@@ -198,8 +198,8 @@ export default function App() {
 
         <section className="panel beta" aria-label="Beta features">
           <div className="section-heading">
-            <h2>In beta</h2>
-            <p>Features currently being tested with early users.</p>
+            <h2>Will be released soon</h2>
+            <p>Features planned for upcoming release.</p>
           </div>
           <div className="card-grid">
             {betaFeatures.map((feature) => (
