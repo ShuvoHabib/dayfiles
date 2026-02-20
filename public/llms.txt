@@ -15,7 +15,7 @@ Dayfiles is a file workflow platform focused on image and PDF operations for dai
 - Sitemap: https://dayfiles.com/sitemap.xml
 
 ## Latest Blog Posts
-- Designing a Cross-Team File Handoff System with Dayfiles: https://dayfiles.com/blog/file-handoff-system
+- From Accra to Berlin: A Student Visa Application Story Powered by Dayfiles: https://dayfiles.com/blog/student-visa-application-story
 - PDF Toolkit Operations Checklist for Reliable Document Delivery: https://dayfiles.com/blog/pdf-operations-checklist
 - Everyday Image Studio Workflow Playbook for Daily Creative Operations: https://dayfiles.com/blog/eis-workflow-playbook
 

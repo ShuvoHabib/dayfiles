@@ -1,20 +1,20 @@
 [
   {
-    "title": "Designing a Cross-Team File Handoff System with Dayfiles",
-    "slug": "file-handoff-system",
+    "title": "From Accra to Berlin: A Student Visa Application Story Powered by Dayfiles",
+    "slug": "student-visa-application-story",
     "date": "2026-02-21",
     "product": "eis",
-    "description": "A practical operating model for teams that need consistent handoffs between image workflows and PDF deliverables.",
+    "description": "A practical story of how one student preparing for studies in Germany used Dayfiles tools to organize documents, fix image assets, and submit a clean visa-ready application package.",
     "tags": [
-      "file handoff",
-      "team collaboration",
-      "image workflow",
-      "pdf workflow"
+      "student visa application",
+      "study abroad",
+      "dayfiles",
+      "document workflow"
     ],
-    "canonicalUrl": "https://dayfiles.com/blog/file-handoff-system",
+    "canonicalUrl": "https://dayfiles.com/blog/student-visa-application-story",
     "featuredImage": "/blog/images/file-handoff-system.svg",
-    "featuredImageAlt": "Illustration for Dayfiles cross-team handoff system",
-    "readingMinutes": 3
+    "featuredImageAlt": "A student preparing documents for international study application",
+    "readingMinutes": 5
   },
   {
     "title": "PDF Toolkit Operations Checklist for Reliable Document Delivery",
