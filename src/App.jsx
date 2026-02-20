@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 const liveProducts = [
   {
     title: 'Everyday Image Studio',
@@ -34,6 +36,10 @@ const workflows = [
   'Share final outputs with trackable links'
 ];
 
+const extensionLink =
+  'https://chromewebstore.google.com/detail/everyday-image-studio/cpcfdmaihaccamacobbfnfngefmdphfp/reviews?utm_source=item-share-cp';
+const extensionBannerStorageKey = 'dayfiles_extension_banner_dismissed_v1';
+
 const faqs = [
   {
     question: 'What is Dayfiles used for?',
@@ -53,8 +59,41 @@ const faqs = [
 ];
 
 export default function App() {
+  const [showExtensionBanner, setShowExtensionBanner] = useState(false);
+
+  useEffect(() => {
+    const dismissed = window.localStorage.getItem(extensionBannerStorageKey) === 'true';
+    setShowExtensionBanner(!dismissed);
+  }, []);
+
+  const dismissExtensionBanner = () => {
+    window.localStorage.setItem(extensionBannerStorageKey, 'true');
+    setShowExtensionBanner(false);
+  };
+
   return (
     <div className="site-shell">
+      {showExtensionBanner && (
+        <aside className="extension-banner" aria-label="Chrome extension promotion">
+          <p>
+            New: Install the <strong>Everyday Image Studio Chrome Extension</strong> for faster image workflows.
+          </p>
+          <div className="extension-banner-actions">
+            <a href={extensionLink} target="_blank" rel="noreferrer">
+              Download extension
+            </a>
+            <button
+              type="button"
+              className="extension-banner-close"
+              aria-label="Dismiss extension banner"
+              onClick={dismissExtensionBanner}
+            >
+              ×
+            </button>
+          </div>
+        </aside>
+      )}
+
       <header className="topbar">
         <a className="brand" href="#home">
           dayfiles.com
