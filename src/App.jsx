@@ -109,6 +109,21 @@ export default function App() {
         </aside>
       )}
 
+      <div className="producthunt-badge-wrap">
+        <a
+          href="https://www.producthunt.com/products/everyday-image-studio-chrome-extension?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-everyday-image-studio-chrome-extension"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            alt=" Everyday Image Studio- Chrome Extension - Privacy first photo editing in your browser, in minutes. | Product Hunt"
+            width="250"
+            height="54"
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1082820&theme=light&t=1771619055827"
+          />
+        </a>
+      </div>
+
       <header className={`topbar${isHeaderScrolled ? ' topbar-scrolled' : ''}`}>
         <a className="brand" href="#home">
           <img src="/dayfiles-logo.svg" alt="Dayfiles logo" />
