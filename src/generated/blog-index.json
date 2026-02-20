@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Designing a Cross-Team File Handoff System with Dayfiles",
+    "slug": "file-handoff-system",
+    "date": "2026-02-21",
+    "product": "eis",
+    "description": "A practical operating model for teams that need consistent handoffs between image workflows and PDF deliverables.",
+    "tags": [
+      "file handoff",
+      "team collaboration",
+      "image workflow",
+      "pdf workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/file-handoff-system",
+    "featuredImage": "/blog/images/file-handoff-system.svg",
+    "featuredImageAlt": "Illustration for Dayfiles cross-team handoff system",
+    "readingMinutes": 3
+  },
+  {
+    "title": "PDF Toolkit Operations Checklist for Reliable Document Delivery",
+    "slug": "pdf-operations-checklist",
+    "date": "2026-02-19",
+    "product": "pdf",
+    "description": "Use this checklist to standardize PDF conversion, compression, and delivery with fewer errors and faster approvals.",
+    "tags": [
+      "pdf workflow",
+      "document operations",
+      "dayfiles",
+      "delivery checklist"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/pdf-operations-checklist",
+    "featuredImage": "/blog/images/pdf-operations-checklist.svg",
+    "featuredImageAlt": "Illustration for PDF Toolkit operations checklist",
+    "readingMinutes": 4
+  },
+  {
+    "title": "Everyday Image Studio Workflow Playbook for Daily Creative Operations",
+    "slug": "eis-workflow-playbook",
+    "date": "2026-02-17",
+    "product": "eis",
+    "description": "A practical guide for teams that need faster image turnaround, consistent quality, and cleaner handoffs using Everyday Image Studio.",
+    "tags": [
+      "image workflow",
+      "creative operations",
+      "dayfiles",
+      "team process"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/eis-workflow-playbook",
+    "featuredImage": "/blog/images/eis-workflow-playbook.svg",
+    "featuredImageAlt": "Illustration for Everyday Image Studio workflow playbook",
+    "readingMinutes": 4
+  }
+]

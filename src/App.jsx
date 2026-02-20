@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import blogIndex from './generated/blog-index.json';
 
 const liveProducts = [
   {
@@ -113,9 +114,14 @@ export default function App() {
           <img src="/dayfiles-logo.svg" alt="Dayfiles logo" />
           <span>dayfiles.com</span>
         </a>
-        <a className="header-cta" href="https://pdf.dayfiles.com/" target="_blank" rel="noreferrer">
-          Open Tools
-        </a>
+        <div className="header-links">
+          <a className="header-link" href="/blog">
+            Blog
+          </a>
+          <a className="header-cta" href="https://pdf.dayfiles.com/" target="_blank" rel="noreferrer">
+            Open Tools
+          </a>
+        </div>
       </header>
 
       <main id="home">
@@ -153,6 +159,26 @@ export default function App() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className="panel blog" aria-label="Latest blog posts">
+          <div className="section-heading">
+            <h2>From the blog</h2>
+            <p>Source-backed workflow guides published on a recurring schedule.</p>
+          </div>
+          <div className="card-grid">
+            {blogIndex.slice(0, 3).map((post) => (
+              <article key={post.slug} className="card">
+                <div className="badge">{post.product === 'pdf' ? 'PDF' : 'Image'}</div>
+                <h3>{post.title}</h3>
+                <p>{post.description}</p>
+                <a href={`/blog/${post.slug}`}>Read post</a>
+              </article>
+            ))}
+          </div>
+          <p className="blog-cta">
+            <a href="/blog">View all blog posts</a>
+          </p>
         </section>
 
         <section className="panel beta" aria-label="Beta features">

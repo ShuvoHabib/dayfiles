@@ -120,6 +120,26 @@ body {
   display: block;
 }
 
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-link {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  color: var(--text-main);
+  padding: 0.52rem 0.95rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.header-link:hover {
+  border-color: var(--accent-2);
+  transform: translateY(-1px);
+}
+
 .header-cta {
   text-decoration: none;
   border: 1px solid var(--line);
@@ -276,6 +296,15 @@ h1 {
   margin-bottom: 0;
 }
 
+.blog-cta {
+  margin: 0.9rem 0 0;
+}
+
+.blog-cta a {
+  color: var(--accent-2);
+  text-underline-offset: 0.2em;
+}
+
 .footer {
   margin-top: 1.6rem;
   padding-top: 0.8rem;
@@ -326,6 +355,16 @@ h1 {
   .extension-banner-actions {
     width: 100%;
     justify-content: space-between;
+  }
+
+  .header-links {
+    gap: 0.4rem;
+  }
+
+  .header-link,
+  .header-cta {
+    padding: 0.45rem 0.72rem;
+    font-size: 0.88rem;
   }
 
   .hero {

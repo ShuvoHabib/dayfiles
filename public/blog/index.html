@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Dayfiles Blog | Image and PDF Workflow Guides</title>
+    <meta name="description" content="Daily workflow articles for Everyday Image Studio and PDF Toolkit, including practical guides, checklists, and operational playbooks." />
+    <link rel="canonical" href="https://dayfiles.com/blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dayfiles Blog" />
+    <meta property="og:description" content="Daily workflow guides for image and PDF operations." />
+    <meta property="og:url" content="https://dayfiles.com/blog" />
+    <meta property="og:image" content="https://dayfiles.com/dayfiles-logo.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dayfiles Blog" />
+    <meta name="twitter:description" content="Daily workflow guides for image and PDF operations." />
+    <meta name="twitter:image" content="https://dayfiles.com/dayfiles-logo.svg" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Dayfiles Blog","url":"https://dayfiles.com/blog","inLanguage":"en","blogPost":[{"@type":"BlogPosting","headline":"Designing a Cross-Team File Handoff System with Dayfiles","url":"https://dayfiles.com/blog/file-handoff-system","datePublished":"2026-02-21","image":"https://dayfiles.com/blog/images/file-handoff-system.svg"},{"@type":"BlogPosting","headline":"PDF Toolkit Operations Checklist for Reliable Document Delivery","url":"https://dayfiles.com/blog/pdf-operations-checklist","datePublished":"2026-02-19","image":"https://dayfiles.com/blog/images/pdf-operations-checklist.svg"},{"@type":"BlogPosting","headline":"Everyday Image Studio Workflow Playbook for Daily Creative Operations","url":"https://dayfiles.com/blog/eis-workflow-playbook","datePublished":"2026-02-17","image":"https://dayfiles.com/blog/images/eis-workflow-playbook.svg"}]}</script>
+    <style>
+  :root {
+    --bg-main: #0b1020;
+    --bg-alt: #111d3b;
+    --text-main: #f6f7fb;
+    --text-soft: #c0c8df;
+    --line: rgba(255,255,255,0.15);
+    --accent: #5de2b0;
+    --accent-2: #63c7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--text-main);
+    background:
+      radial-gradient(circle at 15% 20%, rgba(93, 226, 176, 0.24) 0, transparent 30%),
+      radial-gradient(circle at 88% 15%, rgba(99, 199, 255, 0.24) 0, transparent 34%),
+      linear-gradient(160deg, var(--bg-main), #060b16 65%, #0f1b36 100%);
+  }
+  a { color: var(--accent-2); }
+  .wrap {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 1.2rem 0 2.8rem;
+  }
+  .top {
+    position: sticky;
+    top: 0;
+    z-index: 120;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    border: 1px solid rgba(99,199,255,0.2);
+    border-radius: 14px;
+    background: rgba(6,11,22,0.9);
+    backdrop-filter: blur(6px);
+    padding: 0.7rem 0.9rem;
+  }
+  .brand {
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .brand img { width: 28px; height: 28px; }
+  .chip {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: .45rem .7rem;
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: .92rem;
+  }
+  .panel {
+    margin-top: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 1.2rem;
+    background: linear-gradient(160deg, rgba(17, 29, 59, 0.72), rgba(8, 15, 33, 0.6));
+  }
+  .muted { color: var(--text-soft); }
+  .badge {
+    display: inline-block;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #06131f;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    padding: 0.25rem 0.42rem;
+    border-radius: 999px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: .9rem;
+  }
+  .card {
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 14px;
+    padding: .95rem;
+    background: rgba(8,14,30,.45);
+  }
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 0.7rem;
+  }
+  .hero-title { font-size: clamp(1.8rem, 3.4vw, 2.7rem); margin: 0.2rem 0 0.6rem; }
+  .meta {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    color: var(--text-soft);
+    font-size: .93rem;
+  }
+  .prose {
+    color: #d9deef;
+    line-height: 1.75;
+    font-size: 1.04rem;
+  }
+  .prose h2, .prose h3 { color: #ffffff; margin-top: 1.3rem; }
+  .faq-list, .source-list { display: grid; gap: .7rem; }
+  .crumbs {
+    display: inline-flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    color: var(--text-soft);
+    font-size: .92rem;
+  }
+  .crumbs a { color: var(--text-soft); text-decoration: none; }
+  @media (max-width: 720px) {
+    .wrap { width: min(1120px, calc(100% - 1.2rem)); }
+    .panel { padding: 1rem; }
+  }
+</style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav class="top" aria-label="Primary">
+        <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
+        <div style="display:flex; gap:.5rem; flex-wrap:wrap;">
+          <a class="chip" href="https://everydayimagestudio.dayfiles.com/">Image Studio</a>
+          <a class="chip" href="https://pdf.dayfiles.com/">PDF Toolkit</a>
+        </div>
+      </nav>
+
+      <section class="panel">
+        <p class="badge">New every Mon/Wed/Fri</p>
+        <h1 class="hero-title">Dayfiles Blog</h1>
+        <p class="muted">Source-backed guides on file operations, image workflows, and PDF workflow automation.</p>
+      </section>
+
+      <section class="panel">
+        <div class="grid">
+        <article class="card">
+          <img src="/blog/images/file-handoff-system.svg" alt="Illustration for Dayfiles cross-team handoff system" loading="lazy" />
+          <div class="meta"><span class="badge">Image Studio</span><span>February 21, 2026</span></div>
+          <h2><a href="/blog/file-handoff-system">Designing a Cross-Team File Handoff System with Dayfiles</a></h2>
+          <p class="muted">A practical operating model for teams that need consistent handoffs between image workflows and PDF deliverables.</p>
+          <a href="/blog/file-handoff-system">Read article</a>
+        </article>
+      
+
+        <article class="card">
+          <img src="/blog/images/pdf-operations-checklist.svg" alt="Illustration for PDF Toolkit operations checklist" loading="lazy" />
+          <div class="meta"><span class="badge">PDF Toolkit</span><span>February 19, 2026</span></div>
+          <h2><a href="/blog/pdf-operations-checklist">PDF Toolkit Operations Checklist for Reliable Document Delivery</a></h2>
+          <p class="muted">Use this checklist to standardize PDF conversion, compression, and delivery with fewer errors and faster approvals.</p>
+          <a href="/blog/pdf-operations-checklist">Read article</a>
+        </article>
+      
+
+        <article class="card">
+          <img src="/blog/images/eis-workflow-playbook.svg" alt="Illustration for Everyday Image Studio workflow playbook" loading="lazy" />
+          <div class="meta"><span class="badge">Image Studio</span><span>February 17, 2026</span></div>
+          <h2><a href="/blog/eis-workflow-playbook">Everyday Image Studio Workflow Playbook for Daily Creative Operations</a></h2>
+          <p class="muted">A practical guide for teams that need faster image turnaround, consistent quality, and cleaner handoffs using Everyday Image Studio.</p>
+          <a href="/blog/eis-workflow-playbook">Read article</a>
+        </article>
+      </div>
+      </section>
+    </div>
+  </body>
+</html>

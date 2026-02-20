@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Dayfiles Blog</title>
+    <link>https://dayfiles.com/blog</link>
+    <description>Daily workflow guides for Everyday Image Studio and PDF Toolkit.</description>
+    <language>en-us</language>
+    
+    <item>
+      <title><![CDATA[Designing a Cross-Team File Handoff System with Dayfiles]]></title>
+      <link>https://dayfiles.com/blog/file-handoff-system</link>
+      <guid>https://dayfiles.com/blog/file-handoff-system</guid>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[A practical operating model for teams that need consistent handoffs between image workflows and PDF deliverables.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[PDF Toolkit Operations Checklist for Reliable Document Delivery]]></title>
+      <link>https://dayfiles.com/blog/pdf-operations-checklist</link>
+      <guid>https://dayfiles.com/blog/pdf-operations-checklist</guid>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[Use this checklist to standardize PDF conversion, compression, and delivery with fewer errors and faster approvals.]]></description>
+    </item>
+
+    <item>
+      <title><![CDATA[Everyday Image Studio Workflow Playbook for Daily Creative Operations]]></title>
+      <link>https://dayfiles.com/blog/eis-workflow-playbook</link>
+      <guid>https://dayfiles.com/blog/eis-workflow-playbook</guid>
+      <pubDate>Tue, 17 Feb 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[A practical guide for teams that need faster image turnaround, consistent quality, and cleaner handoffs using Everyday Image Studio.]]></description>
+    </item>
+  </channel>
+</rss>

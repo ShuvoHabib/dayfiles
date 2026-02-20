@@ -4,12 +4,22 @@ Dayfiles is a file workflow platform focused on image and PDF operations for dai
 
 ## Canonical Site
 - https://dayfiles.com/
+- https://dayfiles.com/blog
 
 ## Live Tools
 - https://everydayimagestudio.dayfiles.com/
 - https://pdf.dayfiles.com/
 
+## Blog Discovery
+- RSS: https://dayfiles.com/blog/feed.xml
+- Sitemap: https://dayfiles.com/sitemap.xml
+
+## Latest Blog Posts
+- Designing a Cross-Team File Handoff System with Dayfiles: https://dayfiles.com/blog/file-handoff-system
+- PDF Toolkit Operations Checklist for Reliable Document Delivery: https://dayfiles.com/blog/pdf-operations-checklist
+- Everyday Image Studio Workflow Playbook for Daily Creative Operations: https://dayfiles.com/blog/eis-workflow-playbook
+
 ## Summary
 - Dayfiles helps users create, convert, organize, and share files.
 - Primary capabilities include image workflows and PDF workflows.
-- The platform also includes beta features such as File Copilot, Shared Workspaces, and Smart File Tags.
+- Blog posts are source-backed and updated three times weekly.
