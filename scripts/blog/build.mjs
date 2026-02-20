@@ -273,6 +273,12 @@ function renderBlogIndexPage(posts) {
       gtag('js', new Date());
       gtag('config', 'G-V6HJS96NK6');
     </script>
+    <!-- AdSense script is loaded, but no ad slots are rendered yet. -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702"
+      crossorigin="anonymous"
+    ></script>
     <script type="application/ld+json">${JSON.stringify(itemList)}</script>
     <style>${sharedStyles()}</style>
   </head>
@@ -360,6 +366,12 @@ function renderPostPage(post, relatedPosts) {
       gtag('js', new Date());
       gtag('config', 'G-V6HJS96NK6');
     </script>
+    <!-- AdSense script is loaded, but no ad slots are rendered yet. -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702"
+      crossorigin="anonymous"
+    ></script>
     <script type="application/ld+json">${collectJsonLd(post, relatedPosts)}</script>
     <style>${sharedStyles()}</style>
   </head>
