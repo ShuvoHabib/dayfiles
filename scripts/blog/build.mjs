@@ -265,6 +265,14 @@ function renderBlogIndexPage(posts) {
     <meta name="twitter:title" content="Dayfiles Blog" />
     <meta name="twitter:description" content="Daily workflow guides for image and PDF operations." />
     <meta name="twitter:image" content="${SITE_URL}/dayfiles-logo.svg" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-V6HJS96NK6');
+    </script>
     <script type="application/ld+json">${JSON.stringify(itemList)}</script>
     <style>${sharedStyles()}</style>
   </head>
@@ -344,6 +352,14 @@ function renderPostPage(post, relatedPosts) {
     <meta name="twitter:title" content="${escapeHtml(post.title)}" />
     <meta name="twitter:description" content="${escapeHtml(post.description)}" />
     <meta name="twitter:image" content="${escapeHtml(toAbsoluteUrl(post.featuredImage))}" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-V6HJS96NK6');
+    </script>
     <script type="application/ld+json">${collectJsonLd(post, relatedPosts)}</script>
     <style>${sharedStyles()}</style>
   </head>
