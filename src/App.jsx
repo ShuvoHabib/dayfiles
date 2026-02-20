@@ -34,6 +34,24 @@ const workflows = [
   'Share final outputs with trackable links'
 ];
 
+const faqs = [
+  {
+    question: 'What is Dayfiles used for?',
+    answer:
+      'Dayfiles is a file operations platform for image editing, PDF conversion, document cleanup, and daily file sharing workflows.'
+  },
+  {
+    question: 'Which Dayfiles tools are live today?',
+    answer:
+      'Everyday Image Studio and PDF Toolkit are live products. You can access them directly from dayfiles.com.'
+  },
+  {
+    question: 'What features are currently in beta?',
+    answer:
+      'File Copilot, Shared Workspaces, and Smart File Tags are in active beta and being tested with early teams.'
+  }
+];
+
 export default function App() {
   return (
     <div className="site-shell">
@@ -51,8 +69,8 @@ export default function App() {
           <p className="eyebrow">File stack for modern teams</p>
           <h1>Everything file-related, in one place.</h1>
           <p className="hero-copy">
-            Dayfiles gives your team practical tools to handle documents, media, and daily file operations without
-            switching between scattered apps.
+            Dayfiles gives your team practical tools for image workflows, PDF workflows, and daily document management
+            without switching between scattered apps.
           </p>
           <div className="hero-actions">
             <a href="https://everydayimagestudio.dayfiles.com/" target="_blank" rel="noreferrer">
@@ -108,6 +126,21 @@ export default function App() {
               <li key={workflow}>{workflow}</li>
             ))}
           </ol>
+        </section>
+
+        <section className="panel faq" aria-label="Frequently asked questions">
+          <div className="section-heading">
+            <h2>FAQs</h2>
+            <p>Answers to common questions about Dayfiles tools and features.</p>
+          </div>
+          <div className="faq-grid">
+            {faqs.map((faq) => (
+              <article key={faq.question} className="faq-item">
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </article>
+            ))}
+          </div>
         </section>
       </main>
 

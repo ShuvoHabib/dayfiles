@@ -194,6 +194,24 @@ h1 {
   color: var(--text-soft);
 }
 
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+
+.faq-item {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  padding: 0.95rem;
+  background: rgba(8, 14, 30, 0.45);
+}
+
+.faq-item p {
+  color: var(--text-soft);
+  margin-bottom: 0;
+}
+
 .footer {
   margin-top: 1.6rem;
   padding-top: 0.8rem;

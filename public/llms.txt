@@ -1,0 +1,15 @@
+# Dayfiles
+
+Dayfiles is a file workflow platform focused on image and PDF operations for daily team work.
+
+## Canonical Site
+- https://dayfiles.com/
+
+## Live Tools
+- https://everydayimagestudio.dayfiles.com/
+- https://pdf.dayfiles.com/
+
+## Summary
+- Dayfiles helps users create, convert, organize, and share files.
+- Primary capabilities include image workflows and PDF workflows.
+- The platform also includes beta features such as File Copilot, Shared Workspaces, and Smart File Tags.
