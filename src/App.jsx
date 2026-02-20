@@ -60,10 +60,24 @@ const faqs = [
 
 export default function App() {
   const [showExtensionBanner, setShowExtensionBanner] = useState(false);
+  const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
 
   useEffect(() => {
     const dismissed = window.localStorage.getItem(extensionBannerStorageKey) === 'true';
     setShowExtensionBanner(!dismissed);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsHeaderScrolled(window.scrollY > 10);
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   const dismissExtensionBanner = () => {
@@ -94,9 +108,10 @@ export default function App() {
         </aside>
       )}
 
-      <header className="topbar">
+      <header className={`topbar${isHeaderScrolled ? ' topbar-scrolled' : ''}`}>
         <a className="brand" href="#home">
-          dayfiles.com
+          <img src="/dayfiles-logo.svg" alt="Dayfiles logo" />
+          <span>dayfiles.com</span>
         </a>
         <a className="header-cta" href="https://pdf.dayfiles.com/" target="_blank" rel="noreferrer">
           Open Tools
