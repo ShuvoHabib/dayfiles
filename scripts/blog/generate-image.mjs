@@ -77,17 +77,24 @@ async function writePlaceholderImage(filePath, product, title) {
   const subtitleLines = lines.slice(0, 2);
   const productLabel = product === 'pdf' ? 'PDF Toolkit' : 'Everyday Image Studio';
 
-  const baseY = subtitleLines.length > 1 ? 350 : 368;
-  const subtitleStartY = subtitleLines.length > 1 ? 430 : 420;
+  const subtitleCount = Math.max(subtitleLines.length, 1);
+  const subtitleHeight = 42 + (subtitleCount - 1) * 52;
+  const blockHeight = 56 + 34 + subtitleHeight;
+  const blockTop = Math.round((680 - blockHeight) / 2);
+  const baseY = blockTop + 56;
+  const subtitleStartY = baseY + 78;
   const subtitleTspans = subtitleLines
     .map((entry, idx) => `<tspan x="160" y="${subtitleStartY + idx * 52}">${escapeXml(entry)}</tspan>`)
     .join('');
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${palette.a}"/><stop offset="1" stop-color="${palette.b}"/></linearGradient></defs>
-  <rect width="1600" height="760" fill="#0B1020"/>
-  <circle cx="1260" cy="90" r="220" fill="url(#g)" opacity="0.26"/>
-  <rect x="96" y="84" width="1408" height="592" rx="32" fill="#101A34" stroke="#1B2A54"/>
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="680" viewBox="0 0 1600 680">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${palette.a}"/><stop offset="1" stop-color="${palette.b}"/></linearGradient>
+    <radialGradient id="wash" cx="0.86" cy="0.08" r="0.7"><stop offset="0" stop-color="#24456F" stop-opacity=".58"/><stop offset="1" stop-color="#0B1020" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="680" fill="#0B1020"/>
+  <rect width="1600" height="680" fill="url(#wash)"/>
+  <circle cx="1320" cy="72" r="190" fill="url(#g)" opacity="0.28"/>
   <text x="160" y="${baseY}" fill="${palette.fg}" font-family="Arial, sans-serif" font-size="56" font-weight="700">${productLabel}</text>
   <text fill="#C0C8DF" font-family="Arial, sans-serif" font-size="42">${subtitleTspans}</text>
 </svg>`;
