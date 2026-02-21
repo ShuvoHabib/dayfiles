@@ -316,14 +316,13 @@ function sharedStyles() {
     border-radius: 16px;
     border: 1px solid var(--hero-cover-border);
     overflow: hidden;
-    aspect-ratio: 16 / 7;
-    max-height: 270px;
+    width: 100%;
+    height: clamp(200px, 24vw, 240px);
     background: var(--hero-cover-bg);
   }
   .hero-image {
     width: 100%;
     height: 100%;
-    max-height: 270px;
     display: block;
     object-fit: cover;
     object-position: center;
@@ -389,7 +388,7 @@ function sharedStyles() {
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
-    .hero-cover, .hero-image { max-height: 190px; }
+    .hero-cover { height: 185px; }
     .top {
       position: static;
       flex-direction: column;
