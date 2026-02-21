@@ -49,14 +49,47 @@ async function writePlaceholderImage(filePath, product, title) {
       ? { a: '#63C7FF', b: '#4EA0FF', fg: '#F6F7FB' }
       : { a: '#5DE2B0', b: '#48C7A7', fg: '#F6F7FB' };
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  const escapeXml = (value) =>
+    String(value)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&apos;');
+
+  const text = String(title || '').trim();
+  const words = text.split(/\s+/).filter(Boolean);
+  const lines = [];
+  let line = '';
+  for (const word of words) {
+    const candidate = line ? `${line} ${word}` : word;
+    if (candidate.length > 48 && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = candidate;
+    }
+  }
+  if (line) {
+    lines.push(line);
+  }
+
+  const subtitleLines = lines.slice(0, 2);
+  const productLabel = product === 'pdf' ? 'PDF Toolkit' : 'Everyday Image Studio';
+
+  const baseY = subtitleLines.length > 1 ? 350 : 368;
+  const subtitleStartY = subtitleLines.length > 1 ? 430 : 420;
+  const subtitleTspans = subtitleLines
+    .map((entry, idx) => `<tspan x="160" y="${subtitleStartY + idx * 52}">${escapeXml(entry)}</tspan>`)
+    .join('');
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760">
   <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${palette.a}"/><stop offset="1" stop-color="${palette.b}"/></linearGradient></defs>
-  <rect width="1600" height="900" fill="#0B1020"/>
-  <circle cx="1240" cy="140" r="280" fill="url(#g)" opacity="0.28"/>
-  <rect x="96" y="120" width="1408" height="660" rx="36" fill="#101A34" stroke="#1B2A54"/>
-  <text x="160" y="260" fill="${palette.fg}" font-family="Arial, sans-serif" font-size="52" font-weight="700">Dayfiles Blog</text>
-  <text x="160" y="340" fill="#C0C8DF" font-family="Arial, sans-serif" font-size="42">${title.replaceAll('&', 'and')}</text>
-  <text x="160" y="760" fill="#C0C8DF" font-family="Arial, sans-serif" font-size="32">Generated placeholder image</text>
+  <rect width="1600" height="760" fill="#0B1020"/>
+  <circle cx="1260" cy="90" r="220" fill="url(#g)" opacity="0.26"/>
+  <rect x="96" y="84" width="1408" height="592" rx="32" fill="#101A34" stroke="#1B2A54"/>
+  <text x="160" y="${baseY}" fill="${palette.fg}" font-family="Arial, sans-serif" font-size="56" font-weight="700">${productLabel}</text>
+  <text fill="#C0C8DF" font-family="Arial, sans-serif" font-size="42">${subtitleTspans}</text>
 </svg>`;
 
   await fs.writeFile(filePath.replace(/\.png$/, '.svg'), svg, 'utf8');
