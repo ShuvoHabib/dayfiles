@@ -212,7 +212,7 @@ a {
 }
 
 .theme-select {
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: 999px;
   background: transparent;
   color: var(--text-main);
@@ -220,11 +220,16 @@ a {
   font-size: 0.84rem;
   padding: 0.28rem 0.62rem;
   cursor: pointer;
+  outline: none;
 }
 
 .theme-select:focus-visible {
-  outline: 2px solid var(--accent-2);
-  outline-offset: 1px;
+  outline: none;
+}
+
+.theme-select-wrap:focus-within {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-2) 24%, transparent);
 }
 
 .theme-select option {

@@ -244,7 +244,7 @@ function sharedStyles() {
     padding: .25rem .34rem;
   }
   .theme-select {
-    border: 1px solid var(--line);
+    border: 0;
     border-radius: 999px;
     background: transparent;
     color: var(--text-main);
@@ -252,11 +252,15 @@ function sharedStyles() {
     font-size: .82rem;
     padding: .27rem .58rem;
     cursor: pointer;
+    outline: none;
   }
   .theme-select option { color: #0f1d3a; }
   .theme-select:focus-visible {
-    outline: 2px solid var(--accent-2);
-    outline-offset: 1px;
+    outline: none;
+  }
+  .theme-select-wrap:focus-within {
+    border-color: var(--accent-2);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-2) 24%, transparent);
   }
   .panel {
     margin-top: 1rem;
