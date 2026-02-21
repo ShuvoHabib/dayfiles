@@ -40,6 +40,7 @@ const workflows = [
 const extensionLink =
   'https://chromewebstore.google.com/detail/everyday-image-studio/cpcfdmaihaccamacobbfnfngefmdphfp/reviews?utm_source=item-share-cp';
 const extensionBannerStorageKey = 'dayfiles_extension_banner_dismissed_v1';
+const themeStorageKey = 'dayfiles_theme';
 
 const faqs = [
   {
@@ -62,10 +63,26 @@ const faqs = [
 export default function App() {
   const [showExtensionBanner, setShowExtensionBanner] = useState(false);
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
+  const [theme, setTheme] = useState('dark');
+
+  const applyTheme = (nextTheme, persist = false) => {
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    setTheme(nextTheme);
+    if (persist) {
+      window.localStorage.setItem(themeStorageKey, nextTheme);
+    }
+  };
 
   useEffect(() => {
     const dismissed = window.localStorage.getItem(extensionBannerStorageKey) === 'true';
     setShowExtensionBanner(!dismissed);
+
+    const validThemes = new Set(['light', 'dark']);
+    const attrTheme = document.documentElement.getAttribute('data-theme');
+    const storedTheme = window.localStorage.getItem(themeStorageKey);
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const initialTheme = validThemes.has(storedTheme) ? storedTheme : validThemes.has(attrTheme) ? attrTheme : systemTheme;
+    applyTheme(initialTheme, false);
   }, []);
 
   useEffect(() => {
@@ -84,6 +101,11 @@ export default function App() {
   const dismissExtensionBanner = () => {
     window.localStorage.setItem(extensionBannerStorageKey, 'true');
     setShowExtensionBanner(false);
+  };
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    applyTheme(nextTheme, true);
   };
 
   return (
@@ -130,6 +152,9 @@ export default function App() {
           <span>dayfiles.com</span>
         </a>
         <div className="header-links">
+          <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            {theme === 'dark' ? 'Dark' : 'Light'}
+          </button>
           <a className="header-link" href="/blog">
             Blog
           </a>

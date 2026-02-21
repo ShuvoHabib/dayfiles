@@ -3,6 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <script>
+      (function () {
+        var key = 'dayfiles_theme';
+        var saved = localStorage.getItem(key);
+        var valid = saved === 'light' || saved === 'dark';
+        var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        var theme = valid ? saved : system;
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Why Dayfiles Blog Uses Google Ads to Keep Practical Guides Free | Dayfiles Blog</title>
     <meta name="description" content="A transparent explanation of how Dayfiles uses relevant Google Ads to support free workflow content for students, job applicants, and small teams." />
@@ -34,22 +46,56 @@
     <style>
   :root {
     --bg-main: #0b1020;
-    --bg-alt: #111d3b;
     --text-main: #f6f7fb;
     --text-soft: #c0c8df;
     --line: rgba(255,255,255,0.15);
     --accent: #5de2b0;
     --accent-2: #63c7ff;
+    --page-bg:
+      radial-gradient(circle at 15% 20%, rgba(93, 226, 176, 0.24) 0, transparent 30%),
+      radial-gradient(circle at 88% 15%, rgba(99, 199, 255, 0.24) 0, transparent 34%),
+      linear-gradient(160deg, #0b1020, #060b16 65%, #0f1b36 100%);
+    --top-bg: rgba(6,11,22,0.9);
+    --top-border: rgba(99,199,255,0.2);
+    --panel-bg: linear-gradient(160deg, rgba(17, 29, 59, 0.72), rgba(8, 15, 33, 0.6));
+    --card-bg: rgba(8,14,30,.45);
+    --card-border: rgba(255,255,255,0.16);
+    --hero-cover-bg: rgba(10, 18, 36, 0.65);
+    --hero-cover-border: rgba(255,255,255,.15);
+    --badge-text: #06131f;
+    --prose: #d9deef;
+    --prose-heading: #ffffff;
+    --button-on-accent: #06131f;
+  }
+  [data-theme='light'] {
+    --bg-main: #f3f8ff;
+    --text-main: #0f1d3a;
+    --text-soft: #415273;
+    --line: rgba(15, 29, 58, 0.18);
+    --accent: #17c088;
+    --accent-2: #2d93ff;
+    --page-bg:
+      radial-gradient(circle at 8% 16%, rgba(23, 192, 136, 0.16) 0, transparent 33%),
+      radial-gradient(circle at 92% 8%, rgba(45, 147, 255, 0.16) 0, transparent 34%),
+      linear-gradient(160deg, #f3f8ff, #eaf2ff 60%, #f8fbff 100%);
+    --top-bg: rgba(255,255,255,0.92);
+    --top-border: rgba(45, 147, 255, 0.3);
+    --panel-bg: linear-gradient(160deg, rgba(255,255,255,0.95), rgba(239,246,255,0.92));
+    --card-bg: rgba(255,255,255,0.92);
+    --card-border: rgba(15, 29, 58, 0.14);
+    --hero-cover-bg: rgba(233, 243, 255, 0.9);
+    --hero-cover-border: rgba(15, 29, 58, 0.14);
+    --badge-text: #ffffff;
+    --prose: #1c2a4b;
+    --prose-heading: #0f1d3a;
+    --button-on-accent: #ffffff;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     color: var(--text-main);
-    background:
-      radial-gradient(circle at 15% 20%, rgba(93, 226, 176, 0.24) 0, transparent 30%),
-      radial-gradient(circle at 88% 15%, rgba(99, 199, 255, 0.24) 0, transparent 34%),
-      linear-gradient(160deg, var(--bg-main), #060b16 65%, #0f1b36 100%);
+    background: var(--page-bg);
   }
   a { color: var(--accent-2); }
   .wrap {
@@ -65,9 +111,9 @@
     justify-content: space-between;
     gap: 1rem;
     align-items: center;
-    border: 1px solid rgba(99,199,255,0.2);
+    border: 1px solid var(--top-border);
     border-radius: 14px;
-    background: rgba(6,11,22,0.9);
+    background: var(--top-bg);
     backdrop-filter: blur(6px);
     padding: 0.7rem 0.9rem;
   }
@@ -80,20 +126,27 @@
     font-weight: 700;
   }
   .brand img { width: 28px; height: 28px; }
-  .chip {
+  .chip, .theme-toggle {
     border: 1px solid var(--line);
     border-radius: 999px;
     padding: .45rem .7rem;
-    text-decoration: none;
     color: var(--text-main);
     font-size: .92rem;
+    background: transparent;
+  }
+  .chip {
+    text-decoration: none;
+  }
+  .theme-toggle {
+    cursor: pointer;
+    font: inherit;
   }
   .panel {
     margin-top: 1rem;
     border: 1px solid var(--line);
     border-radius: 18px;
     padding: 1.2rem;
-    background: linear-gradient(160deg, rgba(17, 29, 59, 0.72), rgba(8, 15, 33, 0.6));
+    background: var(--panel-bg);
   }
   .muted { color: var(--text-soft); }
   .badge {
@@ -101,7 +154,7 @@
     font-size: .72rem;
     text-transform: uppercase;
     letter-spacing: .06em;
-    color: #06131f;
+    color: var(--badge-text);
     background: linear-gradient(120deg, var(--accent), var(--accent-2));
     padding: 0.25rem 0.42rem;
     border-radius: 999px;
@@ -112,10 +165,10 @@
     gap: .9rem;
   }
   .card {
-    border: 1px solid rgba(255,255,255,0.16);
+    border: 1px solid var(--card-border);
     border-radius: 14px;
     padding: .95rem;
-    background: rgba(8,14,30,.45);
+    background: var(--card-bg);
   }
   .card img {
     width: 100%;
@@ -126,10 +179,10 @@
   .hero-cover {
     margin-top: 0.8rem;
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,.15);
+    border: 1px solid var(--hero-cover-border);
     overflow: hidden;
     max-height: 360px;
-    background: rgba(10, 18, 36, 0.65);
+    background: var(--hero-cover-bg);
   }
   .hero-image {
     width: 100%;
@@ -148,11 +201,11 @@
     font-size: .93rem;
   }
   .prose {
-    color: #d9deef;
+    color: var(--prose);
     line-height: 1.75;
     font-size: 1.04rem;
   }
-  .prose h2, .prose h3 { color: #ffffff; margin-top: 1.3rem; }
+  .prose h2, .prose h3 { color: var(--prose-heading); margin-top: 1.3rem; }
   .faq-list, .source-list { display: grid; gap: .7rem; }
   .crumbs {
     display: inline-flex;
@@ -166,6 +219,7 @@
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
     .hero-cover, .hero-image { max-height: 240px; }
+    .theme-toggle, .chip { font-size: .86rem; padding: .4rem .58rem; }
   }
 </style>
   </head>
@@ -174,6 +228,7 @@
       <nav class="top" aria-label="Primary">
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
         <div style="display:flex; gap:.5rem; flex-wrap:wrap;">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">Dark</button>
           <a class="chip" href="/blog">Blog home</a>
           <a class="chip" href="https://everydayimagestudio.dayfiles.com/">Image Studio</a>
           <a class="chip" href="https://pdf.dayfiles.com/">PDF Toolkit</a>
@@ -331,5 +386,28 @@
     </div>
       </section>
     </div>
+    
+    <script>
+      (function () {
+        var key = 'dayfiles_theme';
+        var button = document.getElementById('theme-toggle');
+        if (!button) return;
+
+        function setTheme(theme, persist) {
+          document.documentElement.setAttribute('data-theme', theme);
+          button.textContent = theme === 'dark' ? 'Dark' : 'Light';
+          if (persist) localStorage.setItem(key, theme);
+        }
+
+        var current = document.documentElement.getAttribute('data-theme') || 'dark';
+        setTheme(current, false);
+
+        button.addEventListener('click', function () {
+          var next = (document.documentElement.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
+          setTheme(next, true);
+        });
+      })();
+    </script>
+  
   </body>
 </html>
