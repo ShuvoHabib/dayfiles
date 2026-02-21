@@ -186,7 +186,6 @@ export default function App() {
         </a>
         <div className="header-links">
           <label className="theme-select-wrap" htmlFor="theme-select">
-            <span>Theme</span>
             <select id="theme-select" className="theme-select" value={themePreference} onChange={onThemeSelect}>
               <option value="system">System ({resolvedTheme})</option>
               <option value="light">Light</option>

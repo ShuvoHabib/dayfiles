@@ -222,15 +222,9 @@ function sharedStyles() {
   .theme-select-wrap {
     display: inline-flex;
     align-items: center;
-    gap: .36rem;
     border: 1px solid var(--line);
     border-radius: 999px;
-    padding: .25rem .34rem .25rem .6rem;
-  }
-  .theme-select-wrap span {
-    color: var(--text-soft);
-    font-size: .8rem;
-    white-space: nowrap;
+    padding: .25rem .34rem;
   }
   .theme-select {
     border: 1px solid var(--line);
@@ -360,7 +354,6 @@ function sharedStyles() {
       font-size: .86rem;
       padding: .4rem .58rem;
     }
-    .theme-select-wrap span { font-size: .75rem; }
     .theme-select { font-size: .78rem; }
   }
 `;
@@ -520,7 +513,6 @@ function renderBlogIndexPage(posts) {
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
         <div class="top-links">
           <label class="theme-select-wrap" for="theme-select">
-            <span>Theme</span>
             <select id="theme-select" class="theme-select" aria-label="Theme">
               <option value="system">System</option>
               <option value="light">Light</option>
@@ -634,7 +626,6 @@ function renderPostPage(post, relatedPosts) {
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
         <div class="top-links">
           <label class="theme-select-wrap" for="theme-select">
-            <span>Theme</span>
             <select id="theme-select" class="theme-select" aria-label="Theme">
               <option value="system">System</option>
               <option value="light">Light</option>
