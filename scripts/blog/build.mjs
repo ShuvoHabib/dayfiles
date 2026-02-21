@@ -21,6 +21,9 @@ import {
 } from './lib.mjs';
 import { validatePosts } from './validate.mjs';
 
+const ADSENSE_CLIENT = 'ca-pub-1193261985740702';
+const BLOG_AD_SLOT = process.env.BLOG_AD_SLOT || '1234567890';
+
 function stripMarkdown(markdown) {
   return String(markdown)
     .replace(/```[\s\S]*?```/g, ' ')
@@ -29,6 +32,22 @@ function stripMarkdown(markdown) {
     .replace(/[#>*_~\-]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function renderAdUnit(placementKey) {
+  return `
+    <section class="panel ad-panel" aria-label="Sponsored content ${escapeHtml(placementKey)}">
+      <p class="ad-label">Sponsored</p>
+      <ins
+        class="adsbygoogle js-ad-slot"
+        style="display:block"
+        data-ad-client="${ADSENSE_CLIENT}"
+        data-ad-slot="${BLOG_AD_SLOT}"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+    </section>
+  `;
 }
 
 function collectJsonLd(post, relatedPosts = []) {
@@ -116,6 +135,10 @@ function sharedStyles() {
     --prose: #d9deef;
     --prose-heading: #ffffff;
     --button-on-accent: #06131f;
+    --faq-card-bg: rgba(8, 14, 30, 0.55);
+    --faq-card-border: rgba(255,255,255,0.2);
+    --ad-panel-bg: linear-gradient(160deg, rgba(17, 29, 59, 0.65), rgba(8, 15, 33, 0.55));
+    --ad-panel-border: rgba(99,199,255,0.26);
   }
   [data-theme='light'] {
     --bg-main: #f3f8ff;
@@ -139,6 +162,10 @@ function sharedStyles() {
     --prose: #1c2a4b;
     --prose-heading: #0f1d3a;
     --button-on-accent: #ffffff;
+    --faq-card-bg: linear-gradient(160deg, rgba(245, 251, 255, 0.98), rgba(233, 245, 255, 0.95));
+    --faq-card-border: rgba(45,147,255,0.24);
+    --ad-panel-bg: linear-gradient(160deg, rgba(255,255,255,0.95), rgba(236,246,255,0.92));
+    --ad-panel-border: rgba(45,147,255,0.34);
   }
   * { box-sizing: border-box; }
   body {
@@ -176,20 +203,49 @@ function sharedStyles() {
     font-weight: 700;
   }
   .brand img { width: 28px; height: 28px; }
-  .chip, .theme-toggle {
+  .top-links {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .chip {
     border: 1px solid var(--line);
     border-radius: 999px;
     padding: .45rem .7rem;
     color: var(--text-main);
     font-size: .92rem;
     background: transparent;
-  }
-  .chip {
     text-decoration: none;
   }
-  .theme-toggle {
-    cursor: pointer;
+  .theme-select-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: .36rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: .25rem .34rem .25rem .6rem;
+  }
+  .theme-select-wrap span {
+    color: var(--text-soft);
+    font-size: .8rem;
+    white-space: nowrap;
+  }
+  .theme-select {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-main);
     font: inherit;
+    font-size: .82rem;
+    padding: .27rem .58rem;
+    cursor: pointer;
+  }
+  .theme-select option { color: #0f1d3a; }
+  .theme-select:focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: 1px;
   }
   .panel {
     margin-top: 1rem;
@@ -257,6 +313,21 @@ function sharedStyles() {
   }
   .prose h2, .prose h3 { color: var(--prose-heading); margin-top: 1.3rem; }
   .faq-list, .source-list { display: grid; gap: .7rem; }
+  .faq-card {
+    border: 1px solid var(--faq-card-border);
+    background: var(--faq-card-bg);
+  }
+  .ad-panel {
+    border-color: var(--ad-panel-border);
+    background: var(--ad-panel-bg);
+  }
+  .ad-label {
+    margin: 0 0 .7rem;
+    font-size: .74rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--text-soft);
+  }
   .crumbs {
     display: inline-flex;
     gap: .5rem;
@@ -269,7 +340,28 @@ function sharedStyles() {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
     .hero-cover, .hero-image { max-height: 240px; }
-    .theme-toggle, .chip { font-size: .86rem; padding: .4rem .58rem; }
+    .top {
+      position: static;
+      flex-direction: column;
+      align-items: center;
+      gap: .55rem;
+    }
+    .brand {
+      width: 100%;
+      justify-content: center;
+    }
+    .top-links {
+      width: 100%;
+      justify-content: center;
+      gap: .4rem;
+    }
+    .chip,
+    .theme-select-wrap {
+      font-size: .86rem;
+      padding: .4rem .58rem;
+    }
+    .theme-select-wrap span { font-size: .75rem; }
+    .theme-select { font-size: .78rem; }
   }
 `;
 }
@@ -280,35 +372,72 @@ function themeBootstrapScript() {
       (function () {
         var key = 'dayfiles_theme';
         var saved = localStorage.getItem(key);
-        var valid = saved === 'light' || saved === 'dark';
+        var valid = saved === 'light' || saved === 'dark' || saved === 'system';
         var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        var theme = valid ? saved : system;
+        var theme = valid && saved !== 'system' ? saved : system;
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
   `;
 }
 
-function themeToggleScript() {
+function themeSelectScript() {
   return `
     <script>
       (function () {
         var key = 'dayfiles_theme';
-        var button = document.getElementById('theme-toggle');
-        if (!button) return;
+        var select = document.getElementById('theme-select');
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+        if (!select) return;
 
-        function setTheme(theme, persist) {
-          document.documentElement.setAttribute('data-theme', theme);
-          button.textContent = theme === 'dark' ? 'Dark' : 'Light';
-          if (persist) localStorage.setItem(key, theme);
+        function getSystemTheme() {
+          return media.matches ? 'dark' : 'light';
         }
 
-        var current = document.documentElement.getAttribute('data-theme') || 'dark';
-        setTheme(current, false);
+        function setTheme(preference, persist) {
+          var resolved = preference === 'light' || preference === 'dark' ? preference : getSystemTheme();
+          document.documentElement.setAttribute('data-theme', resolved);
+          var text = resolved.charAt(0).toUpperCase() + resolved.slice(1);
+          var systemOption = select.querySelector('option[value="system"]');
+          if (systemOption) {
+            systemOption.textContent = 'System (' + text + ')';
+          }
+          select.value = preference;
+          if (persist) localStorage.setItem(key, preference);
+        }
 
-        button.addEventListener('click', function () {
-          var next = (document.documentElement.getAttribute('data-theme') || 'dark') === 'dark' ? 'light' : 'dark';
+        var saved = localStorage.getItem(key);
+        var preference = saved === 'light' || saved === 'dark' || saved === 'system' ? saved : 'system';
+        setTheme(preference, false);
+
+        select.addEventListener('change', function () {
+          var next = select.value;
+          if (next !== 'light' && next !== 'dark' && next !== 'system') return;
           setTheme(next, true);
+        });
+
+        media.addEventListener('change', function () {
+          if (select.value === 'system') {
+            setTheme('system', false);
+          }
+        });
+      })();
+    </script>
+  `;
+}
+
+function adInitScript() {
+  return `
+    <script>
+      (function () {
+        var adSlots = document.querySelectorAll('.js-ad-slot');
+        if (!adSlots.length) return;
+        adSlots.forEach(function () {
+          try {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          } catch (error) {
+            // Ignore runtime ad-fill errors to avoid breaking page rendering.
+          }
         });
       })();
     </script>
@@ -317,9 +446,10 @@ function themeToggleScript() {
 
 function renderBlogIndexPage(posts) {
   const cards = posts
-    .map((post) => {
+    .map((post, index) => {
       const excerpt = escapeHtml(post.description || stripMarkdown(post.body).slice(0, 170));
       const postHref = postRelativeUrl(post.slug);
+      const adBlock = renderAdUnit(`index-card-${index + 1}`);
       return `
         <article class="card">
           <img src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" loading="lazy" />
@@ -328,6 +458,7 @@ function renderBlogIndexPage(posts) {
           <p class="muted">${excerpt}</p>
           <a href="${postHref}">Read article</a>
         </article>
+        ${adBlock}
       `;
     })
     .join('\n');
@@ -387,8 +518,15 @@ function renderBlogIndexPage(posts) {
     <div class="wrap">
       <nav class="top" aria-label="Primary">
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
-        <div style="display:flex; gap:.5rem; flex-wrap:wrap;">
-          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">Dark</button>
+        <div class="top-links">
+          <label class="theme-select-wrap" for="theme-select">
+            <span>Theme</span>
+            <select id="theme-select" class="theme-select" aria-label="Theme">
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
           <a class="chip" href="https://everydayimagestudio.dayfiles.com/">Image Studio</a>
           <a class="chip" href="https://pdf.dayfiles.com/">PDF Toolkit</a>
         </div>
@@ -408,11 +546,14 @@ function renderBlogIndexPage(posts) {
         </p>
       </section>
 
+      ${renderAdUnit('index-hero')}
+
       <section class="panel">
         <div class="grid">${cards || '<p class="muted">No posts yet.</p>'}</div>
       </section>
     </div>
-    ${themeToggleScript()}
+    ${themeSelectScript()}
+    ${adInitScript()}
   </body>
 </html>`;
 }
@@ -421,7 +562,7 @@ function renderPostPage(post, relatedPosts) {
   const faqHtml = (post.faq || [])
     .map(
       (item) => `
-      <article class="card">
+      <article class="card faq-card">
         <h3>${escapeHtml(item.q)}</h3>
         <p class="muted">${escapeHtml(item.a)}</p>
       </article>
@@ -491,8 +632,15 @@ function renderPostPage(post, relatedPosts) {
     <div class="wrap">
       <nav class="top" aria-label="Primary">
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
-        <div style="display:flex; gap:.5rem; flex-wrap:wrap;">
-          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">Dark</button>
+        <div class="top-links">
+          <label class="theme-select-wrap" for="theme-select">
+            <span>Theme</span>
+            <select id="theme-select" class="theme-select" aria-label="Theme">
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
           <a class="chip" href="/blog">Blog home</a>
           <a class="chip" href="https://everydayimagestudio.dayfiles.com/">Image Studio</a>
           <a class="chip" href="https://pdf.dayfiles.com/">PDF Toolkit</a>
@@ -515,6 +663,8 @@ function renderPostPage(post, relatedPosts) {
         ${post.html}
       </article>
 
+      ${renderAdUnit(`post-${post.slug}-body`)}
+
       <section class="panel">
         <h2>FAQ</h2>
         <div class="faq-list">${faqHtml}</div>
@@ -533,12 +683,15 @@ function renderPostPage(post, relatedPosts) {
         </p>
       </section>
 
+      ${renderAdUnit(`post-${post.slug}-support`)}
+
       <section class="panel">
         <h2>Related posts</h2>
         <div class="grid">${relatedHtml || '<p class="muted">More posts coming soon.</p>'}</div>
       </section>
     </div>
-    ${themeToggleScript()}
+    ${themeSelectScript()}
+    ${adInitScript()}
   </body>
 </html>`;
 }

@@ -41,6 +41,7 @@ const extensionLink =
   'https://chromewebstore.google.com/detail/everyday-image-studio/cpcfdmaihaccamacobbfnfngefmdphfp/reviews?utm_source=item-share-cp';
 const extensionBannerStorageKey = 'dayfiles_extension_banner_dismissed_v1';
 const themeStorageKey = 'dayfiles_theme';
+const themeOptions = new Set(['system', 'light', 'dark']);
 
 const faqs = [
   {
@@ -63,13 +64,25 @@ const faqs = [
 export default function App() {
   const [showExtensionBanner, setShowExtensionBanner] = useState(false);
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
-  const [theme, setTheme] = useState('dark');
+  const [themePreference, setThemePreference] = useState('system');
+  const [resolvedTheme, setResolvedTheme] = useState('dark');
 
-  const applyTheme = (nextTheme, persist = false) => {
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    setTheme(nextTheme);
+  const getSystemTheme = () => (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+  const resolveTheme = (preference) => {
+    if (preference === 'light' || preference === 'dark') {
+      return preference;
+    }
+    return getSystemTheme();
+  };
+
+  const applyThemePreference = (preference, persist = false) => {
+    const resolved = resolveTheme(preference);
+    document.documentElement.setAttribute('data-theme', resolved);
+    setThemePreference(preference);
+    setResolvedTheme(resolved);
     if (persist) {
-      window.localStorage.setItem(themeStorageKey, nextTheme);
+      window.localStorage.setItem(themeStorageKey, preference);
     }
   };
 
@@ -77,13 +90,30 @@ export default function App() {
     const dismissed = window.localStorage.getItem(extensionBannerStorageKey) === 'true';
     setShowExtensionBanner(!dismissed);
 
-    const validThemes = new Set(['light', 'dark']);
-    const attrTheme = document.documentElement.getAttribute('data-theme');
     const storedTheme = window.localStorage.getItem(themeStorageKey);
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    const initialTheme = validThemes.has(storedTheme) ? storedTheme : validThemes.has(attrTheme) ? attrTheme : systemTheme;
-    applyTheme(initialTheme, false);
+    const attrTheme = document.documentElement.getAttribute('data-theme');
+
+    let initialPreference = 'system';
+    if (themeOptions.has(storedTheme)) {
+      initialPreference = storedTheme;
+    } else if (attrTheme === 'light' || attrTheme === 'dark') {
+      initialPreference = attrTheme;
+    }
+
+    applyThemePreference(initialPreference, false);
   }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const onThemeChange = () => {
+      if (themePreference === 'system') {
+        applyThemePreference('system', false);
+      }
+    };
+
+    media.addEventListener('change', onThemeChange);
+    return () => media.removeEventListener('change', onThemeChange);
+  }, [themePreference]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -103,9 +133,12 @@ export default function App() {
     setShowExtensionBanner(false);
   };
 
-  const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    applyTheme(nextTheme, true);
+  const onThemeSelect = (event) => {
+    const nextPreference = event.target.value;
+    if (!themeOptions.has(nextPreference)) {
+      return;
+    }
+    applyThemePreference(nextPreference, true);
   };
 
   return (
@@ -152,9 +185,14 @@ export default function App() {
           <span>dayfiles.com</span>
         </a>
         <div className="header-links">
-          <button type="button" className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-            {theme === 'dark' ? 'Dark' : 'Light'}
-          </button>
+          <label className="theme-select-wrap" htmlFor="theme-select">
+            <span>Theme</span>
+            <select id="theme-select" className="theme-select" value={themePreference} onChange={onThemeSelect}>
+              <option value="system">System ({resolvedTheme})</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
           <a className="header-link" href="/blog">
             Blog
           </a>

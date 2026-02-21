@@ -7,9 +7,9 @@
       (function () {
         var key = 'dayfiles_theme';
         var saved = localStorage.getItem(key);
-        var valid = saved === 'light' || saved === 'dark';
+        var valid = saved === 'light' || saved === 'dark' || saved === 'system';
         var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        var theme = valid ? saved : system;
+        var theme = valid && saved !== 'system' ? saved : system;
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
