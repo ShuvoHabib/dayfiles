@@ -586,14 +586,6 @@ function renderBlogIndexPage(posts) {
         <p class="muted">Source-backed guides on file operations, image workflows, and PDF workflow automation.</p>
       </section>
 
-      <section class="panel">
-        <h2>About ads on this blog</h2>
-        <p class="muted">
-          Dayfiles may show relevant Google Ads to support free educational content. Ads do not control editorial
-          rankings or workflow recommendations.
-        </p>
-      </section>
-
       ${renderAdUnit('index-hero')}
 
       <section class="panel">
