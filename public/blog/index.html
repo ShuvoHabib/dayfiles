@@ -75,8 +75,6 @@
     --button-on-accent: #06131f;
     --faq-card-bg: rgba(8, 14, 30, 0.55);
     --faq-card-border: rgba(255,255,255,0.2);
-    --ad-panel-bg: linear-gradient(160deg, rgba(17, 29, 59, 0.65), rgba(8, 15, 33, 0.55));
-    --ad-panel-border: rgba(99,199,255,0.26);
   }
   [data-theme='light'] {
     --bg-main: #f3f8ff;
@@ -102,8 +100,6 @@
     --button-on-accent: #ffffff;
     --faq-card-bg: linear-gradient(160deg, rgba(245, 251, 255, 0.98), rgba(233, 245, 255, 0.95));
     --faq-card-border: rgba(45,147,255,0.24);
-    --ad-panel-bg: linear-gradient(160deg, rgba(255,255,255,0.95), rgba(236,246,255,0.92));
-    --ad-panel-border: rgba(45,147,255,0.34);
   }
   * { box-sizing: border-box; }
   body {
@@ -298,17 +294,6 @@
     border: 1px solid var(--faq-card-border);
     background: var(--faq-card-bg);
   }
-  .ad-panel {
-    border-color: var(--ad-panel-border);
-    background: var(--ad-panel-bg);
-  }
-  .ad-label {
-    margin: 0 0 .7rem;
-    font-size: .74rem;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    color: var(--text-soft);
-  }
   .crumbs {
     display: inline-flex;
     gap: .5rem;
@@ -372,20 +357,6 @@
         <p class="muted">Source-backed guides on file operations, image workflows, and PDF workflow automation.</p>
       </section>
 
-      
-    <section class="panel ad-panel" aria-label="Sponsored content index-hero">
-      <p class="ad-label">Sponsored</p>
-      <ins
-        class="adsbygoogle js-ad-slot"
-        style="display:block"
-        data-ad-client="ca-pub-1193261985740702"
-        data-ad-slot="3130169445"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-    </section>
-  
-
       <section class="panel">
         <div class="grid">
         <article class="card">
@@ -395,19 +366,6 @@
           <p class="muted">Dayfiles launched the Everyday Image Studio Chrome Extension on Product Hunt, with a focused browser editing workflow and more features already on the roadmap.</p>
           <a href="/blog/product-hunt-launch-everyday-image-studio">Read article</a>
         </article>
-        
-    <section class="panel ad-panel" aria-label="Sponsored content index-card-1">
-      <p class="ad-label">Sponsored</p>
-      <ins
-        class="adsbygoogle js-ad-slot"
-        style="display:block"
-        data-ad-client="ca-pub-1193261985740702"
-        data-ad-slot="3130169445"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-    </section>
-  
       
 
         <article class="card">
@@ -417,19 +375,6 @@
           <p class="muted">A practical story of how one student preparing for studies in Germany used Dayfiles tools to organize documents, fix image assets, and submit a clean visa-ready application package.</p>
           <a href="/blog/student-visa-application-story">Read article</a>
         </article>
-        
-    <section class="panel ad-panel" aria-label="Sponsored content index-card-2">
-      <p class="ad-label">Sponsored</p>
-      <ins
-        class="adsbygoogle js-ad-slot"
-        style="display:block"
-        data-ad-client="ca-pub-1193261985740702"
-        data-ad-slot="3130169445"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-    </section>
-  
       
 
         <article class="card">
@@ -439,19 +384,6 @@
           <p class="muted">A transparent explanation of how Dayfiles uses relevant Google Ads to support free workflow content for students, job applicants, and small teams.</p>
           <a href="/blog/google-ads-content-support">Read article</a>
         </article>
-        
-    <section class="panel ad-panel" aria-label="Sponsored content index-card-3">
-      <p class="ad-label">Sponsored</p>
-      <ins
-        class="adsbygoogle js-ad-slot"
-        style="display:block"
-        data-ad-client="ca-pub-1193261985740702"
-        data-ad-slot="3130169445"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-    </section>
-  
       
 
         <article class="card">
@@ -461,19 +393,6 @@
           <p class="muted">Use this checklist to standardize PDF conversion, compression, and delivery with fewer errors and faster approvals.</p>
           <a href="/blog/pdf-operations-checklist">Read article</a>
         </article>
-        
-    <section class="panel ad-panel" aria-label="Sponsored content index-card-4">
-      <p class="ad-label">Sponsored</p>
-      <ins
-        class="adsbygoogle js-ad-slot"
-        style="display:block"
-        data-ad-client="ca-pub-1193261985740702"
-        data-ad-slot="3130169445"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-    </section>
-  
       
 
         <article class="card">
@@ -483,19 +402,6 @@
           <p class="muted">A practical guide for teams that need faster image turnaround, consistent quality, and cleaner handoffs using Everyday Image Studio.</p>
           <a href="/blog/eis-workflow-playbook">Read article</a>
         </article>
-        
-    <section class="panel ad-panel" aria-label="Sponsored content index-card-5">
-      <p class="ad-label">Sponsored</p>
-      <ins
-        class="adsbygoogle js-ad-slot"
-        style="display:block"
-        data-ad-client="ca-pub-1193261985740702"
-        data-ad-slot="3130169445"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-    </section>
-  
       </div>
       </section>
     </div>
@@ -536,21 +442,6 @@
         media.addEventListener('change', function () {
           if (select.value === 'system') {
             setTheme('system', false);
-          }
-        });
-      })();
-    </script>
-  
-    
-    <script>
-      (function () {
-        var adSlots = document.querySelectorAll('.js-ad-slot');
-        if (!adSlots.length) return;
-        adSlots.forEach(function () {
-          try {
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          } catch (error) {
-            // Ignore runtime ad-fill errors to avoid breaking page rendering.
           }
         });
       })();

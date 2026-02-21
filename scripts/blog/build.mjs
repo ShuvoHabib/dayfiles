@@ -21,9 +21,6 @@ import {
 } from './lib.mjs';
 import { validatePosts } from './validate.mjs';
 
-const ADSENSE_CLIENT = 'ca-pub-1193261985740702';
-const BLOG_AD_SLOT = process.env.BLOG_AD_SLOT || '3130169445';
-
 function stripMarkdown(markdown) {
   return String(markdown)
     .replace(/```[\s\S]*?```/g, ' ')
@@ -32,22 +29,6 @@ function stripMarkdown(markdown) {
     .replace(/[#>*_~\-]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
-}
-
-function renderAdUnit(placementKey) {
-  return `
-    <section class="panel ad-panel" aria-label="Sponsored content ${escapeHtml(placementKey)}">
-      <p class="ad-label">Sponsored</p>
-      <ins
-        class="adsbygoogle js-ad-slot"
-        style="display:block"
-        data-ad-client="${ADSENSE_CLIENT}"
-        data-ad-slot="${BLOG_AD_SLOT}"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-    </section>
-  `;
 }
 
 function collectJsonLd(post, relatedPosts = []) {
@@ -139,8 +120,6 @@ function sharedStyles() {
     --button-on-accent: #06131f;
     --faq-card-bg: rgba(8, 14, 30, 0.55);
     --faq-card-border: rgba(255,255,255,0.2);
-    --ad-panel-bg: linear-gradient(160deg, rgba(17, 29, 59, 0.65), rgba(8, 15, 33, 0.55));
-    --ad-panel-border: rgba(99,199,255,0.26);
   }
   [data-theme='light'] {
     --bg-main: #f3f8ff;
@@ -166,8 +145,6 @@ function sharedStyles() {
     --button-on-accent: #ffffff;
     --faq-card-bg: linear-gradient(160deg, rgba(245, 251, 255, 0.98), rgba(233, 245, 255, 0.95));
     --faq-card-border: rgba(45,147,255,0.24);
-    --ad-panel-bg: linear-gradient(160deg, rgba(255,255,255,0.95), rgba(236,246,255,0.92));
-    --ad-panel-border: rgba(45,147,255,0.34);
   }
   * { box-sizing: border-box; }
   body {
@@ -362,17 +339,6 @@ function sharedStyles() {
     border: 1px solid var(--faq-card-border);
     background: var(--faq-card-bg);
   }
-  .ad-panel {
-    border-color: var(--ad-panel-border);
-    background: var(--ad-panel-bg);
-  }
-  .ad-label {
-    margin: 0 0 .7rem;
-    font-size: .74rem;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    color: var(--text-soft);
-  }
   .crumbs {
     display: inline-flex;
     gap: .5rem;
@@ -474,30 +440,11 @@ function themeSelectScript() {
   `;
 }
 
-function adInitScript() {
-  return `
-    <script>
-      (function () {
-        var adSlots = document.querySelectorAll('.js-ad-slot');
-        if (!adSlots.length) return;
-        adSlots.forEach(function () {
-          try {
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          } catch (error) {
-            // Ignore runtime ad-fill errors to avoid breaking page rendering.
-          }
-        });
-      })();
-    </script>
-  `;
-}
-
 function renderBlogIndexPage(posts) {
   const cards = posts
-    .map((post, index) => {
+    .map((post) => {
       const excerpt = escapeHtml(post.description || stripMarkdown(post.body).slice(0, 170));
       const postHref = postRelativeUrl(post.slug);
-      const adBlock = renderAdUnit(`index-card-${index + 1}`);
       return `
         <article class="card">
           <img src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" loading="lazy" />
@@ -506,7 +453,6 @@ function renderBlogIndexPage(posts) {
           <p class="muted">${excerpt}</p>
           <a href="${postHref}">Read article</a>
         </article>
-        ${adBlock}
       `;
     })
     .join('\n');
@@ -590,14 +536,11 @@ function renderBlogIndexPage(posts) {
         <p class="muted">Source-backed guides on file operations, image workflows, and PDF workflow automation.</p>
       </section>
 
-      ${renderAdUnit('index-hero')}
-
       <section class="panel">
         <div class="grid">${cards || '<p class="muted">No posts yet.</p>'}</div>
       </section>
     </div>
     ${themeSelectScript()}
-    ${adInitScript()}
   </body>
 </html>`;
 }
@@ -711,8 +654,6 @@ function renderPostPage(post, relatedPosts) {
         ${post.html}
       </article>
 
-      ${renderAdUnit(`post-${post.slug}-body`)}
-
       <section class="panel">
         <h2>FAQ</h2>
         <div class="faq-list">${faqHtml}</div>
@@ -731,15 +672,12 @@ function renderPostPage(post, relatedPosts) {
         </p>
       </section>
 
-      ${renderAdUnit(`post-${post.slug}-support`)}
-
       <section class="panel">
         <h2>Related posts</h2>
         <div class="grid">${relatedHtml || '<p class="muted">More posts coming soon.</p>'}</div>
       </section>
     </div>
     ${themeSelectScript()}
-    ${adInitScript()}
   </body>
 </html>`;
 }
