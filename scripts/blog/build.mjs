@@ -299,6 +299,14 @@ function renderBlogIndexPage(posts) {
       </section>
 
       <section class="panel">
+        <h2>About ads on this blog</h2>
+        <p class="muted">
+          Dayfiles may show relevant Google Ads to support free educational content. Ads do not control editorial
+          rankings or workflow recommendations.
+        </p>
+      </section>
+
+      <section class="panel">
         <div class="grid">${cards || '<p class="muted">No posts yet.</p>'}</div>
       </section>
     </div>
@@ -408,6 +416,14 @@ function renderPostPage(post, relatedPosts) {
       <section class="panel">
         <h2>Sources</h2>
         <ol class="source-list">${sourceHtml}</ol>
+      </section>
+
+      <section class="panel">
+        <h2>Ad transparency</h2>
+        <p class="muted">
+          Dayfiles may place relevant Google Ads on selected pages to support free guides. Ads are kept separate from
+          editorial recommendations.
+        </p>
       </section>
 
       <section class="panel">

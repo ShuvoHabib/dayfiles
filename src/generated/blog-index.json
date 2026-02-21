@@ -17,6 +17,23 @@
     "readingMinutes": 5
   },
   {
+    "title": "Why Dayfiles Blog Uses Google Ads to Keep Practical Guides Free",
+    "slug": "google-ads-content-support",
+    "date": "2026-02-20",
+    "product": "pdf",
+    "description": "A transparent explanation of how Dayfiles uses relevant Google Ads to support free workflow content for students, job applicants, and small teams.",
+    "tags": [
+      "google ads",
+      "ads transparency",
+      "dayfiles blog",
+      "free resources"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/google-ads-content-support",
+    "featuredImage": "/blog/images/pdf-operations-checklist.svg",
+    "featuredImageAlt": "Dayfiles blog ad transparency and free content model",
+    "readingMinutes": 3
+  },
+  {
     "title": "PDF Toolkit Operations Checklist for Reliable Document Delivery",
     "slug": "pdf-operations-checklist",
     "date": "2026-02-19",
