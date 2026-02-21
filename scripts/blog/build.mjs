@@ -113,6 +113,8 @@ function collectJsonLd(post, relatedPosts = []) {
 
 function sharedStyles() {
   return `
+  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
   :root {
     --bg-main: #0b1020;
     --text-main: #f6f7fb;
@@ -170,11 +172,24 @@ function sharedStyles() {
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     color: var(--text-main);
     background: var(--page-bg);
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--accent-2); }
+  h1, h2, h3 {
+    font-family: 'Chakra Petch', sans-serif;
+    line-height: 1.16;
+    letter-spacing: .015em;
+    margin: 0 0 .52rem;
+  }
+  a {
+    color: var(--accent-2);
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: .08em;
+  }
   .wrap {
     width: min(1120px, calc(100% - 2rem));
     margin: 0 auto;
@@ -198,6 +213,8 @@ function sharedStyles() {
     display: inline-flex;
     gap: .5rem;
     align-items: center;
+    font-family: 'Chakra Petch', sans-serif;
+    letter-spacing: .03em;
     color: var(--text-main);
     text-decoration: none;
     font-weight: 700;
@@ -248,7 +265,10 @@ function sharedStyles() {
     padding: 1.2rem;
     background: var(--panel-bg);
   }
-  .muted { color: var(--text-soft); }
+  .muted {
+    color: var(--text-soft);
+    line-height: 1.58;
+  }
   .badge {
     display: inline-block;
     font-size: .72rem;
@@ -270,6 +290,17 @@ function sharedStyles() {
     padding: .95rem;
     background: var(--card-bg);
   }
+  .card h2, .card h3 {
+    margin-bottom: .45rem;
+    line-height: 1.22;
+  }
+  .card h2 { font-size: clamp(1.2rem, 1.9vw, 1.42rem); }
+  .card h3 { font-size: clamp(1.06rem, 1.5vw, 1.2rem); }
+  .title-link {
+    color: var(--text-main);
+    text-decoration: none;
+  }
+  .title-link:hover { color: var(--accent-2); }
   .card img {
     width: 100%;
     border-radius: 10px;
@@ -299,11 +330,27 @@ function sharedStyles() {
     flex-wrap: wrap;
     color: var(--text-soft);
     font-size: .93rem;
+    line-height: 1.45;
   }
+  .meta span { white-space: nowrap; }
   .prose {
     color: var(--prose);
     line-height: 1.75;
     font-size: 1.04rem;
+  }
+  .prose p { margin: 0 0 1rem; }
+  .prose ul, .prose ol {
+    margin: 0 0 1rem 1.2rem;
+    padding: 0;
+  }
+  .prose li { margin-bottom: .35rem; }
+  .prose a {
+    font-weight: 600;
+  }
+  .prose strong { color: var(--prose-heading); }
+  .prose code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace;
+    font-size: .92em;
   }
   .prose h2, .prose h3 { color: var(--prose-heading); margin-top: 1.3rem; }
   .faq-list, .source-list { display: grid; gap: .7rem; }
@@ -330,6 +377,10 @@ function sharedStyles() {
     font-size: .92rem;
   }
   .crumbs a { color: var(--text-soft); text-decoration: none; }
+  .crumbs span:last-child {
+    color: var(--text-main);
+    font-weight: 600;
+  }
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
@@ -447,7 +498,7 @@ function renderBlogIndexPage(posts) {
         <article class="card">
           <img src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" loading="lazy" />
           <div class="meta"><span class="badge">${post.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span><span>${formatHumanDate(post.date)}</span></div>
-          <h2><a href="${postHref}">${escapeHtml(post.title)}</a></h2>
+          <h2><a class="title-link" href="${postHref}">${escapeHtml(post.title)}</a></h2>
           <p class="muted">${excerpt}</p>
           <a href="${postHref}">Read article</a>
         </article>
@@ -577,7 +628,7 @@ function renderPostPage(post, relatedPosts) {
       (related) => `
       <article class="card">
         <span class="badge">${related.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span>
-        <h3><a href="${postRelativeUrl(related.slug)}">${escapeHtml(related.title)}</a></h3>
+        <h3><a class="title-link" href="${postRelativeUrl(related.slug)}">${escapeHtml(related.title)}</a></h3>
         <p class="muted">${escapeHtml(related.description)}</p>
       </article>
     `

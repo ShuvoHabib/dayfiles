@@ -44,6 +44,8 @@
     ></script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Dayfiles Blog","url":"https://dayfiles.com/blog","inLanguage":"en","blogPost":[{"@type":"BlogPosting","headline":"From Accra to Berlin: A Student Visa Application Story Powered by Dayfiles","url":"https://dayfiles.com/blog/student-visa-application-story","datePublished":"2026-02-21","image":"https://dayfiles.com/blog/images/file-handoff-system.svg"},{"@type":"BlogPosting","headline":"Why Dayfiles Blog Uses Google Ads to Keep Practical Guides Free","url":"https://dayfiles.com/blog/google-ads-content-support","datePublished":"2026-02-20","image":"https://dayfiles.com/blog/images/pdf-operations-checklist.svg"},{"@type":"BlogPosting","headline":"PDF Toolkit Operations Checklist for Reliable Document Delivery","url":"https://dayfiles.com/blog/pdf-operations-checklist","datePublished":"2026-02-19","image":"https://dayfiles.com/blog/images/pdf-operations-checklist.svg"},{"@type":"BlogPosting","headline":"Everyday Image Studio Workflow Playbook for Daily Creative Operations","url":"https://dayfiles.com/blog/eis-workflow-playbook","datePublished":"2026-02-17","image":"https://dayfiles.com/blog/images/eis-workflow-playbook.svg"}]}</script>
     <style>
+  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
   :root {
     --bg-main: #0b1020;
     --text-main: #f6f7fb;
@@ -101,11 +103,24 @@
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: Manrope, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     color: var(--text-main);
     background: var(--page-bg);
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--accent-2); }
+  h1, h2, h3 {
+    font-family: 'Chakra Petch', sans-serif;
+    line-height: 1.16;
+    letter-spacing: .015em;
+    margin: 0 0 .52rem;
+  }
+  a {
+    color: var(--accent-2);
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: .08em;
+  }
   .wrap {
     width: min(1120px, calc(100% - 2rem));
     margin: 0 auto;
@@ -129,6 +144,8 @@
     display: inline-flex;
     gap: .5rem;
     align-items: center;
+    font-family: 'Chakra Petch', sans-serif;
+    letter-spacing: .03em;
     color: var(--text-main);
     text-decoration: none;
     font-weight: 700;
@@ -179,7 +196,10 @@
     padding: 1.2rem;
     background: var(--panel-bg);
   }
-  .muted { color: var(--text-soft); }
+  .muted {
+    color: var(--text-soft);
+    line-height: 1.58;
+  }
   .badge {
     display: inline-block;
     font-size: .72rem;
@@ -201,6 +221,17 @@
     padding: .95rem;
     background: var(--card-bg);
   }
+  .card h2, .card h3 {
+    margin-bottom: .45rem;
+    line-height: 1.22;
+  }
+  .card h2 { font-size: clamp(1.2rem, 1.9vw, 1.42rem); }
+  .card h3 { font-size: clamp(1.06rem, 1.5vw, 1.2rem); }
+  .title-link {
+    color: var(--text-main);
+    text-decoration: none;
+  }
+  .title-link:hover { color: var(--accent-2); }
   .card img {
     width: 100%;
     border-radius: 10px;
@@ -230,11 +261,27 @@
     flex-wrap: wrap;
     color: var(--text-soft);
     font-size: .93rem;
+    line-height: 1.45;
   }
+  .meta span { white-space: nowrap; }
   .prose {
     color: var(--prose);
     line-height: 1.75;
     font-size: 1.04rem;
+  }
+  .prose p { margin: 0 0 1rem; }
+  .prose ul, .prose ol {
+    margin: 0 0 1rem 1.2rem;
+    padding: 0;
+  }
+  .prose li { margin-bottom: .35rem; }
+  .prose a {
+    font-weight: 600;
+  }
+  .prose strong { color: var(--prose-heading); }
+  .prose code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace;
+    font-size: .92em;
   }
   .prose h2, .prose h3 { color: var(--prose-heading); margin-top: 1.3rem; }
   .faq-list, .source-list { display: grid; gap: .7rem; }
@@ -261,6 +308,10 @@
     font-size: .92rem;
   }
   .crumbs a { color: var(--text-soft); text-decoration: none; }
+  .crumbs span:last-child {
+    color: var(--text-main);
+    font-weight: 600;
+  }
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
@@ -339,7 +390,7 @@
         <article class="card">
           <img src="/blog/images/file-handoff-system.svg" alt="A student preparing documents for international study application" loading="lazy" />
           <div class="meta"><span class="badge">Image Studio</span><span>February 21, 2026</span></div>
-          <h2><a href="/blog/student-visa-application-story">From Accra to Berlin: A Student Visa Application Story Powered by Dayfiles</a></h2>
+          <h2><a class="title-link" href="/blog/student-visa-application-story">From Accra to Berlin: A Student Visa Application Story Powered by Dayfiles</a></h2>
           <p class="muted">A practical story of how one student preparing for studies in Germany used Dayfiles tools to organize documents, fix image assets, and submit a clean visa-ready application package.</p>
           <a href="/blog/student-visa-application-story">Read article</a>
         </article>
@@ -361,7 +412,7 @@
         <article class="card">
           <img src="/blog/images/pdf-operations-checklist.svg" alt="Dayfiles blog ad transparency and free content model" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 20, 2026</span></div>
-          <h2><a href="/blog/google-ads-content-support">Why Dayfiles Blog Uses Google Ads to Keep Practical Guides Free</a></h2>
+          <h2><a class="title-link" href="/blog/google-ads-content-support">Why Dayfiles Blog Uses Google Ads to Keep Practical Guides Free</a></h2>
           <p class="muted">A transparent explanation of how Dayfiles uses relevant Google Ads to support free workflow content for students, job applicants, and small teams.</p>
           <a href="/blog/google-ads-content-support">Read article</a>
         </article>
@@ -383,7 +434,7 @@
         <article class="card">
           <img src="/blog/images/pdf-operations-checklist.svg" alt="Illustration for PDF Toolkit operations checklist" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 19, 2026</span></div>
-          <h2><a href="/blog/pdf-operations-checklist">PDF Toolkit Operations Checklist for Reliable Document Delivery</a></h2>
+          <h2><a class="title-link" href="/blog/pdf-operations-checklist">PDF Toolkit Operations Checklist for Reliable Document Delivery</a></h2>
           <p class="muted">Use this checklist to standardize PDF conversion, compression, and delivery with fewer errors and faster approvals.</p>
           <a href="/blog/pdf-operations-checklist">Read article</a>
         </article>
@@ -405,7 +456,7 @@
         <article class="card">
           <img src="/blog/images/eis-workflow-playbook.svg" alt="Illustration for Everyday Image Studio workflow playbook" loading="lazy" />
           <div class="meta"><span class="badge">Image Studio</span><span>February 17, 2026</span></div>
-          <h2><a href="/blog/eis-workflow-playbook">Everyday Image Studio Workflow Playbook for Daily Creative Operations</a></h2>
+          <h2><a class="title-link" href="/blog/eis-workflow-playbook">Everyday Image Studio Workflow Playbook for Daily Creative Operations</a></h2>
           <p class="muted">A practical guide for teams that need faster image turnaround, consistent quality, and cleaner handoffs using Everyday Image Studio.</p>
           <a href="/blog/eis-workflow-playbook">Read article</a>
         </article>
