@@ -185,6 +185,22 @@ function sharedStyles() {
     border: 1px solid rgba(255,255,255,0.12);
     margin-bottom: 0.7rem;
   }
+  .hero-cover {
+    margin-top: 0.8rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.15);
+    overflow: hidden;
+    max-height: 360px;
+    background: rgba(10, 18, 36, 0.65);
+  }
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    max-height: 360px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
   .hero-title { font-size: clamp(1.8rem, 3.4vw, 2.7rem); margin: 0.2rem 0 0.6rem; }
   .meta {
     display: flex;
@@ -211,6 +227,7 @@ function sharedStyles() {
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
+    .hero-cover, .hero-image { max-height: 240px; }
   }
 `;
 }
@@ -401,7 +418,9 @@ function renderPostPage(post, relatedPosts) {
         <p class="meta"><span class="badge">${post.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span><span>${formatHumanDate(post.date)}</span><span>${readingMinutes(post.body)} min read</span></p>
         <h1 class="hero-title">${escapeHtml(post.title)}</h1>
         <p class="muted">${escapeHtml(post.description)}</p>
-        <img src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" style="width:100%; border-radius:16px; border:1px solid rgba(255,255,255,.15); margin-top: .8rem;" />
+        <div class="hero-cover">
+          <img class="hero-image" src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" />
+        </div>
       </section>
 
       <article class="panel prose">
