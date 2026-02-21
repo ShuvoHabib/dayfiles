@@ -534,6 +534,11 @@ function renderBlogIndexPage(posts) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     ${themeBootstrapScript()}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <title>Dayfiles Blog | Image and PDF Workflow Guides</title>
     <meta name="description" content="Daily workflow articles for Everyday Image Studio and PDF Toolkit, including practical guides, checklists, and operational playbooks." />
     <link rel="canonical" href="${SITE_URL}/blog" />
@@ -639,6 +644,11 @@ function renderPostPage(post, relatedPosts) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     ${themeBootstrapScript()}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <title>${escapeHtml(post.title)} | Dayfiles Blog</title>
     <meta name="description" content="${escapeHtml(post.description)}" />
     <link rel="canonical" href="${escapeHtml(post.canonicalUrl)}" />
