@@ -22,7 +22,7 @@ import {
 import { validatePosts } from './validate.mjs';
 
 const ADSENSE_CLIENT = 'ca-pub-1193261985740702';
-const BLOG_AD_SLOT = process.env.BLOG_AD_SLOT || '1234567890';
+const BLOG_AD_SLOT = process.env.BLOG_AD_SLOT || '3130169445';
 
 function stripMarkdown(markdown) {
   return String(markdown)
