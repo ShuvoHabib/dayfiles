@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <script>
+      (function () {
+        var key = 'dayfiles_theme';
+        var saved = localStorage.getItem(key);
+        var valid = saved === 'light' || saved === 'dark' || saved === 'system';
+        var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        var theme = valid && saved !== 'system' ? saved : system;
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+  
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <title>Organize PDF Without Uploads: A Privacy-First Browser Guide | Dayfiles Blog</title>
+    <meta name="description" content="Reorder, remove, and arrange pages before final delivery. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload." />
+    <link rel="canonical" href="https://dayfiles.com/blog/organize-pdf-without-upload" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Organize PDF Without Uploads: A Privacy-First Browser Guide" />
+    <meta property="og:description" content="Reorder, remove, and arrange pages before final delivery. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload." />
+    <meta property="og:url" content="https://dayfiles.com/blog/organize-pdf-without-upload" />
+    <meta property="og:image" content="https://dayfiles.com/blog/images/organize-pdf-without-upload.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Organize PDF Without Uploads: A Privacy-First Browser Guide" />
+    <meta name="twitter:description" content="Reorder, remove, and arrange pages before final delivery. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload." />
+    <meta name="twitter:image" content="https://dayfiles.com/blog/images/organize-pdf-without-upload.svg" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-V6HJS96NK6');
+    </script>
+    <!-- AdSense script is loaded, but no ad slots are rendered yet. -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702"
+      crossorigin="anonymous"
+    ></script>
+    <script type="application/ld+json">{"@graph":[{"@context":"https://schema.org","@type":"BlogPosting","headline":"Organize PDF Without Uploads: A Privacy-First Browser Guide","description":"Reorder, remove, and arrange pages before final delivery. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.","datePublished":"2026-02-15","dateModified":"2026-02-15","mainEntityOfPage":"https://dayfiles.com/blog/organize-pdf-without-upload","image":["https://dayfiles.com/blog/images/organize-pdf-without-upload.svg"],"author":{"@type":"Organization","name":"Dayfiles"},"publisher":{"@type":"Organization","name":"Dayfiles","logo":{"@type":"ImageObject","url":"https://dayfiles.com/dayfiles-logo.svg"}},"keywords":"organize-pdf, pdf tools, client-side, privacy-first","articleSection":"PDF Workflows","isPartOf":"https://dayfiles.com/blog","citation":["https://pdf.dayfiles.com/","https://dayfiles.com/","https://everydayimagestudio.dayfiles.com/"]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use Organize PDF without uploading files to a server?","acceptedAnswer":{"@type":"Answer","text":"Yes. PDF Dayfiles tools run client-side in your browser, so processing happens locally on your device."}},{"@type":"Question","name":"Is Organize PDF free to use on PDF Dayfiles?","acceptedAnswer":{"@type":"Answer","text":"Core usage is free and designed for quick personal or team workflows without complicated setup."}},{"@type":"Question","name":"Does Organize PDF work when internet is unstable?","acceptedAnswer":{"@type":"Answer","text":"Most processing is local in-browser, so the workflow can continue even with weak connectivity after loading the tool."}}]},{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://dayfiles.com/blog/html-to-pdf-without-upload","name":"HTML to PDF Without Uploads: A Privacy-First Browser Guide"},{"@type":"ListItem","position":2,"url":"https://dayfiles.com/blog/docx-to-pdf-without-upload","name":"DOCX to PDF Without Uploads: A Privacy-First Browser Guide"},{"@type":"ListItem","position":3,"url":"https://dayfiles.com/blog/jpg-to-pdf-without-upload","name":"JPG to PDF Without Uploads: A Privacy-First Browser Guide"}]}]}</script>
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+  :root {
+    --bg-main: #0b1020;
+    --text-main: #f6f7fb;
+    --text-soft: #c0c8df;
+    --line: rgba(255,255,255,0.15);
+    --accent: #5de2b0;
+    --accent-2: #63c7ff;
+    --page-bg:
+      radial-gradient(circle at 15% 20%, rgba(93, 226, 176, 0.24) 0, transparent 30%),
+      radial-gradient(circle at 88% 15%, rgba(99, 199, 255, 0.24) 0, transparent 34%),
+      linear-gradient(160deg, #0b1020, #060b16 65%, #0f1b36 100%);
+    --top-bg: rgba(6,11,22,0.9);
+    --top-border: rgba(99,199,255,0.2);
+    --panel-bg: linear-gradient(160deg, rgba(17, 29, 59, 0.72), rgba(8, 15, 33, 0.6));
+    --card-bg: rgba(8,14,30,.45);
+    --card-border: rgba(255,255,255,0.16);
+    --hero-cover-bg: rgba(10, 18, 36, 0.65);
+    --hero-cover-border: rgba(255,255,255,.15);
+    --badge-text: #06131f;
+    --prose: #d9deef;
+    --prose-heading: #ffffff;
+    --button-on-accent: #06131f;
+    --faq-card-bg: rgba(8, 14, 30, 0.55);
+    --faq-card-border: rgba(255,255,255,0.2);
+  }
+  [data-theme='light'] {
+    --bg-main: #f3f8ff;
+    --text-main: #0f1d3a;
+    --text-soft: #415273;
+    --line: rgba(15, 29, 58, 0.18);
+    --accent: #17c088;
+    --accent-2: #2d93ff;
+    --page-bg:
+      radial-gradient(circle at 8% 16%, rgba(23, 192, 136, 0.16) 0, transparent 33%),
+      radial-gradient(circle at 92% 8%, rgba(45, 147, 255, 0.16) 0, transparent 34%),
+      linear-gradient(160deg, #f3f8ff, #eaf2ff 60%, #f8fbff 100%);
+    --top-bg: rgba(255,255,255,0.92);
+    --top-border: rgba(45, 147, 255, 0.3);
+    --panel-bg: linear-gradient(160deg, rgba(255,255,255,0.95), rgba(239,246,255,0.92));
+    --card-bg: rgba(255,255,255,0.92);
+    --card-border: rgba(15, 29, 58, 0.14);
+    --hero-cover-bg: rgba(233, 243, 255, 0.9);
+    --hero-cover-border: rgba(15, 29, 58, 0.14);
+    --badge-text: #ffffff;
+    --prose: #1c2a4b;
+    --prose-heading: #0f1d3a;
+    --button-on-accent: #ffffff;
+    --faq-card-bg: linear-gradient(160deg, rgba(245, 251, 255, 0.98), rgba(233, 245, 255, 0.95));
+    --faq-card-border: rgba(45,147,255,0.24);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--text-main);
+    background: var(--page-bg);
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: 'Chakra Petch', sans-serif;
+    line-height: 1.16;
+    letter-spacing: .015em;
+    margin: 0 0 .52rem;
+  }
+  a {
+    color: var(--accent-2);
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: .08em;
+  }
+  .wrap {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 1.2rem 0 2.8rem;
+  }
+  .top {
+    position: sticky;
+    top: 0;
+    z-index: 120;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    border: 1px solid var(--top-border);
+    border-radius: 14px;
+    background: var(--top-bg);
+    backdrop-filter: blur(6px);
+    padding: 0.7rem 0.9rem;
+  }
+  .brand {
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+    font-family: 'Chakra Petch', sans-serif;
+    letter-spacing: .03em;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .brand img { width: 28px; height: 28px; }
+  .top-links {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .chip {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: .45rem .7rem;
+    color: var(--text-main);
+    font-size: .92rem;
+    background: transparent;
+    text-decoration: none;
+  }
+  .theme-select-wrap {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: .25rem .34rem;
+  }
+  .theme-select {
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-main);
+    font: inherit;
+    font-size: .82rem;
+    padding: .27rem .58rem;
+    cursor: pointer;
+    outline: none;
+  }
+  .theme-select option { color: #0f1d3a; }
+  .theme-select:focus-visible {
+    outline: none;
+  }
+  .theme-select-wrap:focus-within {
+    border-color: var(--accent-2);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-2) 24%, transparent);
+  }
+  .panel {
+    margin-top: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 1.2rem;
+    background: var(--panel-bg);
+  }
+  .muted {
+    color: var(--text-soft);
+    line-height: 1.58;
+  }
+  .badge {
+    display: inline-block;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--badge-text);
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    padding: 0.25rem 0.42rem;
+    border-radius: 999px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: .9rem;
+  }
+  .card {
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: .95rem;
+    background: var(--card-bg);
+  }
+  .card h2, .card h3 {
+    margin-bottom: .45rem;
+    line-height: 1.22;
+  }
+  .card h2 { font-size: clamp(1.2rem, 1.9vw, 1.42rem); }
+  .card h3 { font-size: clamp(1.06rem, 1.5vw, 1.2rem); }
+  .title-link {
+    color: var(--text-main);
+    text-decoration: none;
+  }
+  .title-link:hover { color: var(--accent-2); }
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 0.7rem;
+  }
+  .hero-cover {
+    margin-top: 0.8rem;
+    border-radius: 16px;
+    border: 1px solid var(--hero-cover-border);
+    overflow: hidden;
+    width: 100%;
+    height: clamp(200px, 24vw, 240px);
+    background: var(--hero-cover-bg);
+  }
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero-title { font-size: clamp(1.8rem, 3.4vw, 2.7rem); margin: 0.2rem 0 0.6rem; }
+  .meta {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    color: var(--text-soft);
+    font-size: .93rem;
+    line-height: 1.45;
+  }
+  .meta span { white-space: nowrap; }
+  .prose {
+    color: var(--prose);
+    line-height: 1.75;
+    font-size: 1.04rem;
+  }
+  .prose p { margin: 0 0 1rem; }
+  .prose ul, .prose ol {
+    margin: 0 0 1rem 1.2rem;
+    padding: 0;
+  }
+  .prose li { margin-bottom: .35rem; }
+  .prose a {
+    font-weight: 600;
+  }
+  .prose strong { color: var(--prose-heading); }
+  .prose code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace;
+    font-size: .92em;
+  }
+  .prose h2, .prose h3 { color: var(--prose-heading); margin-top: 1.3rem; }
+  .faq-list, .source-list { display: grid; gap: .7rem; }
+  .faq-card {
+    border: 1px solid var(--faq-card-border);
+    background: var(--faq-card-bg);
+  }
+  .crumbs {
+    display: inline-flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    color: var(--text-soft);
+    font-size: .92rem;
+  }
+  .crumbs a { color: var(--text-soft); text-decoration: none; }
+  .crumbs span:last-child {
+    color: var(--text-main);
+    font-weight: 600;
+  }
+  @media (max-width: 720px) {
+    .wrap { width: min(1120px, calc(100% - 1.2rem)); }
+    .panel { padding: 1rem; }
+    .hero-cover { height: 185px; }
+    .top {
+      position: static;
+      flex-direction: column;
+      align-items: center;
+      gap: .55rem;
+    }
+    .brand {
+      width: 100%;
+      justify-content: center;
+    }
+    .top-links {
+      width: 100%;
+      justify-content: center;
+      gap: .4rem;
+    }
+    .chip,
+    .theme-select-wrap {
+      font-size: .86rem;
+      padding: .4rem .58rem;
+    }
+    .theme-select { font-size: .78rem; }
+  }
+</style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav class="top" aria-label="Primary">
+        <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
+        <div class="top-links">
+          <label class="theme-select-wrap" for="theme-select">
+            <select id="theme-select" class="theme-select" aria-label="Theme">
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+          <a class="chip" href="/blog">Blog home</a>
+          <a class="chip" href="https://everydayimagestudio.dayfiles.com/">Image Studio</a>
+          <a class="chip" href="https://pdf.dayfiles.com/">PDF Toolkit</a>
+        </div>
+      </nav>
+
+      <section class="panel">
+        <div class="crumbs">
+          <a href="/">Home</a> <span>›</span> <a href="/blog">Blog</a> <span>›</span> <span>Organize PDF Without Uploads: A Privacy-First Browser Guide</span>
+        </div>
+        <p class="meta"><span class="badge">PDF Toolkit</span><span>February 15, 2026</span><span>3 min read</span></p>
+        <h1 class="hero-title">Organize PDF Without Uploads: A Privacy-First Browser Guide</h1>
+        <p class="muted">Reorder, remove, and arrange pages before final delivery. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
+        <div class="hero-cover">
+          <img class="hero-image" src="/blog/images/organize-pdf-without-upload.svg" alt="Organize PDF privacy-first guide visual" />
+        </div>
+      </section>
+
+      <article class="panel prose">
+        <h2>Why people search for Organize PDF without uploads</h2>
+<p>People usually need Organize PDF at the worst possible moment: before a visa submission, a job application deadline, a client handoff, or a legal review. In those moments, users are not searching for a complex suite. They are searching for speed, clarity, and trust. The biggest trust issue in PDF workflows is where the file goes. Many free PDF websites ask users to upload confidential files to unknown servers. That creates risk for personal IDs, financial paperwork, contracts, and internal company documents.</p>
+<p>PDF Dayfiles takes a different approach. The tool is designed around client-side processing, where the work runs locally in your browser. That changes the privacy posture from day one. Instead of sending files to a remote server by default, the browser handles the transformation directly. For users who care about confidentiality, this architecture is not a nice-to-have feature. It is the main reason to choose one tool over another.</p>
+<h2>Common community pain points</h2>
+<p>Public discussions on Quora and Reddit usually repeat the same concerns for Organize PDF: people want a free option, they do not want watermarked output, they do not want files stored by unknown tools, and they want results that do not break formatting. Another frequent complaint is performance. A tool may look simple on the homepage but become slow when files are large or when multiple files must be processed in one flow.</p>
+<p>The practical requirement is straightforward: users want predictable output and minimal risk. If a PDF tool can give them that with fewer steps, they keep using it. If the tool feels unsafe or unstable, they switch immediately. That is why privacy-first messaging has to be matched by workflow quality.</p>
+<h2>How PDF Dayfiles handles Organize PDF</h2>
+<p>At <a href="https://pdf.dayfiles.com/">https://pdf.dayfiles.com/</a>, the Organize PDF workflow is built for practical execution:</p>
+<ol>
+<li>Open the tool in your browser.</li>
+<li>Select the input PDF files or pages.</li>
+<li>Configure the required organize pdf options.</li>
+<li>Process locally in-browser.</li>
+<li>Download the output file immediately.</li>
+</ol>
+<p>Because processing happens client-side, teams can use the workflow even for sensitive files that should not be transferred to third-party storage. This is especially relevant for HR teams handling applicant documents, students preparing admission packets, and operations teams working with internal records.</p>
+<h2>Why client-side matters for confidential files</h2>
+<p>Privacy language on tool pages often sounds similar, but architecture determines real behavior. A server-upload workflow means your document leaves your device and is handled by infrastructure you do not control. A client-side workflow means the transformation is performed in your browser context. For confidential files, this is a major operational difference.</p>
+<p>Client-side processing also improves compliance conversations. Even if a team does not have a formal security review process, they can still choose tools that reduce exposure by design. For smaller organizations and independent professionals, this can be the most realistic way to improve document safety without adding enterprise complexity.</p>
+<h2>Practical use cases</h2>
+<p>Users typically run Organize PDF in repeated scenarios:</p>
+<ul>
+<li>preparing scholarship and visa documentation,</li>
+<li>assembling job application packets,</li>
+<li>sending vendor contracts,</li>
+<li>packaging client deliverables,</li>
+<li>creating clean archive versions.</li>
+</ul>
+<p>In each case, the same outcome matters: complete the file operation quickly, preserve quality, and avoid unnecessary privacy risk. That is the operational promise of PDF Dayfiles.</p>
+<h2>Final takeaway</h2>
+<p>Organize PDF should not require trading privacy for convenience. A modern PDF workflow can be fast, free, and local-first at the same time. If your priority is processing sensitive documents with fewer risks, start with <a href="https://pdf.dayfiles.com/">https://pdf.dayfiles.com/</a> and run organize pdf directly in your browser.</p>
+
+      </article>
+
+      <section class="panel">
+        <h2>FAQ</h2>
+        <div class="faq-list">
+      <article class="card faq-card">
+        <h3>Can I use Organize PDF without uploading files to a server?</h3>
+        <p class="muted">Yes. PDF Dayfiles tools run client-side in your browser, so processing happens locally on your device.</p>
+      </article>
+    
+
+      <article class="card faq-card">
+        <h3>Is Organize PDF free to use on PDF Dayfiles?</h3>
+        <p class="muted">Core usage is free and designed for quick personal or team workflows without complicated setup.</p>
+      </article>
+    
+
+      <article class="card faq-card">
+        <h3>Does Organize PDF work when internet is unstable?</h3>
+        <p class="muted">Most processing is local in-browser, so the workflow can continue even with weak connectivity after loading the tool.</p>
+      </article>
+    </div>
+      </section>
+
+      <section class="panel">
+        <h2>Sources</h2>
+        <ol class="source-list">
+      <li>
+        <a href="https://pdf.dayfiles.com/" target="_blank" rel="noreferrer">PDF Dayfiles</a>
+      </li>
+    
+
+      <li>
+        <a href="https://dayfiles.com/" target="_blank" rel="noreferrer">Dayfiles</a>
+      </li>
+    
+
+      <li>
+        <a href="https://everydayimagestudio.dayfiles.com/" target="_blank" rel="noreferrer">Everyday Image Studio</a>
+      </li>
+    </ol>
+      </section>
+
+      <section class="panel">
+        <h2>Ad transparency</h2>
+        <p class="muted">
+          Dayfiles may place relevant Google Ads on selected pages to support free guides. Ads are kept separate from
+          editorial recommendations.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Related posts</h2>
+        <div class="grid">
+      <article class="card">
+        <span class="badge">PDF Toolkit</span>
+        <h3><a class="title-link" href="/blog/html-to-pdf-without-upload">HTML to PDF Without Uploads: A Privacy-First Browser Guide</a></h3>
+        <p class="muted">Generate PDF output from HTML for reports and records. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
+      </article>
+    
+
+      <article class="card">
+        <span class="badge">PDF Toolkit</span>
+        <h3><a class="title-link" href="/blog/docx-to-pdf-without-upload">DOCX to PDF Without Uploads: A Privacy-First Browser Guide</a></h3>
+        <p class="muted">Export DOCX files to PDF for stable, share-ready formatting. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
+      </article>
+    
+
+      <article class="card">
+        <span class="badge">PDF Toolkit</span>
+        <h3><a class="title-link" href="/blog/jpg-to-pdf-without-upload">JPG to PDF Without Uploads: A Privacy-First Browser Guide</a></h3>
+        <p class="muted">Turn image files into a clean PDF packet in seconds. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
+      </article>
+    </div>
+      </section>
+    </div>
+    
+    <script>
+      (function () {
+        var key = 'dayfiles_theme';
+        var select = document.getElementById('theme-select');
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+        if (!select) return;
+
+        function getSystemTheme() {
+          return media.matches ? 'dark' : 'light';
+        }
+
+        function setTheme(preference, persist) {
+          var resolved = preference === 'light' || preference === 'dark' ? preference : getSystemTheme();
+          document.documentElement.setAttribute('data-theme', resolved);
+          var text = resolved.charAt(0).toUpperCase() + resolved.slice(1);
+          var systemOption = select.querySelector('option[value="system"]');
+          if (systemOption) {
+            systemOption.textContent = 'System (' + text + ')';
+          }
+          select.value = preference;
+          if (persist) localStorage.setItem(key, preference);
+        }
+
+        var saved = localStorage.getItem(key);
+        var preference = saved === 'light' || saved === 'dark' || saved === 'system' ? saved : 'system';
+        setTheme(preference, false);
+
+        select.addEventListener('change', function () {
+          var next = select.value;
+          if (next !== 'light' && next !== 'dark' && next !== 'system') return;
+          setTheme(next, true);
+        });
+
+        media.addEventListener('change', function () {
+          if (select.value === 'system') {
+            setTheme('system', false);
+          }
+        });
+      })();
+    </script>
+  
+  </body>
+</html>

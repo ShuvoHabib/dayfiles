@@ -1,5 +1,56 @@
 [
   {
+    "title": "HTML to PDF Without Uploads: A Privacy-First Browser Guide",
+    "slug": "html-to-pdf-without-upload",
+    "date": "2026-02-23",
+    "product": "pdf",
+    "description": "Generate PDF output from HTML for reports and records. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "html-to-pdf",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/html-to-pdf-without-upload",
+    "featuredImage": "/blog/images/html-to-pdf-without-upload.svg",
+    "featuredImageAlt": "HTML to PDF privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
+    "title": "DOCX to PDF Without Uploads: A Privacy-First Browser Guide",
+    "slug": "docx-to-pdf-without-upload",
+    "date": "2026-02-22",
+    "product": "pdf",
+    "description": "Export DOCX files to PDF for stable, share-ready formatting. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "docx-to-pdf",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/docx-to-pdf-without-upload",
+    "featuredImage": "/blog/images/docx-to-pdf-without-upload.svg",
+    "featuredImageAlt": "DOCX to PDF privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
+    "title": "JPG to PDF Without Uploads: A Privacy-First Browser Guide",
+    "slug": "jpg-to-pdf-without-upload",
+    "date": "2026-02-21",
+    "product": "pdf",
+    "description": "Turn image files into a clean PDF packet in seconds. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "jpg-to-pdf",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/jpg-to-pdf-without-upload",
+    "featuredImage": "/blog/images/jpg-to-pdf-without-upload.svg",
+    "featuredImageAlt": "JPG to PDF privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
     "title": "Everyday Image Studio Chrome Extension Is Now Live on Product Hunt",
     "slug": "product-hunt-launch-everyday-image-studio",
     "date": "2026-02-21",
@@ -51,6 +102,23 @@
     "readingMinutes": 3
   },
   {
+    "title": "PDF to DOCX Without Uploads: A Privacy-First Browser Guide",
+    "slug": "pdf-to-docx-without-upload",
+    "date": "2026-02-20",
+    "product": "pdf",
+    "description": "Convert PDF content into editable DOCX when updates are needed. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "pdf-to-docx",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/pdf-to-docx-without-upload",
+    "featuredImage": "/blog/images/pdf-to-docx-without-upload.svg",
+    "featuredImageAlt": "PDF to DOCX privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
     "title": "PDF Toolkit Operations Checklist for Reliable Document Delivery",
     "slug": "pdf-operations-checklist",
     "date": "2026-02-19",
@@ -68,6 +136,40 @@
     "readingMinutes": 4
   },
   {
+    "title": "PDF to JPG Without Uploads: A Privacy-First Browser Guide",
+    "slug": "pdf-to-jpg-without-upload",
+    "date": "2026-02-19",
+    "product": "pdf",
+    "description": "Convert PDF pages into JPG images for sharing and slides. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "pdf-to-jpg",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/pdf-to-jpg-without-upload",
+    "featuredImage": "/blog/images/pdf-to-jpg-without-upload.svg",
+    "featuredImageAlt": "PDF to JPG privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
+    "title": "Page Numbers Without Uploads: A Privacy-First Browser Guide",
+    "slug": "page-numbers-without-upload",
+    "date": "2026-02-18",
+    "product": "pdf",
+    "description": "Insert clear page numbering for review and legal documents. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "page-numbers",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/page-numbers-without-upload",
+    "featuredImage": "/blog/images/page-numbers-without-upload.svg",
+    "featuredImageAlt": "Page Numbers privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
     "title": "Everyday Image Studio Workflow Playbook for Daily Creative Operations",
     "slug": "eis-workflow-playbook",
     "date": "2026-02-17",
@@ -83,5 +185,158 @@
     "featuredImage": "/blog/images/eis-workflow-playbook.svg",
     "featuredImageAlt": "Illustration for Everyday Image Studio workflow playbook",
     "readingMinutes": 4
+  },
+  {
+    "title": "Watermark Without Uploads: A Privacy-First Browser Guide",
+    "slug": "watermark-without-upload",
+    "date": "2026-02-17",
+    "product": "pdf",
+    "description": "Add brand, draft, or confidential marks to PDF pages. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "watermark",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/watermark-without-upload",
+    "featuredImage": "/blog/images/watermark-without-upload.svg",
+    "featuredImageAlt": "Watermark privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
+    "title": "Crop PDF Without Uploads: A Privacy-First Browser Guide",
+    "slug": "crop-pdf-without-upload",
+    "date": "2026-02-16",
+    "product": "pdf",
+    "description": "Trim margins and clean page areas for print or submission. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "crop-pdf",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/crop-pdf-without-upload",
+    "featuredImage": "/blog/images/crop-pdf-without-upload.svg",
+    "featuredImageAlt": "Crop PDF privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
+    "title": "Organize PDF Without Uploads: A Privacy-First Browser Guide",
+    "slug": "organize-pdf-without-upload",
+    "date": "2026-02-15",
+    "product": "pdf",
+    "description": "Reorder, remove, and arrange pages before final delivery. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "organize-pdf",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/organize-pdf-without-upload",
+    "featuredImage": "/blog/images/organize-pdf-without-upload.svg",
+    "featuredImageAlt": "Organize PDF privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
+    "title": "Rotate PDF Without Uploads: A Privacy-First Browser Guide",
+    "slug": "rotate-pdf-without-upload",
+    "date": "2026-02-14",
+    "product": "pdf",
+    "description": "Fix page orientation quickly for scans and mixed-layout files. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "rotate-pdf",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/rotate-pdf-without-upload",
+    "featuredImage": "/blog/images/rotate-pdf-without-upload.svg",
+    "featuredImageAlt": "Rotate PDF privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
+    "title": "Split PDF Without Uploads: A Privacy-First Browser Guide",
+    "slug": "split-pdf-without-upload",
+    "date": "2026-02-13",
+    "product": "pdf",
+    "description": "Extract pages or split one large PDF into smaller files. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "split-pdf",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/split-pdf-without-upload",
+    "featuredImage": "/blog/images/split-pdf-without-upload.svg",
+    "featuredImageAlt": "Split PDF privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
+    "title": "Unlock PDF Without Uploads: A Privacy-First Browser Guide",
+    "slug": "unlock-pdf-without-upload",
+    "date": "2026-02-12",
+    "product": "pdf",
+    "description": "Remove password restrictions when you have valid access rights. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "unlock-pdf",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/unlock-pdf-without-upload",
+    "featuredImage": "/blog/images/unlock-pdf-without-upload.svg",
+    "featuredImageAlt": "Unlock PDF privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
+    "title": "Lock PDF Without Uploads: A Privacy-First Browser Guide",
+    "slug": "lock-pdf-without-upload",
+    "date": "2026-02-11",
+    "product": "pdf",
+    "description": "Protect sensitive PDFs with a password before sharing. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "lock-pdf",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/lock-pdf-without-upload",
+    "featuredImage": "/blog/images/lock-pdf-without-upload.svg",
+    "featuredImageAlt": "Lock PDF privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
+    "title": "Minify PDF Without Uploads: A Privacy-First Browser Guide",
+    "slug": "minify-pdf-without-upload",
+    "date": "2026-02-10",
+    "product": "pdf",
+    "description": "Reduce PDF file size while keeping text and layout readable. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "minify-pdf",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/minify-pdf-without-upload",
+    "featuredImage": "/blog/images/minify-pdf-without-upload.svg",
+    "featuredImageAlt": "Minify PDF privacy-first guide visual",
+    "readingMinutes": 3
+  },
+  {
+    "title": "Merge PDF Without Uploads: A Privacy-First Browser Guide",
+    "slug": "merge-pdf-without-upload",
+    "date": "2026-02-09",
+    "product": "pdf",
+    "description": "Combine multiple PDF files into one document in the browser. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.",
+    "tags": [
+      "merge-pdf",
+      "pdf tools",
+      "client-side",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/merge-pdf-without-upload",
+    "featuredImage": "/blog/images/merge-pdf-without-upload.svg",
+    "featuredImageAlt": "Merge PDF privacy-first guide visual",
+    "readingMinutes": 3
   }
 ]

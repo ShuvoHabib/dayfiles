@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I use PDF to DOCX without uploading files to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. PDF Dayfiles tools run client-side in your browser, so processing happens locally on your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is PDF to DOCX free to use on PDF Dayfiles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Core usage is free and designed for quick personal or team workflows without complicated setup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does PDF to DOCX work when internet is unstable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most processing is local in-browser, so the workflow can continue even with weak connectivity after loading the tool."
+      }
+    }
+  ]
+}
