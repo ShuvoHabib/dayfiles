@@ -856,7 +856,12 @@ function buildLlms(posts) {
 }
 
 function buildRedirects(posts) {
+  const legacyBlogRedirects = [
+    '/blog/e-sign-pdf-without-upload /blog/e-sign-pdf-online 301',
+    '/blog/fill-pdf-forms-without-upload /blog/fill-pdf-forms-online 301'
+  ];
   const lines = [
+    ...legacyBlogRedirects,
     '/blog /blog/index.html 200',
     ...posts.map((post) => `/blog/${post.slug} /blog/${post.slug}/index.html 200`),
     '/* /index.html 200'

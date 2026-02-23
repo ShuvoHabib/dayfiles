@@ -1,5 +1,42 @@
 [
   {
+    "title": "E-Sign PDF Online: Sign Documents Securely in Your Browser",
+    "slug": "e-sign-pdf-online",
+    "date": "2026-02-23",
+    "product": "pdf",
+    "description": "Add signatures to PDF files in minutes with a browser-based workflow. Use PDF Dayfiles e-sign tools with no account signup and no file storage.",
+    "tags": [
+      "e-sign pdf",
+      "sign pdf online free",
+      "client-side pdf",
+      "no file storage",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/e-sign-pdf-online",
+    "featuredImage": "/blog/images/e-sign-pdf-online.svg",
+    "featuredImageAlt": "E-sign PDF online privacy-first guide visual",
+    "readingMinutes": 2
+  },
+  {
+    "title": "Fill PDF Forms Online: Complete Application PDFs Faster",
+    "slug": "fill-pdf-forms-online",
+    "date": "2026-02-23",
+    "product": "pdf",
+    "description": "Fill PDF forms directly in your browser with PDF Dayfiles. No account required, no file storage, and faster completion for forms and applications.",
+    "tags": [
+      "fill pdf forms",
+      "pdf form filler",
+      "client-side pdf tools",
+      "no account",
+      "no file storage",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/fill-pdf-forms-online",
+    "featuredImage": "/blog/images/fill-pdf-forms-online.svg",
+    "featuredImageAlt": "Fill PDF forms online privacy-first guide visual",
+    "readingMinutes": 2
+  },
+  {
     "title": "HTML to PDF Without Uploads: A Privacy-First Browser Guide",
     "slug": "html-to-pdf-without-upload",
     "date": "2026-02-23",
