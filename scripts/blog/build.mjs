@@ -123,10 +123,10 @@ function sharedStyles() {
   [data-theme='light'] {
     --bg-main: #f3f8ff;
     --text-main: #0f1d3a;
-    --text-soft: #415273;
+    --text-soft: #334668;
     --line: rgba(15, 29, 58, 0.18);
-    --accent: #17c088;
-    --accent-2: #2d93ff;
+    --accent: #0f8b63;
+    --accent-2: #145fb8;
     --page-bg:
       radial-gradient(circle at 8% 16%, rgba(23, 192, 136, 0.16) 0, transparent 33%),
       radial-gradient(circle at 92% 8%, rgba(45, 147, 255, 0.16) 0, transparent 34%),
@@ -138,7 +138,7 @@ function sharedStyles() {
     --card-border: rgba(15, 29, 58, 0.14);
     --hero-cover-bg: rgba(233, 243, 255, 0.9);
     --hero-cover-border: rgba(15, 29, 58, 0.14);
-    --badge-text: #ffffff;
+    --badge-text: #f5fbff;
     --prose: #1c2a4b;
     --prose-heading: #0f1d3a;
     --button-on-accent: #ffffff;
@@ -457,26 +457,44 @@ function thirdPartyScripts() {
         var host = window.location.hostname;
         var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
         if (!isProd) return;
+        var loaded = false;
 
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function gtag() {
-          window.dataLayer.push(arguments);
-        };
+        function loadThirdParty() {
+          if (loaded) return;
+          loaded = true;
 
-        var gtagScript = document.createElement('script');
-        gtagScript.async = true;
-        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
-        gtagScript.onload = function () {
-          window.gtag('js', new Date());
-          window.gtag('config', 'G-V6HJS96NK6');
-        };
-        document.head.appendChild(gtagScript);
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function gtag() {
+            window.dataLayer.push(arguments);
+          };
 
-        var adsScript = document.createElement('script');
-        adsScript.async = true;
-        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702';
-        adsScript.crossOrigin = 'anonymous';
-        document.head.appendChild(adsScript);
+          var gtagScript = document.createElement('script');
+          gtagScript.async = true;
+          gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
+          gtagScript.onload = function () {
+            window.gtag('js', new Date());
+            window.gtag('config', 'G-V6HJS96NK6');
+          };
+          document.head.appendChild(gtagScript);
+
+          var adsScript = document.createElement('script');
+          adsScript.async = true;
+          adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702';
+          adsScript.crossOrigin = 'anonymous';
+          document.head.appendChild(adsScript);
+        }
+
+        function triggerLoad() {
+          loadThirdParty();
+          window.removeEventListener('pointerdown', triggerLoad);
+          window.removeEventListener('keydown', triggerLoad);
+          window.removeEventListener('scroll', triggerLoad);
+        }
+
+        window.addEventListener('pointerdown', triggerLoad, { once: true, passive: true });
+        window.addEventListener('keydown', triggerLoad, { once: true });
+        window.addEventListener('scroll', triggerLoad, { once: true, passive: true });
+        window.setTimeout(loadThirdParty, 60000);
       })();
     </script>
   `;

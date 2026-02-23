@@ -28,10 +28,10 @@
 [data-theme='light'] {
   --bg-main: #f3f8ff;
   --text-main: #0f1d3a;
-  --text-soft: #415273;
+  --text-soft: #334668;
   --line: rgba(15, 29, 58, 0.18);
-  --accent: #17c088;
-  --accent-2: #2d93ff;
+  --accent: #0f8b63;
+  --accent-2: #145fb8;
   --warning: #e8b33f;
   --page-bg:
     radial-gradient(circle at 8% 16%, rgba(23, 192, 136, 0.16) 0, transparent 33%),
@@ -48,8 +48,8 @@
   --card-bg: rgba(255, 255, 255, 0.9);
   --faq-card-bg: linear-gradient(160deg, rgba(245, 251, 255, 0.98), rgba(233, 245, 255, 0.95));
   --faq-card-border: rgba(45, 147, 255, 0.24);
-  --badge-text: #ffffff;
-  --beta-badge-text: #ffffff;
+  --badge-text: #f5fbff;
+  --beta-badge-text: #2f1b00;
 }
 
 * {
