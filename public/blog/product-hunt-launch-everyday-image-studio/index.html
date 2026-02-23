@@ -33,24 +33,37 @@
     <meta name="twitter:title" content="Everyday Image Studio Chrome Extension Is Now Live on Product Hunt" />
     <meta name="twitter:description" content="Dayfiles launched the Everyday Image Studio Chrome Extension on Product Hunt, with a focused browser editing workflow and more features already on the roadmap." />
     <meta name="twitter:image" content="https://dayfiles.com/blog/images/product-hunt-launch-everyday-image-studio.svg" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6"></script>
+    
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-V6HJS96NK6');
+      (function () {
+        var host = window.location.hostname;
+        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
+        if (!isProd) return;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
+        gtagScript.onload = function () {
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-V6HJS96NK6');
+        };
+        document.head.appendChild(gtagScript);
+
+        var adsScript = document.createElement('script');
+        adsScript.async = true;
+        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702';
+        adsScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsScript);
+      })();
     </script>
-    <!-- AdSense script is loaded, but no ad slots are rendered yet. -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702"
-      crossorigin="anonymous"
-    ></script>
+  
     <script type="application/ld+json">{"@graph":[{"@context":"https://schema.org","@type":"BlogPosting","headline":"Everyday Image Studio Chrome Extension Is Now Live on Product Hunt","description":"Dayfiles launched the Everyday Image Studio Chrome Extension on Product Hunt, with a focused browser editing workflow and more features already on the roadmap.","datePublished":"2026-02-21","dateModified":"2026-02-21","mainEntityOfPage":"https://dayfiles.com/blog/product-hunt-launch-everyday-image-studio","image":["https://dayfiles.com/blog/images/product-hunt-launch-everyday-image-studio.svg"],"author":{"@type":"Organization","name":"Dayfiles"},"publisher":{"@type":"Organization","name":"Dayfiles","logo":{"@type":"ImageObject","url":"https://dayfiles.com/dayfiles-logo.svg"}},"keywords":"product hunt, chrome extension, everyday image studio, dayfiles","articleSection":"Image Workflows","isPartOf":"https://dayfiles.com/blog","citation":["https://www.producthunt.com/products/everyday-image-studio-chrome-extension?launch=everyday-image-studio-chrome-extension","https://everydayimagestudio.dayfiles.com/","https://dayfiles.com/","https://pdf.dayfiles.com/"]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What was launched on Product Hunt?","acceptedAnswer":{"@type":"Answer","text":"Dayfiles launched the Everyday Image Studio Chrome Extension, focused on practical in-browser image editing workflows."}},{"@type":"Question","name":"Will the extension stay focused on quick workflows?","acceptedAnswer":{"@type":"Answer","text":"Yes. The roadmap is centered on faster repeatable edits, cleaner exports, and less switching between tools."}},{"@type":"Question","name":"How does this connect to PDF workflows?","acceptedAnswer":{"@type":"Answer","text":"Image preparation can be completed in Everyday Image Studio, then document packaging can continue in PDF Toolkit at pdf.dayfiles.com."}}]},{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://dayfiles.com/blog/student-visa-application-story","name":"From Accra to Berlin: A Student Visa Application Story Powered by Dayfiles"},{"@type":"ListItem","position":2,"url":"https://dayfiles.com/blog/html-to-pdf-without-upload","name":"HTML to PDF Without Uploads: A Privacy-First Browser Guide"},{"@type":"ListItem","position":3,"url":"https://dayfiles.com/blog/docx-to-pdf-without-upload","name":"DOCX to PDF Without Uploads: A Privacy-First Browser Guide"}]}]}</script>
     <style>
-  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
-
   :root {
     --bg-main: #0b1020;
     --text-main: #f6f7fb;
@@ -104,7 +117,7 @@
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     color: var(--text-main);
     background: var(--page-bg);
     line-height: 1.65;
@@ -112,7 +125,7 @@
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     line-height: 1.16;
     letter-spacing: .015em;
     margin: 0 0 .52rem;
@@ -145,7 +158,7 @@
     display: inline-flex;
     gap: .5rem;
     align-items: center;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     letter-spacing: .03em;
     color: var(--text-main);
     text-decoration: none;
@@ -193,6 +206,17 @@
   .theme-select-wrap:focus-within {
     border-color: var(--accent-2);
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-2) 24%, transparent);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .panel {
     margin-top: 1rem;
@@ -335,11 +359,12 @@
 </style>
   </head>
   <body>
-    <div class="wrap">
+    <main class="wrap">
       <nav class="top" aria-label="Primary">
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
         <div class="top-links">
           <label class="theme-select-wrap" for="theme-select">
+            <span class="sr-only">Theme</span>
             <select id="theme-select" class="theme-select" aria-label="Theme">
               <option value="system">System</option>
               <option value="light">Light</option>
@@ -360,7 +385,7 @@
         <h1 class="hero-title">Everyday Image Studio Chrome Extension Is Now Live on Product Hunt</h1>
         <p class="muted">Dayfiles launched the Everyday Image Studio Chrome Extension on Product Hunt, with a focused browser editing workflow and more features already on the roadmap.</p>
         <div class="hero-cover">
-          <img class="hero-image" src="/blog/images/product-hunt-launch-everyday-image-studio.svg" alt="Everyday Image Studio launch announcement on Product Hunt" />
+          <img class="hero-image" src="/blog/images/product-hunt-launch-everyday-image-studio.svg" alt="Everyday Image Studio launch announcement on Product Hunt" width="1600" height="680" />
         </div>
       </section>
 
@@ -494,7 +519,7 @@
       </article>
     </div>
       </section>
-    </div>
+    </main>
     
     <script>
       (function () {

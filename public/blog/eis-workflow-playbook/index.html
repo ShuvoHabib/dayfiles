@@ -33,24 +33,37 @@
     <meta name="twitter:title" content="Everyday Image Studio Workflow Playbook for Daily Creative Operations" />
     <meta name="twitter:description" content="A practical guide for teams that need faster image turnaround, consistent quality, and cleaner handoffs using Everyday Image Studio." />
     <meta name="twitter:image" content="https://dayfiles.com/blog/images/eis-workflow-playbook.svg" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6"></script>
+    
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-V6HJS96NK6');
+      (function () {
+        var host = window.location.hostname;
+        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
+        if (!isProd) return;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
+        gtagScript.onload = function () {
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-V6HJS96NK6');
+        };
+        document.head.appendChild(gtagScript);
+
+        var adsScript = document.createElement('script');
+        adsScript.async = true;
+        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702';
+        adsScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsScript);
+      })();
     </script>
-    <!-- AdSense script is loaded, but no ad slots are rendered yet. -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702"
-      crossorigin="anonymous"
-    ></script>
+  
     <script type="application/ld+json">{"@graph":[{"@context":"https://schema.org","@type":"BlogPosting","headline":"Everyday Image Studio Workflow Playbook for Daily Creative Operations","description":"A practical guide for teams that need faster image turnaround, consistent quality, and cleaner handoffs using Everyday Image Studio.","datePublished":"2026-02-17","dateModified":"2026-02-17","mainEntityOfPage":"https://dayfiles.com/blog/eis-workflow-playbook","image":["https://dayfiles.com/blog/images/eis-workflow-playbook.svg"],"author":{"@type":"Organization","name":"Dayfiles"},"publisher":{"@type":"Organization","name":"Dayfiles","logo":{"@type":"ImageObject","url":"https://dayfiles.com/dayfiles-logo.svg"}},"keywords":"image workflow, creative operations, dayfiles, team process","articleSection":"Image Workflows","isPartOf":"https://dayfiles.com/blog","citation":["https://everydayimagestudio.dayfiles.com/","https://dayfiles.com/"]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who should own the image workflow in a small team?","acceptedAnswer":{"@type":"Answer","text":"Assign a single workflow owner who maintains intake standards, quality checks, and delivery conventions across projects."}},{"@type":"Question","name":"How often should teams review image presets?","acceptedAnswer":{"@type":"Answer","text":"Review presets monthly and immediately after major campaign quality issues so output remains aligned with brand standards."}},{"@type":"Question","name":"What is the biggest bottleneck to remove first?","acceptedAnswer":{"@type":"Answer","text":"Most teams should remove unclear handoffs first by adding explicit input requirements and output acceptance criteria."}}]},{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://dayfiles.com/blog/product-hunt-launch-everyday-image-studio","name":"Everyday Image Studio Chrome Extension Is Now Live on Product Hunt"},{"@type":"ListItem","position":2,"url":"https://dayfiles.com/blog/student-visa-application-story","name":"From Accra to Berlin: A Student Visa Application Story Powered by Dayfiles"},{"@type":"ListItem","position":3,"url":"https://dayfiles.com/blog/html-to-pdf-without-upload","name":"HTML to PDF Without Uploads: A Privacy-First Browser Guide"}]}]}</script>
     <style>
-  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
-
   :root {
     --bg-main: #0b1020;
     --text-main: #f6f7fb;
@@ -104,7 +117,7 @@
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     color: var(--text-main);
     background: var(--page-bg);
     line-height: 1.65;
@@ -112,7 +125,7 @@
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     line-height: 1.16;
     letter-spacing: .015em;
     margin: 0 0 .52rem;
@@ -145,7 +158,7 @@
     display: inline-flex;
     gap: .5rem;
     align-items: center;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     letter-spacing: .03em;
     color: var(--text-main);
     text-decoration: none;
@@ -193,6 +206,17 @@
   .theme-select-wrap:focus-within {
     border-color: var(--accent-2);
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-2) 24%, transparent);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .panel {
     margin-top: 1rem;
@@ -335,11 +359,12 @@
 </style>
   </head>
   <body>
-    <div class="wrap">
+    <main class="wrap">
       <nav class="top" aria-label="Primary">
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
         <div class="top-links">
           <label class="theme-select-wrap" for="theme-select">
+            <span class="sr-only">Theme</span>
             <select id="theme-select" class="theme-select" aria-label="Theme">
               <option value="system">System</option>
               <option value="light">Light</option>
@@ -360,7 +385,7 @@
         <h1 class="hero-title">Everyday Image Studio Workflow Playbook for Daily Creative Operations</h1>
         <p class="muted">A practical guide for teams that need faster image turnaround, consistent quality, and cleaner handoffs using Everyday Image Studio.</p>
         <div class="hero-cover">
-          <img class="hero-image" src="/blog/images/eis-workflow-playbook.svg" alt="Illustration for Everyday Image Studio workflow playbook" />
+          <img class="hero-image" src="/blog/images/eis-workflow-playbook.svg" alt="Illustration for Everyday Image Studio workflow playbook" width="1600" height="680" />
         </div>
       </section>
 
@@ -526,7 +551,7 @@
       </article>
     </div>
       </section>
-    </div>
+    </main>
     
     <script>
       (function () {

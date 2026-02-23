@@ -33,24 +33,37 @@
     <meta name="twitter:title" content="Page Numbers Without Uploads: A Privacy-First Browser Guide" />
     <meta name="twitter:description" content="Insert clear page numbering for review and legal documents. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload." />
     <meta name="twitter:image" content="https://dayfiles.com/blog/images/page-numbers-without-upload.svg" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6"></script>
+    
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-V6HJS96NK6');
+      (function () {
+        var host = window.location.hostname;
+        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
+        if (!isProd) return;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
+        gtagScript.onload = function () {
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-V6HJS96NK6');
+        };
+        document.head.appendChild(gtagScript);
+
+        var adsScript = document.createElement('script');
+        adsScript.async = true;
+        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702';
+        adsScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsScript);
+      })();
     </script>
-    <!-- AdSense script is loaded, but no ad slots are rendered yet. -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702"
-      crossorigin="anonymous"
-    ></script>
+  
     <script type="application/ld+json">{"@graph":[{"@context":"https://schema.org","@type":"BlogPosting","headline":"Page Numbers Without Uploads: A Privacy-First Browser Guide","description":"Insert clear page numbering for review and legal documents. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.","datePublished":"2026-02-18","dateModified":"2026-02-18","mainEntityOfPage":"https://dayfiles.com/blog/page-numbers-without-upload","image":["https://dayfiles.com/blog/images/page-numbers-without-upload.svg"],"author":{"@type":"Organization","name":"Dayfiles"},"publisher":{"@type":"Organization","name":"Dayfiles","logo":{"@type":"ImageObject","url":"https://dayfiles.com/dayfiles-logo.svg"}},"keywords":"page-numbers, pdf tools, client-side, privacy-first","articleSection":"PDF Workflows","isPartOf":"https://dayfiles.com/blog","citation":["https://pdf.dayfiles.com/","https://dayfiles.com/","https://everydayimagestudio.dayfiles.com/"]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use Page Numbers without uploading files to a server?","acceptedAnswer":{"@type":"Answer","text":"Yes. PDF Dayfiles tools run client-side in your browser, so processing happens locally on your device."}},{"@type":"Question","name":"Is Page Numbers free to use on PDF Dayfiles?","acceptedAnswer":{"@type":"Answer","text":"Core usage is free and designed for quick personal or team workflows without complicated setup."}},{"@type":"Question","name":"Does Page Numbers work when internet is unstable?","acceptedAnswer":{"@type":"Answer","text":"Most processing is local in-browser, so the workflow can continue even with weak connectivity after loading the tool."}}]},{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://dayfiles.com/blog/html-to-pdf-without-upload","name":"HTML to PDF Without Uploads: A Privacy-First Browser Guide"},{"@type":"ListItem","position":2,"url":"https://dayfiles.com/blog/docx-to-pdf-without-upload","name":"DOCX to PDF Without Uploads: A Privacy-First Browser Guide"},{"@type":"ListItem","position":3,"url":"https://dayfiles.com/blog/jpg-to-pdf-without-upload","name":"JPG to PDF Without Uploads: A Privacy-First Browser Guide"}]}]}</script>
     <style>
-  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
-
   :root {
     --bg-main: #0b1020;
     --text-main: #f6f7fb;
@@ -104,7 +117,7 @@
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     color: var(--text-main);
     background: var(--page-bg);
     line-height: 1.65;
@@ -112,7 +125,7 @@
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     line-height: 1.16;
     letter-spacing: .015em;
     margin: 0 0 .52rem;
@@ -145,7 +158,7 @@
     display: inline-flex;
     gap: .5rem;
     align-items: center;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     letter-spacing: .03em;
     color: var(--text-main);
     text-decoration: none;
@@ -193,6 +206,17 @@
   .theme-select-wrap:focus-within {
     border-color: var(--accent-2);
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-2) 24%, transparent);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .panel {
     margin-top: 1rem;
@@ -335,11 +359,12 @@
 </style>
   </head>
   <body>
-    <div class="wrap">
+    <main class="wrap">
       <nav class="top" aria-label="Primary">
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
         <div class="top-links">
           <label class="theme-select-wrap" for="theme-select">
+            <span class="sr-only">Theme</span>
             <select id="theme-select" class="theme-select" aria-label="Theme">
               <option value="system">System</option>
               <option value="light">Light</option>
@@ -360,7 +385,7 @@
         <h1 class="hero-title">Page Numbers Without Uploads: A Privacy-First Browser Guide</h1>
         <p class="muted">Insert clear page numbering for review and legal documents. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
         <div class="hero-cover">
-          <img class="hero-image" src="/blog/images/page-numbers-without-upload.svg" alt="Page Numbers privacy-first guide visual" />
+          <img class="hero-image" src="/blog/images/page-numbers-without-upload.svg" alt="Page Numbers privacy-first guide visual" width="1600" height="680" />
         </div>
       </section>
 
@@ -472,7 +497,7 @@
       </article>
     </div>
       </section>
-    </div>
+    </main>
     
     <script>
       (function () {

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import blogIndex from './generated/blog-index.json';
 
 const liveProducts = [
   {
@@ -62,10 +61,16 @@ const faqs = [
 ];
 
 export default function App() {
-  const [showExtensionBanner, setShowExtensionBanner] = useState(false);
+  const [showExtensionBanner, setShowExtensionBanner] = useState(() => {
+    if (typeof window === 'undefined') {
+      return false;
+    }
+    return window.localStorage.getItem(extensionBannerStorageKey) !== 'true';
+  });
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
   const [themePreference, setThemePreference] = useState('system');
   const [resolvedTheme, setResolvedTheme] = useState('dark');
+  const [blogPosts, setBlogPosts] = useState([]);
 
   const getSystemTheme = () => (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
@@ -87,9 +92,6 @@ export default function App() {
   };
 
   useEffect(() => {
-    const dismissed = window.localStorage.getItem(extensionBannerStorageKey) === 'true';
-    setShowExtensionBanner(!dismissed);
-
     const storedTheme = window.localStorage.getItem(themeStorageKey);
     const attrTheme = document.documentElement.getAttribute('data-theme');
 
@@ -125,6 +127,25 @@ export default function App() {
 
     return () => {
       window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    let mounted = true;
+    fetch('/blog-index.json')
+      .then((response) => (response.ok ? response.json() : []))
+      .then((data) => {
+        if (mounted && Array.isArray(data)) {
+          setBlogPosts(data);
+        }
+      })
+      .catch(() => {
+        if (mounted) {
+          setBlogPosts([]);
+        }
+      });
+    return () => {
+      mounted = false;
     };
   }, []);
 
@@ -174,7 +195,9 @@ export default function App() {
             alt=" Everyday Image Studio- Chrome Extension - Privacy first photo editing in your browser, in minutes. | Product Hunt"
             width="250"
             height="54"
-            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1082820&theme=light&t=1771619055827"
+            loading="lazy"
+            decoding="async"
+            src="/producthunt-featured.svg"
           />
         </a>
       </div>
@@ -186,6 +209,7 @@ export default function App() {
         </a>
         <div className="header-links">
           <label className="theme-select-wrap" htmlFor="theme-select">
+            <span className="sr-only">Theme</span>
             <select id="theme-select" className="theme-select" value={themePreference} onChange={onThemeSelect}>
               <option value="system">System ({resolvedTheme})</option>
               <option value="light">Light</option>
@@ -244,7 +268,7 @@ export default function App() {
             <p>Source-backed workflow guides published on a recurring schedule.</p>
           </div>
           <div className="card-grid">
-            {blogIndex.slice(0, 3).map((post) => (
+            {blogPosts.slice(0, 3).map((post) => (
               <article key={post.slug} className="card">
                 <div className="badge">{post.product === 'pdf' ? 'PDF' : 'Image'}</div>
                 <h3>{post.title}</h3>

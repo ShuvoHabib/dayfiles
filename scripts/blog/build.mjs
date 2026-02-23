@@ -6,6 +6,7 @@ import {
   BLOG_PUBLIC_DIR,
   FEED_PATH,
   LLMS_PATH,
+  PUBLIC_DIR,
   REDIRECTS_PATH,
   SITEMAP_PATH,
   SITE_URL,
@@ -94,8 +95,6 @@ function collectJsonLd(post, relatedPosts = []) {
 
 function sharedStyles() {
   return `
-  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
-
   :root {
     --bg-main: #0b1020;
     --text-main: #f6f7fb;
@@ -149,7 +148,7 @@ function sharedStyles() {
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     color: var(--text-main);
     background: var(--page-bg);
     line-height: 1.65;
@@ -157,7 +156,7 @@ function sharedStyles() {
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     line-height: 1.16;
     letter-spacing: .015em;
     margin: 0 0 .52rem;
@@ -190,7 +189,7 @@ function sharedStyles() {
     display: inline-flex;
     gap: .5rem;
     align-items: center;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     letter-spacing: .03em;
     color: var(--text-main);
     text-decoration: none;
@@ -238,6 +237,17 @@ function sharedStyles() {
   .theme-select-wrap:focus-within {
     border-color: var(--accent-2);
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-2) 24%, transparent);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .panel {
     margin-top: 1rem;
@@ -440,6 +450,38 @@ function themeSelectScript() {
   `;
 }
 
+function thirdPartyScripts() {
+  return `
+    <script>
+      (function () {
+        var host = window.location.hostname;
+        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
+        if (!isProd) return;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
+        gtagScript.onload = function () {
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-V6HJS96NK6');
+        };
+        document.head.appendChild(gtagScript);
+
+        var adsScript = document.createElement('script');
+        adsScript.async = true;
+        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702';
+        adsScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsScript);
+      })();
+    </script>
+  `;
+}
+
 function renderBlogIndexPage(posts) {
   const cards = posts
     .map((post) => {
@@ -447,7 +489,7 @@ function renderBlogIndexPage(posts) {
       const postHref = postRelativeUrl(post.slug);
       return `
         <article class="card">
-          <img src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" loading="lazy" />
+          <img src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">${post.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span><span>${formatHumanDate(post.date)}</span></div>
           <h2><a class="title-link" href="${postHref}">${escapeHtml(post.title)}</a></h2>
           <p class="muted">${excerpt}</p>
@@ -496,29 +538,17 @@ function renderBlogIndexPage(posts) {
     <meta name="twitter:title" content="Dayfiles Blog" />
     <meta name="twitter:description" content="Daily workflow guides for image and PDF operations." />
     <meta name="twitter:image" content="${SITE_URL}/dayfiles-logo.svg" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-V6HJS96NK6');
-    </script>
-    <!-- AdSense script is loaded, but no ad slots are rendered yet. -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702"
-      crossorigin="anonymous"
-    ></script>
+    ${thirdPartyScripts()}
     <script type="application/ld+json">${JSON.stringify(itemList)}</script>
     <style>${sharedStyles()}</style>
   </head>
   <body>
-    <div class="wrap">
+    <main class="wrap">
       <nav class="top" aria-label="Primary">
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
         <div class="top-links">
           <label class="theme-select-wrap" for="theme-select">
+            <span class="sr-only">Theme</span>
             <select id="theme-select" class="theme-select" aria-label="Theme">
               <option value="system">System</option>
               <option value="light">Light</option>
@@ -539,7 +569,7 @@ function renderBlogIndexPage(posts) {
       <section class="panel">
         <div class="grid">${cards || '<p class="muted">No posts yet.</p>'}</div>
       </section>
-    </div>
+    </main>
     ${themeSelectScript()}
   </body>
 </html>`;
@@ -603,29 +633,17 @@ function renderPostPage(post, relatedPosts) {
     <meta name="twitter:title" content="${escapeHtml(post.title)}" />
     <meta name="twitter:description" content="${escapeHtml(post.description)}" />
     <meta name="twitter:image" content="${escapeHtml(toAbsoluteUrl(post.featuredImage))}" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-V6HJS96NK6');
-    </script>
-    <!-- AdSense script is loaded, but no ad slots are rendered yet. -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702"
-      crossorigin="anonymous"
-    ></script>
+    ${thirdPartyScripts()}
     <script type="application/ld+json">${collectJsonLd(post, relatedPosts)}</script>
     <style>${sharedStyles()}</style>
   </head>
   <body>
-    <div class="wrap">
+    <main class="wrap">
       <nav class="top" aria-label="Primary">
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
         <div class="top-links">
           <label class="theme-select-wrap" for="theme-select">
+            <span class="sr-only">Theme</span>
             <select id="theme-select" class="theme-select" aria-label="Theme">
               <option value="system">System</option>
               <option value="light">Light</option>
@@ -646,7 +664,7 @@ function renderPostPage(post, relatedPosts) {
         <h1 class="hero-title">${escapeHtml(post.title)}</h1>
         <p class="muted">${escapeHtml(post.description)}</p>
         <div class="hero-cover">
-          <img class="hero-image" src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" />
+          <img class="hero-image" src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" width="1600" height="680" />
         </div>
       </section>
 
@@ -676,7 +694,7 @@ function renderPostPage(post, relatedPosts) {
         <h2>Related posts</h2>
         <div class="grid">${relatedHtml || '<p class="muted">More posts coming soon.</p>'}</div>
       </section>
-    </div>
+    </main>
     ${themeSelectScript()}
   </body>
 </html>`;
@@ -824,6 +842,7 @@ export async function buildBlogArtifacts() {
 
   const indexJson = buildBlogIndex(posts);
   await writeJson(BLOG_INDEX_JSON, indexJson);
+  await writeJson(path.join(PUBLIC_DIR, 'blog-index.json'), indexJson);
 
   const slugSet = new Set(posts.map((post) => post.slug));
   await cleanStalePostDirs(slugSet);

@@ -49,22 +49,33 @@
     />
     <meta name="twitter:image" content="https://dayfiles.com/favicon.svg" />
     <title>dayfiles.com | File Tools, Built for Daily Work</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-V6HJS96NK6');
+      (function () {
+        var host = window.location.hostname;
+        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
+        if (!isProd) return;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
+        gtagScript.onload = function () {
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-V6HJS96NK6');
+        };
+        document.head.appendChild(gtagScript);
+
+        var adsScript = document.createElement('script');
+        adsScript.async = true;
+        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702';
+        adsScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsScript);
+      })();
     </script>
-    <!-- AdSense script is loaded, but no ad slots are rendered yet. -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702"
-      crossorigin="anonymous"
-    ></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",

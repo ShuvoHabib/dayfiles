@@ -33,24 +33,37 @@
     <meta name="twitter:title" content="Dayfiles Blog" />
     <meta name="twitter:description" content="Daily workflow guides for image and PDF operations." />
     <meta name="twitter:image" content="https://dayfiles.com/dayfiles-logo.svg" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6"></script>
+    
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-V6HJS96NK6');
+      (function () {
+        var host = window.location.hostname;
+        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
+        if (!isProd) return;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          window.dataLayer.push(arguments);
+        };
+
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
+        gtagScript.onload = function () {
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-V6HJS96NK6');
+        };
+        document.head.appendChild(gtagScript);
+
+        var adsScript = document.createElement('script');
+        adsScript.async = true;
+        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702';
+        adsScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adsScript);
+      })();
     </script>
-    <!-- AdSense script is loaded, but no ad slots are rendered yet. -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702"
-      crossorigin="anonymous"
-    ></script>
+  
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Dayfiles Blog","url":"https://dayfiles.com/blog","inLanguage":"en","blogPost":[{"@type":"BlogPosting","headline":"HTML to PDF Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/html-to-pdf-without-upload","datePublished":"2026-02-23","image":"https://dayfiles.com/blog/images/html-to-pdf-without-upload.svg"},{"@type":"BlogPosting","headline":"DOCX to PDF Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/docx-to-pdf-without-upload","datePublished":"2026-02-22","image":"https://dayfiles.com/blog/images/docx-to-pdf-without-upload.svg"},{"@type":"BlogPosting","headline":"JPG to PDF Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/jpg-to-pdf-without-upload","datePublished":"2026-02-21","image":"https://dayfiles.com/blog/images/jpg-to-pdf-without-upload.svg"},{"@type":"BlogPosting","headline":"Everyday Image Studio Chrome Extension Is Now Live on Product Hunt","url":"https://dayfiles.com/blog/product-hunt-launch-everyday-image-studio","datePublished":"2026-02-21","image":"https://dayfiles.com/blog/images/product-hunt-launch-everyday-image-studio.svg"},{"@type":"BlogPosting","headline":"From Accra to Berlin: A Student Visa Application Story Powered by Dayfiles","url":"https://dayfiles.com/blog/student-visa-application-story","datePublished":"2026-02-21","image":"https://dayfiles.com/blog/images/file-handoff-system.svg"},{"@type":"BlogPosting","headline":"Why Dayfiles Blog Uses Google Ads to Keep Practical Guides Free","url":"https://dayfiles.com/blog/google-ads-content-support","datePublished":"2026-02-20","image":"https://dayfiles.com/blog/images/pdf-operations-checklist.svg"},{"@type":"BlogPosting","headline":"PDF to DOCX Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/pdf-to-docx-without-upload","datePublished":"2026-02-20","image":"https://dayfiles.com/blog/images/pdf-to-docx-without-upload.svg"},{"@type":"BlogPosting","headline":"PDF Toolkit Operations Checklist for Reliable Document Delivery","url":"https://dayfiles.com/blog/pdf-operations-checklist","datePublished":"2026-02-19","image":"https://dayfiles.com/blog/images/pdf-operations-checklist.svg"},{"@type":"BlogPosting","headline":"PDF to JPG Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/pdf-to-jpg-without-upload","datePublished":"2026-02-19","image":"https://dayfiles.com/blog/images/pdf-to-jpg-without-upload.svg"},{"@type":"BlogPosting","headline":"Page Numbers Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/page-numbers-without-upload","datePublished":"2026-02-18","image":"https://dayfiles.com/blog/images/page-numbers-without-upload.svg"},{"@type":"BlogPosting","headline":"Everyday Image Studio Workflow Playbook for Daily Creative Operations","url":"https://dayfiles.com/blog/eis-workflow-playbook","datePublished":"2026-02-17","image":"https://dayfiles.com/blog/images/eis-workflow-playbook.svg"},{"@type":"BlogPosting","headline":"Watermark Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/watermark-without-upload","datePublished":"2026-02-17","image":"https://dayfiles.com/blog/images/watermark-without-upload.svg"},{"@type":"BlogPosting","headline":"Crop PDF Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/crop-pdf-without-upload","datePublished":"2026-02-16","image":"https://dayfiles.com/blog/images/crop-pdf-without-upload.svg"},{"@type":"BlogPosting","headline":"Organize PDF Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/organize-pdf-without-upload","datePublished":"2026-02-15","image":"https://dayfiles.com/blog/images/organize-pdf-without-upload.svg"},{"@type":"BlogPosting","headline":"Rotate PDF Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/rotate-pdf-without-upload","datePublished":"2026-02-14","image":"https://dayfiles.com/blog/images/rotate-pdf-without-upload.svg"},{"@type":"BlogPosting","headline":"Split PDF Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/split-pdf-without-upload","datePublished":"2026-02-13","image":"https://dayfiles.com/blog/images/split-pdf-without-upload.svg"},{"@type":"BlogPosting","headline":"Unlock PDF Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/unlock-pdf-without-upload","datePublished":"2026-02-12","image":"https://dayfiles.com/blog/images/unlock-pdf-without-upload.svg"},{"@type":"BlogPosting","headline":"Lock PDF Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/lock-pdf-without-upload","datePublished":"2026-02-11","image":"https://dayfiles.com/blog/images/lock-pdf-without-upload.svg"},{"@type":"BlogPosting","headline":"Minify PDF Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/minify-pdf-without-upload","datePublished":"2026-02-10","image":"https://dayfiles.com/blog/images/minify-pdf-without-upload.svg"},{"@type":"BlogPosting","headline":"Merge PDF Without Uploads: A Privacy-First Browser Guide","url":"https://dayfiles.com/blog/merge-pdf-without-upload","datePublished":"2026-02-09","image":"https://dayfiles.com/blog/images/merge-pdf-without-upload.svg"}]}</script>
     <style>
-  @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
-
   :root {
     --bg-main: #0b1020;
     --text-main: #f6f7fb;
@@ -104,7 +117,7 @@
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     color: var(--text-main);
     background: var(--page-bg);
     line-height: 1.65;
@@ -112,7 +125,7 @@
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     line-height: 1.16;
     letter-spacing: .015em;
     margin: 0 0 .52rem;
@@ -145,7 +158,7 @@
     display: inline-flex;
     gap: .5rem;
     align-items: center;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     letter-spacing: .03em;
     color: var(--text-main);
     text-decoration: none;
@@ -193,6 +206,17 @@
   .theme-select-wrap:focus-within {
     border-color: var(--accent-2);
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-2) 24%, transparent);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .panel {
     margin-top: 1rem;
@@ -335,11 +359,12 @@
 </style>
   </head>
   <body>
-    <div class="wrap">
+    <main class="wrap">
       <nav class="top" aria-label="Primary">
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
         <div class="top-links">
           <label class="theme-select-wrap" for="theme-select">
+            <span class="sr-only">Theme</span>
             <select id="theme-select" class="theme-select" aria-label="Theme">
               <option value="system">System</option>
               <option value="light">Light</option>
@@ -360,7 +385,7 @@
       <section class="panel">
         <div class="grid">
         <article class="card">
-          <img src="/blog/images/html-to-pdf-without-upload.svg" alt="HTML to PDF privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/html-to-pdf-without-upload.svg" alt="HTML to PDF privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 23, 2026</span></div>
           <h2><a class="title-link" href="/blog/html-to-pdf-without-upload">HTML to PDF Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Generate PDF output from HTML for reports and records. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -369,7 +394,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/docx-to-pdf-without-upload.svg" alt="DOCX to PDF privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/docx-to-pdf-without-upload.svg" alt="DOCX to PDF privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 22, 2026</span></div>
           <h2><a class="title-link" href="/blog/docx-to-pdf-without-upload">DOCX to PDF Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Export DOCX files to PDF for stable, share-ready formatting. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -378,7 +403,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/jpg-to-pdf-without-upload.svg" alt="JPG to PDF privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/jpg-to-pdf-without-upload.svg" alt="JPG to PDF privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 21, 2026</span></div>
           <h2><a class="title-link" href="/blog/jpg-to-pdf-without-upload">JPG to PDF Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Turn image files into a clean PDF packet in seconds. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -387,7 +412,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/product-hunt-launch-everyday-image-studio.svg" alt="Everyday Image Studio launch announcement on Product Hunt" loading="lazy" />
+          <img src="/blog/images/product-hunt-launch-everyday-image-studio.svg" alt="Everyday Image Studio launch announcement on Product Hunt" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">Image Studio</span><span>February 21, 2026</span></div>
           <h2><a class="title-link" href="/blog/product-hunt-launch-everyday-image-studio">Everyday Image Studio Chrome Extension Is Now Live on Product Hunt</a></h2>
           <p class="muted">Dayfiles launched the Everyday Image Studio Chrome Extension on Product Hunt, with a focused browser editing workflow and more features already on the roadmap.</p>
@@ -396,7 +421,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/file-handoff-system.svg" alt="A student preparing documents for international study application" loading="lazy" />
+          <img src="/blog/images/file-handoff-system.svg" alt="A student preparing documents for international study application" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">Image Studio</span><span>February 21, 2026</span></div>
           <h2><a class="title-link" href="/blog/student-visa-application-story">From Accra to Berlin: A Student Visa Application Story Powered by Dayfiles</a></h2>
           <p class="muted">A practical story of how one student preparing for studies in Germany used Dayfiles tools to organize documents, fix image assets, and submit a clean visa-ready application package.</p>
@@ -405,7 +430,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/pdf-operations-checklist.svg" alt="Dayfiles blog ad transparency and free content model" loading="lazy" />
+          <img src="/blog/images/pdf-operations-checklist.svg" alt="Dayfiles blog ad transparency and free content model" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 20, 2026</span></div>
           <h2><a class="title-link" href="/blog/google-ads-content-support">Why Dayfiles Blog Uses Google Ads to Keep Practical Guides Free</a></h2>
           <p class="muted">A transparent explanation of how Dayfiles uses relevant Google Ads to support free workflow content for students, job applicants, and small teams.</p>
@@ -414,7 +439,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/pdf-to-docx-without-upload.svg" alt="PDF to DOCX privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/pdf-to-docx-without-upload.svg" alt="PDF to DOCX privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 20, 2026</span></div>
           <h2><a class="title-link" href="/blog/pdf-to-docx-without-upload">PDF to DOCX Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Convert PDF content into editable DOCX when updates are needed. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -423,7 +448,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/pdf-operations-checklist.svg" alt="Illustration for PDF Toolkit operations checklist" loading="lazy" />
+          <img src="/blog/images/pdf-operations-checklist.svg" alt="Illustration for PDF Toolkit operations checklist" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 19, 2026</span></div>
           <h2><a class="title-link" href="/blog/pdf-operations-checklist">PDF Toolkit Operations Checklist for Reliable Document Delivery</a></h2>
           <p class="muted">Use this checklist to standardize PDF conversion, compression, and delivery with fewer errors and faster approvals.</p>
@@ -432,7 +457,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/pdf-to-jpg-without-upload.svg" alt="PDF to JPG privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/pdf-to-jpg-without-upload.svg" alt="PDF to JPG privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 19, 2026</span></div>
           <h2><a class="title-link" href="/blog/pdf-to-jpg-without-upload">PDF to JPG Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Convert PDF pages into JPG images for sharing and slides. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -441,7 +466,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/page-numbers-without-upload.svg" alt="Page Numbers privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/page-numbers-without-upload.svg" alt="Page Numbers privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 18, 2026</span></div>
           <h2><a class="title-link" href="/blog/page-numbers-without-upload">Page Numbers Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Insert clear page numbering for review and legal documents. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -450,7 +475,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/eis-workflow-playbook.svg" alt="Illustration for Everyday Image Studio workflow playbook" loading="lazy" />
+          <img src="/blog/images/eis-workflow-playbook.svg" alt="Illustration for Everyday Image Studio workflow playbook" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">Image Studio</span><span>February 17, 2026</span></div>
           <h2><a class="title-link" href="/blog/eis-workflow-playbook">Everyday Image Studio Workflow Playbook for Daily Creative Operations</a></h2>
           <p class="muted">A practical guide for teams that need faster image turnaround, consistent quality, and cleaner handoffs using Everyday Image Studio.</p>
@@ -459,7 +484,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/watermark-without-upload.svg" alt="Watermark privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/watermark-without-upload.svg" alt="Watermark privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 17, 2026</span></div>
           <h2><a class="title-link" href="/blog/watermark-without-upload">Watermark Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Add brand, draft, or confidential marks to PDF pages. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -468,7 +493,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/crop-pdf-without-upload.svg" alt="Crop PDF privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/crop-pdf-without-upload.svg" alt="Crop PDF privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 16, 2026</span></div>
           <h2><a class="title-link" href="/blog/crop-pdf-without-upload">Crop PDF Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Trim margins and clean page areas for print or submission. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -477,7 +502,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/organize-pdf-without-upload.svg" alt="Organize PDF privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/organize-pdf-without-upload.svg" alt="Organize PDF privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 15, 2026</span></div>
           <h2><a class="title-link" href="/blog/organize-pdf-without-upload">Organize PDF Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Reorder, remove, and arrange pages before final delivery. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -486,7 +511,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/rotate-pdf-without-upload.svg" alt="Rotate PDF privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/rotate-pdf-without-upload.svg" alt="Rotate PDF privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 14, 2026</span></div>
           <h2><a class="title-link" href="/blog/rotate-pdf-without-upload">Rotate PDF Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Fix page orientation quickly for scans and mixed-layout files. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -495,7 +520,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/split-pdf-without-upload.svg" alt="Split PDF privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/split-pdf-without-upload.svg" alt="Split PDF privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 13, 2026</span></div>
           <h2><a class="title-link" href="/blog/split-pdf-without-upload">Split PDF Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Extract pages or split one large PDF into smaller files. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -504,7 +529,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/unlock-pdf-without-upload.svg" alt="Unlock PDF privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/unlock-pdf-without-upload.svg" alt="Unlock PDF privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 12, 2026</span></div>
           <h2><a class="title-link" href="/blog/unlock-pdf-without-upload">Unlock PDF Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Remove password restrictions when you have valid access rights. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -513,7 +538,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/lock-pdf-without-upload.svg" alt="Lock PDF privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/lock-pdf-without-upload.svg" alt="Lock PDF privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 11, 2026</span></div>
           <h2><a class="title-link" href="/blog/lock-pdf-without-upload">Lock PDF Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Protect sensitive PDFs with a password before sharing. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -522,7 +547,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/minify-pdf-without-upload.svg" alt="Minify PDF privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/minify-pdf-without-upload.svg" alt="Minify PDF privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 10, 2026</span></div>
           <h2><a class="title-link" href="/blog/minify-pdf-without-upload">Minify PDF Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Reduce PDF file size while keeping text and layout readable. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -531,7 +556,7 @@
       
 
         <article class="card">
-          <img src="/blog/images/merge-pdf-without-upload.svg" alt="Merge PDF privacy-first guide visual" loading="lazy" />
+          <img src="/blog/images/merge-pdf-without-upload.svg" alt="Merge PDF privacy-first guide visual" width="1600" height="680" loading="lazy" />
           <div class="meta"><span class="badge">PDF Toolkit</span><span>February 9, 2026</span></div>
           <h2><a class="title-link" href="/blog/merge-pdf-without-upload">Merge PDF Without Uploads: A Privacy-First Browser Guide</a></h2>
           <p class="muted">Combine multiple PDF files into one document in the browser. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
@@ -539,7 +564,7 @@
         </article>
       </div>
       </section>
-    </div>
+    </main>
     
     <script>
       (function () {
