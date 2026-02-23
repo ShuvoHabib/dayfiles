@@ -278,11 +278,27 @@ function sharedStyles() {
   .card {
     border: 1px solid var(--card-border);
     border-radius: 14px;
-    padding: .95rem;
     background: var(--card-bg);
+    overflow: hidden;
+  }
+  .card-link {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    min-height: 100%;
+    padding: .95rem;
+    color: inherit;
+    text-decoration: none;
+  }
+  .card-link:hover .title-link {
+    color: var(--accent-2);
+  }
+  .card-link:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent-2) 78%, white 22%);
+    outline-offset: -2px;
   }
   .card h2, .card h3 {
-    margin-bottom: .45rem;
+    margin: 0;
     line-height: 1.22;
   }
   .card h2 { font-size: clamp(1.2rem, 1.9vw, 1.42rem); }
@@ -293,10 +309,14 @@ function sharedStyles() {
   }
   .title-link:hover { color: var(--accent-2); }
   .card img {
+    display: block;
     width: 100%;
+    aspect-ratio: 1600 / 680;
+    object-fit: cover;
+    height: auto;
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.12);
-    margin-bottom: 0.7rem;
+    margin: 0;
   }
   .hero-cover {
     margin-top: 0.8rem;
@@ -324,6 +344,14 @@ function sharedStyles() {
     line-height: 1.45;
   }
   .meta span { white-space: nowrap; }
+  .card .muted { margin: 0; }
+  .card-cta {
+    color: var(--accent-2);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: .08em;
+    width: fit-content;
+  }
   .prose {
     color: var(--prose);
     line-height: 1.75;
@@ -386,6 +414,7 @@ function sharedStyles() {
       padding: .4rem .58rem;
     }
     .theme-select { font-size: .78rem; }
+    .card-link { gap: .62rem; }
   }
 `;
 }
@@ -507,11 +536,13 @@ function renderBlogIndexPage(posts) {
       const postHref = postRelativeUrl(post.slug);
       return `
         <article class="card">
-          <img src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" width="1600" height="680" loading="lazy" />
-          <div class="meta"><span class="badge">${post.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span><span>${formatHumanDate(post.date)}</span></div>
-          <h2><a class="title-link" href="${postHref}">${escapeHtml(post.title)}</a></h2>
-          <p class="muted">${excerpt}</p>
-          <a href="${postHref}">Read article</a>
+          <a class="card-link" href="${postHref}" aria-label="Read ${escapeHtml(post.title)}">
+            <img src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" width="1600" height="680" loading="lazy" />
+            <div class="meta"><span class="badge">${post.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span><span>${formatHumanDate(post.date)}</span></div>
+            <h2><span class="title-link">${escapeHtml(post.title)}</span></h2>
+            <p class="muted">${excerpt}</p>
+            <span class="card-cta">Read article</span>
+          </a>
         </article>
       `;
     })
@@ -619,9 +650,12 @@ function renderPostPage(post, relatedPosts) {
     .map(
       (related) => `
       <article class="card">
-        <span class="badge">${related.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span>
-        <h3><a class="title-link" href="${postRelativeUrl(related.slug)}">${escapeHtml(related.title)}</a></h3>
-        <p class="muted">${escapeHtml(related.description)}</p>
+        <a class="card-link" href="${postRelativeUrl(related.slug)}" aria-label="Read ${escapeHtml(related.title)}">
+          <span class="badge">${related.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span>
+          <h3><span class="title-link">${escapeHtml(related.title)}</span></h3>
+          <p class="muted">${escapeHtml(related.description)}</p>
+          <span class="card-cta">Read article</span>
+        </a>
       </article>
     `
     )

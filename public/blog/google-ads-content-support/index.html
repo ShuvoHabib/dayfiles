@@ -265,11 +265,27 @@
   .card {
     border: 1px solid var(--card-border);
     border-radius: 14px;
-    padding: .95rem;
     background: var(--card-bg);
+    overflow: hidden;
+  }
+  .card-link {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    min-height: 100%;
+    padding: .95rem;
+    color: inherit;
+    text-decoration: none;
+  }
+  .card-link:hover .title-link {
+    color: var(--accent-2);
+  }
+  .card-link:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent-2) 78%, white 22%);
+    outline-offset: -2px;
   }
   .card h2, .card h3 {
-    margin-bottom: .45rem;
+    margin: 0;
     line-height: 1.22;
   }
   .card h2 { font-size: clamp(1.2rem, 1.9vw, 1.42rem); }
@@ -280,10 +296,14 @@
   }
   .title-link:hover { color: var(--accent-2); }
   .card img {
+    display: block;
     width: 100%;
+    aspect-ratio: 1600 / 680;
+    object-fit: cover;
+    height: auto;
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.12);
-    margin-bottom: 0.7rem;
+    margin: 0;
   }
   .hero-cover {
     margin-top: 0.8rem;
@@ -311,6 +331,14 @@
     line-height: 1.45;
   }
   .meta span { white-space: nowrap; }
+  .card .muted { margin: 0; }
+  .card-cta {
+    color: var(--accent-2);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: .08em;
+    width: fit-content;
+  }
   .prose {
     color: var(--prose);
     line-height: 1.75;
@@ -373,6 +401,7 @@
       padding: .4rem .58rem;
     }
     .theme-select { font-size: .78rem; }
+    .card-link { gap: .62rem; }
   }
 </style>
   </head>
@@ -525,23 +554,32 @@
         <h2>Related posts</h2>
         <div class="grid">
       <article class="card">
-        <span class="badge">PDF Toolkit</span>
-        <h3><a class="title-link" href="/blog/html-to-pdf-without-upload">HTML to PDF Without Uploads: A Privacy-First Browser Guide</a></h3>
-        <p class="muted">Generate PDF output from HTML for reports and records. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
+        <a class="card-link" href="/blog/html-to-pdf-without-upload" aria-label="Read HTML to PDF Without Uploads: A Privacy-First Browser Guide">
+          <span class="badge">PDF Toolkit</span>
+          <h3><span class="title-link">HTML to PDF Without Uploads: A Privacy-First Browser Guide</span></h3>
+          <p class="muted">Generate PDF output from HTML for reports and records. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
+          <span class="card-cta">Read article</span>
+        </a>
       </article>
     
 
       <article class="card">
-        <span class="badge">PDF Toolkit</span>
-        <h3><a class="title-link" href="/blog/docx-to-pdf-without-upload">DOCX to PDF Without Uploads: A Privacy-First Browser Guide</a></h3>
-        <p class="muted">Export DOCX files to PDF for stable, share-ready formatting. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
+        <a class="card-link" href="/blog/docx-to-pdf-without-upload" aria-label="Read DOCX to PDF Without Uploads: A Privacy-First Browser Guide">
+          <span class="badge">PDF Toolkit</span>
+          <h3><span class="title-link">DOCX to PDF Without Uploads: A Privacy-First Browser Guide</span></h3>
+          <p class="muted">Export DOCX files to PDF for stable, share-ready formatting. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
+          <span class="card-cta">Read article</span>
+        </a>
       </article>
     
 
       <article class="card">
-        <span class="badge">PDF Toolkit</span>
-        <h3><a class="title-link" href="/blog/jpg-to-pdf-without-upload">JPG to PDF Without Uploads: A Privacy-First Browser Guide</a></h3>
-        <p class="muted">Turn image files into a clean PDF packet in seconds. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
+        <a class="card-link" href="/blog/jpg-to-pdf-without-upload" aria-label="Read JPG to PDF Without Uploads: A Privacy-First Browser Guide">
+          <span class="badge">PDF Toolkit</span>
+          <h3><span class="title-link">JPG to PDF Without Uploads: A Privacy-First Browser Guide</span></h3>
+          <p class="muted">Turn image files into a clean PDF packet in seconds. Use a privacy-first client-side workflow on PDF Dayfiles with no forced server upload.</p>
+          <span class="card-cta">Read article</span>
+        </a>
       </article>
     </div>
       </section>
