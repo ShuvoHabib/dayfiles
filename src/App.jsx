@@ -206,8 +206,8 @@ export default function App() {
           <p className="eyebrow">File stack for modern teams</p>
           <h1>Everything file-related, in one place.</h1>
           <p className="hero-copy">
-            Dayfiles gives your team practical tools for image workflows, PDF workflows, and daily document management
-            without switching between scattered apps.
+            Dayfiles gives you free tools for image and PDF workflows, with no account required and no setup before
+            you start.
           </p>
           <div className="hero-actions">
             <a href="https://everydayimagestudio.dayfiles.com/" target="_blank" rel="noreferrer">
