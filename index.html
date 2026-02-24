@@ -109,7 +109,38 @@
             "@type": "WebSite",
             "name": "Dayfiles",
             "url": "https://dayfiles.com/",
-            "description": "Marketing site for Dayfiles image and PDF workflow tools."
+            "description": "Marketing site for Dayfiles image and PDF workflow tools.",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://dayfiles.com/blog",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "PDF Dayfiles",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "url": "https://pdf.dayfiles.com/",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "description": "Browser-based PDF workflow tools for merge, split, convert, fill forms, and e-sign operations."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "Everyday Image Studio",
+            "applicationCategory": "PhotoEditingApplication",
+            "operatingSystem": "Web",
+            "url": "https://everydayimagestudio.dayfiles.com/",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "description": "Privacy-first image workflow tool for quick photo editing and export in the browser."
           },
           {
             "@type": "FAQPage",
@@ -145,6 +176,21 @@
     </script>
   </head>
   <body>
+    <noscript>
+      <main>
+        <h1>Dayfiles: Free Browser Tools for PDF and Image Workflows</h1>
+        <p>
+          Dayfiles provides practical file workflow tools with no account required for core usage. Products include PDF Dayfiles for PDF operations and Everyday Image Studio for image editing.
+        </p>
+        <ul>
+          <li><a href="https://pdf.dayfiles.com/">PDF Dayfiles</a></li>
+          <li><a href="https://everydayimagestudio.dayfiles.com/">Everyday Image Studio</a></li>
+          <li><a href="https://dayfiles.com/blog">Dayfiles Blog</a></li>
+          <li><a href="https://dayfiles.com/blog/e-sign-pdf-online">E-Sign PDF Online Guide</a></li>
+          <li><a href="https://dayfiles.com/blog/fill-pdf-forms-online">Fill PDF Forms Online Guide</a></li>
+        </ul>
+      </main>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
