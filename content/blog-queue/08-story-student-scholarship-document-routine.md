@@ -1,9 +1,9 @@
 ---
-title: "Story: A Student Scholarship Document Routine Powered by Dayfiles"
+title: "Student Scholarship Document Routine With Dayfiles"
 slug: "story-student-scholarship-document-routine"
 date: "2026-02-27"
 product: "pdf"
-description: "A practical student story showing how Dayfiles tools helped organize scholarship and study documents with a privacy-conscious daily routine."
+description: "See how a student used Dayfiles to organize scholarship documents, clean images, and build submission-ready file routines under deadline pressure."
 tags:
   - "student story"
   - "scholarship documents"
@@ -30,7 +30,7 @@ faq:
 
 ## Situation
 
-A student preparing scholarship and study-abroad applications had the same problem many applicants face: documents existed, but the workflow was chaotic. Statements, transcripts, recommendation letters, and identity files were scattered across email attachments and local folders.
+How does a scholarship application go off track when the student already has the required files? A student preparing scholarship and study-abroad applications had the same problem many applicants face: documents existed, but the workflow was chaotic. Statements, transcripts, recommendation letters, and identity files were scattered across email attachments and local folders.
 
 Deadlines were close, and each portal had slightly different upload rules. The risk was not missing effort. The risk was submitting the wrong version.
 
@@ -60,6 +60,10 @@ Within a week, the student saw practical improvements:
 - better confidence before submission.
 
 The student also kept a checklist of required documents per portal so the same mistakes would not repeat.
+
+## Where to start on Dayfiles
+
+For students running this kind of routine, [Everyday Image Studio](/everyday-image-studio) is the right starting point for photo cleanup, while [PDF Toolkit](/pdf-toolkit) is the hub for packet assembly and final export. The closest supporting guides are [Fill PDF Forms Online](/blog/fill-pdf-forms-online), [Merge PDF Without Uploads](/blog/merge-pdf-without-upload), and the [Everyday Image Studio Passport Photo Checklist](/blog/eis-passport-photo-checklist).
 
 ## Final takeaway
 

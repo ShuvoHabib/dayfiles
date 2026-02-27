@@ -1,9 +1,9 @@
 ---
-title: "Story: Operations Team Switched to a Privacy-First Daily File Routine"
+title: "Operations Team Privacy-First File Routine"
 slug: "story-operations-team-privacy-first-daily-files"
 date: "2026-02-27"
 product: "eis"
-description: "A daily operations story showing how a small team used Dayfiles to improve file handoffs, reduce rework, and keep sensitive files better controlled."
+description: "See how one operations team used Dayfiles to improve file handoffs, reduce rework, and keep daily image and PDF workflows controlled and traceable."
 tags:
   - "operations story"
   - "file handoff"
@@ -30,7 +30,7 @@ faq:
 
 ## The day-to-day challenge
 
-A small operations team handled marketing files, onboarding forms, and client documents in the same week. Their tools worked individually, but handoff quality was weak. Files were renamed differently by each person, updates were shared in chat threads, and final versions were hard to identify.
+How does everyday file work become unreliable when each individual tool still functions? A small operations team handled marketing files, onboarding forms, and client documents in the same week. Their tools worked individually, but handoff quality was weak. Files were renamed differently by each person, updates were shared in chat threads, and final versions were hard to identify.
 
 Under pressure, this created errors that looked random but had the same root cause: no daily operating routine.
 
@@ -49,6 +49,10 @@ This made responsibilities and output expectations clear.
 ## Why privacy improved
 
 Before the routine, confidential files were copied repeatedly across channels. After the routine, the team used one final destination path and one owner per package. Fewer duplicate copies meant lower accidental exposure risk.
+
+## Where to start on Dayfiles
+
+This type of cross-functional routine works best when the team uses [Everyday Image Studio](/everyday-image-studio) for visual asset prep and [PDF Toolkit](/pdf-toolkit) for packet preparation and final document delivery. For practical follow-up reading, pair this story with the [Everyday Image Studio Workflow Playbook](/blog/eis-workflow-playbook) and the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist).
 
 ## Daily quality checks
 

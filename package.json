@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run blog:build && vite build",
+    "build": "npm run site:build && npm run blog:build && vite build",
     "preview": "vite preview",
     "build:cf": "npm run build",
     "deploy:cf": "npm run build && npx wrangler pages deploy dist",
+    "site:build": "node scripts/site/build-product-pages.mjs",
     "blog:build": "node scripts/blog/build.mjs",
     "blog:validate": "node scripts/blog/validate.mjs",
     "blog:scrape": "node scripts/blog/scrape-facts.mjs",

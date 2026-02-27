@@ -6,6 +6,10 @@ import { chooseTopic } from './select-topic.mjs';
 import { generateFeaturedImage } from './generate-image.mjs';
 import { CONTENT_DIR, ROOT_DIR, ensureDir, normalizeDateString, postUrl, readPosts, slugify } from './lib.mjs';
 
+function productHubHref(product) {
+  return product === 'pdf' ? '/pdf-toolkit' : '/everyday-image-studio';
+}
+
 function parseArgs(argv) {
   const args = {
     facts: path.join(ROOT_DIR, 'tmp/blog/facts.json'),
@@ -92,24 +96,35 @@ function renderFrontmatter({ title, slug, date, product, description, tags, cano
   return yaml.join('\n');
 }
 
-function fallbackDraft({ topic, product, sources }) {
+function fallbackDraft({ topic, product, sources, relatedPosts = [] }) {
   const productName = product === 'pdf' ? 'PDF Toolkit' : 'Everyday Image Studio';
   const otherName = product === 'pdf' ? 'Everyday Image Studio' : 'PDF Toolkit';
+  const hubHref = productHubHref(product);
+  const relatedLinks = relatedPosts
+    .slice(0, 3)
+    .map((post) => `[${post.title}](/blog/${post.slug})`)
+    .join(', ');
 
   const title = `${productName} Workflow Guide: ${topic}`;
   const description = `A practical, source-backed guide to improve ${productName} workflows in daily team operations.`;
 
-  const markdownBody = `## Why this workflow matters
+  const markdownBody = `How can a team turn ${topic} into a repeatable workflow without adding new handoff risk? The short answer is to define the output first, keep the transformation path narrow, and review the final artifact before it leaves ${productName}. That approach makes the workflow easier to repeat and easier to trust.
+
+## What is this ${productName} workflow?
+
+This workflow is a practical operating pattern for teams that use [${productName}](${hubHref}) to move files from intake to delivery with fewer ad hoc decisions. It works best when a team needs consistency, clear ownership, and a documented handoff rather than another one-off tool run.
+
+## Why this workflow matters
 
 Teams lose momentum when files move across too many tools. ${productName} helps centralize repetitive work so projects move from draft to delivery faster.
 
 ## What we observed from the live product pages
 
-- ${productName} is positioned as a practical tool for daily operations.
+- [${productName}](${hubHref}) is positioned as a practical tool for daily operations.
 - The Dayfiles stack includes both ${productName} and ${otherName}, so teams can combine image and document workflows.
 - Core value proposition: create, convert, organize, and share files with less switching cost.
 
-## Step-by-step execution model
+## How to run the workflow step by step
 
 ### 1. Intake and triage
 Create a repeatable intake checklist for file requests. Standardize naming, ownership, and expected output type.
@@ -135,6 +150,23 @@ A reliable practice is to route visual assets through Everyday Image Studio and 
 - **Pitfall:** inconsistent file naming. **Fix:** template-based naming.
 - **Pitfall:** unclear output quality. **Fix:** preset-driven export rules.
 - **Pitfall:** weak handoff context. **Fix:** include links, source files, and change notes.
+
+## Client-side workflow vs ad hoc tool switching
+
+| Requirement | Defined ${productName} workflow | Ad hoc switching |
+| --- | --- | --- |
+| Ownership | One named operator per package | Ownership shifts during the job |
+| Output quality | Checked against a known standard | Depends on whoever is available |
+| Auditability | Sources and steps are easier to trace | Decisions are scattered across tools |
+| Rework risk | Lower because the flow is documented | Higher because quality checks move around |
+
+## Related reading
+
+${relatedLinks || `Pair this guide with other Dayfiles workflow posts once adjacent coverage exists.`}
+
+## Where to start on Dayfiles
+
+Use [${productName}](${hubHref}) as the main hub on dayfiles.com when you need the product overview first, then open the live tool when you are ready to run the workflow directly.
 
 ## Final checklist
 
@@ -167,7 +199,7 @@ A reliable practice is to route visual assets through Everyday Image Studio and 
   };
 }
 
-async function generateWithAi({ topic, product, sourceFacts, sources }) {
+async function generateWithAi({ topic, product, sourceFacts, sources, relatedPosts }) {
   if (!process.env.OPENAI_API_KEY) {
     throw new Error('OPENAI_API_KEY is required for AI post generation.');
   }
@@ -175,13 +207,29 @@ async function generateWithAi({ topic, product, sourceFacts, sources }) {
   const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
   const productName = product === 'pdf' ? 'PDF Toolkit' : 'Everyday Image Studio';
 
-  const system = `You are a senior SEO content writer for Dayfiles. Return strict JSON only with keys: title, description, tags, markdownBody, faq.\nRules:\n- 1200-1600 words markdownBody.\n- Source-backed claims only from supplied facts.\n- Include practical how-to structure with H2/H3 headings.\n- No fabricated metrics.\n- FAQ must have exactly 3 items with keys q and a.`;
+  const system = `You are a senior SEO content writer for Dayfiles. Return strict JSON only with keys: title, description, tags, markdownBody, faq.
+Rules:
+- 1400-1800 words in markdownBody.
+- Source-backed claims only from supplied facts.
+- Title must be 50-60 characters and front-load the topic.
+- Description must be 150-160 characters and start with Learn, Discover, Understand, or Use.
+- Open with a question hook and a direct answer in the first paragraph.
+- Include at least 5 H2 sections.
+- Include one question-style H2.
+- Include one "How to" H2 with numbered steps.
+- Include one markdown comparison table.
+- Use short paragraphs.
+- Include a natural internal link to the main Dayfiles product hub: `/pdf-toolkit` for PDF content or `/everyday-image-studio` for image content.
+- Link 2-4 relevant internal posts from the supplied relatedPosts list using markdown links to /blog/<slug> when the fit is natural.
+- No fabricated metrics or unsupported product claims.
+- FAQ must have exactly 3 items with keys q and a.`;
 
   const user = {
     topic,
     product,
     productName,
     sources,
+    relatedPosts,
     facts: sourceFacts
   };
 
@@ -248,9 +296,15 @@ export async function generatePost(options = {}) {
     }
   ];
 
+  const existing = await readPosts();
+  const relatedPosts = existing
+    .filter((post) => post.product === topicSelection.product)
+    .slice(0, 8)
+    .map((post) => ({ title: post.title, slug: post.slug }));
+
   let draft;
   if (args.dryRun || args.mode === 'dry-run') {
-    draft = fallbackDraft({ topic: topicSelection.topic, product: topicSelection.product, sources });
+    draft = fallbackDraft({ topic: topicSelection.topic, product: topicSelection.product, sources, relatedPosts });
   } else {
     try {
       draft = await generateWithAi({
@@ -263,15 +317,15 @@ export async function generatePost(options = {}) {
           sourceUrl: selectedSource.url,
           scrapedAt: selectedSource.scrapedAt
         },
-        sources
+        sources,
+        relatedPosts
       });
     } catch (error) {
       console.warn(`AI generation failed, using fallback draft: ${error.message}`);
-      draft = fallbackDraft({ topic: topicSelection.topic, product: topicSelection.product, sources });
+      draft = fallbackDraft({ topic: topicSelection.topic, product: topicSelection.product, sources, relatedPosts });
     }
   }
 
-  const existing = await readPosts();
   const existingSlugs = new Set(existing.map((post) => post.slug));
 
   const date = normalizeDateString(args.date || toEtDateString(new Date()));

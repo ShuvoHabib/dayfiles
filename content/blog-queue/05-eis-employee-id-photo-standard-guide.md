@@ -1,9 +1,9 @@
 ---
-title: "Everyday Image Studio Employee ID Photo Standard Guide"
+title: "Image Studio Employee ID Photo Standard Guide"
 slug: "eis-employee-id-photo-standard-guide"
 date: "2026-02-27"
 product: "eis"
-description: "A practical guide for HR and operations teams to standardize employee ID photos with Everyday Image Studio and reduce rework across systems."
+description: "Standardize employee ID photos with Everyday Image Studio. Learn framing, export, naming, quality checks, and review steps that reduce HR rework."
 tags:
   - "employee id photo"
   - "everyday image studio"
@@ -30,9 +30,9 @@ faq:
 
 ## The operational problem with ID photos
 
-ID photo preparation seems simple, but teams frequently lose time on corrections. Common issues include inconsistent crop, mixed backgrounds, wrong dimensions, and unclear naming. These problems block onboarding, directory updates, and badge creation.
+Why do employee ID photos create so much avoidable rework? ID photo preparation seems simple, but teams frequently lose time on corrections. Common issues include inconsistent crop, mixed backgrounds, wrong dimensions, and unclear naming. These problems block onboarding, directory updates, and badge creation.
 
-A standard process in Everyday Image Studio solves this quickly.
+A standard process in [Everyday Image Studio](/everyday-image-studio) solves this quickly.
 
 ## Build an ID photo baseline
 
@@ -58,7 +58,11 @@ This keeps profile quality consistent and reduces correction loops.
 
 ## Integration with document workflows
 
-Many teams need ID photos inside onboarding or compliance packets. After photo processing in Everyday Image Studio, teams can attach files in [PDF Dayfiles](https://pdf.dayfiles.com/) for final packet delivery.
+Many teams need ID photos inside onboarding or compliance packets. After photo processing in [Everyday Image Studio](/everyday-image-studio), teams can attach files in [PDF Toolkit](/pdf-toolkit) for final packet delivery. The closest supporting guides are the [Everyday Image Studio Workflow Playbook](/blog/eis-workflow-playbook) for repeat process setup and the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) when those images need document handoff discipline.
+
+## Where to start on Dayfiles
+
+Use [Everyday Image Studio](/everyday-image-studio) as the main hub when the team needs crop, alignment, and export consistency first. If the photo becomes part of a larger employee packet, hand off to [PDF Toolkit](/pdf-toolkit) only after the image standard is locked.
 
 ## Final takeaway
 

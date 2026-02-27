@@ -4,13 +4,13 @@ const liveProducts = [
   {
     title: 'Everyday Image Studio',
     subtitle: 'Smart image workflows for teams and creators',
-    href: 'https://everydayimagestudio.dayfiles.com/',
+    href: '/everyday-image-studio',
     state: 'Live'
   },
   {
     title: 'PDF Toolkit',
     subtitle: 'Merge, compress, convert, and ship clean docs',
-    href: 'https://pdf.dayfiles.com/',
+    href: '/pdf-toolkit',
     state: 'Live'
   }
 ];
@@ -219,7 +219,7 @@ export default function App() {
           <a className="header-link" href="/blog">
             Blog
           </a>
-          <a className="header-cta" href="https://pdf.dayfiles.com/" target="_blank" rel="noreferrer">
+          <a className="header-cta" href="/pdf-toolkit">
             Open Tools
           </a>
         </div>
@@ -234,10 +234,10 @@ export default function App() {
             you start.
           </p>
           <div className="hero-actions">
-            <a href="https://everydayimagestudio.dayfiles.com/" target="_blank" rel="noreferrer">
+            <a href="/everyday-image-studio">
               Explore Image Studio
             </a>
-            <a href="https://pdf.dayfiles.com/" target="_blank" rel="noreferrer">
+            <a href="/pdf-toolkit">
               Open PDF Toolkit
             </a>
           </div>
@@ -254,7 +254,7 @@ export default function App() {
                 <div className="badge">{product.state}</div>
                 <h3>{product.title}</h3>
                 <p>{product.subtitle}</p>
-                <a href={product.href} target="_blank" rel="noreferrer">
+                <a href={product.href}>
                   Visit {product.title}
                 </a>
               </article>
@@ -328,10 +328,10 @@ export default function App() {
       <footer className="footer">
         <p>Dayfiles. Built for daily file work.</p>
         <div>
-          <a href="https://everydayimagestudio.dayfiles.com/" target="_blank" rel="noreferrer">
+          <a href="/everyday-image-studio">
             Image Studio
           </a>
-          <a href="https://pdf.dayfiles.com/" target="_blank" rel="noreferrer">
+          <a href="/pdf-toolkit">
             PDF Toolkit
           </a>
         </div>
