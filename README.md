@@ -46,6 +46,12 @@ npm run blog:auto -- --mode publish --ignore-schedule
 
 # Dry-run generation to tmp/ only
 npm run blog:auto -- --mode dry-run
+
+# Queue-based publish (one prewritten post from content/blog-queue)
+npm run blog:queue -- --mode publish --ignore-schedule
+
+# Queue dry-run (no file moves, no publish)
+npm run blog:queue -- --mode dry-run --ignore-schedule
 ```
 
 ## Cloudflare Pages deployment
@@ -69,14 +75,24 @@ This project includes:
 
 ## GitHub Actions automation
 
-Workflow: `.github/workflows/blog-auto-publish.yml`
+Workflow (manual generator): `.github/workflows/blog-auto-publish.yml`
 
-- Schedule: hourly on Mon/Wed/Fri (`0 * * * 1,3,5`) with ET gate at `09:00`.
+- Manual trigger only (`workflow_dispatch`) for ad-hoc generation.
 - Manual trigger supports:
   - `mode`: `dry-run|publish`
   - `force_product`: `auto|eis|pdf`
   - `force_slug`: optional
   - `publish_date`: optional `YYYY-MM-DD` for backfill
+
+Workflow (queued publishing): `.github/workflows/blog-queue-publish.yml`
+
+- Schedule: hourly (`0 * * * *`) with ET gate at `09:00` and 2-day cadence.
+- Publishes exactly one markdown file from `content/blog-queue/` per eligible run.
+- Tracks publish cadence in `.blog-queue-state.json`.
+- Manual trigger supports:
+  - `mode`: `dry-run|publish`
+  - `publish_date`: optional `YYYY-MM-DD` backfill
+  - `ignore_schedule`: bypass 09:00 ET gate for manual runs
 
 Required repo secret:
 

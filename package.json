@@ -12,7 +12,8 @@
     "blog:build": "node scripts/blog/build.mjs",
     "blog:validate": "node scripts/blog/validate.mjs",
     "blog:scrape": "node scripts/blog/scrape-facts.mjs",
-    "blog:auto": "node scripts/blog/run-auto.mjs"
+    "blog:auto": "node scripts/blog/run-auto.mjs",
+    "blog:queue": "node scripts/blog/publish-queued.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
