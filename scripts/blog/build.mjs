@@ -297,11 +297,10 @@ function sharedStyles() {
     outline: 2px solid color-mix(in srgb, var(--accent-2) 78%, white 22%);
     outline-offset: -2px;
   }
-  .card h2, .card h3 {
+  .card h3 {
     margin: 0;
     line-height: 1.22;
   }
-  .card h2 { font-size: clamp(1.2rem, 1.9vw, 1.42rem); }
   .card h3 { font-size: clamp(1.06rem, 1.5vw, 1.2rem); }
   .title-link {
     color: var(--text-main);
@@ -539,7 +538,7 @@ function renderBlogIndexPage(posts) {
           <a class="card-link" href="${postHref}" aria-label="Read ${escapeHtml(post.title)}">
             <img src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" width="1600" height="680" loading="lazy" />
             <div class="meta"><span class="badge">${post.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span><span>${formatHumanDate(post.date)}</span></div>
-            <h2><span class="title-link">${escapeHtml(post.title)}</span></h2>
+            <h3><span class="title-link">${escapeHtml(post.title)}</span></h3>
             <p class="muted">${excerpt}</p>
             <span class="card-cta">Read article</span>
           </a>
@@ -575,8 +574,8 @@ function renderBlogIndexPage(posts) {
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <title>Dayfiles Blog | Image and PDF Workflow Guides</title>
-    <meta name="description" content="Daily workflow articles for Everyday Image Studio and PDF Toolkit, including practical guides, checklists, and operational playbooks." />
+    <title>Dayfiles Blog | Free Image and PDF Workflow Guides</title>
+    <meta name="description" content="Free image and PDF workflow articles for Everyday Image Studio and PDF Toolkit, with practical guides, checklists, and operational playbooks." />
     <link rel="canonical" href="${SITE_URL}/blog" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Dayfiles Blog" />
@@ -611,11 +610,12 @@ function renderBlogIndexPage(posts) {
 
       <section class="panel">
         <p class="badge">New every Mon/Wed/Fri</p>
-        <h1 class="hero-title">Dayfiles Blog</h1>
-        <p class="muted">Source-backed guides on file operations, image workflows, and PDF workflow automation.</p>
+        <h1 class="hero-title">Dayfiles Blog: Free Image and PDF Workflow Guides</h1>
+        <p class="muted">Source-backed guides on free file tools, image workflows, and PDF operations.</p>
       </section>
 
       <section class="panel">
+        <h2>Latest Articles on PDF and Image Workflows</h2>
         <div class="grid">${cards || '<p class="muted">No posts yet.</p>'}</div>
       </section>
     </main>

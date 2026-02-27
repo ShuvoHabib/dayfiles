@@ -228,7 +228,7 @@ export default function App() {
       <main id="home">
         <section className="hero">
           <p className="eyebrow">File stack for modern teams</p>
-          <h1>Everything file-related, in one place.</h1>
+          <h1>Free Online Image and PDF Tools with No Account Required</h1>
           <p className="hero-copy">
             Dayfiles gives you free tools for image and PDF workflows, with no account required and no setup before
             you start.
@@ -245,8 +245,8 @@ export default function App() {
 
         <section className="panel products" aria-label="Live products">
           <div className="section-heading">
-            <h2>Live now</h2>
-            <p>Production-ready tools available today.</p>
+            <h2>Free Tools Available Now</h2>
+            <p>Production-ready image and PDF tools you can use immediately.</p>
           </div>
           <div className="card-grid">
             {liveProducts.map((product) => (
@@ -264,8 +264,8 @@ export default function App() {
 
         <section className="panel blog" aria-label="Latest blog posts">
           <div className="section-heading">
-            <h2>From the blog</h2>
-            <p>Source-backed workflow guides published on a recurring schedule.</p>
+            <h2>Image and PDF Workflow Guides</h2>
+            <p>Source-backed SEO articles and practical tutorials published on a recurring schedule.</p>
           </div>
           <div className="card-grid">
             {blogPosts.slice(0, 3).map((post) => (
@@ -284,8 +284,8 @@ export default function App() {
 
         <section className="panel beta" aria-label="Beta features">
           <div className="section-heading">
-            <h2>Will be released soon</h2>
-            <p>Features planned for upcoming release.</p>
+            <h2>Upcoming Features Releasing Soon</h2>
+            <p>Features currently in testing and planned for public release.</p>
           </div>
           <div className="card-grid">
             {betaFeatures.map((feature) => (
@@ -311,8 +311,8 @@ export default function App() {
 
         <section className="panel faq" aria-label="Frequently asked questions">
           <div className="section-heading">
-            <h2>FAQs</h2>
-            <p>Answers to common questions about Dayfiles tools and features.</p>
+            <h2>Frequently Asked Questions About Dayfiles</h2>
+            <p>Answers about free usage, no-account access, and product availability.</p>
           </div>
           <div className="faq-grid">
             {faqs.map((faq) => (
