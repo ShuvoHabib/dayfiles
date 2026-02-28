@@ -1,5 +1,22 @@
 [
   {
+    "title": "PDF Fill and Sign Workflow for Daily Teams",
+    "slug": "pdf-fill-sign-private-workflow",
+    "date": "2026-02-28",
+    "product": "pdf",
+    "description": "Build a repeatable PDF fill-and-sign workflow with Dayfiles. Learn validation, naming, approval, export, and archive steps for private daily teams.",
+    "tags": [
+      "pdf fill and sign",
+      "privacy-first workflow",
+      "dayfiles",
+      "employee documents"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/pdf-fill-sign-private-workflow",
+    "featuredImage": "/blog/images/pdf-fill-sign-private-workflow.svg",
+    "featuredImageAlt": "PDF fill and sign private workflow visual",
+    "readingMinutes": 3
+  },
+  {
     "title": "Everyday Image Studio Passport Photo Checklist for Visa and Study Applications",
     "slug": "eis-passport-photo-checklist",
     "date": "2026-02-26",
