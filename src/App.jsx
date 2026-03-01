@@ -41,6 +41,13 @@ const extensionLink =
 const extensionBannerStorageKey = 'dayfiles_extension_banner_dismissed_v1';
 const themeStorageKey = 'dayfiles_theme';
 const themeOptions = new Set(['system', 'light', 'dark']);
+const navigationLinks = [
+  { label: 'Blog', href: '/blog' },
+  { label: 'Chrome Extension', href: extensionLink, external: true },
+  { label: 'Everyday Image Studio', href: 'https://everydayimagestudio.dayfiles.com/', external: true },
+  { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
+  { label: 'PDF Toolkit', href: 'https://pdf.dayfiles.com/', external: true }
+];
 
 const faqs = [
   {
@@ -71,6 +78,7 @@ export default function App() {
   const [themePreference, setThemePreference] = useState('system');
   const [resolvedTheme, setResolvedTheme] = useState('dark');
   const [blogPosts, setBlogPosts] = useState([]);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const getSystemTheme = () => (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
@@ -131,6 +139,24 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setMobileNavOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileNavOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileNavOpen]);
+
+  useEffect(() => {
     let mounted = true;
     fetch('/blog-index.json')
       .then((response) => (response.ok ? response.json() : []))
@@ -162,6 +188,14 @@ export default function App() {
     applyThemePreference(nextPreference, true);
   };
 
+  const openMobileNav = () => {
+    setMobileNavOpen(true);
+  };
+
+  const closeMobileNav = () => {
+    setMobileNavOpen(false);
+  };
+
   return (
     <div className="site-shell">
       {showExtensionBanner && (
@@ -185,24 +219,12 @@ export default function App() {
         </aside>
       )}
 
-      <div className="producthunt-badge-wrap">
-        <a
-          href="https://www.producthunt.com/products/everyday-image-studio-chrome-extension?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-everyday-image-studio-chrome-extension"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            alt=" Everyday Image Studio- Chrome Extension - Privacy first photo editing in your browser, in minutes. | Product Hunt"
-            width="250"
-            height="54"
-            loading="lazy"
-            decoding="async"
-            src="/producthunt-featured.svg"
-          />
-        </a>
-      </div>
-
       <header className={`topbar${isHeaderScrolled ? ' topbar-scrolled' : ''}`}>
+        <button type="button" className="hamburger-button" aria-label="Open navigation menu" onClick={openMobileNav}>
+          <span />
+          <span />
+          <span />
+        </button>
         <a className="brand" href="#home">
           <img src="/dayfiles-logo.svg" alt="Dayfiles logo" />
           <span>dayfiles.com</span>
@@ -216,14 +238,65 @@ export default function App() {
               <option value="dark">Dark</option>
             </select>
           </label>
-          <a className="header-link" href="/blog">
-            Blog
-          </a>
-          <a className="header-cta" href="/pdf-toolkit">
-            Open Tools
-          </a>
+          {navigationLinks.map((item, index) => (
+            <a
+              key={item.href}
+              className={index === navigationLinks.length - 1 ? 'header-cta' : 'header-link'}
+              href={item.href}
+              target={item.external ? '_blank' : undefined}
+              rel={item.external ? 'noreferrer' : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
       </header>
+
+      <div
+        className={`mobile-nav-overlay${mobileNavOpen ? ' is-open' : ''}`}
+        aria-hidden={mobileNavOpen ? 'false' : 'true'}
+        onClick={closeMobileNav}
+      >
+        <aside
+          className={`mobile-nav-drawer${mobileNavOpen ? ' is-open' : ''}`}
+          aria-label="Mobile navigation"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <div className="mobile-nav-header">
+            <span>Menu</span>
+            <button type="button" className="mobile-nav-close" aria-label="Close navigation menu" onClick={closeMobileNav}>
+              ×
+            </button>
+          </div>
+          <label className="theme-select-wrap mobile-theme-select" htmlFor="theme-select-mobile">
+            <span className="sr-only">Theme</span>
+            <select
+              id="theme-select-mobile"
+              className="theme-select"
+              value={themePreference}
+              onChange={onThemeSelect}
+            >
+              <option value="system">System ({resolvedTheme})</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+          <nav className="mobile-nav-links">
+            {navigationLinks.map((item) => (
+              <a
+                key={item.href}
+                className="mobile-nav-link"
+                href={item.href}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noreferrer' : undefined}
+                onClick={closeMobileNav}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        </aside>
+      </div>
 
       <main id="home">
         <section className="hero">
