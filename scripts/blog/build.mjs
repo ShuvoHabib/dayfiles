@@ -243,31 +243,53 @@ function sharedStyles() {
     background: transparent;
     text-decoration: none;
   }
-  .theme-select-wrap {
+  .theme-toggle {
     display: inline-flex;
     align-items: center;
+    justify-content: space-between;
+    gap: .55rem;
     border: 1px solid var(--line);
     border-radius: 999px;
-    padding: .25rem .34rem;
-  }
-  .theme-select {
-    border: 0;
-    border-radius: 999px;
+    padding: .34rem .42rem .34rem .76rem;
     background: transparent;
     color: var(--text-main);
-    font: inherit;
-    font-size: .82rem;
-    padding: .27rem .58rem;
     cursor: pointer;
-    outline: none;
+    font: inherit;
   }
-  .theme-select option { color: #0f1d3a; }
-  .theme-select:focus-visible {
+  .theme-toggle:focus-visible {
     outline: none;
-  }
-  .theme-select-wrap:focus-within {
     border-color: var(--accent-2);
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-2) 24%, transparent);
+  }
+  .theme-toggle-label {
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .01em;
+  }
+  .theme-toggle-switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--text-soft) 24%, transparent);
+    transition: background .2s ease;
+  }
+  .theme-toggle-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    box-shadow: 0 4px 10px rgba(0,0,0,.2);
+    transition: transform .22s ease;
+  }
+  .theme-toggle.is-dark .theme-toggle-switch {
+    background: color-mix(in srgb, var(--accent-2) 30%, transparent);
+  }
+  .theme-toggle.is-dark .theme-toggle-knob {
+    transform: translateX(20px);
   }
   .mobile-nav-overlay {
     position: fixed;
@@ -317,11 +339,7 @@ function sharedStyles() {
     line-height: 1;
     cursor: pointer;
   }
-  .mobile-theme-select {
-    width: 100%;
-    justify-content: space-between;
-    padding: 0.34rem 0.42rem;
-  }
+  .mobile-theme-toggle { width: 100%; }
   .mobile-nav-links {
     display: grid;
     gap: 0.6rem;
@@ -536,15 +554,15 @@ function themeSelectScript() {
     <script>
       (function () {
         var key = 'dayfiles_theme';
-        var select = document.getElementById('theme-select');
-        var mobileSelect = document.getElementById('theme-select-mobile');
-        var selects = [select, mobileSelect].filter(Boolean);
+        var toggle = document.getElementById('theme-toggle');
+        var mobileToggle = document.getElementById('theme-toggle-mobile');
+        var toggles = [toggle, mobileToggle].filter(Boolean);
         var openButton = document.getElementById('nav-open');
         var closeButton = document.getElementById('nav-close');
         var overlay = document.getElementById('mobile-nav-overlay');
         var drawer = document.getElementById('mobile-nav-drawer');
         var media = window.matchMedia('(prefers-color-scheme: dark)');
-        if (!selects.length) return;
+        if (!toggles.length) return;
 
         function getSystemTheme() {
           return media.matches ? 'dark' : 'light';
@@ -553,13 +571,15 @@ function themeSelectScript() {
         function setTheme(preference, persist) {
           var resolved = preference === 'light' || preference === 'dark' ? preference : getSystemTheme();
           document.documentElement.setAttribute('data-theme', resolved);
-          var text = resolved.charAt(0).toUpperCase() + resolved.slice(1);
-          selects.forEach(function (currentSelect) {
-            var systemOption = currentSelect.querySelector('option[value="system"]');
-            if (systemOption) {
-              systemOption.textContent = 'System (' + text + ')';
+          toggles.forEach(function (currentToggle) {
+            currentToggle.classList.toggle('is-dark', resolved === 'dark');
+            currentToggle.classList.toggle('is-light', resolved !== 'dark');
+            currentToggle.setAttribute('aria-pressed', String(resolved === 'dark'));
+            currentToggle.setAttribute('aria-label', 'Switch to ' + (resolved === 'dark' ? 'light' : 'dark') + ' theme');
+            var label = currentToggle.querySelector('.theme-toggle-label');
+            if (label) {
+              label.textContent = resolved === 'dark' ? 'Dark' : 'Light';
             }
-            currentSelect.value = preference;
           });
           if (persist) localStorage.setItem(key, preference);
         }
@@ -588,16 +608,16 @@ function themeSelectScript() {
         var preference = saved === 'light' || saved === 'dark' || saved === 'system' ? saved : 'system';
         setTheme(preference, false);
 
-        selects.forEach(function (currentSelect) {
-          currentSelect.addEventListener('change', function () {
-            var next = currentSelect.value;
-            if (next !== 'light' && next !== 'dark' && next !== 'system') return;
+        toggles.forEach(function (currentToggle) {
+          currentToggle.addEventListener('click', function () {
+            var currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            var next = currentTheme === 'dark' ? 'light' : 'dark';
             setTheme(next, true);
           });
         });
 
         media.addEventListener('change', function () {
-          if (selects[0].value === 'system') {
+          if (!localStorage.getItem(key) || localStorage.getItem(key) === 'system') {
             setTheme('system', false);
           }
         });
@@ -770,14 +790,10 @@ function renderBlogIndexPage(posts) {
         </button>
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
         <div class="top-links">
-          <label class="theme-select-wrap" for="theme-select">
-            <span class="sr-only">Theme</span>
-            <select id="theme-select" class="theme-select" aria-label="Theme">
-              <option value="system">System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </label>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+            <span class="theme-toggle-label">Light</span>
+            <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
+          </button>
           ${renderDesktopNavLinks()}
         </div>
       </nav>
@@ -788,14 +804,10 @@ function renderBlogIndexPage(posts) {
             <span>Menu</span>
             <button id="nav-close" class="mobile-nav-close" type="button" aria-label="Close navigation menu">×</button>
           </div>
-          <label class="theme-select-wrap mobile-theme-select" for="theme-select-mobile">
-            <span class="sr-only">Theme</span>
-            <select id="theme-select-mobile" class="theme-select" aria-label="Theme">
-              <option value="system">System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </label>
+          <button id="theme-toggle-mobile" class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+            <span class="theme-toggle-label">Light</span>
+            <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
+          </button>
           <nav class="mobile-nav-links">
             ${renderMobileNavLinks()}
           </nav>
@@ -891,14 +903,10 @@ function renderPostPage(post, relatedPosts) {
         </button>
         <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles"/> <span>dayfiles.com</span></a>
         <div class="top-links">
-          <label class="theme-select-wrap" for="theme-select">
-            <span class="sr-only">Theme</span>
-            <select id="theme-select" class="theme-select" aria-label="Theme">
-              <option value="system">System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </label>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+            <span class="theme-toggle-label">Light</span>
+            <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
+          </button>
           ${renderDesktopNavLinks()}
         </div>
       </nav>
@@ -909,14 +917,10 @@ function renderPostPage(post, relatedPosts) {
             <span>Menu</span>
             <button id="nav-close" class="mobile-nav-close" type="button" aria-label="Close navigation menu">×</button>
           </div>
-          <label class="theme-select-wrap mobile-theme-select" for="theme-select-mobile">
-            <span class="sr-only">Theme</span>
-            <select id="theme-select-mobile" class="theme-select" aria-label="Theme">
-              <option value="system">System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </label>
+          <button id="theme-toggle-mobile" class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+            <span class="theme-toggle-label">Light</span>
+            <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
+          </button>
           <nav class="mobile-nav-links">
             ${renderMobileNavLinks()}
           </nav>

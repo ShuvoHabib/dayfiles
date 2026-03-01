@@ -8,6 +8,13 @@ const liveProducts = [
     state: 'Live'
   },
   {
+    title: 'Images',
+    subtitle: 'Broader image editing, conversion, and cleanup in one toolbox',
+    href: 'https://images.dayfiles.com/',
+    state: 'Live',
+    external: true
+  },
+  {
     title: 'PDF Toolkit',
     subtitle: 'Merge, compress, convert, and ship clean docs',
     href: '/pdf-toolkit',
@@ -58,7 +65,7 @@ const faqs = [
   {
     question: 'Which Dayfiles tools are live today?',
     answer:
-      'Everyday Image Studio and PDF Toolkit are live products. You can access them directly from dayfiles.com.'
+      'Everyday Image Studio, Images, and PDF Toolkit are live products. You can access them directly from dayfiles.com.'
   },
   {
     question: 'What features are currently in beta?',
@@ -180,11 +187,8 @@ export default function App() {
     setShowExtensionBanner(false);
   };
 
-  const onThemeSelect = (event) => {
-    const nextPreference = event.target.value;
-    if (!themeOptions.has(nextPreference)) {
-      return;
-    }
+  const onThemeToggle = () => {
+    const nextPreference = resolvedTheme === 'dark' ? 'light' : 'dark';
     applyThemePreference(nextPreference, true);
   };
 
@@ -230,14 +234,18 @@ export default function App() {
           <span>dayfiles.com</span>
         </a>
         <div className="header-links">
-          <label className="theme-select-wrap" htmlFor="theme-select">
-            <span className="sr-only">Theme</span>
-            <select id="theme-select" className="theme-select" value={themePreference} onChange={onThemeSelect}>
-              <option value="system">System ({resolvedTheme})</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </label>
+          <button
+            type="button"
+            className={`theme-toggle${resolvedTheme === 'dark' ? ' is-dark' : ' is-light'}`}
+            aria-label={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} theme`}
+            aria-pressed={resolvedTheme === 'dark'}
+            onClick={onThemeToggle}
+          >
+            <span className="theme-toggle-label">{resolvedTheme === 'dark' ? 'Dark' : 'Light'}</span>
+            <span className="theme-toggle-switch" aria-hidden="true">
+              <span className="theme-toggle-knob" />
+            </span>
+          </button>
           {navigationLinks.map((item, index) => (
             <a
               key={item.href}
@@ -268,19 +276,18 @@ export default function App() {
               ×
             </button>
           </div>
-          <label className="theme-select-wrap mobile-theme-select" htmlFor="theme-select-mobile">
-            <span className="sr-only">Theme</span>
-            <select
-              id="theme-select-mobile"
-              className="theme-select"
-              value={themePreference}
-              onChange={onThemeSelect}
-            >
-              <option value="system">System ({resolvedTheme})</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </label>
+          <button
+            type="button"
+            className={`theme-toggle mobile-theme-toggle${resolvedTheme === 'dark' ? ' is-dark' : ' is-light'}`}
+            aria-label={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} theme`}
+            aria-pressed={resolvedTheme === 'dark'}
+            onClick={onThemeToggle}
+          >
+            <span className="theme-toggle-label">{resolvedTheme === 'dark' ? 'Dark' : 'Light'}</span>
+            <span className="theme-toggle-switch" aria-hidden="true">
+              <span className="theme-toggle-knob" />
+            </span>
+          </button>
           <nav className="mobile-nav-links">
             {navigationLinks.map((item) => (
               <a
@@ -303,12 +310,15 @@ export default function App() {
           <p className="eyebrow">File stack for modern teams</p>
           <h1>Free Online Image and PDF Tools with No Account Required</h1>
           <p className="hero-copy">
-            Dayfiles gives you free tools for image and PDF workflows, with no account required and no setup before
-            you start.
+            Dayfiles gives you free tools for workflow-focused image editing, broader image processing, and PDF work,
+            with no account required and no setup before you start.
           </p>
           <div className="hero-actions">
             <a href="/everyday-image-studio">
               Explore Image Studio
+            </a>
+            <a href="https://images.dayfiles.com/" target="_blank" rel="noreferrer">
+              Open Images
             </a>
             <a href="/pdf-toolkit">
               Open PDF Toolkit
@@ -319,7 +329,7 @@ export default function App() {
         <section className="panel products" aria-label="Live products">
           <div className="section-heading">
             <h2>Free Tools Available Now</h2>
-            <p>Production-ready image and PDF tools you can use immediately.</p>
+            <p>Production-ready image workflow, image toolbox, and PDF tools you can use immediately.</p>
           </div>
           <div className="card-grid">
             {liveProducts.map((product) => (
@@ -327,7 +337,7 @@ export default function App() {
                 <div className="badge">{product.state}</div>
                 <h3>{product.title}</h3>
                 <p>{product.subtitle}</p>
-                <a href={product.href}>
+                <a href={product.href} target={product.external ? '_blank' : undefined} rel={product.external ? 'noreferrer' : undefined}>
                   Visit {product.title}
                 </a>
               </article>
