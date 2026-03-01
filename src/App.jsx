@@ -51,9 +51,17 @@ const themeOptions = new Set(['system', 'light', 'dark']);
 const navigationLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Chrome Extension', href: extensionLink, external: true },
-  { label: 'Everyday Image Studio', href: 'https://everydayimagestudio.dayfiles.com/', external: true },
+  { label: 'Everyday Image Studio', href: '/everyday-image-studio' },
   { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
-  { label: 'PDF Toolkit', href: 'https://pdf.dayfiles.com/', external: true }
+  { label: 'PDF Toolkit', href: '/pdf-toolkit' }
+];
+const trustLinks = [
+  { label: 'About Dayfiles', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Editorial Policy', href: '/editorial-policy' },
+  { label: 'Advertising Disclosure', href: '/advertising-disclosure' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms of Service', href: '/terms' }
 ];
 
 const faqs = [
@@ -406,16 +414,50 @@ export default function App() {
             ))}
           </div>
         </section>
+
+        <section className="panel trust" aria-label="Trust and policy pages">
+          <div className="section-heading">
+            <h2>Trust, Editorial, and Policy Pages</h2>
+            <p>Dayfiles publishes clear policy pages so readers and reviewers can see how the site operates.</p>
+          </div>
+          <div className="card-grid">
+            {trustLinks.map((link) => (
+              <article key={link.href} className="card">
+                <h3>{link.label}</h3>
+                <p>Open the page for Dayfiles publisher details, editorial standards, legal terms, or contact information.</p>
+                <a href={link.href}>Open {link.label}</a>
+              </article>
+            ))}
+          </div>
+        </section>
       </main>
 
       <footer className="footer">
-        <p>Dayfiles. Built for daily file work.</p>
+        <p>Dayfiles. Built for daily file work, with visible publisher, policy, and advertising pages.</p>
         <div>
           <a href="/everyday-image-studio">
             Image Studio
           </a>
           <a href="/pdf-toolkit">
             PDF Toolkit
+          </a>
+          <a href="/about">
+            About
+          </a>
+          <a href="/contact">
+            Contact
+          </a>
+          <a href="/editorial-policy">
+            Editorial Policy
+          </a>
+          <a href="/advertising-disclosure">
+            Advertising Disclosure
+          </a>
+          <a href="/privacy-policy">
+            Privacy Policy
+          </a>
+          <a href="/terms">
+            Terms
           </a>
         </div>
       </footer>

@@ -21,6 +21,7 @@ import {
   writeJson
 } from './lib.mjs';
 import { productPages } from '../site/product-pages.mjs';
+import { trustPages } from '../site/trust-pages.mjs';
 import { validatePosts } from './validate.mjs';
 
 const extensionLink =
@@ -28,9 +29,23 @@ const extensionLink =
 const navLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Chrome Extension', href: extensionLink, external: true },
-  { label: 'Everyday Image Studio', href: 'https://everydayimagestudio.dayfiles.com/', external: true },
+  { label: 'Everyday Image Studio', href: '/everyday-image-studio' },
   { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
-  { label: 'PDF Toolkit', href: 'https://pdf.dayfiles.com/', external: true }
+  { label: 'PDF Toolkit', href: '/pdf-toolkit' }
+];
+const footerPrimaryLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'PDF Toolkit', href: '/pdf-toolkit' },
+  { label: 'Everyday Image Studio', href: '/everyday-image-studio' }
+];
+const footerTrustLinks = [
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Editorial Policy', href: '/editorial-policy' },
+  { label: 'Advertising Disclosure', href: '/advertising-disclosure' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms', href: '/terms' }
 ];
 
 function stripMarkdown(markdown) {
@@ -504,6 +519,45 @@ function sharedStyles() {
     color: var(--text-main);
     font-weight: 600;
   }
+  .site-footer {
+    margin-top: 1rem;
+    border-top: 1px solid var(--line);
+    padding: 1rem 0 0.2rem;
+    display: grid;
+    gap: 0.9rem;
+  }
+  .site-footer p {
+    margin: 0;
+    color: var(--text-soft);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem;
+  }
+  .footer-panel {
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 0.9rem;
+    background: var(--card-bg);
+  }
+  .footer-panel h2,
+  .footer-panel h3 {
+    margin: 0 0 0.45rem;
+    font-size: 1rem;
+  }
+  .footer-link-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 0.9rem;
+  }
+  .footer-link-list a {
+    color: var(--text-main);
+    text-decoration: none;
+  }
+  .footer-link-list a:hover {
+    text-decoration: underline;
+  }
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
@@ -670,6 +724,32 @@ function renderMobileNavLinks() {
     .join('\n');
 }
 
+function renderSiteFooter() {
+  return `
+    <footer class="site-footer">
+      <p>Dayfiles publishes source-backed workflow guides and keeps product hubs, policies, and advertising disclosures visible across the site.</p>
+      <div class="footer-grid">
+        <section class="footer-panel">
+          <h2>Explore Dayfiles</h2>
+          <div class="footer-link-list">
+            ${footerPrimaryLinks
+              .map((item) => `<a href="${item.href}">${escapeHtml(item.label)}</a>`)
+              .join('\n')}
+          </div>
+        </section>
+        <section class="footer-panel">
+          <h2>Policies and trust</h2>
+          <div class="footer-link-list">
+            ${footerTrustLinks
+              .map((item) => `<a href="${item.href}">${escapeHtml(item.label)}</a>`)
+              .join('\n')}
+          </div>
+        </section>
+      </div>
+    </footer>
+  `;
+}
+
 function thirdPartyScripts() {
   return `
     <script>
@@ -824,6 +904,8 @@ function renderBlogIndexPage(posts) {
         <h2>Latest Articles on PDF and Image Workflows</h2>
         <div class="grid">${cards || '<p class="muted">No posts yet.</p>'}</div>
       </section>
+
+      ${renderSiteFooter()}
     </main>
     ${themeSelectScript()}
   </body>
@@ -959,12 +1041,17 @@ function renderPostPage(post, relatedPosts) {
           Dayfiles may place relevant Google Ads on selected pages to support free guides. Ads are kept separate from
           editorial recommendations.
         </p>
+        <p class="muted">
+          Learn more on <a href="/editorial-policy">Editorial Policy</a>, <a href="/advertising-disclosure">Advertising Disclosure</a>, and <a href="/contact">Contact</a>.
+        </p>
       </section>
 
       <section class="panel">
         <h2>Related posts</h2>
         <div class="grid">${relatedHtml || '<p class="muted">More posts coming soon.</p>'}</div>
       </section>
+
+      ${renderSiteFooter()}
     </main>
     ${themeSelectScript()}
   </body>
@@ -1020,6 +1107,11 @@ function buildSitemap(posts) {
       priority: '0.9',
       changefreq: 'weekly'
     })),
+    ...trustPages.map((page) => ({
+      loc: `${SITE_URL}/${page.slug}`,
+      priority: '0.6',
+      changefreq: 'monthly'
+    })),
     { loc: `${SITE_URL}/blog`, priority: '0.9', changefreq: 'daily' },
     ...posts.map((post) => ({
       loc: post.canonicalUrl,
@@ -1056,6 +1148,7 @@ function buildLlms(posts) {
     '## Canonical Site',
     '- https://dayfiles.com/',
     ...productPages.map((page) => `- ${page.canonicalUrl}`),
+    ...trustPages.map((page) => `- ${SITE_URL}/${page.slug}`),
     '- https://dayfiles.com/blog',
     '',
     '## Live Tools',
@@ -1065,6 +1158,9 @@ function buildLlms(posts) {
     '## Blog Discovery',
     '- RSS: https://dayfiles.com/blog/feed.xml',
     '- Sitemap: https://dayfiles.com/sitemap.xml',
+    '',
+    '## Trust Pages',
+    ...trustPages.map((page) => `- ${SITE_URL}/${page.slug}`),
     '',
     '## Latest Blog Posts'
   ];
@@ -1094,6 +1190,7 @@ function buildRedirects(posts) {
   const lines = [
     ...legacyBlogRedirects,
     ...productPages.map((page) => `/${page.slug} /${page.slug}/index.html 200`),
+    ...trustPages.map((page) => `/${page.slug} /${page.slug}/index.html 200`),
     '/blog /blog/index.html 200',
     ...posts.map((post) => `/blog/${post.slug} /blog/${post.slug}/index.html 200`),
     '/* /index.html 200'

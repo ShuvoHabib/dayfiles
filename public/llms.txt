@@ -7,6 +7,12 @@ Core user value: free core workflows, no account required for core usage, and pr
 - https://dayfiles.com/
 - https://dayfiles.com/pdf-toolkit
 - https://dayfiles.com/everyday-image-studio
+- https://dayfiles.com/about
+- https://dayfiles.com/contact
+- https://dayfiles.com/privacy-policy
+- https://dayfiles.com/terms
+- https://dayfiles.com/editorial-policy
+- https://dayfiles.com/advertising-disclosure
 - https://dayfiles.com/blog
 
 ## Live Tools
@@ -16,6 +22,14 @@ Core user value: free core workflows, no account required for core usage, and pr
 ## Blog Discovery
 - RSS: https://dayfiles.com/blog/feed.xml
 - Sitemap: https://dayfiles.com/sitemap.xml
+
+## Trust Pages
+- https://dayfiles.com/about
+- https://dayfiles.com/contact
+- https://dayfiles.com/privacy-policy
+- https://dayfiles.com/terms
+- https://dayfiles.com/editorial-policy
+- https://dayfiles.com/advertising-disclosure
 
 ## Latest Blog Posts
 - PDF Fill and Sign Workflow Guide for Private Teams: https://dayfiles.com/blog/pdf-fill-sign-private-workflow

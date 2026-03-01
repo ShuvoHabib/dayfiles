@@ -1,8 +1,9 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { PUBLIC_DIR, SITE_URL, ensureDir, readPosts } from '../blog/lib.mjs';
+import { PUBLIC_DIR, SITE_URL, ensureDir, formatHumanDate, readPosts } from '../blog/lib.mjs';
 import { getProductPageBySlug, productPages } from './product-pages.mjs';
+import { trustPages } from './trust-pages.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const extensionLink =
@@ -10,9 +11,23 @@ const extensionLink =
 const navLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Chrome Extension', href: extensionLink, external: true },
-  { label: 'Everyday Image Studio', href: 'https://everydayimagestudio.dayfiles.com/', external: true },
+  { label: 'Everyday Image Studio', href: '/everyday-image-studio' },
   { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
-  { label: 'PDF Toolkit', href: 'https://pdf.dayfiles.com/', external: true }
+  { label: 'PDF Toolkit', href: '/pdf-toolkit' }
+];
+const footerPrimaryLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'PDF Toolkit', href: '/pdf-toolkit' },
+  { label: 'Everyday Image Studio', href: '/everyday-image-studio' }
+];
+const footerTrustLinks = [
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Editorial Policy', href: '/editorial-policy' },
+  { label: 'Advertising Disclosure', href: '/advertising-disclosure' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms', href: '/terms' }
 ];
 
 function escapeHtml(value) {
@@ -540,6 +555,45 @@ function sharedStyles() {
   .guide-link:hover h3 {
     color: var(--accent-2);
   }
+  .site-footer {
+    margin-top: 1rem;
+    border-top: 1px solid var(--line);
+    padding: 1rem 0 0.2rem;
+    display: grid;
+    gap: 0.9rem;
+  }
+  .site-footer p {
+    margin: 0;
+    color: var(--text-soft);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem;
+  }
+  .footer-panel {
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 0.9rem;
+    background: var(--card-bg);
+  }
+  .footer-panel h2,
+  .footer-panel h3 {
+    margin-bottom: 0.45rem;
+    font-size: 1rem;
+  }
+  .footer-link-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 0.9rem;
+  }
+  .footer-link-list a {
+    color: var(--text-main);
+    text-decoration: none;
+  }
+  .footer-link-list a:hover {
+    text-decoration: underline;
+  }
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
@@ -627,6 +681,62 @@ function buildJsonLd(page) {
   };
 
   return JSON.stringify({ '@graph': [software, faq, breadcrumb] });
+}
+
+function buildTrustJsonLd(page) {
+  const webPage = {
+    '@context': 'https://schema.org',
+    '@type': page.schemaType || 'WebPage',
+    name: page.shortTitle,
+    url: `${SITE_URL}/${page.slug}`,
+    description: page.description,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Dayfiles',
+      url: `${SITE_URL}/`
+    }
+  };
+
+  if (page.contactEmail) {
+    webPage.email = page.contactEmail;
+  }
+
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: page.shortTitle, item: `${SITE_URL}/${page.slug}` }
+    ]
+  };
+
+  return JSON.stringify({ '@graph': [webPage, breadcrumb] });
+}
+
+function renderFooter() {
+  return `
+    <footer class="site-footer">
+      <p>Dayfiles publishes browser-based PDF and image workflow guides with visible product hubs, policy pages, and advertising disclosure.</p>
+      <div class="footer-grid">
+        <section class="footer-panel">
+          <h2>Explore Dayfiles</h2>
+          <div class="footer-link-list">
+            ${footerPrimaryLinks
+              .map((item) => `<a href="${item.href}">${escapeHtml(item.label)}</a>`)
+              .join('\n')}
+          </div>
+        </section>
+        <section class="footer-panel">
+          <h2>Policies and trust</h2>
+          <div class="footer-link-list">
+            ${footerTrustLinks
+              .map((item) => `<a href="${item.href}">${escapeHtml(item.label)}</a>`)
+              .join('\n')}
+          </div>
+        </section>
+      </div>
+    </footer>
+  `;
 }
 
 function renderPage(page, relatedPosts) {
@@ -761,6 +871,104 @@ function renderPage(page, relatedPosts) {
         <p>${escapeHtml(page.companionCopy)}</p>
         <p><a href="/${escapeHtml(companion.slug)}">Explore ${escapeHtml(companion.shortTitle)}</a></p>
       </section>
+
+      ${renderFooter()}
+    </main>
+    ${themeSelectScript()}
+  </body>
+</html>`;
+}
+
+function renderTrustPage(page, lastUpdated) {
+  const sectionHtml = page.sections
+    .map((section) => {
+      const paragraphs = (section.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n');
+      const list = Array.isArray(section.list)
+        ? `<ul>${section.list.map((item) => `<li>${escapeHtml(item)}</li>`).join('\n')}</ul>`
+        : '';
+      return `
+        <section class="panel prose">
+          <h2>${escapeHtml(section.title)}</h2>
+          ${paragraphs}
+          ${list}
+        </section>
+      `;
+    })
+    .join('\n');
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    ${themeBootstrapScript()}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <title>${escapeHtml(page.title)}</title>
+    <meta name="description" content="${escapeHtml(page.description)}" />
+    <link rel="canonical" href="${SITE_URL}/${escapeHtml(page.slug)}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="${escapeHtml(page.title)}" />
+    <meta property="og:description" content="${escapeHtml(page.description)}" />
+    <meta property="og:url" content="${SITE_URL}/${escapeHtml(page.slug)}" />
+    <meta property="og:image" content="${SITE_URL}/dayfiles-logo.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${escapeHtml(page.title)}" />
+    <meta name="twitter:description" content="${escapeHtml(page.description)}" />
+    <meta name="twitter:image" content="${SITE_URL}/dayfiles-logo.svg" />
+    ${thirdPartyScripts()}
+    <script type="application/ld+json">${buildTrustJsonLd(page)}</script>
+    <style>${sharedStyles()}</style>
+  </head>
+  <body>
+    <main class="wrap">
+      <nav class="top" aria-label="Primary">
+        <button id="nav-open" class="hamburger-button" type="button" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="brand" href="/"><img src="/dayfiles-logo.svg" alt="Dayfiles" /> <span>dayfiles.com</span></a>
+        <div class="top-links">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+            <span class="theme-toggle-label">Light</span>
+            <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
+          </button>
+          ${renderDesktopNavLinks()}
+        </div>
+      </nav>
+
+      <div id="mobile-nav-overlay" class="mobile-nav-overlay" aria-hidden="true">
+        <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile navigation">
+          <div class="mobile-nav-header">
+            <span>Menu</span>
+            <button id="nav-close" class="mobile-nav-close" type="button" aria-label="Close navigation menu">×</button>
+          </div>
+          <button id="theme-toggle-mobile" class="theme-toggle mobile-theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+            <span class="theme-toggle-label">Light</span>
+            <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
+          </button>
+          <nav class="mobile-nav-links">
+            ${renderMobileNavLinks()}
+          </nav>
+        </aside>
+      </div>
+
+      <section class="panel">
+        <div class="crumbs">
+          <a href="/">Home</a> <span>›</span> <span>${escapeHtml(page.shortTitle)}</span>
+        </div>
+        <p class="eyebrow">${escapeHtml(page.heroEyebrow)}</p>
+        <h1 class="hero-title">${escapeHtml(page.h1)}</h1>
+        <p class="hero-copy">${escapeHtml(page.heroCopy)}</p>
+        <p class="muted">Last updated ${escapeHtml(lastUpdated)}</p>
+      </section>
+
+      ${sectionHtml}
+
+      ${renderFooter()}
     </main>
     ${themeSelectScript()}
   </body>
@@ -780,12 +988,20 @@ export async function buildProductPages() {
     await fs.writeFile(path.join(outDir, 'index.html'), renderPage(page, relatedPosts), 'utf8');
   }
 
-  return { count: productPages.length };
+  const lastUpdated = formatHumanDate(new Date().toISOString());
+
+  for (const page of trustPages) {
+    const outDir = path.join(PUBLIC_DIR, page.slug);
+    await ensureDir(outDir);
+    await fs.writeFile(path.join(outDir, 'index.html'), renderTrustPage(page, lastUpdated), 'utf8');
+  }
+
+  return { count: productPages.length + trustPages.length };
 }
 
 async function main() {
   const result = await buildProductPages();
-  console.log(`Generated static product pages for ${result.count} route(s).`);
+  console.log(`Generated static site pages for ${result.count} route(s).`);
 }
 
 const isDirectRun = process.argv[1] && path.resolve(process.argv[1]) === __filename;
