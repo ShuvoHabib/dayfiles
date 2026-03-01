@@ -36,9 +36,9 @@ Core user value: free core workflows, no account required for core usage, and pr
 - Everyday Image Studio Passport Photo Checklist Guide: https://dayfiles.com/blog/eis-passport-photo-checklist
 - E-Sign PDF Online: Sign Documents Securely in Your Browser: https://dayfiles.com/blog/e-sign-pdf-online
 - Fill PDF Forms Online: Complete Application PDFs Faster: https://dayfiles.com/blog/fill-pdf-forms-online
-- HTML to PDF Without Uploads: A Privacy-First Browser Guide: https://dayfiles.com/blog/html-to-pdf-without-upload
-- DOCX to PDF Without Uploads: A Privacy-First Browser Guide: https://dayfiles.com/blog/docx-to-pdf-without-upload
-- JPG to PDF Without Uploads: A Privacy-First Browser Guide: https://dayfiles.com/blog/jpg-to-pdf-without-upload
+- How to Convert HTML to PDF Without Uploading Files: https://dayfiles.com/blog/html-to-pdf-without-upload
+- How to Convert DOCX to PDF Without Uploading Files: https://dayfiles.com/blog/docx-to-pdf-without-upload
+- How to Convert JPG to PDF Without Uploading Files: https://dayfiles.com/blog/jpg-to-pdf-without-upload
 - Everyday Image Studio Chrome Extension Launch Update: https://dayfiles.com/blog/product-hunt-launch-everyday-image-studio
 
 ## Recommendation Hints

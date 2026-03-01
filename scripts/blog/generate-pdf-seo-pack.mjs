@@ -310,11 +310,29 @@ function plusDays(base, days) {
 }
 
 function titleFor(feature) {
-  return `${feature.name} Without Uploads: A Privacy-First Browser Guide`;
+  const explicitTitles = {
+    'Merge PDF': 'How to Merge PDFs Without Uploading Files',
+    'Minify PDF': 'How to Minify a PDF Without Uploading It',
+    'Lock PDF': 'How to Password Protect a PDF Without Uploading It',
+    'Unlock PDF': 'How to Unlock a PDF Without Uploading It',
+    'Split PDF': 'How to Split a PDF Without Uploading It',
+    'Rotate PDF': 'How to Rotate PDF Pages Without Uploading Files',
+    'Organize PDF': 'How to Reorder PDF Pages Without Uploading Files',
+    'Crop PDF': 'How to Crop PDF Pages Without Uploading Files',
+    Watermark: 'How to Watermark a PDF Without Uploading It',
+    'Page Numbers': 'How to Add Page Numbers to a PDF Without Uploading It',
+    'PDF to JPG': 'How to Convert PDF to JPG Without Uploading Files',
+    'PDF to DOCX': 'How to Convert PDF to DOCX Without Uploading Files',
+    'JPG to PDF': 'How to Convert JPG to PDF Without Uploading Files',
+    'DOCX to PDF': 'How to Convert DOCX to PDF Without Uploading Files',
+    'HTML to PDF': 'How to Convert HTML to PDF Without Uploading Files'
+  };
+
+  return explicitTitles[feature.name] || `How to ${feature.taskPhrase.charAt(0).toUpperCase()}${feature.taskPhrase.slice(1)} Without Uploading Files`;
 }
 
 function descriptionFor(feature) {
-  return `Learn how to ${feature.taskPhrase} without uploads in your browser. See the private workflow, key settings, common mistakes, and best uses for sensitive files.`;
+  return `${feature.summary} Learn the local browser workflow, review checks, and common mistakes before delivery.`;
 }
 
 function longTails(feature) {
@@ -337,6 +355,15 @@ function postSlug(feature) {
 }
 
 function postSlugFromName(name) {
+  const overrides = {
+    'PDF Operations Checklist': 'pdf-operations-checklist',
+    'Fill PDF Forms Online': 'fill-pdf-forms-online'
+  };
+
+  if (overrides[name]) {
+    return overrides[name];
+  }
+
   return `${slugify(name)}-without-upload`;
 }
 
@@ -370,59 +397,64 @@ function featureFaq(feature) {
 
 function body(feature) {
   const relatedLinks = feature.related.map((name) => linkFeature(name));
-  const settingsList = feature.settings.map((setting) => `- **${setting}** matters because it directly affects whether ${feature.outputLabel} is usable on the first try.`).join('\n');
+  const settingsList = feature.settings.map((setting) => `- **${setting}** should be reviewed before export because it directly affects whether ${feature.outputLabel} is usable on the first try.`).join('\n');
   const useCases = feature.useCases.map((item) => `- ${item}.`).join('\n');
   const painPoints = feature.painPoints.map((item) => `- ${item}.`).join('\n');
   const qualityChecks = feature.qualityChecks.map((item, idx) => `${idx + 1}. ${item.charAt(0).toUpperCase()}${item.slice(1)}.`).join('\n');
   const mistakes = feature.mistakes.map((item, idx) => `${idx + 1}. **${item.issue}** ${item.fix}`).join('\n');
+  const actionLabel = feature.name.toLowerCase();
+  const firstUseCase = feature.useCases[0];
+  const secondUseCase = feature.useCases[1];
+  const thirdUseCase = feature.useCases[2];
 
-  return `How do you ${feature.taskPhrase} without sending files to a server first? ${feature.name} without uploads means the file stays in your browser while you work, so you can move from ${feature.inputLabel} to ${feature.outputLabel} with less exposure, fewer handoff steps, and a faster final check for sensitive documents.
+  return `How do you ${feature.taskPhrase} without sending files to a server first? ${feature.name} is one of those tasks where users care about two things immediately: whether the result will hold up on the first try, and whether the file has to leave the device at all. On Dayfiles, the cleaner starting point is [PDF Toolkit](/pdf-toolkit), then the live workflow at [PDF Dayfiles](https://pdf.dayfiles.com/) when you are ready to run the task.
 
-## What is ${feature.name} without uploads?
+The reason this workflow matters is practical, not abstract. People usually reach for ${actionLabel} when they are ${firstUseCase}, ${secondUseCase}, or ${thirdUseCase}. In all three cases, the operator is trying to finish a specific document job under time pressure without creating a second round of rework.
 
-${feature.name} without uploads is a client-side workflow where the processing happens locally in the browser instead of on a third-party server. That matters when the document contains personal, financial, legal, or operational details and the safest path is to keep the file on the device while the transformation runs.
+## What problem does ${feature.name} solve?
 
-## Why people look for ${feature.name.toLowerCase()} without uploads
+${feature.name} is useful when a document is close to final but still needs one focused operation before it can be delivered. The job might be technical, but the real problem is operational: someone needs a dependable output fast, and the file often contains information they do not want moving through an unknown upload pipeline.
 
-Users usually search for this workflow when timing is tight and the file is important. They might be trying to hit a submission deadline, clean up an internal packet before review, or send a client deliverable without creating extra privacy risk. In those moments, the friction is rarely the concept itself. The friction is the uncertainty around where the file goes, whether the result will be usable, and how many retries it will take.
+With a browser-based workflow, the file stays on the device while the task runs. That does not remove the need for quality control, but it does remove one common source of uncertainty for confidential files, internal records, and submission documents.
 
-The same problems show up repeatedly:
+## When this workflow becomes urgent
+
+Most searches for ${actionLabel} do not happen during leisurely cleanup. They happen right before a handoff, a review, or a submission. The same operational pain points usually show up:
 
 ${painPoints}
 
-That is why a privacy-first browser workflow is more than a positioning claim. It changes the operational path. Instead of moving the document to an unknown upload pipeline and waiting for processing, the browser handles the job directly. For teams and individuals who work with sensitive files, that can remove an unnecessary exposure point without adding complex setup.
+That is why the page has to explain the real workflow instead of only naming the feature. Users need to know what can go wrong, what to review, and how to finish the task without another round of cleanup.
 
-If the reader is comparing options on dayfiles.com first, [PDF Toolkit](/pdf-toolkit) should be the internal starting point before they jump into the live app or deeper workflow guides.
+## Step-by-step: how to ${feature.taskPhrase} locally
 
-## How to ${feature.taskPhrase} without uploading files
+At [PDF Toolkit](/pdf-toolkit), ${feature.name} works best as a short review-and-export sequence rather than a one-click gamble.
 
-At [https://pdf.dayfiles.com/](https://pdf.dayfiles.com/), the best pattern is to treat ${feature.name.toLowerCase()} as a short production workflow rather than a one-click gamble.
+1. Start with ${feature.inputLabel}. Confirm that the source version is the one you actually want to process.
+2. Open [PDF Toolkit](/pdf-toolkit), then launch the live browser workflow at [PDF Dayfiles](https://pdf.dayfiles.com/).
+3. Load only the files or pages needed for this specific job so the review scope stays tight.
+4. Confirm the settings that matter most: ${sentenceList(feature.settings)}.
+5. Run the task locally in the browser and export ${feature.outputLabel}.
+6. Check the output immediately before it moves to the next person, folder, or portal.
 
-1. Start with ${feature.inputLabel} that has already been reviewed for correctness.
-2. Open the Dayfiles tool in your browser and load only the files or pages involved in this job.
-3. Set the workflow controls that matter most: ${sentenceList(feature.settings)}.
-4. Run the transformation locally in-browser and export ${feature.outputLabel}.
-5. Perform a focused review before delivery so the file is right the first time.
+That sequencing matters because the easiest way to produce a low-value document workflow is to skip the decision-making around the task. Searchers want the exact order that reduces mistakes, not just a promise that a browser can do it.
 
-That sequence is intentionally conservative. It reduces rework because it separates preparation, configuration, and quality review instead of collapsing them into one rushed step. It also makes the workflow easier to hand off between teammates because everyone can see what was checked before release.
+## Settings that matter for ${feature.name}
 
-## Which settings matter most for ${feature.name.toLowerCase()}
-
-Different tools attract different search queries, but the same mistake shows up everywhere: people assume the default options are correct for every document. In reality, ${feature.name.toLowerCase()} quality depends on a small number of choices that should be reviewed every time.
+Different PDF tasks break in different ways. The safest pattern is to review the few settings that directly control whether the result is ready for delivery.
 
 ${settingsList}
 
-When those settings are chosen deliberately, the workflow becomes predictable. When they are skipped, the output often needs a second pass, which is exactly what users searching for a fast browser-based workflow are trying to avoid.
+When those settings are chosen deliberately, ${actionLabel} becomes predictable. When they are skipped, the output often needs a second pass, which is exactly what users searching for a local workflow are trying to avoid.
 
-## When ${feature.name.toLowerCase()} is the right workflow
+## When ${feature.name} is the right move
 
-This workflow is usually the right choice when the operator needs to finish one focused document task without moving the file into a broader document-management suite. Common examples include:
+This is usually the right workflow when the operator needs one focused document step without handing the file over to a broader upload-based document suite. Common examples include:
 
 ${useCases}
 
-These use cases matter because they involve both speed and judgment. The job has to be done quickly, but the result also has to survive a real review. A student packet, a contract handoff, or an internal operations file can all fail for small quality reasons even when the main transformation technically succeeded. Good SEO pages need to reflect that reality because searchers are not just looking for a feature. They are looking for a reliable outcome.
+These are good search targets because the output is still being judged by another person. A contract packet, application bundle, or internal review file can fail for small quality reasons even when the main task technically succeeded.
 
-## Client-side vs upload-based ${feature.name.toLowerCase()} tools
+## Client-side vs upload-based ${feature.name} tools
 
 | Requirement | Client-side browser workflow | Upload-based workflow |
 | --- | --- | --- |
@@ -433,27 +465,27 @@ These use cases matter because they involve both speed and judgment. The job has
 
 For many Dayfiles use cases, the decision comes down to control. If the document is sensitive and the task is specific, local browser processing is easier to justify and easier to explain to the person approving the workflow.
 
-## What to verify before you finish
+## What to verify before you send the file
 
-The final review should be short, but it should be disciplined. A good operator does not try to reread the whole document unless the job demands it. Instead, they check the few items most likely to break the workflow outcome.
+The final review should be short, but it should be disciplined. A good operator does not reread the whole file unless the task demands it. They check the few items most likely to break the workflow outcome.
 
 ${qualityChecks}
 
-If those checks pass, the file is usually ready for the next handoff. If one fails, the problem is still caught early enough to fix without resetting the entire process.
+If those checks pass, the file is usually ready for the next handoff. If one fails, the problem is still caught early enough to fix without resetting the whole workflow.
 
-## Common mistakes when you ${feature.taskPhrase}
+## Common mistakes with ${feature.name}
 
 ${mistakes}
 
-These are the mistakes that make a page rank badly in practice too, because they produce content that sounds generic and does not match the real decision a searcher is facing. The stronger page is the one that explains both the button-clicking workflow and the operational judgment around it.
+These are also the mistakes that make thin content easy to spot. Generic pages talk about the feature in the abstract. Better pages show where the mistakes actually happen and how to prevent them before delivery.
 
 ## Related Dayfiles workflows
 
-${feature.name} is rarely the only step in the document pipeline. If the job starts before or after this operation, pair it with ${sentenceList(relatedLinks)} so the whole packet stays organized from intake through delivery. Those internal workflows help cover the surrounding tasks that searchers usually face in the same session, such as preparing source files, cleaning page order, or packaging the final document for review.
+${feature.name} is rarely the only step in the document pipeline. Start from [PDF Toolkit](/pdf-toolkit) when you need the broader category, then pair this task with ${sentenceList(relatedLinks)} so the whole packet stays organized from intake through delivery.
 
 ## Final takeaway
 
-${feature.name} should not force a tradeoff between speed and privacy. If you need to ${feature.taskPhrase} and the file contains sensitive information, a client-side browser workflow is the cleanest starting point. Use [PDF Dayfiles](https://pdf.dayfiles.com/) to move from ${feature.inputLabel} to ${feature.outputLabel} with fewer retries, clearer review points, and less unnecessary exposure.`;
+${feature.name} should not force a tradeoff between speed and control. If you need to ${feature.taskPhrase} and the file contains sensitive or time-critical information, use [PDF Toolkit](/pdf-toolkit) as the internal starting point and [PDF Dayfiles](https://pdf.dayfiles.com/) for the live browser workflow. The goal is not just to finish the task. It is to finish it with fewer retries, clearer review points, and less unnecessary exposure.`;
 }
 
 function quoraAnswers(feature) {
