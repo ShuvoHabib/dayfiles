@@ -1,33 +1,40 @@
 ---
-title: "PDF Visa Packet Checklist for Faster Reviews"
-slug: "pdf-visa-application-packet-checklist"
-date: "2026-02-27"
-product: "pdf"
-description: "Use this PDF visa packet checklist to align forms, signatures, naming, and exports in Dayfiles before final submission deadlines and portal reviews."
+title: PDF Visa Packet Checklist for Faster Reviews
+slug: pdf-visa-application-packet-checklist
+date: '2026-03-02'
+product: pdf
+description: >-
+  Use this PDF visa packet checklist to align forms, signatures, naming, and
+  exports in Dayfiles before final submission deadlines and portal reviews.
 tags:
-  - "visa application pdf"
-  - "document checklist"
-  - "privacy-first"
-  - "dayfiles"
-canonicalUrl: "https://dayfiles.com/blog/pdf-visa-application-packet-checklist"
-featuredImage: "/blog/images/pdf-visa-application-packet-checklist.svg"
-featuredImageAlt: "Visa application packet PDF checklist visual"
+  - visa application pdf
+  - document checklist
+  - privacy-first
+  - dayfiles
+canonicalUrl: 'https://dayfiles.com/blog/pdf-visa-application-packet-checklist'
+featuredImage: /blog/images/pdf-visa-application-packet-checklist.svg
+featuredImageAlt: Visa application packet PDF checklist visual
 sources:
-  - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
-  - title: "Fill PDF Forms"
-    url: "https://pdf.dayfiles.com/fill-pdf-forms"
-  - title: "E-Sign PDF"
-    url: "https://pdf.dayfiles.com/e-sign-pdf"
+  - title: PDF Dayfiles
+    url: 'https://pdf.dayfiles.com/'
+  - title: Fill PDF Forms
+    url: 'https://pdf.dayfiles.com/fill-pdf-forms'
+  - title: E-Sign PDF
+    url: 'https://pdf.dayfiles.com/e-sign-pdf'
 faq:
-  - q: "What is the most common visa packet mistake?"
-    a: "The most common mistake is inconsistent field values across multiple forms, especially names and dates."
-  - q: "Should signatures be added before final review?"
-    a: "No. Final review should come first, then signatures should be added on the locked final version."
-  - q: "Can this workflow help students and employees alike?"
-    a: "Yes. The same packet discipline works for student visa applications and employer-sponsored documentation."
+  - q: What is the most common visa packet mistake?
+    a: >-
+      The most common mistake is inconsistent field values across multiple
+      forms, especially names and dates.
+  - q: Should signatures be added before final review?
+    a: >-
+      No. Final review should come first, then signatures should be added on the
+      locked final version.
+  - q: Can this workflow help students and employees alike?
+    a: >-
+      Yes. The same packet discipline works for student visa applications and
+      employer-sponsored documentation.
 ---
-
 ## Why visa packets fail late
 
 How do visa packets fail even when all the documents are technically present? Visa submissions are often rejected for formatting and consistency issues, not only for missing documents. Applicants may have the right files but still fail because values are not aligned across forms. One file uses initials, another uses full middle name, and a declaration date is in a different format.
