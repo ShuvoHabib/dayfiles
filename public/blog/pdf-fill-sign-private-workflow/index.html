@@ -463,10 +463,23 @@
     font-size: .92em;
   }
   .prose h2, .prose h3 { color: var(--prose-heading); margin-top: 1.3rem; }
-  .faq-list, .source-list { display: grid; gap: .7rem; }
+  .faq-list, .source-list { display: grid; gap: .9rem; }
   .faq-card {
+    display: grid;
+    gap: 0.7rem;
     border: 1px solid var(--faq-card-border);
     background: var(--faq-card-bg);
+    padding: 1.05rem 1.15rem;
+    border-radius: 18px;
+  }
+  .faq-card h3 {
+    margin: 0;
+    line-height: 1.16;
+  }
+  .faq-card .muted,
+  .faq-card p {
+    margin: 0;
+    line-height: 1.58;
   }
   .crumbs {
     display: inline-flex;

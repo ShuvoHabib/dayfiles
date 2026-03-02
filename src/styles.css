@@ -519,20 +519,27 @@ h1 {
 .faq-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 0.9rem;
+  gap: 1rem;
 }
 
 .faq-item {
   border: 1px solid var(--faq-card-border);
   border-radius: 14px;
-  padding: 0.95rem;
+  padding: 1.05rem 1.15rem;
   background: var(--faq-card-bg);
   box-shadow: 0 8px 20px rgba(18, 31, 63, 0.06);
+  display: grid;
+  gap: 0.7rem;
+}
+
+.faq-item h3 {
+  margin: 0;
+  line-height: 1.16;
 }
 
 .faq-item p {
   color: var(--text-soft);
-  margin-bottom: 0;
+  margin: 0;
   line-height: 1.58;
 }
 
