@@ -47,7 +47,9 @@ async function writePlaceholderImage(filePath, product, title) {
   const palette =
     product === 'pdf'
       ? { a: '#63C7FF', b: '#4EA0FF', fg: '#F6F7FB' }
-      : { a: '#5DE2B0', b: '#48C7A7', fg: '#F6F7FB' };
+      : product === 'images'
+        ? { a: '#FFB55E', b: '#F07A48', fg: '#F6F7FB' }
+        : { a: '#5DE2B0', b: '#48C7A7', fg: '#F6F7FB' };
 
   const escapeXml = (value) =>
     String(value)
@@ -75,7 +77,7 @@ async function writePlaceholderImage(filePath, product, title) {
   }
 
   const subtitleLines = lines.slice(0, 2);
-  const productLabel = product === 'pdf' ? 'PDF Toolkit' : 'Everyday Image Studio';
+  const productLabel = product === 'pdf' ? 'PDF Toolkit' : product === 'images' ? 'Images' : 'Everyday Image Studio';
 
   const subtitleCount = Math.max(subtitleLines.length, 1);
   const subtitleHeight = 42 + (subtitleCount - 1) * 52;
@@ -104,7 +106,12 @@ async function writePlaceholderImage(filePath, product, title) {
 }
 
 async function screenshotFallback(filePath, product) {
-  const targetUrl = product === 'pdf' ? 'https://pdf.dayfiles.com/' : 'https://everydayimagestudio.dayfiles.com/';
+  const targetUrl =
+    product === 'pdf'
+      ? 'https://pdf.dayfiles.com/'
+      : product === 'images'
+        ? 'https://images.dayfiles.com/'
+        : 'https://everydayimagestudio.dayfiles.com/';
 
   try {
     const playwright = await import('playwright');
@@ -132,7 +139,7 @@ export async function generateFeaturedImage({ title, product, slug, out, dryRun 
   const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
   const prompt = [
     'Create a clean, editorial featured image for a technical blog post.',
-    `Brand: Dayfiles. Product focus: ${product === 'pdf' ? 'PDF Toolkit' : 'Everyday Image Studio'}.`,
+    `Brand: Dayfiles. Product focus: ${product === 'pdf' ? 'PDF Toolkit' : product === 'images' ? 'Images' : 'Everyday Image Studio'}.`,
     `Post title: ${title}.`,
     'Style: modern SaaS illustration, premium, minimal clutter, soft gradients, no logos from other brands.',
     'No text overlays, no watermark.'

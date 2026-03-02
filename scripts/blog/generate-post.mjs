@@ -7,7 +7,23 @@ import { generateFeaturedImage } from './generate-image.mjs';
 import { CONTENT_DIR, ROOT_DIR, ensureDir, normalizeDateString, postUrl, readPosts, slugify } from './lib.mjs';
 
 function productHubHref(product) {
-  return product === 'pdf' ? '/pdf-toolkit' : '/everyday-image-studio';
+  if (product === 'pdf') {
+    return '/pdf-toolkit';
+  }
+  if (product === 'images') {
+    return 'https://images.dayfiles.com/';
+  }
+  return '/everyday-image-studio';
+}
+
+function productNameFor(product) {
+  if (product === 'pdf') {
+    return 'PDF Toolkit';
+  }
+  if (product === 'images') {
+    return 'Images';
+  }
+  return 'Everyday Image Studio';
 }
 
 function parseArgs(argv) {
@@ -97,7 +113,7 @@ function renderFrontmatter({ title, slug, date, product, description, tags, cano
 }
 
 function fallbackDraft({ topic, product, sources, relatedPosts = [] }) {
-  const productName = product === 'pdf' ? 'PDF Toolkit' : 'Everyday Image Studio';
+  const productName = productNameFor(product);
   const otherName = product === 'pdf' ? 'Everyday Image Studio' : 'PDF Toolkit';
   const hubHref = productHubHref(product);
   const relatedLinks = relatedPosts
@@ -205,7 +221,7 @@ async function generateWithAi({ topic, product, sourceFacts, sources, relatedPos
   }
 
   const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-  const productName = product === 'pdf' ? 'PDF Toolkit' : 'Everyday Image Studio';
+  const productName = productNameFor(product);
 
   const system = `You are a senior SEO content writer for Dayfiles. Return strict JSON only with keys: title, description, tags, markdownBody, faq.
 Rules:

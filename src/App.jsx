@@ -361,7 +361,7 @@ export default function App() {
           <div className="card-grid">
             {blogPosts.slice(0, 3).map((post) => (
               <article key={post.slug} className="card">
-                <div className="badge">{post.product === 'pdf' ? 'PDF' : 'Image'}</div>
+                <div className="badge">{post.product === 'pdf' ? 'PDF' : post.product === 'images' ? 'Images' : 'Image'}</div>
                 <h3>{post.title}</h3>
                 <p>{post.description}</p>
                 <a href={`/blog/${post.slug}`}>Read post</a>

@@ -4,6 +4,12 @@ import { fileURLToPath } from 'node:url';
 import { readPosts, ROOT_DIR } from './lib.mjs';
 
 const TOPICS = {
+  images: [
+    'How teams compress image batches before upload deadlines',
+    'Bulk image resize workflows for listings, CMS, and email',
+    'Practical image conversion workflows for JPG-first delivery',
+    'Privacy-safe photo preparation before public sharing'
+  ],
   eis: [
     'Image workflow automation for recurring content tasks',
     'How teams standardize image output quality with repeatable presets',
@@ -43,9 +49,11 @@ export async function chooseTopic(forceProduct = 'auto') {
   const last = posts[0];
 
   let product = 'eis';
-  if (forceProduct === 'eis' || forceProduct === 'pdf') {
+  if (forceProduct === 'eis' || forceProduct === 'pdf' || forceProduct === 'images') {
     product = forceProduct;
   } else if (last?.product === 'eis') {
+    product = 'pdf';
+  } else if (last?.product === 'images') {
     product = 'pdf';
   }
 

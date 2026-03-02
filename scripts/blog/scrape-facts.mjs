@@ -5,6 +5,11 @@ import { ROOT_DIR, ensureDir } from './lib.mjs';
 
 const TARGETS = [
   {
+    product: 'images',
+    name: 'Images',
+    url: 'https://images.dayfiles.com/'
+  },
+  {
     product: 'eis',
     name: 'Everyday Image Studio',
     url: 'https://everydayimagestudio.dayfiles.com/'

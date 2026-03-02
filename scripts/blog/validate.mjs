@@ -134,8 +134,8 @@ export async function validatePosts(options = {}) {
       }
     }
 
-    if (post.product !== 'eis' && post.product !== 'pdf') {
-      errors.push(`${post.file}: product must be 'eis' or 'pdf'.`);
+    if (post.product !== 'eis' && post.product !== 'pdf' && post.product !== 'images') {
+      errors.push(`${post.file}: product must be 'eis', 'images', or 'pdf'.`);
     }
 
     if (seenSlugs.has(post.slug)) {

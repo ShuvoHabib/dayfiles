@@ -103,8 +103,8 @@ function assertPostContract(data, body, fileName) {
     }
   }
 
-  if (data.product !== 'pdf' && data.product !== 'eis') {
-    throw new Error(`${fileName}: product must be 'pdf' or 'eis'.`);
+  if (data.product !== 'pdf' && data.product !== 'eis' && data.product !== 'images') {
+    throw new Error(`${fileName}: product must be 'pdf', 'eis', or 'images'.`);
   }
 
   if (!Array.isArray(data.tags) || data.tags.length < 2) {

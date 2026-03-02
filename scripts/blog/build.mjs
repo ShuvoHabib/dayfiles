@@ -48,6 +48,20 @@ const footerTrustLinks = [
   { label: 'Terms', href: '/terms' }
 ];
 
+function productBadgeLabel(product) {
+  if (product === 'pdf') {
+    return 'PDF Toolkit';
+  }
+  if (product === 'images') {
+    return 'Images';
+  }
+  return 'Image Studio';
+}
+
+function productArticleSection(product) {
+  return product === 'pdf' ? 'PDF Workflows' : 'Image Workflows';
+}
+
 function stripMarkdown(markdown) {
   return String(markdown)
     .replace(/```[\s\S]*?```/g, ' ')
@@ -81,7 +95,7 @@ function collectJsonLd(post, relatedPosts = []) {
       }
     },
     keywords: (post.tags || []).join(', '),
-    articleSection: post.product === 'pdf' ? 'PDF Workflows' : 'Image Workflows',
+    articleSection: productArticleSection(post.product),
     isPartOf: `${SITE_URL}/blog`,
     citation: (post.sources || []).map((source) => source.url)
   };
@@ -822,7 +836,7 @@ function renderBlogIndexPage(posts) {
         <article class="card">
           <a class="card-link" href="${postHref}" aria-label="Read ${escapeHtml(post.title)}">
             <img src="${escapeHtml(post.featuredImage)}" alt="${escapeHtml(post.featuredImageAlt)}" width="1600" height="680" loading="lazy" />
-            <div class="meta"><span class="badge">${post.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span><span>${formatHumanDate(post.date)}</span></div>
+            <div class="meta"><span class="badge">${productBadgeLabel(post.product)}</span><span>${formatHumanDate(post.date)}</span></div>
             <h3><span class="title-link">${escapeHtml(post.title)}</span></h3>
             <p class="muted">${excerpt}</p>
             <span class="card-cta">Read article</span>
@@ -860,7 +874,7 @@ function renderBlogIndexPage(posts) {
     <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <title>Dayfiles Blog | Free Image and PDF Workflow Guides</title>
-    <meta name="description" content="Free image and PDF workflow articles for Everyday Image Studio and PDF Toolkit, with practical guides, checklists, and operational playbooks." />
+    <meta name="description" content="Free image and PDF workflow articles for Images, Everyday Image Studio, and PDF Toolkit, with practical guides, checklists, and operational playbooks." />
     <link rel="canonical" href="${SITE_URL}/blog" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Dayfiles Blog" />
@@ -910,7 +924,7 @@ function renderBlogIndexPage(posts) {
       <section class="panel">
         <p class="badge">New every Mon/Wed/Fri</p>
         <h1 class="hero-title">Dayfiles Blog: Free Image and PDF Workflow Guides</h1>
-        <p class="muted">Source-backed guides on free file tools, image workflows, and PDF operations.</p>
+        <p class="muted">Source-backed guides on Images, Everyday Image Studio, PDF Toolkit, and practical file workflows.</p>
       </section>
 
       <section class="panel">
@@ -952,7 +966,7 @@ function renderPostPage(post, relatedPosts) {
       (related) => `
       <article class="card">
         <a class="card-link" href="${postRelativeUrl(related.slug)}" aria-label="Read ${escapeHtml(related.title)}">
-          <span class="badge">${related.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span>
+          <span class="badge">${productBadgeLabel(related.product)}</span>
           <h3><span class="title-link">${escapeHtml(related.title)}</span></h3>
           <p class="muted">${escapeHtml(related.description)}</p>
           <span class="card-cta">Read article</span>
@@ -1026,7 +1040,7 @@ function renderPostPage(post, relatedPosts) {
         <div class="crumbs">
           <a href="/">Home</a> <span>›</span> <a href="/blog">Blog</a> <span>›</span> <span>${escapeHtml(post.title)}</span>
         </div>
-        <p class="meta"><span class="badge">${post.product === 'pdf' ? 'PDF Toolkit' : 'Image Studio'}</span><span>${formatHumanDate(post.date)}</span><span>${readingMinutes(post.body)} min read</span></p>
+        <p class="meta"><span class="badge">${productBadgeLabel(post.product)}</span><span>${formatHumanDate(post.date)}</span><span>${readingMinutes(post.body)} min read</span></p>
         <h1 class="hero-title">${escapeHtml(post.title)}</h1>
         <p class="muted">${escapeHtml(post.description)}</p>
         <div class="hero-cover">
@@ -1105,7 +1119,7 @@ function buildFeed(posts) {
   <channel>
     <title>Dayfiles Blog</title>
     <link>${SITE_URL}/blog</link>
-    <description>Daily workflow guides for Everyday Image Studio and PDF Toolkit.</description>
+    <description>Daily workflow guides for Images, Everyday Image Studio, and PDF Toolkit.</description>
     <language>en-us</language>
     ${items}
   </channel>
