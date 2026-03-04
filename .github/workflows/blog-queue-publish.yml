@@ -36,6 +36,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync with latest master
+        run: |
+          set -euo pipefail
+          git fetch origin master
+          git checkout master
+          git reset --hard origin/master
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -73,6 +82,10 @@ jobs:
           echo "Running: ${CMD[*]}"
           "${CMD[@]}"
 
+      - name: Validate generated blog state
+        if: github.event_name != 'workflow_dispatch' || inputs.mode == 'publish'
+        run: npm run blog:validate
+
       - name: Commit and push changes
         if: github.event_name != 'workflow_dispatch' || inputs.mode == 'publish'
         run: |
@@ -86,4 +99,16 @@ jobs:
           git config user.email "shuvohabib@gmail.com"
           git add content/blog content/blog-queue public/blog public/blog-index.json src/generated/blog-index.json public/sitemap.xml public/llms.txt public/_redirects .blog-queue-state.json
           git commit -m "chore(blog): publish queued blog post"
-          git push origin master
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:master; then
+              exit 0
+            fi
+
+            echo "Push failed on attempt ${attempt}; rebasing onto origin/master and retrying"
+            git fetch origin master
+            git rebase origin/master
+          done
+
+          echo "Push failed after 3 attempts"
+          exit 1
