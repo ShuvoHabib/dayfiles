@@ -1,33 +1,40 @@
 ---
-title: "PDF Onboarding Workflow for Sensitive Teams"
-slug: "pdf-employee-onboarding-doc-workflow"
-date: "2026-02-27"
-product: "pdf"
-description: "Learn a privacy-sensitive PDF onboarding workflow for HR teams using Dayfiles to fill, sign, review, archive, and hand off employee packets safely."
+title: PDF Onboarding Workflow for Sensitive Teams
+slug: pdf-employee-onboarding-doc-workflow
+date: '2026-03-04'
+product: pdf
+description: >-
+  Learn a privacy-sensitive PDF onboarding workflow for HR teams using Dayfiles
+  to fill, sign, review, archive, and hand off employee packets safely.
 tags:
-  - "employee onboarding"
-  - "hr documents"
-  - "pdf workflow"
-  - "privacy"
-canonicalUrl: "https://dayfiles.com/blog/pdf-employee-onboarding-doc-workflow"
-featuredImage: "/blog/images/pdf-employee-onboarding-doc-workflow.svg"
-featuredImageAlt: "Employee onboarding PDF workflow visual"
+  - employee onboarding
+  - hr documents
+  - pdf workflow
+  - privacy
+canonicalUrl: 'https://dayfiles.com/blog/pdf-employee-onboarding-doc-workflow'
+featuredImage: /blog/images/pdf-employee-onboarding-doc-workflow.svg
+featuredImageAlt: Employee onboarding PDF workflow visual
 sources:
-  - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
-  - title: "Dayfiles"
-    url: "https://dayfiles.com/"
-  - title: "Fill PDF Forms"
-    url: "https://pdf.dayfiles.com/fill-pdf-forms"
+  - title: PDF Dayfiles
+    url: 'https://pdf.dayfiles.com/'
+  - title: Dayfiles
+    url: 'https://dayfiles.com/'
+  - title: Fill PDF Forms
+    url: 'https://pdf.dayfiles.com/fill-pdf-forms'
 faq:
-  - q: "Why are onboarding documents a privacy hotspot?"
-    a: "Onboarding files often include IDs, addresses, salary details, and contracts, which require controlled handling and minimal exposure."
-  - q: "How can HR reduce onboarding document mistakes?"
-    a: "Use a fixed checklist, one naming convention, and a clear owner for each employee packet."
-  - q: "Should onboarding packets be merged before archival?"
-    a: "Yes. A merged final packet with version control improves retrieval and reduces duplicate copies."
+  - q: Why are onboarding documents a privacy hotspot?
+    a: >-
+      Onboarding files often include IDs, addresses, salary details, and
+      contracts, which require controlled handling and minimal exposure.
+  - q: How can HR reduce onboarding document mistakes?
+    a: >-
+      Use a fixed checklist, one naming convention, and a clear owner for each
+      employee packet.
+  - q: Should onboarding packets be merged before archival?
+    a: >-
+      Yes. A merged final packet with version control improves retrieval and
+      reduces duplicate copies.
 ---
-
 ## Why onboarding workflows need structure
 
 How do onboarding packets become risky so quickly? Employee onboarding moves quickly, and document handling is usually fragmented across email, chat, and shared drives. The result is a predictable set of issues: wrong versions, missing signatures, incomplete fields, and duplicate copies of sensitive files.

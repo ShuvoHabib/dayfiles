@@ -1,5 +1,22 @@
 [
   {
+    "title": "PDF Onboarding Workflow for Sensitive Teams",
+    "slug": "pdf-employee-onboarding-doc-workflow",
+    "date": "2026-03-04",
+    "product": "pdf",
+    "description": "Learn a privacy-sensitive PDF onboarding workflow for HR teams using Dayfiles to fill, sign, review, archive, and hand off employee packets safely.",
+    "tags": [
+      "employee onboarding",
+      "hr documents",
+      "pdf workflow",
+      "privacy"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/pdf-employee-onboarding-doc-workflow",
+    "featuredImage": "/blog/images/pdf-employee-onboarding-doc-workflow.svg",
+    "featuredImageAlt": "Employee onboarding PDF workflow visual",
+    "readingMinutes": 2
+  },
+  {
     "title": "PDF Visa Packet Checklist for Faster Reviews",
     "slug": "pdf-visa-application-packet-checklist",
     "date": "2026-03-02",
