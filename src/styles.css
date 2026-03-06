@@ -425,7 +425,14 @@ h1 {
   gap: 0.7rem;
 }
 
-.hero-actions a {
+.hero-action-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.48rem;
+}
+
+.hero-action-card > a:first-child {
   text-decoration: none;
   color: var(--button-on-accent);
   font-weight: 700;
@@ -435,9 +442,21 @@ h1 {
   transition: filter 0.2s ease, transform 0.2s ease;
 }
 
-.hero-actions a:hover {
+.hero-action-card > a:first-child:hover {
   filter: brightness(1.04);
   transform: translateY(-2px);
+}
+
+.hero-action-learn-more {
+  padding-left: 0.35rem;
+  color: var(--text-soft);
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-action-learn-more:hover {
+  color: var(--text-main);
 }
 
 .panel {

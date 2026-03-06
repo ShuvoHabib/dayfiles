@@ -55,6 +55,23 @@ const navigationLinks = [
   { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
   { label: 'PDF Toolkit', href: '/pdf-toolkit' }
 ];
+const heroActions = [
+  {
+    label: 'Explore Image Studio',
+    href: 'https://everydayimagestudio.dayfiles.com/',
+    learnMoreHref: '/everyday-image-studio'
+  },
+  {
+    label: 'Open Images',
+    href: 'https://images.dayfiles.com/',
+    learnMoreHref: '/blog'
+  },
+  {
+    label: 'Open PDF Toolkit',
+    href: 'https://pdf.dayfiles.com/',
+    learnMoreHref: '/pdf-toolkit'
+  }
+];
 const trustLinks = [
   { label: 'About Dayfiles', href: '/about' },
   { label: 'Contact', href: '/contact' },
@@ -322,15 +339,16 @@ export default function App() {
             with no account required and no setup before you start.
           </p>
           <div className="hero-actions">
-            <a href="/everyday-image-studio">
-              Explore Image Studio
-            </a>
-            <a href="https://images.dayfiles.com/" target="_blank" rel="noreferrer">
-              Open Images
-            </a>
-            <a href="/pdf-toolkit">
-              Open PDF Toolkit
-            </a>
+            {heroActions.map((action) => (
+              <div key={action.label} className="hero-action-card">
+                <a href={action.href} target="_blank" rel="noreferrer">
+                  {action.label}
+                </a>
+                <a className="hero-action-learn-more" href={action.learnMoreHref}>
+                  Learn more
+                </a>
+              </div>
+            ))}
           </div>
         </section>
 
