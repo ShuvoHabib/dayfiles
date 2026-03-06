@@ -12,12 +12,13 @@ const navLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Chrome Extension', href: extensionLink, external: true },
   { label: 'Everyday Image Studio', href: '/everyday-image-studio' },
-  { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
+  { label: 'Images', href: '/images' },
   { label: 'PDF Toolkit', href: '/pdf-toolkit' }
 ];
 const footerPrimaryLinks = [
   { label: 'Home', href: '/' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Images', href: '/images' },
   { label: 'PDF Toolkit', href: '/pdf-toolkit' },
   { label: 'Everyday Image Studio', href: '/everyday-image-studio' }
 ];
@@ -750,7 +751,7 @@ function renderFooter() {
   `;
 }
 
-function renderPage(page, relatedPosts) {
+function renderPage(page, relatedPosts, lastUpdated) {
   const companion = getProductPageBySlug(page.companionSlug);
   const relatedGuidesHtml = relatedPosts
     .map(
@@ -844,6 +845,7 @@ function renderPage(page, relatedPosts) {
         <p class="eyebrow">${escapeHtml(page.heroEyebrow)}</p>
         <h1 class="hero-title">${escapeHtml(page.h1)}</h1>
         <p class="hero-copy">${escapeHtml(page.heroCopy)}</p>
+        <p class="muted">Last updated ${escapeHtml(lastUpdated)}</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="${escapeHtml(page.appUrl)}" target="_blank" rel="noreferrer">${escapeHtml(page.primaryCtaLabel)}</a>
           <a class="btn btn-secondary" href="${escapeHtml(page.secondaryCtaHref)}">${escapeHtml(page.secondaryCtaLabel)}</a>
@@ -988,6 +990,7 @@ function renderTrustPage(page, lastUpdated) {
 
 export async function buildProductPages() {
   const posts = await readPosts();
+  const lastUpdated = formatHumanDate(new Date().toISOString());
 
   for (const page of productPages) {
     const relatedPosts = page.relatedGuideSlugs
@@ -996,10 +999,8 @@ export async function buildProductPages() {
 
     const outDir = path.join(PUBLIC_DIR, page.slug);
     await ensureDir(outDir);
-    await fs.writeFile(path.join(outDir, 'index.html'), renderPage(page, relatedPosts), 'utf8');
+    await fs.writeFile(path.join(outDir, 'index.html'), renderPage(page, relatedPosts, lastUpdated), 'utf8');
   }
-
-  const lastUpdated = formatHumanDate(new Date().toISOString());
 
   for (const page of trustPages) {
     const outDir = path.join(PUBLIC_DIR, page.slug);

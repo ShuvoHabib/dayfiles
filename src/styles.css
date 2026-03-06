@@ -459,6 +459,30 @@ h1 {
   color: var(--text-main);
 }
 
+.hero-answer-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+}
+
+.hero-answer-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1rem 1.05rem;
+  background: var(--panel-bg);
+}
+
+.hero-answer-card h2 {
+  margin: 0 0 0.45rem;
+  font-size: 1.02rem;
+}
+
+.hero-answer-card p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
 .panel {
   margin-top: 1.3rem;
   border: 1px solid var(--line);

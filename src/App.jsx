@@ -10,9 +10,8 @@ const liveProducts = [
   {
     title: 'Images',
     subtitle: 'Broader image editing, conversion, and cleanup in one toolbox',
-    href: 'https://images.dayfiles.com/',
-    state: 'Live',
-    external: true
+    href: '/images',
+    state: 'Live'
   },
   {
     title: 'PDF Toolkit',
@@ -52,7 +51,7 @@ const navigationLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Chrome Extension', href: extensionLink, external: true },
   { label: 'Everyday Image Studio', href: '/everyday-image-studio' },
-  { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
+  { label: 'Images', href: '/images' },
   { label: 'PDF Toolkit', href: '/pdf-toolkit' }
 ];
 const heroActions = [
@@ -64,12 +63,29 @@ const heroActions = [
   {
     label: 'Open Images',
     href: 'https://images.dayfiles.com/',
-    learnMoreHref: '/blog'
+    learnMoreHref: '/images'
   },
   {
     label: 'Open PDF Toolkit',
     href: 'https://pdf.dayfiles.com/',
     learnMoreHref: '/pdf-toolkit'
+  }
+];
+const heroAnswerCards = [
+  {
+    title: 'What is Dayfiles?',
+    copy:
+      'Dayfiles is a browser-first file workflow platform for image editing, image conversion, compression, and PDF operations. It combines live tools, product hubs, and source-backed guides that answer specific file workflow questions.'
+  },
+  {
+    title: 'What can you do here?',
+    copy:
+      'You can open live apps for PDF work, workflow-focused image editing, and broader image processing. You can also read structured guides that explain how to complete those tasks and what to check before delivery.'
+  },
+  {
+    title: 'Why is the content structured this way?',
+    copy:
+      'Dayfiles publishes concise definitions, practical steps, FAQs, sources, and trust pages so readers and answer engines can extract the right task-specific information quickly.'
   }
 ];
 const trustLinks = [
@@ -350,6 +366,15 @@ export default function App() {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="hero-answer-grid" aria-label="Dayfiles overview">
+          {heroAnswerCards.map((card) => (
+            <article key={card.title} className="hero-answer-card">
+              <h2>{card.title}</h2>
+              <p>{card.copy}</p>
+            </article>
+          ))}
         </section>
 
         <section className="panel products" aria-label="Live products">

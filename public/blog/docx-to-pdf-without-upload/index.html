@@ -463,6 +463,29 @@
     font-size: .92em;
   }
   .prose h2, .prose h3 { color: var(--prose-heading); margin-top: 1.3rem; }
+  .signal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: .85rem;
+    margin-top: .95rem;
+  }
+  .signal-card {
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: .9rem;
+    background: var(--card-bg);
+  }
+  .signal-card h2,
+  .signal-card h3 {
+    margin: 0 0 .35rem;
+    font-size: .98rem;
+  }
+  .signal-card p {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: .95rem;
+    line-height: 1.55;
+  }
   .faq-list, .source-list { display: grid; gap: .9rem; }
   .faq-card {
     display: grid;
@@ -580,7 +603,7 @@
 
           <a class="chip" href="/everyday-image-studio">Everyday Image Studio</a>
 
-          <a class="chip" href="https://images.dayfiles.com/" target="_blank" rel="noreferrer">Images</a>
+          <a class="chip" href="/images">Images</a>
 
           <a class="chip chip-cta" href="/pdf-toolkit">PDF Toolkit</a>
         </div>
@@ -604,7 +627,7 @@
 
             <a class="mobile-nav-link" data-mobile-nav-link href="/everyday-image-studio">Everyday Image Studio</a>
 
-            <a class="mobile-nav-link" data-mobile-nav-link href="https://images.dayfiles.com/" target="_blank" rel="noreferrer">Images</a>
+            <a class="mobile-nav-link" data-mobile-nav-link href="/images">Images</a>
 
             <a class="mobile-nav-link" data-mobile-nav-link href="/pdf-toolkit">PDF Toolkit</a>
           </nav>
@@ -618,6 +641,24 @@
         <p class="meta"><span class="badge">PDF Toolkit</span><span>February 22, 2026</span><span>6 min read</span></p>
         <h1 class="hero-title">How to Convert DOCX to PDF Without Uploading Files</h1>
         <p class="muted">Export DOCX files to PDF for stable, share-ready formatting. Learn the local browser workflow, review checks, and common mistakes before delivery.</p>
+        <div class="signal-grid">
+          <section class="signal-card">
+            <h2>Reviewed by</h2>
+            <p>Dayfiles editorial team. This guide is kept public, source-backed, and aligned with the live workflow hub for this topic.</p>
+          </section>
+          <section class="signal-card">
+            <h2>Last updated</h2>
+            <p>February 22, 2026. Dates, links, and workflow steps are tied to the publish or refresh date shown above.</p>
+          </section>
+          <section class="signal-card">
+            <h2>Sources reviewed</h2>
+            <p>3 linked sources support this guide. The full list appears below for verification and follow-up reading.</p>
+          </section>
+          <section class="signal-card">
+            <h2>Related tool hub</h2>
+            <p>Need the category overview before using the app? Start with <a href="/pdf-toolkit">PDF Toolkit</a>.</p>
+          </section>
+        </div>
         <div class="hero-cover">
           <img class="hero-image" src="/blog/images/docx-to-pdf-without-upload.svg" alt="DOCX to PDF privacy-first guide visual" width="1600" height="680" />
         </div>
@@ -812,6 +853,7 @@
           <div class="footer-link-list">
             <a href="/">Home</a>
 <a href="/blog">Blog</a>
+<a href="/images">Images</a>
 <a href="/pdf-toolkit">PDF Toolkit</a>
 <a href="/everyday-image-studio">Everyday Image Studio</a>
           </div>

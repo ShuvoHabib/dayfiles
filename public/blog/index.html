@@ -463,6 +463,29 @@
     font-size: .92em;
   }
   .prose h2, .prose h3 { color: var(--prose-heading); margin-top: 1.3rem; }
+  .signal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: .85rem;
+    margin-top: .95rem;
+  }
+  .signal-card {
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: .9rem;
+    background: var(--card-bg);
+  }
+  .signal-card h2,
+  .signal-card h3 {
+    margin: 0 0 .35rem;
+    font-size: .98rem;
+  }
+  .signal-card p {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: .95rem;
+    line-height: 1.55;
+  }
   .faq-list, .source-list { display: grid; gap: .9rem; }
   .faq-card {
     display: grid;
@@ -580,7 +603,7 @@
 
           <a class="chip" href="/everyday-image-studio">Everyday Image Studio</a>
 
-          <a class="chip" href="https://images.dayfiles.com/" target="_blank" rel="noreferrer">Images</a>
+          <a class="chip" href="/images">Images</a>
 
           <a class="chip chip-cta" href="/pdf-toolkit">PDF Toolkit</a>
         </div>
@@ -604,7 +627,7 @@
 
             <a class="mobile-nav-link" data-mobile-nav-link href="/everyday-image-studio">Everyday Image Studio</a>
 
-            <a class="mobile-nav-link" data-mobile-nav-link href="https://images.dayfiles.com/" target="_blank" rel="noreferrer">Images</a>
+            <a class="mobile-nav-link" data-mobile-nav-link href="/images">Images</a>
 
             <a class="mobile-nav-link" data-mobile-nav-link href="/pdf-toolkit">PDF Toolkit</a>
           </nav>
@@ -927,6 +950,7 @@
           <div class="footer-link-list">
             <a href="/">Home</a>
 <a href="/blog">Blog</a>
+<a href="/images">Images</a>
 <a href="/pdf-toolkit">PDF Toolkit</a>
 <a href="/everyday-image-studio">Everyday Image Studio</a>
           </div>

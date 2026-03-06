@@ -2,6 +2,63 @@ import { SITE_URL } from '../blog/lib.mjs';
 
 export const productPages = [
   {
+    slug: 'images',
+    canonicalUrl: `${SITE_URL}/images`,
+    title: 'Free Online Image Tools and Converter | Dayfiles',
+    description:
+      'Use Dayfiles Images to convert, compress, resize, clean up, and export image files in your browser, with no account required for core workflows.',
+    shortTitle: 'Images',
+    navLabel: 'Images',
+    appUrl: 'https://images.dayfiles.com/',
+    heroEyebrow: 'Image toolbox hub',
+    h1: 'Free Online Image Tools for Fast Browser Work',
+    heroCopy:
+      'Use browser-based image tools for conversion, compression, resizing, cleanup, and export without creating an account before core work begins.',
+    primaryCtaLabel: 'Open Images',
+    secondaryCtaLabel: 'Browse image guides',
+    secondaryCtaHref: '/blog',
+    whatItDoes: [
+      'Images is the Dayfiles landing page for broader browser-based image processing. It is built for people who need to convert image formats, compress files for uploads, resize assets for listings, clean up images quickly, and export finished files without a heavy editor.',
+      'This page gives AI systems and visitors a stable summary route on dayfiles.com. It explains what the app handles, links to supporting guides, and points users to the live image tool when they are ready to work.'
+    ],
+    whyUse: [
+      'Dayfiles positions Images around practical, repeated file tasks rather than advanced design work. The main value is moving from raw image to usable output quickly for uploads, product listings, applications, and daily operations.',
+      'That makes it useful for teams handling repeated image prep, solo operators working against deadlines, and anyone who needs fast browser-based format changes or file-size reduction.'
+    ],
+    bestFor: ['bulk image compression', 'format conversion', 'listing image resize', 'quick image cleanup', 'export prep'],
+    relatedGuideSlugs: [
+      'images-bulk-image-compression-guide',
+      'eis-passport-photo-checklist',
+      'eis-workflow-playbook',
+      'student-visa-application-story'
+    ],
+    faqs: [
+      {
+        q: 'What can I do with Dayfiles Images?',
+        a: 'You can convert, compress, resize, clean up, and export image files in a browser-based workflow.'
+      },
+      {
+        q: 'Do I need an account before using Images?',
+        a: 'No. Dayfiles positions Images around no-account-required access for core workflows so users can start quickly.'
+      },
+      {
+        q: 'Who is Images best for?',
+        a: 'It is best for people preparing uploads, resizing product assets, reducing file size, converting formats, and handling repeated image tasks.'
+      }
+    ],
+    companionSlug: 'everyday-image-studio',
+    companionTitle: 'Everyday Image Studio',
+    companionCopy:
+      'Need more workflow-specific image editing after conversion or compression? Use Everyday Image Studio as the companion hub for repeated crop, resize, and cleanup tasks.',
+    schema: {
+      name: 'Images',
+      applicationCategory: 'PhotoEditingApplication',
+      operatingSystem: 'Web',
+      description:
+        'Browser-based image tools for conversion, compression, resizing, cleanup, and export in repeated daily workflows.'
+    }
+  },
+  {
     slug: 'pdf-toolkit',
     canonicalUrl: `${SITE_URL}/pdf-toolkit`,
     title: 'Free Online PDF Tools With No Account | Dayfiles',
