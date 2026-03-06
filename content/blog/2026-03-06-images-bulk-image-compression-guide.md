@@ -1,33 +1,41 @@
 ---
-title: "How to Compress Images in Bulk Before Upload Deadlines"
-slug: "images-bulk-image-compression-guide"
-date: "2026-03-03"
-product: "images"
-description: "Compress image batches before upload deadlines with a repeatable workflow that keeps files lighter, reviewable, and ready for email, CMS, and portal delivery."
+title: How to Compress Images in Bulk Before Upload Deadlines
+slug: images-bulk-image-compression-guide
+date: '2026-03-06'
+product: images
+description: >-
+  Compress image batches before upload deadlines with a repeatable workflow that
+  keeps files lighter, reviewable, and ready for email, CMS, and portal
+  delivery.
 tags:
-  - "bulk image compression"
-  - "images dayfiles"
-  - "upload workflow"
-  - "image optimization"
-canonicalUrl: "https://dayfiles.com/blog/images-bulk-image-compression-guide"
-featuredImage: "/blog/images/images-bulk-image-compression-guide.svg"
-featuredImageAlt: "Bulk image compression workflow visual"
+  - bulk image compression
+  - images dayfiles
+  - upload workflow
+  - image optimization
+canonicalUrl: 'https://dayfiles.com/blog/images-bulk-image-compression-guide'
+featuredImage: /blog/images/images-bulk-image-compression-guide.svg
+featuredImageAlt: Bulk image compression workflow visual
 sources:
-  - title: "Images by Dayfiles"
-    url: "https://images.dayfiles.com/"
-  - title: "Compress Image"
-    url: "https://images.dayfiles.com/compress-image"
-  - title: "Dayfiles"
-    url: "https://dayfiles.com/"
+  - title: Images by Dayfiles
+    url: 'https://images.dayfiles.com/'
+  - title: Compress Image
+    url: 'https://images.dayfiles.com/compress-image'
+  - title: Dayfiles
+    url: 'https://dayfiles.com/'
 faq:
-  - q: "When should teams compress images in bulk?"
-    a: "Compress in bulk when a batch is headed to email, a CMS, a client portal, or any delivery path with file-size constraints."
-  - q: "What is the biggest compression mistake?"
-    a: "The biggest mistake is compressing the whole batch aggressively before checking whether text, logos, or product detail stay readable."
-  - q: "How does this connect to the rest of Dayfiles?"
-    a: "After image compression, teams can move approved assets into broader image routines or final document packets in the Dayfiles stack."
+  - q: When should teams compress images in bulk?
+    a: >-
+      Compress in bulk when a batch is headed to email, a CMS, a client portal,
+      or any delivery path with file-size constraints.
+  - q: What is the biggest compression mistake?
+    a: >-
+      The biggest mistake is compressing the whole batch aggressively before
+      checking whether text, logos, or product detail stay readable.
+  - q: How does this connect to the rest of Dayfiles?
+    a: >-
+      After image compression, teams can move approved assets into broader image
+      routines or final document packets in the Dayfiles stack.
 ---
-
 How do you compress images in bulk without turning upload preparation into a guessing game? The reliable approach is to define the delivery target first, run one controlled compression pass, and review the hardest images before the batch leaves your folder. That is exactly the kind of workflow [Images by Dayfiles](https://images.dayfiles.com/compress-image) is built to support.
 
 ## Why bulk compression becomes urgent
