@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Resize Images in Bulk for Listings and Uploads",
+    "slug": "images-bulk-resize-listings-guide",
+    "date": "2026-03-08",
+    "product": "images",
+    "description": "Resize image batches for listings and uploads with a repeatable workflow that keeps dimensions consistent, approvals faster, and final exports easier to trust.",
+    "tags": [
+      "bulk image resize",
+      "images dayfiles",
+      "listing uploads",
+      "image dimensions"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/images-bulk-resize-listings-guide",
+    "featuredImage": "/blog/images/images-bulk-resize-listings-guide.svg",
+    "featuredImageAlt": "Bulk image resize workflow visual",
+    "readingMinutes": 3
+  },
+  {
     "title": "How to Compress Images in Bulk Before Upload Deadlines",
     "slug": "images-bulk-image-compression-guide",
     "date": "2026-03-06",

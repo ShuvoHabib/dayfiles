@@ -1,33 +1,41 @@
 ---
-title: "How to Resize Images in Bulk for Listings and Uploads"
-slug: "images-bulk-resize-listings-guide"
-date: "2026-03-03"
-product: "images"
-description: "Resize image batches for listings and uploads with a repeatable workflow that keeps dimensions consistent, approvals faster, and final exports easier to trust."
+title: How to Resize Images in Bulk for Listings and Uploads
+slug: images-bulk-resize-listings-guide
+date: '2026-03-08'
+product: images
+description: >-
+  Resize image batches for listings and uploads with a repeatable workflow that
+  keeps dimensions consistent, approvals faster, and final exports easier to
+  trust.
 tags:
-  - "bulk image resize"
-  - "images dayfiles"
-  - "listing uploads"
-  - "image dimensions"
-canonicalUrl: "https://dayfiles.com/blog/images-bulk-resize-listings-guide"
-featuredImage: "/blog/images/images-bulk-resize-listings-guide.svg"
-featuredImageAlt: "Bulk image resize workflow visual"
+  - bulk image resize
+  - images dayfiles
+  - listing uploads
+  - image dimensions
+canonicalUrl: 'https://dayfiles.com/blog/images-bulk-resize-listings-guide'
+featuredImage: /blog/images/images-bulk-resize-listings-guide.svg
+featuredImageAlt: Bulk image resize workflow visual
 sources:
-  - title: "Images by Dayfiles"
-    url: "https://images.dayfiles.com/"
-  - title: "Resize Image"
-    url: "https://images.dayfiles.com/resize-image"
-  - title: "Dayfiles"
-    url: "https://dayfiles.com/"
+  - title: Images by Dayfiles
+    url: 'https://images.dayfiles.com/'
+  - title: Resize Image
+    url: 'https://images.dayfiles.com/resize-image'
+  - title: Dayfiles
+    url: 'https://dayfiles.com/'
 faq:
-  - q: "Why do teams resize images in bulk instead of one by one?"
-    a: "Bulk resizing keeps dimensions consistent across a whole upload set and reduces review time for marketplaces, CMS uploads, and content teams."
-  - q: "What causes the most resize mistakes?"
-    a: "The most common mistake is mixing aspect ratios and output targets in the same batch without deciding which requirement matters first."
-  - q: "What should happen after resizing?"
-    a: "After resizing, teams should check edge cases, confirm filenames, and move the approved export set into the next delivery step."
+  - q: Why do teams resize images in bulk instead of one by one?
+    a: >-
+      Bulk resizing keeps dimensions consistent across a whole upload set and
+      reduces review time for marketplaces, CMS uploads, and content teams.
+  - q: What causes the most resize mistakes?
+    a: >-
+      The most common mistake is mixing aspect ratios and output targets in the
+      same batch without deciding which requirement matters first.
+  - q: What should happen after resizing?
+    a: >-
+      After resizing, teams should check edge cases, confirm filenames, and move
+      the approved export set into the next delivery step.
 ---
-
 How do you resize a large image batch without creating inconsistent uploads? The practical answer is to lock the target dimensions first, resize against one destination rule, and review the outliers before the files leave your staging folder. That is where [Images by Dayfiles](https://images.dayfiles.com/resize-image) fits best.
 
 ## Why bulk resizing matters
