@@ -1,33 +1,40 @@
 ---
-title: "How to Convert Images to JPG for Consistent Delivery"
-slug: "images-convert-to-jpg-guide"
-date: "2026-03-03"
-product: "images"
-description: "Convert image batches to JPG with a repeatable workflow that keeps delivery formats consistent for uploads, sharing, and downstream document assembly."
+title: How to Convert Images to JPG for Consistent Delivery
+slug: images-convert-to-jpg-guide
+date: '2026-03-10'
+product: images
+description: >-
+  Convert image batches to JPG with a repeatable workflow that keeps delivery
+  formats consistent for uploads, sharing, and downstream document assembly.
 tags:
-  - "convert to jpg"
-  - "images dayfiles"
-  - "image delivery"
-  - "format workflow"
-canonicalUrl: "https://dayfiles.com/blog/images-convert-to-jpg-guide"
-featuredImage: "/blog/images/images-convert-to-jpg-guide.svg"
-featuredImageAlt: "Image to JPG conversion workflow visual"
+  - convert to jpg
+  - images dayfiles
+  - image delivery
+  - format workflow
+canonicalUrl: 'https://dayfiles.com/blog/images-convert-to-jpg-guide'
+featuredImage: /blog/images/images-convert-to-jpg-guide.svg
+featuredImageAlt: Image to JPG conversion workflow visual
 sources:
-  - title: "Images by Dayfiles"
-    url: "https://images.dayfiles.com/"
-  - title: "Convert to JPG"
-    url: "https://images.dayfiles.com/convert-to-jpg"
-  - title: "Dayfiles"
-    url: "https://dayfiles.com/"
+  - title: Images by Dayfiles
+    url: 'https://images.dayfiles.com/'
+  - title: Convert to JPG
+    url: 'https://images.dayfiles.com/convert-to-jpg'
+  - title: Dayfiles
+    url: 'https://dayfiles.com/'
 faq:
-  - q: "Why convert images to JPG in bulk?"
-    a: "Teams convert to JPG in bulk when downstream systems, upload forms, or collaboration habits expect one stable image format."
-  - q: "What should be checked after conversion?"
-    a: "Check image clarity, expected color appearance, naming, and whether transparent or detail-sensitive files still work in JPG."
-  - q: "Does JPG conversion replace the original file?"
-    a: "It should not. The safer workflow is to keep the source files untouched and export a separate JPG-ready delivery batch."
+  - q: Why convert images to JPG in bulk?
+    a: >-
+      Teams convert to JPG in bulk when downstream systems, upload forms, or
+      collaboration habits expect one stable image format.
+  - q: What should be checked after conversion?
+    a: >-
+      Check image clarity, expected color appearance, naming, and whether
+      transparent or detail-sensitive files still work in JPG.
+  - q: Does JPG conversion replace the original file?
+    a: >-
+      It should not. The safer workflow is to keep the source files untouched
+      and export a separate JPG-ready delivery batch.
 ---
-
 How do you convert a mixed image batch to JPG without creating avoidable format issues? The clean approach is to decide why the batch must become JPG, export a dedicated delivery copy, and review the files that are most likely to lose useful detail. That is the workflow [Images by Dayfiles](https://images.dayfiles.com/convert-to-jpg) is suited for.
 
 ## Why JPG conversion still matters
