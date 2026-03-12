@@ -1,5 +1,22 @@
 [
   {
+    "title": "PDF Client Report Workflow for Daily Delivery",
+    "slug": "pdf-confidential-client-report-workflow",
+    "date": "2026-03-12",
+    "product": "pdf",
+    "description": "Run a controlled PDF client report workflow in Dayfiles with stronger review checks, version discipline, approval steps, and safer delivery handoffs.",
+    "tags": [
+      "confidential reports",
+      "client delivery",
+      "pdf operations",
+      "dayfiles"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/pdf-confidential-client-report-workflow",
+    "featuredImage": "/blog/images/pdf-confidential-client-report-workflow.svg",
+    "featuredImageAlt": "Confidential client report PDF workflow visual",
+    "readingMinutes": 2
+  },
+  {
     "title": "How to Convert Images to JPG for Consistent Delivery",
     "slug": "images-convert-to-jpg-guide",
     "date": "2026-03-10",

@@ -1,33 +1,40 @@
 ---
-title: "PDF Client Report Workflow for Daily Delivery"
-slug: "pdf-confidential-client-report-workflow"
-date: "2026-02-27"
-product: "pdf"
-description: "Run a controlled PDF client report workflow in Dayfiles with stronger review checks, version discipline, approval steps, and safer delivery handoffs."
+title: PDF Client Report Workflow for Daily Delivery
+slug: pdf-confidential-client-report-workflow
+date: '2026-03-12'
+product: pdf
+description: >-
+  Run a controlled PDF client report workflow in Dayfiles with stronger review
+  checks, version discipline, approval steps, and safer delivery handoffs.
 tags:
-  - "confidential reports"
-  - "client delivery"
-  - "pdf operations"
-  - "dayfiles"
-canonicalUrl: "https://dayfiles.com/blog/pdf-confidential-client-report-workflow"
-featuredImage: "/blog/images/pdf-confidential-client-report-workflow.svg"
-featuredImageAlt: "Confidential client report PDF workflow visual"
+  - confidential reports
+  - client delivery
+  - pdf operations
+  - dayfiles
+canonicalUrl: 'https://dayfiles.com/blog/pdf-confidential-client-report-workflow'
+featuredImage: /blog/images/pdf-confidential-client-report-workflow.svg
+featuredImageAlt: Confidential client report PDF workflow visual
 sources:
-  - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
-  - title: "Dayfiles"
-    url: "https://dayfiles.com/"
-  - title: "E-Sign PDF"
-    url: "https://pdf.dayfiles.com/e-sign-pdf"
+  - title: PDF Dayfiles
+    url: 'https://pdf.dayfiles.com/'
+  - title: Dayfiles
+    url: 'https://dayfiles.com/'
+  - title: E-Sign PDF
+    url: 'https://pdf.dayfiles.com/e-sign-pdf'
 faq:
-  - q: "What causes the most report delivery errors?"
-    a: "Most report errors come from version confusion and missing final review checks before delivery."
-  - q: "Should teams sign client reports?"
-    a: "Many teams sign final reports for accountability and approval traceability, depending on client policy."
-  - q: "How can teams reduce exposure of confidential report files?"
-    a: "Use one delivery path, limit duplicate exports, and keep clear ownership of final approved versions."
+  - q: What causes the most report delivery errors?
+    a: >-
+      Most report errors come from version confusion and missing final review
+      checks before delivery.
+  - q: Should teams sign client reports?
+    a: >-
+      Many teams sign final reports for accountability and approval
+      traceability, depending on client policy.
+  - q: How can teams reduce exposure of confidential report files?
+    a: >-
+      Use one delivery path, limit duplicate exports, and keep clear ownership
+      of final approved versions.
 ---
-
 ## Why confidential reports need a controlled pipeline
 
 How do confidential client reports go wrong even in disciplined teams? Client reports often carry sensitive metrics, internal projections, and contractual details. In many teams, report assembly is still ad hoc: files move from analyst to manager to delivery lead with no strict finalization protocol. This increases the chance of sharing wrong versions or incomplete pages.
