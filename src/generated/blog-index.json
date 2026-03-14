@@ -1,5 +1,22 @@
 [
   {
+    "title": "Image Studio Employee ID Photo Standard Guide",
+    "slug": "eis-employee-id-photo-standard-guide",
+    "date": "2026-03-14",
+    "product": "eis",
+    "description": "Standardize employee ID photos with Everyday Image Studio. Learn framing, export, naming, quality checks, and review steps that reduce HR rework.",
+    "tags": [
+      "employee id photo",
+      "everyday image studio",
+      "hr operations",
+      "photo standards"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/eis-employee-id-photo-standard-guide",
+    "featuredImage": "/blog/images/eis-employee-id-photo-standard-guide.svg",
+    "featuredImageAlt": "Employee ID photo standard workflow visual",
+    "readingMinutes": 2
+  },
+  {
     "title": "PDF Client Report Workflow for Daily Delivery",
     "slug": "pdf-confidential-client-report-workflow",
     "date": "2026-03-12",

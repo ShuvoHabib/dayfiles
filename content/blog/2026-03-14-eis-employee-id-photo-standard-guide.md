@@ -1,33 +1,38 @@
 ---
-title: "Image Studio Employee ID Photo Standard Guide"
-slug: "eis-employee-id-photo-standard-guide"
-date: "2026-02-27"
-product: "eis"
-description: "Standardize employee ID photos with Everyday Image Studio. Learn framing, export, naming, quality checks, and review steps that reduce HR rework."
+title: Image Studio Employee ID Photo Standard Guide
+slug: eis-employee-id-photo-standard-guide
+date: '2026-03-14'
+product: eis
+description: >-
+  Standardize employee ID photos with Everyday Image Studio. Learn framing,
+  export, naming, quality checks, and review steps that reduce HR rework.
 tags:
-  - "employee id photo"
-  - "everyday image studio"
-  - "hr operations"
-  - "photo standards"
-canonicalUrl: "https://dayfiles.com/blog/eis-employee-id-photo-standard-guide"
-featuredImage: "/blog/images/eis-employee-id-photo-standard-guide.svg"
-featuredImageAlt: "Employee ID photo standard workflow visual"
+  - employee id photo
+  - everyday image studio
+  - hr operations
+  - photo standards
+canonicalUrl: 'https://dayfiles.com/blog/eis-employee-id-photo-standard-guide'
+featuredImage: /blog/images/eis-employee-id-photo-standard-guide.svg
+featuredImageAlt: Employee ID photo standard workflow visual
 sources:
-  - title: "Everyday Image Studio"
-    url: "https://everydayimagestudio.dayfiles.com/"
-  - title: "Dayfiles"
-    url: "https://dayfiles.com/"
-  - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+  - title: Everyday Image Studio
+    url: 'https://everydayimagestudio.dayfiles.com/'
+  - title: Dayfiles
+    url: 'https://dayfiles.com/'
+  - title: PDF Dayfiles
+    url: 'https://pdf.dayfiles.com/'
 faq:
-  - q: "Why standardize employee ID photos?"
-    a: "Standardization reduces rejected submissions, inconsistent profiles, and repetitive correction requests across HR systems."
-  - q: "What should an ID photo standard include?"
-    a: "It should include framing, background, dimensions, export format, and naming convention requirements."
-  - q: "Can teams run this process without a design department?"
-    a: "Yes. A lightweight checklist and preset workflow is enough for most teams." 
+  - q: Why standardize employee ID photos?
+    a: >-
+      Standardization reduces rejected submissions, inconsistent profiles, and
+      repetitive correction requests across HR systems.
+  - q: What should an ID photo standard include?
+    a: >-
+      It should include framing, background, dimensions, export format, and
+      naming convention requirements.
+  - q: Can teams run this process without a design department?
+    a: Yes. A lightweight checklist and preset workflow is enough for most teams.
 ---
-
 ## The operational problem with ID photos
 
 Why do employee ID photos create so much avoidable rework? ID photo preparation seems simple, but teams frequently lose time on corrections. Common issues include inconsistent crop, mixed backgrounds, wrong dimensions, and unclear naming. These problems block onboarding, directory updates, and badge creation.
