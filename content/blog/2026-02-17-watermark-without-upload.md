@@ -1,9 +1,9 @@
 ---
-title: "How to Watermark a PDF Without Uploading It"
+title: "How to Watermark a PDF Without Uploading It Online"
 slug: "watermark-without-upload"
 date: "2026-02-17"
 product: "pdf"
-description: "Add brand, draft, or confidential marks to PDF pages. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Add brand, draft, or confidential marks to PDF pages. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "watermark"
   - "pdf tools"

@@ -1,9 +1,9 @@
 ---
-title: "How to Build One PDF From DOCX, HTML, and Images"
+title: "How to Build One Client PDF From DOCX, HTML, and Images"
 slug: "build-client-pdf-from-docx-html-and-images"
 date: "2026-03-07"
 product: "pdf"
-description: "Combine DOCX, HTML, and image sources into one client-ready PDF with a workflow that keeps mixed-format inputs organized before final delivery."
+description: "Combine DOCX, HTML, and image sources into one client-ready PDF with a workflow that keeps mixed-format inputs organized and reviewable before final delivery."
 tags:
   - "combine docx html images into pdf"
   - "mixed source pdf workflow"

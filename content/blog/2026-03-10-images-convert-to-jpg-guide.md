@@ -86,6 +86,18 @@ The conversion check should focus on:
 
 If those files still look correct, the rest of the batch usually follows.
 
+## Which files should stay out of the first JPG batch?
+
+Not every image should be converted automatically just because the delivery set is moving toward JPG. Files that depend on transparency, very fine interface details, or later design reuse often deserve a second decision before they join the export. That pause is useful because JPG is excellent for consistency, but not always the best working format for every asset.
+
+A practical rule is to flag the exceptions before conversion starts. If the team knows which files are likely to need PNG or another source-preserving format, the main JPG batch can stay clean and predictable.
+
+## Use this workflow when downstream tools expect one stable format
+
+This workflow is most useful when the next system is simple and format-sensitive: upload forms, CMS fields, shared folders for non-design teammates, and PDF assembly steps that work better when every image arrives the same way. In those cases, the conversion step reduces friction for everyone downstream.
+
+It also helps when the person doing the conversion is not the final reviewer. A clearly labeled JPG export set gives the next reviewer a smaller, more consistent batch to approve.
+
 ## JPG conversion workflow vs random export habits
 
 | Requirement | One conversion workflow | Mixed-tool exports |
@@ -99,7 +111,13 @@ This is why JPG conversion belongs in a documented handoff flow rather than insi
 
 ## Related Dayfiles workflows
 
-If the JPG files are part of a broader image process, the [Everyday Image Studio Workflow Playbook](/blog/eis-workflow-playbook) is the best adjacent process article. If those images later need to be bundled into a final submission or report, connect the workflow to the [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist). If the image work is part of an application routine with real deadlines, the [Student Visa Application Workflow Story Powered by Dayfiles](/blog/student-visa-application-story) is a useful reference for how image and document steps fit together.
+Start from [Images](/images) when the work is mainly format conversion and delivery normalization. If the JPG files are part of a broader image process after conversion, the [Everyday Image Studio Workflow Playbook](/blog/eis-workflow-playbook) is the best adjacent process article. If those images later need to be bundled into a final submission or report, connect the workflow to the [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist). If the image work is part of an application routine with real deadlines, the [Student Visa Application Workflow Story Powered by Dayfiles](/blog/student-visa-application-story) is a useful reference for how image and document steps fit together.
+
+## A clean handoff rule for JPG export sets
+
+After conversion, keep the JPG batch separate from the originals and label it for the destination that required the format change. That prevents later confusion when someone comes back asking whether the files in a shared folder are working assets, archive assets, or delivery copies.
+
+This matters even more when the next step is document assembly. If the JPG set later moves into a PDF packet, the clearer the folder and naming discipline are now, the easier the packet review becomes later.
 
 ## Final takeaway
 

@@ -1,9 +1,9 @@
 ---
-title: "How to Crop PDF Pages Without Uploading Files"
+title: "How to Crop PDF Pages Without Uploading Files Online"
 slug: "crop-pdf-without-upload"
 date: "2026-02-16"
 product: "pdf"
-description: "Trim margins and clean page areas for print or submission. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Trim margins and clean page areas for print or submission. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "crop-pdf"
   - "pdf tools"

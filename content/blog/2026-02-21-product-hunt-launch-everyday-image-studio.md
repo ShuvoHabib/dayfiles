@@ -49,7 +49,7 @@ You can view the launch here:
 
 - [Everyday Image Studio Chrome Extension on Product Hunt](https://www.producthunt.com/products/everyday-image-studio-chrome-extension?launch=everyday-image-studio-chrome-extension)
 
-For Dayfiles, this is more than a visibility moment. It is a product validation step. Product Hunt is where builders and users quickly test whether a tool solves a real day-to-day problem. The Everyday Image Studio extension was built specifically for those daily tasks that need quick image adjustments without opening heavy software.
+For Dayfiles, this is more than a visibility moment. It is a product validation step. Product Hunt is where builders and users quickly test whether a tool solves a real day-to-day problem. The Everyday Image Studio extension was built specifically for those daily tasks that need quick image adjustments without opening heavy software. The parent hub for that workflow on dayfiles.com is [Everyday Image Studio](/everyday-image-studio), while broader image-processing tasks live under [Images](/images).
 
 ## The core workflow the extension is built for
 
@@ -93,7 +93,7 @@ The product direction remains the same: reduce friction in everyday image work a
 
 Everyday Image Studio is one part of a broader Dayfiles workflow. In many real use cases, image edits are only the first stage. After visuals are prepared, users still need to compile and finalize documents.
 
-That is where the Dayfiles stack becomes useful as a connected system rather than isolated tools.
+That is where the Dayfiles stack becomes useful as a connected system rather than isolated tools. Users can move from the [Everyday Image Studio](/everyday-image-studio) hub into the live extension workflow, then continue into [PDF Toolkit](/pdf-toolkit) when the image work feeds a final document packet.
 
 ## Final note: PDF workflows in the same ecosystem
 

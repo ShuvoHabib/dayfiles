@@ -44,7 +44,7 @@ How can you handle fill pdf forms online: complete application pdfs faster faste
 
 "Fill PDF form online" is a task keyword, not a browsing keyword. People search it when they already have a document and a deadline. They need to complete fields correctly, save a clean output, and submit quickly. The faster a tool gets them from blank form to final file, the more likely they are to trust and reuse it.
 
-This is especially true for users dealing with process-heavy paperwork: study applications, visa forms, internship paperwork, job onboarding packets, healthcare claims, and compliance checklists.
+This is especially true for users dealing with process-heavy paperwork: study applications, visa forms, internship paperwork, job onboarding packets, healthcare claims, and compliance checklists. The parent workflow hub for that document work on Dayfiles is [PDF Toolkit](/pdf-toolkit).
 
 ## What users usually struggle with
 

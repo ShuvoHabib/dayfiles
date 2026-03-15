@@ -34,7 +34,7 @@ faq:
       Most teams should remove unclear handoffs first by adding explicit input
       requirements and output acceptance criteria.
 ---
-How can you manage everyday image studio workflow playbook for daily teams without slowing down the rest of your file workflow? Dayfiles articles focus on practical browser-based image work for teams, applicants, and creators who need clean exports, consistent quality, and fewer handoff mistakes. This guide shows where the workflow matters most, what to review before export, and how to connect the work to the broader Dayfiles process.
+How can you manage everyday image studio workflow playbook for daily teams without slowing down the rest of your file workflow? Dayfiles articles focus on practical browser-based image work for teams, applicants, and creators who need clean exports, consistent quality, and fewer handoff mistakes. This guide shows where the workflow matters most, what to review before export, and how to connect the work to the broader Dayfiles process. If you need the parent editing hub before the detailed playbook, start with [Everyday Image Studio](/everyday-image-studio).
 
 ## Why image workflows break down in daily operations
 

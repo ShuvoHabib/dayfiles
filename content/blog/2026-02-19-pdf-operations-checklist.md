@@ -33,7 +33,7 @@ faq:
       Avoid aggressive compression when files contain detail-critical diagrams,
       legal text, or print-quality requirements.
 ---
-How can you handle pdf toolkit checklist for reliable document delivery faster without creating file chaos or avoidable privacy risk? Dayfiles articles focus on repeatable browser-based document work so teams, students, and applicants can move from raw files to final delivery with fewer delays. This guide explains where the workflow fits, what should be checked before export, and how to keep the overall process reliable from start to finish.
+How can you handle pdf toolkit checklist for reliable document delivery faster without creating file chaos or avoidable privacy risk? Dayfiles articles focus on repeatable browser-based document work so teams, students, and applicants can move from raw files to final delivery with fewer delays. This guide explains where the workflow fits, what should be checked before export, and how to keep the overall process reliable from start to finish. If you need the broader document hub first, start with [PDF Toolkit](/pdf-toolkit).
 
 ## Why PDF delivery still fails in modern teams
 

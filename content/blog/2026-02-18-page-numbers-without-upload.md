@@ -3,7 +3,7 @@ title: "How to Add Page Numbers to a PDF Without Uploading It"
 slug: "page-numbers-without-upload"
 date: "2026-02-18"
 product: "pdf"
-description: "Insert clear page numbering for review and legal documents. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Insert clear page numbering for review and legal documents. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "page-numbers"
   - "pdf tools"

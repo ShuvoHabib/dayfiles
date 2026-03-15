@@ -3,7 +3,7 @@ title: "How to Convert DOCX to PDF Without Uploading Files"
 slug: "docx-to-pdf-without-upload"
 date: "2026-02-22"
 product: "pdf"
-description: "Export DOCX files to PDF for stable, share-ready formatting. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Export DOCX files to PDF for stable, share-ready formatting. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "docx-to-pdf"
   - "pdf tools"

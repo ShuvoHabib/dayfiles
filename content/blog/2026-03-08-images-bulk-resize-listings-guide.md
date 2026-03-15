@@ -87,6 +87,18 @@ When teams resize in bulk, the risky files are usually:
 
 If those files survive the resize cleanly, the rest of the set usually follows. A targeted review method saves more time than opening every image individually.
 
+## How to handle mixed aspect ratios without starting over
+
+Mixed aspect ratios are where most resize batches go off course. Teams often combine square, portrait, and landscape files, then expect one export rule to satisfy a destination that was really designed for only one shape. The fix is not to improvise file by file. The fix is to separate the batch into groups that share the same target behavior.
+
+If the destination accepts only one layout style, decide early whether padding, cropping, or rejection of edge cases is the right tradeoff. That decision keeps the reviewer from having to interpret visual inconsistencies after the fact.
+
+## Use this workflow when upload consistency matters more than one perfect image
+
+Listings and content systems rarely reward one beautiful file inside an inconsistent batch. They reward predictability. A clean resize workflow helps the whole set behave the same way in grid views, product pages, internal portals, and reviewer queues.
+
+That is why batch resizing is usually an operations problem, not an image-aesthetics problem. The goal is to keep the destination stable for every asset in the set.
+
 ## Bulk resize workflow vs last-minute re-exporting
 
 | Requirement | Bulk resize workflow | Last-minute manual edits |
@@ -100,7 +112,13 @@ This is why resizing should be part of the pre-upload workflow, not a rescue act
 
 ## Where this fits in Dayfiles content
 
-If the team needs a broader operating model for repeated image work, the best adjacent process article is the [Everyday Image Studio Workflow Playbook](/blog/eis-workflow-playbook). If strict photo rules are part of the job, the [Everyday Image Studio Passport Photo Checklist Guide](/blog/eis-passport-photo-checklist) is useful because it shows how exact dimension work should be reviewed. If resized images are heading into a final document set, close the loop with the [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist).
+Start from [Images](/images) when the work is mainly batch resizing for one destination. If the team needs a broader operating model for repeated image work after the resize stage, the best adjacent process article is the [Everyday Image Studio Workflow Playbook](/blog/eis-workflow-playbook). If strict photo rules are part of the job, the [Everyday Image Studio Passport Photo Checklist Guide](/blog/eis-passport-photo-checklist) is useful because it shows how exact dimension work should be reviewed. If resized images are heading into a final document set, close the loop with the [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist).
+
+## What the reviewer should confirm before upload
+
+The final reviewer does not need to reopen the whole production process. They only need to confirm that the resized folder matches the destination requirement, that the odd-shape images were handled intentionally, and that filenames still map back to the source set. That quick review is often enough to prevent platform rejection and confusing second exports.
+
+If the batch is headed to a marketplace or shared content system, it also helps to keep one short note with the target dimensions and export date. That gives the next teammate immediate context if the destination changes later.
 
 ## Final takeaway
 

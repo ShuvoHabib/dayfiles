@@ -109,8 +109,9 @@ Dayfiles therefore treats ad-related communication as part of product communicat
 
 Dayfiles provides practical tools for recurring file operations. In the current stack:
 
-- Everyday Image Studio supports image workflow tasks.
-- PDF Toolkit supports PDF conversion and packaging tasks.
+- [Everyday Image Studio](/everyday-image-studio) supports image-editing workflows.
+- [Images](/images) supports broader image conversion, compression, and export tasks.
+- [PDF Toolkit](/pdf-toolkit) supports PDF conversion and packaging tasks.
 
 The blog explains how to use those capabilities in realistic workflows. Ads can support the publication layer, while product tools support execution.
 

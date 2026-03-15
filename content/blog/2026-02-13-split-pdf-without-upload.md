@@ -1,9 +1,9 @@
 ---
-title: "How to Split a PDF Without Uploading It"
+title: "How to Split a PDF in Browser Without Uploading It"
 slug: "split-pdf-without-upload"
 date: "2026-02-13"
 product: "pdf"
-description: "Extract pages or split one large PDF into smaller files. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Extract pages or split one large PDF into smaller files. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "split-pdf"
   - "pdf tools"

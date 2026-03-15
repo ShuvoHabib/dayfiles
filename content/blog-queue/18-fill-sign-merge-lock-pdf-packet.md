@@ -1,5 +1,5 @@
 ---
-title: "How to Fill, Sign, Merge, and Lock a PDF Packet"
+title: "How to Fill, Sign, Merge, and Lock a Final PDF Packet"
 slug: "fill-sign-merge-lock-pdf-packet"
 date: "2026-03-07"
 product: "pdf"

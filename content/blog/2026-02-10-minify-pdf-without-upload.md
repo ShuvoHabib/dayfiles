@@ -1,9 +1,9 @@
 ---
-title: "How to Minify a PDF Without Uploading It"
+title: "How to Minify a PDF in Browser Without Uploading It"
 slug: "minify-pdf-without-upload"
 date: "2026-02-10"
 product: "pdf"
-description: "Reduce PDF file size while keeping text and layout readable. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Reduce PDF file size while keeping text and layout readable. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "minify-pdf"
   - "pdf tools"

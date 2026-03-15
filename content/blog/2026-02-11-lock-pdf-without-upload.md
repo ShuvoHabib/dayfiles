@@ -3,7 +3,7 @@ title: "How to Password Protect a PDF Without Uploading It"
 slug: "lock-pdf-without-upload"
 date: "2026-02-11"
 product: "pdf"
-description: "Protect sensitive PDFs with a password before sharing. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Protect sensitive PDFs with a password before sharing. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "lock-pdf"
   - "pdf tools"

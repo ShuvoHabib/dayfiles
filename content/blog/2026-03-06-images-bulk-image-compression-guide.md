@@ -88,6 +88,12 @@ Compression quality problems usually appear in the same places:
 
 A team does not need to inspect every image at full depth. It only needs a consistent spot-check method. Review the first file, a middle file, the most detailed file, and the final file in the batch. That catches most avoidable issues early.
 
+## Use this workflow when size limits are fixed but quality still matters
+
+This is the right workflow when the destination has a real threshold and the team cannot afford to guess. Marketplace uploads, newsletter asset folders, support-center images, and customer portals all create that situation. The batch has to get lighter, but the important details still have to survive the handoff.
+
+Compression is also valuable when several people will review or reuse the same export set later. A clearly named compressed batch prevents the team from mixing originals, experiments, and delivery copies once deadlines get close.
+
 ## Client-side batch compression vs ad hoc editing
 
 | Requirement | Repeatable bulk compression workflow | Ad hoc export in mixed tools |
@@ -101,8 +107,16 @@ This is why compression belongs inside a workflow instead of inside improvisatio
 
 ## Where this fits in the Dayfiles stack
 
-Compression is often only one stage in a broader content pipeline. If your team is still defining repeatable image operations, the closest process guide is the [Everyday Image Studio Workflow Playbook](/blog/eis-workflow-playbook). If those images are heading into a final PDF packet, pair the batch with the [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist). If the files support an application or student submission, the [Student Visa Application Workflow Story Powered by Dayfiles](/blog/student-visa-application-story) shows how image preparation and packet assembly connect under deadline pressure.
+Compression is often only one stage in a broader content pipeline. Start from [Images](/images) when the main job is batch compression, conversion, or upload preparation at scale. If your team is still defining repeatable image operations after that processing stage, the closest process guide is the [Everyday Image Studio Workflow Playbook](/blog/eis-workflow-playbook). If those images are heading into a final PDF packet, pair the batch with the [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist). If the files support an application or student submission, the [Student Visa Application Workflow Story Powered by Dayfiles](/blog/student-visa-application-story) shows how image preparation and packet assembly connect under deadline pressure.
+
+## A short handoff rule for compressed batches
+
+Once the compressed set passes review, treat it as a named delivery asset rather than as a temporary folder. A simple batch suffix, one storage location, and one owner are usually enough. That small bit of discipline prevents a later teammate from reopening the originals, recompressing them differently, and creating a second "approved" batch right before send-off.
+
+The more people involved in the handoff, the more valuable that rule becomes. Compression is fast. Reconstructing which batch was approved is what wastes time later.
 
 ## Final takeaway
 
 Bulk compression should make delivery easier, not create another hidden QA problem. Use [Images by Dayfiles](https://images.dayfiles.com/compress-image) when the team needs one controlled batch workflow before upload, and keep the process simple: define the target, compress once, review the hardest files, then ship the approved set.
+
+If the batch will later feed a document packet, keep the compressed folder intact until the PDF assembly step starts. That small handoff habit makes it much easier to explain which image set became the final submission.

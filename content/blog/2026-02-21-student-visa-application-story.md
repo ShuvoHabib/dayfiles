@@ -66,7 +66,7 @@ She has duplicate versions with names like:
 
 If she sends the wrong version, she may need to resubmit. If file sizes are too large or pages are inconsistent, she may lose time during critical appointment windows.
 
-That is where Dayfiles becomes useful in a practical, non-theoretical way. Dayfiles already positions itself around daily file work, with Everyday Image Studio for image workflows and PDF Toolkit for PDF operations. Ama does not need a complicated software stack. She needs predictable steps.
+That is where Dayfiles becomes useful in a practical, non-theoretical way. Dayfiles already positions itself around daily file work, with [Everyday Image Studio](/everyday-image-studio) for image workflows and [PDF Toolkit](/pdf-toolkit) for PDF operations. Ama does not need a complicated software stack. She needs predictable steps.
 
 ## Step 1: Build one master application workspace
 

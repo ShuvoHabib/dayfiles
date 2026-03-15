@@ -1,9 +1,9 @@
 ---
-title: "How to Convert PDF to JPG Without Uploading Files"
+title: "How to Convert PDF to JPG Without Uploading Files Online"
 slug: "pdf-to-jpg-without-upload"
 date: "2026-02-19"
 product: "pdf"
-description: "Convert PDF pages into JPG images for sharing and slides. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Convert PDF pages into JPG images for sharing and slides. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "pdf-to-jpg"
   - "pdf tools"

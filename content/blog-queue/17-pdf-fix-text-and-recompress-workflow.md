@@ -1,5 +1,5 @@
 ---
-title: "How to Fix PDF Text and Save a Smaller Final PDF"
+title: "How to Fix PDF Text and Save a Smaller Final PDF File"
 slug: "pdf-fix-text-and-recompress-workflow"
 date: "2026-03-07"
 product: "pdf"

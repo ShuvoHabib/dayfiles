@@ -1,10 +1,10 @@
 [
   {
-    "title": "Image Studio Employee ID Photo Standard Guide",
+    "title": "Employee ID Photo Standards for HR Teams and Faster Reviews",
     "slug": "eis-employee-id-photo-standard-guide",
     "date": "2026-03-14",
     "product": "eis",
-    "description": "Standardize employee ID photos with Everyday Image Studio. Learn framing, export, naming, quality checks, and review steps that reduce HR rework.",
+    "description": "Standardize employee ID photos with a repeatable HR workflow for crop, background, export, naming, and packet handoff checks that reduce rework and delays.",
     "tags": [
       "employee id photo",
       "everyday image studio",
@@ -14,14 +14,14 @@
     "canonicalUrl": "https://dayfiles.com/blog/eis-employee-id-photo-standard-guide",
     "featuredImage": "/blog/images/eis-employee-id-photo-standard-guide.svg",
     "featuredImageAlt": "Employee ID photo standard workflow visual",
-    "readingMinutes": 2
+    "readingMinutes": 4
   },
   {
-    "title": "PDF Client Report Workflow for Daily Delivery",
+    "title": "Confidential Client Report PDF Workflow for Delivery Teams",
     "slug": "pdf-confidential-client-report-workflow",
     "date": "2026-03-12",
     "product": "pdf",
-    "description": "Run a controlled PDF client report workflow in Dayfiles with stronger review checks, version discipline, approval steps, and safer delivery handoffs.",
+    "description": "Run a controlled confidential client report workflow with stronger PDF review, version discipline, approval checks, and safer client delivery handoffs.",
     "tags": [
       "confidential reports",
       "client delivery",
@@ -31,7 +31,7 @@
     "canonicalUrl": "https://dayfiles.com/blog/pdf-confidential-client-report-workflow",
     "featuredImage": "/blog/images/pdf-confidential-client-report-workflow.svg",
     "featuredImageAlt": "Confidential client report PDF workflow visual",
-    "readingMinutes": 2
+    "readingMinutes": 5
   },
   {
     "title": "How to Convert Images to JPG for Consistent Delivery",
@@ -48,7 +48,7 @@
     "canonicalUrl": "https://dayfiles.com/blog/images-convert-to-jpg-guide",
     "featuredImage": "/blog/images/images-convert-to-jpg-guide.svg",
     "featuredImageAlt": "Image to JPG conversion workflow visual",
-    "readingMinutes": 3
+    "readingMinutes": 4
   },
   {
     "title": "How to Resize Images in Bulk for Listings and Uploads",
@@ -65,7 +65,7 @@
     "canonicalUrl": "https://dayfiles.com/blog/images-bulk-resize-listings-guide",
     "featuredImage": "/blog/images/images-bulk-resize-listings-guide.svg",
     "featuredImageAlt": "Bulk image resize workflow visual",
-    "readingMinutes": 3
+    "readingMinutes": 4
   },
   {
     "title": "How to Compress Images in Bulk Before Upload Deadlines",
@@ -82,14 +82,14 @@
     "canonicalUrl": "https://dayfiles.com/blog/images-bulk-image-compression-guide",
     "featuredImage": "/blog/images/images-bulk-image-compression-guide.svg",
     "featuredImageAlt": "Bulk image compression workflow visual",
-    "readingMinutes": 3
+    "readingMinutes": 4
   },
   {
-    "title": "PDF Onboarding Workflow for Sensitive Teams",
+    "title": "Employee Onboarding PDF Workflow for Remote HR Teams",
     "slug": "pdf-employee-onboarding-doc-workflow",
     "date": "2026-03-04",
     "product": "pdf",
-    "description": "Learn a privacy-sensitive PDF onboarding workflow for HR teams using Dayfiles to fill, sign, review, archive, and hand off employee packets safely.",
+    "description": "Run a cleaner employee onboarding PDF workflow for HR teams with stronger form checks, signature timing, version control, and packet handoff discipline.",
     "tags": [
       "employee onboarding",
       "hr documents",
@@ -99,14 +99,14 @@
     "canonicalUrl": "https://dayfiles.com/blog/pdf-employee-onboarding-doc-workflow",
     "featuredImage": "/blog/images/pdf-employee-onboarding-doc-workflow.svg",
     "featuredImageAlt": "Employee onboarding PDF workflow visual",
-    "readingMinutes": 2
+    "readingMinutes": 5
   },
   {
-    "title": "PDF Visa Packet Checklist for Faster Reviews",
+    "title": "Visa Packet PDF Checklist for Clean Final Submission",
     "slug": "pdf-visa-application-packet-checklist",
     "date": "2026-03-02",
     "product": "pdf",
-    "description": "Use this PDF visa packet checklist to align forms, signatures, naming, and exports in Dayfiles before final submission deadlines and portal reviews.",
+    "description": "Use this visa packet PDF checklist to align forms, signatures, naming, and final export steps before portal upload, review, and final handoff checks today.",
     "tags": [
       "visa application pdf",
       "document checklist",
@@ -116,7 +116,7 @@
     "canonicalUrl": "https://dayfiles.com/blog/pdf-visa-application-packet-checklist",
     "featuredImage": "/blog/images/pdf-visa-application-packet-checklist.svg",
     "featuredImageAlt": "Visa application packet PDF checklist visual",
-    "readingMinutes": 2
+    "readingMinutes": 4
   },
   {
     "title": "PDF Fill and Sign Workflow Guide for Private Teams",
@@ -195,7 +195,7 @@
     "slug": "html-to-pdf-without-upload",
     "date": "2026-02-23",
     "product": "pdf",
-    "description": "Generate PDF output from HTML for reports and records. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Generate PDF output from HTML for reports and records. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "html-to-pdf",
       "pdf tools",
@@ -212,7 +212,7 @@
     "slug": "docx-to-pdf-without-upload",
     "date": "2026-02-22",
     "product": "pdf",
-    "description": "Export DOCX files to PDF for stable, share-ready formatting. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Export DOCX files to PDF for stable, share-ready formatting. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "docx-to-pdf",
       "pdf tools",
@@ -225,11 +225,11 @@
     "readingMinutes": 6
   },
   {
-    "title": "How to Convert JPG to PDF Without Uploading Files",
+    "title": "How to Convert JPG to PDF Without Uploading Files Online",
     "slug": "jpg-to-pdf-without-upload",
     "date": "2026-02-21",
     "product": "pdf",
-    "description": "Turn image files into a clean PDF packet in seconds. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Turn image files into a clean PDF packet in seconds. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "jpg-to-pdf",
       "pdf tools",
@@ -256,7 +256,7 @@
     "canonicalUrl": "https://dayfiles.com/blog/product-hunt-launch-everyday-image-studio",
     "featuredImage": "/blog/images/product-hunt-launch-everyday-image-studio.svg",
     "featuredImageAlt": "Everyday Image Studio launch announcement on Product Hunt",
-    "readingMinutes": 4
+    "readingMinutes": 5
   },
   {
     "title": "Student Visa Application Workflow Story Powered by Dayfiles",
@@ -297,7 +297,7 @@
     "slug": "pdf-to-docx-without-upload",
     "date": "2026-02-20",
     "product": "pdf",
-    "description": "Convert PDF content into editable DOCX when updates are needed. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Convert a PDF to editable DOCX in your browser, then review formatting, layout, and final delivery checks before exporting the updated final document.",
     "tags": [
       "pdf-to-docx",
       "pdf tools",
@@ -327,11 +327,11 @@
     "readingMinutes": 6
   },
   {
-    "title": "How to Convert PDF to JPG Without Uploading Files",
+    "title": "How to Convert PDF to JPG Without Uploading Files Online",
     "slug": "pdf-to-jpg-without-upload",
     "date": "2026-02-19",
     "product": "pdf",
-    "description": "Convert PDF pages into JPG images for sharing and slides. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Convert PDF pages into JPG images for sharing and slides. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "pdf-to-jpg",
       "pdf tools",
@@ -348,7 +348,7 @@
     "slug": "page-numbers-without-upload",
     "date": "2026-02-18",
     "product": "pdf",
-    "description": "Insert clear page numbering for review and legal documents. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Insert clear page numbering for review and legal documents. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "page-numbers",
       "pdf tools",
@@ -378,11 +378,11 @@
     "readingMinutes": 6
   },
   {
-    "title": "How to Watermark a PDF Without Uploading It",
+    "title": "How to Watermark a PDF Without Uploading It Online",
     "slug": "watermark-without-upload",
     "date": "2026-02-17",
     "product": "pdf",
-    "description": "Add brand, draft, or confidential marks to PDF pages. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Add brand, draft, or confidential marks to PDF pages. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "watermark",
       "pdf tools",
@@ -395,11 +395,11 @@
     "readingMinutes": 5
   },
   {
-    "title": "How to Crop PDF Pages Without Uploading Files",
+    "title": "How to Crop PDF Pages Without Uploading Files Online",
     "slug": "crop-pdf-without-upload",
     "date": "2026-02-16",
     "product": "pdf",
-    "description": "Trim margins and clean page areas for print or submission. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Trim margins and clean page areas for print or submission. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "crop-pdf",
       "pdf tools",
@@ -412,11 +412,11 @@
     "readingMinutes": 5
   },
   {
-    "title": "How to Reorder PDF Pages Without Uploading Files",
+    "title": "How to Reorder PDF Pages Without Uploading Files Online",
     "slug": "organize-pdf-without-upload",
     "date": "2026-02-15",
     "product": "pdf",
-    "description": "Reorder, remove, and arrange pages before final delivery. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Reorder, remove, and arrange pages before final delivery. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "organize-pdf",
       "pdf tools",
@@ -429,11 +429,11 @@
     "readingMinutes": 5
   },
   {
-    "title": "How to Rotate PDF Pages Without Uploading Files",
+    "title": "How to Rotate PDF Pages Without Uploading Files Online",
     "slug": "rotate-pdf-without-upload",
     "date": "2026-02-14",
     "product": "pdf",
-    "description": "Fix page orientation quickly for scans and mixed-layout files. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Fix sideways or upside-down PDF pages in your browser, then review orientation, page order, readability, and final delivery checks before the final export.",
     "tags": [
       "rotate-pdf",
       "pdf tools",
@@ -446,11 +446,11 @@
     "readingMinutes": 5
   },
   {
-    "title": "How to Split a PDF Without Uploading It",
+    "title": "How to Split a PDF in Browser Without Uploading It",
     "slug": "split-pdf-without-upload",
     "date": "2026-02-13",
     "product": "pdf",
-    "description": "Extract pages or split one large PDF into smaller files. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Extract pages or split one large PDF into smaller files. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "split-pdf",
       "pdf tools",
@@ -463,11 +463,11 @@
     "readingMinutes": 6
   },
   {
-    "title": "How to Unlock a PDF Without Uploading It",
+    "title": "How to Unlock a PDF in Browser Without Uploading It",
     "slug": "unlock-pdf-without-upload",
     "date": "2026-02-12",
     "product": "pdf",
-    "description": "Remove password restrictions when you have valid access rights. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Remove password restrictions from a PDF in your browser, then review access, storage, and final delivery checks before sharing the approved unlocked file.",
     "tags": [
       "unlock-pdf",
       "pdf tools",
@@ -484,7 +484,7 @@
     "slug": "lock-pdf-without-upload",
     "date": "2026-02-11",
     "product": "pdf",
-    "description": "Protect sensitive PDFs with a password before sharing. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Protect sensitive PDFs with a password before sharing. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "lock-pdf",
       "pdf tools",
@@ -497,11 +497,11 @@
     "readingMinutes": 5
   },
   {
-    "title": "How to Minify a PDF Without Uploading It",
+    "title": "How to Minify a PDF in Browser Without Uploading It",
     "slug": "minify-pdf-without-upload",
     "date": "2026-02-10",
     "product": "pdf",
-    "description": "Reduce PDF file size while keeping text and layout readable. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Reduce PDF file size while keeping text and layout readable. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "minify-pdf",
       "pdf tools",
@@ -514,11 +514,11 @@
     "readingMinutes": 5
   },
   {
-    "title": "How to Merge PDFs Without Uploading Files",
+    "title": "How to Merge PDFs Without Uploading Files in Browser",
     "slug": "merge-pdf-without-upload",
     "date": "2026-02-09",
     "product": "pdf",
-    "description": "Combine multiple PDF files into one document in the browser. Learn the local browser workflow, review checks, and common mistakes before delivery.",
+    "description": "Combine multiple PDF files into one document in the browser. Follow the in-browser workflow, review checks, and delivery steps before you share the final file.",
     "tags": [
       "merge-pdf",
       "pdf tools",

@@ -1,9 +1,9 @@
 ---
-title: "How to Convert JPG to PDF Without Uploading Files"
+title: "How to Convert JPG to PDF Without Uploading Files Online"
 slug: "jpg-to-pdf-without-upload"
 date: "2026-02-21"
 product: "pdf"
-description: "Turn image files into a clean PDF packet in seconds. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Turn image files into a clean PDF packet in seconds. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "jpg-to-pdf"
   - "pdf tools"

@@ -4,28 +4,28 @@ export const productPages = [
   {
     slug: 'images',
     canonicalUrl: `${SITE_URL}/images`,
-    title: 'Free Online Image Tools and Converter | Dayfiles',
+    title: 'Free Online Image Converter and Compression Tools | Dayfiles',
     description:
-      'Use Dayfiles Images to convert, compress, resize, clean up, and export image files in your browser, with no account required for core workflows.',
+      'Use Dayfiles Images to convert, compress, resize in bulk, and export image files in your browser, with no account required for core workflows.',
     shortTitle: 'Images',
     navLabel: 'Images',
     appUrl: 'https://images.dayfiles.com/',
     heroEyebrow: 'Image toolbox hub',
-    h1: 'Free Online Image Tools for Fast Browser Work',
+    h1: 'Free Online Image Conversion and Compression Tools',
     heroCopy:
-      'Use browser-based image tools for conversion, compression, resizing, cleanup, and export without creating an account before core work begins.',
+      'Use browser-based image tools for conversion, compression, batch resizing, and export without creating an account before core work begins.',
     primaryCtaLabel: 'Open Images',
     secondaryCtaLabel: 'Browse image guides',
     secondaryCtaHref: '/blog',
     whatItDoes: [
-      'Images is the Dayfiles landing page for broader browser-based image processing. It is built for people who need to convert image formats, compress files for uploads, resize assets for listings, clean up images quickly, and export finished files without a heavy editor.',
-      'This page gives AI systems and visitors a stable summary route on dayfiles.com. It explains what the app handles, links to supporting guides, and points users to the live image tool when they are ready to work.'
+      'Images is the Dayfiles landing page for browser-based image processing at scale. It is built for people who need to convert formats, compress files for uploads, resize batches for listings, and export delivery-ready images without opening a heavy editor.',
+      'This page gives AI systems and visitors a stable summary route on dayfiles.com. It explains the broader processing use cases, links to supporting guides, and points users to the live image tool when they are ready to work.'
     ],
     whyUse: [
-      'Dayfiles positions Images around practical, repeated file tasks rather than advanced design work. The main value is moving from raw image to usable output quickly for uploads, product listings, applications, and daily operations.',
-      'That makes it useful for teams handling repeated image prep, solo operators working against deadlines, and anyone who needs fast browser-based format changes or file-size reduction.'
+      'Dayfiles positions Images around practical image-processing tasks rather than design editing. The main value is moving from raw image files to upload-ready output quickly for listings, CMS workflows, document assembly, and repeated operational delivery.',
+      'That makes it useful for teams handling batch prep, solo operators working against file-size limits, and anyone who needs browser-based format changes or compression without design-tool overhead.'
     ],
-    bestFor: ['bulk image compression', 'format conversion', 'listing image resize', 'quick image cleanup', 'export prep'],
+    bestFor: ['bulk image compression', 'format conversion', 'listing image resize', 'batch export prep', 'upload-ready image delivery'],
     relatedGuideSlugs: [
       'images-bulk-image-compression-guide',
       'eis-passport-photo-checklist',
@@ -49,13 +49,13 @@ export const productPages = [
     companionSlug: 'everyday-image-studio',
     companionTitle: 'Everyday Image Studio',
     companionCopy:
-      'Need more workflow-specific image editing after conversion or compression? Use Everyday Image Studio as the companion hub for repeated crop, resize, and cleanup tasks.',
+      'Need crop, background cleanup, or workflow-specific image editing after conversion or compression? Use Everyday Image Studio as the companion hub.',
     schema: {
       name: 'Images',
       applicationCategory: 'PhotoEditingApplication',
       operatingSystem: 'Web',
       description:
-        'Browser-based image tools for conversion, compression, resizing, cleanup, and export in repeated daily workflows.'
+        'Browser-based image tools for conversion, compression, batch resizing, and export in repeated daily workflows.'
     }
   },
   {
@@ -118,25 +118,25 @@ export const productPages = [
   {
     slug: 'everyday-image-studio',
     canonicalUrl: `${SITE_URL}/everyday-image-studio`,
-    title: 'Free Online Image Editor for Daily Work | Dayfiles',
+    title: 'Free Online Image Editor for Crop and Cleanup | Dayfiles',
     description:
-      'Use Everyday Image Studio to crop, resize, clean up, and export images in your browser, with no account required for core daily workflows.',
+      'Use Everyday Image Studio to crop, clean up, resize, and export images in your browser, with no account required for core daily workflows.',
     shortTitle: 'Everyday Image Studio',
     navLabel: 'Image Studio',
     appUrl: 'https://everydayimagestudio.dayfiles.com/',
     heroEyebrow: 'Image workflow hub',
-    h1: 'Free Online Image Editing for Daily Work',
+    h1: 'Free Online Image Editing for Crop, Cleanup, and Export',
     heroCopy:
       'Use browser-based image tools for cropping, resizing, cleaning up, and exporting files fast, without creating an account before core daily work begins.',
     primaryCtaLabel: 'Open Image Studio',
     secondaryCtaLabel: 'Browse image guides',
     secondaryCtaHref: '/blog',
     whatItDoes: [
-      'Everyday Image Studio is the Dayfiles landing page for repeated image-editing workflows. It is designed for browser-based crop, resize, cleanup, and export tasks that need to move quickly from source image to finished asset.',
-      'This page gives search engines and visitors a static route on dayfiles.com that explains the tool, links to related content, and routes users into the live image app when they want to start editing.'
+      'Everyday Image Studio is the Dayfiles landing page for repeated image-editing workflows. It is designed for browser-based crop, cleanup, resize, and export tasks that need to move quickly from source image to finished asset.',
+      'This page gives search engines and visitors a static route on dayfiles.com that explains the editing-focused use cases, links to related content, and routes users into the live image app when they want to start editing.'
     ],
     whyUse: [
-      'Dayfiles positions Everyday Image Studio around practical image work instead of heavy creative suites. The emphasis is on fast repeated edits, clear exports, and daily task flow rather than long setup or advanced design tooling.',
+      'Dayfiles positions Everyday Image Studio around practical image editing instead of broad image processing or heavy creative suites. The emphasis is on crop accuracy, cleanup quality, and repeated export work rather than batch conversion.',
       'That makes it a good fit for teams creating content, people preparing submission images, and operators who need quick cleanup and export workflows in the browser.'
     ],
     bestFor: ['passport photo preparation', 'team content production', 'quick image cleanup', 'repeated export workflows'],
@@ -162,7 +162,7 @@ export const productPages = [
     companionSlug: 'pdf-toolkit',
     companionTitle: 'PDF Toolkit',
     companionCopy:
-      'Need document packaging after image prep? Use PDF Toolkit as the companion hub for form filling, conversion, signing, and PDF delivery workflows.',
+      'Need batch conversion or compression before document packaging? Use Images for broad image processing, then PDF Toolkit for form filling, signing, and PDF delivery workflows.',
     schema: {
       name: 'Everyday Image Studio',
       applicationCategory: 'PhotoEditingApplication',

@@ -1,9 +1,9 @@
 ---
-title: "How to Reorder PDF Pages Without Uploading Files"
+title: "How to Reorder PDF Pages Without Uploading Files Online"
 slug: "organize-pdf-without-upload"
 date: "2026-02-15"
 product: "pdf"
-description: "Reorder, remove, and arrange pages before final delivery. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Reorder, remove, and arrange pages before final delivery. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "organize-pdf"
   - "pdf tools"

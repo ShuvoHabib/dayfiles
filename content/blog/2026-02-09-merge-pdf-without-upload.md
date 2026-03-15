@@ -1,9 +1,9 @@
 ---
-title: "How to Merge PDFs Without Uploading Files"
+title: "How to Merge PDFs Without Uploading Files in Browser"
 slug: "merge-pdf-without-upload"
 date: "2026-02-09"
 product: "pdf"
-description: "Combine multiple PDF files into one document in the browser. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Combine multiple PDF files into one document in the browser. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "merge-pdf"
   - "pdf tools"

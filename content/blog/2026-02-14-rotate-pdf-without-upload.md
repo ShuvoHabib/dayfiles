@@ -1,9 +1,9 @@
 ---
-title: "How to Rotate PDF Pages Without Uploading Files"
+title: "How to Rotate PDF Pages Without Uploading Files Online"
 slug: "rotate-pdf-without-upload"
 date: "2026-02-14"
 product: "pdf"
-description: "Fix page orientation quickly for scans and mixed-layout files. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Fix sideways or upside-down PDF pages in your browser, then review orientation, page order, readability, and final delivery checks before the final export."
 tags:
   - "rotate-pdf"
   - "pdf tools"

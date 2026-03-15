@@ -3,7 +3,7 @@ title: "How to Convert HTML to PDF Without Uploading Files"
 slug: "html-to-pdf-without-upload"
 date: "2026-02-23"
 product: "pdf"
-description: "Generate PDF output from HTML for reports and records. Learn the local browser workflow, review checks, and common mistakes before delivery."
+description: "Generate PDF output from HTML for reports and records. Follow the in-browser workflow, review checks, and delivery steps before you share the final file."
 tags:
   - "html-to-pdf"
   - "pdf tools"

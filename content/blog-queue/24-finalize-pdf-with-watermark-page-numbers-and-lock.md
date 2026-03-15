@@ -1,5 +1,5 @@
 ---
-title: "How to Add Watermarks, Page Numbers, and Final Locking Before Delivery"
+title: "How to Finalize a PDF With Watermarks, Numbers, and Locking"
 slug: "finalize-pdf-with-watermark-page-numbers-and-lock"
 date: "2026-03-07"
 product: "pdf"

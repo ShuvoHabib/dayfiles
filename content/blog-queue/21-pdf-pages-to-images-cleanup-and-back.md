@@ -1,9 +1,9 @@
 ---
-title: "How to Convert PDF Pages to Images, Clean Them Up, and Rebuild the PDF"
+title: "How to Clean PDF Pages via Images and Rebuild the PDF"
 slug: "pdf-pages-to-images-cleanup-and-back"
 date: "2026-03-07"
 product: "images"
-description: "Convert PDF pages into images, clean the pages visually, and rebuild the final PDF with a workflow that helps improve clarity before delivery."
+description: "Convert PDF pages into images, clean the pages visually, and rebuild the final PDF with a workflow that improves clarity and review confidence before delivery."
 tags:
   - "convert pdf to images and back to pdf"
   - "pdf page cleanup workflow"

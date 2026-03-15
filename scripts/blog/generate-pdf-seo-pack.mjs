@@ -311,19 +311,19 @@ function plusDays(base, days) {
 
 function titleFor(feature) {
   const explicitTitles = {
-    'Merge PDF': 'How to Merge PDFs Without Uploading Files',
-    'Minify PDF': 'How to Minify a PDF Without Uploading It',
+    'Merge PDF': 'How to Merge PDFs Without Uploading Files in Browser',
+    'Minify PDF': 'How to Minify a PDF in Browser Without Uploading It',
     'Lock PDF': 'How to Password Protect a PDF Without Uploading It',
-    'Unlock PDF': 'How to Unlock a PDF Without Uploading It',
-    'Split PDF': 'How to Split a PDF Without Uploading It',
-    'Rotate PDF': 'How to Rotate PDF Pages Without Uploading Files',
-    'Organize PDF': 'How to Reorder PDF Pages Without Uploading Files',
-    'Crop PDF': 'How to Crop PDF Pages Without Uploading Files',
-    Watermark: 'How to Watermark a PDF Without Uploading It',
+    'Unlock PDF': 'How to Unlock a PDF in Browser Without Uploading It',
+    'Split PDF': 'How to Split a PDF in Browser Without Uploading It',
+    'Rotate PDF': 'How to Rotate PDF Pages Without Uploading Files Online',
+    'Organize PDF': 'How to Reorder PDF Pages Without Uploading Files Online',
+    'Crop PDF': 'How to Crop PDF Pages Without Uploading Files Online',
+    Watermark: 'How to Watermark a PDF Without Uploading It Online',
     'Page Numbers': 'How to Add Page Numbers to a PDF Without Uploading It',
-    'PDF to JPG': 'How to Convert PDF to JPG Without Uploading Files',
+    'PDF to JPG': 'How to Convert PDF to JPG Without Uploading Files Online',
     'PDF to DOCX': 'How to Convert PDF to DOCX Without Uploading Files',
-    'JPG to PDF': 'How to Convert JPG to PDF Without Uploading Files',
+    'JPG to PDF': 'How to Convert JPG to PDF Without Uploading Files Online',
     'DOCX to PDF': 'How to Convert DOCX to PDF Without Uploading Files',
     'HTML to PDF': 'How to Convert HTML to PDF Without Uploading Files'
   };
@@ -332,7 +332,17 @@ function titleFor(feature) {
 }
 
 function descriptionFor(feature) {
-  return `${feature.summary} Learn the local browser workflow, review checks, and common mistakes before delivery.`;
+  const explicitDescriptions = {
+    'Unlock PDF': 'Remove password restrictions from a PDF in your browser, then review access, storage, and final delivery checks before sharing the approved unlocked file.',
+    'Rotate PDF': 'Fix sideways or upside-down PDF pages in your browser, then review orientation, page order, readability, and final delivery checks before the final export.',
+    'PDF to DOCX': 'Convert a PDF to editable DOCX in your browser, then review formatting, layout, and final delivery checks before exporting the updated final document.'
+  };
+
+  if (explicitDescriptions[feature.name]) {
+    return explicitDescriptions[feature.name];
+  }
+
+  return `${feature.summary} Follow the in-browser workflow, review checks, and delivery steps before you share the final file.`;
 }
 
 function longTails(feature) {

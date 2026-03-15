@@ -42,7 +42,7 @@ How can you handle e-sign pdf online: sign documents securely in your browser fa
 
 People search for "sign pdf online free" when they have a deadline, not when they have extra time. The document could be a visa declaration, internship offer, scholarship form, rental paper, client agreement, or internal approval note. In most of these cases, the user needs three things: a fast signature flow, no account friction, and confidence that sensitive files are handled safely.
 
-That is exactly why browser-based tools are seeing strong demand. Traditional upload-first tools may work, but many users are uncomfortable sending personal files to unknown servers for a simple signature step. If the document includes passport pages, ID information, salary details, or legal notes, privacy concerns become non-negotiable.
+That is exactly why browser-based tools are seeing strong demand. Traditional upload-first tools may work, but many users are uncomfortable sending personal files to unknown servers for a simple signature step. If the document includes passport pages, ID information, salary details, or legal notes, privacy concerns become non-negotiable. On Dayfiles, the clean internal starting point for that work is [PDF Toolkit](/pdf-toolkit).
 
 ## The Dayfiles approach for e-signing PDFs
 

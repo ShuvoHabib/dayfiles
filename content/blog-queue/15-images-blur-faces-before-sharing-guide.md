@@ -1,5 +1,5 @@
 ---
-title: "How to Blur Faces Before Sharing Sensitive Photos"
+title: "How to Blur Faces Before Sharing Sensitive Photos Online"
 slug: "images-blur-faces-before-sharing-guide"
 date: "2026-03-03"
 product: "images"
@@ -87,8 +87,22 @@ This is why face blur should be treated like any other controlled release step. 
 
 ## Where this fits in Dayfiles workflows
 
-If the image is part of a larger document process, finish the privacy edit first and then move to the [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist). If the team needs a broader operating model for repeat image work, the [Everyday Image Studio Workflow Playbook](/blog/eis-workflow-playbook) is the best adjacent guide. If the sharing context includes student or application documents with real sensitivity, the [Student Visa Application Workflow Story Powered by Dayfiles](/blog/student-visa-application-story) is also relevant because it shows how image work and final packet discipline connect under deadline pressure.
+Start from [Images](/images) when the job is broad image processing with privacy controls like face blur. If the image is part of a larger document process, finish the privacy edit first and then move to the [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist). If the team needs a broader operating model for repeat image work, the [Everyday Image Studio Workflow Playbook](/blog/eis-workflow-playbook) is the best adjacent guide. If the sharing context includes student or application documents with real sensitivity, the [Student Visa Application Workflow Story Powered by Dayfiles](/blog/student-visa-application-story) is also relevant because it shows how image work and final packet discipline connect under deadline pressure.
+
+## What reviewers should still check before sending
+
+The final reviewer should confirm more than blur placement. They should confirm that no alternate unblurred copy is sitting in the same handoff folder, that the file name makes the redacted status obvious, and that the chosen export is the one actually attached to the message, deck, or document packet. Those checks are simple, but they are what turn an edit into a release-safe workflow.
+
+## Why source separation matters
+
+Keeping the source image separate from the redacted export protects both privacy and team clarity. It reduces the chance of sharing the wrong version under pressure, and it makes later follow-up easier if someone needs to prove which file was intentionally approved for distribution.
+
+## Use this workflow when sharing speed creates the real risk
+
+The need for face blur often appears right before a report is sent, a deck is shared, or a public example is published. That timing is exactly why the workflow matters. A short, repeatable review protects privacy better than relying on memory while everyone is trying to move quickly.
 
 ## Final takeaway
 
 Face blur is not just an edit. It is a privacy-control step before release. Use [Images by Dayfiles](https://images.dayfiles.com/blur-face) when photos need one controlled redaction pass before sharing, and keep the process disciplined: duplicate the source, blur every required subject, review the whole frame, and share only the approved export.
+
+When the image will move into a report, deck, or packet afterward, keep the approved redacted copy in a clearly named handoff folder. That small step makes later reuse safer and much easier to verify.
