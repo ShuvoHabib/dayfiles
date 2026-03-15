@@ -82,8 +82,34 @@ jobs:
           echo "Running: ${CMD[*]}"
           "${CMD[@]}"
 
+      - name: Detect publish changes
+        id: detect_changes
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- \
+            content/blog \
+            content/blog-queue \
+            public/blog \
+            public/blog-index.json \
+            src/generated/blog-index.json \
+            public/sitemap.xml \
+            public/llms.txt \
+            public/_redirects \
+            .blog-queue-state.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No publish artifact changes detected"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Publish artifact changes detected"
+          fi
+
+      - name: Verify sitemap update
+        if: (github.event_name != 'workflow_dispatch' || inputs.mode == 'publish') && steps.detect_changes.outputs.changed == 'true'
+        run: npm run blog:test-sitemap
+
       - name: Validate generated blog state
-        if: github.event_name != 'workflow_dispatch' || inputs.mode == 'publish'
+        if: (github.event_name != 'workflow_dispatch' || inputs.mode == 'publish') && steps.detect_changes.outputs.changed == 'true'
         run: npm run blog:validate
 
       - name: Commit and push changes
