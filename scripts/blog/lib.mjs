@@ -12,7 +12,9 @@ marked.setOptions({
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export const ROOT_DIR = path.resolve(__dirname, '../..');
+export const ROOT_DIR = process.env.DAYFILES_ROOT_DIR
+  ? path.resolve(process.env.DAYFILES_ROOT_DIR)
+  : path.resolve(__dirname, '../..');
 export const CONTENT_DIR = path.join(ROOT_DIR, 'content/blog');
 export const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
 export const BLOG_PUBLIC_DIR = path.join(PUBLIC_DIR, 'blog');

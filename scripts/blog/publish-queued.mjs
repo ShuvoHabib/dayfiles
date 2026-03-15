@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { fileURLToPath } from 'node:url';
 import { buildBlogArtifacts } from './build.mjs';
 import { generateFeaturedImage } from './generate-image.mjs';
-import { CONTENT_DIR, PUBLIC_DIR, ROOT_DIR, ensureDir, normalizeDateString } from './lib.mjs';
+import { CONTENT_DIR, PUBLIC_DIR, ROOT_DIR, SITEMAP_PATH, ensureDir, normalizeDateString } from './lib.mjs';
 
 const QUEUE_DIR = path.join(ROOT_DIR, 'content/blog-queue');
 const STATE_PATH = path.join(ROOT_DIR, '.blog-queue-state.json');
@@ -174,6 +174,28 @@ async function ensureFeaturedImage(data) {
   }
 }
 
+function collectSitemapUrls(xml) {
+  return [...String(xml).matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+}
+
+async function assertPublishArtifacts(slug) {
+  const sitemapXml = await fs.readFile(SITEMAP_PATH, 'utf8');
+  const sitemapUrls = collectSitemapUrls(sitemapXml);
+  const canonicalUrl = `https://dayfiles.com/blog/${slug}`;
+  const matches = sitemapUrls.filter((url) => url === canonicalUrl);
+
+  if (matches.length !== 1) {
+    throw new Error(`Published post ${slug} is not represented exactly once in sitemap.xml.`);
+  }
+
+  const publicPostPath = path.join(PUBLIC_DIR, 'blog', slug, 'index.html');
+  try {
+    await fs.access(publicPostPath);
+  } catch {
+    throw new Error(`Published post ${slug} is missing generated HTML at ${publicPostPath}.`);
+  }
+}
+
 async function publishOneFromQueue({ publishDate, dryRun }) {
   const nextFile = await getNextQueuedFile();
   if (!nextFile) {
@@ -268,6 +290,7 @@ export async function publishQueued(options = {}) {
   }
 
   await buildBlogArtifacts();
+  await assertPublishArtifacts(publishResult.slug);
 
   await writeState({
     ...state,
