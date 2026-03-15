@@ -11,9 +11,9 @@ const extensionLink =
 const navLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Chrome Extension', href: extensionLink, external: true },
-  { label: 'Everyday Image Studio', href: '/everyday-image-studio' },
-  { label: 'Images', href: '/images' },
-  { label: 'PDF Toolkit', href: '/pdf-toolkit' }
+  { label: 'Everyday Image Studio', href: 'https://everydayimagestudio.dayfiles.com/', external: true },
+  { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
+  { label: 'PDF Toolkit', href: 'https://pdf.dayfiles.com/', external: true }
 ];
 const footerPrimaryLinks = [
   { label: 'Home', href: '/' },
