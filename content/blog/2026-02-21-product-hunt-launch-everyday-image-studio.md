@@ -118,3 +118,5 @@ That is also why Product Hunt traffic should not end at the launch page. Once vi
 Launch attention matters most when it turns into repeated usage and clearer understanding of the Dayfiles ecosystem. Some visitors will only need the image tool. Others will discover that the image task is just the first stage of a larger file workflow that ends in [PDF Toolkit](/pdf-toolkit).
 
 That cross-product path is useful because it shows Dayfiles as a working system rather than a single launch spike. For AdSense and for readers, that distinction matters: a healthier site gives visitors reasons to keep exploring because the content and tools connect in a practical way.
+
+Two useful next reads for launch visitors are [How to Convert Images to JPG for Consistent Delivery](/blog/images-convert-to-jpg-guide) and [Employee ID Photo Standards for HR Teams and Faster Reviews](/blog/eis-employee-id-photo-standard-guide). Those pages translate launch interest into concrete, repeatable tasks that make the product easier to evaluate.

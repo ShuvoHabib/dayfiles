@@ -84,19 +84,26 @@ function stripMarkdown(markdown) {
 }
 
 function collectJsonLd(post, relatedPosts = []) {
+  const reviewDate = post.reviewDate || post.date;
+  const author = post.authorName
+    ? {
+        '@type': 'Organization',
+        name: post.authorName
+      }
+    : {
+        '@type': 'Organization',
+        name: 'Dayfiles'
+      };
   const blogPosting = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: reviewDate,
     mainEntityOfPage: post.canonicalUrl,
     image: [toAbsoluteUrl(post.featuredImage)],
-    author: {
-      '@type': 'Organization',
-      name: 'Dayfiles'
-    },
+    author,
     publisher: {
       '@type': 'Organization',
       name: 'Dayfiles',
@@ -110,6 +117,13 @@ function collectJsonLd(post, relatedPosts = []) {
     isPartOf: `${SITE_URL}/blog`,
     citation: (post.sources || []).map((source) => source.url)
   };
+
+  if (post.reviewedBy) {
+    blogPosting.editor = {
+      '@type': 'Organization',
+      name: post.reviewedBy
+    };
+  }
 
   const graph = [blogPosting];
 
@@ -522,6 +536,26 @@ function sharedStyles() {
     font-weight: 600;
   }
   .prose strong { color: var(--prose-heading); }
+  .prose figure {
+    margin: 1.25rem 0;
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--card-bg);
+  }
+  .prose figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--card-border);
+    margin: 0;
+  }
+  .prose figcaption {
+    padding: 0.8rem 0.95rem;
+    color: var(--text-soft);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
   .prose code {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace;
     font-size: .92em;
@@ -976,6 +1010,13 @@ function renderBlogIndexPage(posts) {
 function renderPostPage(post, relatedPosts) {
   const sourceCount = Array.isArray(post.sources) ? post.sources.length : 0;
   const hubHref = productHubHref(post.product);
+  const reviewDate = post.reviewDate || post.date;
+  const authorName = post.authorName || 'Dayfiles editorial team';
+  const authorRole = post.authorRole || 'Workflow documentation and public publisher guidance';
+  const reviewerName = post.reviewedBy || 'Dayfiles editorial review';
+  const reviewerRole = post.reviewedRole || 'Checked against live links, page structure, and workflow framing';
+  const testedToolName = post.testedToolName || productBadgeLabel(post.product);
+  const testedToolUrl = post.testedToolUrl || hubHref;
   const faqHtml = (post.faq || [])
     .map(
       (item) => `
@@ -1081,20 +1122,20 @@ function renderPostPage(post, relatedPosts) {
         <p class="muted">${escapeHtml(post.description)}</p>
         <div class="signal-grid">
           <section class="signal-card">
-            <h2>Reviewed by</h2>
-            <p>Dayfiles editorial team. This guide is kept public, source-backed, and aligned with the live workflow hub for this topic.</p>
+            <h2>Written by</h2>
+            <p>${escapeHtml(authorName)}. ${escapeHtml(authorRole)}.</p>
           </section>
           <section class="signal-card">
-            <h2>Last updated</h2>
-            <p>${formatHumanDate(post.date)}. Dates, links, and workflow steps are tied to the publish or refresh date shown above.</p>
+            <h2>Reviewed on</h2>
+            <p>${formatHumanDate(reviewDate)} by ${escapeHtml(reviewerName)}. ${escapeHtml(reviewerRole)}.</p>
           </section>
           <section class="signal-card">
             <h2>Sources reviewed</h2>
             <p>${sourceCount} linked source${sourceCount === 1 ? '' : 's'} support this guide. The full list appears below for verification and follow-up reading.</p>
           </section>
           <section class="signal-card">
-            <h2>Related tool hub</h2>
-            <p>Need the category overview before using the app? Start with <a href="${hubHref}">${productBadgeLabel(post.product)}</a>.</p>
+            <h2>Checked against</h2>
+            <p>This guide is tied to <a href="${escapeHtml(testedToolUrl)}">${escapeHtml(testedToolName)}</a> plus the related Dayfiles hub for this workflow.</p>
           </section>
         </div>
         <div class="hero-cover">

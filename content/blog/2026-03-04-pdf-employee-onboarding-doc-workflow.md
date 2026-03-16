@@ -126,7 +126,7 @@ If the packet includes ID photos or other image assets, finalize those earlier i
 
 If the file uploaded to the HR system and the file saved in the archive do not clearly point to the same packet state, later retrieval gets slow and uncertain. Keep one naming pattern across both destinations so the archive supports the operational record instead of competing with it.
 
-## How this fits in Dayfiles
+## Where this HR packet workflow fits in Dayfiles
 
 Use [PDF Toolkit](/pdf-toolkit) as the parent hub for onboarding packet work. Then connect the workflow to:
 
@@ -145,6 +145,6 @@ Use [PDF Toolkit](/pdf-toolkit) as the parent hub for onboarding packet work. Th
 6. Archive copy and upload copy are identical.
 7. Packet owner and storage destination recorded.
 
-## Final takeaway
+## Final note on onboarding document control
 
 Onboarding packet quality is mostly a workflow discipline issue. HR teams that use [PDF Toolkit](https://pdf.dayfiles.com/) as the document hub, separate review from signature timing, and maintain one approved final packet move faster and create fewer privacy and retrieval problems later.

@@ -126,7 +126,7 @@ Do not send one draft through chat and another through email "just in case." One
 
 If the file goes out with a message that references a different version name, date range, or appendix count, the client still experiences that as a document error. Keep the delivery note aligned with the final PDF name and status so the handoff reads as one controlled action.
 
-## How this fits in Dayfiles
+## Where this report workflow sits in Dayfiles
 
 Use [PDF Toolkit](/pdf-toolkit) as the internal starting point for assembling, reviewing, and exporting the report. If the workflow includes approval signatures, connect the final step to [E-Sign PDF Online](/blog/e-sign-pdf-online). If the report package is built from several separate source files, pair it with [Merge PDF Without Uploads](/blog/merge-pdf-without-upload) and the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist).
 
@@ -143,6 +143,6 @@ If your report includes charts or screenshots prepared earlier in the pipeline, 
 7. Archive copy saved.
 8. One delivery channel selected.
 
-## Final takeaway
+## Final note on confidential report delivery
 
 Confidential client report quality depends as much on release discipline as on analysis quality. Teams that assemble the file in [PDF Toolkit](https://pdf.dayfiles.com/), review against a short delivery checklist, and release one canonical PDF avoid the most expensive versioning mistakes before the client ever opens the document.

@@ -1,5 +1,90 @@
 [
   {
+    "title": "Social Content Workflow for Small Teams in Image Studio",
+    "slug": "eis-social-content-production-workflow",
+    "date": "2026-03-17",
+    "product": "eis",
+    "description": "Build a repeatable social asset workflow with presets, review gates, export rules, and approval discipline so small teams ship cleaner creative faster.",
+    "tags": [
+      "social content workflow",
+      "everyday image studio",
+      "small team ops",
+      "brand consistency"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/eis-social-content-production-workflow",
+    "featuredImage": "/blog/images/eis-social-content-production-workflow.svg",
+    "featuredImageAlt": "Social content production workflow visual",
+    "readingMinutes": 5
+  },
+  {
+    "title": "Visa Photo Checklist to Prevent Resubmission Delays",
+    "slug": "eis-visa-photo-resubmission-checklist",
+    "date": "2026-03-17",
+    "product": "eis",
+    "description": "Use this visa photo checklist to reduce resubmissions caused by crop, background, export, and requirement mismatches before the image reaches the final packet.",
+    "tags": [
+      "visa photo checklist",
+      "everyday image studio",
+      "application quality",
+      "privacy-first"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/eis-visa-photo-resubmission-checklist",
+    "featuredImage": "/blog/images/eis-visa-photo-resubmission-checklist.svg",
+    "featuredImageAlt": "Visa photo resubmission prevention checklist visual",
+    "readingMinutes": 4
+  },
+  {
+    "title": "Privacy-First File Routine for Daily Operations Teams",
+    "slug": "story-operations-team-privacy-first-daily-files",
+    "date": "2026-03-17",
+    "product": "eis",
+    "description": "See how one operations team used Dayfiles to tighten file handoffs, reduce rework, and keep daily image and PDF workflows controlled and traceable every day.",
+    "tags": [
+      "operations story",
+      "file handoff",
+      "privacy-first",
+      "dayfiles routine"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/story-operations-team-privacy-first-daily-files",
+    "featuredImage": "/blog/images/story-operations-team-privacy-first-daily-files.svg",
+    "featuredImageAlt": "Operations team privacy-first daily files story visual",
+    "readingMinutes": 4
+  },
+  {
+    "title": "Remote HR Onboarding Routine for Private PDF Packets",
+    "slug": "story-remote-hr-private-onboarding-routine",
+    "date": "2026-03-17",
+    "product": "pdf",
+    "description": "See how a remote HR team reduced onboarding errors, tightened version control, and standardized private packet delivery across distributed coordinators.",
+    "tags": [
+      "hr story",
+      "remote onboarding",
+      "privacy",
+      "pdf workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/story-remote-hr-private-onboarding-routine",
+    "featuredImage": "/blog/images/story-remote-hr-private-onboarding-routine.svg",
+    "featuredImageAlt": "Remote HR onboarding routine story visual",
+    "readingMinutes": 4
+  },
+  {
+    "title": "Scholarship Document Routine for Student Applications",
+    "slug": "story-student-scholarship-document-routine",
+    "date": "2026-03-17",
+    "product": "pdf",
+    "description": "See how a student used a Dayfiles routine to organize scholarship documents, clean images, and build submission-ready packets with less deadline stress.",
+    "tags": [
+      "student story",
+      "scholarship documents",
+      "dayfiles",
+      "privacy workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/story-student-scholarship-document-routine",
+    "featuredImage": "/blog/images/story-student-scholarship-document-routine.svg",
+    "featuredImageAlt": "Student scholarship document routine story visual",
+    "readingMinutes": 5
+  },
+  {
     "title": "Employee ID Photo Standards for HR Teams and Faster Reviews",
     "slug": "eis-employee-id-photo-standard-guide",
     "date": "2026-03-14",
@@ -116,7 +201,7 @@
     "canonicalUrl": "https://dayfiles.com/blog/pdf-visa-application-packet-checklist",
     "featuredImage": "/blog/images/pdf-visa-application-packet-checklist.svg",
     "featuredImageAlt": "Visa application packet PDF checklist visual",
-    "readingMinutes": 4
+    "readingMinutes": 5
   },
   {
     "title": "PDF Fill and Sign Workflow Guide for Private Teams",
@@ -169,7 +254,7 @@
     "canonicalUrl": "https://dayfiles.com/blog/e-sign-pdf-online",
     "featuredImage": "/blog/images/e-sign-pdf-online.svg",
     "featuredImageAlt": "E-sign PDF online privacy-first guide visual",
-    "readingMinutes": 4
+    "readingMinutes": 5
   },
   {
     "title": "Fill PDF Forms Online: Complete Application PDFs Faster",
@@ -188,7 +273,7 @@
     "canonicalUrl": "https://dayfiles.com/blog/fill-pdf-forms-online",
     "featuredImage": "/blog/images/fill-pdf-forms-online.svg",
     "featuredImageAlt": "Fill PDF forms online privacy-first guide visual",
-    "readingMinutes": 4
+    "readingMinutes": 5
   },
   {
     "title": "How to Convert HTML to PDF Without Uploading Files",
@@ -341,7 +426,7 @@
     "canonicalUrl": "https://dayfiles.com/blog/pdf-to-jpg-without-upload",
     "featuredImage": "/blog/images/pdf-to-jpg-without-upload.svg",
     "featuredImageAlt": "PDF to JPG privacy-first guide visual",
-    "readingMinutes": 5
+    "readingMinutes": 6
   },
   {
     "title": "How to Add Page Numbers to a PDF Without Uploading It",
@@ -358,7 +443,7 @@
     "canonicalUrl": "https://dayfiles.com/blog/page-numbers-without-upload",
     "featuredImage": "/blog/images/page-numbers-without-upload.svg",
     "featuredImageAlt": "Page Numbers privacy-first guide visual",
-    "readingMinutes": 5
+    "readingMinutes": 6
   },
   {
     "title": "Everyday Image Studio Workflow Playbook for Daily Teams",

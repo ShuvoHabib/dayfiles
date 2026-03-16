@@ -15,6 +15,13 @@ tags:
 canonicalUrl: 'https://dayfiles.com/blog/pdf-visa-application-packet-checklist'
 featuredImage: /blog/images/pdf-visa-application-packet-checklist.svg
 featuredImageAlt: Visa application packet PDF checklist visual
+authorName: Dayfiles Editorial Team
+authorRole: Workflow documentation for application packets and document review
+reviewedBy: Dayfiles Product Review
+reviewedRole: Checked against the live Dayfiles packet workflow and related submission guides
+reviewDate: '2026-03-17'
+testedToolName: Dayfiles PDF Toolkit hub
+testedToolUrl: 'https://dayfiles.com/pdf-toolkit'
 sources:
   - title: PDF Dayfiles
     url: 'https://pdf.dayfiles.com/'
@@ -115,7 +122,7 @@ A visa packet is judged as a whole. Review identity fields and dates across form
 
 If the packet includes passport or visa photos, finish those first in [Everyday Image Studio](/everyday-image-studio) so the PDF stage is only about packet consistency and release.
 
-## How this fits in Dayfiles
+## Where this packet workflow connects in Dayfiles
 
 Use [PDF Toolkit](/pdf-toolkit) as the parent hub when the packet still needs form completion, review, signature, or final export. Then connect the workflow to:
 
@@ -125,6 +132,15 @@ Use [PDF Toolkit](/pdf-toolkit) as the parent hub when the packet still needs fo
 - [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) for final delivery discipline.
 
 If the packet includes photo assets, pair this with the [Everyday Image Studio Passport Photo Checklist](/blog/eis-passport-photo-checklist) so image quality is finalized before the upload-ready packet is assembled.
+
+## What the packet owner should see before choosing the next step
+
+<figure>
+  <img src="/blog/images/pdf-toolkit-hub-ui.png" alt="Dayfiles PDF Toolkit hub page with PDF workflow categories and open-tool actions" loading="lazy" />
+  <figcaption>Reviewed on March 17, 2026. The Dayfiles PDF Toolkit hub gives the packet owner one stable place to decide whether the file needs form filling, signature work, merge, or final review before submission.</figcaption>
+</figure>
+
+That is useful for visa work because packet problems are rarely isolated. A passport copy may be fine while one declaration still needs a signature, or the forms may be correct while the final bundle still needs a merge and filename check.
 
 ## Final checklist before upload
 
@@ -136,6 +152,6 @@ If the packet includes photo assets, pair this with the [Everyday Image Studio P
 6. Final packet exported once.
 7. Archive copy saved separately.
 
-## Final takeaway
+## Final note on visa packet quality
 
 Visa packet quality is usually a process problem, not a missing-document problem. Applicants and support teams that use [PDF Toolkit](https://pdf.dayfiles.com/) as the packet hub, run one cross-form review, and lock signatures until the final stage avoid the most common late-stage submission failures.

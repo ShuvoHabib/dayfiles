@@ -115,7 +115,7 @@ Once the compressed set passes review, treat it as a named delivery asset rather
 
 The more people involved in the handoff, the more valuable that rule becomes. Compression is fast. Reconstructing which batch was approved is what wastes time later.
 
-## Final takeaway
+## Final note on bulk image compression
 
 Bulk compression should make delivery easier, not create another hidden QA problem. Use [Images by Dayfiles](https://images.dayfiles.com/compress-image) when the team needs one controlled batch workflow before upload, and keep the process simple: define the target, compress once, review the hardest files, then ship the approved set.
 

@@ -115,7 +115,7 @@ When teams assemble the onboarding packet before the image is approved, the pack
 
 An image can be visually correct and still create operational confusion if the filename is vague. Use one stable format such as `lastname-firstname-employee-id-photo.jpg`.
 
-## How this fits in the Dayfiles stack
+## Where employee-photo prep fits in Dayfiles
 
 The clean division is:
 
@@ -136,6 +136,6 @@ Use this checklist before the image leaves the HR workflow:
 6. Export format matches destination system.
 7. If needed in paperwork, packet handoff owner assigned.
 
-## Final takeaway
+## Final note on employee ID photo standards
 
 Employee ID photo quality is mostly a standards problem, not a software problem. When HR teams define one baseline, edit inside [Everyday Image Studio](https://everydayimagestudio.dayfiles.com/), and only then pass approved files into [PDF Toolkit](https://pdf.dayfiles.com/), review time drops and avoidable correction loops shrink.

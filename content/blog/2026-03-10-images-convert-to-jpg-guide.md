@@ -119,6 +119,6 @@ After conversion, keep the JPG batch separate from the originals and label it fo
 
 This matters even more when the next step is document assembly. If the JPG set later moves into a PDF packet, the clearer the folder and naming discipline are now, the easier the packet review becomes later.
 
-## Final takeaway
+## Final note on reliable JPG delivery
 
 Converting to JPG should reduce delivery friction, not create another approval problem. Use [Images by Dayfiles](https://images.dayfiles.com/convert-to-jpg) when one downstream system expects one stable format, and keep the process disciplined: export a separate JPG batch, review the risky files, and preserve the originals.
