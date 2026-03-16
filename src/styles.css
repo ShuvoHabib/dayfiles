@@ -447,16 +447,12 @@ h1 {
   transform: translateY(-2px);
 }
 
-.hero-action-learn-more {
+.hero-action-note {
+  margin: 0;
+  max-width: 240px;
   padding-left: 0.35rem;
   color: var(--text-soft);
   font-size: 0.94rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.hero-action-learn-more:hover {
-  color: var(--text-main);
 }
 
 .hero-answer-grid {

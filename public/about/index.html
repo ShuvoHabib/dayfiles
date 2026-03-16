@@ -33,53 +33,6 @@
     <meta name="twitter:title" content="About Dayfiles | Browser-Based File Workflow Tools" />
     <meta name="twitter:description" content="Learn what Dayfiles publishes, who the site is for, and how its browser-based PDF and image workflow guides connect to the live tools." />
     <meta name="twitter:image" content="https://dayfiles.com/dayfiles-logo.svg" />
-    
-    <script>
-      (function () {
-        var host = window.location.hostname;
-        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
-        if (!isProd) return;
-        var loaded = false;
-
-        function loadThirdParty() {
-          if (loaded) return;
-          loaded = true;
-
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = function gtag() {
-            window.dataLayer.push(arguments);
-          };
-
-          var gtagScript = document.createElement('script');
-          gtagScript.async = true;
-          gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
-          gtagScript.onload = function () {
-            window.gtag('js', new Date());
-            window.gtag('config', 'G-V6HJS96NK6');
-          };
-          document.head.appendChild(gtagScript);
-
-          var adsScript = document.createElement('script');
-          adsScript.async = true;
-          adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702';
-          adsScript.crossOrigin = 'anonymous';
-          document.head.appendChild(adsScript);
-        }
-
-        function triggerLoad() {
-          loadThirdParty();
-          window.removeEventListener('pointerdown', triggerLoad);
-          window.removeEventListener('keydown', triggerLoad);
-          window.removeEventListener('scroll', triggerLoad);
-        }
-
-        window.addEventListener('pointerdown', triggerLoad, { once: true, passive: true });
-        window.addEventListener('keydown', triggerLoad, { once: true });
-        window.addEventListener('scroll', triggerLoad, { once: true, passive: true });
-        window.setTimeout(loadThirdParty, 60000);
-      })();
-    </script>
-  
     <script type="application/ld+json">{"@graph":[{"@context":"https://schema.org","@type":"AboutPage","name":"About Dayfiles","url":"https://dayfiles.com/about","description":"Learn what Dayfiles publishes, who the site is for, and how its browser-based PDF and image workflow guides connect to the live tools.","publisher":{"@type":"Organization","name":"Dayfiles","url":"https://dayfiles.com/"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dayfiles.com/"},{"@type":"ListItem","position":2,"name":"About Dayfiles","item":"https://dayfiles.com/about"}]}]}</script>
     <style>
   :root {
@@ -566,7 +519,7 @@
         <p class="eyebrow">About the publisher</p>
         <h1 class="hero-title">About Dayfiles</h1>
         <p class="hero-copy">Dayfiles is a small web publisher and product hub focused on practical PDF and image workflows. The site exists to help people complete everyday file work faster with clear guides and direct paths into the live tools.</p>
-        <p class="muted">Last updated March 16, 2026</p>
+        <p class="muted">Last updated March 17, 2026</p>
       </section>
 
       

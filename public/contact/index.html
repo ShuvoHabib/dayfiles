@@ -33,53 +33,6 @@
     <meta name="twitter:title" content="Contact Dayfiles | Support, Policy, and Business Questions" />
     <meta name="twitter:description" content="Contact Dayfiles for support, policy, copyright, privacy, advertising, or business questions related to the site, its guides, and live tools." />
     <meta name="twitter:image" content="https://dayfiles.com/dayfiles-logo.svg" />
-    
-    <script>
-      (function () {
-        var host = window.location.hostname;
-        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
-        if (!isProd) return;
-        var loaded = false;
-
-        function loadThirdParty() {
-          if (loaded) return;
-          loaded = true;
-
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = function gtag() {
-            window.dataLayer.push(arguments);
-          };
-
-          var gtagScript = document.createElement('script');
-          gtagScript.async = true;
-          gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
-          gtagScript.onload = function () {
-            window.gtag('js', new Date());
-            window.gtag('config', 'G-V6HJS96NK6');
-          };
-          document.head.appendChild(gtagScript);
-
-          var adsScript = document.createElement('script');
-          adsScript.async = true;
-          adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702';
-          adsScript.crossOrigin = 'anonymous';
-          document.head.appendChild(adsScript);
-        }
-
-        function triggerLoad() {
-          loadThirdParty();
-          window.removeEventListener('pointerdown', triggerLoad);
-          window.removeEventListener('keydown', triggerLoad);
-          window.removeEventListener('scroll', triggerLoad);
-        }
-
-        window.addEventListener('pointerdown', triggerLoad, { once: true, passive: true });
-        window.addEventListener('keydown', triggerLoad, { once: true });
-        window.addEventListener('scroll', triggerLoad, { once: true, passive: true });
-        window.setTimeout(loadThirdParty, 60000);
-      })();
-    </script>
-  
     <script type="application/ld+json">{"@graph":[{"@context":"https://schema.org","@type":"ContactPage","name":"Contact","url":"https://dayfiles.com/contact","description":"Contact Dayfiles for support, policy, copyright, privacy, advertising, or business questions related to the site, its guides, and live tools.","publisher":{"@type":"Organization","name":"Dayfiles","url":"https://dayfiles.com/"},"email":"contact@dayfiles.com"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dayfiles.com/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://dayfiles.com/contact"}]}]}</script>
     <style>
   :root {
@@ -566,7 +519,7 @@
         <p class="eyebrow">Publisher contact</p>
         <h1 class="hero-title">Contact Dayfiles</h1>
         <p class="hero-copy">Use this page for support, privacy, copyright, advertising, and business questions related to Dayfiles guides and product hubs.</p>
-        <p class="muted">Last updated March 16, 2026</p>
+        <p class="muted">Last updated March 17, 2026</p>
       </section>
 
       

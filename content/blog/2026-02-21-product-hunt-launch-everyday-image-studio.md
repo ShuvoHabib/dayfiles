@@ -107,24 +107,14 @@ A practical flow for many users is:
 
 This Product Hunt launch is a key milestone for the image side of Dayfiles, and it also points toward a more complete end-to-end file workflow across the full platform.
 
-## What should you do after the image edit
+## What Product Hunt visitors should test first
 
-A clean image export is usually only one step in a larger workflow. The image may be headed into an application packet, a content calendar, a shared team folder, or a final PDF. That is why image quality alone is not enough. The process around naming, reviewing, and exporting also matters. If you need the broader Dayfiles image system, continue with [Everyday Image Studio Workflow Playbook for Daily Teams](/blog/eis-workflow-playbook) and [Everyday Image Studio Passport Photo Checklist Guide](/blog/eis-passport-photo-checklist). If the image will be submitted inside a document packet, connect the work with [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist) so the file moves into the next step cleanly.
+A launch page works better when it gives new visitors a short path instead of a broad promise. For Everyday Image Studio, the best first tests are jobs that are easy to understand and easy to judge: resize one image for a listing, clean up one image for a post, or prepare one image for a submission requirement. Those examples make the value legible faster than a long feature inventory.
 
-The practical gain is consistency. When teams and individual users follow a repeatable review path, they spend less time second-guessing exports and less time fixing preventable issues after handoff.
+That is also why Product Hunt traffic should not end at the launch page. Once visitors understand the first use case, they should be able to continue into the main [Everyday Image Studio](/everyday-image-studio) hub or the broader [Everyday Image Studio Workflow Playbook for Daily Teams](/blog/eis-workflow-playbook).
 
-## Repeatable image workflow checklist
+## How launch interest should flow into the broader site
 
-Use this checklist when the image matters for an application, formal submission, or multi-person workflow:
+Launch attention matters most when it turns into repeated usage and clearer understanding of the Dayfiles ecosystem. Some visitors will only need the image tool. Others will discover that the image task is just the first stage of a larger file workflow that ends in [PDF Toolkit](/pdf-toolkit).
 
-1. Confirm the exact size, crop, and quality requirement before editing.
-2. Keep the original image untouched so you can return to it if needed.
-3. Make edits with the final destination in mind, not just visual preference.
-4. Export with a clear filename that matches the project or submission step.
-5. Review the output on the device or screen where it will actually be used.
-
-A reliable process matters more than a flashy feature list. Most users do not need dozens of effects. They need a result that looks correct, exports cleanly, and fits the requirement the first time. That is why browser-first image workflows are strongest when they are built around repeated real tasks rather than one-off experimentation.
-
-## Why this workflow matters for privacy and speed
-
-Image work often contains personal information, faces, IDs, product drafts, or internal brand assets. Even when the edit itself is simple, the file can still be sensitive. A practical Dayfiles workflow helps users move from source image to final export with less confusion, fewer unnecessary transfers, and better readiness for the next step. That combination of clarity and speed is what makes the workflow useful over time, not just for one edit today.
+That cross-product path is useful because it shows Dayfiles as a working system rather than a single launch spike. For AdSense and for readers, that distinction matters: a healthier site gives visitors reasons to keep exploring because the content and tools connect in a practical way.

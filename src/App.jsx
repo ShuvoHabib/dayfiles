@@ -21,18 +21,18 @@ const liveProducts = [
   }
 ];
 
-const betaFeatures = [
+const guideStandards = [
   {
-    name: 'File Copilot',
-    description: 'Ask for edits in plain language and generate ready-to-share files in seconds.'
+    name: 'Task-first writing',
+    description: 'Guides are written around a real file job, the likely failure points, and the review steps that matter before submission.'
   },
   {
-    name: 'Shared Workspaces',
-    description: 'Keep all versions, comments, and exports in one place for your whole team.'
+    name: 'Live tool checks',
+    description: 'Each guide links back to the relevant Dayfiles product hub so readers can verify the workflow against the current tool path.'
   },
   {
-    name: 'Smart File Tags',
-    description: 'Auto-tag incoming files by content so search and sorting stay fast at scale.'
+    name: 'Visible trust pages',
+    description: 'Editorial policy, contact details, privacy terms, and advertising disclosure stay public so the site is reviewable.'
   }
 ];
 
@@ -50,25 +50,25 @@ const themeOptions = new Set(['system', 'light', 'dark']);
 const navigationLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Chrome Extension', href: extensionLink, external: true },
-  { label: 'Everyday Image Studio', href: 'https://everydayimagestudio.dayfiles.com/', external: true },
-  { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
-  { label: 'PDF Toolkit', href: 'https://pdf.dayfiles.com/', external: true }
+  { label: 'Everyday Image Studio', href: '/everyday-image-studio' },
+  { label: 'Images', href: '/images' },
+  { label: 'PDF Toolkit', href: '/pdf-toolkit' }
 ];
 const heroActions = [
   {
     label: 'Explore Image Studio',
-    href: 'https://everydayimagestudio.dayfiles.com/',
-    learnMoreHref: '/everyday-image-studio'
+    href: '/everyday-image-studio',
+    note: 'See the workflow hub, current use cases, and the live app path.'
   },
   {
-    label: 'Open Images',
-    href: 'https://images.dayfiles.com/',
-    learnMoreHref: '/images'
+    label: 'Browse Workflow Guides',
+    href: '/blog',
+    note: 'Read task-first guides that explain what to check before delivery.'
   },
   {
     label: 'Open PDF Toolkit',
-    href: 'https://pdf.dayfiles.com/',
-    learnMoreHref: '/pdf-toolkit'
+    href: '/pdf-toolkit',
+    note: 'Start with the product hub before jumping into the live PDF tool.'
   }
 ];
 const heroAnswerCards = [
@@ -109,9 +109,9 @@ const faqs = [
       'Everyday Image Studio, Images, and PDF Toolkit are live products. You can access them directly from dayfiles.com.'
   },
   {
-    question: 'What features are currently in beta?',
+    question: 'How does Dayfiles keep guides trustworthy?',
     answer:
-      'File Copilot, Shared Workspaces, and Smart File Tags are in active beta and being tested with early teams.'
+      'Dayfiles keeps policy pages visible, ties guides to live tool hubs, and updates public workflow content when links, dates, or process details change.'
   }
 ];
 
@@ -357,12 +357,8 @@ export default function App() {
           <div className="hero-actions">
             {heroActions.map((action) => (
               <div key={action.label} className="hero-action-card">
-                <a href={action.href} target="_blank" rel="noreferrer">
-                  {action.label}
-                </a>
-                <a className="hero-action-learn-more" href={action.learnMoreHref}>
-                  Learn more
-                </a>
+                <a href={action.href}>{action.label}</a>
+                <p className="hero-action-note">{action.note}</p>
               </div>
             ))}
           </div>
@@ -416,15 +412,15 @@ export default function App() {
           </p>
         </section>
 
-        <section className="panel beta" aria-label="Beta features">
+        <section className="panel beta" aria-label="Editorial standards">
           <div className="section-heading">
-            <h2>Upcoming Features Releasing Soon</h2>
-            <p>Features currently in testing and planned for public release.</p>
+            <h2>How Dayfiles Keeps Guides Useful</h2>
+            <p>Editorial standards, live tool context, and visible trust pages help the public site stay reviewable.</p>
           </div>
           <div className="card-grid">
-            {betaFeatures.map((feature) => (
+            {guideStandards.map((feature) => (
               <article key={feature.name} className="card beta-card">
-                <div className="badge beta-badge">Beta</div>
+                <div className="badge beta-badge">Editorial</div>
                 <h3>{feature.name}</h3>
                 <p>{feature.description}</p>
               </article>

@@ -167,24 +167,19 @@ This sequence gives teams a visible operational upgrade without a large migratio
 
 Everyday Image Studio becomes most valuable when used as part of a repeatable operating model. The tool enables speed, but the workflow enables dependable output. If your team standardizes intake, presets, quality checks, and handoffs, daily image operations become significantly easier to scale.
 
-## What should you do after the image edit
+## What teams should document first
 
-A clean image export is usually only one step in a larger workflow. The image may be headed into an application packet, a content calendar, a shared team folder, or a final PDF. That is why image quality alone is not enough. The process around naming, reviewing, and exporting also matters. If you need the broader Dayfiles image system, continue with [Everyday Image Studio Workflow Playbook for Daily Teams](/blog/eis-workflow-playbook) and [Everyday Image Studio Passport Photo Checklist Guide](/blog/eis-passport-photo-checklist). If the image will be submitted inside a document packet, connect the work with [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist) so the file moves into the next step cleanly.
+If a team adopts this playbook, the first thing to document is not every possible editing technique. It is the operating boundary around the work: who owns intake, who approves presets, what counts as a ready-to-ship export, and where final files live after review. Those decisions stop image work from turning into a pile of personal habits.
 
-The practical gain is consistency. When teams and individual users follow a repeatable review path, they spend less time second-guessing exports and less time fixing preventable issues after handoff.
+That is also where this page connects back to the rest of Dayfiles. If the visual asset is eventually headed into a packet, report, or formal handoff, connect the image side to [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist) so the ownership model stays consistent after export.
 
-## Repeatable image workflow checklist
+## How to tell the playbook is working
 
-Use this checklist when the image matters for an application, formal submission, or multi-person workflow:
+The playbook is doing its job when the team sees fewer avoidable review comments such as:
 
-1. Confirm the exact size, crop, and quality requirement before editing.
-2. Keep the original image untouched so you can return to it if needed.
-3. Make edits with the final destination in mind, not just visual preference.
-4. Export with a clear filename that matches the project or submission step.
-5. Review the output on the device or screen where it will actually be used.
+- "which version is the final export?",
+- "who approved this crop and size?",
+- "why does this folder have four near-identical files?",
+- "why did the same issue reach the client twice?"
 
-A reliable process matters more than a flashy feature list. Most users do not need dozens of effects. They need a result that looks correct, exports cleanly, and fits the requirement the first time. That is why browser-first image workflows are strongest when they are built around repeated real tasks rather than one-off experimentation.
-
-## Why this workflow matters for privacy and speed
-
-Image work often contains personal information, faces, IDs, product drafts, or internal brand assets. Even when the edit itself is simple, the file can still be sensitive. A practical Dayfiles workflow helps users move from source image to final export with less confusion, fewer unnecessary transfers, and better readiness for the next step. That combination of clarity and speed is what makes the workflow useful over time, not just for one edit today.
+Those signals matter more than feature usage counts. A strong image workflow is valuable because it reduces ambiguity and cleanup, not because it produces the most edits.

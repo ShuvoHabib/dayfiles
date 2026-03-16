@@ -933,7 +933,6 @@ function renderTrustPage(page, lastUpdated) {
     <meta name="twitter:title" content="${escapeHtml(page.title)}" />
     <meta name="twitter:description" content="${escapeHtml(page.description)}" />
     <meta name="twitter:image" content="${SITE_URL}/dayfiles-logo.svg" />
-    ${thirdPartyScripts()}
     <script type="application/ld+json">${buildTrustJsonLd(page)}</script>
     <style>${sharedStyles()}</style>
   </head>

@@ -40,8 +40,12 @@ function normalizeSource(source, idx, errors, file) {
 }
 
 function validateFaq(faq, errors, file) {
+  if (faq == null) {
+    return;
+  }
+
   if (!Array.isArray(faq) || faq.length === 0) {
-    errors.push(`${file}: faq must be a non-empty array.`);
+    errors.push(`${file}: faq must be an array when provided.`);
     return;
   }
 
@@ -113,8 +117,8 @@ function collectSeoWarnings(post) {
     warnings.push(`${post.file}: include at least 2 internal /blog/ links in the body; found ${internalLinkCount}.`);
   }
 
-  if (!Array.isArray(post.faq) || post.faq.length !== 3) {
-    warnings.push(`${post.file}: FAQ should contain exactly 3 entries for the current template.`);
+  if (Array.isArray(post.faq) && post.faq.length > 0 && post.faq.length !== 3) {
+    warnings.push(`${post.file}: FAQ should contain exactly 3 entries when used; found ${post.faq.length}.`);
   }
 
   return warnings;

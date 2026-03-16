@@ -15,7 +15,7 @@ const faqSchemaDir = path.join(ROOT_DIR, 'faq-schema');
 const keywordsDir = path.join(ROOT_DIR, 'keywords');
 const imageDir = path.join(ROOT_DIR, 'public/blog/images');
 
-const features = [
+export const pdfFeatures = [
   {
     name: 'Merge PDF',
     keyword: 'merge pdf without upload',
@@ -309,7 +309,7 @@ function plusDays(base, days) {
   return d.toISOString().slice(0, 10);
 }
 
-function titleFor(feature) {
+export function titleFor(feature) {
   const explicitTitles = {
     'Merge PDF': 'How to Merge PDFs Without Uploading Files in Browser',
     'Minify PDF': 'How to Minify a PDF in Browser Without Uploading It',
@@ -331,7 +331,7 @@ function titleFor(feature) {
   return explicitTitles[feature.name] || `How to ${feature.taskPhrase.charAt(0).toUpperCase()}${feature.taskPhrase.slice(1)} Without Uploading Files`;
 }
 
-function descriptionFor(feature) {
+export function descriptionFor(feature) {
   const explicitDescriptions = {
     'Unlock PDF': 'Remove password restrictions from a PDF in your browser, then review access, storage, and final delivery checks before sharing the approved unlocked file.',
     'Rotate PDF': 'Fix sideways or upside-down PDF pages in your browser, then review orientation, page order, readability, and final delivery checks before the final export.',
@@ -356,11 +356,11 @@ function longTails(feature) {
   ];
 }
 
-function toolSlug(feature) {
+export function toolSlug(feature) {
   return slugify(feature.name);
 }
 
-function postSlug(feature) {
+export function postSlug(feature) {
   return `${toolSlug(feature)}-without-upload`;
 }
 
@@ -489,10 +489,6 @@ ${mistakes}
 
 These are also the mistakes that make thin content easy to spot. Generic pages talk about the feature in the abstract. Better pages show where the mistakes actually happen and how to prevent them before delivery.
 
-## Related Dayfiles workflows
-
-${feature.name} is rarely the only step in the document pipeline. Start from [PDF Toolkit](/pdf-toolkit) when you need the broader category, then pair this task with ${sentenceList(relatedLinks)} so the whole packet stays organized from intake through delivery.
-
 ## Final takeaway
 
 ${feature.name} should not force a tradeoff between speed and control. If you need to ${feature.taskPhrase} and the file contains sensitive or time-critical information, use [PDF Toolkit](/pdf-toolkit) as the internal starting point and [PDF Dayfiles](https://pdf.dayfiles.com/) for the live browser workflow. The goal is not just to finish the task. It is to finish it with fewer retries, clearer review points, and less unnecessary exposure.`;
@@ -540,7 +536,6 @@ function faqSchema(feature) {
 function frontmatter(feature, date) {
   const slug = postSlug(feature);
   const title = titleFor(feature);
-  const faq = featureFaq(feature);
   const tags = [
     toolSlug(feature),
     'pdf tools',
@@ -548,9 +543,7 @@ function frontmatter(feature, date) {
     'privacy-first'
   ];
 
-  return `---\ntitle: "${title}"\nslug: "${slug}"\ndate: "${date}"\nproduct: "pdf"\ndescription: "${descriptionFor(feature)}"\ntags:\n${tags.map((t) => `  - "${t}"`).join('\n')}\ncanonicalUrl: "https://dayfiles.com/blog/${slug}"\nfeaturedImage: "/blog/images/${slug}.svg"\nfeaturedImageAlt: "${feature.name} privacy-first guide visual"\nsources:\n  - title: "PDF Dayfiles"\n    url: "https://pdf.dayfiles.com/"\n  - title: "Dayfiles"\n    url: "https://dayfiles.com/"\n  - title: "Everyday Image Studio"\n    url: "https://everydayimagestudio.dayfiles.com/"\nfaq:\n${faq
-    .map((item) => `  - q: "${item.q.replaceAll('"', '\\"')}"\n    a: "${item.a.replaceAll('"', '\\"')}"`)
-    .join('\n')}\n---`;
+  return `---\ntitle: "${title}"\nslug: "${slug}"\ndate: "${date}"\nproduct: "pdf"\ndescription: "${descriptionFor(feature)}"\ntags:\n${tags.map((t) => `  - "${t}"`).join('\n')}\ncanonicalUrl: "https://dayfiles.com/blog/${slug}"\nfeaturedImage: "/blog/images/${slug}.svg"\nfeaturedImageAlt: "${feature.name} privacy-first guide visual"\nsources:\n  - title: "PDF Dayfiles"\n    url: "https://pdf.dayfiles.com/"\n  - title: "Dayfiles"\n    url: "https://dayfiles.com/"\n  - title: "Everyday Image Studio"\n    url: "https://everydayimagestudio.dayfiles.com/"\n---`;
 }
 
 async function writeIfChanged(filePath, next) {
@@ -581,8 +574,8 @@ async function main() {
   const baseDate = new Date('2026-02-09T00:00:00.000Z');
   let changed = 0;
 
-  for (let i = 0; i < features.length; i += 1) {
-    const feature = features[i];
+  for (let i = 0; i < pdfFeatures.length; i += 1) {
+    const feature = pdfFeatures[i];
     const slug = postSlug(feature);
     const date = plusDays(baseDate, i);
 
@@ -623,7 +616,11 @@ async function main() {
   console.log(`Generated/updated files: ${changed}`);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+const isDirectRun = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
+if (isDirectRun) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}

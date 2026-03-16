@@ -1106,10 +1106,14 @@ function renderPostPage(post, relatedPosts) {
         ${post.html}
       </article>
 
-      <section class="panel">
+      ${
+        faqHtml
+          ? `<section class="panel">
         <h2>FAQ</h2>
         <div class="faq-list">${faqHtml}</div>
-      </section>
+      </section>`
+          : ''
+      }
 
       <section class="panel">
         <h2>Sources</h2>

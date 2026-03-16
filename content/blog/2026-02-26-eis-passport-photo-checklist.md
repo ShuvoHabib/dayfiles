@@ -146,24 +146,14 @@ This keeps image and document steps connected and reduces cross-tool mistakes.
 
 A passport photo should never be the reason a visa or study application gets delayed. With a consistent checklist and Everyday Image Studio, you can produce cleaner, compliance-ready photos faster and with fewer submission errors. Start with requirement confirmation, follow the six-step workflow, and finalize your full packet with Dayfiles tools.
 
-## What should you do after the image edit
+## What to verify right before upload
 
-A clean image export is usually only one step in a larger workflow. The image may be headed into an application packet, a content calendar, a shared team folder, or a final PDF. That is why image quality alone is not enough. The process around naming, reviewing, and exporting also matters. If you need the broader Dayfiles image system, continue with [Everyday Image Studio Workflow Playbook for Daily Teams](/blog/eis-workflow-playbook) and [Everyday Image Studio Passport Photo Checklist Guide](/blog/eis-passport-photo-checklist). If the image will be submitted inside a document packet, connect the work with [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist) so the file moves into the next step cleanly.
+The final image check should happen in the same environment where the photo will actually be used. If the destination is a visa portal or university form, preview the export on that screen size and confirm that the crop, background, and facial position still look compliant. A perfect image in the editor can still fail if the final upload preview reveals compression or framing issues.
 
-The practical gain is consistency. When teams and individual users follow a repeatable review path, they spend less time second-guessing exports and less time fixing preventable issues after handoff.
+That is also the moment to decide whether the image stays a standalone upload or needs to move into a larger packet via [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist). The answer changes how carefully the filename, versioning, and surrounding files need to be handled.
 
-## Repeatable image workflow checklist
+## Why passport photo prep benefits from one-device editing
 
-Use this checklist when the image matters for an application, formal submission, or multi-person workflow:
+Passport photos are one of the clearest cases for a browser-first workflow because the image is both sensitive and easy to mis-handle. People often create unnecessary risk by bouncing the same face image across random apps, chats, and temporary folders just to make a small background or size correction.
 
-1. Confirm the exact size, crop, and quality requirement before editing.
-2. Keep the original image untouched so you can return to it if needed.
-3. Make edits with the final destination in mind, not just visual preference.
-4. Export with a clear filename that matches the project or submission step.
-5. Review the output on the device or screen where it will actually be used.
-
-A reliable process matters more than a flashy feature list. Most users do not need dozens of effects. They need a result that looks correct, exports cleanly, and fits the requirement the first time. That is why browser-first image workflows are strongest when they are built around repeated real tasks rather than one-off experimentation.
-
-## Why this workflow matters for privacy and speed
-
-Image work often contains personal information, faces, IDs, product drafts, or internal brand assets. Even when the edit itself is simple, the file can still be sensitive. A practical Dayfiles workflow helps users move from source image to final export with less confusion, fewer unnecessary transfers, and better readiness for the next step. That combination of clarity and speed is what makes the workflow useful over time, not just for one edit today.
+Keeping the workflow tighter reduces both privacy exposure and last-minute confusion. That is a practical advantage for applicants who need a compliant photo quickly and do not want the image circulating through more services than necessary.
