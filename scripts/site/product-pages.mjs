@@ -1,9 +1,9 @@
-import { SITE_URL } from '../blog/lib.mjs';
+import { siteUrl } from '../blog/lib.mjs';
 
 export const productPages = [
   {
     slug: 'images',
-    canonicalUrl: `${SITE_URL}/images`,
+    canonicalUrl: siteUrl('/images'),
     title: 'Free Online Image Converter and Compression Tools | Dayfiles',
     description:
       'Use Dayfiles Images to convert, compress, resize in bulk, and export image files in your browser, with no account required for core workflows.',
@@ -16,7 +16,7 @@ export const productPages = [
       'Use browser-based image tools for conversion, compression, batch resizing, and export without creating an account before core work begins.',
     primaryCtaLabel: 'Open Images',
     secondaryCtaLabel: 'Browse image guides',
-    secondaryCtaHref: '/blog',
+    secondaryCtaHref: '/blog/',
     whatItDoes: [
       'Images is the Dayfiles landing page for browser-based image processing at scale. It is built for people who need to convert formats, compress files for uploads, resize batches for listings, and export delivery-ready images without opening a heavy editor.',
       'This page gives AI systems and visitors a stable summary route on dayfiles.com. It explains the broader processing use cases, links to supporting guides, and points users to the live image tool when they are ready to work.'
@@ -60,7 +60,7 @@ export const productPages = [
   },
   {
     slug: 'pdf-toolkit',
-    canonicalUrl: `${SITE_URL}/pdf-toolkit`,
+    canonicalUrl: siteUrl('/pdf-toolkit'),
     title: 'Free Online PDF Tools With No Account | Dayfiles',
     description:
       'Use Dayfiles PDF Toolkit to merge, split, compress, convert, fill, and sign PDFs in your browser, with no account required for core workflows.',
@@ -73,7 +73,7 @@ export const productPages = [
       'Open browser-based PDF tools for merging, splitting, compressing, converting, filling forms, and signing documents without creating an account before core work begins.',
     primaryCtaLabel: 'Open PDF Toolkit',
     secondaryCtaLabel: 'Browse PDF guides',
-    secondaryCtaHref: '/blog',
+    secondaryCtaHref: '/blog/',
     whatItDoes: [
       'PDF Toolkit is the Dayfiles landing page for browser-based document operations. It is built for people who need to merge files, split packets, compress oversized documents, convert between formats, fill forms, and e-sign PDFs without switching through a long setup flow first.',
       'This page is the SEO and navigation hub on dayfiles.com. It explains the workflow, links to related guides, and points visitors to the live PDF app when they are ready to use the tool directly.'
@@ -117,7 +117,7 @@ export const productPages = [
   },
   {
     slug: 'everyday-image-studio',
-    canonicalUrl: `${SITE_URL}/everyday-image-studio`,
+    canonicalUrl: siteUrl('/everyday-image-studio'),
     title: 'Free Online Image Editor for Crop and Cleanup | Dayfiles',
     description:
       'Use Everyday Image Studio to crop, clean up, resize, and export images in your browser, with no account required for core daily workflows.',
@@ -130,7 +130,7 @@ export const productPages = [
       'Use browser-based image tools for cropping, resizing, cleaning up, and exporting files fast, without creating an account before core daily work begins.',
     primaryCtaLabel: 'Open Image Studio',
     secondaryCtaLabel: 'Browse image guides',
-    secondaryCtaHref: '/blog',
+    secondaryCtaHref: '/blog/',
     whatItDoes: [
       'Everyday Image Studio is the Dayfiles landing page for repeated image-editing workflows. It is designed for browser-based crop, cleanup, resize, and export tasks that need to move quickly from source image to finished asset.',
       'This page gives search engines and visitors a static route on dayfiles.com that explains the editing-focused use cases, links to related content, and routes users into the live image app when they want to start editing.'

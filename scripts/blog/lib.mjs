@@ -27,6 +27,10 @@ export const FEED_PATH = path.join(BLOG_PUBLIC_DIR, 'feed.xml');
 export const REDIRECTS_PATH = path.join(PUBLIC_DIR, '_redirects');
 export const SITE_URL = 'https://dayfiles.com';
 
+function hasFileExtension(pathname) {
+  return /\/[^/]+\.[a-z0-9]+$/i.test(pathname);
+}
+
 export function escapeHtml(value) {
   return String(value)
     .replaceAll('&', '&amp;')
@@ -63,8 +67,12 @@ export function formatHumanDate(dateInput) {
   }).format(date);
 }
 
+function normalizeInternalMarkdownLinks(markdown) {
+  return String(markdown || '').replace(/\]\((\/[^)\s]+)\)/g, (match, href) => `](${sitePath(href)})`);
+}
+
 export function renderMarkdown(markdown) {
-  return marked.parse(markdown || '');
+  return marked.parse(normalizeInternalMarkdownLinks(markdown));
 }
 
 export async function ensureDir(dirPath) {
@@ -91,7 +99,8 @@ export async function readPosts(contentDir = CONTENT_DIR) {
       path: absPath,
       body: parsed.content.trim(),
       html: renderMarkdown(parsed.content.trim()),
-      ...parsed.data
+      ...parsed.data,
+      canonicalUrl: canonicalizeSiteUrl(parsed.data.canonicalUrl)
     });
   }
 
@@ -124,12 +133,59 @@ export function toAbsoluteUrl(urlValue) {
   return `${SITE_URL}/${urlValue}`;
 }
 
+export function sitePath(pathValue = '/') {
+  const raw = String(pathValue || '').trim();
+  if (!raw || raw === '/') {
+    return '/';
+  }
+
+  let pathname = raw;
+  if (pathname.startsWith('http://') || pathname.startsWith('https://')) {
+    const url = new URL(pathname);
+    pathname = `${url.pathname}${url.search}${url.hash}`;
+  }
+
+  if (!pathname.startsWith('/')) {
+    pathname = `/${pathname}`;
+  }
+
+  const match = pathname.match(/^([^?#]*)(.*)$/);
+  const base = match ? match[1] : pathname;
+  const suffix = match ? match[2] : '';
+
+  if (base === '/' || hasFileExtension(base) || base.endsWith('/')) {
+    return `${base}${suffix}`;
+  }
+
+  return `${base}/${suffix}`;
+}
+
+export function siteUrl(pathValue = '/') {
+  return `${SITE_URL}${sitePath(pathValue)}`;
+}
+
+export function canonicalizeSiteUrl(urlValue) {
+  if (!urlValue) {
+    return '';
+  }
+
+  try {
+    const url = new URL(urlValue);
+    if (url.origin !== SITE_URL) {
+      return urlValue;
+    }
+    return `${SITE_URL}${sitePath(url.pathname)}`;
+  } catch {
+    return urlValue;
+  }
+}
+
 export function postUrl(slug) {
-  return `${SITE_URL}/blog/${slug}`;
+  return siteUrl(`/blog/${slug}`);
 }
 
 export function postRelativeUrl(slug) {
-  return `/blog/${slug}`;
+  return sitePath(`/blog/${slug}`);
 }
 
 export function readingMinutes(markdown) {

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { PUBLIC_DIR, SITE_URL, ensureDir, formatHumanDate, readPosts } from '../blog/lib.mjs';
+import { PUBLIC_DIR, SITE_URL, ensureDir, formatHumanDate, postRelativeUrl, readPosts, sitePath, siteUrl } from '../blog/lib.mjs';
 import { getProductPageBySlug, productPages } from './product-pages.mjs';
 import { trustPages } from './trust-pages.mjs';
 
@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const extensionLink =
   'https://chromewebstore.google.com/detail/everyday-image-studio/cpcfdmaihaccamacobbfnfngefmdphfp/reviews?utm_source=item-share-cp';
 const navLinks = [
-  { label: 'Blog', href: '/blog' },
+  { label: 'Blog', href: '/blog/' },
   { label: 'Chrome Extension', href: extensionLink, external: true },
   { label: 'Everyday Image Studio', href: 'https://everydayimagestudio.dayfiles.com/', external: true },
   { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
@@ -17,18 +17,18 @@ const navLinks = [
 ];
 const footerPrimaryLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Images', href: '/images' },
-  { label: 'PDF Toolkit', href: '/pdf-toolkit' },
-  { label: 'Everyday Image Studio', href: '/everyday-image-studio' }
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Images', href: '/images/' },
+  { label: 'PDF Toolkit', href: '/pdf-toolkit/' },
+  { label: 'Everyday Image Studio', href: '/everyday-image-studio/' }
 ];
 const footerTrustLinks = [
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Editorial Policy', href: '/editorial-policy' },
-  { label: 'Advertising Disclosure', href: '/advertising-disclosure' },
-  { label: 'Privacy Policy', href: '/privacy-policy' },
-  { label: 'Terms', href: '/terms' }
+  { label: 'About', href: '/about/' },
+  { label: 'Contact', href: '/contact/' },
+  { label: 'Editorial Policy', href: '/editorial-policy/' },
+  { label: 'Advertising Disclosure', href: '/advertising-disclosure/' },
+  { label: 'Privacy Policy', href: '/privacy-policy/' },
+  { label: 'Terms', href: '/terms/' }
 ];
 
 function escapeHtml(value) {
@@ -757,7 +757,7 @@ function renderPage(page, relatedPosts, lastUpdated) {
     .map(
       (post) => `
         <article class="card">
-          <a class="guide-link" href="/blog/${escapeHtml(post.slug)}">
+          <a class="guide-link" href="${postRelativeUrl(post.slug)}">
             <span class="badge">${post.product === 'pdf' ? 'PDF Guide' : 'Image Guide'}</span>
             <h3>${escapeHtml(post.title)}</h3>
             <p class="muted">${escapeHtml(post.description)}</p>
@@ -882,7 +882,7 @@ function renderPage(page, relatedPosts, lastUpdated) {
       <section class="panel prose">
         <h2>Companion workflow</h2>
         <p>${escapeHtml(page.companionCopy)}</p>
-        <p><a href="/${escapeHtml(companion.slug)}">Explore ${escapeHtml(companion.shortTitle)}</a></p>
+        <p><a href="${sitePath(companion.slug)}">Explore ${escapeHtml(companion.shortTitle)}</a></p>
       </section>
 
       ${renderFooter()}
@@ -923,11 +923,11 @@ function renderTrustPage(page, lastUpdated) {
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <title>${escapeHtml(page.title)}</title>
     <meta name="description" content="${escapeHtml(page.description)}" />
-    <link rel="canonical" href="${SITE_URL}/${escapeHtml(page.slug)}" />
+    <link rel="canonical" href="${siteUrl(page.slug)}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="${escapeHtml(page.title)}" />
     <meta property="og:description" content="${escapeHtml(page.description)}" />
-    <meta property="og:url" content="${SITE_URL}/${escapeHtml(page.slug)}" />
+    <meta property="og:url" content="${siteUrl(page.slug)}" />
     <meta property="og:image" content="${SITE_URL}/dayfiles-logo.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(page.title)}" />

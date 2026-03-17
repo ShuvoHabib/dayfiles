@@ -547,7 +547,7 @@ function frontmatter(feature, date) {
     'privacy-first'
   ];
 
-  return `---\ntitle: "${title}"\nslug: "${slug}"\ndate: "${date}"\nproduct: "pdf"\ndescription: "${descriptionFor(feature)}"\ntags:\n${tags.map((t) => `  - "${t}"`).join('\n')}\ncanonicalUrl: "https://dayfiles.com/blog/${slug}"\nfeaturedImage: "/blog/images/${slug}.svg"\nfeaturedImageAlt: "${feature.name} privacy-first guide visual"\nsources:\n  - title: "PDF Dayfiles"\n    url: "https://pdf.dayfiles.com/"\n  - title: "Dayfiles"\n    url: "https://dayfiles.com/"\n  - title: "Everyday Image Studio"\n    url: "https://everydayimagestudio.dayfiles.com/"\n---`;
+  return `---\ntitle: "${title}"\nslug: "${slug}"\ndate: "${date}"\nproduct: "pdf"\ndescription: "${descriptionFor(feature)}"\ntags:\n${tags.map((t) => `  - "${t}"`).join('\n')}\ncanonicalUrl: "https://dayfiles.com/blog/${slug}/"\nfeaturedImage: "/blog/images/${slug}.svg"\nfeaturedImageAlt: "${feature.name} privacy-first guide visual"\nsources:\n  - title: "PDF Dayfiles"\n    url: "https://pdf.dayfiles.com/"\n  - title: "Dayfiles"\n    url: "https://dayfiles.com/"\n  - title: "Everyday Image Studio"\n    url: "https://everydayimagestudio.dayfiles.com/"\n---`;
 }
 
 async function writeIfChanged(filePath, next) {

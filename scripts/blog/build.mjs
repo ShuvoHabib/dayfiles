@@ -10,6 +10,7 @@ import {
   REDIRECTS_PATH,
   SITEMAP_PATH,
   SITE_URL,
+  siteUrl,
   escapeHtml,
   ensureDir,
   formatHumanDate,
@@ -27,7 +28,7 @@ import { validatePosts } from './validate.mjs';
 const extensionLink =
   'https://chromewebstore.google.com/detail/everyday-image-studio/cpcfdmaihaccamacobbfnfngefmdphfp/reviews?utm_source=item-share-cp';
 const navLinks = [
-  { label: 'Blog', href: '/blog' },
+  { label: 'Blog', href: '/blog/' },
   { label: 'Chrome Extension', href: extensionLink, external: true },
   { label: 'Everyday Image Studio', href: 'https://everydayimagestudio.dayfiles.com/', external: true },
   { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
@@ -35,18 +36,18 @@ const navLinks = [
 ];
 const footerPrimaryLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Images', href: '/images' },
-  { label: 'PDF Toolkit', href: '/pdf-toolkit' },
-  { label: 'Everyday Image Studio', href: '/everyday-image-studio' }
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Images', href: '/images/' },
+  { label: 'PDF Toolkit', href: '/pdf-toolkit/' },
+  { label: 'Everyday Image Studio', href: '/everyday-image-studio/' }
 ];
 const footerTrustLinks = [
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Editorial Policy', href: '/editorial-policy' },
-  { label: 'Advertising Disclosure', href: '/advertising-disclosure' },
-  { label: 'Privacy Policy', href: '/privacy-policy' },
-  { label: 'Terms', href: '/terms' }
+  { label: 'About', href: '/about/' },
+  { label: 'Contact', href: '/contact/' },
+  { label: 'Editorial Policy', href: '/editorial-policy/' },
+  { label: 'Advertising Disclosure', href: '/advertising-disclosure/' },
+  { label: 'Privacy Policy', href: '/privacy-policy/' },
+  { label: 'Terms', href: '/terms/' }
 ];
 
 function productBadgeLabel(product) {
@@ -65,12 +66,12 @@ function productArticleSection(product) {
 
 function productHubHref(product) {
   if (product === 'pdf') {
-    return '/pdf-toolkit';
+    return '/pdf-toolkit/';
   }
   if (product === 'images') {
-    return '/images';
+    return '/images/';
   }
-  return '/everyday-image-studio';
+  return '/everyday-image-studio/';
 }
 
 function stripMarkdown(markdown) {
@@ -114,7 +115,7 @@ function collectJsonLd(post, relatedPosts = []) {
     },
     keywords: (post.tags || []).join(', '),
     articleSection: productArticleSection(post.product),
-    isPartOf: `${SITE_URL}/blog`,
+    isPartOf: siteUrl('/blog'),
     citation: (post.sources || []).map((source) => source.url)
   };
 
@@ -918,7 +919,7 @@ function renderBlogIndexPage(posts) {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: 'Dayfiles Blog',
-    url: `${SITE_URL}/blog`,
+    url: siteUrl('/blog'),
     inLanguage: 'en',
     blogPost: posts.map((post) => ({
       '@type': 'BlogPosting',
@@ -943,11 +944,11 @@ function renderBlogIndexPage(posts) {
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <title>Dayfiles Blog | Free Image and PDF Workflow Guides</title>
     <meta name="description" content="Free image and PDF workflow articles for Images, Everyday Image Studio, and PDF Toolkit, with practical guides, checklists, and operational playbooks." />
-    <link rel="canonical" href="${SITE_URL}/blog" />
+    <link rel="canonical" href="${siteUrl('/blog')}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Dayfiles Blog" />
     <meta property="og:description" content="Daily workflow guides for image and PDF operations." />
-    <meta property="og:url" content="${SITE_URL}/blog" />
+    <meta property="og:url" content="${siteUrl('/blog')}" />
     <meta property="og:image" content="${SITE_URL}/dayfiles-logo.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Dayfiles Blog" />
@@ -1115,7 +1116,7 @@ function renderPostPage(post, relatedPosts) {
 
       <section class="panel">
         <div class="crumbs">
-          <a href="/">Home</a> <span>›</span> <a href="/blog">Blog</a> <span>›</span> <span>${escapeHtml(post.title)}</span>
+          <a href="/">Home</a> <span>›</span> <a href="/blog/">Blog</a> <span>›</span> <span>${escapeHtml(post.title)}</span>
         </div>
         <p class="meta"><span class="badge">${productBadgeLabel(post.product)}</span><span>${formatHumanDate(post.date)}</span><span>${readingMinutes(post.body)} min read</span></p>
         <h1 class="hero-title">${escapeHtml(post.title)}</h1>
@@ -1168,7 +1169,7 @@ function renderPostPage(post, relatedPosts) {
           editorial recommendations.
         </p>
         <p class="muted">
-          Learn more on <a href="/editorial-policy">Editorial Policy</a>, <a href="/advertising-disclosure">Advertising Disclosure</a>, and <a href="/contact">Contact</a>.
+          Learn more on <a href="/editorial-policy/">Editorial Policy</a>, <a href="/advertising-disclosure/">Advertising Disclosure</a>, and <a href="/contact/">Contact</a>.
         </p>
       </section>
 
@@ -1217,7 +1218,7 @@ function buildFeed(posts) {
 <rss version="2.0">
   <channel>
     <title>Dayfiles Blog</title>
-    <link>${SITE_URL}/blog</link>
+    <link>${siteUrl('/blog')}</link>
     <description>Daily workflow guides for Images, Everyday Image Studio, and PDF Toolkit.</description>
     <language>en-us</language>
     ${items}
@@ -1234,11 +1235,11 @@ function buildSitemap(posts) {
       changefreq: 'weekly'
     })),
     ...trustPages.map((page) => ({
-      loc: `${SITE_URL}/${page.slug}`,
+      loc: siteUrl(page.slug),
       priority: '0.6',
       changefreq: 'monthly'
     })),
-    { loc: `${SITE_URL}/blog`, priority: '0.9', changefreq: 'daily' },
+    { loc: siteUrl('/blog'), priority: '0.9', changefreq: 'daily' },
     ...posts.map((post) => ({
       loc: post.canonicalUrl,
       priority: '0.8',

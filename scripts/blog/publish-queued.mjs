@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { fileURLToPath } from 'node:url';
 import { buildBlogArtifacts } from './build.mjs';
 import { generateFeaturedImage } from './generate-image.mjs';
-import { CONTENT_DIR, PUBLIC_DIR, ROOT_DIR, SITEMAP_PATH, ensureDir, normalizeDateString } from './lib.mjs';
+import { CONTENT_DIR, PUBLIC_DIR, ROOT_DIR, SITEMAP_PATH, ensureDir, normalizeDateString, postUrl } from './lib.mjs';
 
 const QUEUE_DIR = path.join(ROOT_DIR, 'content/blog-queue');
 const STATE_PATH = path.join(ROOT_DIR, '.blog-queue-state.json');
@@ -181,7 +181,7 @@ function collectSitemapUrls(xml) {
 async function assertPublishArtifacts(slug) {
   const sitemapXml = await fs.readFile(SITEMAP_PATH, 'utf8');
   const sitemapUrls = collectSitemapUrls(sitemapXml);
-  const canonicalUrl = `https://dayfiles.com/blog/${slug}`;
+  const canonicalUrl = postUrl(slug);
   const matches = sitemapUrls.filter((url) => url === canonicalUrl);
 
   if (matches.length !== 1) {
@@ -209,7 +209,7 @@ async function publishOneFromQueue({ publishDate, dryRun }) {
 
   assertPostContract(data, parsed.content, nextFile);
   data.date = publishDate;
-  data.canonicalUrl = `https://dayfiles.com/blog/${data.slug}`;
+  data.canonicalUrl = postUrl(data.slug);
   if (!dryRun) {
     data.featuredImage = await ensureFeaturedImage(data);
   }

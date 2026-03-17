@@ -8,12 +8,12 @@ import { CONTENT_DIR, ROOT_DIR, ensureDir, normalizeDateString, postUrl, readPos
 
 function productHubHref(product) {
   if (product === 'pdf') {
-    return '/pdf-toolkit';
+    return '/pdf-toolkit/';
   }
   if (product === 'images') {
     return 'https://images.dayfiles.com/';
   }
-  return '/everyday-image-studio';
+  return '/everyday-image-studio/';
 }
 
 function productNameFor(product) {

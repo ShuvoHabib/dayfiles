@@ -67,7 +67,7 @@ async function main() {
 
     const queuedRaw = await fs.readFile(path.join(tempRoot, 'content/blog-queue', nextFile), 'utf8');
     const queued = matter(queuedRaw);
-    const expectedUrl = `${lib.SITE_URL}/blog/${queued.data.slug}`;
+    const expectedUrl = lib.postUrl(queued.data.slug);
 
     const beforeSitemap = await fs.readFile(path.join(tempRoot, 'public/sitemap.xml'), 'utf8');
     const beforeUrls = collectSitemapUrls(beforeSitemap);

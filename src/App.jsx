@@ -4,19 +4,19 @@ const liveProducts = [
   {
     title: 'Everyday Image Studio',
     subtitle: 'Smart image workflows for teams and creators',
-    href: '/everyday-image-studio',
+    href: '/everyday-image-studio/',
     state: 'Live'
   },
   {
     title: 'Images',
     subtitle: 'Broader image editing, conversion, and cleanup in one toolbox',
-    href: '/images',
+    href: '/images/',
     state: 'Live'
   },
   {
     title: 'PDF Toolkit',
     subtitle: 'Merge, compress, convert, and ship clean docs',
-    href: '/pdf-toolkit',
+    href: '/pdf-toolkit/',
     state: 'Live'
   }
 ];
@@ -48,26 +48,26 @@ const extensionBannerStorageKey = 'dayfiles_extension_banner_dismissed_v1';
 const themeStorageKey = 'dayfiles_theme';
 const themeOptions = new Set(['system', 'light', 'dark']);
 const navigationLinks = [
-  { label: 'Blog', href: '/blog' },
+  { label: 'Blog', href: '/blog/' },
   { label: 'Chrome Extension', href: extensionLink, external: true },
-  { label: 'Everyday Image Studio', href: '/everyday-image-studio' },
-  { label: 'Images', href: '/images' },
-  { label: 'PDF Toolkit', href: '/pdf-toolkit' }
+  { label: 'Everyday Image Studio', href: '/everyday-image-studio/' },
+  { label: 'Images', href: '/images/' },
+  { label: 'PDF Toolkit', href: '/pdf-toolkit/' }
 ];
 const heroActions = [
   {
     label: 'Explore Image Studio',
-    href: '/everyday-image-studio',
+    href: '/everyday-image-studio/',
     note: 'See the workflow hub, current use cases, and the live app path.'
   },
   {
     label: 'Browse Workflow Guides',
-    href: '/blog',
+    href: '/blog/',
     note: 'Read task-first guides that explain what to check before delivery.'
   },
   {
     label: 'Open PDF Toolkit',
-    href: '/pdf-toolkit',
+    href: '/pdf-toolkit/',
     note: 'Start with the product hub before jumping into the live PDF tool.'
   }
 ];
@@ -89,12 +89,12 @@ const heroAnswerCards = [
   }
 ];
 const trustLinks = [
-  { label: 'About Dayfiles', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Editorial Policy', href: '/editorial-policy' },
-  { label: 'Advertising Disclosure', href: '/advertising-disclosure' },
-  { label: 'Privacy Policy', href: '/privacy-policy' },
-  { label: 'Terms of Service', href: '/terms' }
+  { label: 'About Dayfiles', href: '/about/' },
+  { label: 'Contact', href: '/contact/' },
+  { label: 'Editorial Policy', href: '/editorial-policy/' },
+  { label: 'Advertising Disclosure', href: '/advertising-disclosure/' },
+  { label: 'Privacy Policy', href: '/privacy-policy/' },
+  { label: 'Terms of Service', href: '/terms/' }
 ];
 
 const faqs = [
@@ -403,12 +403,12 @@ export default function App() {
                 <div className="badge">{post.product === 'pdf' ? 'PDF' : post.product === 'images' ? 'Images' : 'Image'}</div>
                 <h3>{post.title}</h3>
                 <p>{post.description}</p>
-                <a href={`/blog/${post.slug}`}>Read post</a>
+                <a href={`/blog/${post.slug}/`}>Read post</a>
               </article>
             ))}
           </div>
           <p className="blog-cta">
-            <a href="/blog">View all blog posts</a>
+            <a href="/blog/">View all blog posts</a>
           </p>
         </section>
 
@@ -474,28 +474,28 @@ export default function App() {
       <footer className="footer">
         <p>Dayfiles. Built for daily file work, with visible publisher, policy, and advertising pages.</p>
         <div>
-          <a href="/everyday-image-studio">
+          <a href="/everyday-image-studio/">
             Image Studio
           </a>
-          <a href="/pdf-toolkit">
+          <a href="/pdf-toolkit/">
             PDF Toolkit
           </a>
-          <a href="/about">
+          <a href="/about/">
             About
           </a>
-          <a href="/contact">
+          <a href="/contact/">
             Contact
           </a>
-          <a href="/editorial-policy">
+          <a href="/editorial-policy/">
             Editorial Policy
           </a>
-          <a href="/advertising-disclosure">
+          <a href="/advertising-disclosure/">
             Advertising Disclosure
           </a>
-          <a href="/privacy-policy">
+          <a href="/privacy-policy/">
             Privacy Policy
           </a>
-          <a href="/terms">
+          <a href="/terms/">
             Terms
           </a>
         </div>

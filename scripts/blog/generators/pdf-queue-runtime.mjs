@@ -134,7 +134,7 @@ export async function runPdfQueueGenerator({
       product: 'pdf',
       description: descriptionForFeature(feature),
       tags: tagsForFeature(feature),
-      canonicalUrl: `https://dayfiles.com/blog/${slug}`,
+      canonicalUrl: `https://dayfiles.com/blog/${slug}/`,
       featuredImage: `/blog/images/${slug}.svg`,
       featuredImageAlt: `${feature.name} ${generatorName} visual`,
       sources: sourcesForFeature(feature),
