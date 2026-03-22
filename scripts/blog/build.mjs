@@ -848,6 +848,7 @@ function renderSiteFooter() {
 
 function thirdPartyScripts() {
   return `
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702" crossorigin="anonymous"></script>
     <script>
       (function () {
         var host = window.location.hostname;
@@ -872,12 +873,6 @@ function thirdPartyScripts() {
             window.gtag('config', 'G-V6HJS96NK6');
           };
           document.head.appendChild(gtagScript);
-
-          var adsScript = document.createElement('script');
-          adsScript.async = true;
-          adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702';
-          adsScript.crossOrigin = 'anonymous';
-          document.head.appendChild(adsScript);
         }
 
         function triggerLoad() {
