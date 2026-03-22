@@ -1,33 +1,43 @@
 ---
-title: "How to Blur Faces Before Sharing Sensitive Photos Online"
-slug: "images-blur-faces-before-sharing-guide"
-date: "2026-03-03"
-product: "images"
-description: "Blur faces before sharing sensitive photos with a practical workflow that reduces exposure risk, keeps reviews clear, and makes final exports easier to control."
+title: How to Blur Faces Before Sharing Sensitive Photos Online
+slug: images-blur-faces-before-sharing-guide
+date: '2026-03-22'
+product: images
+description: >-
+  Blur faces before sharing sensitive photos with a practical workflow that
+  reduces exposure risk, keeps reviews clear, and makes final exports easier to
+  control.
 tags:
-  - "blur face"
-  - "privacy workflow"
-  - "images dayfiles"
-  - "sensitive photos"
-canonicalUrl: "https://dayfiles.com/blog/images-blur-faces-before-sharing-guide"
-featuredImage: "/blog/images/images-blur-faces-before-sharing-guide.svg"
-featuredImageAlt: "Face blur workflow for sensitive photos"
+  - blur face
+  - privacy workflow
+  - images dayfiles
+  - sensitive photos
+canonicalUrl: 'https://dayfiles.com/blog/images-blur-faces-before-sharing-guide/'
+featuredImage: /blog/images/images-blur-faces-before-sharing-guide.svg
+featuredImageAlt: Face blur workflow for sensitive photos
 sources:
-  - title: "Images by Dayfiles"
-    url: "https://images.dayfiles.com/"
-  - title: "Blur Face"
-    url: "https://images.dayfiles.com/blur-face"
-  - title: "Dayfiles"
-    url: "https://dayfiles.com/"
+  - title: Images by Dayfiles
+    url: 'https://images.dayfiles.com/'
+  - title: Blur Face
+    url: 'https://images.dayfiles.com/blur-face'
+  - title: Dayfiles
+    url: 'https://dayfiles.com/'
 faq:
-  - q: "When should faces be blurred before sharing?"
-    a: "Faces should be blurred before sharing when photos include minors, customers, staff, bystanders, or any person who should not be identifiable in the final image."
-  - q: "What is the biggest review mistake in face blur workflows?"
-    a: "The biggest mistake is exporting quickly without checking every visible person in the frame, especially background subjects."
-  - q: "How does this fit a broader Dayfiles workflow?"
-    a: "Face blur is often one step before publishing, reporting, or document assembly, so it should connect to review, naming, and final handoff discipline."
+  - q: When should faces be blurred before sharing?
+    a: >-
+      Faces should be blurred before sharing when photos include minors,
+      customers, staff, bystanders, or any person who should not be identifiable
+      in the final image.
+  - q: What is the biggest review mistake in face blur workflows?
+    a: >-
+      The biggest mistake is exporting quickly without checking every visible
+      person in the frame, especially background subjects.
+  - q: How does this fit a broader Dayfiles workflow?
+    a: >-
+      Face blur is often one step before publishing, reporting, or document
+      assembly, so it should connect to review, naming, and final handoff
+      discipline.
 ---
-
 How do you blur faces before sharing photos without turning privacy cleanup into a last-minute scramble? The dependable method is to identify the sharing context first, blur every visible subject that requires protection, and review the frame one final time before export. That is the workflow [Images by Dayfiles](https://images.dayfiles.com/blur-face) makes easier to run consistently.
 
 ## Why face blur workflows matter
