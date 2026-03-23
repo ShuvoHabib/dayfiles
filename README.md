@@ -73,6 +73,23 @@ This project includes:
 - `wrangler.toml` with `pages_build_output_dir = "dist"`
 - `public/_redirects` for SPA fallback (`/* /index.html 200`)
 
+## Subscriber D1 commands
+
+The site-wide subscription form writes to the Cloudflare D1 database `day-files-subscribers` and table `email_subscribers`.
+
+Useful remote queries:
+
+```bash
+# List recent subscribers with metadata
+npx wrangler d1 execute day-files-subscribers --remote --command "SELECT id, email, lead_magnet_id, source_path, consent_granted, delivery_status, created_at FROM email_subscribers ORDER BY created_at DESC LIMIT 20;"
+
+# List recent emails only
+npx wrangler d1 execute day-files-subscribers --remote --command "SELECT email, created_at FROM email_subscribers ORDER BY created_at DESC LIMIT 20;"
+
+# Count total subscribers
+npx wrangler d1 execute day-files-subscribers --remote --command "SELECT COUNT(*) AS total FROM email_subscribers;"
+```
+
 ## GitHub Actions automation
 
 Workflow (manual generator): `.github/workflows/blog-auto-publish.yml`
