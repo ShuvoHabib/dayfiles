@@ -435,6 +435,126 @@
   .footer-link-list a:hover {
     text-decoration: underline;
   }
+  .contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.9fr);
+    gap: 1rem;
+    align-items: start;
+  }
+  .contact-form-panel {
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 1.1rem;
+    background:
+      radial-gradient(circle at top right, color-mix(in srgb, var(--accent) 16%, transparent), transparent 42%),
+      linear-gradient(160deg, color-mix(in srgb, var(--card-bg) 88%, transparent), color-mix(in srgb, var(--panel-bg) 72%, transparent));
+    display: grid;
+    gap: 0.95rem;
+  }
+  .contact-form-copy {
+    display: grid;
+    gap: 0.35rem;
+  }
+  .contact-form-copy h2,
+  .contact-sidecard h2,
+  .contact-sidecard h3 {
+    margin: 0;
+  }
+  .contact-form-copy p,
+  .contact-sidecard p,
+  .contact-sidecard li {
+    color: var(--text-soft);
+  }
+  .contact-form {
+    display: grid;
+    gap: 0.85rem;
+  }
+  .contact-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  .contact-field {
+    display: grid;
+    gap: 0.42rem;
+  }
+  .contact-field label {
+    font-weight: 600;
+  }
+  .contact-field input,
+  .contact-field select,
+  .contact-field textarea {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: color-mix(in srgb, var(--card-bg) 84%, transparent);
+    color: var(--text-main);
+    padding: 0.85rem 1rem;
+    font: inherit;
+  }
+  .contact-field textarea {
+    min-height: 180px;
+    resize: vertical;
+  }
+  .contact-field input::placeholder,
+  .contact-field textarea::placeholder {
+    color: var(--text-soft);
+  }
+  .contact-button {
+    min-height: 50px;
+    width: fit-content;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.9rem 1.3rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #07131f;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .contact-button[disabled] {
+    opacity: 0.7;
+    cursor: wait;
+  }
+  .contact-status {
+    min-height: 1.5rem;
+    margin: 0;
+    color: var(--text-soft);
+  }
+  .contact-status.is-success {
+    color: var(--accent);
+  }
+  .contact-status.is-error {
+    color: #ff9c9c;
+  }
+  .contact-help {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 0.94rem;
+  }
+  .contact-sidecards {
+    display: grid;
+    gap: 0.9rem;
+  }
+  .contact-sidecard {
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 1rem;
+    background: var(--card-bg);
+    display: grid;
+    gap: 0.65rem;
+  }
+  .contact-sidecard ul {
+    margin: 0;
+    padding-left: 1.15rem;
+  }
+  .contact-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
   
   .subscribe-section {
     margin-top: 1rem;
@@ -556,6 +676,13 @@
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
+    .contact-layout,
+    .contact-form-grid {
+      grid-template-columns: 1fr;
+    }
+    .contact-button {
+      width: 100%;
+    }
     .top {
       position: sticky;
       min-height: 58px;
@@ -640,6 +767,7 @@
         <p class="muted">Last updated March 23, 2026</p>
       </section>
 
+      
       
         <section class="panel prose">
           <h2>What this policy covers</h2>
@@ -827,5 +955,6 @@
     </script>
   
     <script defer src="/subscribe-form.js"></script>
+    
   </body>
 </html>

@@ -602,10 +602,137 @@ function sharedStyles() {
   .footer-link-list a:hover {
     text-decoration: underline;
   }
+  .contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.9fr);
+    gap: 1rem;
+    align-items: start;
+  }
+  .contact-form-panel {
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 1.1rem;
+    background:
+      radial-gradient(circle at top right, color-mix(in srgb, var(--accent) 16%, transparent), transparent 42%),
+      linear-gradient(160deg, color-mix(in srgb, var(--card-bg) 88%, transparent), color-mix(in srgb, var(--panel-bg) 72%, transparent));
+    display: grid;
+    gap: 0.95rem;
+  }
+  .contact-form-copy {
+    display: grid;
+    gap: 0.35rem;
+  }
+  .contact-form-copy h2,
+  .contact-sidecard h2,
+  .contact-sidecard h3 {
+    margin: 0;
+  }
+  .contact-form-copy p,
+  .contact-sidecard p,
+  .contact-sidecard li {
+    color: var(--text-soft);
+  }
+  .contact-form {
+    display: grid;
+    gap: 0.85rem;
+  }
+  .contact-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  .contact-field {
+    display: grid;
+    gap: 0.42rem;
+  }
+  .contact-field label {
+    font-weight: 600;
+  }
+  .contact-field input,
+  .contact-field select,
+  .contact-field textarea {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: color-mix(in srgb, var(--card-bg) 84%, transparent);
+    color: var(--text-main);
+    padding: 0.85rem 1rem;
+    font: inherit;
+  }
+  .contact-field textarea {
+    min-height: 180px;
+    resize: vertical;
+  }
+  .contact-field input::placeholder,
+  .contact-field textarea::placeholder {
+    color: var(--text-soft);
+  }
+  .contact-button {
+    min-height: 50px;
+    width: fit-content;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.9rem 1.3rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #07131f;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .contact-button[disabled] {
+    opacity: 0.7;
+    cursor: wait;
+  }
+  .contact-status {
+    min-height: 1.5rem;
+    margin: 0;
+    color: var(--text-soft);
+  }
+  .contact-status.is-success {
+    color: var(--accent);
+  }
+  .contact-status.is-error {
+    color: #ff9c9c;
+  }
+  .contact-help {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 0.94rem;
+  }
+  .contact-sidecards {
+    display: grid;
+    gap: 0.9rem;
+  }
+  .contact-sidecard {
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 1rem;
+    background: var(--card-bg);
+    display: grid;
+    gap: 0.65rem;
+  }
+  .contact-sidecard ul {
+    margin: 0;
+    padding-left: 1.15rem;
+  }
+  .contact-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
   ${subscriptionStyles()}
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
+    .contact-layout,
+    .contact-form-grid {
+      grid-template-columns: 1fr;
+    }
+    .contact-button {
+      width: 100%;
+    }
     .top {
       position: sticky;
       min-height: 58px;
@@ -747,6 +874,86 @@ function renderFooter() {
       </div>
     </footer>
   `;
+}
+
+function renderContactForm(page) {
+  if (!page.contactForm) {
+    return '';
+  }
+
+  const sidecards = page.contactForm.sidecards
+    .map((card) => {
+      const paragraphs = (card.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n');
+      const list = Array.isArray(card.list)
+        ? `<ul>${card.list.map((item) => `<li>${escapeHtml(item)}</li>`).join('\n')}</ul>`
+        : '';
+
+      return `
+        <section class="contact-sidecard prose">
+          <h2>${escapeHtml(card.title)}</h2>
+          ${paragraphs}
+          ${list}
+        </section>
+      `;
+    })
+    .join('\n');
+
+  return `
+    <section class="panel">
+      <div class="contact-layout">
+        <div class="contact-form-panel">
+          <div class="contact-form-copy">
+            <span class="badge">${escapeHtml(page.contactForm.badge)}</span>
+            <h2>${escapeHtml(page.contactForm.title)}</h2>
+            <p>${escapeHtml(page.contactForm.description)}</p>
+          </div>
+          <form class="contact-form" data-contact-form method="post" action="/api/contact" novalidate>
+            <div class="contact-form-grid">
+              <div class="contact-field">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" type="text" name="name" autocomplete="name" placeholder="Your name" required />
+              </div>
+              <div class="contact-field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="contact-field">
+              <label for="contact-topic">Topic</label>
+              <select id="contact-topic" name="topic">
+                <option value="">Choose a topic</option>
+                ${page.contactForm.topicOptions
+                  .map((topic) => `<option value="${escapeHtml(topic)}">${escapeHtml(topic)}</option>`)
+                  .join('\n')}
+              </select>
+            </div>
+            <div class="contact-field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Tell us what page, guide, or product hub you’re writing about and what needs review." required></textarea>
+            </div>
+            <div class="contact-honeypot" aria-hidden="true">
+              <label>Leave this field empty <input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label>
+            </div>
+            <input type="hidden" name="source_path" value="" />
+            <input type="hidden" name="client_id" value="" />
+            <button class="contact-button" type="submit">Send message</button>
+            <p class="contact-help">${escapeHtml(page.contactForm.helpText).replace(
+              escapeHtml(page.contactEmail),
+              `<a href="mailto:${escapeHtml(page.contactEmail)}">${escapeHtml(page.contactEmail)}</a>`
+            )}</p>
+            <p class="contact-status" data-contact-status aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="contact-sidecards">
+          ${sidecards}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function contactScriptTag(page) {
+  return page.contactForm ? '\n    <script defer src="/contact-form.js"></script>' : '';
 }
 
 function renderPage(page, relatedPosts, lastUpdated) {
@@ -977,12 +1184,14 @@ function renderTrustPage(page, lastUpdated) {
         <p class="muted">Last updated ${escapeHtml(lastUpdated)}</p>
       </section>
 
+      ${renderContactForm(page)}
       ${sectionHtml}
 
       ${renderFooter()}
     </main>
     ${themeSelectScript()}
     ${subscribeScriptTag()}
+    ${contactScriptTag(page)}
   </body>
 </html>`;
 }

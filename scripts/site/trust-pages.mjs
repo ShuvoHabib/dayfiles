@@ -49,14 +49,39 @@ export const trustPages = [
     h1: 'Contact Dayfiles',
     heroCopy:
       'Use this page for support, privacy, copyright, advertising, and business questions related to Dayfiles guides and product hubs.',
+    contactForm: {
+      badge: 'Contact form',
+      title: 'Send a message to Dayfiles',
+      description:
+        'Use the form for support, privacy, copyright, business, advertising, or correction requests. Include the page URL and the issue details so the right context arrives with your message.',
+      topicOptions: [
+        'Support question',
+        'Privacy or copyright request',
+        'Advertising or sponsorship',
+        'Business or partnership inquiry',
+        'Editorial correction'
+      ],
+      helpText:
+        `Direct email also works at ${contactEmail} if you prefer your own mail client.`,
+      sidecards: [
+        {
+          title: 'Before you send',
+          list: [
+            'Include the page URL or guide title you are referring to.',
+            'Name the product hub involved, such as PDF Toolkit or Images, if relevant.',
+            'Explain what outcome you need reviewed, corrected, or answered.'
+          ]
+        },
+        {
+          title: 'Primary contact',
+          paragraphs: [
+            'Dayfiles reviews messages related to site content, public product entry points, privacy, copyright, and business communication.',
+            `For direct email, write to ${contactEmail}.`
+          ]
+        }
+      ]
+    },
     sections: [
-      {
-        title: 'Primary contact',
-        paragraphs: [
-          `Email the Dayfiles team at ${contactEmail} for policy questions, support issues, business requests, advertising matters, or corrections to published content.`,
-          'When you write in, include the page URL, the product or guide involved, and the issue you want reviewed so requests can be handled faster.'
-        ]
-      },
       {
         title: 'What to use this page for',
         list: [
