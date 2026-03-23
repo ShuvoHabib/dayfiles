@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import SubscribeSection from './components/SubscribeSection';
 
 const liveProducts = [
   {
@@ -470,6 +471,8 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      <SubscribeSection />
 
       <footer className="footer">
         <p>Dayfiles. Built for daily file work, with visible publisher, policy, and advertising pages.</p>

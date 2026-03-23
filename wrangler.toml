@@ -1,3 +1,8 @@
 name = "dayfiles"
 compatibility_date = "2026-02-20"
 pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DAYFILES_EMAIL_SUBSCRIBERS_DB"
+database_name = "day-files-subscribers"
+database_id = "e15d9207-4d90-4ed2-a99d-3e8e5166c7a8"

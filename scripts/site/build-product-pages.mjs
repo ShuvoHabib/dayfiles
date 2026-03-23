@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PUBLIC_DIR, SITE_URL, ensureDir, formatHumanDate, postRelativeUrl, readPosts, sitePath, siteUrl } from '../blog/lib.mjs';
 import { getProductPageBySlug, productPages } from './product-pages.mjs';
+import { renderSubscribeSection, subscribeScriptTag, subscriptionStyles } from '../shared/subscription.mjs';
 import { trustPages } from './trust-pages.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -601,6 +602,7 @@ function sharedStyles() {
   .footer-link-list a:hover {
     text-decoration: underline;
   }
+  ${subscriptionStyles()}
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
@@ -722,6 +724,7 @@ function buildTrustJsonLd(page) {
 
 function renderFooter() {
   return `
+    ${renderSubscribeSection(escapeHtml)}
     <footer class="site-footer">
       <p>Dayfiles publishes browser-based PDF and image workflow guides with visible product hubs, policy pages, and advertising disclosure.</p>
       <div class="footer-grid">
@@ -883,6 +886,7 @@ function renderPage(page, relatedPosts, lastUpdated) {
       ${renderFooter()}
     </main>
     ${themeSelectScript()}
+    ${subscribeScriptTag()}
   </body>
 </html>`;
 }
@@ -978,6 +982,7 @@ function renderTrustPage(page, lastUpdated) {
       ${renderFooter()}
     </main>
     ${themeSelectScript()}
+    ${subscribeScriptTag()}
   </body>
 </html>`;
 }

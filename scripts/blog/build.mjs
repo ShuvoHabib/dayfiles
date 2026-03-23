@@ -22,6 +22,7 @@ import {
   writeJson
 } from './lib.mjs';
 import { productPages } from '../site/product-pages.mjs';
+import { renderSubscribeSection, subscribeScriptTag, subscriptionStyles } from '../shared/subscription.mjs';
 import { trustPages } from '../site/trust-pages.mjs';
 import { validatePosts } from './validate.mjs';
 
@@ -654,6 +655,7 @@ function sharedStyles() {
   .footer-link-list a:hover {
     text-decoration: underline;
   }
+  ${subscriptionStyles()}
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
@@ -822,6 +824,7 @@ function renderMobileNavLinks() {
 
 function renderSiteFooter() {
   return `
+    ${renderSubscribeSection(escapeHtml)}
     <footer class="site-footer">
       <p>Dayfiles publishes source-backed workflow guides and keeps product hubs, policies, and advertising disclosures visible across the site.</p>
       <div class="footer-grid">
@@ -999,6 +1002,7 @@ function renderBlogIndexPage(posts) {
       ${renderSiteFooter()}
     </main>
     ${themeSelectScript()}
+    ${subscribeScriptTag()}
   </body>
 </html>`;
 }
@@ -1176,6 +1180,7 @@ function renderPostPage(post, relatedPosts) {
       ${renderSiteFooter()}
     </main>
     ${themeSelectScript()}
+    ${subscribeScriptTag()}
   </body>
 </html>`;
 }
