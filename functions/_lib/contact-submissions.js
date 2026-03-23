@@ -1,4 +1,4 @@
-const D1_BINDING = 'DAYFILES_EMAIL_SUBSCRIBERS_DB';
+const D1_BINDING = 'DAYFILES_CONTACT_DB';
 const TABLE_NAME = 'contact_submissions';
 
 let bootstrapPromise;
