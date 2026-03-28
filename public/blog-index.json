@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Edit a PDF by Converting It to DOCX and Back",
+    "slug": "pdf-edit-via-docx-and-back-workflow",
+    "date": "2026-03-28",
+    "product": "pdf",
+    "description": "Edit PDF content by converting it to DOCX, making controlled changes, and rebuilding a clean PDF with a workflow that stays reviewable from start to finish.",
+    "tags": [
+      "edit pdf by converting to word",
+      "pdf to docx workflow",
+      "docx to pdf workflow",
+      "dayfiles pdf toolkit"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/pdf-edit-via-docx-and-back-workflow/",
+    "featuredImage": "/blog/images/pdf-edit-via-docx-and-back-workflow.svg",
+    "featuredImageAlt": "Edit a PDF through a DOCX conversion workflow visual",
+    "readingMinutes": 6
+  },
+  {
     "title": "How to Blur Faces Before Sharing Sensitive Photos Online",
     "slug": "images-blur-faces-before-sharing-guide",
     "date": "2026-03-22",
