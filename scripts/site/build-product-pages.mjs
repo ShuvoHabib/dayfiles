@@ -26,7 +26,12 @@ const footerPrimaryLinks = [
 const footerTrustLinks = [
   { label: 'About', href: '/about/' },
   { label: 'Contact', href: '/contact/' },
+  { label: 'Cookie Policy', href: '/cookies/' },
   { label: 'Editorial Policy', href: '/editorial-policy/' },
+  { label: 'Workflow Testing', href: '/how-dayfiles-tests-workflows/' },
+  { label: 'Content Review', href: '/content-review-process/' },
+  { label: 'PDF Workflows', href: '/pdf-workflows/' },
+  { label: 'Image Workflows', href: '/image-workflows/' },
   { label: 'Advertising Disclosure', href: '/advertising-disclosure/' },
   { label: 'Privacy Policy', href: '/privacy-policy/' },
   { label: 'Terms', href: '/terms/' }
@@ -837,6 +842,14 @@ function buildTrustJsonLd(page) {
     webPage.email = page.contactEmail;
   }
 
+  if (page.slug === 'about') {
+    webPage.about = {
+      '@type': 'Person',
+      name: 'Shuvo Habib',
+      jobTitle: 'Founder and editor, Dayfiles'
+    };
+  }
+
   const breadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -864,7 +877,7 @@ function renderFooter() {
           </div>
         </section>
         <section class="footer-panel">
-          <h2>Policies and trust</h2>
+          <h2>Editorial and trust</h2>
           <div class="footer-link-list">
             ${footerTrustLinks
               .map((item) => `<a href="${item.href}">${escapeHtml(item.label)}</a>`)
@@ -1099,6 +1112,26 @@ function renderPage(page, relatedPosts, lastUpdated) {
 }
 
 function renderTrustPage(page, lastUpdated) {
+  const highlightsHtml = Array.isArray(page.highlights) && page.highlights.length
+    ? `
+      <section class="panel">
+        <div class="grid">
+          ${page.highlights
+            .map(
+              (item) => `
+                <article class="card">
+                  <span class="badge">At a glance</span>
+                  <h2>${escapeHtml(item.label)}</h2>
+                  <p>${escapeHtml(item.value)}</p>
+                </article>
+              `
+            )
+            .join('\n')}
+        </div>
+      </section>
+    `
+    : '';
+
   const sectionHtml = page.sections
     .map((section) => {
       const paragraphs = (section.paragraphs || []).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n');
@@ -1114,6 +1147,19 @@ function renderTrustPage(page, lastUpdated) {
       `;
     })
     .join('\n');
+
+  const supportingLinksHtml = Array.isArray(page.supportingLinks) && page.supportingLinks.length
+    ? `
+      <section class="panel prose">
+        <h2>Related Dayfiles pages</h2>
+        <ul>
+          ${page.supportingLinks
+            .map((item) => `<li><a href="${item.href}">${escapeHtml(item.label)}</a></li>`)
+            .join('\n')}
+        </ul>
+      </section>
+    `
+    : '';
 
   return `<!doctype html>
 <html lang="en">
@@ -1184,8 +1230,10 @@ function renderTrustPage(page, lastUpdated) {
         <p class="muted">Last updated ${escapeHtml(lastUpdated)}</p>
       </section>
 
+      ${highlightsHtml}
       ${renderContactForm(page)}
       ${sectionHtml}
+      ${supportingLinksHtml}
 
       ${renderFooter()}
     </main>

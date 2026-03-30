@@ -22,25 +22,71 @@ const liveProducts = [
   }
 ];
 
-const guideStandards = [
+const credibilityFacts = [
   {
-    name: 'Real workflow examples',
-    description: 'Guides focus on concrete file jobs, common failure points, and the checks people actually need before they upload, share, or archive.'
+    name: 'Founder-led publishing',
+    description: 'Dayfiles is run by Shuvo Habib, who owns the editorial direction, product framing, and final publishing decisions.'
   },
   {
-    name: 'Visible tool context',
-    description: 'Each guide points back to the relevant Dayfiles product hub so readers can move from the explanation to the live tool path without guessing.'
+    name: 'Live-route review',
+    description: 'Guides are checked against current product hubs, route logic, screenshots, and the handoff risks readers need to catch.'
   },
   {
-    name: 'Release-ready checklists',
-    description: 'The best pages include practical review steps, screenshots, and handoff guidance so the output is easier to trust the first time.'
+    name: 'Workflow-first editorial model',
+    description: 'The site publishes decision guides, checklists, and tool-backed workflow explanations rather than keyword filler or anonymous support content.'
   }
 ];
 
-const workflows = [
-  'Start from the right product hub for the job',
-  'Run the edit, conversion, or packaging step once',
-  'Review the output before it reaches the next person'
+const flagshipWorkflows = [
+  {
+    title: 'PDF delivery and packet workflows',
+    description:
+      'Use editorial guidance first when the job is document assembly, conversion, form completion, signing, or final handoff review.',
+    href: '/pdf-workflows/',
+    cta: 'Start with PDF workflows'
+  },
+  {
+    title: 'Image cleanup and submission prep',
+    description:
+      'Use image workflows when the job is format conversion, resizing, compression, background cleanup, face blur, or compliance-sensitive prep.',
+    href: '/image-workflows/',
+    cta: 'Start with image workflows'
+  },
+  {
+    title: 'Review-heavy file work',
+    description:
+      'Use the blog when you need task-specific guidance, review checklists, and public explanations that make risky file work easier to trust.',
+    href: '/blog/',
+    cta: 'Browse workflow guides'
+  }
+];
+
+const authorityPages = [
+  {
+    title: 'About Dayfiles',
+    description: 'See who runs the site, how it is published, and what Dayfiles is responsible for.',
+    href: '/about/'
+  },
+  {
+    title: 'How Dayfiles tests workflows',
+    description: 'Review the live-route, screenshot, and review-ready checks used before public pages are published or refreshed.',
+    href: '/how-dayfiles-tests-workflows/'
+  },
+  {
+    title: 'How Dayfiles reviews content',
+    description: 'See how topics are chosen, how guides are updated, and what would cause a page to be rewritten or removed.',
+    href: '/content-review-process/'
+  }
+];
+
+const trustLinks = [
+  { label: 'About Dayfiles', href: '/about/', description: 'Founder, publisher identity, and how the site is run.' },
+  { label: 'Contact', href: '/contact/', description: 'Direct contact for corrections, privacy requests, technical issues, and business questions.' },
+  { label: 'Cookie Policy', href: '/cookies/', description: 'How Dayfiles uses analytics, advertising, and browser-based tracking technologies.' },
+  { label: 'Editorial Policy', href: '/editorial-policy/', description: 'How workflow guides are written, updated, and kept separate from monetization.' },
+  { label: 'Advertising Disclosure', href: '/advertising-disclosure/', description: 'How advertising supports the site and how ads are kept separate from editorial content.' },
+  { label: 'Privacy Policy', href: '/privacy-policy/', description: 'What data may be collected on the public site and how public pages are operated.' },
+  { label: 'Terms of Service', href: '/terms/', description: 'The usage rules, limitations, and responsibilities tied to the public site.' }
 ];
 
 const extensionLink =
@@ -57,45 +103,37 @@ const navigationLinks = [
 ];
 const heroActions = [
   {
-    label: 'Explore Image Studio',
-    href: '/everyday-image-studio/',
-    note: 'See the workflow hub, current use cases, and the live app path.'
+    label: 'Start with PDF Workflows',
+    href: '/pdf-workflows/',
+    note: 'Choose the right document route before you jump into a tool.'
   },
   {
-    label: 'Browse Workflow Guides',
-    href: '/blog/',
-    note: 'Read task-first guides that explain what to check before delivery.'
+    label: 'Start with Image Workflows',
+    href: '/image-workflows/',
+    note: 'Find the safest image path for cleanup, conversion, and submission prep.'
   },
   {
-    label: 'Open PDF Toolkit',
-    href: '/pdf-toolkit/',
-    note: 'Start with the product hub before jumping into the live PDF tool.'
+    label: 'Meet the Publisher',
+    href: '/about/',
+    note: 'See who runs Dayfiles and how workflow pages are reviewed.'
   }
 ];
 const heroAnswerCards = [
   {
-    title: 'What is Dayfiles?',
+    title: 'Who Dayfiles is for',
     copy:
-      'Dayfiles is a browser-first file workflow site for image editing, image conversion, compression, and PDF operations. It combines live tools with practical guides for people who need clean outputs fast.'
+      'Dayfiles is for people doing real file work: applicants, HR teams, operations teams, creators, and anyone who needs cleaner PDF and image outputs without heavyweight setup.'
   },
   {
-    title: 'What can you do here?',
+    title: 'What problems it solves',
     copy:
-      'You can open live apps for PDF work, workflow-focused image editing, and broader image processing. You can also follow guides that explain when to use each route and what to verify before delivery.'
+      'The site explains how to choose the right route for document assembly, signing, conversion, image cleanup, submission prep, and final review before a file gets shared or uploaded.'
   },
   {
-    title: 'Why do the guides matter?',
+    title: 'Why the guidance is trustworthy',
     copy:
-      'The guides are built to help users avoid rework. They show the job, the risky points, and the final review checks so a file is easier to trust when it leaves your hands.'
+      'Dayfiles ties public guides to live product paths, screenshot checks, and explicit review criteria so the content is useful even before a reader decides to use the tools.'
   }
-];
-const trustLinks = [
-  { label: 'About Dayfiles', href: '/about/' },
-  { label: 'Contact', href: '/contact/' },
-  { label: 'Editorial Policy', href: '/editorial-policy/' },
-  { label: 'Advertising Disclosure', href: '/advertising-disclosure/' },
-  { label: 'Privacy Policy', href: '/privacy-policy/' },
-  { label: 'Terms of Service', href: '/terms/' }
 ];
 
 const faqs = [
@@ -242,29 +280,8 @@ export default function App() {
     setMobileNavOpen(false);
   };
 
-  return (
+      return (
     <div className="site-shell">
-      {showExtensionBanner && (
-        <aside className="extension-banner" aria-label="Chrome extension promotion">
-          <p>
-            New: Install the <strong>Everyday Image Studio Chrome Extension</strong> for faster image workflows.
-          </p>
-          <div className="extension-banner-actions">
-            <a href={extensionLink} target="_blank" rel="noreferrer">
-              Download extension
-            </a>
-            <button
-              type="button"
-              className="extension-banner-close"
-              aria-label="Dismiss extension banner"
-              onClick={dismissExtensionBanner}
-            >
-              ×
-            </button>
-          </div>
-        </aside>
-      )}
-
       <header className={`topbar${isHeaderScrolled ? ' topbar-scrolled' : ''}`}>
         <button type="button" className="hamburger-button" aria-label="Open navigation menu" onClick={openMobileNav}>
           <span />
@@ -349,11 +366,12 @@ export default function App() {
 
       <main id="home">
         <section className="hero">
-          <p className="eyebrow">File stack for modern teams</p>
-          <h1>Free Online Image and PDF Tools with No Account Required</h1>
+          <p className="eyebrow">Founder-led workflow publisher</p>
+          <h1>Dayfiles helps people finish risky PDF and image work with clearer guidance and lighter tools.</h1>
           <p className="hero-copy">
-            Dayfiles gives you free tools for workflow-focused image editing, broader image processing, and PDF work,
-            with no account required and no setup before you start.
+            Dayfiles publishes browser-first workflow guides for PDF delivery, image preparation, and review-heavy file
+            jobs. The site combines editorial decision support with live product hubs so readers can understand the job
+            before they choose a tool path.
           </p>
           <div className="hero-actions">
             {heroActions.map((action) => (
@@ -365,6 +383,15 @@ export default function App() {
           </div>
         </section>
 
+        <section className="credibility-strip" aria-label="Publisher credibility">
+          {credibilityFacts.map((fact) => (
+            <article key={fact.name} className="credibility-item">
+              <h2>{fact.name}</h2>
+              <p>{fact.description}</p>
+            </article>
+          ))}
+        </section>
+
         <section className="hero-answer-grid" aria-label="Dayfiles overview">
           {heroAnswerCards.map((card) => (
             <article key={card.title} className="hero-answer-card">
@@ -374,10 +401,68 @@ export default function App() {
           ))}
         </section>
 
+        <section className="panel workflows" aria-label="Flagship workflow paths">
+          <div className="section-heading">
+            <h2>Start with the right workflow path</h2>
+            <p>Dayfiles should help you choose the job path first, then the product route second.</p>
+          </div>
+          <div className="card-grid">
+            {flagshipWorkflows.map((workflow) => (
+              <article key={workflow.title} className="card">
+                <div className="badge">Start here</div>
+                <h3>{workflow.title}</h3>
+                <p>{workflow.description}</p>
+                <a href={workflow.href}>
+                  {workflow.cta}
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="panel editorial-proof" aria-label="Editorial proof">
+          <div className="section-heading">
+            <h2>How Dayfiles earns trust</h2>
+            <p>These pages explain who runs the site, how workflow pages are checked, and how public content gets reviewed and corrected.</p>
+          </div>
+          <div className="card-grid">
+            {authorityPages.map((page) => (
+              <article key={page.href} className="card">
+                <div className="badge beta-badge">Editorial proof</div>
+                <h3>{page.title}</h3>
+                <p>{page.description}</p>
+                <a href={page.href}>Open {page.title}</a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {showExtensionBanner && (
+          <aside className="extension-banner panel" aria-label="Chrome extension promotion">
+            <p>
+              Optional product add-on: install the <strong>Everyday Image Studio Chrome Extension</strong> if you already
+              use the image workflow tools and want quicker access from the browser.
+            </p>
+            <div className="extension-banner-actions">
+              <a href={extensionLink} target="_blank" rel="noreferrer">
+                View extension
+              </a>
+              <button
+                type="button"
+                className="extension-banner-close"
+                aria-label="Dismiss extension banner"
+                onClick={dismissExtensionBanner}
+              >
+                ×
+              </button>
+            </div>
+          </aside>
+        )}
+
         <section className="panel products" aria-label="Live products">
           <div className="section-heading">
-            <h2>Free Tools Available Now</h2>
-            <p>Production-ready image workflow, image toolbox, and PDF tools you can use immediately.</p>
+            <h2>Live product hubs</h2>
+            <p>Once the workflow is clear, use these product hubs to move into the actual tool route.</p>
           </div>
           <div className="card-grid">
             {liveProducts.map((product) => (
@@ -395,8 +480,8 @@ export default function App() {
 
         <section className="panel blog" aria-label="Latest blog posts">
           <div className="section-heading">
-            <h2>Image and PDF Workflow Guides</h2>
-            <p>Practical guides for repeated file jobs, with real workflow checkpoints and product-specific next steps.</p>
+            <h2>Recent workflow guides</h2>
+            <p>Task-first pages that explain what to check before delivery, submission, or archive handoff.</p>
           </div>
           <div className="card-grid">
             {blogPosts.slice(0, 3).map((post) => (
@@ -413,31 +498,21 @@ export default function App() {
           </p>
         </section>
 
-        <section className="panel beta" aria-label="Editorial standards">
+        <section className="panel beta" aria-label="Publisher trust pages">
           <div className="section-heading">
-            <h2>Why readers come back to Dayfiles</h2>
-            <p>Helpful workflow pages need more than feature lists. They need clear examples, visible tool routes, and better release guidance.</p>
+            <h2>Publisher, policy, and accountability pages</h2>
+            <p>These pages should make it obvious who is responsible for Dayfiles, how the site is operated, and how ads, privacy, and corrections are handled.</p>
           </div>
           <div className="card-grid">
-            {guideStandards.map((feature) => (
-              <article key={feature.name} className="card beta-card">
-                <div className="badge beta-badge">Editorial</div>
-                <h3>{feature.name}</h3>
-                <p>{feature.description}</p>
+            {trustLinks.map((link) => (
+              <article key={link.href} className="card beta-card">
+                <div className="badge beta-badge">Trust</div>
+                <h3>{link.label}</h3>
+                <p>{link.description}</p>
+                <a href={link.href}>Open {link.label}</a>
               </article>
             ))}
           </div>
-        </section>
-
-        <section className="panel flow" aria-label="Workflow">
-          <div className="section-heading">
-            <h2>How teams use Dayfiles</h2>
-          </div>
-          <ol>
-            {workflows.map((workflow) => (
-              <li key={workflow}>{workflow}</li>
-            ))}
-          </ol>
         </section>
 
         <section className="panel faq" aria-label="Frequently asked questions">
@@ -455,21 +530,6 @@ export default function App() {
           </div>
         </section>
 
-        <section className="panel trust" aria-label="Trust and policy pages">
-          <div className="section-heading">
-            <h2>Trust, Editorial, and Policy Pages</h2>
-            <p>Use these pages to verify who runs the site, how content is reviewed, and how Dayfiles handles privacy, advertising, and contact requests.</p>
-          </div>
-          <div className="card-grid">
-            {trustLinks.map((link) => (
-              <article key={link.href} className="card">
-                <h3>{link.label}</h3>
-                <p>Open the page for Dayfiles publisher details, editorial standards, legal terms, or contact information.</p>
-                <a href={link.href}>Open {link.label}</a>
-              </article>
-            ))}
-          </div>
-        </section>
       </main>
 
       <SubscribeSection />
@@ -488,6 +548,21 @@ export default function App() {
           </a>
           <a href="/contact/">
             Contact
+          </a>
+          <a href="/cookies/">
+            Cookies
+          </a>
+          <a href="/how-dayfiles-tests-workflows/">
+            Workflow Testing
+          </a>
+          <a href="/content-review-process/">
+            Content Review
+          </a>
+          <a href="/pdf-workflows/">
+            PDF Workflows
+          </a>
+          <a href="/image-workflows/">
+            Image Workflows
           </a>
           <a href="/editorial-policy/">
             Editorial Policy

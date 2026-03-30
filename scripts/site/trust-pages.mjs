@@ -1,106 +1,218 @@
 import { SITE_URL } from '../blog/lib.mjs';
 
 const contactEmail = 'contact@dayfiles.com';
+const founderName = 'Shuvo Habib';
 
 export const trustPages = [
   {
     slug: 'about',
     title: 'About Dayfiles | Browser-Based File Workflow Tools',
     description:
-      'Learn what Dayfiles publishes, who the site is for, and how its browser-based PDF and image workflow guides connect to the live tools.',
+      'Learn who runs Dayfiles, how its workflow guides are published and reviewed, and why the site exists as a founder-led publisher for PDF and image work.',
     shortTitle: 'About Dayfiles',
     schemaType: 'AboutPage',
     heroEyebrow: 'About the publisher',
     h1: 'About Dayfiles',
     heroCopy:
-      'Dayfiles is a small web publisher and product hub focused on practical PDF and image workflows. The site exists to help people complete everyday file work faster with clear guides and direct paths into the live tools.',
+      'Dayfiles is a founder-led publisher focused on practical PDF and image workflows. It exists to make everyday file work easier to understand, easier to review, and easier to complete without heavyweight software.',
+    highlights: [
+      { label: 'Founder and editor', value: founderName },
+      { label: 'Primary focus', value: 'PDF delivery, image prep, and browser-based file workflows' },
+      { label: 'Publishing model', value: 'Editorial guides plus linked Dayfiles product hubs' }
+    ],
     sections: [
       {
-        title: 'What Dayfiles is',
+        title: 'Who runs Dayfiles',
         paragraphs: [
-          'Dayfiles publishes browser-based workflow content for PDF handling, image preparation, and document cleanup. The site also acts as the main hub for the live Dayfiles tools, including PDF Toolkit and Everyday Image Studio.',
-          'The goal is straightforward: explain how to finish common file tasks without heavy setup, and make those paths easy to find from search, from the homepage, and from related guides.'
+          `${founderName} runs Dayfiles as the site founder, editorial owner, and product operator. The site is published as a focused content-and-tools business rather than as an anonymous content network.`,
+          'That matters because the same person responsible for the tool ecosystem is also responsible for how the guides are scoped, reviewed, corrected, and kept aligned with the live product routes.'
         ]
       },
       {
-        title: 'Who the site is for',
+        title: 'Why Dayfiles exists',
         paragraphs: [
-          'The site is built for people doing daily document or image work, including applicants, operations teams, HR coordinators, creators, and anyone who needs a quick browser-first workflow.',
-          'That means the content is written around real tasks such as filling forms, assembling packets, resizing images, preparing submission files, and exporting clean final versions.'
+          'Dayfiles exists because many everyday file tasks sit in an awkward middle ground: too important for guesswork, too common for expensive software, and too messy when the only advice online is a feature list or a keyword-stuffed tutorial.',
+          'The site is built for people handling application packets, HR documents, image preparation, PDF delivery, and review-sensitive file work that needs a clearer operating path.'
+        ]
+      },
+      {
+        title: 'What qualifies the site to publish this material',
+        paragraphs: [
+          'Dayfiles publishes from direct product and workflow context. The guides are built around the actual jobs the site tools support: conversion, cleanup, packet assembly, handoff review, and browser-first file preparation.',
+          'That does not make Dayfiles legal, compliance, or enterprise IT authority. It does make the site accountable for practical workflow guidance tied to the products it operates and documents publicly.'
+        ]
+      },
+      {
+        title: 'How Dayfiles is run',
+        paragraphs: [
+          `${founderName} owns the editorial direction, product framing, and final publishing decisions on the site.`,
+          'Guides are reviewed against live page paths, related product hubs, page structure, screenshots, and the clarity of the workflow itself before publication or major revision.'
+        ],
+        list: [
+          'editorial ownership stays with the founder/editor rather than an anonymous content team',
+          'guide updates are triggered by product changes, broken paths, weak explanations, or reader correction requests',
+          'screenshots and walkthrough details are refreshed when the live route changes materially',
+          'correction requests are reviewed through the contact page and direct email channel'
         ]
       },
       {
         title: 'How content and tools fit together',
         paragraphs: [
-          'Dayfiles separates three things clearly: the marketing site, the editorial guides, and the live product interfaces. The main site explains the workflows and links to the tools when a visitor is ready to use them.',
-          'This structure helps readers understand what a tool does before they click into the app, and it gives search engines a stable set of pages with visible context instead of only app shells.'
+          'Dayfiles separates three things clearly: the main publisher site, the editorial workflow guides, and the live product interfaces. The main domain explains the work, while the tools handle the actual task execution.',
+          'That structure is intentional. The guides should still be useful as knowledge pages even when a reader is comparing options or deciding whether the Dayfiles tools fit the job.'
+        ]
+      },
+      {
+        title: 'What Dayfiles is not',
+        list: [
+          'not legal advice or regulatory compliance advice',
+          'not a managed document service or enterprise support desk',
+          'not a generic tool directory with anonymous support content',
+          'not a promise that every workflow fits every jurisdiction or sensitive file type'
         ]
       }
+    ],
+    supportingLinks: [
+      { label: 'How Dayfiles tests workflows', href: '/how-dayfiles-tests-workflows/' },
+      { label: 'How Dayfiles reviews content', href: '/content-review-process/' },
+      { label: 'Contact Dayfiles', href: '/contact/' }
     ]
   },
   {
     slug: 'contact',
     title: 'Contact Dayfiles | Support, Policy, and Business Questions',
     description:
-      'Contact Dayfiles for support, policy, copyright, privacy, advertising, or business questions related to the site, its guides, and live tools.',
+      'Contact Dayfiles for editorial corrections, privacy requests, technical site issues, advertising questions, or business inquiries related to the site and product hubs.',
     shortTitle: 'Contact',
     schemaType: 'ContactPage',
     heroEyebrow: 'Publisher contact',
     h1: 'Contact Dayfiles',
     heroCopy:
-      'Use this page for support, privacy, copyright, advertising, and business questions related to Dayfiles guides and product hubs.',
+      'Use this page to reach the publisher directly about site issues, editorial corrections, privacy requests, advertising questions, and business communication tied to Dayfiles.',
+    highlights: [
+      { label: 'Primary contact', value: contactEmail },
+      { label: 'Response owner', value: `${founderName} / Dayfiles editorial and site operations` },
+      { label: 'Best for', value: 'corrections, privacy questions, technical issues, business inquiries' }
+    ],
     contactForm: {
       badge: 'Contact form',
       title: 'Send a message to Dayfiles',
       description:
-        'Use the form for support, privacy, copyright, business, advertising, or correction requests. Include the page URL and the issue details so the right context arrives with your message.',
+        'Use the form for editorial corrections, privacy or copyright requests, advertising questions, business inquiries, or technical issues on the public site. Include the page URL and enough context to reproduce the problem or review the claim quickly.',
       topicOptions: [
-        'Support question',
-        'Privacy or copyright request',
+        'Editorial correction',
+        'Privacy or data request',
+        'Technical site issue',
         'Advertising or sponsorship',
-        'Business or partnership inquiry',
-        'Editorial correction'
+        'Business or partnership inquiry'
       ],
       helpText:
-        `Direct email also works at ${contactEmail} if you prefer your own mail client.`,
+        `Direct email is monitored at ${contactEmail}. Use it if you prefer your own mail client or need to reference a longer thread.`,
       sidecards: [
         {
-          title: 'Before you send',
+          title: 'What gets answered here',
           list: [
-            'Include the page URL or guide title you are referring to.',
-            'Name the product hub involved, such as PDF Toolkit or Images, if relevant.',
-            'Explain what outcome you need reviewed, corrected, or answered.'
+            'factual corrections and broken guide paths',
+            'privacy, copyright, and content removal requests',
+            'technical issues on dayfiles.com pages',
+            'advertising and business communication'
           ]
         },
         {
-          title: 'Primary contact',
+          title: 'What this inbox is not for',
+          list: [
+            'managed support for files you do not control',
+            'enterprise consulting or regulated-document review',
+            'debugging unrelated third-party platforms or browser extensions not run by Dayfiles'
+          ]
+        },
+        {
+          title: 'Response expectations',
           paragraphs: [
-            'Dayfiles reviews messages related to site content, public product entry points, privacy, copyright, and business communication.',
-            `For direct email, write to ${contactEmail}.`
+            'Dayfiles aims to review substantive editorial, privacy, and technical site messages within 2 business days.',
+            `Messages that need direct owner review are routed to ${founderName}.`
           ]
         }
       ]
     },
     sections: [
       {
-        title: 'What to use this page for',
+        title: 'How to make your message useful',
         list: [
-          'support questions about the public site or its guides',
-          'privacy, copyright, or content removal requests',
-          'advertising and sponsorship questions',
-          'business development and partnership inquiries',
-          'reporting factual errors or broken pages'
+          'include the exact page URL or guide title',
+          'say whether the issue is factual, technical, legal, or commercial',
+          'describe the problem in terms of what a visitor sees or what needs correction',
+          'mention the relevant product hub if the issue is tied to Images, PDF Toolkit, or Everyday Image Studio'
         ]
       },
       {
         title: 'Response scope',
         paragraphs: [
-          'Dayfiles is a web publisher and product hub, not a managed document service. Responses focus on site issues, published content, and public product entry points rather than account-based enterprise support.',
-          'If a question relates to a third-party platform, browser setting, or file you do not have rights to use, Dayfiles may not be able to provide detailed troubleshooting.'
+          'Dayfiles is a publisher and product hub, not a managed file-processing service. Responses focus on site content, trust pages, public product entry points, and communication tied directly to Dayfiles-controlled pages.',
+          'If a question is really about a third-party platform, a personal file you do not have rights to use, or a regulated workflow that requires professional review, Dayfiles may decline to provide detailed troubleshooting.'
         ]
       }
     ],
     contactEmail
+  },
+  {
+    slug: 'cookies',
+    title: 'Cookie Policy | Dayfiles',
+    description:
+      'Read how Dayfiles uses analytics cookies, advertising cookies, third-party scripts, and browser controls across the public site.',
+    shortTitle: 'Cookie Policy',
+    schemaType: 'WebPage',
+    heroEyebrow: 'Cookie policy',
+    h1: 'Cookie Policy',
+    heroCopy:
+      'This page explains how Dayfiles uses cookies and similar technologies for analytics, advertising, and public-site performance across dayfiles.com.',
+    highlights: [
+      { label: 'Applies to', value: 'dayfiles.com public pages' },
+      { label: 'Includes', value: 'analytics cookies, ad-related cookies, and script-triggered measurement' },
+      { label: 'Controls', value: 'browser settings, Google controls, and applicable consent tools' }
+    ],
+    sections: [
+      {
+        title: 'What Dayfiles uses cookies for',
+        paragraphs: [
+          'Dayfiles may use cookies or similar browser technologies to understand site visits, improve public-page performance, and support advertising on selected pages.',
+          'These technologies are tied to the public site experience and are separate from the browser-based tools themselves, which may have their own product-specific behavior.'
+        ]
+      },
+      {
+        title: 'Analytics cookies',
+        paragraphs: [
+          'Analytics cookies may be used to understand page visits, traffic sources, on-site behavior, and general performance trends across the public website.',
+          'That information helps Dayfiles understand which guides are useful, which pages need clearer navigation, and where technical or editorial improvements are needed.'
+        ]
+      },
+      {
+        title: 'Advertising cookies and ad-related technologies',
+        paragraphs: [
+          'On pages where advertising appears, Google AdSense or similar providers may use cookies or related technologies to measure ad delivery, understand performance, and serve ads according to their own policies and controls.',
+          'The presence of those technologies does not change the editorial requirement that public pages be understandable and useful on their own.'
+        ]
+      },
+      {
+        title: 'Third-party scripts',
+        paragraphs: [
+          'Dayfiles may load third-party scripts for analytics, advertising, embedded product references, and related measurement on the public site.',
+          'Those services may set or read cookies according to their own terms, policies, and regional requirements.'
+        ]
+      },
+      {
+        title: 'Browser controls and consent expectations',
+        paragraphs: [
+          'Visitors can limit or clear cookies through browser settings and can review advertising-related controls available through Google where applicable.',
+          'Where regional law or platform requirements apply, Dayfiles expects cookie and advertising behavior to respect the relevant consent expectations for that visitor context.'
+        ]
+      }
+    ],
+    supportingLinks: [
+      { label: 'Privacy Policy', href: '/privacy-policy/' },
+      { label: 'Advertising Disclosure', href: '/advertising-disclosure/' },
+      { label: 'Contact Dayfiles', href: '/contact/' }
+    ]
   },
   {
     slug: 'privacy-policy',
@@ -201,8 +313,8 @@ export const trustPages = [
       {
         title: 'How guides are created',
         paragraphs: [
-          'Dayfiles workflow guides are written to explain a specific task, not just repeat a keyword. Articles are structured around user intent, practical steps, related tools, and the tradeoffs a reader should understand before acting.',
-          'Where appropriate, guides cite primary sources, product pages, or operational references so readers can verify details for themselves.'
+          'Dayfiles workflow guides are written to explain a specific task, not just repeat a keyword. Articles are built around user intent, real workflow checkpoints, live product context, and the mistakes a reader should catch before acting.',
+          'Where appropriate, guides cite primary sources, product pages, operational references, or the site’s own public workflow documentation so readers can verify the logic for themselves.'
         ]
       },
       {
@@ -217,8 +329,8 @@ export const trustPages = [
       {
         title: 'Update and correction policy',
         paragraphs: [
-          'Pages may be updated when products change, when better workflow information becomes available, or when errors are reported. Important fixes should be reflected in the visible page content rather than only in metadata.',
-          'Readers can request corrections through the Dayfiles contact page if a guide is inaccurate, outdated, or materially incomplete.'
+          'Pages may be updated when products change, when clearer workflow evidence becomes available, when screenshots need refresh, or when errors are reported. Important fixes should be reflected in the visible page content rather than only in metadata.',
+          'Readers can request corrections through the Dayfiles contact page if a guide is inaccurate, outdated, materially incomplete, or visually out of date compared with the live route.'
         ]
       },
       {
@@ -228,6 +340,11 @@ export const trustPages = [
           'When a page links into a Dayfiles tool, that relationship is part of the publisher model and should be understandable from the surrounding content.'
         ]
       }
+    ],
+    supportingLinks: [
+      { label: 'How Dayfiles tests workflows', href: '/how-dayfiles-tests-workflows/' },
+      { label: 'How Dayfiles reviews content', href: '/content-review-process/' },
+      { label: 'Contact Dayfiles', href: '/contact/' }
     ]
   },
   {
@@ -263,6 +380,262 @@ export const trustPages = [
           'Questions about advertising practices can be sent through the Dayfiles contact page.'
         ]
       }
+    ]
+  },
+  {
+    slug: 'how-dayfiles-tests-workflows',
+    title: 'How Dayfiles Tests PDF and Image Workflows',
+    description:
+      'See how Dayfiles checks workflow guides, screenshots, live tool routes, and review-ready output standards before publishing or revising public pages.',
+    shortTitle: 'How Dayfiles Tests Workflows',
+    schemaType: 'WebPage',
+    heroEyebrow: 'Editorial proof',
+    h1: 'How Dayfiles Tests PDF and Image Workflows',
+    heroCopy:
+      'This page explains how Dayfiles checks workflow routes, screenshots, output expectations, and public-page clarity before a guide is published or materially revised.',
+    highlights: [
+      { label: 'Checks cover', value: 'live paths, screenshots, guide logic, and review-ready output expectations' },
+      { label: 'Applies to', value: 'PDF, Images, and Everyday Image Studio guides on dayfiles.com' },
+      { label: 'Goal', value: 'publish guidance that matches the live route and helps readers avoid preventable mistakes' }
+    ],
+    sections: [
+      {
+        title: 'What gets checked on live tools',
+        list: [
+          'whether the linked route still exists and loads correctly',
+          'whether the tool category or task path still matches the guide claim',
+          'whether the workflow sequence described on the page still makes sense for the current route',
+          'whether the product hub and article links still connect cleanly'
+        ]
+      },
+      {
+        title: 'What gets checked on guides',
+        paragraphs: [
+          'Guides are reviewed for task clarity, step order, risky failure points, and whether the final review checks would actually help a user avoid rework.',
+          'The site also checks whether an article is saying something distinct or just repeating a neighboring workflow page with surface-level wording changes.'
+        ]
+      },
+      {
+        title: 'Examples of failure types Dayfiles looks for',
+        list: [
+          'screenshots that no longer match the live route',
+          'guide intros that overpromise what the workflow can do',
+          'navigation paths that send readers into the wrong product hub',
+          'checklists that are too generic to catch real delivery mistakes',
+          'pages that read like tool-adjacent filler rather than operational guidance'
+        ]
+      },
+      {
+        title: 'When screenshots are refreshed',
+        paragraphs: [
+          'Screenshots should be refreshed when the visible route changes meaningfully, when the UI no longer supports the explanation on the page, or when the old capture makes the product look incomplete or outdated.',
+          'Dayfiles uses screenshots as proof and orientation, not as decorative filler. If a capture stops doing that job, it should be replaced.'
+        ]
+      },
+      {
+        title: 'What review-ready means before publishing',
+        paragraphs: [
+          'A page is review-ready when the route is live, the explanation is specific, the screenshots support the claim, the internal links work, and the page would still be useful if a reader were comparing options rather than immediately using the tool.',
+          'That standard is stricter than “the page loads.” It is meant to keep workflow pages from becoming low-information wrappers around product links.'
+        ]
+      }
+    ],
+    supportingLinks: [
+      { label: 'Content review process', href: '/content-review-process/' },
+      { label: 'Editorial Policy', href: '/editorial-policy/' },
+      { label: 'About Dayfiles', href: '/about/' }
+    ]
+  },
+  {
+    slug: 'content-review-process',
+    title: 'How Dayfiles Reviews and Updates Content',
+    description:
+      'Learn how Dayfiles selects workflow topics, reviews guides, handles updates, chooses sources, and decides when a page should be rewritten or unpublished.',
+    shortTitle: 'Content Review Process',
+    schemaType: 'WebPage',
+    heroEyebrow: 'Editorial proof',
+    h1: 'How Dayfiles Reviews and Updates Content',
+    heroCopy:
+      'This page explains how Dayfiles chooses workflow topics, reviews public guides, updates pages, and decides when an article needs a rewrite rather than a cosmetic refresh.',
+    highlights: [
+      { label: 'Owned by', value: `${founderName} / Dayfiles editorial` },
+      { label: 'Review inputs', value: 'live routes, source checks, screenshots, and clarity of the workflow itself' },
+      { label: 'Update triggers', value: 'product changes, weak guidance, corrections, and stale page evidence' }
+    ],
+    sections: [
+      {
+        title: 'How topics are selected',
+        paragraphs: [
+          'Dayfiles prioritizes topics that map to recurring file jobs, product-supported workflows, and high-friction tasks where people are likely to make avoidable mistakes.',
+          'The site should not publish a page just because a keyword exists. A topic must justify itself as a useful workflow explanation or decision-support page.'
+        ]
+      },
+      {
+        title: 'How guides are reviewed',
+        paragraphs: [
+          'Guides are reviewed for task specificity, structure, screenshot support, link accuracy, and whether the explanation reflects the real job rather than a generic content template.',
+          'Pages that feel too similar to neighboring content should be rewritten, consolidated, or deprioritized rather than left to create low-value-content signals.'
+        ]
+      },
+      {
+        title: 'How sources are chosen',
+        paragraphs: [
+          'Sources are chosen based on whether they help verify a workflow claim, a product route, a technical standard, or a policy-sensitive instruction.',
+          'A source block should support the page. It should not exist only to make the article look more legitimate.'
+        ]
+      },
+      {
+        title: 'How corrections and updates are handled',
+        paragraphs: [
+          'When a correction request or stale-content issue is credible, Dayfiles updates the visible page content, not just metadata or hidden notes.',
+          'If a guide becomes materially misleading, outdated, or too weak to justify its place in the public archive, it should be rewritten heavily or removed from active promotion.'
+        ]
+      },
+      {
+        title: 'What would cause a page to be rewritten or unpublished',
+        list: [
+          'the product route changed enough that the article no longer matches',
+          'the screenshots no longer help a reader orient themselves',
+          'the page is too repetitive compared with stronger neighboring content',
+          'the article does not add meaningful value beyond routing readers elsewhere',
+          'the page creates trust or monetization risk disproportionate to its usefulness'
+        ]
+      }
+    ],
+    supportingLinks: [
+      { label: 'How Dayfiles tests workflows', href: '/how-dayfiles-tests-workflows/' },
+      { label: 'Editorial Policy', href: '/editorial-policy/' },
+      { label: 'Contact Dayfiles', href: '/contact/' }
+    ]
+  },
+  {
+    slug: 'pdf-workflows',
+    title: 'PDF Workflows Hub | How Dayfiles Handles Common Document Jobs',
+    description:
+      'Use this Dayfiles editorial hub to understand common PDF jobs, choose the right workflow, avoid document-delivery mistakes, and find the best related guides and product routes.',
+    shortTitle: 'PDF Workflows',
+    schemaType: 'CollectionPage',
+    heroEyebrow: 'Editorial hub',
+    h1: 'PDF Workflows Hub',
+    heroCopy:
+      'This page helps readers choose the right PDF workflow before they start clicking tools. It focuses on common document jobs, the mistakes that cause avoidable rework, and the strongest Dayfiles guides for each route.',
+    highlights: [
+      { label: 'Best for', value: 'document assembly, conversion, signing, cleanup, and final delivery review' },
+      { label: 'Start here when', value: 'you know the job but not the right PDF route' },
+      { label: 'Related product hub', value: 'PDF Toolkit' }
+    ],
+    sections: [
+      {
+        title: 'Start here: what kind of PDF job do you actually have?',
+        list: [
+          'assembly work such as merge, split, reorder, or page numbering',
+          'file-shape work such as compression, conversion, or DOCX round-trips',
+          'approval work such as fill, sign, password protection, or controlled handoff',
+          'delivery work such as final packet review, naming, and archive-safe export'
+        ]
+      },
+      {
+        title: 'Common PDF mistakes that cause avoidable rework',
+        paragraphs: [
+          'The most expensive mistakes are rarely dramatic. They are usually version confusion, poor packet order, wrong export assumptions, unreviewed signatures, or a final file name that tells the next person nothing useful.',
+          'A strong PDF workflow page should stop those mistakes before the file reaches the recipient, not just describe a feature that changes the document.'
+        ]
+      },
+      {
+        title: 'Where to start in Dayfiles for PDF work',
+        list: [
+          'use the PDF Toolkit hub when you need the category overview before choosing a task route',
+          'use guide pages when the risky part is the workflow decision, not the button click',
+          'use checklists and packet pages when the file must survive review, submission, or handoff'
+        ]
+      },
+      {
+        title: 'Core Dayfiles guides for PDF workflows',
+        list: [
+          'How to Edit a PDF by Converting It to DOCX and Back',
+          'PDF Toolkit Checklist for Reliable Document Delivery',
+          'PDF Fill and Sign Workflow Guide for Private Teams',
+          'Visa Packet PDF Checklist for Clean Final Submission',
+          'Employee Onboarding PDF Workflow for Remote HR Teams'
+        ]
+      },
+      {
+        title: 'What makes this page useful even if you never open the tool',
+        paragraphs: [
+          'It gives a decision model: what kind of PDF job you have, what the common risks are, and which review step matters most before the file leaves your hands.',
+          'That matters because many readers need workflow clarity before they decide whether Dayfiles is the right tool path at all.'
+        ]
+      }
+    ],
+    supportingLinks: [
+      { label: 'Open PDF Toolkit', href: '/pdf-toolkit/' },
+      { label: 'Read the PDF operations checklist', href: '/blog/pdf-operations-checklist/' },
+      { label: 'Read the PDF edit via DOCX workflow', href: '/blog/pdf-edit-via-docx-and-back-workflow/' }
+    ]
+  },
+  {
+    slug: 'image-workflows',
+    title: 'Image Workflows Hub | How Dayfiles Handles Cleanup, Conversion, and Submission Prep',
+    description:
+      'Use this Dayfiles editorial hub to understand common image jobs, choose the right workflow, avoid image-prep mistakes, and find the best related guides and product routes.',
+    shortTitle: 'Image Workflows',
+    schemaType: 'CollectionPage',
+    heroEyebrow: 'Editorial hub',
+    h1: 'Image Workflows Hub',
+    heroCopy:
+      'This page helps readers choose the right image workflow before they jump into a tool. It focuses on conversion, cleanup, compliance-sensitive prep, and the checks that matter before an image is uploaded, submitted, or shared.',
+    highlights: [
+      { label: 'Best for', value: 'image conversion, resizing, cleanup, blur, background removal, and submission prep' },
+      { label: 'Start here when', value: 'you know the outcome you need but not the safest route' },
+      { label: 'Related product hubs', value: 'Images and Everyday Image Studio' }
+    ],
+    sections: [
+      {
+        title: 'Start here: which kind of image job are you doing?',
+        list: [
+          'format work such as JPG conversion or delivery normalization',
+          'size work such as resize or compression for uploads and listings',
+          'cleanup work such as background removal or face blur before sharing',
+          'compliance-sensitive prep such as passport, visa, or ID photo review'
+        ]
+      },
+      {
+        title: 'Common image-prep mistakes that create rejection or rework',
+        paragraphs: [
+          'Image work breaks when people edit before they confirm the destination rule, overwrite the source file, flatten the wrong asset, or assume a cleaner-looking export is automatically a compliant one.',
+          'A useful image workflow page should make those decision errors visible before the export, not after the upload fails.'
+        ]
+      },
+      {
+        title: 'Where to start in Dayfiles for image work',
+        list: [
+          'use Images when you need broader image conversion, resizing, compression, or cleanup routes',
+          'use Everyday Image Studio when the job is more workflow-sensitive and tied to repeated image preparation or review discipline',
+          'use the guides when the risky part is the decision sequence rather than the edit itself'
+        ]
+      },
+      {
+        title: 'Core Dayfiles guides for image workflows',
+        list: [
+          'How to Convert Images to JPG for Consistent Delivery',
+          'How to Resize Images in Bulk for Listings and Uploads',
+          'How to Compress Images in Bulk Before Upload Deadlines',
+          'How to Remove Backgrounds from Product Photos Fast',
+          'How to Blur Faces Before Sharing Sensitive Photos Online'
+        ]
+      },
+      {
+        title: 'What makes this page useful even without the tools',
+        paragraphs: [
+          'It helps readers identify the real job, the likely failure mode, and the right review criteria before they commit to an edit route.',
+          'That makes the page valuable as an editorial decision guide, not just a product index.'
+        ]
+      }
+    ],
+    supportingLinks: [
+      { label: 'Open Images', href: '/images/' },
+      { label: 'Open Everyday Image Studio', href: '/everyday-image-studio/' },
+      { label: 'Read the JPG conversion guide', href: '/blog/images-convert-to-jpg-guide/' }
     ]
   }
 ];
