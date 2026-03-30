@@ -394,7 +394,7 @@ export default function App() {
       <main id="home">
         <section className="hero">
           <p className="eyebrow">Founder-led workflow publisher</p>
-          <h1>Dayfiles helps people finish risky PDF and image work with clearer guidance and lighter tools.</h1>
+          <h1>Dayfiles makes PDF and image work easier.</h1>
           <p className="hero-copy">
             Dayfiles publishes browser-first workflow guides for PDF delivery, image preparation, and review-heavy file
             jobs. The site combines editorial decision support with live product hubs so readers can understand the job
