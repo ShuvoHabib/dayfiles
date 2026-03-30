@@ -24,23 +24,23 @@ const liveProducts = [
 
 const guideStandards = [
   {
-    name: 'Task-first writing',
-    description: 'Guides are written around a real file job, the likely failure points, and the review steps that matter before submission.'
+    name: 'Real workflow examples',
+    description: 'Guides focus on concrete file jobs, common failure points, and the checks people actually need before they upload, share, or archive.'
   },
   {
-    name: 'Live tool checks',
-    description: 'Each guide links back to the relevant Dayfiles product hub so readers can verify the workflow against the current tool path.'
+    name: 'Visible tool context',
+    description: 'Each guide points back to the relevant Dayfiles product hub so readers can move from the explanation to the live tool path without guessing.'
   },
   {
-    name: 'Visible trust pages',
-    description: 'Editorial policy, contact details, privacy terms, and advertising disclosure stay public so the site is reviewable.'
+    name: 'Release-ready checklists',
+    description: 'The best pages include practical review steps, screenshots, and handoff guidance so the output is easier to trust the first time.'
   }
 ];
 
 const workflows = [
-  'Collect and clean incoming files',
-  'Turn drafts into polished deliverables',
-  'Share final outputs with trackable links'
+  'Start from the right product hub for the job',
+  'Run the edit, conversion, or packaging step once',
+  'Review the output before it reaches the next person'
 ];
 
 const extensionLink =
@@ -76,17 +76,17 @@ const heroAnswerCards = [
   {
     title: 'What is Dayfiles?',
     copy:
-      'Dayfiles is a browser-first file workflow platform for image editing, image conversion, compression, and PDF operations. It combines live tools, product hubs, and source-backed guides that answer specific file workflow questions.'
+      'Dayfiles is a browser-first file workflow site for image editing, image conversion, compression, and PDF operations. It combines live tools with practical guides for people who need clean outputs fast.'
   },
   {
     title: 'What can you do here?',
     copy:
-      'You can open live apps for PDF work, workflow-focused image editing, and broader image processing. You can also read structured guides that explain how to complete those tasks and what to check before delivery.'
+      'You can open live apps for PDF work, workflow-focused image editing, and broader image processing. You can also follow guides that explain when to use each route and what to verify before delivery.'
   },
   {
-    title: 'Why is the content structured this way?',
+    title: 'Why do the guides matter?',
     copy:
-      'Dayfiles publishes concise definitions, practical steps, FAQs, sources, and trust pages so readers and answer engines can extract the right task-specific information quickly.'
+      'The guides are built to help users avoid rework. They show the job, the risky points, and the final review checks so a file is easier to trust when it leaves your hands.'
   }
 ];
 const trustLinks = [
@@ -102,7 +102,7 @@ const faqs = [
   {
     question: 'What is Dayfiles used for?',
     answer:
-      'Dayfiles is a file operations platform for image editing, PDF conversion, document cleanup, and daily file sharing workflows.'
+      'Dayfiles is used for browser-based image editing, image conversion, PDF cleanup, and file-handling workflows that need a clearer handoff.'
   },
   {
     question: 'Which Dayfiles tools are live today?',
@@ -110,9 +110,9 @@ const faqs = [
       'Everyday Image Studio, Images, and PDF Toolkit are live products. You can access them directly from dayfiles.com.'
   },
   {
-    question: 'How does Dayfiles keep guides trustworthy?',
+    question: 'What makes the guides useful?',
     answer:
-      'Dayfiles keeps policy pages visible, ties guides to live tool hubs, and updates public workflow content when links, dates, or process details change.'
+      'The strongest guides stay close to real tasks, show the relevant product route, and explain the checks that matter before a file is shared, submitted, or archived.'
   }
 ];
 
@@ -396,7 +396,7 @@ export default function App() {
         <section className="panel blog" aria-label="Latest blog posts">
           <div className="section-heading">
             <h2>Image and PDF Workflow Guides</h2>
-            <p>Source-backed SEO articles and practical tutorials published on a recurring schedule.</p>
+            <p>Practical guides for repeated file jobs, with real workflow checkpoints and product-specific next steps.</p>
           </div>
           <div className="card-grid">
             {blogPosts.slice(0, 3).map((post) => (
@@ -415,8 +415,8 @@ export default function App() {
 
         <section className="panel beta" aria-label="Editorial standards">
           <div className="section-heading">
-            <h2>How Dayfiles Keeps Guides Useful</h2>
-            <p>Editorial standards, live tool context, and visible trust pages help the public site stay reviewable.</p>
+            <h2>Why readers come back to Dayfiles</h2>
+            <p>Helpful workflow pages need more than feature lists. They need clear examples, visible tool routes, and better release guidance.</p>
           </div>
           <div className="card-grid">
             {guideStandards.map((feature) => (
@@ -458,7 +458,7 @@ export default function App() {
         <section className="panel trust" aria-label="Trust and policy pages">
           <div className="section-heading">
             <h2>Trust, Editorial, and Policy Pages</h2>
-            <p>Dayfiles publishes clear policy pages so readers and reviewers can see how the site operates.</p>
+            <p>Use these pages to verify who runs the site, how content is reviewed, and how Dayfiles handles privacy, advertising, and contact requests.</p>
           </div>
           <div className="card-grid">
             {trustLinks.map((link) => (
@@ -475,7 +475,7 @@ export default function App() {
       <SubscribeSection />
 
       <footer className="footer">
-        <p>Dayfiles. Built for daily file work, with visible publisher, policy, and advertising pages.</p>
+        <p>Dayfiles helps people move from raw files to cleaner, review-ready outputs without heavyweight setup.</p>
         <div>
           <a href="/everyday-image-studio/">
             Image Studio

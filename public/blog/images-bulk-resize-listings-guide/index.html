@@ -798,91 +798,74 @@
       </section>
 
       <article class="panel prose">
-        <p>How do you resize a large image batch without creating inconsistent uploads? The practical answer is to lock the target dimensions first, resize against one destination rule, and review the outliers before the files leave your staging folder. That is where <a href="https://images.dayfiles.com/resize-image">Images by Dayfiles</a> fits best.</p>
-<h2>Why bulk resizing matters</h2>
-<p>Image resizing sounds simple until the batch is tied to a real deadline. Listing platforms, content systems, internal knowledge bases, and campaign uploads often expect dimensions that are strict enough to reject or distort the wrong file. Once a batch contains mixed aspect ratios, late fixes multiply quickly.</p>
-<p>The usual symptoms are familiar:</p>
+        <p>How do you make a listing image batch consistent without re-exporting files one by one? The practical route is to decide the target dimensions first, resize the batch in one pass, then review the images most likely to crop badly or lose product framing.</p>
+<p>The best starting point on Dayfiles is the <a href="/images/">Images hub</a> before switching into the live tool at <a href="https://images.dayfiles.com/">Images by Dayfiles</a>. That route works best when the batch already has a clear destination and the operator knows what kind of review the output will need.</p>
+<h2>What jobs usually trigger this workflow?</h2>
+<p>This workflow comes up most often when a team is preparing files for:</p>
 <ul>
-<li>thumbnails crop unpredictably,</li>
-<li>one or two images look stretched,</li>
-<li>reviewers request a second export,</li>
-<li>filenames no longer match the original set.</li>
+<li>marketplace listing uploads</li>
+<li>catalog refreshes</li>
+<li>CMS image replacement with fixed slots</li>
 </ul>
-<p>Bulk resizing is valuable because it keeps the set aligned before those issues spread downstream.</p>
-<h2>What should teams decide before resizing?</h2>
-<p>Do not start with the image tool. Start with the destination. The team needs to know:</p>
-<ol>
-<li>the exact output dimensions,</li>
-<li>whether aspect ratio must stay preserved,</li>
-<li>which images can tolerate padding, cropping, or empty margin,</li>
-<li>how the final batch will be named.</li>
-</ol>
-<p>Without that decision set, resizing becomes a sequence of corrections rather than a controlled export.</p>
-<h2>Step-by-step: how to resize image batches</h2>
-<p>At <a href="https://images.dayfiles.com/resize-image">Images by Dayfiles</a>, a reliable batch routine looks like this:</p>
-<ol>
-<li>Separate the images for one destination only.</li>
-<li>Confirm the width, height, and aspect-ratio rule for that upload target.</li>
-<li>Run the resize workflow on the batch with one output standard.</li>
-<li>Inspect portrait, landscape, and edge-case images rather than checking only the easy files.</li>
-<li>Export with filenames that preserve sequence or item identity.</li>
-<li>Upload only after the final folder matches the intended destination.</li>
-</ol>
-<p>The key is not the click sequence. The key is preventing mixed-target batches, because that is what produces the most rework.</p>
-<h2>Which files should be checked first?</h2>
-<p>When teams resize in bulk, the risky files are usually:</p>
+<p>Each of those jobs has one thing in common: the output is meant to travel. That means the batch needs more than a quick edit. It needs a predictable handoff.</p>
+<figure>
+  <img src="/blog/images/images-hub-ui.png" alt="Dayfiles Images hub page showing the image conversion, compression, and export workflow overview" loading="lazy" />
+  <figcaption>Start from the Dayfiles Images hub when the job depends on conversion, compression, or export discipline.</figcaption>
+</figure>
+
+<h2>What should be decided before processing starts?</h2>
+<p>Use this short preflight before loading the batch:</p>
 <ul>
-<li>the tallest portrait image,</li>
-<li>the widest landscape image,</li>
-<li>any graphic with text,</li>
-<li>any product image where edges matter,</li>
-<li>the first and last file in the batch.</li>
+<li>confirm the destination dimensions and aspect ratio</li>
+<li>identify images that may crop awkwardly</li>
+<li>decide whether background cleanup happens before or after resizing</li>
 </ul>
-<p>If those files survive the resize cleanly, the rest of the set usually follows. A targeted review method saves more time than opening every image individually.</p>
-<h2>How to handle mixed aspect ratios without starting over</h2>
-<p>Mixed aspect ratios are where most resize batches go off course. Teams often combine square, portrait, and landscape files, then expect one export rule to satisfy a destination that was really designed for only one shape. The fix is not to improvise file by file. The fix is to separate the batch into groups that share the same target behavior.</p>
-<p>If the destination accepts only one layout style, decide early whether padding, cropping, or rejection of edge cases is the right tradeoff. That decision keeps the reviewer from having to interpret visual inconsistencies after the fact.</p>
-<h2>Use this workflow when upload consistency matters more than one perfect image</h2>
-<p>Listings and content systems rarely reward one beautiful file inside an inconsistent batch. They reward predictability. A clean resize workflow helps the whole set behave the same way in grid views, product pages, internal portals, and reviewer queues.</p>
-<p>That is why batch resizing is usually an operations problem, not an image-aesthetics problem. The goal is to keep the destination stable for every asset in the set.</p>
-<h2>Bulk resize workflow vs last-minute re-exporting</h2>
-<table>
-<thead>
-<tr>
-<th>Requirement</th>
-<th>Bulk resize workflow</th>
-<th>Last-minute manual edits</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Dimension consistency</td>
-<td>High across the whole batch</td>
-<td>Varies by editor and tool</td>
-</tr>
-<tr>
-<td>Review speed</td>
-<td>Faster because checks are patterned</td>
-<td>Slower because problems appear late</td>
-</tr>
-<tr>
-<td>Naming discipline</td>
-<td>Easier to preserve sequence</td>
-<td>More likely to create duplicates</td>
-</tr>
-<tr>
-<td>Best fit</td>
-<td>Platform-driven uploads and listings</td>
-<td>One-off emergency fixes</td>
-</tr>
-</tbody></table>
-<p>This is why resizing should be part of the pre-upload workflow, not a rescue action after a rejection.</p>
-<h2>Where this fits in Dayfiles content</h2>
-<p>Start from <a href="/images/">Images</a> when the work is mainly batch resizing for one destination. If the team needs a broader operating model for repeated image work after the resize stage, the best adjacent process article is the <a href="/blog/eis-workflow-playbook/">Everyday Image Studio Workflow Playbook</a>. If strict photo rules are part of the job, the <a href="/blog/eis-passport-photo-checklist/">Everyday Image Studio Passport Photo Checklist Guide</a> is useful because it shows how exact dimension work should be reviewed. If resized images are heading into a final document set, close the loop with the <a href="/blog/pdf-operations-checklist/">PDF Toolkit Checklist for Reliable Document Delivery</a>.</p>
-<h2>What the reviewer should confirm before upload</h2>
-<p>The final reviewer does not need to reopen the whole production process. They only need to confirm that the resized folder matches the destination requirement, that the odd-shape images were handled intentionally, and that filenames still map back to the source set. That quick review is often enough to prevent platform rejection and confusing second exports.</p>
-<p>If the batch is headed to a marketplace or shared content system, it also helps to keep one short note with the target dimensions and export date. That gives the next teammate immediate context if the destination changes later.</p>
-<h2>Final note on listing-ready image batches</h2>
-<p>Bulk resizing should make uploads more predictable, not create another review round. Use <a href="https://images.dayfiles.com/resize-image">Images by Dayfiles</a> when one destination requires one clean dimension standard, then keep the routine disciplined: separate the batch, resize once, inspect the outliers, and ship the approved set.</p>
+<p>Those decisions keep the batch consistent. They also make it easier to explain the output to the next reviewer instead of forcing them to reverse-engineer what changed.</p>
+<h2>What is the cleanest step-by-step route?</h2>
+<ol>
+<li>Open the Images hub and choose the resize path.</li>
+<li>Load the batch and set the target size based on the destination slot.</li>
+<li>Run the resize once across the working batch.</li>
+<li>Inspect edge cases such as wide packaging shots or tall portraits.</li>
+<li>Export the resized set with a folder name that matches the destination.</li>
+</ol>
+<p>Running the workflow in that order reduces the two biggest risks in image handling: mixing source files with output copies and discovering a preventable quality problem only after the batch has already been sent onward.</p>
+<h2>Which files deserve the closest review?</h2>
+<p>Do not review every file with the same intensity. Slow down on the assets most likely to break the handoff:</p>
+<ul>
+<li>consistent dimensions</li>
+<li>safe cropping around the subject</li>
+<li>no accidental stretching</li>
+<li>clear handoff naming</li>
+</ul>
+<p>If those risk points are sound, the rest of the batch is usually much easier to trust.</p>
+<h2>How should the handoff be packaged?</h2>
+<p>The next person should be able to tell which files are source assets, which files are the processed delivery batch, and what destination the batch was prepared for. Clear folder names and export labels matter because image work often gets reused in several systems after the first share.</p>
+<p>That packaging step matters even more when the images will later be compressed again, dropped into a PDF, or handed to someone who was not part of the original edit. If the output set is not clearly labeled, the next operator may make a second round of edits on top of the wrong files.</p>
+<h2>What should happen right after export?</h2>
+<p>Do one short pass before the batch moves on:</p>
+<ol>
+<li>Open several representative files from the output set.</li>
+<li>Compare the output against one or two source files if the job is sensitive.</li>
+<li>Confirm the destination requirement was actually met.</li>
+<li>Store the batch in a folder that makes the output status obvious.</li>
+</ol>
+<p>This four-step release pass prevents a surprising number of downstream problems. It catches naming issues, missed compression targets, awkward crops, and accidental quality loss before another system or teammate bakes those problems in.</p>
+<h2>Where do image guides usually lose value?</h2>
+<p>They lose value when they stop at “click this tool” and never explain what a good batch looks like afterward. The Dayfiles version of the workflow should stay useful even for someone who already knows where the button lives, because the real work is deciding which files need extra attention and what counts as a safe output.</p>
+<h2>What should the next system or teammate receive?</h2>
+<p>The receiving person should get a batch that is boring in the best possible way. The files should open the same way, follow one naming rule, and already match the destination constraint that triggered the work in the first place. If the next person has to ask which files are final or whether the originals were preserved, the workflow still needs work.</p>
+<p>That matters because image tasks often chain together. A resized batch may later be compressed. A cleaned product photo may later be converted to JPG. A privacy-safe share set may later be moved into a report. The handoff quality on this step affects every later step.</p>
+<h2>When is it worth running the workflow again?</h2>
+<p>Run it again only when the review reveals one specific correction target, such as the wrong dimensions, unacceptable compression, or a naming issue that would confuse the next handoff. Re-running the full batch without a clear reason often creates a second round of file sprawl and makes it harder to tell which output is authoritative.</p>
+<h2>Related Dayfiles reading</h2>
+<ul>
+<li><a href="/blog/images-bulk-image-compression-guide/">How to Compress Images in Bulk Before Upload Deadlines</a></li>
+<li><a href="/blog/images-remove-background-product-photos-guide/">images remove background product photos guide</a></li>
+<li><a href="/blog/images-convert-to-jpg-guide/">How to Convert Images to JPG for Consistent Delivery</a></li>
+</ul>
+<h2>Before you release the batch</h2>
+<p>The final question is not “Did the tool run?” It is “Would the next person know exactly what this batch is for, whether it is approved, and whether the originals are still safe?” If the answer is yes, the workflow is doing its job.</p>
 
       </article>
 
