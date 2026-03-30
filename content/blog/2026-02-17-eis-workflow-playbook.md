@@ -35,7 +35,7 @@ The Dayfiles workflow becomes more valuable when the team can explain how work m
   <figcaption>Use the Everyday Image Studio workspace as a repeatable operating surface for small teams that create, clean, and ship repeated image assets.</figcaption>
 </figure>
 
-## What should be documented first?
+## What should be documented first for small teams that create, clean, and ship repeated image assets?
 
 Start with the non-negotiables:
 
@@ -45,7 +45,7 @@ Start with the non-negotiables:
 
 Those choices create the conditions for reliable editing. Without them, even a strong tool setup gets buried under inconsistent intake and vague approvals.
 
-## What should the team do every day?
+## What should the team do every day inside this playbook?
 
 1. Intake files into a predictable working area.
 2. Apply the agreed editing or processing rule for that job type.
@@ -79,7 +79,7 @@ The export folder should reveal what is final, what is source, and what still ne
 
 Measure rework rate, turnaround time, and how often files come back for size, crop, or background corrections. Those numbers show whether the workflow is really improving, not just whether the team likes the tool.
 
-## How should the playbook evolve?
+## How should the playbook evolve over time?
 
 Change it when the team sees repeated failure patterns, not just when someone has a new preference. The playbook is strongest when it captures the fixes that remove recurring rework, unclear approvals, or export mistakes. That keeps it practical instead of turning it into a theoretical operations document.
 
@@ -95,11 +95,17 @@ The source-of-truth folder, the approval signal, and the final archive path shou
 
 It would show up in cleaner handoffs, fewer clarification messages, and less repeated export work on the same files. A good playbook should make the routine easier to explain and easier to trust, not just easier to admire in a document. If the team still spends too much time figuring out what a file is, the playbook needs another iteration.
 
-## Why a playbook matters even for small teams
+## What should the playbook save the team from?
+
+It should save the team from rebuilding the same working assumptions every week. If people still need to ask where files belong, what counts as approved, or when an export is allowed to leave the workspace, the playbook is not yet carrying enough operational weight.
+
+That makes this more than a documentation exercise. The playbook should remove repeated uncertainty and make good behavior easier to repeat under pressure.
+
+## Why this playbook matters even for small teams
 
 Small teams often assume they can rely on memory because everyone talks frequently. In practice, the opposite is true under deadline pressure. A lightweight playbook keeps routine file work from becoming dependent on one person’s memory, and that makes the whole system more resilient when priorities shift quickly.
 
-## Related Dayfiles reading
+## More Dayfiles guides for small teams that create, clean, and ship repeated image assets
 
 - [eis social content production workflow](/blog/eis-social-content-production-workflow/)
 - [eis passport photo checklist](/blog/eis-passport-photo-checklist/)
@@ -108,3 +114,5 @@ Small teams often assume they can rely on memory because everyone talks frequent
 ## What makes the playbook useful
 
 It is useful when a new teammate can follow the sequence, a manager can review the outcomes, and the final asset handoff looks predictable instead of personal. That is the standard the playbook should support.
+
+The more the playbook reduces guesswork around approval, export, and archive status, the more it earns its place as a page people can actually use.

@@ -35,8 +35,8 @@ What should a launch announcement on Dayfiles actually do for readers? It should
 Everyday Image Studio matters because it gives Dayfiles a focused editing surface for image cleanup, repeated export work, and lightweight production tasks that do not need a heavy design suite. The launch post should therefore connect the announcement to the real jobs a visitor can try immediately.
 
 <figure>
-  <img src="/blog/images/everyday-image-studio-ui.png" alt="Everyday Image Studio workspace showing the main editing canvas and tool navigation" loading="lazy" />
-  <figcaption>The Everyday Image Studio workspace gives launch readers a concrete place to evaluate the product instead of only reading an announcement.</figcaption>
+  <img src="/blog/images/images-dayfiles-live-home.png" alt="Live Images Dayfiles homepage showing browser-based image conversion, compression, and export tools" loading="lazy" />
+  <figcaption>A live Dayfiles product surface helps launch readers move from announcement language into an actual workflow evaluation.</figcaption>
 </figure>
 
 ## What is newly available?
@@ -81,6 +81,12 @@ It should still help a later visitor understand where Everyday Image Studio sits
 
 The launch is useful feedback about what visitors notice first, which workflow questions they ask immediately, and which guides make them confident enough to try the tool. Those signals should shape future product-page and guide improvements so the launch keeps producing value after the announcement week is over.
 
+## Which live pages prove the launch is real?
+
+The launch becomes more believable when it connects directly to pages a visitor can test: the main Images hub, focused routes such as JPG conversion or resize flows, and workflow guides that explain how the product fits real jobs. That mix of product surface and supporting context is what turns a launch post into evidence rather than announcement theater.
+
+It is also a better standard for Dayfiles specifically. The launch page should help a reviewer see that the product exists, the routes are navigable, and the editorial layer points back to something useful instead of floating on its own.
+
 ## What should the post avoid becoming?
 
 It should not become a detached announcement that only makes sense to people who already followed the launch week closely. The page stays useful when it still helps a new visitor understand the product role, the likely workflow fit, and the best next page to read after the announcement.
@@ -98,3 +104,5 @@ Later readers often arrive from search, a shared link, or a passing mention rath
 ## What should the launch post leave behind?
 
 The best launch post does not just celebrate. It gives visitors a useful next step and makes the product easier to evaluate on its own terms. That is the job this announcement should do on Dayfiles.
+
+If the post still helps a new visitor understand the product months later, it is doing more than announcing. It is helping the site explain itself in a durable way.

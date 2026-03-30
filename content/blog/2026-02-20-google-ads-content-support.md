@@ -71,6 +71,12 @@ It means short, low-information, or purely promotional pages should not be treat
 
 It should push the team to ask whether a page helps a user finish a job, avoid a mistake, or understand a product route more clearly than before. If the answer is weak, the page probably needs more work before monetization becomes a meaningful conversation. That editorial discipline supports both user trust and long-term approval readiness.
 
+## What should a reviewer notice within the first minute?
+
+A reviewer should notice that the page explains a real task clearly, that the navigation leads somewhere useful, and that the advertising does not compete with the main reason for visiting. First impressions matter here because approval decisions often start with simple questions about whether the page appears genuinely helpful on arrival.
+
+That means strong intros, readable layouts, and obvious next steps are part of policy readiness too. A page that only becomes useful after several extra clicks is already creating friction where trust should be easiest to earn.
+
 ## Why this matters for approval as much as trust
 
 Approval issues and trust issues usually point back to the same root problem: pages that do not carry enough obvious value on their own. Building stronger pages is therefore not just a policy response. It is also the best way to make the site more useful for real readers who arrive without prior context.
@@ -78,6 +84,12 @@ Approval issues and trust issues usually point back to the same root problem: pa
 ## How does this connect to the rest of the site?
 
 The ad policy works only if the rest of Dayfiles keeps improving. That means stronger workflow guides, clearer product hubs, and a better user experience on pages that explain real jobs instead of just naming features.
+
+## Which pages should stay especially strong?
+
+The pages that most need to stay strong are the workflow guides, product hubs, and trust pages a reviewer is likely to open first. Those pages set the tone for whether the site feels genuinely useful or merely monetized. If they are thin, generic, or hard to navigate, the rest of the policy language will not rescue the experience.
+
+That is why policy talk alone is never enough. The surrounding pages have to prove that the site helps a real visitor finish a task or understand a workflow more clearly than before.
 
 ## Which supporting guides explain the real value?
 
@@ -88,3 +100,5 @@ The ad policy works only if the rest of Dayfiles keeps improving. That means str
 ## What this policy is trying to protect
 
 The goal is to keep free content viable without weakening trust. If a reader can understand the workflow, use the guide, and move to the next task without friction, then the policy is serving the site instead of the other way around.
+
+That is why this page should stay tied to the real publishing standard on Dayfiles: stronger workflow guidance, clearer product context, and fewer pages that feel like placeholders for monetization.

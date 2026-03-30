@@ -7,24 +7,24 @@ const BLOG_DIR = path.join(ROOT, 'content/blog');
 
 const SCREENSHOTS = {
   pdf: {
-    src: '/blog/images/pdf-toolkit-hub-ui.png',
-    alt: 'Dayfiles PDF Toolkit hub page showing the main PDF workflow categories and open-tool actions'
+    src: '/blog/images/pdf-dayfiles-live-home.png',
+    alt: 'Live PDF Dayfiles homepage showing the browser-based PDF tool categories and upload-first workspace'
   },
   images: {
-    src: '/blog/images/images-hub-ui.png',
-    alt: 'Dayfiles Images hub page showing the image conversion, compression, and export workflow overview'
+    src: '/blog/images/images-dayfiles-live-home.png',
+    alt: 'Live Images Dayfiles homepage showing browser-based image conversion, compression, and export tools'
   },
   eis: {
     src: '/blog/images/everyday-image-studio-ui.png',
     alt: 'Everyday Image Studio workspace showing the main editing canvas and tool navigation'
   },
   esign: {
-    src: '/blog/images/e-sign-pdf-ui.png',
-    alt: 'PDF Dayfiles e-sign interface with the upload-first layout and signing workflow navigation'
+    src: '/blog/images/pdf-e-sign-pdf-live.png',
+    alt: 'Live PDF Dayfiles e-sign page showing the browser-based signing route and upload-first layout'
   },
   fillforms: {
-    src: '/blog/images/fill-pdf-forms-ui.png',
-    alt: 'PDF Dayfiles fill-form interface showing the upload area and form workflow navigation'
+    src: '/blog/images/pdf-fill-pdf-forms-live.png',
+    alt: 'Live PDF Dayfiles fill-form page showing the browser-based form workflow and upload area'
   }
 };
 
@@ -259,6 +259,24 @@ const customBodies = {
     screenshot: SCREENSHOTS.pdf,
     scenario: 'a student preparing scholarship and visa documents across several upload portals',
     stages: ['build one source folder for every required document', 'clean image assets before mixing them into the packet', 'convert, merge, or rename PDFs only after the source files are stable', 'run one final pre-submission review per portal'],
+    decisionHeading: 'What the student had to lock before submission week',
+    decisionIntro: 'The hardest part was not clicking through tools. It was deciding which version counted as current, which portal had slightly different naming or size rules, and when a file was stable enough to become an upload copy instead of another draft.',
+    driftHeading: 'Where student submission packets usually slip',
+    driftBody: 'They usually slip when one portal-specific tweak quietly gets copied back into the main source folder, or when a renamed upload file becomes mistaken for the master version. That confusion grows fast once two or three deadlines overlap.',
+    copyHeading: 'What another applicant could actually copy from this setup',
+    copyBody: 'Another applicant could copy the packet discipline without copying the exact file list. The useful part is the order: keep originals untouched, build one working folder per requirement, and only create portal-ready copies after the supporting image and PDF checks are done.',
+    nextTimeHeading: 'What the second submission cycle should feel like',
+    nextTimeBody: 'The second cycle should feel less chaotic because the folders, naming rules, and review order already exist. Instead of rebuilding the whole process during deadline week, the applicant should be able to drop in refreshed files and focus on only the fields or pages that changed.',
+    durabilityHeading: 'Why this routine helps beyond one visa deadline',
+    durabilityBody: 'A good application routine survives beyond one portal because universities, scholarship programs, and visa offices often request overlapping documents in slightly different formats. The real payoff is having a repeatable way to produce those variants without losing confidence in the source files.',
+    nextReaderHeading: 'What this story should help another student notice',
+    nextReaderBody: 'It should help another student notice where their own process is too loose: maybe recommendation letters live in several folders, maybe renamed uploads keep becoming the master version, or maybe image prep happens too late to catch a size mismatch. That self-diagnosis is more useful than copying any single step word for word.',
+    borrowHeading: 'What one habit is worth borrowing first',
+    borrowBody: 'Borrow the rule that every upload copy must trace back to a stable source file. That one habit protects against last-minute panic because it keeps portal-specific edits from contaminating the original files you may need again for another deadline.',
+    heroicsHeading: 'Why this beats a last-night scramble',
+    heroicsBody: 'A last-night scramble can still produce a submitted packet, but it usually leaves behind uncertainty about which copy was correct and which requirement was actually checked. This routine is better because it turns submission week into a review problem instead of a file-hunting problem.',
+    carryHeading: 'What is worth carrying forward from this story',
+    carryBody: 'What is worth carrying forward is the calm it creates: one source set, one review order, and one clear moment when a file becomes submission-ready. That pattern is what makes the story useful the next time another application window opens.',
     lessons: ['The packet gets calmer when every file has a known status.', 'The image step and the PDF step should stay connected.', 'Submission stress drops when the reviewer can see what changed and what stayed original.'],
     related: ['/blog/eis-passport-photo-checklist/', '/blog/fill-pdf-forms-online/', '/blog/pdf-visa-application-packet-checklist/']
   }),
@@ -323,6 +341,10 @@ const customBodies = {
   }),
   'images-bulk-image-compression-guide': renderImageGuideBody({
     action: 'compress image batches',
+    screenshot: {
+      src: '/blog/images/images-compress-image-live.png',
+      alt: 'Live Images Dayfiles compress-image page showing the browser-based compression workspace'
+    },
     intro: 'How do you shrink a group of images without turning the final batch into a quality problem? The job is easier when compression is treated as a controlled export step with a known size target, a short review list, and a separate source archive.',
     useCases: ['portal uploads with file-size caps', 'email-ready asset packs', 'CMS uploads that reject oversized files'],
     preflight: ['know the target size or destination limit', 'identify images with tiny text or product detail', 'separate source files from the soon-to-be compressed batch'],
@@ -332,6 +354,10 @@ const customBodies = {
   }),
   'images-bulk-resize-listings-guide': renderImageGuideBody({
     action: 'resize image batches for listings',
+    screenshot: {
+      src: '/blog/images/images-resize-image-live.png',
+      alt: 'Live Images Dayfiles resize-image page showing the browser-based resize workflow'
+    },
     intro: 'How do you make a listing image batch consistent without re-exporting files one by one? The practical route is to decide the target dimensions first, resize the batch in one pass, then review the images most likely to crop badly or lose product framing.',
     useCases: ['marketplace listing uploads', 'catalog refreshes', 'CMS image replacement with fixed slots'],
     preflight: ['confirm the destination dimensions and aspect ratio', 'identify images that may crop awkwardly', 'decide whether background cleanup happens before or after resizing'],
@@ -341,6 +367,10 @@ const customBodies = {
   }),
   'images-convert-to-jpg-guide': renderImageGuideBody({
     action: 'convert mixed image files to JPG',
+    screenshot: {
+      src: '/blog/images/images-convert-to-jpg-live.png',
+      alt: 'Live Images Dayfiles convert-to-jpg page showing the browser-based JPG conversion workflow'
+    },
     intro: 'How do you convert a mixed image batch to JPG without flattening the wrong assets or losing track of the originals? The safest version of the task is not just conversion. It is format normalization with a clear reason, a labeled output batch, and a short quality review for the risky files.',
     useCases: ['systems that only accept JPG', 'shared folders that need one stable format', 'PDF assembly steps that work better with one image type'],
     preflight: ['confirm JPG is really the required destination', 'flag images that depend on transparency', 'decide how the JPG delivery batch will be labeled'],
@@ -411,6 +441,24 @@ const customBodies = {
     screenshot: SCREENSHOTS.images,
     scenario: 'an operations team shipping recurring image and PDF files under deadline pressure',
     stages: ['separate source files from delivery copies', 'normalize image or PDF outputs only after the source batch is settled', 'use one review step before release', 'archive the final handoff set with readable names'],
+    decisionHeading: 'What the operations team had to make non-negotiable',
+    decisionIntro: 'The team had to agree on where privacy risk actually showed up: mixed folders, unclear delivery copies, and rushed releases. Once those pressure points were named, the routine could focus on preventing them instead of cleaning them up later.',
+    driftHeading: 'Where privacy-first routines often start leaking',
+    driftBody: 'They start leaking when convenience wins over separation. A file gets exported back into the source folder, a draft gets sent because the final label was missing, or someone skips the release review because the change looked small. Those are process leaks before they become privacy leaks.',
+    copyHeading: 'What another operations team could borrow immediately',
+    copyBody: 'Another operations team could borrow the release discipline even if their files look different. The high-value part is making privacy visible in the workflow itself: separate intake from delivery, label the sendable copy clearly, and make one person responsible for the final release check.',
+    nextTimeHeading: 'What the next daily run should improve',
+    nextTimeBody: 'The next daily run should produce fewer side messages about which file to send, fewer accidental re-exports from the wrong folder, and fewer moments where someone has to open three copies just to find the approved one. That reduction in small confusion is where the operational value shows up.',
+    durabilityHeading: 'Why this routine matters after the first week',
+    durabilityBody: 'It matters after the first week because privacy failures rarely come from dramatic mistakes alone. They come from repeated, ordinary shortcuts. A routine that removes those shortcuts is more durable than a reminder to “be careful” when the team is busy.',
+    nextReaderHeading: 'What this story should help team leads inspect',
+    nextReaderBody: 'It should help a team lead inspect whether source folders and sendable outputs are still getting mixed together, whether release approval is visible, and whether archived handoff sets can be understood by someone who was not online for the original send. Those are the real pressure points in recurring operations work.',
+    borrowHeading: 'What small rule gives the biggest privacy payoff',
+    borrowBody: 'Borrow the rule that nothing leaves the team from a working folder. That single constraint forces clearer naming, cleaner archives, and a more deliberate final review without requiring a heavy process document.',
+    heroicsHeading: 'Why this beats relying on “someone will catch it”',
+    heroicsBody: 'Relying on someone to catch the wrong file at the last second sounds flexible, but it does not scale under daily pressure. A privacy-first routine is better because it narrows the number of decisions that have to be made at release time.',
+    carryHeading: 'What should stay true after the story ends',
+    carryBody: 'What should stay true is the visibility of status. If the team can always tell which files are raw, which are prepared, and which are approved for delivery, the routine is doing the real work it was designed to do.',
     lessons: ['The routine matters more than any single export feature.', 'Privacy gets easier when status is visible in the folder structure.', 'Rework drops when the final reviewer knows exactly which file is meant to travel.'],
     related: ['/blog/images-bulk-image-compression-guide/', '/blog/pdf-operations-checklist/', '/blog/story-remote-hr-private-onboarding-routine/']
   }),
@@ -419,6 +467,24 @@ const customBodies = {
     screenshot: SCREENSHOTS.pdf,
     scenario: 'a distributed HR team preparing private onboarding packets for new hires',
     stages: ['collect approved forms into one packet folder', 'fill and review the packet before signatures begin', 'sign only the approved copy', 'archive the signed final packet separately from editable working files'],
+    decisionHeading: 'What the HR coordinators needed to agree on early',
+    decisionIntro: 'The coordination burden was the real problem. The team had to agree on who could edit, who could sign, and which copy became the official record, because remote handoffs make vague ownership much more expensive.',
+    driftHeading: 'Where remote onboarding packets usually go off track',
+    driftBody: 'They go off track when a coordinator edits yesterday’s copy, a signer receives an unreviewed version, or the archived packet no longer matches the one referenced in the hiring thread. Distance makes those mistakes harder to detect unless the packet states are obvious.',
+    copyHeading: 'What another HR team could reuse from this routine',
+    copyBody: 'Another HR team could reuse the approval order even if their own forms are different. The useful part is the sequence: collect into one packet, review the packet before signatures begin, sign only the approved copy, and archive the signed result where the next coordinator can trust it.',
+    nextTimeHeading: 'What the next onboarding packet should avoid',
+    nextTimeBody: 'The next packet should avoid version ambiguity entirely. Coordinators should not have to ask whether the signed file reflects the latest edits, whether a tax form came from the current template, or whether the archive contains the same packet that the new hire saw. A strong routine makes those answers visible before anyone opens Slack, email, or a side spreadsheet to investigate.',
+    durabilityHeading: 'Why this routine helps distributed HR specifically',
+    durabilityBody: 'Distributed HR work magnifies weak ownership because the people preparing, reviewing, and signing are often not online at the same time. A routine like this reduces that coordination tax by making packet state and approval order obvious without another meeting.',
+    nextReaderHeading: 'What this story should make an HR lead check first',
+    nextReaderBody: 'It should make an HR lead check whether packet ownership is clear, whether signature timing is controlled, and whether the archive separates editable copies from the official signed record. Those are the points where distributed onboarding often breaks down.',
+    borrowHeading: 'What rule is worth adopting before anything else',
+    borrowBody: 'Adopt the rule that signatures never begin on a packet that has not already passed content review. That one boundary removes a surprising amount of rework because it keeps form cleanup and approval from happening in the same messy moment.',
+    heroicsHeading: 'Why this outperforms ad hoc coordination',
+    heroicsBody: 'Ad hoc coordination can work when one experienced coordinator is awake, available, and remembers every nuance of the packet. It breaks the moment work shifts across time zones. A fixed sequence is less glamorous, but it is much safer for repeated onboarding cycles.',
+    carryHeading: 'What is worth preserving from this HR story',
+    carryBody: 'What is worth preserving is the idea that the official packet should always be legible to the next coordinator. If that stays true, the team can grow or rotate responsibilities without turning every onboarding cycle into a fresh interpretation exercise. That is the kind of operational clarity that keeps remote onboarding sustainable instead of person-dependent.',
     lessons: ['Distributed work needs stronger naming discipline than in-office handoffs.', 'Signing is safer when it happens after review, not during form cleanup.', 'A readable archive prevents repeat confusion for later coordinators.'],
     related: ['/blog/pdf-fill-sign-private-workflow/', '/blog/e-sign-pdf-online/', '/blog/pdf-employee-onboarding-doc-workflow/']
   }),
@@ -427,11 +493,33 @@ const customBodies = {
     screenshot: SCREENSHOTS.pdf,
     scenario: 'a student assembling scholarship applications across several document and image requirements',
     stages: ['collect source files by requirement instead of by portal only', 'clean or resize image assets before packet assembly', 'convert or merge PDFs once the source set is stable', 'export one portal-ready copy for each submission'],
+    decisionHeading: 'What the scholarship routine had to clarify first',
+    decisionIntro: 'The student needed to separate reusable source material from portal-specific delivery files. That decision changed the whole routine, because it turned every new application into a controlled export step instead of a restart.',
+    driftHeading: 'Where scholarship application routines become messy',
+    driftBody: 'They become messy when each portal gets its own improvised folder and the same recommendation letter, transcript, or ID image starts living in several slightly different versions. A cleaner routine prevents that spread before the next application cycle begins.',
+    copyHeading: 'What another scholarship applicant could take from this',
+    copyBody: 'Another scholarship applicant could take the reuse logic from this routine. The most helpful move is to organize source files by requirement first, then create portal-specific output copies only at the end. That keeps essays, transcripts, letters, and ID assets from fragmenting into several competing versions.',
+    nextTimeHeading: 'What the next application round should feel like',
+    nextTimeBody: 'The next application round should feel lighter because the student is no longer rebuilding the same document set from scratch. The folders, export habits, and final checks already exist, so the work shifts from searching and renaming toward verifying the new deadlines and destination rules. That shift matters because it frees more attention for actual application quality instead of mechanical file maintenance.',
+    durabilityHeading: 'Why this routine helps with scholarship cycles',
+    durabilityBody: 'Scholarship cycles often overlap and ask for many of the same materials with slightly different packaging expectations. A routine like this helps because it protects the reusable source documents while still making room for portal-specific exports at the last step.',
+    nextReaderHeading: 'What this story should help another applicant spot',
+    nextReaderBody: 'It should help another applicant spot where their materials are splitting into too many versions or where portal-specific copies are starting to replace the originals. Catching that early can save a lot of anxiety when several applications are due close together.',
+    borrowHeading: 'What one scholarship habit pays off quickly',
+    borrowBody: 'Borrow the habit of creating one final packet or upload set per destination only after the shared documents are stable. That habit keeps the student from endlessly renaming or reconverting the same files every time a new portal opens.',
+    heroicsHeading: 'Why this is better than improvising per portal',
+    heroicsBody: 'Improvising per portal feels fast at first, but it usually multiplies copies, naming errors, and uncertainty about which transcript or letter is current. This routine is better because it protects a reusable core set of materials while still respecting each portal’s requirements.',
+    carryHeading: 'What should remain after the deadlines pass',
+    carryBody: 'What should remain is a clean document system the student can use again for the next scholarship, visa, or university application. That longer life is what makes the routine more valuable than a one-time submission trick. The routine becomes part of the student’s operating system for applications rather than a temporary fix for one stressful week.',
     lessons: ['Separate source files from upload copies from the beginning.', 'Image prep and PDF prep should be part of the same plan.', 'Portal stress drops when each packet has a visible final owner.'],
     related: ['/blog/student-visa-application-story/', '/blog/pdf-visa-application-packet-checklist/', '/blog/eis-passport-photo-checklist/']
   }),
   'images-remove-background-product-photos-guide': renderImageGuideBody({
     action: 'remove backgrounds from product photos',
+    screenshot: {
+      src: '/blog/images/images-remove-background-live.png',
+      alt: 'Live Images Dayfiles remove-background page showing the browser-based background removal workflow'
+    },
     intro: 'How do you clean product-photo backgrounds without creating rough cutouts that fail later in listings or ads? The strongest workflow is to define the output use first, then review edge quality and export consistency before the batch moves downstream.',
     useCases: ['marketplace listings', 'catalog updates', 'campaign assets that need cleaner isolation'],
     preflight: ['decide whether the output is for a white background, transparent export, or another layout', 'flag products with hairline edges or reflective surfaces', 'confirm whether resizing or format conversion comes after background removal'],
@@ -441,12 +529,30 @@ const customBodies = {
   }),
   'images-blur-faces-before-sharing-guide': renderImageGuideBody({
     action: 'blur faces before sharing sensitive photos',
+    screenshot: {
+      src: '/blog/images/images-blur-face-live.png',
+      alt: 'Live Images Dayfiles blur-face page showing the browser-based privacy-safe face blur workflow'
+    },
     intro: 'How do you reduce privacy risk when images need to be shared quickly but still contain visible faces? The safest workflow treats face blur as a release step: identify the images that truly need masking, apply the blur deliberately, then review the result before the file goes out.',
     useCases: ['internal reporting', 'public sharing of event photos', 'case updates where identity should not be exposed'],
     preflight: ['identify which faces must actually be obscured', 'confirm the destination does not require a clean original', 'decide where the unblurred source file will be stored after editing'],
     steps: ['Open the Images hub and start the face-blur route.', 'Load only the images meant for the current share set.', 'Apply blur to every face that should be hidden, then zoom in to confirm coverage.', 'Review the images at the size they are likely to be shared.', 'Export the safe-share batch separately from the original photos.'],
     checks: ['full face coverage', 'no accidental exposure at common viewing sizes', 'separation between source and share copies', 'clear file naming for the safe-share batch'],
     related: ['/blog/images-bulk-image-compression-guide/', '/blog/story-operations-team-privacy-first-daily-files/', '/blog/eis-social-content-production-workflow/']
+  }),
+  'pdf-edit-via-docx-and-back-workflow': renderWorkflowBody({
+    intro: 'How do you edit a PDF when the file needs real wording changes instead of annotation or page cleanup? The safest route is to move the content into DOCX for the revision pass, then rebuild the final PDF only after the edit layer is stable and reviewable.',
+    screenshot: SCREENSHOTS.pdf,
+    focus: 'PDF-to-DOCX-to-PDF revision work',
+    pillars: ['one untouched source PDF', 'one editable DOCX working copy', 'one rebuilt final PDF', 'one review pass that compares wording and layout'],
+    sections: [
+      ['When this workflow is the right fit', 'Use this route when the real job is content editing: paragraph revisions, sentence cleanup, list restructuring, or small document rewrites that would be awkward inside the delivery format itself. It is less useful when the PDF only needs signing, form filling, or page order changes.'],
+      ['What should be settled before conversion starts', 'Confirm that the source PDF is the approved starting point, decide who owns the DOCX revision pass, and know whether the finished PDF will later be merged, signed, or archived. Those choices keep the conversion chain from turning into version sprawl.'],
+      ['What the revision pass should actually check', 'The DOCX review should check headings, lists, tables, spacing, and page flow before the file goes back into PDF. The rebuilt PDF should then be checked for the same visible structure from the recipient point of view.'],
+      ['Where this route fits in the Dayfiles stack', 'This workflow sits between single-step conversion guides and broader packet workflows. It connects naturally to the PDF-to-DOCX guide on the way in, the DOCX-to-PDF guide on the way out, and packet-level steps such as merge, numbering, or signing if the revised file becomes part of a larger delivery.'],
+      ['What the receiving reviewer should get', 'They should receive a final PDF with a clear file name, a preserved source PDF still available for comparison, and one obvious working DOCX copy for traceability. That structure keeps later edits from drifting across several competing versions.']
+    ],
+    related: ['/blog/pdf-to-docx-without-upload/', '/blog/docx-to-pdf-without-upload/', '/blog/pdf-operations-checklist/']
   })
 };
 
@@ -478,16 +584,27 @@ function linkLabel(href) {
   return href.replace('/blog/', '').replaceAll('-', ' ').replace('/', '');
 }
 
+function titleCase(value) {
+  return String(value || '')
+    .split(' ')
+    .filter(Boolean)
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
 function renderPdfTaskBody(config) {
   const screenshot = config.screenshot || SCREENSHOTS.pdf;
   const related = config.related || pdfTaskConfigs['merge-pdf-without-upload'].related;
+  const actionTitle = titleCase(config.action);
+  const taskLabel = config.action.replace(/^to\s+/i, '').replace(/\s+/g, ' ');
+  const relatedHeading = config.relatedHeading || `Next Dayfiles guides after ${taskLabel}`;
   return `${config.intro || `How do you ${config.action} without turning a simple file job into extra rework? The safest way through the task is to decide what the finished file needs to do, line up the checks that matter before export, and only then run the operation.`}
 
 In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://pdf.dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
 
-## When is ${config.action} the right move?
+## When does ${taskLabel} make sense?
 
-${config.action[0].toUpperCase()}${config.action.slice(1)} is usually the right move when the next person only needs ${config.surface}. Common situations include:
+${actionTitle} is usually the right move when the next person only needs ${config.surface}. Common situations include:
 
 ${joinBullet(config.useCases)}
 
@@ -495,10 +612,10 @@ The shared pattern across those jobs is that the file already matters. It is clo
 
 ${renderFigure({
   ...screenshot,
-  caption: 'Use the Dayfiles PDF hub as the stable starting point before opening the specific task route.'
+  caption: config.figureCaption || `Use the live PDF Dayfiles route as the visual starting point for ${taskLabel}.`
 })}
 
-## What should be ready before you open the tool?
+## What should be settled before the ${taskLabel} run?
 
 Before the file is loaded, decide the conditions for a good export:
 
@@ -506,13 +623,13 @@ ${joinBullet(config.preflight)}
 
 That short preflight prevents the most common mistake in browser tools: using the right feature on the wrong file, with the wrong destination in mind.
 
-## How should the task run from start to finish?
+## A safer ${taskLabel} sequence
 
 ${joinOrdered(config.steps)}
 
 This sequence keeps the task specific. It avoids repeated exports, vague versioning, and the temptation to treat the first usable output as the finished delivery copy.
 
-## What usually goes wrong with this type of PDF job?
+## Failure points that matter in a ${taskLabel} job
 
 Most rework comes from a few predictable failure modes:
 
@@ -520,7 +637,7 @@ ${joinBullet(config.failureModes)}
 
 The fix is not more feature exploration. The fix is slowing down at the exact moment when the operator would otherwise assume the file is already good enough.
 
-## What should you verify before the file moves on?
+## Release checks after the ${taskLabel} step
 
 Use this quick release check:
 
@@ -528,39 +645,45 @@ ${joinOrdered(config.checklist)}
 
 If the destination is sensitive, time-limited, or tied to another person’s review queue, this check should happen immediately after export while the task context is still fresh.
 
-## What changes for the next reviewer after this step?
+## What the next reviewer should see after ${taskLabel}
 
-The next reviewer should receive a file that answers three questions immediately: what changed, whether the file is ready, and what still belongs to the source archive. That is especially important for ${config.action} because the operation often changes how the file behaves without changing the underlying subject matter.
+The next reviewer should receive a file that answers three questions immediately: what changed, whether the file is ready, and what still belongs to the source archive. That is especially important for ${taskLabel} because the operation often changes how the file behaves without changing the underlying subject matter.
 
 If the file lands in a shared folder with no naming discipline, another person may not know whether they are opening the source version, the in-progress copy, or the final delivery output. Clean file names and a short handoff note can prevent that confusion without adding another heavy process layer.
 
-## When should you pause instead of shipping the output?
+## When to pause instead of shipping the ${taskLabel} output
 
-Pause if the file still needs content edits, if there is disagreement about the approved source, or if the destination requires a different output format than the one you are preparing. The fastest way to create avoidable rework is to use ${config.action} as a substitute for clarifying the actual delivery requirement.
+Pause if the file still needs content edits, if there is disagreement about the approved source, or if the destination requires a different output format than the one you are preparing. The fastest way to create avoidable rework is to use ${taskLabel} as a substitute for clarifying the actual delivery requirement.
 
-## How does this fit into the larger Dayfiles workflow?
+## Where ${taskLabel} sits in a broader file handoff
 
-This task rarely lives alone. A merged packet may still need numbering. A compressed report may still need a final visual read-through. A converted file may need to be checked against the original before anyone treats it as official. Dayfiles works best when each narrow operation stays attached to the broader handoff logic around it.
+This task rarely lives alone. ${config.workflowFit ||
+  `The ${taskLabel} step usually sits between source cleanup and a final review or delivery pass. Dayfiles works best when this route stays connected to the surrounding handoff logic instead of becoming an isolated click.`}
 
-That broader logic is simple: keep the approved source clear, run the operation once with intent, then review the output as if you were the recipient. When teams skip that last step, the tool may still work perfectly while the handoff fails anyway.
+That broader logic stays the same even when the document changes: keep the approved source clear, run the operation once with intent, then review the output as if you were the recipient. When teams skip that last step, the tool may still work perfectly while the handoff fails anyway.
 
-## Related Dayfiles reading
+## ${relatedHeading}
 
 ${renderRelated(related)}
 
-## Before you send the finished file
+## Before you send the ${taskLabel} result
 
 Treat the exported file as one step in a controlled handoff. Store the output with a readable name, keep the source version available if later changes are likely, and only move to the next channel when the file behaves the way the recipient expects.
 
-The small discipline at the end of the workflow is what gives the whole task its value. The feature click is quick. The trustworthy handoff is the part worth protecting.`;
+The small discipline at the end of the workflow is what gives the whole task its value. The feature click is quick. The trustworthy handoff is the part worth protecting.
+
+For this kind of PDF work, originality comes from the operator knowing exactly what the recipient will notice first. That is why the best version of the workflow is not just “how to run the tool.” It is how to produce an output that another person can trust immediately.`;
 }
 
 function renderImageGuideBody(config) {
+  const screenshot = config.screenshot || SCREENSHOTS.images;
+  const actionLabel = config.action.replace(/^to\s+/i, '').replace(/\s+/g, ' ');
+  const relatedHeading = config.relatedHeading || `More Dayfiles guides around ${actionLabel}`;
   return `${config.intro}
 
 The best starting point on Dayfiles is the [Images hub](/images/) before switching into the live tool at [Images by Dayfiles](https://images.dayfiles.com/). That route works best when the batch already has a clear destination and the operator knows what kind of review the output will need.
 
-## What jobs usually trigger this workflow?
+## When does ${actionLabel} become the right image step?
 
 This workflow comes up most often when a team is preparing files for:
 
@@ -569,11 +692,11 @@ ${joinBullet(config.useCases)}
 Each of those jobs has one thing in common: the output is meant to travel. That means the batch needs more than a quick edit. It needs a predictable handoff.
 
 ${renderFigure({
-  ...SCREENSHOTS.images,
-  caption: 'Start from the Dayfiles Images hub when the job depends on conversion, compression, or export discipline.'
+  ...screenshot,
+  caption: config.figureCaption || `Use the live Images Dayfiles route as the visual checkpoint for ${actionLabel}.`
 })}
 
-## What should be decided before processing starts?
+## What should be decided before ${actionLabel} starts?
 
 Use this short preflight before loading the batch:
 
@@ -581,13 +704,13 @@ ${joinBullet(config.preflight)}
 
 Those decisions keep the batch consistent. They also make it easier to explain the output to the next reviewer instead of forcing them to reverse-engineer what changed.
 
-## What is the cleanest step-by-step route?
+## A cleaner ${actionLabel} route
 
 ${joinOrdered(config.steps)}
 
 Running the workflow in that order reduces the two biggest risks in image handling: mixing source files with output copies and discovering a preventable quality problem only after the batch has already been sent onward.
 
-## Which files deserve the closest review?
+## Which files need the closest review after ${actionLabel}?
 
 Do not review every file with the same intensity. Slow down on the assets most likely to break the handoff:
 
@@ -595,13 +718,13 @@ ${joinBullet(config.checks)}
 
 If those risk points are sound, the rest of the batch is usually much easier to trust.
 
-## How should the handoff be packaged?
+## How should the ${actionLabel} handoff be packaged?
 
 The next person should be able to tell which files are source assets, which files are the processed delivery batch, and what destination the batch was prepared for. Clear folder names and export labels matter because image work often gets reused in several systems after the first share.
 
 That packaging step matters even more when the images will later be compressed again, dropped into a PDF, or handed to someone who was not part of the original edit. If the output set is not clearly labeled, the next operator may make a second round of edits on top of the wrong files.
 
-## What should happen right after export?
+## What should happen right after the ${actionLabel} export?
 
 Do one short pass before the batch moves on:
 
@@ -612,30 +735,33 @@ Do one short pass before the batch moves on:
 
 This four-step release pass prevents a surprising number of downstream problems. It catches naming issues, missed compression targets, awkward crops, and accidental quality loss before another system or teammate bakes those problems in.
 
-## Where do image guides usually lose value?
+## Where does ${actionLabel} usually stop being useful?
 
 They lose value when they stop at “click this tool” and never explain what a good batch looks like afterward. The Dayfiles version of the workflow should stay useful even for someone who already knows where the button lives, because the real work is deciding which files need extra attention and what counts as a safe output.
 
-## What should the next system or teammate receive?
+## What should the next system or teammate receive from ${actionLabel}?
 
 The receiving person should get a batch that is boring in the best possible way. The files should open the same way, follow one naming rule, and already match the destination constraint that triggered the work in the first place. If the next person has to ask which files are final or whether the originals were preserved, the workflow still needs work.
 
 That matters because image tasks often chain together. A resized batch may later be compressed. A cleaned product photo may later be converted to JPG. A privacy-safe share set may later be moved into a report. The handoff quality on this step affects every later step.
 
-## When is it worth running the workflow again?
+## When is it worth repeating the ${actionLabel} pass?
 
 Run it again only when the review reveals one specific correction target, such as the wrong dimensions, unacceptable compression, or a naming issue that would confuse the next handoff. Re-running the full batch without a clear reason often creates a second round of file sprawl and makes it harder to tell which output is authoritative.
 
-## Related Dayfiles reading
+## ${relatedHeading}
 
 ${renderRelated(config.related)}
 
-## Before you release the batch
+## Before you release the ${actionLabel} batch
 
-The final question is not “Did the tool run?” It is “Would the next person know exactly what this batch is for, whether it is approved, and whether the originals are still safe?” If the answer is yes, the workflow is doing its job.`;
+The final question is not “Did the tool run?” It is “Would the next person know exactly what this batch is for, whether it is approved, and whether the originals are still safe?” If the answer is yes, the workflow is doing its job.
+
+That is also what makes the page stronger editorially. A guide about ${actionLabel} should help with the decision-making around the output, not only the button path that starts the process.`;
 }
 
 function renderChecklistBody(config) {
+  const relatedHeading = config.relatedHeading || `More Dayfiles guides for ${config.titleWord}`;
   return `${config.intro}
 
 The Dayfiles route behind this kind of work matters because the file is rarely alone. It usually sits inside a broader image or PDF workflow, so the checklist has to protect the handoff as well as the visible page or image.
@@ -659,40 +785,49 @@ ${paragraph}`
   )
   .join('\n\n')}
 
-## How should this checklist be used under deadline?
+## How should the ${config.titleWord} checklist be used under deadline?
 
 Run the checklist in order and stop at the first issue that would make the file bounce back later. Teams often waste time by finishing the full review on a version that was already wrong at the top of the sequence. It is faster to fix the blocking problem immediately, then restart the short review with a cleaner file.
 
 The checklist also works best when one person owns the final pass. Shared responsibility sounds safe, but it often leaves the riskiest fields and final file names in a gray area where everyone assumes someone else checked them.
 
-## Which issues should stop the workflow immediately?
+## Which issues should stop the ${config.titleWord} workflow immediately?
 
 Stop immediately for source-version confusion, obvious requirement mismatches, missing pages or images, and any field or export setting that would cause the destination to reject the file. Those are not “clean up later” problems. They are signs that the checklist did its job by catching the issue before the handoff.
 
 Less serious issues can be grouped into one correction pass, but blocking issues should interrupt the run at once. That approach keeps the checklist useful under real working conditions instead of turning it into a slow ritual that teams ignore.
 
-## How should the final owner document the result?
+## How should the final owner document the ${config.titleWord} result?
 
 The final owner does not need a long memo. A short note in the folder name, handoff message, or archive convention is enough if it clearly tells the next person what changed and what the file is ready for. That tiny bit of documentation is often what separates a reliable checklist from a checklist that only helped the person who ran it.
 
-## What does a strong final pass feel like?
+## What should the next person never have to guess about ${config.titleWord}?
+
+They should never have to guess which copy is current, which destination rule shaped the export, or whether the file already passed a final review. If those three points are obvious, the checklist is doing more than catching errors. It is reducing the amount of interpretation required from the next operator.
+
+That matters because many file problems are not caused by a missed crop or a wrong field. They are caused by ambiguity. A stronger checklist turns ambiguous status into visible status before the handoff happens.
+
+## What does a strong ${config.titleWord} final pass feel like?
 
 A strong final pass feels calm and specific. The reviewer knows which fields, pages, or exports deserve extra attention and which parts of the file can be trusted because the earlier steps were handled cleanly. That is the real payoff of a checklist: it reduces uncertainty at the last moment instead of adding more generic work.
 
-## Why the checklist is worth keeping after this one file
+## Why this ${config.titleWord} checklist is worth keeping
 
 The checklist earns its place when it helps the next run go faster with fewer surprises. Once the team or individual has a repeatable final pass, the file work becomes easier to trust even before the export happens. That longer-term reduction in uncertainty is what makes a checklist valuable rather than merely procedural.
 
-## Related Dayfiles reading
+## ${relatedHeading}
 
 ${renderRelated(config.related)}
 
-## What “ready” should mean here
+## What “ready” should mean for ${config.titleWord}
 
-Ready means the file can move to its next destination without another person needing to guess what changed, what is final, or what still needs correction. That standard is what makes the checklist worth using.`;
+Ready means the file can move to its next destination without another person needing to guess what changed, what is final, or what still needs correction. That standard is what makes the checklist worth using.
+
+The stronger the checklist becomes, the less likely the next person is to treat the file like a mystery. That is the real gain from deepening this kind of page.`;
 }
 
 function renderWorkflowBody(config) {
+  const relatedHeading = config.relatedHeading || `More Dayfiles guides for ${config.focus}`;
   return `${config.intro}
 
 Dayfiles helps most when the team uses the tool routes as part of one visible sequence instead of scattered one-off fixes. The workflow gets stronger when each step has a clear owner and the next person can see what stage the file is in.
@@ -702,7 +837,7 @@ ${renderFigure({
   caption: `Use this Dayfiles view as the operational starting point for ${config.focus}.`
 })}
 
-## Which operating rules matter most?
+## Which operating rules matter most for ${config.focus}?
 
 For ${config.focus}, the rules worth locking early are:
 
@@ -710,7 +845,7 @@ ${joinBullet(config.pillars)}
 
 Those rules reduce rework because they turn vague “someone should check this” expectations into named parts of the process.
 
-## What should the working sequence look like?
+## What should the ${config.focus} sequence look like?
 
 1. Confirm the source inputs and who owns the final review.
 2. Run the edit, packaging, or preparation step without mixing in unrelated file changes.
@@ -728,36 +863,45 @@ ${paragraph}`
   )
   .join('\n\n')}
 
-## What should managers or owners look for after rollout?
+## What should managers or owners look for after ${config.focus} rollout?
 
 Look for fewer naming mistakes, fewer packet returns, fewer last-minute “which file is final?” questions, and faster review cycles on repeated work. Those are the signals that the workflow is actually reducing friction rather than just adding a better-looking process description.
 
-## Where should the workflow stay flexible?
+## Where should the ${config.focus} workflow stay flexible?
 
 Keep the destination rule, review rule, and archive rule firm. Stay flexible about the exact order of low-risk preparation tasks if the team has a good reason to change them. That balance helps the workflow hold up under real pressure. It protects the steps that prevent errors without forcing the team into unnecessary ceremony for every minor variation in the work.
 
-## What should happen when the workflow breaks?
+## What should happen when the ${config.focus} workflow breaks?
 
 Treat the break as a clue, not as proof that the workflow has failed as a concept. Ask which step allowed the mistake through, what evidence would have caught it earlier, and whether the file state was still visible to the next operator. Those questions usually reveal whether the fix belongs in intake, review, export, or archive discipline.
 
-## What should stay true even when the job changes slightly?
+## What should the receiving team see immediately after ${config.focus}?
+
+The receiving team should see one obvious final file, one obvious archive location, and enough naming clarity to understand the destination without reopening a long explanation thread. When that visibility is missing, even a careful workflow can feel unreliable from the outside.
+
+This is why handoff clarity deserves its own checkpoint. A workflow should not only produce a correct file. It should also make the file legible to the next person who inherits it.
+
+## What should stay true even when the ${config.focus} job changes?
 
 Even when the document type, reviewer, or destination changes, the workflow should still preserve four basics: a known source of truth, a visible review moment, a deliberate export point, and a trustworthy archive. Those constants are what make the process usable across several kinds of file work without becoming vague.
 
-## Why this kind of workflow ages well
+## Why a ${config.focus} workflow ages well
 
 It ages well because it focuses on file state, not temporary interface details. Tools will change and destinations will change, but teams will still need to know which file is approved, what changed, and whether the output is ready to move. A workflow built around those questions stays useful longer than one built around a narrow button path.
 
-## Related Dayfiles reading
+## ${relatedHeading}
 
 ${renderRelated(config.related)}
 
-## What success looks like
+## What success looks like for ${config.focus}
 
-Success here means the next operator can pick up the file without guessing about status, sequence, or destination. When that is true, the workflow is carrying its weight instead of just adding another layer of motion.`;
+Success here means the next operator can pick up the file without guessing about status, sequence, or destination. When that is true, the workflow is carrying its weight instead of just adding another layer of motion.
+
+That is also the standard that makes the article stronger. A workflow page about ${config.focus} should leave the reader with a clearer operating model, not just a list of respectable-sounding principles.`;
 }
 
 function renderStoryBody(config) {
+  const relatedHeading = config.relatedHeading || 'More Dayfiles reading for routines like this';
   return `${config.intro}
 
 This kind of Dayfiles story is useful because it mirrors a real operating pattern rather than a polished demo. The situation is simple: ${config.scenario}. What matters is the sequence of decisions that makes the next review easier instead of harder.
@@ -773,7 +917,9 @@ ${joinOrdered(config.stages)}
 
 This kind of routine works because every step leaves the file in a clearer state than before. The next operator does not need to infer which copy is safe to use or whether a previous correction already happened.
 
-## What the person doing the work had to decide
+## ${config.decisionHeading || 'What the person doing the work had to decide'}
+
+${config.decisionIntro || 'The person doing the work had to keep the source of truth, the delivery copy, and the final archive separate in their head the whole time. Making those judgment calls visible is what turns the story into something another reader can actually borrow.'}
 
 1. Which file was the real source of truth.
 2. Which step belonged to image cleanup versus document packaging.
@@ -788,40 +934,49 @@ ${joinBullet(config.lessons)}
 
 None of those gains come from magic. They come from making the file state visible at every handoff point.
 
-## Where teams or students usually drift off course
+## ${config.driftHeading || 'Where teams or students usually drift off course'}
 
-They drift when they mix source files with delivery copies, when the person doing the edit is not the person checking the result, or when the archive is too vague to support a later reuse cycle. A good routine prevents that drift before deadlines make the mistakes expensive.
+${config.driftBody || 'They drift when they mix source files with delivery copies, when the person doing the edit is not the person checking the result, or when the archive is too vague to support a later reuse cycle. A good routine prevents that drift before deadlines make the mistakes expensive.'}
 
-## What someone else can copy from this story
+## ${config.copyHeading || 'What someone else can copy from this story'}
 
-They do not need the same exact documents or the same exact deadline. They need the same discipline: a known source folder, a defined export point, a final review moment, and an archive that can be read later without detective work. That is the transferable value in the routine.
+${config.copyBody || `They do not need the same exact documents or the same exact deadline. What they can borrow from this ${config.scenario} routine is the discipline behind it: a known source folder, a defined export point, a final review moment, and an archive that can be read later without detective work. That is the transferable value in the routine.`}
 
-## Why the routine stays useful after the first success
+## ${config.nextTimeHeading || 'What the routine should make easier the next time around'}
 
-The first successful run proves the sequence can work. The real value appears later, when a second or third file set can follow the same route with less confusion. That repeatability is what turns the story from a nice anecdote into an operating pattern worth keeping.
+${config.nextTimeBody || `The next run of ${config.scenario} should require fewer clarifying messages, less rechecking of old folders, and less uncertainty about whether the working copy is still safe to edit. A story earns its place when it describes a routine that compounds its value over time instead of only surviving one stressful deadline.`}
 
-## What the story should make easier for the next reader
+That longer-term effect matters because many readers arrive after repeating the same confusion more than once. They are not looking for inspiration alone. They are looking for a pattern that removes one recurring source of avoidable friction.
 
-The story should make it easier to spot where their own process is loose. A reader should be able to compare the routine against their own folders, approvals, and handoff habits and immediately notice where confusion is likely to appear. That practical comparison is what gives the story lasting value.
+## ${config.durabilityHeading || 'Why the routine stays useful after the first success'}
 
-## What should someone borrow first from the routine?
+${config.durabilityBody || `The first successful run proves the sequence can work. The real value appears later, when a second or third file set in ${config.scenario} can follow the same route with less confusion. That repeatability is what turns the story from a nice anecdote into an operating pattern worth keeping.`}
 
-They should borrow the smallest repeatable rule with the biggest payoff: keep originals separate, label delivery copies clearly, and make one person own the final check. Those simple habits scale surprisingly well across student work, team operations, hiring packets, and recurring client deliverables.
+## ${config.nextReaderHeading || 'What the story should make easier for the next reader'}
 
-## Why routines beat last-minute heroics
+${config.nextReaderBody || `The story should make it easier to spot where their own process is loose. A reader dealing with work adjacent to ${config.scenario} should be able to compare the routine against their own folders, approvals, and handoff habits and immediately notice where confusion is likely to appear. That practical comparison is what gives the story lasting value.`}
 
-People rarely remember a workflow because it sounded impressive. They remember it because it removed one recurring source of stress. A routine that reduces deadline confusion, packet mistakes, or archive mess is more valuable than a clever shortcut that only works when the original operator is available to explain it.
+## ${config.borrowHeading || 'What should someone borrow first from the routine?'}
 
-## Related Dayfiles reading
+${config.borrowBody || `They should borrow the smallest repeatable rule with the biggest payoff: keep originals separate, label delivery copies clearly, and make one person own the final check. In a workflow like ${config.scenario}, those simple habits keep the routine from turning into a chain of quiet assumptions.`}
+
+## ${config.heroicsHeading || 'Why routines beat last-minute heroics'}
+
+${config.heroicsBody || `People rarely remember a workflow because it sounded impressive. They remember it because it removed one recurring source of stress. For ${config.scenario}, a routine that reduces deadline confusion, packet mistakes, or archive mess is more valuable than a clever shortcut that only works when the original operator is available to explain it.`}
+
+## ${relatedHeading}
 
 ${renderRelated(config.related)}
 
-## What to carry forward from the story
+## ${config.carryHeading || 'What to carry forward from the story'}
 
-The useful part of the story is the discipline, not the label. If the next file set can follow the same sequence with less confusion and less rework, then the routine is worth keeping.`;
+${config.carryBody || `The useful part of the story is the discipline, not the label. If the next round of ${config.scenario} can follow the same sequence with less confusion and less rework, then the routine is worth keeping.`}
+
+That is also what keeps the page from feeling disposable. A useful story leaves the reader with a pattern they can copy into their own file work the next time the pressure shows up.`;
 }
 
 function renderPlaybookBody(config) {
+  const relatedHeading = config.relatedHeading || `More Dayfiles guides for ${config.audience}`;
   return `${config.intro}
 
 The Dayfiles workflow becomes more valuable when the team can explain how work moves from intake to delivery. That is the point of a playbook: it documents the routine well enough that good results do not depend on one person remembering every step.
@@ -831,7 +986,7 @@ ${renderFigure({
   caption: `Use the Everyday Image Studio workspace as a repeatable operating surface for ${config.audience}.`
 })}
 
-## What should be documented first?
+## What should be documented first for ${config.audience}?
 
 Start with the non-negotiables:
 
@@ -839,7 +994,7 @@ ${joinBullet(config.standards)}
 
 Those choices create the conditions for reliable editing. Without them, even a strong tool setup gets buried under inconsistent intake and vague approvals.
 
-## What should the team do every day?
+## What should the team do every day inside this playbook?
 
 1. Intake files into a predictable working area.
 2. Apply the agreed editing or processing rule for that job type.
@@ -857,7 +1012,7 @@ ${paragraph}`
   )
   .join('\n\n')}
 
-## How should the playbook evolve?
+## How should the playbook evolve over time?
 
 Change it when the team sees repeated failure patterns, not just when someone has a new preference. The playbook is strongest when it captures the fixes that remove recurring rework, unclear approvals, or export mistakes. That keeps it practical instead of turning it into a theoretical operations document.
 
@@ -873,17 +1028,25 @@ The source-of-truth folder, the approval signal, and the final archive path shou
 
 It would show up in cleaner handoffs, fewer clarification messages, and less repeated export work on the same files. A good playbook should make the routine easier to explain and easier to trust, not just easier to admire in a document. If the team still spends too much time figuring out what a file is, the playbook needs another iteration.
 
-## Why a playbook matters even for small teams
+## What should the playbook save the team from?
+
+It should save the team from rebuilding the same working assumptions every week. If people still need to ask where files belong, what counts as approved, or when an export is allowed to leave the workspace, the playbook is not yet carrying enough operational weight.
+
+That makes this more than a documentation exercise. The playbook should remove repeated uncertainty and make good behavior easier to repeat under pressure.
+
+## Why this playbook matters even for small teams
 
 Small teams often assume they can rely on memory because everyone talks frequently. In practice, the opposite is true under deadline pressure. A lightweight playbook keeps routine file work from becoming dependent on one person’s memory, and that makes the whole system more resilient when priorities shift quickly.
 
-## Related Dayfiles reading
+## ${relatedHeading}
 
 ${renderRelated(config.related)}
 
 ## What makes the playbook useful
 
-It is useful when a new teammate can follow the sequence, a manager can review the outcomes, and the final asset handoff looks predictable instead of personal. That is the standard the playbook should support.`;
+It is useful when a new teammate can follow the sequence, a manager can review the outcomes, and the final asset handoff looks predictable instead of personal. That is the standard the playbook should support.
+
+The more the playbook reduces guesswork around approval, export, and archive status, the more it earns its place as a page people can actually use.`;
 }
 
 function renderLaunchBody() {
@@ -892,8 +1055,8 @@ function renderLaunchBody() {
 Everyday Image Studio matters because it gives Dayfiles a focused editing surface for image cleanup, repeated export work, and lightweight production tasks that do not need a heavy design suite. The launch post should therefore connect the announcement to the real jobs a visitor can try immediately.
 
 ${renderFigure({
-  ...SCREENSHOTS.eis,
-  caption: 'The Everyday Image Studio workspace gives launch readers a concrete place to evaluate the product instead of only reading an announcement.'
+  ...SCREENSHOTS.images,
+  caption: 'A live Dayfiles product surface helps launch readers move from announcement language into an actual workflow evaluation.'
 })}
 
 ## What is newly available?
@@ -938,6 +1101,12 @@ It should still help a later visitor understand where Everyday Image Studio sits
 
 The launch is useful feedback about what visitors notice first, which workflow questions they ask immediately, and which guides make them confident enough to try the tool. Those signals should shape future product-page and guide improvements so the launch keeps producing value after the announcement week is over.
 
+## Which live pages prove the launch is real?
+
+The launch becomes more believable when it connects directly to pages a visitor can test: the main Images hub, focused routes such as JPG conversion or resize flows, and workflow guides that explain how the product fits real jobs. That mix of product surface and supporting context is what turns a launch post into evidence rather than announcement theater.
+
+It is also a better standard for Dayfiles specifically. The launch page should help a reviewer see that the product exists, the routes are navigable, and the editorial layer points back to something useful instead of floating on its own.
+
 ## What should the post avoid becoming?
 
 It should not become a detached announcement that only makes sense to people who already followed the launch week closely. The page stays useful when it still helps a new visitor understand the product role, the likely workflow fit, and the best next page to read after the announcement.
@@ -954,7 +1123,9 @@ Later readers often arrive from search, a shared link, or a passing mention rath
 
 ## What should the launch post leave behind?
 
-The best launch post does not just celebrate. It gives visitors a useful next step and makes the product easier to evaluate on its own terms. That is the job this announcement should do on Dayfiles.`;
+The best launch post does not just celebrate. It gives visitors a useful next step and makes the product easier to evaluate on its own terms. That is the job this announcement should do on Dayfiles.
+
+If the post still helps a new visitor understand the product months later, it is doing more than announcing. It is helping the site explain itself in a durable way.`;
 }
 
 function renderPolicyBody() {
@@ -1008,6 +1179,12 @@ It means short, low-information, or purely promotional pages should not be treat
 
 It should push the team to ask whether a page helps a user finish a job, avoid a mistake, or understand a product route more clearly than before. If the answer is weak, the page probably needs more work before monetization becomes a meaningful conversation. That editorial discipline supports both user trust and long-term approval readiness.
 
+## What should a reviewer notice within the first minute?
+
+A reviewer should notice that the page explains a real task clearly, that the navigation leads somewhere useful, and that the advertising does not compete with the main reason for visiting. First impressions matter here because approval decisions often start with simple questions about whether the page appears genuinely helpful on arrival.
+
+That means strong intros, readable layouts, and obvious next steps are part of policy readiness too. A page that only becomes useful after several extra clicks is already creating friction where trust should be easiest to earn.
+
 ## Why this matters for approval as much as trust
 
 Approval issues and trust issues usually point back to the same root problem: pages that do not carry enough obvious value on their own. Building stronger pages is therefore not just a policy response. It is also the best way to make the site more useful for real readers who arrive without prior context.
@@ -1015,6 +1192,12 @@ Approval issues and trust issues usually point back to the same root problem: pa
 ## How does this connect to the rest of the site?
 
 The ad policy works only if the rest of Dayfiles keeps improving. That means stronger workflow guides, clearer product hubs, and a better user experience on pages that explain real jobs instead of just naming features.
+
+## Which pages should stay especially strong?
+
+The pages that most need to stay strong are the workflow guides, product hubs, and trust pages a reviewer is likely to open first. Those pages set the tone for whether the site feels genuinely useful or merely monetized. If they are thin, generic, or hard to navigate, the rest of the policy language will not rescue the experience.
+
+That is why policy talk alone is never enough. The surrounding pages have to prove that the site helps a real visitor finish a task or understand a workflow more clearly than before.
 
 ## Which supporting guides explain the real value?
 
@@ -1024,7 +1207,9 @@ The ad policy works only if the rest of Dayfiles keeps improving. That means str
 
 ## What this policy is trying to protect
 
-The goal is to keep free content viable without weakening trust. If a reader can understand the workflow, use the guide, and move to the next task without friction, then the policy is serving the site instead of the other way around.`;
+The goal is to keep free content viable without weakening trust. If a reader can understand the workflow, use the guide, and move to the next task without friction, then the policy is serving the site instead of the other way around.
+
+That is why this page should stay tied to the real publishing standard on Dayfiles: stronger workflow guidance, clearer product context, and fewer pages that feel like placeholders for monetization.`;
 }
 
 function renderFrontmatter(data) {
