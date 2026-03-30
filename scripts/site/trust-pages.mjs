@@ -2,6 +2,7 @@ import { SITE_URL } from '../blog/lib.mjs';
 
 const contactEmail = 'contact@dayfiles.com';
 const founderName = 'Shuvo Habib';
+const founderSlug = 'shuvo-habib';
 
 export const trustPages = [
   {
@@ -73,8 +74,63 @@ export const trustPages = [
       }
     ],
     supportingLinks: [
+      { label: `${founderName} profile`, href: `/${founderSlug}/` },
       { label: 'How Dayfiles tests workflows', href: '/how-dayfiles-tests-workflows/' },
       { label: 'How Dayfiles reviews content', href: '/content-review-process/' },
+      { label: 'Contact Dayfiles', href: '/contact/' }
+    ]
+  },
+  {
+    slug: founderSlug,
+    title: `${founderName} | Founder and Editor of Dayfiles`,
+    description:
+      `Read the public profile for ${founderName}, the founder and editor responsible for Dayfiles publishing, workflow reviews, and the site's PDF and image guidance.`,
+    shortTitle: founderName,
+    schemaType: 'ProfilePage',
+    heroEyebrow: 'Publisher profile',
+    h1: founderName,
+    heroCopy:
+      `${founderName} is the founder, editor, and product operator behind Dayfiles. He is responsible for the public workflow guidance, site review standards, and the way Dayfiles connects editorial explanations to live PDF and image product routes.`,
+    highlights: [
+      { label: 'Role', value: 'Founder, editor, and publisher of Dayfiles' },
+      { label: 'Focus', value: 'PDF delivery, image preparation, browser-first workflow guidance, and public site operations' },
+      { label: 'Public responsibility', value: 'Editorial direction, route accuracy, screenshot review, and correction decisions' }
+    ],
+    sections: [
+      {
+        title: 'What he is responsible for on Dayfiles',
+        paragraphs: [
+          `${founderName} owns the public editorial direction of Dayfiles, including article scope, content rewrites, trust-page accuracy, and the connection between the main site and the live product hubs.`,
+          'That means the same person responsible for publishing the guides is also responsible for deciding when a page is too weak, too stale, or too unclear to stay promoted.'
+        ]
+      },
+      {
+        title: 'What kind of work this background supports',
+        paragraphs: [
+          'The work on Dayfiles is grounded in browser-first product operations and repeated file workflows rather than abstract software commentary. The strongest pages come from dealing directly with conversion routes, packet assembly, image cleanup, handoff review, and the mistakes that cause avoidable rework.',
+          'That is the perspective Dayfiles is built to publish from: practical workflow clarity, not legal opinion and not generic content production.'
+        ]
+      },
+      {
+        title: 'How he approaches reviews and rewrites',
+        list: [
+          'checks whether the live route still matches the public claim',
+          'rewrites pages that sound too templated or too thin for the job they claim to solve',
+          'refreshes screenshots and trust copy when the visible route or reviewer expectation changes',
+          'routes correction and accountability issues through public Dayfiles contact paths'
+        ]
+      },
+      {
+        title: 'What this profile should signal to readers',
+        paragraphs: [
+          'Dayfiles is not published by an anonymous editorial pool. It is a founder-led site with named accountability for what gets published, what gets monetized, and what gets corrected.',
+          'That does not mean every workflow is right for every sensitive use case. It does mean there is a visible human owner behind the publishing decisions.'
+        ]
+      }
+    ],
+    supportingLinks: [
+      { label: 'About Dayfiles', href: '/about/' },
+      { label: 'How Dayfiles tests workflows', href: '/how-dayfiles-tests-workflows/' },
       { label: 'Contact Dayfiles', href: '/contact/' }
     ]
   },
@@ -153,7 +209,12 @@ export const trustPages = [
         ]
       }
     ],
-    contactEmail
+    contactEmail,
+    supportingLinks: [
+      { label: `${founderName} profile`, href: `/${founderSlug}/` },
+      { label: 'Privacy Policy', href: '/privacy-policy/' },
+      { label: 'Advertising Disclosure', href: '/advertising-disclosure/' }
+    ]
   },
   {
     slug: 'cookies',
@@ -570,7 +631,9 @@ export const trustPages = [
     supportingLinks: [
       { label: 'Open PDF Toolkit', href: '/pdf-toolkit/' },
       { label: 'Read the PDF operations checklist', href: '/blog/pdf-operations-checklist/' },
-      { label: 'Read the PDF edit via DOCX workflow', href: '/blog/pdf-edit-via-docx-and-back-workflow/' }
+      { label: 'Read the PDF edit via DOCX workflow', href: '/blog/pdf-edit-via-docx-and-back-workflow/' },
+      { label: 'Choose a document delivery format', href: '/document-delivery-formats/' },
+      { label: 'Avoid packet rejection mistakes', href: '/application-packet-mistakes/' }
     ]
   },
   {
@@ -635,7 +698,184 @@ export const trustPages = [
     supportingLinks: [
       { label: 'Open Images', href: '/images/' },
       { label: 'Open Everyday Image Studio', href: '/everyday-image-studio/' },
-      { label: 'Read the JPG conversion guide', href: '/blog/images-convert-to-jpg-guide/' }
+      { label: 'Read the JPG conversion guide', href: '/blog/images-convert-to-jpg-guide/' },
+      { label: 'Prepare compliance-sensitive images', href: '/compliance-sensitive-image-prep/' }
+    ]
+  },
+  {
+    slug: 'document-delivery-formats',
+    title: 'Document Delivery Formats | Choosing the Right Output Before You Send',
+    description:
+      'Use this Dayfiles editorial page to choose the right delivery format before you send a document, archive a packet, or hand a file to a reviewer.',
+    shortTitle: 'Document Delivery Formats',
+    schemaType: 'WebPage',
+    heroEyebrow: 'Editorial guide',
+    h1: 'Choosing the Right Document Delivery Format',
+    heroCopy:
+      'This page helps readers decide whether a file should stay as PDF, move through DOCX, export to JPG, or be prepared another way before delivery, review, or archive handoff.',
+    highlights: [
+      { label: 'Best for', value: 'document delivery, archive planning, review handoffs, and format decisions before submission' },
+      { label: 'Focus', value: 'matching the output format to the real destination rather than using whatever export is easiest' },
+      { label: 'Use with', value: 'PDF workflows, image workflows, and submission-sensitive guides across Dayfiles' }
+    ],
+    sections: [
+      {
+        title: 'Start with the destination, not the tool',
+        paragraphs: [
+          'The right delivery format depends on what happens next. A portal upload, a client review, an archive handoff, and an internal editing round all want different things from the file.',
+          'People create avoidable rework when they choose the export route first and only discover the destination rule after the file has already been shared.'
+        ]
+      },
+      {
+        title: 'When PDF is usually the right final format',
+        list: [
+          'the file needs layout stability across devices',
+          'the recipient should not be editing the content directly',
+          'the handoff involves signatures, formal review, or packet assembly',
+          'the archive copy needs to preserve page order and presentation'
+        ]
+      },
+      {
+        title: 'When a DOCX round-trip is worth it',
+        paragraphs: [
+          'A DOCX route makes sense when the real job is content editing, not final delivery. It is useful when text still needs revision, comments need to be resolved, or the layout can be cleaned up before a final export.',
+          'It stops making sense when teams leave the editable file loose in the handoff chain and forget to lock the final PDF version afterward.'
+        ]
+      },
+      {
+        title: 'When image exports help and when they hurt',
+        paragraphs: [
+          'JPG or image exports are useful when a portal or workflow needs image-based pages, lightweight previews, or visual fragments from a document.',
+          'They are the wrong choice when the recipient needs searchable text, editable content, or a formal packet that must preserve multi-page structure.'
+        ]
+      },
+      {
+        title: 'Questions to answer before you export anything',
+        list: [
+          'Will the next person read this, edit this, archive this, or upload this?',
+          'Does the destination have a format rule, size cap, or layout expectation?',
+          'Will anyone need the editable source after the delivery copy is sent?',
+          'Which version will count as the final record if several formats exist?'
+        ]
+      }
+    ],
+    supportingLinks: [
+      { label: 'PDF Workflows Hub', href: '/pdf-workflows/' },
+      { label: 'Image Workflows Hub', href: '/image-workflows/' },
+      { label: 'Read the PDF edit via DOCX workflow', href: '/blog/pdf-edit-via-docx-and-back-workflow/' }
+    ]
+  },
+  {
+    slug: 'application-packet-mistakes',
+    title: 'Application Packet Mistakes | What Gets Packets Rejected or Sent Back',
+    description:
+      'Read this Dayfiles editorial guide to catch the packet mistakes that cause application files to be rejected, delayed, or sent back for corrections.',
+    shortTitle: 'Application Packet Mistakes',
+    schemaType: 'WebPage',
+    heroEyebrow: 'Editorial guide',
+    h1: 'Application Packet Mistakes That Cause Preventable Rework',
+    heroCopy:
+      'This page focuses on the mistakes that send application packets back for correction: wrong file order, wrong version control, unreadable exports, and missing review discipline before submission.',
+    highlights: [
+      { label: 'Best for', value: 'visa packets, scholarship files, onboarding bundles, and formal submission sets' },
+      { label: 'Main risk', value: 'rejection caused by avoidable packaging and review mistakes rather than the underlying content itself' },
+      { label: 'Use with', value: 'PDF checklist pages, form-filling guides, and final delivery reviews' }
+    ],
+    sections: [
+      {
+        title: 'Most packet failures are process failures',
+        paragraphs: [
+          'Many packet problems are not caused by missing effort. They are caused by rushing the final packaging sequence. The file opens, so it feels finished, even though the wrong version, wrong order, or wrong naming scheme is already baked in.',
+          'That is why packet review has to look beyond whether a single page appears correct.'
+        ]
+      },
+      {
+        title: 'The most common packet mistakes',
+        list: [
+          'mixing draft and final files in the same working folder',
+          'submitting pages in the wrong order or with missing supporting pages',
+          'compressing the packet until text, seals, or signatures become hard to trust',
+          'using vague file names that do not tell the next reviewer what is final',
+          'filling or signing the wrong copy of a form before the packet is frozen'
+        ]
+      },
+      {
+        title: 'What to check before the packet leaves your hands',
+        paragraphs: [
+          'Confirm the source of truth, the final order, the destination constraints, and whether each page belongs in the delivery copy or only in the archive. Then read the output like a reviewer who has never seen your working folder.',
+          'That shift matters because packet quality is judged from the outside. The recipient does not care that the draft folder was confusing. They only see the final result.'
+        ]
+      },
+      {
+        title: 'Where Dayfiles fits into packet work',
+        paragraphs: [
+          'Dayfiles is strongest when it helps you sequence the packet deliberately: fill the form, sign the approved version, merge the right pages, compress only if needed, and run one final review before upload or delivery.',
+          'The tools matter, but the discipline between the tools matters more.'
+        ]
+      }
+    ],
+    supportingLinks: [
+      { label: 'PDF Toolkit Checklist for Reliable Document Delivery', href: '/blog/pdf-operations-checklist/' },
+      { label: 'Visa Packet PDF Checklist for Clean Final Submission', href: '/blog/pdf-visa-application-packet-checklist/' },
+      { label: 'PDF Workflows Hub', href: '/pdf-workflows/' }
+    ]
+  },
+  {
+    slug: 'compliance-sensitive-image-prep',
+    title: 'Compliance-Sensitive Image Prep | What to Check Before Submission',
+    description:
+      'Use this Dayfiles editorial guide to prepare compliance-sensitive images more carefully before passport, visa, ID, or other submission-driven workflows.',
+    shortTitle: 'Compliance-Sensitive Image Prep',
+    schemaType: 'WebPage',
+    heroEyebrow: 'Editorial guide',
+    h1: 'Compliance-Sensitive Image Prep',
+    heroCopy:
+      'This page explains how to treat image work more carefully when a submission rule matters. The goal is not to over-edit the file. It is to avoid preventable rejection by reviewing the right things in the right order.',
+    highlights: [
+      { label: 'Best for', value: 'passport, visa, ID, onboarding, and other rule-bound image submissions' },
+      { label: 'Main risk', value: 'visual cleanup that accidentally breaks the destination requirement' },
+      { label: 'Use with', value: 'image conversion, resize, cleanup, and compliance-related review guides' }
+    ],
+    sections: [
+      {
+        title: 'Why compliance-sensitive image work needs a different mindset',
+        paragraphs: [
+          'When the image is headed toward a rule-bound destination, a cleaner-looking file is not automatically a safer file. The real question is whether the image still matches the destination standard after the edit.',
+          'That means the best workflow is usually conservative. Confirm the requirement first, make the minimum necessary change, then review the output against the destination rule.'
+        ]
+      },
+      {
+        title: 'Mistakes that cause avoidable rejection',
+        list: [
+          'cropping before you verify the required framing',
+          'compressing too early and losing detail that matters in review',
+          'removing or flattening the background in a way the destination does not accept',
+          'editing the only source file instead of keeping an untouched original',
+          'assuming one portal or country standard applies everywhere'
+        ]
+      },
+      {
+        title: 'A safer review sequence',
+        list: [
+          'confirm the destination rule and required output format',
+          'keep the original image untouched in a separate source folder',
+          'make only the adjustment that solves the actual requirement gap',
+          'review dimensions, framing, background, and visible clarity before export',
+          'label the export so nobody mistakes it for the untouched source'
+        ]
+      },
+      {
+        title: 'What Dayfiles should help you do here',
+        paragraphs: [
+          'Dayfiles should help you slow down in the right place: before export, when it is still easy to catch an over-edit, a wrong crop, or an output mismatch that would cause rejection later.',
+          'The right tool route only matters if the review criteria stay visible all the way to the handoff.'
+        ]
+      }
+    ],
+    supportingLinks: [
+      { label: 'Image Workflows Hub', href: '/image-workflows/' },
+      { label: 'Employee ID Photo Standards for HR Teams and Faster Reviews', href: '/blog/eis-employee-id-photo-standard-guide/' },
+      { label: 'Visa Photo Checklist to Prevent Resubmission Delays', href: '/blog/eis-visa-photo-resubmission-checklist/' }
     ]
   }
 ];

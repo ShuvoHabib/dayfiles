@@ -30,10 +30,10 @@ const extensionLink =
   'https://chromewebstore.google.com/detail/everyday-image-studio/cpcfdmaihaccamacobbfnfngefmdphfp/reviews?utm_source=item-share-cp';
 const navLinks = [
   { label: 'Blog', href: '/blog/' },
-  { label: 'Chrome Extension', href: extensionLink, external: true },
-  { label: 'Everyday Image Studio', href: 'https://everydayimagestudio.dayfiles.com/', external: true },
-  { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
-  { label: 'PDF Toolkit', href: 'https://pdf.dayfiles.com/', external: true }
+  { label: 'PDF Workflows', href: '/pdf-workflows/' },
+  { label: 'Image Workflows', href: '/image-workflows/' },
+  { label: 'Workflow Standards', href: '/content-review-process/' },
+  { label: 'Chrome Extension', href: extensionLink, external: true }
 ];
 const footerPrimaryLinks = [
   { label: 'Home', href: '/' },
@@ -45,11 +45,32 @@ const footerPrimaryLinks = [
 const footerTrustLinks = [
   { label: 'About', href: '/about/' },
   { label: 'Contact', href: '/contact/' },
+  { label: 'Shuvo Habib', href: '/shuvo-habib/' },
+  { label: 'Cookie Policy', href: '/cookies/' },
+  { label: 'Workflow Testing', href: '/how-dayfiles-tests-workflows/' },
+  { label: 'Content Review', href: '/content-review-process/' },
+  { label: 'PDF Workflows', href: '/pdf-workflows/' },
+  { label: 'Image Workflows', href: '/image-workflows/' },
+  { label: 'Document Delivery Formats', href: '/document-delivery-formats/' },
+  { label: 'Application Packet Mistakes', href: '/application-packet-mistakes/' },
+  { label: 'Compliance-Sensitive Image Prep', href: '/compliance-sensitive-image-prep/' },
   { label: 'Editorial Policy', href: '/editorial-policy/' },
   { label: 'Advertising Disclosure', href: '/advertising-disclosure/' },
   { label: 'Privacy Policy', href: '/privacy-policy/' },
   { label: 'Terms', href: '/terms/' }
 ];
+
+const defaultAuthor = {
+  name: 'Shuvo Habib',
+  role: 'Founder, editor, and publisher of Dayfiles',
+  url: `${SITE_URL}/shuvo-habib/`
+};
+
+const defaultReviewer = {
+  name: 'Shuvo Habib',
+  role: 'Reviews live routes, screenshots, and workflow accuracy before Dayfiles articles are updated',
+  url: `${SITE_URL}/shuvo-habib/`
+};
 
 function productBadgeLabel(product) {
   if (product === 'pdf') {
@@ -75,6 +96,29 @@ function productHubHref(product) {
   return '/everyday-image-studio/';
 }
 
+function clusterLinksForPost(post) {
+  const shared = [
+    { label: 'Meet the publisher', href: '/shuvo-habib/' },
+    { label: 'How Dayfiles reviews content', href: '/content-review-process/' }
+  ];
+
+  if (post.product === 'pdf') {
+    return [
+      { label: 'Start with the PDF Workflows hub', href: '/pdf-workflows/' },
+      { label: 'Choose the right document delivery format', href: '/document-delivery-formats/' },
+      { label: 'Avoid application packet mistakes', href: '/application-packet-mistakes/' },
+      ...shared
+    ];
+  }
+
+  return [
+    { label: 'Start with the Image Workflows hub', href: '/image-workflows/' },
+    { label: 'Review compliance-sensitive image prep', href: '/compliance-sensitive-image-prep/' },
+    { label: 'Choose the right document delivery format', href: '/document-delivery-formats/' },
+    ...shared
+  ];
+}
+
 function stripMarkdown(markdown) {
   return String(markdown)
     .replace(/```[\s\S]*?```/g, ' ')
@@ -87,15 +131,8 @@ function stripMarkdown(markdown) {
 
 function collectJsonLd(post, relatedPosts = []) {
   const reviewDate = post.reviewDate || post.date;
-  const author = post.authorName
-    ? {
-        '@type': 'Organization',
-        name: post.authorName
-      }
-    : {
-        '@type': 'Organization',
-        name: 'Dayfiles'
-      };
+  const authorName = post.authorName || defaultAuthor.name;
+  const authorUrl = post.authorUrl || defaultAuthor.url;
   const blogPosting = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -105,7 +142,11 @@ function collectJsonLd(post, relatedPosts = []) {
     dateModified: reviewDate,
     mainEntityOfPage: post.canonicalUrl,
     image: [toAbsoluteUrl(post.featuredImage)],
-    author,
+    author: {
+      '@type': 'Person',
+      name: authorName,
+      url: authorUrl
+    },
     publisher: {
       '@type': 'Organization',
       name: 'Dayfiles',
@@ -122,8 +163,15 @@ function collectJsonLd(post, relatedPosts = []) {
 
   if (post.reviewedBy) {
     blogPosting.editor = {
-      '@type': 'Organization',
-      name: post.reviewedBy
+      '@type': 'Person',
+      name: post.reviewedBy,
+      url: post.reviewedUrl || defaultReviewer.url
+    };
+  } else {
+    blogPosting.editor = {
+      '@type': 'Person',
+      name: defaultReviewer.name,
+      url: defaultReviewer.url
     };
   }
 
@@ -849,9 +897,8 @@ function renderSiteFooter() {
   `;
 }
 
-function thirdPartyScripts() {
+function analyticsScripts() {
   return `
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702" crossorigin="anonymous"></script>
     <script>
       (function () {
         var host = window.location.hostname;
@@ -891,6 +938,12 @@ function thirdPartyScripts() {
         window.setTimeout(loadThirdParty, 60000);
       })();
     </script>
+  `;
+}
+
+function adSenseScript() {
+  return `
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702" crossorigin="anonymous"></script>
   `;
 }
 
@@ -952,7 +1005,7 @@ function renderBlogIndexPage(posts) {
     <meta name="twitter:title" content="Dayfiles Blog" />
     <meta name="twitter:description" content="Daily workflow guides for image and PDF operations." />
     <meta name="twitter:image" content="${SITE_URL}/dayfiles-logo.svg" />
-    ${thirdPartyScripts()}
+    ${analyticsScripts()}
     <script type="application/ld+json">${JSON.stringify(itemList)}</script>
     <style>${sharedStyles()}</style>
   </head>
@@ -1011,12 +1064,15 @@ function renderPostPage(post, relatedPosts) {
   const sourceCount = Array.isArray(post.sources) ? post.sources.length : 0;
   const hubHref = productHubHref(post.product);
   const reviewDate = post.reviewDate || post.date;
-  const authorName = post.authorName || 'Dayfiles editorial team';
-  const authorRole = post.authorRole || 'Workflow documentation and public publisher guidance';
-  const reviewerName = post.reviewedBy || 'Dayfiles editorial review';
-  const reviewerRole = post.reviewedRole || 'Checked against live links, page structure, and workflow framing';
+  const authorName = post.authorName || defaultAuthor.name;
+  const authorRole = post.authorRole || defaultAuthor.role;
+  const authorUrl = post.authorUrl || defaultAuthor.url;
+  const reviewerName = post.reviewedBy || defaultReviewer.name;
+  const reviewerRole = post.reviewedRole || defaultReviewer.role;
+  const reviewerUrl = post.reviewedUrl || defaultReviewer.url;
   const testedToolName = post.testedToolName || productBadgeLabel(post.product);
   const testedToolUrl = post.testedToolUrl || hubHref;
+  const clusterLinks = clusterLinksForPost(post);
   const faqHtml = (post.faq || [])
     .map(
       (item) => `
@@ -1077,7 +1133,8 @@ function renderPostPage(post, relatedPosts) {
     <meta name="twitter:title" content="${escapeHtml(post.title)}" />
     <meta name="twitter:description" content="${escapeHtml(post.description)}" />
     <meta name="twitter:image" content="${escapeHtml(toAbsoluteUrl(post.featuredImage))}" />
-    ${thirdPartyScripts()}
+    ${analyticsScripts()}
+    ${adSenseScript()}
     <script type="application/ld+json">${collectJsonLd(post, relatedPosts)}</script>
     <style>${sharedStyles()}</style>
   </head>
@@ -1123,11 +1180,11 @@ function renderPostPage(post, relatedPosts) {
         <div class="signal-grid">
           <section class="signal-card">
             <h2>Written by</h2>
-            <p>${escapeHtml(authorName)}. ${escapeHtml(authorRole)}.</p>
+            <p><a href="${escapeHtml(authorUrl)}">${escapeHtml(authorName)}</a>. ${escapeHtml(authorRole)}.</p>
           </section>
           <section class="signal-card">
             <h2>Reviewed on</h2>
-            <p>${formatHumanDate(reviewDate)} by ${escapeHtml(reviewerName)}. ${escapeHtml(reviewerRole)}.</p>
+            <p>${formatHumanDate(reviewDate)} by <a href="${escapeHtml(reviewerUrl)}">${escapeHtml(reviewerName)}</a>. ${escapeHtml(reviewerRole)}.</p>
           </section>
           <section class="signal-card">
             <h2>Sources reviewed</h2>
@@ -1159,6 +1216,13 @@ function renderPostPage(post, relatedPosts) {
       <section class="panel">
         <h2>Sources</h2>
         <ol class="source-list">${sourceHtml}</ol>
+      </section>
+
+      <section class="panel prose">
+        <h2>Start with these cornerstone pages</h2>
+        <ul>
+          ${clusterLinks.map((item) => `<li><a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a></li>`).join('\n')}
+        </ul>
       </section>
 
       <section class="panel">

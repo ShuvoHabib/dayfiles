@@ -63,6 +63,11 @@ const flagshipWorkflows = [
 
 const authorityPages = [
   {
+    title: 'Shuvo Habib',
+    description: 'See the named founder and editor responsible for Dayfiles publishing, workflow reviews, and public accountability.',
+    href: '/shuvo-habib/'
+  },
+  {
     title: 'About Dayfiles',
     description: 'See who runs the site, how it is published, and what Dayfiles is responsible for.',
     href: '/about/'
@@ -79,14 +84,36 @@ const authorityPages = [
   }
 ];
 
+const editorialResourcePages = [
+  {
+    title: 'Choosing the right document delivery format',
+    description: 'Use this page before you decide whether the file should stay as PDF, move through DOCX, or export another way.',
+    href: '/document-delivery-formats/'
+  },
+  {
+    title: 'Application packet mistakes that cause rework',
+    description: 'Catch the packet failures that send files back for correction, delay, or outright rejection.',
+    href: '/application-packet-mistakes/'
+  },
+  {
+    title: 'Compliance-sensitive image prep',
+    description: 'Slow down the risky part of image work when a passport, visa, ID, or onboarding rule matters.',
+    href: '/compliance-sensitive-image-prep/'
+  }
+];
+
 const trustLinks = [
   { label: 'About Dayfiles', href: '/about/', description: 'Founder, publisher identity, and how the site is run.' },
+  { label: 'Shuvo Habib', href: '/shuvo-habib/', description: 'Named founder and editor responsible for Dayfiles publishing and review standards.' },
   { label: 'Contact', href: '/contact/', description: 'Direct contact for corrections, privacy requests, technical issues, and business questions.' },
   { label: 'Cookie Policy', href: '/cookies/', description: 'How Dayfiles uses analytics, advertising, and browser-based tracking technologies.' },
   { label: 'Editorial Policy', href: '/editorial-policy/', description: 'How workflow guides are written, updated, and kept separate from monetization.' },
   { label: 'Advertising Disclosure', href: '/advertising-disclosure/', description: 'How advertising supports the site and how ads are kept separate from editorial content.' },
   { label: 'Privacy Policy', href: '/privacy-policy/', description: 'What data may be collected on the public site and how public pages are operated.' },
-  { label: 'Terms of Service', href: '/terms/', description: 'The usage rules, limitations, and responsibilities tied to the public site.' }
+  { label: 'Terms of Service', href: '/terms/', description: 'The usage rules, limitations, and responsibilities tied to the public site.' },
+  { label: 'Document Delivery Formats', href: '/document-delivery-formats/', description: 'How to choose the right output before delivery, review, or archive handoff.' },
+  { label: 'Application Packet Mistakes', href: '/application-packet-mistakes/', description: 'The common packet failures that cause avoidable rejection or delay.' },
+  { label: 'Compliance-Sensitive Image Prep', href: '/compliance-sensitive-image-prep/', description: 'What to check before exporting images into rule-bound submission workflows.' }
 ];
 
 const extensionLink =
@@ -96,10 +123,10 @@ const themeStorageKey = 'dayfiles_theme';
 const themeOptions = new Set(['system', 'light', 'dark']);
 const navigationLinks = [
   { label: 'Blog', href: '/blog/' },
-  { label: 'Chrome Extension', href: extensionLink, external: true },
-  { label: 'Everyday Image Studio', href: '/everyday-image-studio/' },
-  { label: 'Images', href: '/images/' },
-  { label: 'PDF Toolkit', href: '/pdf-toolkit/' }
+  { label: 'PDF Workflows', href: '/pdf-workflows/' },
+  { label: 'Image Workflows', href: '/image-workflows/' },
+  { label: 'Workflow Standards', href: '/content-review-process/' },
+  { label: 'Chrome Extension', href: extensionLink, external: true }
 ];
 const heroActions = [
   {
@@ -437,6 +464,23 @@ export default function App() {
           </div>
         </section>
 
+        <section className="panel editorial-proof" aria-label="Editorial resources">
+          <div className="section-heading">
+            <h2>Cornerstone editorial resources</h2>
+            <p>These are decision pages first. They should still help even if you never open a Dayfiles tool.</p>
+          </div>
+          <div className="card-grid">
+            {editorialResourcePages.map((page) => (
+              <article key={page.href} className="card">
+                <div className="badge beta-badge">Guide</div>
+                <h3>{page.title}</h3>
+                <p>{page.description}</p>
+                <a href={page.href}>Open {page.title}</a>
+              </article>
+            ))}
+          </div>
+        </section>
+
         {showExtensionBanner && (
           <aside className="extension-banner panel" aria-label="Chrome extension promotion">
             <p>
@@ -546,6 +590,9 @@ export default function App() {
           <a href="/about/">
             About
           </a>
+          <a href="/shuvo-habib/">
+            Shuvo Habib
+          </a>
           <a href="/contact/">
             Contact
           </a>
@@ -563,6 +610,15 @@ export default function App() {
           </a>
           <a href="/image-workflows/">
             Image Workflows
+          </a>
+          <a href="/document-delivery-formats/">
+            Document Delivery Formats
+          </a>
+          <a href="/application-packet-mistakes/">
+            Application Packet Mistakes
+          </a>
+          <a href="/compliance-sensitive-image-prep/">
+            Compliance-Sensitive Image Prep
           </a>
           <a href="/editorial-policy/">
             Editorial Policy

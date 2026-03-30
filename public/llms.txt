@@ -9,6 +9,7 @@ Core user value: free core workflows, no account required for core usage, and pr
 - https://dayfiles.com/pdf-toolkit/
 - https://dayfiles.com/everyday-image-studio/
 - https://dayfiles.com/about
+- https://dayfiles.com/shuvo-habib
 - https://dayfiles.com/contact
 - https://dayfiles.com/cookies
 - https://dayfiles.com/privacy-policy
@@ -19,6 +20,9 @@ Core user value: free core workflows, no account required for core usage, and pr
 - https://dayfiles.com/content-review-process
 - https://dayfiles.com/pdf-workflows
 - https://dayfiles.com/image-workflows
+- https://dayfiles.com/document-delivery-formats
+- https://dayfiles.com/application-packet-mistakes
+- https://dayfiles.com/compliance-sensitive-image-prep
 - https://dayfiles.com/blog
 
 ## Live Tools
@@ -32,6 +36,7 @@ Core user value: free core workflows, no account required for core usage, and pr
 
 ## Trust Pages
 - https://dayfiles.com/about
+- https://dayfiles.com/shuvo-habib
 - https://dayfiles.com/contact
 - https://dayfiles.com/cookies
 - https://dayfiles.com/privacy-policy
@@ -42,6 +47,9 @@ Core user value: free core workflows, no account required for core usage, and pr
 - https://dayfiles.com/content-review-process
 - https://dayfiles.com/pdf-workflows
 - https://dayfiles.com/image-workflows
+- https://dayfiles.com/document-delivery-formats
+- https://dayfiles.com/application-packet-mistakes
+- https://dayfiles.com/compliance-sensitive-image-prep
 
 ## Latest Blog Posts
 - How to Edit a PDF by Converting It to DOCX and Back: https://dayfiles.com/blog/pdf-edit-via-docx-and-back-workflow/

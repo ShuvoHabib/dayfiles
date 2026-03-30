@@ -11,10 +11,10 @@ const extensionLink =
   'https://chromewebstore.google.com/detail/everyday-image-studio/cpcfdmaihaccamacobbfnfngefmdphfp/reviews?utm_source=item-share-cp';
 const navLinks = [
   { label: 'Blog', href: '/blog/' },
-  { label: 'Chrome Extension', href: extensionLink, external: true },
-  { label: 'Everyday Image Studio', href: 'https://everydayimagestudio.dayfiles.com/', external: true },
-  { label: 'Images', href: 'https://images.dayfiles.com/', external: true },
-  { label: 'PDF Toolkit', href: 'https://pdf.dayfiles.com/', external: true }
+  { label: 'PDF Workflows', href: '/pdf-workflows/' },
+  { label: 'Image Workflows', href: '/image-workflows/' },
+  { label: 'Workflow Standards', href: '/content-review-process/' },
+  { label: 'Chrome Extension', href: extensionLink, external: true }
 ];
 const footerPrimaryLinks = [
   { label: 'Home', href: '/' },
@@ -25,6 +25,7 @@ const footerPrimaryLinks = [
 ];
 const footerTrustLinks = [
   { label: 'About', href: '/about/' },
+  { label: 'Shuvo Habib', href: '/shuvo-habib/' },
   { label: 'Contact', href: '/contact/' },
   { label: 'Cookie Policy', href: '/cookies/' },
   { label: 'Editorial Policy', href: '/editorial-policy/' },
@@ -32,6 +33,9 @@ const footerTrustLinks = [
   { label: 'Content Review', href: '/content-review-process/' },
   { label: 'PDF Workflows', href: '/pdf-workflows/' },
   { label: 'Image Workflows', href: '/image-workflows/' },
+  { label: 'Document Delivery Formats', href: '/document-delivery-formats/' },
+  { label: 'Application Packet Mistakes', href: '/application-packet-mistakes/' },
+  { label: 'Compliance-Sensitive Image Prep', href: '/compliance-sensitive-image-prep/' },
   { label: 'Advertising Disclosure', href: '/advertising-disclosure/' },
   { label: 'Privacy Policy', href: '/privacy-policy/' },
   { label: 'Terms', href: '/terms/' }
@@ -160,9 +164,8 @@ function themeSelectScript() {
   `;
 }
 
-function thirdPartyScripts() {
+function analyticsScripts() {
   return `
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702" crossorigin="anonymous"></script>
     <script>
       (function () {
         var host = window.location.hostname;
@@ -850,6 +853,15 @@ function buildTrustJsonLd(page) {
     };
   }
 
+  if (page.slug === 'shuvo-habib') {
+    webPage.mainEntity = {
+      '@type': 'Person',
+      name: 'Shuvo Habib',
+      jobTitle: 'Founder and editor, Dayfiles',
+      url: `${SITE_URL}/shuvo-habib/`
+    };
+  }
+
   const breadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -1020,7 +1032,7 @@ function renderPage(page, relatedPosts, lastUpdated) {
     <meta name="twitter:title" content="${escapeHtml(page.title)}" />
     <meta name="twitter:description" content="${escapeHtml(page.description)}" />
     <meta name="twitter:image" content="${SITE_URL}/dayfiles-logo.svg" />
-    ${thirdPartyScripts()}
+    ${analyticsScripts()}
     <script type="application/ld+json">${buildJsonLd(page)}</script>
     <style>${sharedStyles()}</style>
   </head>
