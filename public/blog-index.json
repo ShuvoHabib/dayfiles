@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Fix PDF Text and Save a Smaller Final PDF File",
+    "slug": "pdf-fix-text-and-recompress-workflow",
+    "date": "2026-04-03",
+    "product": "pdf",
+    "description": "Fix PDF text through a DOCX edit stage, rebuild the document as PDF, and compress the final export so the revised file stays both accurate and upload-ready.",
+    "tags": [
+      "fix text in pdf and save as pdf",
+      "pdf text correction",
+      "compress final pdf",
+      "dayfiles pdf workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/pdf-fix-text-and-recompress-workflow/",
+    "featuredImage": "/blog/images/pdf-fix-text-and-recompress-workflow.svg",
+    "featuredImageAlt": "Fix PDF text and compress final PDF workflow visual",
+    "readingMinutes": 6
+  },
+  {
     "title": "How to Edit a PDF by Converting It to DOCX and Back",
     "slug": "pdf-edit-via-docx-and-back-workflow",
     "date": "2026-03-28",
