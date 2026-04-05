@@ -1,33 +1,43 @@
 ---
-title: "How to Fill, Sign, Merge, and Lock a Final PDF Packet"
-slug: "fill-sign-merge-lock-pdf-packet"
-date: "2026-03-07"
-product: "pdf"
-description: "Fill forms, add signatures, merge the final packet, and lock the delivered PDF with a workflow that keeps approvals, exports, and handoff stages aligned."
+title: 'How to Fill, Sign, Merge, and Lock a Final PDF Packet'
+slug: fill-sign-merge-lock-pdf-packet
+date: '2026-04-05'
+product: pdf
+description: >-
+  Fill forms, add signatures, merge the final packet, and lock the delivered PDF
+  with a workflow that keeps approvals, exports, and handoff stages aligned.
 tags:
-  - "fill sign merge lock pdf"
-  - "pdf packet workflow"
-  - "pdf form and signature process"
-  - "dayfiles pdf toolkit"
-canonicalUrl: "https://dayfiles.com/blog/fill-sign-merge-lock-pdf-packet"
-featuredImage: "/blog/images/fill-sign-merge-lock-pdf-packet.svg"
-featuredImageAlt: "Fill sign merge and lock PDF packet workflow visual"
+  - fill sign merge lock pdf
+  - pdf packet workflow
+  - pdf form and signature process
+  - dayfiles pdf toolkit
+canonicalUrl: 'https://dayfiles.com/blog/fill-sign-merge-lock-pdf-packet/'
+featuredImage: /blog/images/fill-sign-merge-lock-pdf-packet.svg
+featuredImageAlt: Fill sign merge and lock PDF packet workflow visual
 sources:
-  - title: "PDF Toolkit"
-    url: "https://pdf.dayfiles.com/"
-  - title: "Fill PDF Forms Online"
-    url: "https://dayfiles.com/blog/fill-pdf-forms-online"
-  - title: "E-Sign PDF Online"
-    url: "https://dayfiles.com/blog/e-sign-pdf-online"
+  - title: PDF Toolkit
+    url: 'https://pdf.dayfiles.com/'
+  - title: Fill PDF Forms Online
+    url: 'https://dayfiles.com/blog/fill-pdf-forms-online'
+  - title: E-Sign PDF Online
+    url: 'https://dayfiles.com/blog/e-sign-pdf-online'
 faq:
-  - q: "Why merge after filling and signing?"
-    a: "Merge should happen after the component files are complete so the final packet reflects the approved signed versions instead of unfinished drafts."
-  - q: "When should a packet be locked?"
-    a: "Locking belongs at the end, after form completion, signatures, and final packet review are already finished."
-  - q: "Which Dayfiles guides support this workflow?"
-    a: "The main support guides are [Fill PDF Forms Online](/blog/fill-pdf-forms-online), [E-Sign PDF Online](/blog/e-sign-pdf-online), [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload), and [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload)."
+  - q: Why merge after filling and signing?
+    a: >-
+      Merge should happen after the component files are complete so the final
+      packet reflects the approved signed versions instead of unfinished drafts.
+  - q: When should a packet be locked?
+    a: >-
+      Locking belongs at the end, after form completion, signatures, and final
+      packet review are already finished.
+  - q: Which Dayfiles guides support this workflow?
+    a: >-
+      The main support guides are [Fill PDF Forms
+      Online](/blog/fill-pdf-forms-online), [E-Sign PDF
+      Online](/blog/e-sign-pdf-online), [Merge PDF Without Uploading
+      Files](/blog/merge-pdf-without-upload), and [Lock PDF Without Uploading
+      Files](/blog/lock-pdf-without-upload).
 ---
-
 How do you build one trustworthy PDF packet from forms, signatures, and supporting pages without losing control of the final version? The clean answer is to fill first, sign second, merge the complete approved files, and lock the final packet only after one last review. That order keeps edits, approvals, and delivery from colliding.
 
 ## When to use this workflow

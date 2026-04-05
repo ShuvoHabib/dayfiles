@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Fill, Sign, Merge, and Lock a Final PDF Packet",
+    "slug": "fill-sign-merge-lock-pdf-packet",
+    "date": "2026-04-05",
+    "product": "pdf",
+    "description": "Fill forms, add signatures, merge the final packet, and lock the delivered PDF with a workflow that keeps approvals, exports, and handoff stages aligned.",
+    "tags": [
+      "fill sign merge lock pdf",
+      "pdf packet workflow",
+      "pdf form and signature process",
+      "dayfiles pdf toolkit"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/fill-sign-merge-lock-pdf-packet/",
+    "featuredImage": "/blog/images/fill-sign-merge-lock-pdf-packet.svg",
+    "featuredImageAlt": "Fill sign merge and lock PDF packet workflow visual",
+    "readingMinutes": 6
+  },
+  {
     "title": "How to Fix PDF Text and Save a Smaller Final PDF File",
     "slug": "pdf-fix-text-and-recompress-workflow",
     "date": "2026-04-03",
