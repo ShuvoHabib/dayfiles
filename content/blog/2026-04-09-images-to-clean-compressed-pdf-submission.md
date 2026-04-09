@@ -1,33 +1,43 @@
 ---
-title: "How to Turn Images Into a Clean, Compressed PDF Submission"
-slug: "images-to-clean-compressed-pdf-submission"
-date: "2026-03-07"
-product: "pdf"
-description: "Convert image files into a clean PDF submission, merge the set, and compress the final output with a workflow that keeps uploads lighter and easier to review."
+title: 'How to Turn Images Into a Clean, Compressed PDF Submission'
+slug: images-to-clean-compressed-pdf-submission
+date: '2026-04-09'
+product: pdf
+description: >-
+  Convert image files into a clean PDF submission, merge the set, and compress
+  the final output with a workflow that keeps uploads lighter and easier to
+  review.
 tags:
-  - "convert images to compressed pdf"
-  - "images to pdf workflow"
-  - "compress final pdf submission"
-  - "dayfiles pdf toolkit"
-canonicalUrl: "https://dayfiles.com/blog/images-to-clean-compressed-pdf-submission"
-featuredImage: "/blog/images/images-to-clean-compressed-pdf-submission.svg"
-featuredImageAlt: "Turn images into a clean compressed PDF submission workflow visual"
+  - convert images to compressed pdf
+  - images to pdf workflow
+  - compress final pdf submission
+  - dayfiles pdf toolkit
+canonicalUrl: 'https://dayfiles.com/blog/images-to-clean-compressed-pdf-submission/'
+featuredImage: /blog/images/images-to-clean-compressed-pdf-submission.svg
+featuredImageAlt: Turn images into a clean compressed PDF submission workflow visual
 sources:
-  - title: "Images by Dayfiles"
-    url: "https://images.dayfiles.com/"
-  - title: "JPG to PDF Without Uploading Files"
-    url: "https://dayfiles.com/blog/jpg-to-pdf-without-upload"
-  - title: "Minify PDF Without Uploading Files"
-    url: "https://dayfiles.com/blog/minify-pdf-without-upload"
+  - title: Images by Dayfiles
+    url: 'https://images.dayfiles.com/'
+  - title: JPG to PDF Without Uploading Files
+    url: 'https://dayfiles.com/blog/jpg-to-pdf-without-upload'
+  - title: Minify PDF Without Uploading Files
+    url: 'https://dayfiles.com/blog/minify-pdf-without-upload'
 faq:
-  - q: "Why compress the PDF after converting images?"
-    a: "Compression is most useful after the final image order and PDF assembly are already approved, because that avoids duplicate export chains."
-  - q: "When does this workflow help most?"
-    a: "It helps most when a portal, university, client, or operations team needs one clean PDF instead of a loose batch of image files."
-  - q: "Which Dayfiles pages support this sequence?"
-    a: "The most relevant pages are [Images](/images), [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload), [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload), and [Minify PDF Without Uploading Files](/blog/minify-pdf-without-upload)."
+  - q: Why compress the PDF after converting images?
+    a: >-
+      Compression is most useful after the final image order and PDF assembly
+      are already approved, because that avoids duplicate export chains.
+  - q: When does this workflow help most?
+    a: >-
+      It helps most when a portal, university, client, or operations team needs
+      one clean PDF instead of a loose batch of image files.
+  - q: Which Dayfiles pages support this sequence?
+    a: >-
+      The most relevant pages are [Images](/images), [JPG to PDF Without
+      Uploading Files](/blog/jpg-to-pdf-without-upload), [Merge PDF Without
+      Uploading Files](/blog/merge-pdf-without-upload), and [Minify PDF Without
+      Uploading Files](/blog/minify-pdf-without-upload).
 ---
-
 How do you turn several image files into one submission-ready PDF without ending up with a bloated or disorganized upload? The reliable answer is to prepare the images first, convert them into PDF pages, merge the final set if needed, and compress only the approved output. That sequence makes the resulting file easier to review, upload, and archive.
 
 ## When to use this workflow
