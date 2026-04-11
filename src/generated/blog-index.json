@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Clean PDF Pages via Images and Rebuild the PDF",
+    "slug": "pdf-pages-to-images-cleanup-and-back",
+    "date": "2026-04-11",
+    "product": "images",
+    "description": "Convert PDF pages into images, clean the pages visually, and rebuild the final PDF with a workflow that improves clarity and review confidence before delivery.",
+    "tags": [
+      "convert pdf to images and back to pdf",
+      "pdf page cleanup workflow",
+      "images cleanup and pdf rebuild",
+      "dayfiles images workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/pdf-pages-to-images-cleanup-and-back/",
+    "featuredImage": "/blog/images/pdf-pages-to-images-cleanup-and-back.svg",
+    "featuredImageAlt": "Convert PDF pages to images clean them up and rebuild PDF workflow visual",
+    "readingMinutes": 6
+  },
+  {
     "title": "How to Turn Images Into a Clean, Compressed PDF Submission",
     "slug": "images-to-clean-compressed-pdf-submission",
     "date": "2026-04-09",
