@@ -1,33 +1,43 @@
 ---
-title: "How to Prepare Passport Photos and Add Them to a PDF Packet"
-slug: "passport-photo-to-final-pdf-packet"
-date: "2026-03-07"
-product: "eis"
-description: "Prepare passport-style photos, export the approved image files, and add them into a final PDF packet with a workflow that keeps photo and document steps aligned."
+title: How to Prepare Passport Photos and Add Them to a PDF Packet
+slug: passport-photo-to-final-pdf-packet
+date: '2026-04-13'
+product: eis
+description: >-
+  Prepare passport-style photos, export the approved image files, and add them
+  into a final PDF packet with a workflow that keeps photo and document steps
+  aligned.
 tags:
-  - "prepare passport photo and add to pdf"
-  - "passport photo pdf packet"
-  - "image to pdf application workflow"
-  - "dayfiles image workflow"
-canonicalUrl: "https://dayfiles.com/blog/passport-photo-to-final-pdf-packet"
-featuredImage: "/blog/images/passport-photo-to-final-pdf-packet.svg"
-featuredImageAlt: "Prepare passport photos and add them to a PDF packet workflow visual"
+  - prepare passport photo and add to pdf
+  - passport photo pdf packet
+  - image to pdf application workflow
+  - dayfiles image workflow
+canonicalUrl: 'https://dayfiles.com/blog/passport-photo-to-final-pdf-packet/'
+featuredImage: /blog/images/passport-photo-to-final-pdf-packet.svg
+featuredImageAlt: Prepare passport photos and add them to a PDF packet workflow visual
 sources:
-  - title: "Everyday Image Studio"
-    url: "https://everydayimagestudio.dayfiles.com/"
-  - title: "Everyday Image Studio Passport Photo Checklist Guide"
-    url: "https://dayfiles.com/blog/eis-passport-photo-checklist"
-  - title: "JPG to PDF Without Uploading Files"
-    url: "https://dayfiles.com/blog/jpg-to-pdf-without-upload"
+  - title: Everyday Image Studio
+    url: 'https://everydayimagestudio.dayfiles.com/'
+  - title: Everyday Image Studio Passport Photo Checklist Guide
+    url: 'https://dayfiles.com/blog/eis-passport-photo-checklist'
+  - title: JPG to PDF Without Uploading Files
+    url: 'https://dayfiles.com/blog/jpg-to-pdf-without-upload'
 faq:
-  - q: "Why should passport photo preparation happen before PDF assembly?"
-    a: "The photo should be approved in its image stage first, so the final packet does not inherit rejected size, framing, or export problems."
-  - q: "When is this workflow useful?"
-    a: "It is useful for visa packets, scholarship documents, onboarding files, identity checks, and any process where passport-style photos become part of a final PDF submission."
-  - q: "Which Dayfiles hubs support this sequence?"
-    a: "Use [Everyday Image Studio](/everyday-image-studio) for the photo-prep stage, [Images](/images) when broader image export help is needed, and [PDF Toolkit](/pdf-toolkit) for final packet assembly."
+  - q: Why should passport photo preparation happen before PDF assembly?
+    a: >-
+      The photo should be approved in its image stage first, so the final packet
+      does not inherit rejected size, framing, or export problems.
+  - q: When is this workflow useful?
+    a: >-
+      It is useful for visa packets, scholarship documents, onboarding files,
+      identity checks, and any process where passport-style photos become part
+      of a final PDF submission.
+  - q: Which Dayfiles hubs support this sequence?
+    a: >-
+      Use [Everyday Image Studio](/everyday-image-studio) for the photo-prep
+      stage, [Images](/images) when broader image export help is needed, and
+      [PDF Toolkit](/pdf-toolkit) for final packet assembly.
 ---
-
 How do you prepare passport-style photos and still end with one clean PDF packet instead of loose files? The practical answer is to finish the image approval stage first, export the accepted photo files, convert them into PDF pages if required, and merge them only after the rest of the packet is ready. That keeps the photo workflow and document workflow from interfering with each other.
 
 ## When to use this workflow
