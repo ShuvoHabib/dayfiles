@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Build One Client PDF From DOCX, HTML, and Images",
+    "slug": "build-client-pdf-from-docx-html-and-images",
+    "date": "2026-04-15",
+    "product": "pdf",
+    "description": "Combine DOCX, HTML, and image sources into one client-ready PDF with a workflow that keeps mixed-format inputs organized and reviewable before final delivery.",
+    "tags": [
+      "combine docx html images into pdf",
+      "mixed source pdf workflow",
+      "client pdf assembly",
+      "dayfiles pdf toolkit"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/build-client-pdf-from-docx-html-and-images/",
+    "featuredImage": "/blog/images/build-client-pdf-from-docx-html-and-images.svg",
+    "featuredImageAlt": "Build one PDF from DOCX HTML and images workflow visual",
+    "readingMinutes": 6
+  },
+  {
     "title": "How to Prepare Passport Photos and Add Them to a PDF Packet",
     "slug": "passport-photo-to-final-pdf-packet",
     "date": "2026-04-13",

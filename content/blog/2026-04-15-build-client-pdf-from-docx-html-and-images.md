@@ -1,33 +1,46 @@
 ---
-title: "How to Build One Client PDF From DOCX, HTML, and Images"
-slug: "build-client-pdf-from-docx-html-and-images"
-date: "2026-03-07"
-product: "pdf"
-description: "Combine DOCX, HTML, and image sources into one client-ready PDF with a workflow that keeps mixed-format inputs organized and reviewable before final delivery."
+title: 'How to Build One Client PDF From DOCX, HTML, and Images'
+slug: build-client-pdf-from-docx-html-and-images
+date: '2026-04-15'
+product: pdf
+description: >-
+  Combine DOCX, HTML, and image sources into one client-ready PDF with a
+  workflow that keeps mixed-format inputs organized and reviewable before final
+  delivery.
 tags:
-  - "combine docx html images into pdf"
-  - "mixed source pdf workflow"
-  - "client pdf assembly"
-  - "dayfiles pdf toolkit"
-canonicalUrl: "https://dayfiles.com/blog/build-client-pdf-from-docx-html-and-images"
-featuredImage: "/blog/images/build-client-pdf-from-docx-html-and-images.svg"
-featuredImageAlt: "Build one PDF from DOCX HTML and images workflow visual"
+  - combine docx html images into pdf
+  - mixed source pdf workflow
+  - client pdf assembly
+  - dayfiles pdf toolkit
+canonicalUrl: 'https://dayfiles.com/blog/build-client-pdf-from-docx-html-and-images/'
+featuredImage: /blog/images/build-client-pdf-from-docx-html-and-images.svg
+featuredImageAlt: Build one PDF from DOCX HTML and images workflow visual
 sources:
-  - title: "PDF Toolkit"
-    url: "https://pdf.dayfiles.com/"
-  - title: "How to Convert HTML to PDF Without Uploading Files"
-    url: "https://dayfiles.com/blog/html-to-pdf-without-upload"
-  - title: "How to Convert DOCX to PDF Without Uploading Files"
-    url: "https://dayfiles.com/blog/docx-to-pdf-without-upload"
+  - title: PDF Toolkit
+    url: 'https://pdf.dayfiles.com/'
+  - title: How to Convert HTML to PDF Without Uploading Files
+    url: 'https://dayfiles.com/blog/html-to-pdf-without-upload'
+  - title: How to Convert DOCX to PDF Without Uploading Files
+    url: 'https://dayfiles.com/blog/docx-to-pdf-without-upload'
 faq:
-  - q: "Why use a staged workflow for mixed-format PDF assembly?"
-    a: "A staged workflow keeps each source type stable before merge, which reduces rework compared with trying to improvise across several formats at once."
-  - q: "What kind of files fit this workflow?"
-    a: "Client reports, proposals, operational packets, and mixed deliverables with text documents, rendered pages, and image assets fit this workflow well."
-  - q: "Which Dayfiles guides support this process?"
-    a: "The main support guides are [HTML to PDF Without Uploading Files](/blog/html-to-pdf-without-upload), [DOCX to PDF Without Uploading Files](/blog/docx-to-pdf-without-upload), [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload), and [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload)."
+  - q: Why use a staged workflow for mixed-format PDF assembly?
+    a: >-
+      A staged workflow keeps each source type stable before merge, which
+      reduces rework compared with trying to improvise across several formats at
+      once.
+  - q: What kind of files fit this workflow?
+    a: >-
+      Client reports, proposals, operational packets, and mixed deliverables
+      with text documents, rendered pages, and image assets fit this workflow
+      well.
+  - q: Which Dayfiles guides support this process?
+    a: >-
+      The main support guides are [HTML to PDF Without Uploading
+      Files](/blog/html-to-pdf-without-upload), [DOCX to PDF Without Uploading
+      Files](/blog/docx-to-pdf-without-upload), [JPG to PDF Without Uploading
+      Files](/blog/jpg-to-pdf-without-upload), and [Merge PDF Without Uploading
+      Files](/blog/merge-pdf-without-upload).
 ---
-
 How do you turn DOCX files, HTML pages, and images into one clean client-ready PDF without losing order or consistency? The practical answer is to convert each source type into stable PDF components first, then merge the approved parts into one final document and review the assembled packet before delivery. That staged sequence is the safest path for mixed-format work.
 
 ## When to use this workflow
