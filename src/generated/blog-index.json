@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Finalize a PDF With Watermarks, Numbers, and Locking",
+    "slug": "finalize-pdf-with-watermark-page-numbers-and-lock",
+    "date": "2026-04-18",
+    "product": "pdf",
+    "description": "Finalize a PDF for external delivery by adding watermarks, applying page numbers, and locking the approved version with a workflow built for clean handoff.",
+    "tags": [
+      "finalize pdf before sending",
+      "watermark page numbers lock pdf",
+      "pdf delivery workflow",
+      "dayfiles pdf toolkit"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/finalize-pdf-with-watermark-page-numbers-and-lock/",
+    "featuredImage": "/blog/images/finalize-pdf-with-watermark-page-numbers-and-lock.svg",
+    "featuredImageAlt": "Finalize PDF with watermark page numbers and lock workflow visual",
+    "readingMinutes": 5
+  },
+  {
     "title": "How to Build One Client PDF From DOCX, HTML, and Images",
     "slug": "build-client-pdf-from-docx-html-and-images",
     "date": "2026-04-15",
