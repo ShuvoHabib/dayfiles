@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Edit PDFs Locally Before Final Review and Export",
+    "slug": "edit-pdf-locally-before-final-review",
+    "date": "2026-04-22",
+    "product": "pdf",
+    "description": "Edit PDFs locally with a workflow that keeps revisions controlled, review easier, and final exports cleaner before the file is shared or archived safely.",
+    "tags": [
+      "edit pdf locally",
+      "pdf editing workflow",
+      "pdf dayfiles",
+      "final review process"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/edit-pdf-locally-before-final-review/",
+    "featuredImage": "/blog/images/edit-pdf-locally-before-final-review.svg",
+    "featuredImageAlt": "Edit PDF locally before final review workflow visual",
+    "readingMinutes": 5
+  },
+  {
     "title": "How to Compress, Organize, and Secure a Large PDF Submission",
     "slug": "large-submission-packaging-workflow",
     "date": "2026-04-20",
