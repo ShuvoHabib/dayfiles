@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Extract PDF Pages for Cleaner Review Packets",
+    "slug": "extract-pdf-pages-for-review-packets",
+    "date": "2026-04-24",
+    "product": "pdf",
+    "description": "Extract PDF pages with a workflow that creates cleaner review packets, reduces over-sharing, and keeps section-specific handoffs easier to control consistently.",
+    "tags": [
+      "extract pdf pages",
+      "review packet workflow",
+      "pdf toolkit",
+      "section handoff"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/extract-pdf-pages-for-review-packets/",
+    "featuredImage": "/blog/images/extract-pdf-pages-for-review-packets.svg",
+    "featuredImageAlt": "Extract PDF pages for cleaner review packets workflow visual",
+    "readingMinutes": 4
+  },
+  {
     "title": "How to Edit PDFs Locally Before Final Review and Export",
     "slug": "edit-pdf-locally-before-final-review",
     "date": "2026-04-22",

@@ -1,33 +1,41 @@
 ---
-title: "How to Extract PDF Pages for Cleaner Review Packets"
-slug: "extract-pdf-pages-for-review-packets"
-date: "2026-03-16"
-product: "pdf"
-description: "Extract PDF pages with a workflow that creates cleaner review packets, reduces over-sharing, and keeps section-specific handoffs easier to control consistently."
+title: How to Extract PDF Pages for Cleaner Review Packets
+slug: extract-pdf-pages-for-review-packets
+date: '2026-04-24'
+product: pdf
+description: >-
+  Extract PDF pages with a workflow that creates cleaner review packets, reduces
+  over-sharing, and keeps section-specific handoffs easier to control
+  consistently.
 tags:
-  - "extract pdf pages"
-  - "review packet workflow"
-  - "pdf toolkit"
-  - "section handoff"
-canonicalUrl: "https://dayfiles.com/blog/extract-pdf-pages-for-review-packets"
-featuredImage: "/blog/images/extract-pdf-pages-for-review-packets.svg"
-featuredImageAlt: "Extract PDF pages for cleaner review packets workflow visual"
+  - extract pdf pages
+  - review packet workflow
+  - pdf toolkit
+  - section handoff
+canonicalUrl: 'https://dayfiles.com/blog/extract-pdf-pages-for-review-packets/'
+featuredImage: /blog/images/extract-pdf-pages-for-review-packets.svg
+featuredImageAlt: Extract PDF pages for cleaner review packets workflow visual
 sources:
-  - title: "Extract PDF Pages"
-    url: "https://pdf.dayfiles.com/extract-pdf-pages"
-  - title: "PDF Toolkit"
-    url: "https://dayfiles.com/pdf-toolkit"
-  - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+  - title: Extract PDF Pages
+    url: 'https://pdf.dayfiles.com/extract-pdf-pages'
+  - title: PDF Toolkit
+    url: 'https://dayfiles.com/pdf-toolkit'
+  - title: PDF Dayfiles
+    url: 'https://pdf.dayfiles.com/'
 faq:
-  - q: "When should pages be extracted instead of sending the full PDF?"
-    a: "Extract pages when reviewers only need one section, appendix, or subset and do not need the full packet for context."
-  - q: "What is the biggest extraction mistake?"
-    a: "The biggest mistake is exporting the wrong page range because the section boundaries were not confirmed before extraction."
-  - q: "Which Dayfiles steps usually come next?"
-    a: "Teams often use extraction before review, redaction, recombination, or final packet assembly in the broader PDF Toolkit flow."
+  - q: When should pages be extracted instead of sending the full PDF?
+    a: >-
+      Extract pages when reviewers only need one section, appendix, or subset
+      and do not need the full packet for context.
+  - q: What is the biggest extraction mistake?
+    a: >-
+      The biggest mistake is exporting the wrong page range because the section
+      boundaries were not confirmed before extraction.
+  - q: Which Dayfiles steps usually come next?
+    a: >-
+      Teams often use extraction before review, redaction, recombination, or
+      final packet assembly in the broader PDF Toolkit flow.
 ---
-
 How do you send only the pages a reviewer actually needs without creating confusion about the full packet? The practical answer is to confirm the section boundary first, extract only the approved pages, and label the result for its exact review purpose. That is where [Extract PDF Pages](https://pdf.dayfiles.com/extract-pdf-pages) is more useful than forwarding the entire file.
 
 ## When should pages be extracted from a PDF?
