@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Remove PDF Pages Before Sharing a Final Packet",
+    "slug": "remove-pdf-pages-before-final-packet",
+    "date": "2026-05-05",
+    "product": "pdf",
+    "description": "Remove PDF pages with a workflow that keeps final packets cleaner, reduces unnecessary exposure, and makes delivery files easier to review before sending.",
+    "tags": [
+      "remove pdf pages",
+      "final packet cleanup",
+      "pdf workflow",
+      "pdf dayfiles"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/remove-pdf-pages-before-final-packet/",
+    "featuredImage": "/blog/images/remove-pdf-pages-before-final-packet.svg",
+    "featuredImageAlt": "Remove PDF pages before final packet workflow visual",
+    "readingMinutes": 4
+  },
+  {
     "title": "How to Extract PDF Pages for Cleaner Review Packets",
     "slug": "extract-pdf-pages-for-review-packets",
     "date": "2026-04-24",
