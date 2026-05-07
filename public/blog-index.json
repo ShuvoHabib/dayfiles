@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Redact a PDF Before External Sharing or Filing",
+    "slug": "redact-pdf-before-sharing-or-filing",
+    "date": "2026-05-07",
+    "product": "pdf",
+    "description": "Redact a PDF with a workflow that protects sensitive details, keeps review discipline intact, and prepares the final file for secure sharing or filing.",
+    "tags": [
+      "redact pdf",
+      "pdf privacy workflow",
+      "external sharing",
+      "pdf dayfiles"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/redact-pdf-before-sharing-or-filing/",
+    "featuredImage": "/blog/images/redact-pdf-before-sharing-or-filing.svg",
+    "featuredImageAlt": "Redact PDF before external sharing or filing workflow visual",
+    "readingMinutes": 4
+  },
+  {
     "title": "How to Remove PDF Pages Before Sharing a Final Packet",
     "slug": "remove-pdf-pages-before-final-packet",
     "date": "2026-05-05",
