@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Check If a PDF Can Be Edited Before Rework Cleanly",
+    "slug": "check-if-a-pdf-can-be-edited-before-rework",
+    "date": "2026-05-11",
+    "product": "pdf",
+    "description": "Check whether a PDF can be edited before rework starts so your team chooses the right workflow, avoids false starts, and keeps revisions cleaner overall.",
+    "tags": [
+      "can this pdf be edited",
+      "pdf editability check",
+      "pdf rework workflow",
+      "pdf dayfiles"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/check-if-a-pdf-can-be-edited-before-rework/",
+    "featuredImage": "/blog/images/check-if-a-pdf-can-be-edited-before-rework.svg",
+    "featuredImageAlt": "Check if a PDF can be edited before rework workflow visual",
+    "readingMinutes": 4
+  },
+  {
     "title": "How to Redact a PDF Before External Sharing or Filing",
     "slug": "redact-pdf-before-sharing-or-filing",
     "date": "2026-05-07",
