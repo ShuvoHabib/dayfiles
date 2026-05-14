@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Compress Images to a Specific Size Before Upload",
+    "slug": "compress-images-to-a-specific-size-before-upload",
+    "date": "2026-05-14",
+    "product": "images",
+    "description": "Compress images to a specific size target with a workflow that makes uploads more predictable and keeps final review easier before final delivery begins.",
+    "tags": [
+      "compress image to specific size",
+      "compress to size",
+      "images dayfiles",
+      "upload workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/compress-images-to-a-specific-size-before-upload/",
+    "featuredImage": "/blog/images/compress-images-to-a-specific-size-before-upload.svg",
+    "featuredImageAlt": "Compress images to a specific size before upload workflow visual",
+    "readingMinutes": 4
+  },
+  {
     "title": "How to Check If a PDF Can Be Edited Before Rework Cleanly",
     "slug": "check-if-a-pdf-can-be-edited-before-rework",
     "date": "2026-05-11",
