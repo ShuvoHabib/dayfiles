@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Resize Images to Match File Size Limits Cleanly",
+    "slug": "resize-images-to-match-file-size-limits",
+    "date": "2026-05-16",
+    "product": "images",
+    "description": "Resize images to match file size limits with a workflow that balances dimensions, quality, and upload reliability before the final export is shared cleanly.",
+    "tags": [
+      "resize image to file size",
+      "resize to size",
+      "images dayfiles",
+      "size limit workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/resize-images-to-match-file-size-limits/",
+    "featuredImage": "/blog/images/resize-images-to-match-file-size-limits.svg",
+    "featuredImageAlt": "Resize images to match file size limits cleanly workflow visual",
+    "readingMinutes": 4
+  },
+  {
     "title": "How to Compress Images to a Specific Size Before Upload",
     "slug": "compress-images-to-a-specific-size-before-upload",
     "date": "2026-05-14",
