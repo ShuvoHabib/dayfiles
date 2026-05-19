@@ -1,33 +1,42 @@
 ---
-title: "How to Convert HEIC, PNG, and WebP for Easier Delivery"
-slug: "convert-heic-png-and-webp-for-easier-delivery"
-date: "2026-03-16"
-product: "images"
-description: "Convert HEIC, PNG, and WebP files with a workflow that keeps delivery formats consistent and reduces handoff issues across uploads and final documents."
+title: 'How to Convert HEIC, PNG, and WebP for Easier Delivery'
+slug: convert-heic-png-and-webp-for-easier-delivery
+date: '2026-05-19'
+product: images
+description: >-
+  Convert HEIC, PNG, and WebP files with a workflow that keeps delivery formats
+  consistent and reduces handoff issues across uploads and final documents.
 tags:
-  - "format converter"
-  - "heic png webp conversion"
-  - "images dayfiles"
-  - "delivery format workflow"
-canonicalUrl: "https://dayfiles.com/blog/convert-heic-png-and-webp-for-easier-delivery"
-featuredImage: "/blog/images/convert-heic-png-and-webp-for-easier-delivery.svg"
-featuredImageAlt: "Convert HEIC PNG and WebP for easier delivery workflow visual"
+  - format converter
+  - heic png webp conversion
+  - images dayfiles
+  - delivery format workflow
+canonicalUrl: 'https://dayfiles.com/blog/convert-heic-png-and-webp-for-easier-delivery/'
+featuredImage: /blog/images/convert-heic-png-and-webp-for-easier-delivery.svg
+featuredImageAlt: Convert HEIC PNG and WebP for easier delivery workflow visual
 sources:
-  - title: "Format Converter"
-    url: "https://images.dayfiles.com/format-converter"
-  - title: "Images by Dayfiles"
-    url: "https://images.dayfiles.com/"
-  - title: "Dayfiles Images Hub"
-    url: "https://dayfiles.com/images"
+  - title: Format Converter
+    url: 'https://images.dayfiles.com/format-converter'
+  - title: Images by Dayfiles
+    url: 'https://images.dayfiles.com/'
+  - title: Dayfiles Images Hub
+    url: 'https://dayfiles.com/images'
 faq:
-  - q: "When should teams convert between HEIC, PNG, WebP, or JPG?"
-    a: "Teams should convert when the current format creates friction for the destination, reviewer, or downstream system that expects a more stable or compatible file type."
-  - q: "What is the biggest format-conversion mistake?"
-    a: "The biggest mistake is converting without first deciding what the destination actually requires, which leads to unnecessary exports and mixed batches."
-  - q: "What Dayfiles guides pair well with format conversion?"
-    a: "Format conversion often pairs with compression, resize, and JPG delivery workflows depending on what the next system needs."
+  - q: 'When should teams convert between HEIC, PNG, WebP, or JPG?'
+    a: >-
+      Teams should convert when the current format creates friction for the
+      destination, reviewer, or downstream system that expects a more stable or
+      compatible file type.
+  - q: What is the biggest format-conversion mistake?
+    a: >-
+      The biggest mistake is converting without first deciding what the
+      destination actually requires, which leads to unnecessary exports and
+      mixed batches.
+  - q: What Dayfiles guides pair well with format conversion?
+    a: >-
+      Format conversion often pairs with compression, resize, and JPG delivery
+      workflows depending on what the next system needs.
 ---
-
 How do you convert mixed image formats without turning the delivery folder into a compatibility mess? The practical answer is to decide which format the next system really expects, convert the batch once, and keep the output set clearly separated from the originals. That is what [Format Converter](https://images.dayfiles.com/format-converter) is built to simplify.
 
 ## When should you convert image formats?
