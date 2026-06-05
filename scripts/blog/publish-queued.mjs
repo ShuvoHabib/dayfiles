@@ -15,7 +15,7 @@ function parseArgs(argv) {
     date: '',
     ignoreSchedule: false,
     timezone: 'America/New_York',
-    minGapDays: 2
+    minGapDays: 1
   };
 
   for (let i = 0; i < argv.length; i += 1) {
@@ -247,7 +247,7 @@ export async function publishQueued(options = {}) {
     date: '',
     ignoreSchedule: false,
     timezone: 'America/New_York',
-    minGapDays: 2,
+    minGapDays: 1,
     ...options
   };
 
