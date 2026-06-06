@@ -1,5 +1,22 @@
 [
   {
+    "title": "How to Turn HTML Into Shareable Images for Launch Posts",
+    "slug": "html-to-image-launch-posts-workflow",
+    "date": "2026-06-06",
+    "product": "images",
+    "description": "Turn HTML into shareable images with a workflow that makes launch posts, visual snippets, and product updates easier to package and reuse across channels.",
+    "tags": [
+      "html to image",
+      "launch post assets",
+      "images dayfiles",
+      "product snippet workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/html-to-image-launch-posts-workflow/",
+    "featuredImage": "/blog/images/html-to-image-launch-posts-workflow.svg",
+    "featuredImageAlt": "Turn HTML into shareable images for launch posts workflow visual",
+    "readingMinutes": 4
+  },
+  {
     "title": "How to Turn Short Videos Into GIFs for Product Updates",
     "slug": "turn-short-videos-into-gifs-for-product-updates",
     "date": "2026-05-21",
