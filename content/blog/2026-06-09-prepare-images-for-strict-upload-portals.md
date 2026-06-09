@@ -1,30 +1,37 @@
 ---
-title: "Prepare Images for Strict Upload Portals"
-slug: "prepare-images-for-strict-upload-portals"
-date: "2026-06-06"
-product: "images"
-description: "Prepare images for strict upload portals with a practical workflow for size caps, format rules, readability checks, and clean final delivery."
+title: Prepare Images for Strict Upload Portals
+slug: prepare-images-for-strict-upload-portals
+date: '2026-06-09'
+product: images
+description: >-
+  Prepare images for strict upload portals with a practical workflow for size
+  caps, format rules, readability checks, and clean final delivery.
 tags:
-  - "image upload limits"
-  - "compress images"
-  - "image workflow"
-canonicalUrl: "https://dayfiles.com/blog/prepare-images-for-strict-upload-portals"
-featuredImage: "/blog/images/prepare-images-for-strict-upload-portals.svg"
-featuredImageAlt: "Image upload portal preparation workflow"
+  - image upload limits
+  - compress images
+  - image workflow
+canonicalUrl: 'https://dayfiles.com/blog/prepare-images-for-strict-upload-portals/'
+featuredImage: /blog/images/prepare-images-for-strict-upload-portals.svg
+featuredImageAlt: Image upload portal preparation workflow
 sources:
-  - title: "Images Dayfiles"
-    url: "https://images.dayfiles.com/"
-  - title: "Dayfiles Images Hub"
-    url: "https://dayfiles.com/images/"
+  - title: Images Dayfiles
+    url: 'https://images.dayfiles.com/'
+  - title: Dayfiles Images Hub
+    url: 'https://dayfiles.com/images/'
 faq:
-  - q: "What should I check before uploading an image to a portal?"
-    a: "Check file size, format, dimensions, readability, and whether the destination accepts the file name and extension."
-  - q: "Should I compress or resize first?"
-    a: "Compress first when the image is only slightly too large. Resize first when the dimensions are much larger than the destination needs."
-  - q: "Why keep the original image?"
-    a: "The original lets you create a different output later without compounding quality loss from repeated exports."
+  - q: What should I check before uploading an image to a portal?
+    a: >-
+      Check file size, format, dimensions, readability, and whether the
+      destination accepts the file name and extension.
+  - q: Should I compress or resize first?
+    a: >-
+      Compress first when the image is only slightly too large. Resize first
+      when the dimensions are much larger than the destination needs.
+  - q: Why keep the original image?
+    a: >-
+      The original lets you create a different output later without compounding
+      quality loss from repeated exports.
 ---
-
 How do you prepare images when a form keeps rejecting files for size, format, or dimensions? The safer workflow is to treat the portal rule as the starting point, not as something to discover after several failed uploads. [Images Dayfiles](https://images.dayfiles.com/) is useful for this kind of work because its tool set includes compression, resize, format conversion, and exact target-size routes.
 
 ## Start with the rejection message

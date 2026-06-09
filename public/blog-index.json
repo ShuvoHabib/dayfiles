@@ -1,5 +1,21 @@
 [
   {
+    "title": "Prepare Images for Strict Upload Portals",
+    "slug": "prepare-images-for-strict-upload-portals",
+    "date": "2026-06-09",
+    "product": "images",
+    "description": "Prepare images for strict upload portals with a practical workflow for size caps, format rules, readability checks, and clean final delivery.",
+    "tags": [
+      "image upload limits",
+      "compress images",
+      "image workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/prepare-images-for-strict-upload-portals/",
+    "featuredImage": "/blog/images/prepare-images-for-strict-upload-portals.svg",
+    "featuredImageAlt": "Image upload portal preparation workflow",
+    "readingMinutes": 2
+  },
+  {
     "title": "How to Turn HTML Into Shareable Images for Launch Posts",
     "slug": "html-to-image-launch-posts-workflow",
     "date": "2026-06-06",
