@@ -1,32 +1,39 @@
 ---
-title: "Compress vs Resize for Image KB Limits"
-slug: "compress-vs-resize-for-image-kb-limits"
-date: "2026-06-06"
-product: "images"
-description: "Decide whether to compress or resize images for KB limits with a practical workflow that protects readability while meeting strict upload caps."
+title: Compress vs Resize for Image KB Limits
+slug: compress-vs-resize-for-image-kb-limits
+date: '2026-06-13'
+product: images
+description: >-
+  Decide whether to compress or resize images for KB limits with a practical
+  workflow that protects readability while meeting strict upload caps.
 tags:
-  - "compress vs resize"
-  - "image kb limit"
-  - "upload workflow"
-canonicalUrl: "https://dayfiles.com/blog/compress-vs-resize-for-image-kb-limits"
-featuredImage: "/blog/images/compress-vs-resize-for-image-kb-limits.svg"
-featuredImageAlt: "Compress versus resize decision workflow for image KB limits"
+  - compress vs resize
+  - image kb limit
+  - upload workflow
+canonicalUrl: 'https://dayfiles.com/blog/compress-vs-resize-for-image-kb-limits/'
+featuredImage: /blog/images/compress-vs-resize-for-image-kb-limits.svg
+featuredImageAlt: Compress versus resize decision workflow for image KB limits
 sources:
-  - title: "Compress to Size"
-    url: "https://images.dayfiles.com/compress-to-size"
-  - title: "Resize to Size"
-    url: "https://images.dayfiles.com/resize-to-size"
-  - title: "Dayfiles Image Workflows"
-    url: "https://dayfiles.com/image-workflows/"
+  - title: Compress to Size
+    url: 'https://images.dayfiles.com/compress-to-size'
+  - title: Resize to Size
+    url: 'https://images.dayfiles.com/resize-to-size'
+  - title: Dayfiles Image Workflows
+    url: 'https://dayfiles.com/image-workflows/'
 faq:
-  - q: "When is compression enough?"
-    a: "Compression is usually enough when the image is only slightly above the file-size limit and the dimensions are already reasonable."
-  - q: "When should I resize instead?"
-    a: "Resize when the image dimensions are much larger than the destination needs or compression makes details too blurry."
-  - q: "Can I use both?"
-    a: "Yes. Many strict portals need a small dimension reduction followed by moderate compression."
+  - q: When is compression enough?
+    a: >-
+      Compression is usually enough when the image is only slightly above the
+      file-size limit and the dimensions are already reasonable.
+  - q: When should I resize instead?
+    a: >-
+      Resize when the image dimensions are much larger than the destination
+      needs or compression makes details too blurry.
+  - q: Can I use both?
+    a: >-
+      Yes. Many strict portals need a small dimension reduction followed by
+      moderate compression.
 ---
-
 How do you know whether to compress an image or resize it when a portal asks for a strict KB limit? Compression changes encoding quality. Resizing changes pixel dimensions. Both can reduce file size, but they damage images in different ways, so the right choice depends on the source file and the destination rule.
 
 ## The quick decision rule

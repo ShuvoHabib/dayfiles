@@ -1,5 +1,21 @@
 [
   {
+    "title": "Compress vs Resize for Image KB Limits",
+    "slug": "compress-vs-resize-for-image-kb-limits",
+    "date": "2026-06-13",
+    "product": "images",
+    "description": "Decide whether to compress or resize images for KB limits with a practical workflow that protects readability while meeting strict upload caps.",
+    "tags": [
+      "compress vs resize",
+      "image kb limit",
+      "upload workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/compress-vs-resize-for-image-kb-limits/",
+    "featuredImage": "/blog/images/compress-vs-resize-for-image-kb-limits.svg",
+    "featuredImageAlt": "Compress versus resize decision workflow for image KB limits",
+    "readingMinutes": 2
+  },
+  {
     "title": "Prepare Images for Strict Upload Portals",
     "slug": "prepare-images-for-strict-upload-portals",
     "date": "2026-06-09",
