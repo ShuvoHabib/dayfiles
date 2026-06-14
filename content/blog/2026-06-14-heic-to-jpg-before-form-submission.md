@@ -1,32 +1,39 @@
 ---
-title: "Convert HEIC to JPG Before Form Submission"
-slug: "heic-to-jpg-before-form-submission"
-date: "2026-06-06"
-product: "images"
-description: "Convert HEIC to JPG before form submission with a workflow for compatibility, file-size checks, naming, and final review before upload."
+title: Convert HEIC to JPG Before Form Submission
+slug: heic-to-jpg-before-form-submission
+date: '2026-06-14'
+product: images
+description: >-
+  Convert HEIC to JPG before form submission with a workflow for compatibility,
+  file-size checks, naming, and final review before upload.
 tags:
-  - "heic to jpg"
-  - "image conversion"
-  - "form upload"
-canonicalUrl: "https://dayfiles.com/blog/heic-to-jpg-before-form-submission"
-featuredImage: "/blog/images/heic-to-jpg-before-form-submission.svg"
-featuredImageAlt: "HEIC to JPG form submission workflow"
+  - heic to jpg
+  - image conversion
+  - form upload
+canonicalUrl: 'https://dayfiles.com/blog/heic-to-jpg-before-form-submission/'
+featuredImage: /blog/images/heic-to-jpg-before-form-submission.svg
+featuredImageAlt: HEIC to JPG form submission workflow
 sources:
-  - title: "Format Converter"
-    url: "https://images.dayfiles.com/format-converter"
-  - title: "HEIC to JPG"
-    url: "https://images.dayfiles.com/convert/heic-to-jpg"
-  - title: "Images Dayfiles"
-    url: "https://images.dayfiles.com/"
+  - title: Format Converter
+    url: 'https://images.dayfiles.com/format-converter'
+  - title: HEIC to JPG
+    url: 'https://images.dayfiles.com/convert/heic-to-jpg'
+  - title: Images Dayfiles
+    url: 'https://images.dayfiles.com/'
 faq:
-  - q: "Why do forms reject HEIC photos?"
-    a: "Many portals and older systems expect JPG or PNG and do not reliably preview iPhone HEIC files."
-  - q: "Is JPG always smaller than HEIC?"
-    a: "Not always. After conversion, check file size because JPG compatibility can come with a larger output."
-  - q: "What should I preserve after conversion?"
-    a: "Keep the original HEIC and save a separate JPG delivery copy for the specific form."
+  - q: Why do forms reject HEIC photos?
+    a: >-
+      Many portals and older systems expect JPG or PNG and do not reliably
+      preview iPhone HEIC files.
+  - q: Is JPG always smaller than HEIC?
+    a: >-
+      Not always. After conversion, check file size because JPG compatibility
+      can come with a larger output.
+  - q: What should I preserve after conversion?
+    a: >-
+      Keep the original HEIC and save a separate JPG delivery copy for the
+      specific form.
 ---
-
 How do you avoid a failed upload when the source photo came from an iPhone as HEIC? Convert the file to a more widely accepted format before the deadline, then check size and readability before submitting. HEIC is efficient, but many form systems still behave more predictably with JPG.
 
 ## Why HEIC creates friction

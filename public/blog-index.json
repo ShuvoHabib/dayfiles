@@ -1,5 +1,21 @@
 [
   {
+    "title": "Convert HEIC to JPG Before Form Submission",
+    "slug": "heic-to-jpg-before-form-submission",
+    "date": "2026-06-14",
+    "product": "images",
+    "description": "Convert HEIC to JPG before form submission with a workflow for compatibility, file-size checks, naming, and final review before upload.",
+    "tags": [
+      "heic to jpg",
+      "image conversion",
+      "form upload"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/heic-to-jpg-before-form-submission/",
+    "featuredImage": "/blog/images/heic-to-jpg-before-form-submission.svg",
+    "featuredImageAlt": "HEIC to JPG form submission workflow",
+    "readingMinutes": 2
+  },
+  {
     "title": "Compress vs Resize for Image KB Limits",
     "slug": "compress-vs-resize-for-image-kb-limits",
     "date": "2026-06-13",
