@@ -1,32 +1,39 @@
 ---
-title: "Convert PNG to JPG for Smaller Delivery Files"
-slug: "png-to-jpg-for-smaller-delivery-files"
-date: "2026-06-06"
-product: "images"
-description: "Convert PNG to JPG for smaller delivery files with a practical review process for photos, screenshots, transparency, and upload limits."
+title: Convert PNG to JPG for Smaller Delivery Files
+slug: png-to-jpg-for-smaller-delivery-files
+date: '2026-06-18'
+product: images
+description: >-
+  Convert PNG to JPG for smaller delivery files with a practical review process
+  for photos, screenshots, transparency, and upload limits.
 tags:
-  - "png to jpg"
-  - "smaller image files"
-  - "image delivery"
-canonicalUrl: "https://dayfiles.com/blog/png-to-jpg-for-smaller-delivery-files"
-featuredImage: "/blog/images/png-to-jpg-for-smaller-delivery-files.svg"
-featuredImageAlt: "PNG to JPG delivery workflow"
+  - png to jpg
+  - smaller image files
+  - image delivery
+canonicalUrl: 'https://dayfiles.com/blog/png-to-jpg-for-smaller-delivery-files/'
+featuredImage: /blog/images/png-to-jpg-for-smaller-delivery-files.svg
+featuredImageAlt: PNG to JPG delivery workflow
 sources:
-  - title: "PNG to JPG"
-    url: "https://images.dayfiles.com/convert/png-to-jpg"
-  - title: "Convert to JPG"
-    url: "https://images.dayfiles.com/convert-to-jpg"
-  - title: "Dayfiles Images Hub"
-    url: "https://dayfiles.com/images/"
+  - title: PNG to JPG
+    url: 'https://images.dayfiles.com/convert/png-to-jpg'
+  - title: Convert to JPG
+    url: 'https://images.dayfiles.com/convert-to-jpg'
+  - title: Dayfiles Images Hub
+    url: 'https://dayfiles.com/images/'
 faq:
-  - q: "When does PNG to JPG make sense?"
-    a: "It makes sense for photo-like PNG files where smaller file size matters more than transparency."
-  - q: "When should I keep PNG?"
-    a: "Keep PNG when the image needs transparency, crisp UI text, logos, or sharp graphic edges."
-  - q: "Should I delete the PNG after conversion?"
-    a: "No. Keep the PNG as the source and save the JPG as a destination-specific delivery copy."
+  - q: When does PNG to JPG make sense?
+    a: >-
+      It makes sense for photo-like PNG files where smaller file size matters
+      more than transparency.
+  - q: When should I keep PNG?
+    a: >-
+      Keep PNG when the image needs transparency, crisp UI text, logos, or sharp
+      graphic edges.
+  - q: Should I delete the PNG after conversion?
+    a: >-
+      No. Keep the PNG as the source and save the JPG as a destination-specific
+      delivery copy.
 ---
-
 How do you reduce a PNG file without ruining the image or losing something important? First decide whether the PNG really needs to stay PNG. Many photo-like PNGs are heavy because the format is preserving detail that the destination does not need. In those cases, converting to JPG can create a smaller delivery file.
 
 ## The PNG question to ask first
