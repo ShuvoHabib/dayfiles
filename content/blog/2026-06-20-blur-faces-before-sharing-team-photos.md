@@ -1,32 +1,39 @@
 ---
-title: "Blur Faces Before Sharing Team Photos"
-slug: "blur-faces-before-sharing-team-photos"
-date: "2026-06-06"
-product: "images"
-description: "Blur faces before sharing team photos with a privacy review workflow for public posts, reports, events, screenshots, and client updates."
+title: Blur Faces Before Sharing Team Photos
+slug: blur-faces-before-sharing-team-photos
+date: '2026-06-20'
+product: images
+description: >-
+  Blur faces before sharing team photos with a privacy review workflow for
+  public posts, reports, events, screenshots, and client updates.
 tags:
-  - "blur faces"
-  - "privacy image workflow"
-  - "team photos"
-canonicalUrl: "https://dayfiles.com/blog/blur-faces-before-sharing-team-photos"
-featuredImage: "/blog/images/blur-faces-before-sharing-team-photos.svg"
-featuredImageAlt: "Face blur workflow before sharing team photos"
+  - blur faces
+  - privacy image workflow
+  - team photos
+canonicalUrl: 'https://dayfiles.com/blog/blur-faces-before-sharing-team-photos/'
+featuredImage: /blog/images/blur-faces-before-sharing-team-photos.svg
+featuredImageAlt: Face blur workflow before sharing team photos
 sources:
-  - title: "Blur Face"
-    url: "https://images.dayfiles.com/blur-face"
-  - title: "Compliance-Sensitive Image Prep"
-    url: "https://dayfiles.com/compliance-sensitive-image-prep/"
-  - title: "Images Dayfiles"
-    url: "https://images.dayfiles.com/"
+  - title: Blur Face
+    url: 'https://images.dayfiles.com/blur-face'
+  - title: Compliance-Sensitive Image Prep
+    url: 'https://dayfiles.com/compliance-sensitive-image-prep/'
+  - title: Images Dayfiles
+    url: 'https://images.dayfiles.com/'
 faq:
-  - q: "When should faces be blurred?"
-    a: "Blur faces when people did not clearly agree to public sharing or when the image is used outside its original private context."
-  - q: "Is face blur enough for every sensitive image?"
-    a: "No. Check backgrounds, badges, screens, documents, location clues, and file metadata too."
-  - q: "Should I keep an unblurred copy?"
-    a: "Keep it only in the approved internal archive if the team has a legitimate reason to retain it."
+  - q: When should faces be blurred?
+    a: >-
+      Blur faces when people did not clearly agree to public sharing or when the
+      image is used outside its original private context.
+  - q: Is face blur enough for every sensitive image?
+    a: >-
+      No. Check backgrounds, badges, screens, documents, location clues, and
+      file metadata too.
+  - q: Should I keep an unblurred copy?
+    a: >-
+      Keep it only in the approved internal archive if the team has a legitimate
+      reason to retain it.
 ---
-
 How do you share useful team photos without exposing people who did not need to become public? Face blur is a practical first step, but the workflow should also review context around the face. A photo can reveal names, screens, badges, addresses, or client details even after faces are hidden.
 
 ## When face blur is the right move

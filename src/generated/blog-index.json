@@ -1,5 +1,21 @@
 [
   {
+    "title": "Blur Faces Before Sharing Team Photos",
+    "slug": "blur-faces-before-sharing-team-photos",
+    "date": "2026-06-20",
+    "product": "images",
+    "description": "Blur faces before sharing team photos with a privacy review workflow for public posts, reports, events, screenshots, and client updates.",
+    "tags": [
+      "blur faces",
+      "privacy image workflow",
+      "team photos"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/blur-faces-before-sharing-team-photos/",
+    "featuredImage": "/blog/images/blur-faces-before-sharing-team-photos.svg",
+    "featuredImageAlt": "Face blur workflow before sharing team photos",
+    "readingMinutes": 2
+  },
+  {
     "title": "Convert PNG to JPG for Smaller Delivery Files",
     "slug": "png-to-jpg-for-smaller-delivery-files",
     "date": "2026-06-18",
