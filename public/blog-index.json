@@ -1,5 +1,21 @@
 [
   {
+    "title": "Remove Backgrounds Without Fake Product Edges",
+    "slug": "remove-background-without-fake-product-edges",
+    "date": "2026-06-23",
+    "product": "images",
+    "description": "Remove image backgrounds without fake product edges using a practical review workflow for marketplace photos, creator assets, and previews.",
+    "tags": [
+      "remove background",
+      "product photos",
+      "image cleanup"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/remove-background-without-fake-product-edges/",
+    "featuredImage": "/blog/images/remove-background-without-fake-product-edges.svg",
+    "featuredImageAlt": "Background removal review workflow for product images",
+    "readingMinutes": 2
+  },
+  {
     "title": "Blur Faces Before Sharing Team Photos",
     "slug": "blur-faces-before-sharing-team-photos",
     "date": "2026-06-20",
