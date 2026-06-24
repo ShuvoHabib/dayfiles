@@ -1,32 +1,39 @@
 ---
-title: "Watermark Images for Public Previews"
-slug: "watermark-images-for-public-previews"
-date: "2026-06-06"
-product: "images"
-description: "Watermark images for public previews with a balanced workflow that protects ownership signals without ruining readability or trust."
+title: Watermark Images for Public Previews
+slug: watermark-images-for-public-previews
+date: '2026-06-24'
+product: images
+description: >-
+  Watermark images for public previews with a balanced workflow that protects
+  ownership signals without ruining readability or trust.
 tags:
-  - "watermark images"
-  - "public previews"
-  - "image protection"
-canonicalUrl: "https://dayfiles.com/blog/watermark-images-for-public-previews"
-featuredImage: "/blog/images/watermark-images-for-public-previews.svg"
-featuredImageAlt: "Watermarking workflow for public image previews"
+  - watermark images
+  - public previews
+  - image protection
+canonicalUrl: 'https://dayfiles.com/blog/watermark-images-for-public-previews/'
+featuredImage: /blog/images/watermark-images-for-public-previews.svg
+featuredImageAlt: Watermarking workflow for public image previews
 sources:
-  - title: "Watermark Image"
-    url: "https://images.dayfiles.com/watermark-image"
-  - title: "Images Dayfiles"
-    url: "https://images.dayfiles.com/"
-  - title: "Image Workflows"
-    url: "https://dayfiles.com/image-workflows/"
+  - title: Watermark Image
+    url: 'https://images.dayfiles.com/watermark-image'
+  - title: Images Dayfiles
+    url: 'https://images.dayfiles.com/'
+  - title: Image Workflows
+    url: 'https://dayfiles.com/image-workflows/'
 faq:
-  - q: "Where should a watermark go?"
-    a: "Place it where it discourages casual reuse but does not hide the main content users need to inspect."
-  - q: "Should watermarks be opaque?"
-    a: "Usually no. Moderate opacity often protects better without making the image feel careless."
-  - q: "Is watermarking a security control?"
-    a: "It is mostly a deterrent and attribution signal, not a strong security control."
+  - q: Where should a watermark go?
+    a: >-
+      Place it where it discourages casual reuse but does not hide the main
+      content users need to inspect.
+  - q: Should watermarks be opaque?
+    a: >-
+      Usually no. Moderate opacity often protects better without making the
+      image feel careless.
+  - q: Is watermarking a security control?
+    a: >-
+      It is mostly a deterrent and attribution signal, not a strong security
+      control.
 ---
-
 How do you watermark an image without making the preview unusable? The trick is to decide what the viewer must still inspect, then place the watermark around that need. Watermarking should support trust and ownership, not punish the person trying to evaluate the image.
 
 ## When watermarking makes sense

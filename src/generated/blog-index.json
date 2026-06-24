@@ -1,5 +1,21 @@
 [
   {
+    "title": "Watermark Images for Public Previews",
+    "slug": "watermark-images-for-public-previews",
+    "date": "2026-06-24",
+    "product": "images",
+    "description": "Watermark images for public previews with a balanced workflow that protects ownership signals without ruining readability or trust.",
+    "tags": [
+      "watermark images",
+      "public previews",
+      "image protection"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/watermark-images-for-public-previews/",
+    "featuredImage": "/blog/images/watermark-images-for-public-previews.svg",
+    "featuredImageAlt": "Watermarking workflow for public image previews",
+    "readingMinutes": 2
+  },
+  {
     "title": "Remove Backgrounds Without Fake Product Edges",
     "slug": "remove-background-without-fake-product-edges",
     "date": "2026-06-23",
