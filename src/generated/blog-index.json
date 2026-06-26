@@ -1,5 +1,21 @@
 [
   {
+    "title": "Video to GIF Workflow for Product Changelog Notes",
+    "slug": "video-to-gif-for-product-changelog-notes",
+    "date": "2026-06-26",
+    "product": "images",
+    "description": "Turn short videos into GIFs for product updates with a workflow for trimming, file size, readability, and lightweight release communication.",
+    "tags": [
+      "video to gif",
+      "product updates",
+      "image workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/video-to-gif-for-product-changelog-notes/",
+    "featuredImage": "/blog/images/video-to-gif-for-product-changelog-notes.svg",
+    "featuredImageAlt": "Video to GIF workflow for product updates",
+    "readingMinutes": 2
+  },
+  {
     "title": "Watermark Images for Public Previews",
     "slug": "watermark-images-for-public-previews",
     "date": "2026-06-24",
