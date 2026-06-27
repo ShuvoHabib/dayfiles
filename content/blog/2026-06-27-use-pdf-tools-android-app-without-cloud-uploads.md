@@ -1,32 +1,39 @@
 ---
-title: "Use PDF Tools Android App Without Cloud Uploads"
-slug: "use-pdf-tools-android-app-without-cloud-uploads"
-date: "2026-06-06"
-product: "pdf"
-description: "Use the PDF Tools Android app with a practical local-first workflow for merge, split, compress, organize, convert, and inspect tasks."
+title: Use PDF Tools Android App Without Cloud Uploads
+slug: use-pdf-tools-android-app-without-cloud-uploads
+date: '2026-06-27'
+product: pdf
+description: >-
+  Use the PDF Tools Android app with a practical local-first workflow for merge,
+  split, compress, organize, convert, and inspect tasks.
 tags:
-  - "pdf tools android"
-  - "private pdf app"
-  - "local pdf workflow"
-canonicalUrl: "https://dayfiles.com/blog/use-pdf-tools-android-app-without-cloud-uploads"
-featuredImage: "/blog/images/use-pdf-tools-android-app-without-cloud-uploads.svg"
-featuredImageAlt: "Android PDF tools local workflow"
+  - pdf tools android
+  - private pdf app
+  - local pdf workflow
+canonicalUrl: 'https://dayfiles.com/blog/use-pdf-tools-android-app-without-cloud-uploads/'
+featuredImage: /blog/images/use-pdf-tools-android-app-without-cloud-uploads.svg
+featuredImageAlt: Android PDF tools local workflow
 sources:
-  - title: "PDF Tools on Google Play"
-    url: "https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor"
-  - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
-  - title: "PDF Toolkit"
-    url: "https://dayfiles.com/pdf-toolkit/"
+  - title: PDF Tools on Google Play
+    url: 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor'
+  - title: PDF Dayfiles
+    url: 'https://pdf.dayfiles.com/'
+  - title: PDF Toolkit
+    url: 'https://dayfiles.com/pdf-toolkit/'
 faq:
-  - q: "Does the Android app need an account?"
-    a: "The Play listing describes core PDF tools as usable without creating an account or signing in."
-  - q: "Which tasks fit the Android app?"
-    a: "Common fits include merge, split, compress, organize, rotate, convert, lock, unlock, and PDF inspection workflows."
-  - q: "Should I still review exported files?"
-    a: "Yes. Local processing reduces upload friction, but exported files should still be checked before sharing."
+  - q: Does the Android app need an account?
+    a: >-
+      The Play listing describes core PDF tools as usable without creating an
+      account or signing in.
+  - q: Which tasks fit the Android app?
+    a: >-
+      Common fits include merge, split, compress, organize, rotate, convert,
+      lock, unlock, and PDF inspection workflows.
+  - q: Should I still review exported files?
+    a: >-
+      Yes. Local processing reduces upload friction, but exported files should
+      still be checked before sharing.
 ---
-
 How do you use a PDF app on Android without sending every document through a cloud upload queue? The practical approach is to choose local-first tasks, keep the source files organized, and review the export before sharing. The [PDF Tools Android app](https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor) is listed around that kind of everyday workflow.
 
 ## What the Android app is best for
