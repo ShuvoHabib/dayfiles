@@ -1,32 +1,39 @@
 ---
-title: "Merge PDFs on Android for Assignments"
-slug: "merge-pdfs-on-android-for-assignments"
-date: "2026-06-06"
-product: "pdf"
-description: "Merge PDFs on Android for assignments with a student-friendly workflow for file order, compression, naming, review, and final submission."
+title: Merge PDFs on Android for Assignments
+slug: merge-pdfs-on-android-for-assignments
+date: '2026-06-30'
+product: pdf
+description: >-
+  Merge PDFs on Android for assignments with a student-friendly workflow for
+  file order, compression, naming, review, and final submission.
 tags:
-  - "merge pdf android"
-  - "student pdf workflow"
-  - "pdf app"
-canonicalUrl: "https://dayfiles.com/blog/merge-pdfs-on-android-for-assignments"
-featuredImage: "/blog/images/merge-pdfs-on-android-for-assignments.svg"
-featuredImageAlt: "Android assignment PDF merge workflow"
+  - merge pdf android
+  - student pdf workflow
+  - pdf app
+canonicalUrl: 'https://dayfiles.com/blog/merge-pdfs-on-android-for-assignments/'
+featuredImage: /blog/images/merge-pdfs-on-android-for-assignments.svg
+featuredImageAlt: Android assignment PDF merge workflow
 sources:
-  - title: "PDF Tools on Google Play"
-    url: "https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor"
-  - title: "Merge PDF"
-    url: "https://pdf.dayfiles.com/merge-pdf"
-  - title: "PDF Toolkit"
-    url: "https://dayfiles.com/pdf-toolkit/"
+  - title: PDF Tools on Google Play
+    url: 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor'
+  - title: Merge PDF
+    url: 'https://pdf.dayfiles.com/merge-pdf'
+  - title: PDF Toolkit
+    url: 'https://dayfiles.com/pdf-toolkit/'
 faq:
-  - q: "What should students check before merging PDFs?"
-    a: "Check the required order, file names, page count, file size limit, and whether every attachment belongs in the final packet."
-  - q: "Should the merged PDF be compressed?"
-    a: "Compress only if the final file exceeds the submission limit or is too heavy to share comfortably."
-  - q: "Why keep separate source files?"
-    a: "Separate source files make corrections easier if one page or attachment needs to be replaced later."
+  - q: What should students check before merging PDFs?
+    a: >-
+      Check the required order, file names, page count, file size limit, and
+      whether every attachment belongs in the final packet.
+  - q: Should the merged PDF be compressed?
+    a: >-
+      Compress only if the final file exceeds the submission limit or is too
+      heavy to share comfortably.
+  - q: Why keep separate source files?
+    a: >-
+      Separate source files make corrections easier if one page or attachment
+      needs to be replaced later.
 ---
-
 How do you merge assignment PDFs on Android without submitting pages in the wrong order? Start by planning the packet before you tap merge. The tool can combine files, but the student still has to decide which document comes first, what belongs in the final copy, and how the result should be named.
 
 ## Why assignment merges go wrong
