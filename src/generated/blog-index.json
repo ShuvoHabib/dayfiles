@@ -1,5 +1,21 @@
 [
   {
+    "title": "Compress PDFs on Android Before Email",
+    "slug": "compress-pdfs-on-android-before-email",
+    "date": "2026-07-04",
+    "product": "pdf",
+    "description": "Compress PDFs on Android before email with a workflow for attachment limits, readability, source copies, and final review before sending.",
+    "tags": [
+      "compress pdf android",
+      "email attachment",
+      "pdf workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/compress-pdfs-on-android-before-email/",
+    "featuredImage": "/blog/images/compress-pdfs-on-android-before-email.svg",
+    "featuredImageAlt": "Android PDF compression before email workflow",
+    "readingMinutes": 2
+  },
+  {
     "title": "Merge PDFs on Android for Assignments",
     "slug": "merge-pdfs-on-android-for-assignments",
     "date": "2026-06-30",

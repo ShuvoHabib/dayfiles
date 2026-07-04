@@ -1,32 +1,37 @@
 ---
-title: "Compress PDFs on Android Before Email"
-slug: "compress-pdfs-on-android-before-email"
-date: "2026-06-06"
-product: "pdf"
-description: "Compress PDFs on Android before email with a workflow for attachment limits, readability, source copies, and final review before sending."
+title: Compress PDFs on Android Before Email
+slug: compress-pdfs-on-android-before-email
+date: '2026-07-04'
+product: pdf
+description: >-
+  Compress PDFs on Android before email with a workflow for attachment limits,
+  readability, source copies, and final review before sending.
 tags:
-  - "compress pdf android"
-  - "email attachment"
-  - "pdf workflow"
-canonicalUrl: "https://dayfiles.com/blog/compress-pdfs-on-android-before-email"
-featuredImage: "/blog/images/compress-pdfs-on-android-before-email.svg"
-featuredImageAlt: "Android PDF compression before email workflow"
+  - compress pdf android
+  - email attachment
+  - pdf workflow
+canonicalUrl: 'https://dayfiles.com/blog/compress-pdfs-on-android-before-email/'
+featuredImage: /blog/images/compress-pdfs-on-android-before-email.svg
+featuredImageAlt: Android PDF compression before email workflow
 sources:
-  - title: "PDF Tools on Google Play"
-    url: "https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor"
-  - title: "Compress PDF"
-    url: "https://pdf.dayfiles.com/compress-pdf"
-  - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+  - title: PDF Tools on Google Play
+    url: 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor'
+  - title: Compress PDF
+    url: 'https://pdf.dayfiles.com/compress-pdf'
+  - title: PDF Dayfiles
+    url: 'https://pdf.dayfiles.com/'
 faq:
-  - q: "When should I compress a PDF before email?"
-    a: "Compress when the attachment is too large for the email system or too heavy for the recipient to download comfortably."
-  - q: "What should I check after compression?"
-    a: "Check text, signatures, scanned pages, images, file size, and whether the recipient can still read the document."
-  - q: "Should I overwrite the original?"
-    a: "No. Save the compressed file as a separate email-ready copy."
+  - q: When should I compress a PDF before email?
+    a: >-
+      Compress when the attachment is too large for the email system or too
+      heavy for the recipient to download comfortably.
+  - q: What should I check after compression?
+    a: >-
+      Check text, signatures, scanned pages, images, file size, and whether the
+      recipient can still read the document.
+  - q: Should I overwrite the original?
+    a: No. Save the compressed file as a separate email-ready copy.
 ---
-
 How do you compress a PDF on Android without making the attachment unreadable? Treat compression as a delivery step, not a blind file shrink. The goal is to make the PDF easier to send while preserving the parts the recipient needs to read.
 
 ## Why email compression needs review
