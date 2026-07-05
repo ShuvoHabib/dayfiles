@@ -1,32 +1,39 @@
 ---
-title: "Organize PDF Pages on Phone Before Sharing"
-slug: "organize-pdf-pages-on-phone-before-sharing"
-date: "2026-06-06"
-product: "pdf"
-description: "Organize PDF pages on a phone before sharing with a workflow for order, page removal, rotation, extraction, and final mobile review."
+title: Organize PDF Pages on Phone Before Sharing
+slug: organize-pdf-pages-on-phone-before-sharing
+date: '2026-07-05'
+product: pdf
+description: >-
+  Organize PDF pages on a phone before sharing with a workflow for order, page
+  removal, rotation, extraction, and final mobile review.
 tags:
-  - "organize pdf android"
-  - "pdf page order"
-  - "mobile pdf workflow"
-canonicalUrl: "https://dayfiles.com/blog/organize-pdf-pages-on-phone-before-sharing"
-featuredImage: "/blog/images/organize-pdf-pages-on-phone-before-sharing.svg"
-featuredImageAlt: "Mobile PDF page organization workflow"
+  - organize pdf android
+  - pdf page order
+  - mobile pdf workflow
+canonicalUrl: 'https://dayfiles.com/blog/organize-pdf-pages-on-phone-before-sharing/'
+featuredImage: /blog/images/organize-pdf-pages-on-phone-before-sharing.svg
+featuredImageAlt: Mobile PDF page organization workflow
 sources:
-  - title: "PDF Tools on Google Play"
-    url: "https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor"
-  - title: "Organize PDF"
-    url: "https://pdf.dayfiles.com/organize-pdf"
-  - title: "PDF Toolkit"
-    url: "https://dayfiles.com/pdf-toolkit/"
+  - title: PDF Tools on Google Play
+    url: 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor'
+  - title: Organize PDF
+    url: 'https://pdf.dayfiles.com/organize-pdf'
+  - title: PDF Toolkit
+    url: 'https://dayfiles.com/pdf-toolkit/'
 faq:
-  - q: "What can page organization include?"
-    a: "It can include reordering pages, removing extra pages, rotating pages, and extracting the section that should be shared."
-  - q: "Why review on the phone after organizing?"
-    a: "Mobile thumbnails can hide mistakes, so opening the final file helps catch wrong order, missing pages, or rotated scans."
-  - q: "Should I organize the only copy?"
-    a: "No. Work from a copy so the original remains available if the order needs to be rebuilt."
+  - q: What can page organization include?
+    a: >-
+      It can include reordering pages, removing extra pages, rotating pages, and
+      extracting the section that should be shared.
+  - q: Why review on the phone after organizing?
+    a: >-
+      Mobile thumbnails can hide mistakes, so opening the final file helps catch
+      wrong order, missing pages, or rotated scans.
+  - q: Should I organize the only copy?
+    a: >-
+      No. Work from a copy so the original remains available if the order needs
+      to be rebuilt.
 ---
-
 How do you organize PDF pages on a phone without losing the structure of the document? Use page organization as a review workflow, not just a drag-and-drop task. The important question is what the recipient should see first, second, and last.
 
 ## What page organization solves
