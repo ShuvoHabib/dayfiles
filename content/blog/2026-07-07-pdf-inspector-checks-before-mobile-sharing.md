@@ -1,32 +1,39 @@
 ---
-title: "PDF Inspector Checks Before Mobile Sharing"
-slug: "pdf-inspector-checks-before-mobile-sharing"
-date: "2026-06-06"
-product: "pdf"
-description: "Run PDF inspector checks before mobile sharing with a practical review of file size, page count, password status, metadata, and readiness."
+title: PDF Inspector Checks Before Mobile Sharing
+slug: pdf-inspector-checks-before-mobile-sharing
+date: '2026-07-07'
+product: pdf
+description: >-
+  Run PDF inspector checks before mobile sharing with a practical review of file
+  size, page count, password status, metadata, and readiness.
 tags:
-  - "pdf inspector"
-  - "mobile pdf sharing"
-  - "pdf checks"
-canonicalUrl: "https://dayfiles.com/blog/pdf-inspector-checks-before-mobile-sharing"
-featuredImage: "/blog/images/pdf-inspector-checks-before-mobile-sharing.svg"
-featuredImageAlt: "PDF inspection checklist before mobile sharing"
+  - pdf inspector
+  - mobile pdf sharing
+  - pdf checks
+canonicalUrl: 'https://dayfiles.com/blog/pdf-inspector-checks-before-mobile-sharing/'
+featuredImage: /blog/images/pdf-inspector-checks-before-mobile-sharing.svg
+featuredImageAlt: PDF inspection checklist before mobile sharing
 sources:
-  - title: "PDF Tools on Google Play"
-    url: "https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor"
-  - title: "PDF Metadata Viewer"
-    url: "https://pdf.dayfiles.com/pdf-metadata-viewer"
-  - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+  - title: PDF Tools on Google Play
+    url: 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor'
+  - title: PDF Metadata Viewer
+    url: 'https://pdf.dayfiles.com/pdf-metadata-viewer'
+  - title: PDF Dayfiles
+    url: 'https://pdf.dayfiles.com/'
 faq:
-  - q: "What should a PDF inspector check?"
-    a: "Useful checks include file size, page count, metadata, password status, permissions, and whether the file is ready for the destination."
-  - q: "Why check metadata?"
-    a: "Metadata can expose titles, author names, creation tools, or old document context that may not belong in the shared copy."
-  - q: "Is inspection a substitute for reading the PDF?"
-    a: "No. Inspection supports review, but the final PDF should still be opened and checked visually."
+  - q: What should a PDF inspector check?
+    a: >-
+      Useful checks include file size, page count, metadata, password status,
+      permissions, and whether the file is ready for the destination.
+  - q: Why check metadata?
+    a: >-
+      Metadata can expose titles, author names, creation tools, or old document
+      context that may not belong in the shared copy.
+  - q: Is inspection a substitute for reading the PDF?
+    a: >-
+      No. Inspection supports review, but the final PDF should still be opened
+      and checked visually.
 ---
-
 How do you know whether a PDF is ready to share from your phone? Open it, yes, but also inspect the basic file facts. A visual review catches page content. Inspector checks catch file size, page count, password status, and metadata issues that are easy to miss on mobile.
 
 ## Why inspection matters before sharing

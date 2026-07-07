@@ -1,5 +1,21 @@
 [
   {
+    "title": "PDF Inspector Checks Before Mobile Sharing",
+    "slug": "pdf-inspector-checks-before-mobile-sharing",
+    "date": "2026-07-07",
+    "product": "pdf",
+    "description": "Run PDF inspector checks before mobile sharing with a practical review of file size, page count, password status, metadata, and readiness.",
+    "tags": [
+      "pdf inspector",
+      "mobile pdf sharing",
+      "pdf checks"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/pdf-inspector-checks-before-mobile-sharing/",
+    "featuredImage": "/blog/images/pdf-inspector-checks-before-mobile-sharing.svg",
+    "featuredImageAlt": "PDF inspection checklist before mobile sharing",
+    "readingMinutes": 2
+  },
+  {
     "title": "Organize PDF Pages on Phone Before Sharing",
     "slug": "organize-pdf-pages-on-phone-before-sharing",
     "date": "2026-07-05",
