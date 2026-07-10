@@ -1,5 +1,21 @@
 [
   {
+    "title": "Lock PDFs on Android Before Client Handoff",
+    "slug": "lock-pdfs-on-android-before-client-handoff",
+    "date": "2026-07-10",
+    "product": "pdf",
+    "description": "Lock PDFs on Android before client handoff with a workflow for passwords, recipient readiness, archive copies, and delivery review.",
+    "tags": [
+      "lock pdf android",
+      "client handoff",
+      "pdf security"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/lock-pdfs-on-android-before-client-handoff/",
+    "featuredImage": "/blog/images/lock-pdfs-on-android-before-client-handoff.svg",
+    "featuredImageAlt": "Android PDF locking workflow before client handoff",
+    "readingMinutes": 1
+  },
+  {
     "title": "PDF Inspector Checks Before Mobile Sharing",
     "slug": "pdf-inspector-checks-before-mobile-sharing",
     "date": "2026-07-07",

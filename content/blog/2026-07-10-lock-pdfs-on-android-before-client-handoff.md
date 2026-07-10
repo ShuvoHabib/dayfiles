@@ -1,32 +1,37 @@
 ---
-title: "Lock PDFs on Android Before Client Handoff"
-slug: "lock-pdfs-on-android-before-client-handoff"
-date: "2026-06-06"
-product: "pdf"
-description: "Lock PDFs on Android before client handoff with a workflow for passwords, recipient readiness, archive copies, and delivery review."
+title: Lock PDFs on Android Before Client Handoff
+slug: lock-pdfs-on-android-before-client-handoff
+date: '2026-07-10'
+product: pdf
+description: >-
+  Lock PDFs on Android before client handoff with a workflow for passwords,
+  recipient readiness, archive copies, and delivery review.
 tags:
-  - "lock pdf android"
-  - "client handoff"
-  - "pdf security"
-canonicalUrl: "https://dayfiles.com/blog/lock-pdfs-on-android-before-client-handoff"
-featuredImage: "/blog/images/lock-pdfs-on-android-before-client-handoff.svg"
-featuredImageAlt: "Android PDF locking workflow before client handoff"
+  - lock pdf android
+  - client handoff
+  - pdf security
+canonicalUrl: 'https://dayfiles.com/blog/lock-pdfs-on-android-before-client-handoff/'
+featuredImage: /blog/images/lock-pdfs-on-android-before-client-handoff.svg
+featuredImageAlt: Android PDF locking workflow before client handoff
 sources:
-  - title: "PDF Tools on Google Play"
-    url: "https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor"
-  - title: "Lock PDF"
-    url: "https://pdf.dayfiles.com/lock-pdf"
-  - title: "PDF Confidential Client Report Workflow"
-    url: "https://dayfiles.com/blog/pdf-confidential-client-report-workflow"
+  - title: PDF Tools on Google Play
+    url: 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor'
+  - title: Lock PDF
+    url: 'https://pdf.dayfiles.com/lock-pdf'
+  - title: PDF Confidential Client Report Workflow
+    url: 'https://dayfiles.com/blog/pdf-confidential-client-report-workflow'
 faq:
-  - q: "When should a PDF be locked?"
-    a: "Lock a PDF when the recipient expects password protection or when the file contains sensitive material that should not travel as an open attachment."
-  - q: "How should the password be shared?"
-    a: "Share it through a different channel from the PDF whenever possible."
-  - q: "Should I keep an unlocked archive copy?"
-    a: "Keep an unlocked source only in the approved internal archive if your workflow requires future edits."
+  - q: When should a PDF be locked?
+    a: >-
+      Lock a PDF when the recipient expects password protection or when the file
+      contains sensitive material that should not travel as an open attachment.
+  - q: How should the password be shared?
+    a: Share it through a different channel from the PDF whenever possible.
+  - q: Should I keep an unlocked archive copy?
+    a: >-
+      Keep an unlocked source only in the approved internal archive if your
+      workflow requires future edits.
 ---
-
 How do you lock a PDF on Android without creating a support problem for the client? Password protection is useful only when the recipient can open the file and the team can still manage the archive. The workflow needs a password plan, not just a locked export.
 
 ## When locking is appropriate
