@@ -1,32 +1,37 @@
 ---
-title: "Convert PDF to JPG on Phone for Page Previews"
-slug: "pdf-to-jpg-on-phone-for-page-previews"
-date: "2026-06-06"
-product: "pdf"
-description: "Convert PDF to JPG on a phone for page previews with a workflow for selecting pages, checking readability, and sharing lighter visuals."
+title: Convert PDF to JPG on Phone for Page Previews
+slug: pdf-to-jpg-on-phone-for-page-previews
+date: '2026-07-15'
+product: pdf
+description: >-
+  Convert PDF to JPG on a phone for page previews with a workflow for selecting
+  pages, checking readability, and sharing lighter visuals.
 tags:
-  - "pdf to jpg android"
-  - "page previews"
-  - "mobile pdf workflow"
-canonicalUrl: "https://dayfiles.com/blog/pdf-to-jpg-on-phone-for-page-previews"
-featuredImage: "/blog/images/pdf-to-jpg-on-phone-for-page-previews.svg"
-featuredImageAlt: "PDF to JPG phone preview workflow"
+  - pdf to jpg android
+  - page previews
+  - mobile pdf workflow
+canonicalUrl: 'https://dayfiles.com/blog/pdf-to-jpg-on-phone-for-page-previews/'
+featuredImage: /blog/images/pdf-to-jpg-on-phone-for-page-previews.svg
+featuredImageAlt: PDF to JPG phone preview workflow
 sources:
-  - title: "PDF Tools on Google Play"
-    url: "https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor"
-  - title: "PDF to JPG"
-    url: "https://pdf.dayfiles.com/pdf-to-jpg"
-  - title: "Images Dayfiles"
-    url: "https://images.dayfiles.com/"
+  - title: PDF Tools on Google Play
+    url: 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor'
+  - title: PDF to JPG
+    url: 'https://pdf.dayfiles.com/pdf-to-jpg'
+  - title: Images Dayfiles
+    url: 'https://images.dayfiles.com/'
 faq:
-  - q: "When is PDF to JPG useful?"
-    a: "It is useful when someone needs a visual page preview rather than the full editable or printable PDF."
-  - q: "Should every page be exported?"
-    a: "No. Export only the pages that need to be previewed or shared as images."
-  - q: "What should I check after export?"
-    a: "Check resolution, readability, page selection, file size, and whether sensitive pages were excluded."
+  - q: When is PDF to JPG useful?
+    a: >-
+      It is useful when someone needs a visual page preview rather than the full
+      editable or printable PDF.
+  - q: Should every page be exported?
+    a: No. Export only the pages that need to be previewed or shared as images.
+  - q: What should I check after export?
+    a: >-
+      Check resolution, readability, page selection, file size, and whether
+      sensitive pages were excluded.
 ---
-
 How do you share a PDF page preview from your phone without sending the full document? Convert only the needed pages to JPG, review the output, and share the image copy. This is useful when the recipient needs to see a page, not handle the whole PDF.
 
 ## When page previews help
