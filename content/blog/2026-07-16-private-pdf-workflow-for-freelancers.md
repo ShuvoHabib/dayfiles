@@ -1,32 +1,40 @@
 ---
-title: "Private PDF Workflow for Freelancers"
-slug: "private-pdf-workflow-for-freelancers"
-date: "2026-06-06"
-product: "pdf"
-description: "Build a private PDF workflow for freelancers handling quotes, invoices, contracts, reports, signatures, compression, and client handoff."
+title: Private PDF Workflow for Freelancers
+slug: private-pdf-workflow-for-freelancers
+date: '2026-07-16'
+product: pdf
+description: >-
+  Build a private PDF workflow for freelancers handling quotes, invoices,
+  contracts, reports, signatures, compression, and client handoff.
 tags:
-  - "freelancer pdf workflow"
-  - "client documents"
-  - "private pdf tools"
-canonicalUrl: "https://dayfiles.com/blog/private-pdf-workflow-for-freelancers"
-featuredImage: "/blog/images/private-pdf-workflow-for-freelancers.svg"
-featuredImageAlt: "Freelancer private PDF workflow"
+  - freelancer pdf workflow
+  - client documents
+  - private pdf tools
+canonicalUrl: 'https://dayfiles.com/blog/private-pdf-workflow-for-freelancers/'
+featuredImage: /blog/images/private-pdf-workflow-for-freelancers.svg
+featuredImageAlt: Freelancer private PDF workflow
 sources:
-  - title: "PDF Tools on Google Play"
-    url: "https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor"
-  - title: "PDF Toolkit"
-    url: "https://dayfiles.com/pdf-toolkit/"
-  - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+  - title: PDF Tools on Google Play
+    url: 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor'
+  - title: PDF Toolkit
+    url: 'https://dayfiles.com/pdf-toolkit/'
+  - title: PDF Dayfiles
+    url: 'https://pdf.dayfiles.com/'
 faq:
-  - q: "Which PDF tasks do freelancers repeat most?"
-    a: "Common tasks include merging attachments, compressing files, signing agreements, locking sensitive documents, and converting between PDF and DOCX."
-  - q: "Why use a local-first workflow?"
-    a: "It reduces unnecessary upload friction for routine supported tasks and keeps source files closer to the device."
-  - q: "What should be archived?"
-    a: "Archive the source files, final delivery PDF, and any signed or password-protected versions that support the client record."
+  - q: Which PDF tasks do freelancers repeat most?
+    a: >-
+      Common tasks include merging attachments, compressing files, signing
+      agreements, locking sensitive documents, and converting between PDF and
+      DOCX.
+  - q: Why use a local-first workflow?
+    a: >-
+      It reduces unnecessary upload friction for routine supported tasks and
+      keeps source files closer to the device.
+  - q: What should be archived?
+    a: >-
+      Archive the source files, final delivery PDF, and any signed or
+      password-protected versions that support the client record.
 ---
-
 How can a freelancer keep client PDF work organized without turning every small task into a cloud upload? Build a simple repeatable workflow: collect, prepare, review, protect if needed, deliver, and archive. The tools matter, but the order matters more.
 
 ## Where freelancers lose time

@@ -1,5 +1,21 @@
 [
   {
+    "title": "Private PDF Workflow for Freelancers",
+    "slug": "private-pdf-workflow-for-freelancers",
+    "date": "2026-07-16",
+    "product": "pdf",
+    "description": "Build a private PDF workflow for freelancers handling quotes, invoices, contracts, reports, signatures, compression, and client handoff.",
+    "tags": [
+      "freelancer pdf workflow",
+      "client documents",
+      "private pdf tools"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/private-pdf-workflow-for-freelancers/",
+    "featuredImage": "/blog/images/private-pdf-workflow-for-freelancers.svg",
+    "featuredImageAlt": "Freelancer private PDF workflow",
+    "readingMinutes": 1
+  },
+  {
     "title": "Convert PDF to JPG on Phone for Page Previews",
     "slug": "pdf-to-jpg-on-phone-for-page-previews",
     "date": "2026-07-15",
