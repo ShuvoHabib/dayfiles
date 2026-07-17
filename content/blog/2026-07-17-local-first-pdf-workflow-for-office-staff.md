@@ -1,32 +1,37 @@
 ---
-title: "Local-First PDF Workflow for Office Staff"
-slug: "local-first-pdf-workflow-for-office-staff"
-date: "2026-06-06"
-product: "pdf"
-description: "Create a local-first PDF workflow for office staff managing reports, forms, scans, page order, compression, and daily document sharing."
+title: Local-First PDF Workflow for Office Staff
+slug: local-first-pdf-workflow-for-office-staff
+date: '2026-07-17'
+product: pdf
+description: >-
+  Create a local-first PDF workflow for office staff managing reports, forms,
+  scans, page order, compression, and daily document sharing.
 tags:
-  - "office pdf workflow"
-  - "local pdf tools"
-  - "document sharing"
-canonicalUrl: "https://dayfiles.com/blog/local-first-pdf-workflow-for-office-staff"
-featuredImage: "/blog/images/local-first-pdf-workflow-for-office-staff.svg"
-featuredImageAlt: "Office staff local-first PDF workflow"
+  - office pdf workflow
+  - local pdf tools
+  - document sharing
+canonicalUrl: 'https://dayfiles.com/blog/local-first-pdf-workflow-for-office-staff/'
+featuredImage: /blog/images/local-first-pdf-workflow-for-office-staff.svg
+featuredImageAlt: Office staff local-first PDF workflow
 sources:
-  - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
-  - title: "PDF Tools on Google Play"
-    url: "https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor"
-  - title: "PDF Workflows"
-    url: "https://dayfiles.com/pdf-workflows/"
+  - title: PDF Dayfiles
+    url: 'https://pdf.dayfiles.com/'
+  - title: PDF Tools on Google Play
+    url: 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor'
+  - title: PDF Workflows
+    url: 'https://dayfiles.com/pdf-workflows/'
 faq:
-  - q: "What makes a PDF workflow local-first?"
-    a: "It uses device or browser processing for supported routine tasks instead of forcing every file through a remote upload queue."
-  - q: "Which office tasks fit this approach?"
-    a: "Merging, splitting, compressing, organizing, rotating, inspecting, locking, and converting routine PDFs are common fits."
-  - q: "Does local-first remove all risk?"
-    a: "No. Staff still need clear storage, naming, review, and sharing rules."
+  - q: What makes a PDF workflow local-first?
+    a: >-
+      It uses device or browser processing for supported routine tasks instead
+      of forcing every file through a remote upload queue.
+  - q: Which office tasks fit this approach?
+    a: >-
+      Merging, splitting, compressing, organizing, rotating, inspecting,
+      locking, and converting routine PDFs are common fits.
+  - q: Does local-first remove all risk?
+    a: 'No. Staff still need clear storage, naming, review, and sharing rules.'
 ---
-
 How can office staff handle everyday PDFs without creating a messy chain of uploads, downloads, and duplicate files? A local-first workflow helps by keeping supported routine tasks close to the browser or device, then adding a clear review step before sharing.
 
 ## What office PDF work usually includes

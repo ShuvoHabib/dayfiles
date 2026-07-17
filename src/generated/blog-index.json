@@ -1,5 +1,21 @@
 [
   {
+    "title": "Local-First PDF Workflow for Office Staff",
+    "slug": "local-first-pdf-workflow-for-office-staff",
+    "date": "2026-07-17",
+    "product": "pdf",
+    "description": "Create a local-first PDF workflow for office staff managing reports, forms, scans, page order, compression, and daily document sharing.",
+    "tags": [
+      "office pdf workflow",
+      "local pdf tools",
+      "document sharing"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/local-first-pdf-workflow-for-office-staff/",
+    "featuredImage": "/blog/images/local-first-pdf-workflow-for-office-staff.svg",
+    "featuredImageAlt": "Office staff local-first PDF workflow",
+    "readingMinutes": 1
+  },
+  {
     "title": "Private PDF Workflow for Freelancers",
     "slug": "private-pdf-workflow-for-freelancers",
     "date": "2026-07-16",
