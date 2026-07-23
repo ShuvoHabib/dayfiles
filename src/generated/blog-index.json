@@ -1,5 +1,21 @@
 [
   {
+    "title": "Android PDF App vs Browser PDF Tools",
+    "slug": "android-pdf-app-vs-browser-pdf-tools",
+    "date": "2026-07-23",
+    "product": "pdf",
+    "description": "Compare the Android PDF app and browser PDF tools by device context, file location, offline use, task type, review needs, and handoff.",
+    "tags": [
+      "android pdf app",
+      "browser pdf tools",
+      "pdf workflow"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/android-pdf-app-vs-browser-pdf-tools/",
+    "featuredImage": "/blog/images/android-pdf-app-vs-browser-pdf-tools.svg",
+    "featuredImageAlt": "Android app versus browser PDF tools comparison",
+    "readingMinutes": 1
+  },
+  {
     "title": "Local-First PDF Workflow for Office Staff",
     "slug": "local-first-pdf-workflow-for-office-staff",
     "date": "2026-07-17",
