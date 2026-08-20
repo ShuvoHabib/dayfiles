@@ -9,7 +9,7 @@ tags:
   - "privacy workflow"
   - "images dayfiles"
   - "sensitive photos"
-canonicalUrl: "https://dayfiles.com/blog/images-blur-faces-before-sharing-guide/"
+canonicalUrl: "https://dayfiles.com/image-workflows/"
 featuredImage: "/blog/images/images-blur-faces-before-sharing-guide.svg"
 featuredImageAlt: "Face blur workflow for sensitive photos"
 sources:
@@ -111,9 +111,9 @@ Run it again only when the review reveals one specific correction target, such a
 
 ## More Dayfiles guides around blur faces before sharing sensitive photos
 
-- [How to Compress Images in Bulk Before Upload Deadlines](/blog/images-bulk-image-compression-guide/)
+- [How to Compress Images in Bulk Before Upload Deadlines](/image-workflows/)
 - [story operations team privacy first daily files](/blog/story-operations-team-privacy-first-daily-files/)
-- [eis social content production workflow](/blog/eis-social-content-production-workflow/)
+- [eis social content production workflow](/image-workflows/)
 
 ## Before you release the blur faces before sharing sensitive photos batch
 

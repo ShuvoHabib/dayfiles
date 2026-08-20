@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readPosts, isValidUrl, normalizeDateString } from './lib.mjs';
+import { isRetiredBlogSlug } from './remediation.mjs';
 
 const REQUIRED_STRING_FIELDS = [
   'title',
@@ -73,6 +74,62 @@ function validateBody(body, errors, file) {
   }
 }
 
+function bodyShingles(body, size = 5) {
+  const words = String(body || '')
+    .toLowerCase()
+    .replace(/\[[^\]]+\]\([^)]*\)/g, ' ')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  const shingles = new Set();
+  for (let index = 0; index <= words.length - size; index += 1) {
+    shingles.add(words.slice(index, index + size).join(' '));
+  }
+  return shingles;
+}
+
+function jaccard(left, right) {
+  let overlap = 0;
+  for (const value of left) if (right.has(value)) overlap += 1;
+  const union = left.size + right.size - overlap;
+  return union ? overlap / union : 0;
+}
+
+function validateCorpusOriginality(posts, errors, warnings) {
+  const shingles = posts.map((post) => bodyShingles(post.body));
+  for (let left = 0; left < posts.length; left += 1) {
+    for (let right = left + 1; right < posts.length; right += 1) {
+      const similarity = jaccard(shingles[left], shingles[right]);
+      if (similarity >= 0.2) {
+        errors.push(`${posts[left].file} and ${posts[right].file}: body similarity ${(similarity * 100).toFixed(1)}% exceeds the 20% originality gate.`);
+      }
+    }
+  }
+
+  const paragraphOwners = new Map();
+  for (const post of posts) {
+    for (const paragraph of String(post.body || '').split(/\n\s*\n/)) {
+      const normalized = paragraph.replace(/\s+/g, ' ').trim();
+      if (normalized.length < 120 || normalized.startsWith('#') || normalized.startsWith('![')) continue;
+      const owners = paragraphOwners.get(normalized) ?? new Set();
+      owners.add(post.file);
+      paragraphOwners.set(normalized, owners);
+    }
+  }
+  for (const [paragraph, owners] of paragraphOwners) {
+    if (owners.size > 3) {
+      errors.push(`Repeated paragraph appears in ${owners.size} posts: "${paragraph.slice(0, 90)}..."`);
+    }
+  }
+
+  for (const post of posts) {
+    if (!/we (tested|measured|checked)|before and after|sample file|test file|last checked/i.test(post.body)) {
+      warnings.push(`${post.file}: add first-hand test evidence, a sample file, measurement, or a dated verification note.`);
+    }
+  }
+}
+
 function collectSeoWarnings(post) {
   const warnings = [];
   const titleLength = String(post.title || '').trim().length;
@@ -83,7 +140,7 @@ function collectSeoWarnings(post) {
   const h2s = [...body.matchAll(/^##\s+(.+)$/gm)].map((match) => match[1].trim());
   const hasQuestionH2 = h2s.some((heading) => /^(what|why|how|when|where|can|should)\b/i.test(heading));
   const hasOrderedList = /^\d+\.\s+/m.test(body);
-  const internalLinkCount = (body.match(/\[[^\]]+\]\(\/blog\/[^)]+\)/g) || []).length;
+  const internalLinkCount = (body.match(/\[[^\]]+\]\(\/(?!blog\/images\/)[^)#?]+\)/g) || []).length;
 
   if (titleLength < 50 || titleLength > 60) {
     warnings.push(`${post.file}: title should ideally be 50-60 characters; found ${titleLength}.`);
@@ -114,7 +171,7 @@ function collectSeoWarnings(post) {
   }
 
   if (internalLinkCount < 2) {
-    warnings.push(`${post.file}: include at least 2 internal /blog/ links in the body; found ${internalLinkCount}.`);
+    warnings.push(`${post.file}: include at least 2 relevant internal links in the body; found ${internalLinkCount}.`);
   }
 
   if (Array.isArray(post.faq) && post.faq.length > 0 && post.faq.length !== 3) {
@@ -126,7 +183,7 @@ function collectSeoWarnings(post) {
 
 export async function validatePosts(options = {}) {
   const strictSeo = options.strictSeo === true;
-  const posts = await readPosts();
+  const posts = (await readPosts()).filter((post) => !isRetiredBlogSlug(post.slug));
   const errors = [];
   const warnings = [];
   const seenSlugs = new Set();
@@ -181,6 +238,8 @@ export async function validatePosts(options = {}) {
       errors.push(...postWarnings.map((warning) => `[seo] ${warning}`));
     }
   }
+
+  validateCorpusOriginality(posts, errors, warnings);
 
   return { posts, errors, warnings };
 }

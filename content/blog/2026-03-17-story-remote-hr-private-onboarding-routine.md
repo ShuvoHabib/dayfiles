@@ -14,7 +14,7 @@ featuredImage: "/blog/images/story-remote-hr-private-onboarding-routine.svg"
 featuredImageAlt: "Remote HR onboarding routine story visual"
 sources:
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "PDF Toolkit Hub"
@@ -97,9 +97,9 @@ Ad hoc coordination can work when one experienced coordinator is awake, availabl
 
 ## More Dayfiles reading for routines like this
 
-- [PDF Fill and Sign Workflow Guide for Private Teams](/blog/pdf-fill-sign-private-workflow/)
-- [e sign pdf online](/blog/e-sign-pdf-online/)
-- [pdf employee onboarding doc workflow](/blog/pdf-employee-onboarding-doc-workflow/)
+- [PDF Fill and Sign Workflow Guide for Private Teams](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/)
+- [e sign pdf online](/guides/how-to-add-a-signature-image-to-a-pdf-locally/)
+- [pdf employee onboarding doc workflow](/pdf-workflows/)
 
 ## What is worth preserving from this HR story
 

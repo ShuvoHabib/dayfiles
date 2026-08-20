@@ -25,6 +25,7 @@ import { productPages } from '../site/product-pages.mjs';
 import { renderSubscribeSection, subscribeScriptTag, subscriptionStyles } from '../shared/subscription.mjs';
 import { trustPages } from '../site/trust-pages.mjs';
 import { validatePosts } from './validate.mjs';
+import { BLOG_REDIRECTS } from './remediation.mjs';
 
 const extensionLink =
   'https://chromewebstore.google.com/detail/everyday-image-studio/cpcfdmaihaccamacobbfnfngefmdphfp/reviews?utm_source=item-share-cp';
@@ -897,56 +898,6 @@ function renderSiteFooter() {
   `;
 }
 
-function analyticsScripts() {
-  return `
-    <script>
-      (function () {
-        var host = window.location.hostname;
-        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
-        if (!isProd) return;
-        var loaded = false;
-
-        function loadThirdParty() {
-          if (loaded) return;
-          loaded = true;
-
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = function gtag() {
-            window.dataLayer.push(arguments);
-          };
-
-          var gtagScript = document.createElement('script');
-          gtagScript.async = true;
-          gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
-          gtagScript.onload = function () {
-            window.gtag('js', new Date());
-            window.gtag('config', 'G-V6HJS96NK6');
-          };
-          document.head.appendChild(gtagScript);
-        }
-
-        function triggerLoad() {
-          loadThirdParty();
-          window.removeEventListener('pointerdown', triggerLoad);
-          window.removeEventListener('keydown', triggerLoad);
-          window.removeEventListener('scroll', triggerLoad);
-        }
-
-        window.addEventListener('pointerdown', triggerLoad, { once: true, passive: true });
-        window.addEventListener('keydown', triggerLoad, { once: true });
-        window.addEventListener('scroll', triggerLoad, { once: true, passive: true });
-        window.setTimeout(loadThirdParty, 60000);
-      })();
-    </script>
-  `;
-}
-
-function adSenseScript() {
-  return `
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1193261985740702" crossorigin="anonymous"></script>
-  `;
-}
-
 function renderBlogIndexPage(posts) {
   const cards = posts
     .map((post) => {
@@ -1005,7 +956,6 @@ function renderBlogIndexPage(posts) {
     <meta name="twitter:title" content="Dayfiles Blog" />
     <meta name="twitter:description" content="Daily workflow guides for image and PDF operations." />
     <meta name="twitter:image" content="${SITE_URL}/dayfiles-logo.svg" />
-    ${analyticsScripts()}
     <script type="application/ld+json">${JSON.stringify(itemList)}</script>
     <style>${sharedStyles()}</style>
   </head>
@@ -1133,8 +1083,6 @@ function renderPostPage(post, relatedPosts) {
     <meta name="twitter:title" content="${escapeHtml(post.title)}" />
     <meta name="twitter:description" content="${escapeHtml(post.description)}" />
     <meta name="twitter:image" content="${escapeHtml(toAbsoluteUrl(post.featuredImage))}" />
-    ${analyticsScripts()}
-    ${adSenseScript()}
     <script type="application/ld+json">${collectJsonLd(post, relatedPosts)}</script>
     <style>${sharedStyles()}</style>
   </head>
@@ -1345,7 +1293,7 @@ function buildLlms(posts) {
     '## Live Tools',
     '- https://everydayimagestudio.dayfiles.com/',
     '- https://images.dayfiles.com/',
-    '- https://pdf.dayfiles.com/',
+    '- https://dayfiles.com/',
     '',
     '## Blog Discovery',
     '- RSS: https://dayfiles.com/blog/feed.xml',
@@ -1369,19 +1317,15 @@ function buildLlms(posts) {
 
   lines.push('', '## Summary', '- Dayfiles helps users create, convert, organize, and share files.');
   lines.push('- Primary capabilities include image workflows, image processing, and PDF workflows.');
-  lines.push('- Blog posts are source-backed and updated three times weekly.');
+  lines.push('- Blog posts are published only after manual editorial and evidence review.');
   lines.push('');
 
   return lines.join('\n');
 }
 
 function buildRedirects(posts) {
-  const legacyBlogRedirects = [
-    '/blog/e-sign-pdf-without-upload /blog/e-sign-pdf-online 301',
-    '/blog/fill-pdf-forms-without-upload /blog/fill-pdf-forms-online 301'
-  ];
   const lines = [
-    ...legacyBlogRedirects,
+    ...Object.entries(BLOG_REDIRECTS).map(([slug, destination]) => `/blog/${slug} ${destination} 301`),
     ...productPages.map((page) => `/${page.slug} /${page.slug}/index.html 200`),
     ...trustPages.map((page) => `/${page.slug} /${page.slug}/index.html 200`),
     '/blog /blog/index.html 200',

@@ -60,7 +60,7 @@ When the destination is an application or compliance portal, readability matters
 
 ## Where this fits in Dayfiles
 
-Use [How to Compress Images in Bulk Before Upload Deadlines](/blog/images-bulk-image-compression-guide) when the whole folder is too heavy. Use [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide) when dimensions are the real problem. If the images later become a document packet, [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) gives the next review step.
+Use [How to Compress Images in Bulk Before Upload Deadlines](/image-workflows) when the whole folder is too heavy. Use [How to Resize Images in Bulk for Listings and Uploads](/image-workflows) when dimensions are the real problem. If the images later become a document packet, [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) gives the next review step.
 
 ## Final takeaway
 

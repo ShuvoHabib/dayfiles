@@ -58,7 +58,7 @@ The goal is not to convert every PNG. It is to use the lighter format when the i
 
 Logos, icons, diagrams, UI captures, line art, and transparent product cutouts often deserve to remain PNG. Converting them to JPG can create fuzzy edges or background problems. For those files, resizing or PNG compression may be more appropriate than format conversion.
 
-For broader format decisions, [How to Convert Images to JPG Before Sharing](/blog/images-convert-to-jpg-guide) gives the general workflow. If the JPG later belongs inside a packet, [How to Convert JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload) covers the next step.
+For broader format decisions, [How to Convert Images to JPG Before Sharing](/image-workflows) gives the general workflow. If the JPG later belongs inside a packet, [How to Convert JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free) covers the next step.
 
 ## Why this matters for teams
 

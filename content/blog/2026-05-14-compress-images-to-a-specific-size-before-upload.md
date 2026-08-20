@@ -98,7 +98,7 @@ If the destination uses a hard threshold, exact targeting is usually the better 
 
 ## Where this fits in Dayfiles
 
-Start from [Images](/images) when the job is batch processing, format conversion, or upload preparation at scale. The strongest adjacent guides are [How to Compress Images in Bulk Before Upload Deadlines](/blog/images-bulk-image-compression-guide), [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide), and [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist) when the final assets later move into a packet.
+Start from [Images](/images) when the job is batch processing, format conversion, or upload preparation at scale. The strongest adjacent guides are [How to Compress Images in Bulk Before Upload Deadlines](/image-workflows), [How to Resize Images in Bulk for Listings and Uploads](/image-workflows), and [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist) when the final assets later move into a packet.
 
 ## Use this workflow when the portal cap is non-negotiable
 

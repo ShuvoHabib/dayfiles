@@ -19,9 +19,9 @@ sources:
   - title: Images by Dayfiles
     url: 'https://images.dayfiles.com/'
   - title: How to Convert PDF to JPG Without Uploading Files
-    url: 'https://dayfiles.com/blog/pdf-to-jpg-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-convert-pdf-to-jpg-locally'
   - title: How to Convert JPG to PDF Without Uploading Files
-    url: 'https://dayfiles.com/blog/jpg-to-pdf-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-convert-jpg-to-pdf-for-free'
 faq:
   - q: When should PDF pages be converted to images before cleanup?
     a: >-
@@ -58,9 +58,9 @@ That is why this workflow lives between the [Images](/images) and [PDF Toolkit](
 The Dayfiles chain is:
 
 1. [PDF Toolkit](/pdf-toolkit) to frame the overall document workflow.
-2. [PDF to JPG Without Uploading Files](/blog/pdf-to-jpg-without-upload) to separate pages into image outputs.
+2. [PDF to JPG Without Uploading Files](/guides/how-to-convert-pdf-to-jpg-locally) to separate pages into image outputs.
 3. [Images](/images) for broader page-image cleanup or export preparation.
-4. [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload) to rebuild the PDF from the approved page images.
+4. [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free) to rebuild the PDF from the approved page images.
 
 In some cases, the operator may also use [Everyday Image Studio](/everyday-image-studio) if the page cleanup resembles repeated editing or framing work. But the dominant workflow intent here is image processing plus PDF rebuild, which is why the article belongs under `images`.
 
@@ -82,11 +82,11 @@ Use this workflow:
 
 1. Confirm that the document issue is mainly visual rather than text-based.
 2. Start with [PDF Toolkit](/pdf-toolkit) to keep the document sequence anchored.
-3. Export the relevant pages through [PDF to JPG Without Uploading Files](/blog/pdf-to-jpg-without-upload).
+3. Export the relevant pages through [PDF to JPG Without Uploading Files](/guides/how-to-convert-pdf-to-jpg-locally).
 4. Review the page images in order and isolate the ones that need cleanup or standardization.
 5. Use [Images](/images) to prepare those page files for final rebuild.
 6. Keep filenames and page sequence stable so the rebuild step stays predictable.
-7. Reassemble the approved page images using [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload).
+7. Reassemble the approved page images using [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free).
 8. Review the rebuilt PDF as a full document, not just a collection of improved pages.
 
 The most important control is sequence preservation. A visually cleaner page set is still a failed workflow if the rebuilt PDF has the wrong order.
@@ -116,15 +116,15 @@ The right choice depends on the real problem. This workflow is for page appearan
 
 ## Where this fits in Dayfiles
 
-Use [Images](/images) when page cleanup is the main issue. Use [PDF Toolkit](/pdf-toolkit) when the job is broader than the page images alone and still includes packet assembly or final export logic. The nearest supporting guides are [PDF to JPG Without Uploading Files](/blog/pdf-to-jpg-without-upload), [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload), and [Rotate PDF Without Uploading Files](/blog/rotate-pdf-without-upload) if orientation is part of the cleanup path.
+Use [Images](/images) when page cleanup is the main issue. Use [PDF Toolkit](/pdf-toolkit) when the job is broader than the page images alone and still includes packet assembly or final export logic. The nearest supporting guides are [PDF to JPG Without Uploading Files](/guides/how-to-convert-pdf-to-jpg-locally), [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free), and [Rotate PDF Without Uploading Files](/guides/how-to-rotate-one-page-in-a-pdf) if orientation is part of the cleanup path.
 
-If the rebuilt document needs further packaging, follow with [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload) or the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist). That is the natural handoff when image cleanup becomes packet assembly.
+If the rebuilt document needs further packaging, follow with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading) or the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist). That is the natural handoff when image cleanup becomes packet assembly.
 
 ## Best fit scenarios for this workflow
 
 This workflow is strongest when the operator is solving a page-quality problem rather than a writing problem. Scanned packets with uneven page presentation, visual appendices that need consistent treatment, and presentation-ready documents with inconsistent page imagery are all good candidates. The key is that each page behaves more like an image than like a living text document.
 
-It is less effective when the document needs paragraph revision, field completion, or signature handling. Those are better solved through [PDF to DOCX](/blog/pdf-to-docx-without-upload), [Fill PDF Forms Online](/blog/fill-pdf-forms-online), or [E-Sign PDF Online](/blog/e-sign-pdf-online). The operator should choose this route only when page appearance is truly the bottleneck.
+It is less effective when the document needs paragraph revision, field completion, or signature handling. Those are better solved through [PDF to DOCX](/guides/how-to-convert-pdf-to-word-without-uploading), [Fill PDF Forms Online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it), or [E-Sign PDF Online](/guides/how-to-add-a-signature-image-to-a-pdf-locally). The operator should choose this route only when page appearance is truly the bottleneck.
 
 That distinction is what makes the article useful for AI search and human readers alike. It gives a clear answer to the question "When should I use this chain instead of another one?"
 
@@ -154,4 +154,4 @@ The workflow succeeds only when the page improvements also hold up at the full-d
 
 ## Final takeaway
 
-When page appearance is the real problem, converting PDF pages to images can make cleanup and review much clearer. Start from [PDF Toolkit](/pdf-toolkit), isolate page images with [PDF to JPG Without Uploading Files](/blog/pdf-to-jpg-without-upload), prepare them through [Images](/images), and rebuild with [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload) so the final document looks cleaner without losing sequence control.
+When page appearance is the real problem, converting PDF pages to images can make cleanup and review much clearer. Start from [PDF Toolkit](/pdf-toolkit), isolate page images with [PDF to JPG Without Uploading Files](/guides/how-to-convert-pdf-to-jpg-locally), prepare them through [Images](/images), and rebuild with [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free) so the final document looks cleaner without losing sequence control.

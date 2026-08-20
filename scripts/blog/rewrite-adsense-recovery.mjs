@@ -600,7 +600,7 @@ function renderPdfTaskBody(config) {
   const relatedHeading = config.relatedHeading || `Next Dayfiles guides after ${taskLabel}`;
   return `${config.intro || `How do you ${config.action} without turning a simple file job into extra rework? The safest way through the task is to decide what the finished file needs to do, line up the checks that matter before export, and only then run the operation.`}
 
-In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://pdf.dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
+In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
 
 ## When does ${taskLabel} make sense?
 

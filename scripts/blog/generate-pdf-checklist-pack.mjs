@@ -19,7 +19,7 @@ function tagsForFeature(feature) {
 
 function sourcesForFeature(feature) {
   return [
-    { title: 'PDF Dayfiles', url: 'https://pdf.dayfiles.com/' },
+    { title: 'PDF Dayfiles', url: 'https://dayfiles.com/' },
     { title: 'Dayfiles', url: 'https://dayfiles.com/' }
   ];
 }
@@ -59,7 +59,7 @@ ${settings}
 ## Operator checklist
 
 1. Start from [PDF Toolkit](/pdf-toolkit) so the broader workflow context is clear.
-2. Open the live tool at [PDF Dayfiles](https://pdf.dayfiles.com/) only after the source file is confirmed.
+2. Open the live tool at [PDF Dayfiles](https://dayfiles.com/) only after the source file is confirmed.
 3. Run ${feature.name} on the smallest set of files or pages needed for the job.
 4. Export once with deliberate settings rather than iterating blindly.
 5. Review the output before it leaves the device or team folder.

@@ -71,7 +71,7 @@ Use this sequence:
 2. Decide where the image will be used next: launch post, changelog, internal update, support article, or social asset.
 3. Open [HTML to Image](https://images.dayfiles.com/html-to-image) and export the specific state that should become the reusable visual.
 4. Review spacing, crop boundaries, and readability in the exported result.
-5. If needed, continue with [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide) or [How to Compress Images in Bulk Before Upload Deadlines](/blog/images-bulk-image-compression-guide) before distribution.
+5. If needed, continue with [How to Resize Images in Bulk for Listings and Uploads](/image-workflows) or [How to Compress Images in Bulk Before Upload Deadlines](/image-workflows) before distribution.
 6. Name the asset according to feature, launch, or channel.
 7. Preserve the original HTML state in case the team later needs an updated export.
 
@@ -102,7 +102,7 @@ If the goal is to communicate the actual state of the product or component, HTML
 
 ## Where this fits in Dayfiles
 
-Use [Images](/images) as the parent hub when the asset may still need compression, resize, or format cleanup after export. The most useful adjacent guides are [How to Turn Short Videos Into GIFs for Product Updates](/blog/turn-short-videos-into-gifs-for-product-updates), [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide), and [How to Convert Images to JPG for Consistent Delivery](/blog/images-convert-to-jpg-guide) when the final channel expects a different format or weight.
+Use [Images](/images) as the parent hub when the asset may still need compression, resize, or format cleanup after export. The most useful adjacent guides are [How to Turn Short Videos Into GIFs for Product Updates](/blog/turn-short-videos-into-gifs-for-product-updates), [How to Resize Images in Bulk for Listings and Uploads](/image-workflows), and [How to Convert Images to JPG for Consistent Delivery](/image-workflows) when the final channel expects a different format or weight.
 
 ## Use this workflow when the product UI is the proof
 

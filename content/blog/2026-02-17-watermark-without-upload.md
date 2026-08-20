@@ -9,12 +9,12 @@ tags:
   - "pdf tools"
   - "client-side"
   - "privacy-first"
-canonicalUrl: "https://dayfiles.com/blog/watermark-without-upload"
+canonicalUrl: "https://dayfiles.com/guides/how-to-add-a-watermark-to-a-pdf"
 featuredImage: "/blog/images/watermark-without-upload.svg"
 featuredImageAlt: "Watermark privacy-first guide visual"
 sources:
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "Everyday Image Studio"
@@ -23,7 +23,7 @@ sources:
 
 How do you add a watermark to a PDF without turning a simple file job into extra rework? The safest way through the task is to decide what the finished file needs to do, line up the checks that matter before export, and only then run the operation.
 
-In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://pdf.dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
+In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
 
 ## When does add a watermark to a PDF make sense?
 
@@ -98,9 +98,9 @@ That broader logic stays the same even when the document changes: keep the appro
 
 ## Next Dayfiles guides after add a watermark to a PDF
 
-- [lock pdf without upload](/blog/lock-pdf-without-upload/)
-- [page numbers without upload](/blog/page-numbers-without-upload/)
-- [merge pdf without upload](/blog/merge-pdf-without-upload/)
+- [lock pdf without upload](/guides/how-to-password-protect-a-pdf-before-emailing/)
+- [page numbers without upload](/guides/how-to-add-page-numbers-to-a-pdf/)
+- [merge pdf without upload](/guides/how-to-merge-pdf-files-without-uploading/)
 
 ## Before you send the add a watermark to a PDF result
 

@@ -14,7 +14,7 @@ featuredImage: "/blog/images/pdf-operations-checklist.svg"
 featuredImageAlt: "Illustration for PDF Toolkit operations checklist"
 sources:
   - title: "PDF Toolkit"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
 ---
@@ -91,9 +91,9 @@ The checklist earns its place when it helps the next run go faster with fewer su
 
 ## More Dayfiles guides for PDF delivery
 
-- [merge pdf without upload](/blog/merge-pdf-without-upload/)
-- [Confidential Client Report PDF Workflow for Delivery Teams](/blog/pdf-confidential-client-report-workflow/)
-- [PDF Fill and Sign Workflow Guide for Private Teams](/blog/pdf-fill-sign-private-workflow/)
+- [merge pdf without upload](/guides/how-to-merge-pdf-files-without-uploading/)
+- [Confidential Client Report PDF Workflow for Delivery Teams](/pdf-workflows/)
+- [PDF Fill and Sign Workflow Guide for Private Teams](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/)
 
 ## What “ready” should mean for PDF delivery
 

@@ -71,7 +71,7 @@ This workflow keeps the image useful without treating privacy as an afterthought
 
 The blur should make recognition impractical in the final viewing context. A weak blur may look polite but still expose the person. If the image will be enlarged, shared on social media, or included in a report, inspect it at that larger size.
 
-For related guidance, use [How to Blur Faces in Images Before Sharing](/blog/images-blur-faces-before-sharing-guide) and [Compliance-Sensitive Image Prep](/compliance-sensitive-image-prep/). If the image later becomes part of a PDF report, [PDF Confidential Client Report Workflow](/blog/pdf-confidential-client-report-workflow) is the better companion.
+For related guidance, use [How to Blur Faces in Images Before Sharing](/image-workflows) and [Compliance-Sensitive Image Prep](/compliance-sensitive-image-prep/). If the image later becomes part of a PDF report, [PDF Confidential Client Report Workflow](/pdf-workflows) is the better companion.
 
 ## Final takeaway
 

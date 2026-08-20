@@ -58,7 +58,7 @@ This keeps the source safe while making the delivery file easier for older syste
 
 JPG conversion can increase file size, especially if the export quality is high. It can also remove transparency if the source was not a normal photo, although HEIC photos usually do not rely on transparent backgrounds. The review step matters because compatibility alone is not enough.
 
-If the converted JPG is too large, use [How to Compress Images to a Specific Size Before Upload](/blog/compress-images-to-a-specific-size-before-upload). If the image later needs to join a document, [How to Convert JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload) is the next practical guide.
+If the converted JPG is too large, use [How to Compress Images to a Specific Size Before Upload](/blog/compress-images-to-a-specific-size-before-upload). If the image later needs to join a document, [How to Convert JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free) is the next practical guide.
 
 ## When PNG is the better target
 

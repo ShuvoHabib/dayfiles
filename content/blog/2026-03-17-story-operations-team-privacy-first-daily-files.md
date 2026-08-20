@@ -18,7 +18,7 @@ sources:
   - title: "Everyday Image Studio"
     url: "https://everydayimagestudio.dayfiles.com/"
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
 faq:
   - q: "What changed first in the team workflow?"
     a: "They standardized intake, naming, and final handoff rules before changing anything else."
@@ -97,7 +97,7 @@ Relying on someone to catch the wrong file at the last second sounds flexible, b
 
 ## More Dayfiles reading for routines like this
 
-- [How to Compress Images in Bulk Before Upload Deadlines](/blog/images-bulk-image-compression-guide/)
+- [How to Compress Images in Bulk Before Upload Deadlines](/image-workflows/)
 - [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist/)
 - [story remote hr private onboarding routine](/blog/story-remote-hr-private-onboarding-routine/)
 

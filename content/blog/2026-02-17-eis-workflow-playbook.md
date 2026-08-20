@@ -107,9 +107,9 @@ Small teams often assume they can rely on memory because everyone talks frequent
 
 ## More Dayfiles guides for small teams that create, clean, and ship repeated image assets
 
-- [eis social content production workflow](/blog/eis-social-content-production-workflow/)
-- [eis passport photo checklist](/blog/eis-passport-photo-checklist/)
-- [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide/)
+- [eis social content production workflow](/image-workflows/)
+- [eis passport photo checklist](/image-workflows/)
+- [How to Resize Images in Bulk for Listings and Uploads](/image-workflows/)
 
 ## What makes the playbook useful
 

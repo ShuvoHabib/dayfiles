@@ -17,11 +17,11 @@ featuredImage: /blog/images/large-submission-packaging-workflow.svg
 featuredImageAlt: Compress organize and secure a large PDF submission workflow visual
 sources:
   - title: PDF Toolkit
-    url: 'https://pdf.dayfiles.com/'
+    url: 'https://dayfiles.com/'
   - title: Organize PDF Without Uploading Files
-    url: 'https://dayfiles.com/blog/organize-pdf-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-reorder-and-delete-pdf-pages'
   - title: Minify PDF Without Uploading Files
-    url: 'https://dayfiles.com/blog/minify-pdf-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-compress-pdf-without-losing-quality'
 faq:
   - q: Why is large PDF packaging a separate workflow?
     a: >-
@@ -33,10 +33,10 @@ faq:
       compression are already approved.
   - q: Which Dayfiles guides support this process?
     a: >-
-      Use [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload),
-      [Organize PDF Without Uploading Files](/blog/organize-pdf-without-upload),
-      [Minify PDF Without Uploading Files](/blog/minify-pdf-without-upload), and
-      [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload) with
+      Use [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading),
+      [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages),
+      [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality), and
+      [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing) with
       [PDF Toolkit](/pdf-toolkit) as the hub.
 ---
 How do you prepare a large PDF submission that is too complex to trust as a one-click export? The practical answer is to assemble the packet, organize the page flow, compress the final file for upload limits, and lock the approved version only after one last full review. That sequence treats large-file delivery as a process, not a gamble.
@@ -66,10 +66,10 @@ That is why this article combines several PDF actions into one packaging sequenc
 The Dayfiles chain is:
 
 1. [PDF Toolkit](/pdf-toolkit) as the workflow hub.
-2. [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload) for packet assembly.
-3. [Organize PDF Without Uploading Files](/blog/organize-pdf-without-upload) for ordering and structural cleanup.
-4. [Minify PDF Without Uploading Files](/blog/minify-pdf-without-upload) for upload-ready file size.
-5. [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload) for end-stage delivery control.
+2. [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading) for packet assembly.
+3. [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages) for ordering and structural cleanup.
+4. [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality) for upload-ready file size.
+5. [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing) for end-stage delivery control.
 
 This sequence is intentionally linear. The operator should not compress an unorganized packet or lock an unreviewed one.
 
@@ -90,12 +90,12 @@ Use this process:
 
 1. Collect the full set of approved component files before assembly starts.
 2. Start from [PDF Toolkit](/pdf-toolkit) so the broader submission flow stays visible.
-3. Assemble the packet with [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload).
-4. Review the merged packet and correct structure using [Organize PDF Without Uploading Files](/blog/organize-pdf-without-upload).
+3. Assemble the packet with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading).
+4. Review the merged packet and correct structure using [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages).
 5. Confirm that all appendices, attachments, and supporting sections are present and correctly ordered.
-6. Reduce the final file size using [Minify PDF Without Uploading Files](/blog/minify-pdf-without-upload) only after packet order is stable.
+6. Reduce the final file size using [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality) only after packet order is stable.
 7. Recheck readability and page continuity after compression.
-8. Lock the approved final version with [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload) if the delivery requires a fixed end-state.
+8. Lock the approved final version with [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing) if the delivery requires a fixed end-state.
 
 This sequence reduces the chance that the team solves the wrong problem first.
 
@@ -123,7 +123,7 @@ The difference is not just efficiency. It is whether the file can survive formal
 
 ## Where this fits in Dayfiles
 
-Use [PDF Toolkit](/pdf-toolkit) as the anchor for large submission work. The main supporting guides are [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload), [Organize PDF Without Uploading Files](/blog/organize-pdf-without-upload), [Minify PDF Without Uploading Files](/blog/minify-pdf-without-upload), and [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload). If the packet needs page references, [Page Numbers Without Uploading Files](/blog/page-numbers-without-upload) is the next useful step.
+Use [PDF Toolkit](/pdf-toolkit) as the anchor for large submission work. The main supporting guides are [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages), [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality), and [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing). If the packet needs page references, [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf) is the next useful step.
 
 For process-heavy teams, the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) remains the best adjacent Dayfiles guide because it frames final delivery as repeatable operational work rather than a set of isolated file actions.
 
@@ -167,4 +167,4 @@ The size of the packet is not the only risk. The structure of the packet is usua
 
 ## Final takeaway
 
-Large PDF submissions need packaging discipline more than they need faster clicks. Start in [PDF Toolkit](/pdf-toolkit), assemble with [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload), clean structure with [Organize PDF Without Uploading Files](/blog/organize-pdf-without-upload), optimize size through [Minify PDF Without Uploading Files](/blog/minify-pdf-without-upload), and lock only the approved final delivery version. That makes large uploads easier to trust and easier to get right the first time.
+Large PDF submissions need packaging discipline more than they need faster clicks. Start in [PDF Toolkit](/pdf-toolkit), assemble with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), clean structure with [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages), optimize size through [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality), and lock only the approved final delivery version. That makes large uploads easier to trust and easier to get right the first time.

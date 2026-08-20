@@ -9,7 +9,7 @@ tags:
   - "images dayfiles"
   - "image delivery"
   - "format workflow"
-canonicalUrl: "https://dayfiles.com/blog/images-convert-to-jpg-guide"
+canonicalUrl: "https://dayfiles.com/image-workflows"
 featuredImage: "/blog/images/images-convert-to-jpg-guide.svg"
 featuredImageAlt: "Image to JPG conversion workflow visual"
 sources:
@@ -111,8 +111,8 @@ Run it again only when the review reveals one specific correction target, such a
 
 ## More Dayfiles guides around convert mixed image files to JPG
 
-- [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide/)
-- [How to Compress Images in Bulk Before Upload Deadlines](/blog/images-bulk-image-compression-guide/)
+- [How to Resize Images in Bulk for Listings and Uploads](/image-workflows/)
+- [How to Compress Images in Bulk Before Upload Deadlines](/image-workflows/)
 - [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist/)
 
 ## Before you release the convert mixed image files to JPG batch

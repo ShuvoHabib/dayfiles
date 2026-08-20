@@ -17,11 +17,11 @@ featuredImage: /blog/images/extract-pdf-pages-for-review-packets.svg
 featuredImageAlt: Extract PDF pages for cleaner review packets workflow visual
 sources:
   - title: Extract PDF Pages
-    url: 'https://pdf.dayfiles.com/extract-pdf-pages'
+    url: 'https://dayfiles.com/extract-pdf-pages'
   - title: PDF Toolkit
     url: 'https://dayfiles.com/pdf-toolkit'
   - title: PDF Dayfiles
-    url: 'https://pdf.dayfiles.com/'
+    url: 'https://dayfiles.com/'
 faq:
   - q: When should pages be extracted instead of sending the full PDF?
     a: >-
@@ -36,7 +36,7 @@ faq:
       Teams often use extraction before review, redaction, recombination, or
       final packet assembly in the broader PDF Toolkit flow.
 ---
-How do you send only the pages a reviewer actually needs without creating confusion about the full packet? The practical answer is to confirm the section boundary first, extract only the approved pages, and label the result for its exact review purpose. That is where [Extract PDF Pages](https://pdf.dayfiles.com/extract-pdf-pages) is more useful than forwarding the entire file.
+How do you send only the pages a reviewer actually needs without creating confusion about the full packet? The practical answer is to confirm the section boundary first, extract only the approved pages, and label the result for its exact review purpose. That is where [Extract PDF Pages](https://dayfiles.com/extract-pdf-pages) is more useful than forwarding the entire file.
 
 ## When should pages be extracted from a PDF?
 
@@ -66,7 +66,7 @@ Use this sequence:
 
 1. Start from the approved source PDF, not a random working copy.
 2. Mark the exact page range or ranges needed for the next task.
-3. Open [Extract PDF Pages](https://pdf.dayfiles.com/extract-pdf-pages) and export only those pages.
+3. Open [Extract PDF Pages](https://dayfiles.com/extract-pdf-pages) and export only those pages.
 4. Name the output according to purpose, not just page number.
 5. Review the extracted file for completeness, page order, and unintended omissions.
 6. Send that subset only to the stakeholder who needs it.
@@ -99,7 +99,7 @@ When only one section is needed, extraction usually creates a cleaner and safer 
 
 ## Where this fits in Dayfiles
 
-Start from [PDF Toolkit](/pdf-toolkit) when page extraction is one step in a bigger packet workflow. The strongest adjacent guides are [Split PDF Without Uploading Files](/blog/split-pdf-without-upload) for broader section handling, [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload) if the section must later return to a packet, and [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) when the handoff itself needs structure.
+Start from [PDF Toolkit](/pdf-toolkit) when page extraction is one step in a bigger packet workflow. The strongest adjacent guides are [Split PDF Without Uploading Files](/guides/how-to-split-one-pdf-into-multiple-files) for broader section handling, [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading) if the section must later return to a packet, and [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) when the handoff itself needs structure.
 
 If the extracted range still contains private details that should not travel further, the next useful step may be [How to Redact a PDF Before External Sharing or Filing](/blog/redact-pdf-before-sharing-or-filing) once that guide is live from this same queue set.
 
@@ -142,4 +142,4 @@ An extracted review file should stay tied to its original purpose. Do not quietl
 
 ## Final takeaway
 
-Page extraction is not just a convenience feature. It is a cleaner way to move specific sections through approval, correction, or limited review. Use [Extract PDF Pages](https://pdf.dayfiles.com/extract-pdf-pages) when only part of the packet is needed, and keep the subset clearly named so the team never confuses it with the full final document.
+Page extraction is not just a convenience feature. It is a cleaner way to move specific sections through approval, correction, or limited review. Use [Extract PDF Pages](https://dayfiles.com/extract-pdf-pages) when only part of the packet is needed, and keep the subset clearly named so the team never confuses it with the full final document.

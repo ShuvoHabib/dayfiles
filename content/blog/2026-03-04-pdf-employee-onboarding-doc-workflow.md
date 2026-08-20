@@ -9,16 +9,16 @@ tags:
   - "hr documents"
   - "pdf workflow"
   - "privacy"
-canonicalUrl: "https://dayfiles.com/blog/pdf-employee-onboarding-doc-workflow"
+canonicalUrl: "https://dayfiles.com/pdf-workflows"
 featuredImage: "/blog/images/pdf-employee-onboarding-doc-workflow.svg"
 featuredImageAlt: "Employee onboarding PDF workflow visual"
 sources:
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "Fill PDF Forms"
-    url: "https://pdf.dayfiles.com/fill-pdf-forms"
+    url: "https://dayfiles.com/fill-pdf-forms"
 faq:
   - q: "Why are onboarding documents a privacy hotspot?"
     a: "Onboarding files often include IDs, addresses, salary details, and contracts, which require controlled handling and minimal exposure."
@@ -106,9 +106,9 @@ It ages well because it focuses on file state, not temporary interface details. 
 
 ## More Dayfiles guides for employee onboarding packets
 
-- [PDF Fill and Sign Workflow Guide for Private Teams](/blog/pdf-fill-sign-private-workflow/)
-- [e sign pdf online](/blog/e-sign-pdf-online/)
-- [Confidential Client Report PDF Workflow for Delivery Teams](/blog/pdf-confidential-client-report-workflow/)
+- [PDF Fill and Sign Workflow Guide for Private Teams](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/)
+- [e sign pdf online](/guides/how-to-add-a-signature-image-to-a-pdf-locally/)
+- [Confidential Client Report PDF Workflow for Delivery Teams](/pdf-workflows/)
 
 ## What success looks like for employee onboarding packets
 

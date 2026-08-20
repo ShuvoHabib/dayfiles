@@ -100,7 +100,7 @@ If the batch is about to leave the working phase, one format standard usually he
 
 ## Where this fits in Dayfiles
 
-Start from [Images](/images) when the task is large-scale format handling or delivery prep. The most useful companion guides are [How to Convert Images to JPG for Consistent Delivery](/blog/images-convert-to-jpg-guide), [How to Compress Images to a Specific Size Before Upload](/blog/compress-images-to-a-specific-size-before-upload), and [How to Resize Images to Match File Size Limits Cleanly](/blog/resize-images-to-match-file-size-limits).
+Start from [Images](/images) when the task is large-scale format handling or delivery prep. The most useful companion guides are [How to Convert Images to JPG for Consistent Delivery](/image-workflows), [How to Compress Images to a Specific Size Before Upload](/blog/compress-images-to-a-specific-size-before-upload), and [How to Resize Images to Match File Size Limits Cleanly](/blog/resize-images-to-match-file-size-limits).
 
 ## Which conversions deserve extra caution
 

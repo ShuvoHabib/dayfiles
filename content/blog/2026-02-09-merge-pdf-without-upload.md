@@ -9,12 +9,12 @@ tags:
   - "pdf tools"
   - "client-side"
   - "privacy-first"
-canonicalUrl: "https://dayfiles.com/blog/merge-pdf-without-upload"
+canonicalUrl: "https://dayfiles.com/guides/how-to-merge-pdf-files-without-uploading"
 featuredImage: "/blog/images/merge-pdf-without-upload.svg"
 featuredImageAlt: "Merge PDF privacy-first guide visual"
 sources:
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "Everyday Image Studio"
@@ -23,7 +23,7 @@ sources:
 
 How do you merge PDF files without turning a simple file job into extra rework? The safest way through the task is to decide what the finished file needs to do, line up the checks that matter before export, and only then run the operation.
 
-In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://pdf.dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
+In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
 
 ## When does merge PDF files make sense?
 
@@ -98,8 +98,8 @@ That broader logic stays the same even when the document changes: keep the appro
 
 ## Next Dayfiles guides after merge PDF files
 
-- [organize pdf without upload](/blog/organize-pdf-without-upload/)
-- [page numbers without upload](/blog/page-numbers-without-upload/)
+- [organize pdf without upload](/guides/how-to-reorder-and-delete-pdf-pages/)
+- [page numbers without upload](/guides/how-to-add-page-numbers-to-a-pdf/)
 - [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist/)
 
 ## Before you send the merge PDF files result

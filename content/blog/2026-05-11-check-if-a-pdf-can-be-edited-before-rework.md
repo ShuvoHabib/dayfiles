@@ -16,9 +16,9 @@ featuredImage: /blog/images/check-if-a-pdf-can-be-edited-before-rework.svg
 featuredImageAlt: Check if a PDF can be edited before rework workflow visual
 sources:
   - title: Can This PDF Be Edited
-    url: 'https://pdf.dayfiles.com/can-this-pdf-be-edited'
+    url: 'https://dayfiles.com/can-this-pdf-be-edited'
   - title: PDF Password Status Checker
-    url: 'https://pdf.dayfiles.com/pdf-password-status-checker'
+    url: 'https://dayfiles.com/pdf-password-status-checker'
   - title: PDF Toolkit
     url: 'https://dayfiles.com/pdf-toolkit'
 faq:
@@ -37,7 +37,7 @@ faq:
       Teams may move into Edit PDF, PDF to DOCX, Unlock PDF, or section-based
       cleanup depending on what the editability check reveals.
 ---
-How do you know whether a PDF should be edited directly, converted, or handled another way entirely? The practical answer is to check the file before rework begins. A quick editability decision saves time because it keeps the team from choosing the wrong workflow first. That is exactly what [Can This PDF Be Edited](https://pdf.dayfiles.com/can-this-pdf-be-edited) is good for inside [PDF Toolkit](/pdf-toolkit).
+How do you know whether a PDF should be edited directly, converted, or handled another way entirely? The practical answer is to check the file before rework begins. A quick editability decision saves time because it keeps the team from choosing the wrong workflow first. That is exactly what [Can This PDF Be Edited](https://dayfiles.com/can-this-pdf-be-edited) is good for inside [PDF Toolkit](/pdf-toolkit).
 
 ## When should a team run an editability check?
 
@@ -65,8 +65,8 @@ Checking the document first makes the next move more deliberate and usually fast
 Use this sequence:
 
 1. Start from the exact PDF that needs revision.
-2. Run [Can This PDF Be Edited](https://pdf.dayfiles.com/can-this-pdf-be-edited) before opening a full rework path.
-3. If password protection might be involved, confirm that with [PDF Password Status Checker](https://pdf.dayfiles.com/pdf-password-status-checker).
+2. Run [Can This PDF Be Edited](https://dayfiles.com/can-this-pdf-be-edited) before opening a full rework path.
+3. If password protection might be involved, confirm that with [PDF Password Status Checker](https://dayfiles.com/pdf-password-status-checker).
 4. Decide which branch fits the file best:
    - direct edit,
    - unlock first,
@@ -105,7 +105,7 @@ If the file came from outside your normal process, the check is usually worth do
 
 ## Where this fits in Dayfiles
 
-Use [PDF Toolkit](/pdf-toolkit) as the parent workflow hub, then branch based on what the check reveals. The most likely next guides are [How to Edit PDFs Locally Before Final Review and Export](/blog/edit-pdf-locally-before-final-review), [How to Convert PDF to DOCX Without Uploading Files](/blog/pdf-to-docx-without-upload), and [How to Unlock a PDF in Browser Without Uploading It](/blog/unlock-pdf-without-upload). If only one section truly needs work, [How to Extract PDF Pages for Cleaner Review Packets](/blog/extract-pdf-pages-for-review-packets) is often the cleaner move.
+Use [PDF Toolkit](/pdf-toolkit) as the parent workflow hub, then branch based on what the check reveals. The most likely next guides are [How to Edit PDFs Locally Before Final Review and Export](/blog/edit-pdf-locally-before-final-review), [How to Convert PDF to DOCX Without Uploading Files](/guides/how-to-convert-pdf-to-word-without-uploading), and [How to Unlock a PDF in Browser Without Uploading It](/guides/how-to-remove-a-pdf-password-you-know). If only one section truly needs work, [How to Extract PDF Pages for Cleaner Review Packets](/blog/extract-pdf-pages-for-review-packets) is often the cleaner move.
 
 ## When this check matters most
 
@@ -148,4 +148,4 @@ Even if a file can be edited, it may still be wiser to convert or isolate pages 
 
 ## Final takeaway
 
-Editability checks are valuable because they reduce wasted effort before real revision work even starts. Use [Can This PDF Be Edited](https://pdf.dayfiles.com/can-this-pdf-be-edited) to choose the right next step, then move into a single clean workflow instead of experimenting across several tools at once.
+Editability checks are valuable because they reduce wasted effort before real revision work even starts. Use [Can This PDF Be Edited](https://dayfiles.com/can-this-pdf-be-edited) to choose the right next step, then move into a single clean workflow instead of experimenting across several tools at once.

@@ -11,21 +11,21 @@ tags:
   - "no account"
   - "no file storage"
   - "privacy-first"
-canonicalUrl: "https://dayfiles.com/blog/fill-pdf-forms-online"
+canonicalUrl: "https://dayfiles.com/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it"
 featuredImage: "/blog/images/fill-pdf-forms-online.svg"
 featuredImageAlt: "Fill PDF forms online privacy-first guide visual"
 sources:
   - title: "PDF Dayfiles Fill PDF Forms"
-    url: "https://pdf.dayfiles.com/fill-pdf-forms"
+    url: "https://dayfiles.com/fill-pdf-forms"
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
 ---
 
 How do you fill a PDF form quickly without creating submission mistakes that show up later? The clean route is to treat form completion as a short control workflow: confirm the right file, fill the fields once, then run a final review before the form enters a packet or portal.
 
-In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://pdf.dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
+In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
 
 ## When does fill PDF forms online make sense?
 
@@ -100,9 +100,9 @@ That broader logic stays the same even when the document changes: keep the appro
 
 ## Next Dayfiles guides after fill PDF forms online
 
-- [e sign pdf online](/blog/e-sign-pdf-online/)
-- [PDF Fill and Sign Workflow Guide for Private Teams](/blog/pdf-fill-sign-private-workflow/)
-- [pdf visa application packet checklist](/blog/pdf-visa-application-packet-checklist/)
+- [e sign pdf online](/guides/how-to-add-a-signature-image-to-a-pdf-locally/)
+- [PDF Fill and Sign Workflow Guide for Private Teams](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/)
+- [pdf visa application packet checklist](/pdf-workflows/)
 
 ## Before you send the fill PDF forms online result
 

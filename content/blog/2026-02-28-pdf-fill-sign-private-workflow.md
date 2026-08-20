@@ -9,16 +9,16 @@ tags:
   - "privacy-first workflow"
   - "dayfiles"
   - "employee documents"
-canonicalUrl: "https://dayfiles.com/blog/pdf-fill-sign-private-workflow"
+canonicalUrl: "https://dayfiles.com/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it"
 featuredImage: "/blog/images/pdf-fill-sign-private-workflow.svg"
 featuredImageAlt: "PDF fill and sign private workflow visual"
 sources:
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "E-Sign PDF"
-    url: "https://pdf.dayfiles.com/e-sign-pdf"
+    url: "https://dayfiles.com/e-sign-pdf"
   - title: "Fill PDF Forms"
-    url: "https://pdf.dayfiles.com/fill-pdf-forms"
+    url: "https://dayfiles.com/fill-pdf-forms"
 ---
 
 How should a team handle repeated fill-and-sign work when the files contain personal or internal information? The strongest approach is to standardize who prepares the file, who signs, and who archives the approved version before the packet moves farther than it should.
@@ -93,9 +93,9 @@ The checklist earns its place when it helps the next run go faster with fewer su
 
 ## More Dayfiles guides for fill-and-sign work
 
-- [fill pdf forms online](/blog/fill-pdf-forms-online/)
-- [e sign pdf online](/blog/e-sign-pdf-online/)
-- [Confidential Client Report PDF Workflow for Delivery Teams](/blog/pdf-confidential-client-report-workflow/)
+- [fill pdf forms online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/)
+- [e sign pdf online](/guides/how-to-add-a-signature-image-to-a-pdf-locally/)
+- [Confidential Client Report PDF Workflow for Delivery Teams](/pdf-workflows/)
 
 ## What “ready” should mean for fill-and-sign work
 

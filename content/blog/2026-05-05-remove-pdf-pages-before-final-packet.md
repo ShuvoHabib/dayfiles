@@ -17,11 +17,11 @@ featuredImage: /blog/images/remove-pdf-pages-before-final-packet.svg
 featuredImageAlt: Remove PDF pages before final packet workflow visual
 sources:
   - title: Remove PDF Pages
-    url: 'https://pdf.dayfiles.com/remove-pdf-pages'
+    url: 'https://dayfiles.com/remove-pdf-pages'
   - title: PDF Toolkit
     url: 'https://dayfiles.com/pdf-toolkit'
   - title: PDF Dayfiles
-    url: 'https://pdf.dayfiles.com/'
+    url: 'https://dayfiles.com/'
 faq:
   - q: When should pages be removed instead of just ignored?
     a: >-
@@ -36,7 +36,7 @@ faq:
       Teams often organize the packet again, add page numbers, or run a final
       delivery check after the page set is trimmed.
 ---
-How do you remove pages from a PDF without accidentally weakening the packet you are about to send? The right approach is to decide what truly belongs in the delivery copy, remove only the unnecessary pages, and then recheck structure before the file moves forward. That is the most practical use of [Remove PDF Pages](https://pdf.dayfiles.com/remove-pdf-pages) inside [PDF Toolkit](/pdf-toolkit).
+How do you remove pages from a PDF without accidentally weakening the packet you are about to send? The right approach is to decide what truly belongs in the delivery copy, remove only the unnecessary pages, and then recheck structure before the file moves forward. That is the most practical use of [Remove PDF Pages](https://dayfiles.com/remove-pdf-pages) inside [PDF Toolkit](/pdf-toolkit).
 
 ## When is removing pages the right move?
 
@@ -68,9 +68,9 @@ Use this sequence:
 
 1. Start from the version that is meant to become the delivery packet.
 2. List the pages or page types that should not remain in that final copy.
-3. Open [Remove PDF Pages](https://pdf.dayfiles.com/remove-pdf-pages) and delete only those pages.
+3. Open [Remove PDF Pages](https://dayfiles.com/remove-pdf-pages) and delete only those pages.
 4. Review the new page flow immediately after removal.
-5. If needed, continue into [Organize PDF Without Uploading Files](/blog/organize-pdf-without-upload) or [How to Add Page Numbers to a PDF Without Uploading It](/blog/page-numbers-without-upload) so the remaining structure stays clean.
+5. If needed, continue into [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages) or [How to Add Page Numbers to a PDF Without Uploading It](/guides/how-to-add-page-numbers-to-a-pdf) so the remaining structure stays clean.
 6. Export one updated final-review copy.
 7. Preserve the pre-removal working packet separately if the team may need to reference it later.
 
@@ -101,7 +101,7 @@ If the packet is about to leave the team, trimming usually helps more than “pl
 
 ## Where this fits in Dayfiles
 
-Use [PDF Toolkit](/pdf-toolkit) as the hub when page removal is one finishing step among others. The closest companion guides are [Organize PDF Without Uploading Files](/blog/organize-pdf-without-upload), [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload), and [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist). If the real need is not deletion but isolation of one section, [How to Extract PDF Pages for Cleaner Review Packets](/blog/extract-pdf-pages-for-review-packets) is the better path once that queued guide publishes.
+Use [PDF Toolkit](/pdf-toolkit) as the hub when page removal is one finishing step among others. The closest companion guides are [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages), [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), and [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist). If the real need is not deletion but isolation of one section, [How to Extract PDF Pages for Cleaner Review Packets](/blog/extract-pdf-pages-for-review-packets) is the better path once that queued guide publishes.
 
 ## Use this workflow when the packet is mostly right already
 
@@ -142,4 +142,4 @@ Keep the prior working version available when the team may need to explain what 
 
 ## Final takeaway
 
-Removing PDF pages is a delivery-quality decision, not just a cosmetic edit. Use [Remove PDF Pages](https://pdf.dayfiles.com/remove-pdf-pages) when the final file should be tighter, clearer, or safer than the assembled working packet. The key is to trim deliberately and then review the remaining structure before release.
+Removing PDF pages is a delivery-quality decision, not just a cosmetic edit. Use [Remove PDF Pages](https://dayfiles.com/remove-pdf-pages) when the final file should be tighter, clearer, or safer than the assembled working packet. The key is to trim deliberately and then review the remaining structure before release.

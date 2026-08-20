@@ -20,14 +20,14 @@ sources:
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "PDF Toolkit"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
 faq:
   - q: "What was launched on Product Hunt?"
     a: "Dayfiles launched the Everyday Image Studio Chrome Extension, focused on practical in-browser image editing workflows."
   - q: "Will the extension stay focused on quick workflows?"
     a: "Yes. The roadmap is centered on faster repeatable edits, cleaner exports, and less switching between tools."
   - q: "How does this connect to PDF workflows?"
-    a: "Image preparation can be completed in Everyday Image Studio, then document packaging can continue in PDF Toolkit at pdf.dayfiles.com."
+    a: "Image preparation can be completed in Everyday Image Studio, then document packaging can continue in the PDF Toolkit on dayfiles.com."
 ---
 
 What should a launch announcement on Dayfiles actually do for readers? It should explain what changed, who the product helps, and where a curious visitor should go next if they want to test the workflow instead of just read the headline.
@@ -98,8 +98,8 @@ Later readers often arrive from search, a shared link, or a passing mention rath
 ## Where should launch traffic go next?
 
 - [Everyday Image Studio Workflow Playbook for Daily Teams](/blog/eis-workflow-playbook/)
-- [How to Convert Images to JPG for Consistent Delivery](/blog/images-convert-to-jpg-guide/)
-- [Employee ID Photo Standards for HR Teams and Faster Reviews](/blog/eis-employee-id-photo-standard-guide/)
+- [How to Convert Images to JPG for Consistent Delivery](/image-workflows/)
+- [Employee ID Photo Standards for HR Teams and Faster Reviews](/image-workflows/)
 
 ## What should the launch post leave behind?
 

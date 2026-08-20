@@ -9,16 +9,16 @@ tags:
   - "pdf to docx workflow"
   - "docx to pdf workflow"
   - "dayfiles pdf toolkit"
-canonicalUrl: "https://dayfiles.com/blog/pdf-edit-via-docx-and-back-workflow/"
+canonicalUrl: "https://dayfiles.com/pdf-workflows/"
 featuredImage: "/blog/images/pdf-edit-via-docx-and-back-workflow.svg"
 featuredImageAlt: "Edit a PDF through a DOCX conversion workflow visual"
 sources:
   - title: "PDF Toolkit"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "How to Convert PDF to DOCX Without Uploading Files"
-    url: "https://dayfiles.com/blog/pdf-to-docx-without-upload"
+    url: "https://dayfiles.com/guides/how-to-convert-pdf-to-word-without-uploading"
   - title: "How to Convert DOCX to PDF Without Uploading Files"
-    url: "https://dayfiles.com/blog/docx-to-pdf-without-upload"
+    url: "https://dayfiles.com/guides/how-to-convert-docx-to-pdf-in-browser"
 faq:
   - q: "When should someone edit a PDF by converting it to DOCX?"
     a: "This workflow is useful when the PDF needs real text edits, paragraph updates, or document revisions that are easier to handle in a word-processing format."
@@ -106,8 +106,8 @@ It ages well because it focuses on file state, not temporary interface details. 
 
 ## More Dayfiles guides for PDF-to-DOCX-to-PDF revision work
 
-- [pdf to docx without upload](/blog/pdf-to-docx-without-upload/)
-- [docx to pdf without upload](/blog/docx-to-pdf-without-upload/)
+- [pdf to docx without upload](/guides/how-to-convert-pdf-to-word-without-uploading/)
+- [docx to pdf without upload](/guides/how-to-convert-docx-to-pdf-in-browser/)
 - [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist/)
 
 ## What success looks like for PDF-to-DOCX-to-PDF revision work

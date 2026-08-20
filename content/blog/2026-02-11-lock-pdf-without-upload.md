@@ -9,12 +9,12 @@ tags:
   - "pdf tools"
   - "client-side"
   - "privacy-first"
-canonicalUrl: "https://dayfiles.com/blog/lock-pdf-without-upload"
+canonicalUrl: "https://dayfiles.com/guides/how-to-password-protect-a-pdf-before-emailing"
 featuredImage: "/blog/images/lock-pdf-without-upload.svg"
 featuredImageAlt: "Lock PDF privacy-first guide visual"
 sources:
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "Everyday Image Studio"
@@ -23,7 +23,7 @@ sources:
 
 How do you password protect a PDF without turning a simple file job into extra rework? The safest way through the task is to decide what the finished file needs to do, line up the checks that matter before export, and only then run the operation.
 
-In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://pdf.dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
+In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
 
 ## When does password protect a PDF make sense?
 
@@ -98,9 +98,9 @@ That broader logic stays the same even when the document changes: keep the appro
 
 ## Next Dayfiles guides after password protect a PDF
 
-- [unlock pdf without upload](/blog/unlock-pdf-without-upload/)
-- [e sign pdf online](/blog/e-sign-pdf-online/)
-- [PDF Fill and Sign Workflow Guide for Private Teams](/blog/pdf-fill-sign-private-workflow/)
+- [unlock pdf without upload](/guides/how-to-remove-a-pdf-password-you-know/)
+- [e sign pdf online](/guides/how-to-add-a-signature-image-to-a-pdf-locally/)
+- [PDF Fill and Sign Workflow Guide for Private Teams](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/)
 
 ## Before you send the password protect a PDF result
 

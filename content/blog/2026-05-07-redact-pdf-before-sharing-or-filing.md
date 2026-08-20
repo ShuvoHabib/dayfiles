@@ -16,11 +16,11 @@ featuredImage: /blog/images/redact-pdf-before-sharing-or-filing.svg
 featuredImageAlt: Redact PDF before external sharing or filing workflow visual
 sources:
   - title: Redact PDF
-    url: 'https://pdf.dayfiles.com/redact-pdf'
+    url: 'https://dayfiles.com/redact-pdf'
   - title: PDF Toolkit
     url: 'https://dayfiles.com/pdf-toolkit'
   - title: PDF Dayfiles
-    url: 'https://pdf.dayfiles.com/'
+    url: 'https://dayfiles.com/'
 faq:
   - q: When should a PDF be redacted instead of just trimmed or cropped?
     a: >-
@@ -36,7 +36,7 @@ faq:
       Teams often redact before final packet review, page removal, extraction,
       or external delivery through the broader PDF Toolkit workflow.
 ---
-How do you share a document that still contains useful content without exposing the parts that should never leave the team? The strongest answer is to treat redaction as a controlled release step: identify what must be hidden, apply the redaction locally, and review the shareable result as its own final file. That is exactly where [Redact PDF](https://pdf.dayfiles.com/redact-pdf) fits inside [PDF Toolkit](/pdf-toolkit).
+How do you share a document that still contains useful content without exposing the parts that should never leave the team? The strongest answer is to treat redaction as a controlled release step: identify what must be hidden, apply the redaction locally, and review the shareable result as its own final file. That is exactly where [Redact PDF](https://dayfiles.com/redact-pdf) fits inside [PDF Toolkit](/pdf-toolkit).
 
 ## When is redaction the right workflow?
 
@@ -66,9 +66,9 @@ Use this sequence:
 
 1. Start from the source PDF that is intended for the redacted release path.
 2. Identify every field, line, or area that should not remain visible.
-3. Apply [Redact PDF](https://pdf.dayfiles.com/redact-pdf) to those sections locally in the browser.
+3. Apply [Redact PDF](https://dayfiles.com/redact-pdf) to those sections locally in the browser.
 4. Review the redacted copy page by page, not just the first affected page.
-5. If the packet still needs cleanup after privacy work, continue into [Remove PDF Pages Before Sharing a Final Packet](/blog/remove-pdf-pages-before-final-packet) or [Organize PDF Without Uploading Files](/blog/organize-pdf-without-upload).
+5. If the packet still needs cleanup after privacy work, continue into [Remove PDF Pages Before Sharing a Final Packet](/blog/remove-pdf-pages-before-final-packet) or [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages).
 6. Export one redacted release file.
 7. Store the original working version separately from the redacted shareable copy.
 
@@ -140,4 +140,4 @@ It is not. It is a release decision with privacy implications.
 
 ## Final takeaway
 
-Redaction is strongest when the team treats it as part of controlled release, not as a quick visual edit. Start with [Redact PDF](https://pdf.dayfiles.com/redact-pdf), review the shareable result as its own file, and keep the original separate. That makes external sharing safer without forcing a full rebuild of the document.
+Redaction is strongest when the team treats it as part of controlled release, not as a quick visual edit. Start with [Redact PDF](https://dayfiles.com/redact-pdf), review the shareable result as its own file, and keep the original separate. That makes external sharing safer without forcing a full rebuild of the document.

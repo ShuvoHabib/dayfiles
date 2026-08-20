@@ -9,7 +9,7 @@ tags:
   - "everyday image studio"
   - "small team ops"
   - "brand consistency"
-canonicalUrl: "https://dayfiles.com/blog/eis-social-content-production-workflow"
+canonicalUrl: "https://dayfiles.com/image-workflows"
 featuredImage: "/blog/images/eis-social-content-production-workflow.svg"
 featuredImageAlt: "Social content production workflow visual"
 sources:
@@ -107,8 +107,8 @@ It ages well because it focuses on file state, not temporary interface details. 
 ## More Dayfiles guides for social asset production
 
 - [Everyday Image Studio Workflow Playbook for Daily Teams](/blog/eis-workflow-playbook/)
-- [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide/)
-- [images remove background product photos guide](/blog/images-remove-background-product-photos-guide/)
+- [How to Resize Images in Bulk for Listings and Uploads](/image-workflows/)
+- [images remove background product photos guide](/image-workflows/)
 
 ## What success looks like for social asset production
 

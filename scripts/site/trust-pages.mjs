@@ -631,7 +631,7 @@ export const trustPages = [
     supportingLinks: [
       { label: 'Open PDF Toolkit', href: '/pdf-toolkit/' },
       { label: 'Read the PDF operations checklist', href: '/blog/pdf-operations-checklist/' },
-      { label: 'Read the PDF edit via DOCX workflow', href: '/blog/pdf-edit-via-docx-and-back-workflow/' },
+      { label: 'Read the PDF-to-Word workflow', href: '/guides/how-to-convert-pdf-to-word-without-uploading/' },
       { label: 'Choose a document delivery format', href: '/document-delivery-formats/' },
       { label: 'Avoid packet rejection mistakes', href: '/application-packet-mistakes/' }
     ]
@@ -698,7 +698,7 @@ export const trustPages = [
     supportingLinks: [
       { label: 'Open Images', href: '/images/' },
       { label: 'Open Everyday Image Studio', href: '/everyday-image-studio/' },
-      { label: 'Read the JPG conversion guide', href: '/blog/images-convert-to-jpg-guide/' },
+      { label: 'Read the image format delivery guide', href: '/blog/convert-heic-png-and-webp-for-easier-delivery/' },
       { label: 'Prepare compliance-sensitive images', href: '/compliance-sensitive-image-prep/' }
     ]
   },
@@ -762,7 +762,7 @@ export const trustPages = [
     supportingLinks: [
       { label: 'PDF Workflows Hub', href: '/pdf-workflows/' },
       { label: 'Image Workflows Hub', href: '/image-workflows/' },
-      { label: 'Read the PDF edit via DOCX workflow', href: '/blog/pdf-edit-via-docx-and-back-workflow/' }
+      { label: 'Read the PDF-to-Word workflow', href: '/guides/how-to-convert-pdf-to-word-without-uploading/' }
     ]
   },
   {
@@ -816,7 +816,7 @@ export const trustPages = [
     ],
     supportingLinks: [
       { label: 'PDF Toolkit Checklist for Reliable Document Delivery', href: '/blog/pdf-operations-checklist/' },
-      { label: 'Visa Packet PDF Checklist for Clean Final Submission', href: '/blog/pdf-visa-application-packet-checklist/' },
+      { label: 'PDF Workflows Hub', href: '/pdf-workflows/' },
       { label: 'PDF Workflows Hub', href: '/pdf-workflows/' }
     ]
   },
@@ -874,8 +874,8 @@ export const trustPages = [
     ],
     supportingLinks: [
       { label: 'Image Workflows Hub', href: '/image-workflows/' },
-      { label: 'Employee ID Photo Standards for HR Teams and Faster Reviews', href: '/blog/eis-employee-id-photo-standard-guide/' },
-      { label: 'Visa Photo Checklist to Prevent Resubmission Delays', href: '/blog/eis-visa-photo-resubmission-checklist/' }
+      { label: 'Image Workflows Hub', href: '/image-workflows/' },
+      { label: 'Passport photo and PDF packet workflow', href: '/blog/passport-photo-to-final-pdf-packet/' }
     ]
   }
 ];

@@ -16,11 +16,11 @@ featuredImage: /blog/images/fill-sign-merge-lock-pdf-packet.svg
 featuredImageAlt: Fill sign merge and lock PDF packet workflow visual
 sources:
   - title: PDF Toolkit
-    url: 'https://pdf.dayfiles.com/'
+    url: 'https://dayfiles.com/'
   - title: Fill PDF Forms Online
-    url: 'https://dayfiles.com/blog/fill-pdf-forms-online'
+    url: 'https://dayfiles.com/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it'
   - title: E-Sign PDF Online
-    url: 'https://dayfiles.com/blog/e-sign-pdf-online'
+    url: 'https://dayfiles.com/guides/how-to-add-a-signature-image-to-a-pdf-locally'
 faq:
   - q: Why merge after filling and signing?
     a: >-
@@ -33,10 +33,10 @@ faq:
   - q: Which Dayfiles guides support this workflow?
     a: >-
       The main support guides are [Fill PDF Forms
-      Online](/blog/fill-pdf-forms-online), [E-Sign PDF
-      Online](/blog/e-sign-pdf-online), [Merge PDF Without Uploading
-      Files](/blog/merge-pdf-without-upload), and [Lock PDF Without Uploading
-      Files](/blog/lock-pdf-without-upload).
+      Online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it), [E-Sign PDF
+      Online](/guides/how-to-add-a-signature-image-to-a-pdf-locally), [Merge PDF Without Uploading
+      Files](/guides/how-to-merge-pdf-files-without-uploading), and [Lock PDF Without Uploading
+      Files](/guides/how-to-password-protect-a-pdf-before-emailing).
 ---
 How do you build one trustworthy PDF packet from forms, signatures, and supporting pages without losing control of the final version? The clean answer is to fill first, sign second, merge the complete approved files, and lock the final packet only after one last review. That order keeps edits, approvals, and delivery from colliding.
 
@@ -58,10 +58,10 @@ The workflow solves those problems by keeping each stage separate and visible.
 The Dayfiles chain is:
 
 1. [PDF Toolkit](/pdf-toolkit) as the workflow hub.
-2. [Fill PDF Forms Online](/blog/fill-pdf-forms-online) for structured field completion.
-3. [E-Sign PDF Online](/blog/e-sign-pdf-online) for signature placement.
-4. [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload) for final packet assembly.
-5. [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload) for end-stage protection.
+2. [Fill PDF Forms Online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it) for structured field completion.
+3. [E-Sign PDF Online](/guides/how-to-add-a-signature-image-to-a-pdf-locally) for signature placement.
+4. [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading) for final packet assembly.
+5. [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing) for end-stage protection.
 
 Each step exists for a reason. Filling handles content. Signing handles approval. Merging handles package structure. Locking handles final delivery control.
 
@@ -86,12 +86,12 @@ Use this process when the packet matters:
 
 1. Gather every required document and confirm which files actually need filling or signatures.
 2. Start in [PDF Toolkit](/pdf-toolkit) to anchor the full sequence.
-3. Complete form fields using [Fill PDF Forms Online](/blog/fill-pdf-forms-online).
+3. Complete form fields using [Fill PDF Forms Online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it).
 4. Validate names, dates, required attachments, and document version labels before anyone signs.
-5. Apply signatures only after the file content is final, using [E-Sign PDF Online](/blog/e-sign-pdf-online).
-6. Merge the approved signed files and supporting pages through [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload).
+5. Apply signatures only after the file content is final, using [E-Sign PDF Online](/guides/how-to-add-a-signature-image-to-a-pdf-locally).
+6. Merge the approved signed files and supporting pages through [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading).
 7. Review the merged packet for page order, missing attachments, and repeated pages.
-8. Lock the final packet using [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload) if the delivery step requires a fixed end-state.
+8. Lock the final packet using [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing) if the delivery step requires a fixed end-state.
 
 This is the operational difference between a packet and a pile of PDFs. One has sequence. The other has risk.
 
@@ -120,9 +120,9 @@ A packet workflow is mostly about reducing ambiguity. Once ambiguity is removed,
 
 ## Where this fits in Dayfiles
 
-The closest surrounding guides are already live on Dayfiles. Use [Fill PDF Forms Online](/blog/fill-pdf-forms-online) for the form stage, [E-Sign PDF Online](/blog/e-sign-pdf-online) for the signature stage, [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload) for packet assembly, and [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload) for final delivery control. Keep [PDF Toolkit](/pdf-toolkit) as the internal starting point when the process still needs orchestration.
+The closest surrounding guides are already live on Dayfiles. Use [Fill PDF Forms Online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it) for the form stage, [E-Sign PDF Online](/guides/how-to-add-a-signature-image-to-a-pdf-locally) for the signature stage, [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading) for packet assembly, and [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing) for final delivery control. Keep [PDF Toolkit](/pdf-toolkit) as the internal starting point when the process still needs orchestration.
 
-If the packet also includes image files turned into supporting PDF pages, pair this with [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload) and the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist). That combination helps when photos, scans, and forms all need to land in one deliverable.
+If the packet also includes image files turned into supporting PDF pages, pair this with [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free) and the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist). That combination helps when photos, scans, and forms all need to land in one deliverable.
 
 ## Best fit scenarios for packet workflows
 
@@ -158,4 +158,4 @@ All of those failures are preventable if the packet is treated like a workflow i
 
 ## Final takeaway
 
-The best packet workflows are boring because the sequence is stable. Start with [PDF Toolkit](/pdf-toolkit), fill through [Fill PDF Forms Online](/blog/fill-pdf-forms-online), sign through [E-Sign PDF Online](/blog/e-sign-pdf-online), merge with [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload), and lock only the final reviewed export. That keeps approvals, packet structure, and delivery aligned from start to finish.
+The best packet workflows are boring because the sequence is stable. Start with [PDF Toolkit](/pdf-toolkit), fill through [Fill PDF Forms Online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it), sign through [E-Sign PDF Online](/guides/how-to-add-a-signature-image-to-a-pdf-locally), merge with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), and lock only the final reviewed export. That keeps approvals, packet structure, and delivery aligned from start to finish.

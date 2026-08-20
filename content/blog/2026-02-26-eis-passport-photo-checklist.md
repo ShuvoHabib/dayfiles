@@ -10,7 +10,7 @@ tags:
   - "visa application"
   - "study application"
   - "photo checklist"
-canonicalUrl: "https://dayfiles.com/blog/eis-passport-photo-checklist"
+canonicalUrl: "https://dayfiles.com/image-workflows"
 featuredImage: "/blog/images/eis-passport-photo-checklist.svg"
 featuredImageAlt: "Everyday Image Studio passport photo checklist visual"
 sources:
@@ -19,7 +19,7 @@ sources:
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
 faq:
   - q: "Can I prepare passport or visa photos in the browser with Everyday Image Studio?"
     a: "Yes. Everyday Image Studio is designed for browser-based photo editing workflows so users can prepare compliant photos quickly before submitting forms."
@@ -101,8 +101,8 @@ The checklist earns its place when it helps the next run go faster with fewer su
 
 ## More Dayfiles guides for passport photo prep
 
-- [Visa Photo Checklist to Prevent Resubmission Delays](/blog/eis-visa-photo-resubmission-checklist/)
-- [How to Convert Images to JPG for Consistent Delivery](/blog/images-convert-to-jpg-guide/)
+- [Visa Photo Checklist to Prevent Resubmission Delays](/image-workflows/)
+- [How to Convert Images to JPG for Consistent Delivery](/image-workflows/)
 - [student visa application story](/blog/student-visa-application-story/)
 
 ## What “ready” should mean for passport photo prep

@@ -9,7 +9,7 @@ tags:
   - "images dayfiles"
   - "upload workflow"
   - "image optimization"
-canonicalUrl: "https://dayfiles.com/blog/images-bulk-image-compression-guide"
+canonicalUrl: "https://dayfiles.com/image-workflows"
 featuredImage: "/blog/images/images-bulk-image-compression-guide.svg"
 featuredImageAlt: "Bulk image compression workflow visual"
 sources:
@@ -111,9 +111,9 @@ Run it again only when the review reveals one specific correction target, such a
 
 ## More Dayfiles guides around compress image batches
 
-- [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide/)
-- [How to Convert Images to JPG for Consistent Delivery](/blog/images-convert-to-jpg-guide/)
-- [images remove background product photos guide](/blog/images-remove-background-product-photos-guide/)
+- [How to Resize Images in Bulk for Listings and Uploads](/image-workflows/)
+- [How to Convert Images to JPG for Consistent Delivery](/image-workflows/)
+- [images remove background product photos guide](/image-workflows/)
 
 ## Before you release the compress image batches batch
 

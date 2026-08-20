@@ -19,9 +19,9 @@ sources:
   - title: Images by Dayfiles
     url: 'https://images.dayfiles.com/'
   - title: JPG to PDF Without Uploading Files
-    url: 'https://dayfiles.com/blog/jpg-to-pdf-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-convert-jpg-to-pdf-for-free'
   - title: Minify PDF Without Uploading Files
-    url: 'https://dayfiles.com/blog/minify-pdf-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-compress-pdf-without-losing-quality'
 faq:
   - q: Why compress the PDF after converting images?
     a: >-
@@ -34,9 +34,9 @@ faq:
   - q: Which Dayfiles pages support this sequence?
     a: >-
       The most relevant pages are [Images](/images), [JPG to PDF Without
-      Uploading Files](/blog/jpg-to-pdf-without-upload), [Merge PDF Without
-      Uploading Files](/blog/merge-pdf-without-upload), and [Minify PDF Without
-      Uploading Files](/blog/minify-pdf-without-upload).
+      Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free), [Merge PDF Without
+      Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), and [Minify PDF Without
+      Uploading Files](/guides/how-to-compress-pdf-without-losing-quality).
 ---
 How do you turn several image files into one submission-ready PDF without ending up with a bloated or disorganized upload? The reliable answer is to prepare the images first, convert them into PDF pages, merge the final set if needed, and compress only the approved output. That sequence makes the resulting file easier to review, upload, and archive.
 
@@ -57,9 +57,9 @@ The chain usually looks like this:
 
 1. [Images](/images) for image preparation such as resize or compression.
 2. [PDF Toolkit](/pdf-toolkit) as the document workflow hub.
-3. [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload) to create PDF pages from the prepared image set.
-4. [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload) if several partial PDFs need to be assembled together.
-5. [Minify PDF Without Uploading Files](/blog/minify-pdf-without-upload) to reduce the final file size for upload limits.
+3. [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free) to create PDF pages from the prepared image set.
+4. [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading) if several partial PDFs need to be assembled together.
+5. [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality) to reduce the final file size for upload limits.
 
 The workflow becomes easier when each stage has one job: prepare, convert, assemble, optimize.
 
@@ -83,10 +83,10 @@ Use this process:
 1. Gather only the image files required for the submission.
 2. Review order, orientation, and readability before conversion.
 3. If the image batch is too heavy or inconsistent, stage it through [Images](/images) first.
-4. Convert the prepared files using [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload).
-5. If the submission is made of several parts, combine them with [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload).
+4. Convert the prepared files using [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free).
+5. If the submission is made of several parts, combine them with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading).
 6. Review the assembled PDF for page order, legibility, and missing pages.
-7. If upload limits still matter, run [Minify PDF Without Uploading Files](/blog/minify-pdf-without-upload) on the final approved PDF.
+7. If upload limits still matter, run [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality) on the final approved PDF.
 8. Recheck readability after compression before the file leaves the staging folder.
 
 This is the difference between "turning files into a PDF" and preparing a PDF that is ready to survive review.
@@ -116,9 +116,9 @@ The right workflow saves time because it reduces retries, not because it elimina
 
 ## Where this fits in Dayfiles
 
-Start with [Images](/images) when image preparation is still the main problem. Move to [PDF Toolkit](/pdf-toolkit) when the task becomes packet assembly and final delivery. The most relevant supporting guides are [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload), [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload), and [Minify PDF Without Uploading Files](/blog/minify-pdf-without-upload).
+Start with [Images](/images) when image preparation is still the main problem. Move to [PDF Toolkit](/pdf-toolkit) when the task becomes packet assembly and final delivery. The most relevant supporting guides are [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free), [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), and [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality).
 
-If the submission includes official photos or application images, the [Everyday Image Studio Passport Photo Checklist Guide](/blog/eis-passport-photo-checklist) is also useful. If the file becomes one step inside a broader application routine, pair this with the [Student Visa Application Workflow Story Powered by Dayfiles](/blog/student-visa-application-story) for a more complete operational model.
+If the submission includes official photos or application images, the [image workflow library](/image-workflows/) is also useful. If the file becomes one step inside a broader application routine, pair this with the [PDF workflow library](/pdf-workflows/) for a more complete operational model.
 
 ## Best fit scenarios for image-to-PDF submissions
 
@@ -158,4 +158,4 @@ The pattern is consistent: teams move too quickly between formats and lose the r
 
 ## Final takeaway
 
-Image-to-PDF work is more reliable when the operator treats preparation, conversion, assembly, and compression as distinct stages. Start from [Images](/images) if the source files need cleanup, move through [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload), combine parts with [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload), and finish with [Minify PDF Without Uploading Files](/blog/minify-pdf-without-upload) only after the packet is truly final.
+Image-to-PDF work is more reliable when the operator treats preparation, conversion, assembly, and compression as distinct stages. Start from [Images](/images) if the source files need cleanup, move through [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free), combine parts with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), and finish with [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality) only after the packet is truly final.

@@ -16,7 +16,7 @@ sources:
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Everyday Image Studio"
     url: "https://everydayimagestudio.dayfiles.com/"
 faq:
@@ -98,8 +98,8 @@ Improvising per portal feels fast at first, but it usually multiplies copies, na
 ## More Dayfiles reading for routines like this
 
 - [student visa application story](/blog/student-visa-application-story/)
-- [pdf visa application packet checklist](/blog/pdf-visa-application-packet-checklist/)
-- [eis passport photo checklist](/blog/eis-passport-photo-checklist/)
+- [pdf visa application packet checklist](/pdf-workflows/)
+- [eis passport photo checklist](/image-workflows/)
 
 ## What should remain after the deadlines pass
 

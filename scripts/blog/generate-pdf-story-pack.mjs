@@ -19,7 +19,7 @@ function tagsForFeature(feature) {
 
 function sourcesForFeature(feature) {
   return [
-    { title: 'PDF Dayfiles', url: 'https://pdf.dayfiles.com/' },
+    { title: 'PDF Dayfiles', url: 'https://dayfiles.com/' },
     { title: 'Dayfiles', url: 'https://dayfiles.com/' }
   ];
 }
@@ -46,7 +46,7 @@ The first version of the process is usually too loose. Someone opens the tool qu
 Mira switches to a tighter sequence:
 
 1. Start from [PDF Toolkit](/pdf-toolkit) to confirm the job category.
-2. Open [PDF Dayfiles](https://pdf.dayfiles.com/) only after the source file is confirmed.
+2. Open [PDF Dayfiles](https://dayfiles.com/) only after the source file is confirmed.
 3. Review the settings that matter most: ${feature.settings.join(', ')}.
 4. Export ${feature.outputLabel} and review it immediately.
 5. Save the final version with a name the next reviewer can understand.

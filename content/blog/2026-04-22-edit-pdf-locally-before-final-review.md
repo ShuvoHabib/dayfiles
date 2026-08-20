@@ -17,11 +17,11 @@ featuredImage: /blog/images/edit-pdf-locally-before-final-review.svg
 featuredImageAlt: Edit PDF locally before final review workflow visual
 sources:
   - title: Edit PDF
-    url: 'https://pdf.dayfiles.com/edit-pdf'
+    url: 'https://dayfiles.com/edit-pdf'
   - title: PDF Toolkit
     url: 'https://dayfiles.com/pdf-toolkit'
   - title: PDF Dayfiles
-    url: 'https://pdf.dayfiles.com/'
+    url: 'https://dayfiles.com/'
 faq:
   - q: When is direct PDF editing the right first step?
     a: >-
@@ -38,7 +38,7 @@ faq:
       cleanup, e-sign, page numbering, or final packet checks inside the PDF
       Toolkit workflow.
 ---
-How do you edit a PDF without turning the document into three competing “latest” versions? The safest answer is to choose one working copy, make the needed edits locally, and move the file through one review-and-export path before anyone shares it. That is the most practical use case for [Edit PDF](https://pdf.dayfiles.com/edit-pdf) inside the broader [PDF Toolkit](/pdf-toolkit) workflow.
+How do you edit a PDF without turning the document into three competing “latest” versions? The safest answer is to choose one working copy, make the needed edits locally, and move the file through one review-and-export path before anyone shares it. That is the most practical use case for [Edit PDF](https://dayfiles.com/edit-pdf) inside the broader [PDF Toolkit](/pdf-toolkit) workflow.
 
 ## When should a team edit the PDF directly?
 
@@ -70,10 +70,10 @@ Editing the PDF locally keeps the workflow shorter when the document itself is a
 Use this sequence when the document is nearly ready:
 
 1. Start from one clearly named working copy of the PDF.
-2. Open [Edit PDF](https://pdf.dayfiles.com/edit-pdf) and make only the revisions that are still truly required.
+2. Open [Edit PDF](https://dayfiles.com/edit-pdf) and make only the revisions that are still truly required.
 3. Save those changes back into the working copy instead of creating several parallel experiments.
 4. Run a focused review for the sections that were touched, not just the first page.
-5. If the document needs structural cleanup afterward, continue in related [PDF Toolkit](/pdf-toolkit) steps like [Organize PDF Without Uploading Files](/blog/organize-pdf-without-upload) or [Add Page Numbers to a PDF Without Uploading It](/blog/page-numbers-without-upload).
+5. If the document needs structural cleanup afterward, continue in related [PDF Toolkit](/pdf-toolkit) steps like [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages) or [Add Page Numbers to a PDF Without Uploading It](/guides/how-to-add-page-numbers-to-a-pdf).
 6. Export one review-ready version for approval.
 7. Archive or deliver only the approved final version.
 
@@ -104,7 +104,7 @@ This is why direct editing is strong for late-stage refinement and weak for full
 
 ## Where this fits in Dayfiles
 
-Use [PDF Toolkit](/pdf-toolkit) as the parent hub when the document may need more than one finishing step. After editing, the most useful adjacent guides are [Fill PDF Forms Online](/blog/fill-pdf-forms-online) when the document still has form work, [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) when the file is headed for handoff, and [E-Sign PDF Online](/blog/e-sign-pdf-online) if approval signatures come after the review stage.
+Use [PDF Toolkit](/pdf-toolkit) as the parent hub when the document may need more than one finishing step. After editing, the most useful adjacent guides are [Fill PDF Forms Online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it) when the document still has form work, [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) when the file is headed for handoff, and [E-Sign PDF Online](/guides/how-to-add-a-signature-image-to-a-pdf-locally) if approval signatures come after the review stage.
 
 If the file only needs a direct edit and export, this new feature can shorten the whole flow. If the file needs broader rework, it should still move into the right next step instead of staying in “editing mode” too long.
 
@@ -141,4 +141,4 @@ The edited file still needs one approved release state. Editing is not the end o
 
 ## Final takeaway
 
-Direct PDF editing is strongest when the document is already close to final and only needs focused changes. Start from [Edit PDF](https://pdf.dayfiles.com/edit-pdf), keep one working copy, and move the file through one review path before release. That keeps late-stage revisions fast without making the final PDF harder to trust.
+Direct PDF editing is strongest when the document is already close to final and only needs focused changes. Start from [Edit PDF](https://dayfiles.com/edit-pdf), keep one working copy, and move the file through one review path before release. That keeps late-stage revisions fast without making the final PDF harder to trust.

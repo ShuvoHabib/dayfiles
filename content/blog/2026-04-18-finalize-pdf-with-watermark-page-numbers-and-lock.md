@@ -17,11 +17,11 @@ featuredImage: /blog/images/finalize-pdf-with-watermark-page-numbers-and-lock.sv
 featuredImageAlt: Finalize PDF with watermark page numbers and lock workflow visual
 sources:
   - title: PDF Toolkit
-    url: 'https://pdf.dayfiles.com/'
+    url: 'https://dayfiles.com/'
   - title: Watermark Without Uploading Files
-    url: 'https://dayfiles.com/blog/watermark-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-add-a-watermark-to-a-pdf'
   - title: Page Numbers Without Uploading Files
-    url: 'https://dayfiles.com/blog/page-numbers-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-add-page-numbers-to-a-pdf'
 faq:
   - q: Why should locking be the last step?
     a: >-
@@ -34,9 +34,9 @@ faq:
       client, vendor, reviewer, or portal-facing final document.
   - q: Which Dayfiles guides support this sequence?
     a: >-
-      Use [Watermark Without Uploading Files](/blog/watermark-without-upload),
-      [Page Numbers Without Uploading Files](/blog/page-numbers-without-upload),
-      [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload), and
+      Use [Watermark Without Uploading Files](/guides/how-to-add-a-watermark-to-a-pdf),
+      [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf),
+      [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing), and
       [PDF Toolkit](/pdf-toolkit).
 ---
 How do you take a PDF from "working draft" to "ready to send" without skipping the final control steps? The practical answer is to add watermarks, apply page numbers, review the finished structure, and lock the file only after the approved delivery version is clear. That sequence turns a working document into a controlled final output.
@@ -57,9 +57,9 @@ The workflow exists because presentation and control are often added too late or
 The Dayfiles chain is straightforward:
 
 1. [PDF Toolkit](/pdf-toolkit) as the main category hub.
-2. [Watermark Without Uploading Files](/blog/watermark-without-upload) for marking the delivery state.
-3. [Page Numbers Without Uploading Files](/blog/page-numbers-without-upload) for navigable structure.
-4. [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload) for final delivery control.
+2. [Watermark Without Uploading Files](/guides/how-to-add-a-watermark-to-a-pdf) for marking the delivery state.
+3. [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf) for navigable structure.
+4. [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing) for final delivery control.
 
 This sequence is less about complex document editing and more about release discipline. The file is already approved. The question is how to finalize it correctly.
 
@@ -84,10 +84,10 @@ Use this process:
 
 1. Confirm the PDF content and page order are already final.
 2. Start from [PDF Toolkit](/pdf-toolkit) so the handoff process stays visible.
-3. Apply the visual status layer with [Watermark Without Uploading Files](/blog/watermark-without-upload) if the file needs a visible designation such as draft, reviewed, or internal.
-4. Add navigational structure through [Page Numbers Without Uploading Files](/blog/page-numbers-without-upload) if the recipient needs easier page reference.
+3. Apply the visual status layer with [Watermark Without Uploading Files](/guides/how-to-add-a-watermark-to-a-pdf) if the file needs a visible designation such as draft, reviewed, or internal.
+4. Add navigational structure through [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf) if the recipient needs easier page reference.
 5. Review the full PDF for readability, page order, watermark placement, and numbering consistency.
-6. Lock the approved delivery version through [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload).
+6. Lock the approved delivery version through [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing).
 7. Archive the unlocked working file separately from the locked delivered file.
 
 The most important rule is that locking protects certainty. It does not create certainty.
@@ -117,7 +117,7 @@ This workflow is essentially release management for PDFs.
 
 ## Where this fits in Dayfiles
 
-The right internal sequence is to start from [PDF Toolkit](/pdf-toolkit), then use [Watermark Without Uploading Files](/blog/watermark-without-upload), [Page Numbers Without Uploading Files](/blog/page-numbers-without-upload), and [Lock PDF Without Uploading Files](/blog/lock-pdf-without-upload) in that order. If the file is still being assembled, finish that first through [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload) or [Organize PDF Without Uploading Files](/blog/organize-pdf-without-upload).
+The right internal sequence is to start from [PDF Toolkit](/pdf-toolkit), then use [Watermark Without Uploading Files](/guides/how-to-add-a-watermark-to-a-pdf), [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf), and [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing) in that order. If the file is still being assembled, finish that first through [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading) or [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages).
 
 For teams that run document handoff often, the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) is the best adjacent process guide because it treats final delivery as a repeatable operational stage rather than an afterthought.
 
@@ -163,4 +163,4 @@ The stronger the delivery expectations, the more expensive those mistakes become
 
 ## Final takeaway
 
-Finalizing a PDF is not one action. It is a short release sequence. Start with [PDF Toolkit](/pdf-toolkit), add any status watermark through [Watermark Without Uploading Files](/blog/watermark-without-upload), apply numbering through [Page Numbers Without Uploading Files](/blog/page-numbers-without-upload), and lock only the approved delivery file. That makes the final handoff cleaner, easier to review, and easier to trust.
+Finalizing a PDF is not one action. It is a short release sequence. Start with [PDF Toolkit](/pdf-toolkit), add any status watermark through [Watermark Without Uploading Files](/guides/how-to-add-a-watermark-to-a-pdf), apply numbering through [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf), and lock only the approved delivery file. That makes the final handoff cleaner, easier to review, and easier to trust.

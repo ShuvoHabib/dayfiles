@@ -17,11 +17,11 @@ featuredImage: /blog/images/pdf-fix-text-and-recompress-workflow.svg
 featuredImageAlt: Fix PDF text and compress final PDF workflow visual
 sources:
   - title: PDF Toolkit
-    url: 'https://pdf.dayfiles.com/'
+    url: 'https://dayfiles.com/'
   - title: How to Convert PDF to DOCX Without Uploading Files
-    url: 'https://dayfiles.com/blog/pdf-to-docx-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-convert-pdf-to-word-without-uploading'
   - title: How to Minify PDF Without Uploading Files
-    url: 'https://dayfiles.com/blog/minify-pdf-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-compress-pdf-without-losing-quality'
 faq:
   - q: Why compress the PDF after text edits are finished?
     a: >-
@@ -34,9 +34,9 @@ faq:
   - q: Which Dayfiles pages support this sequence?
     a: >-
       Use [PDF Toolkit](/pdf-toolkit), [PDF to
-      DOCX](/blog/pdf-to-docx-without-upload), [DOCX to
-      PDF](/blog/docx-to-pdf-without-upload), and [Minify
-      PDF](/blog/minify-pdf-without-upload) in sequence.
+      DOCX](/guides/how-to-convert-pdf-to-word-without-uploading), [DOCX to
+      PDF](/guides/how-to-convert-docx-to-pdf-in-browser), and [Minify
+      PDF](/guides/how-to-compress-pdf-without-losing-quality) in sequence.
 ---
 How do you fix text inside a PDF and still end with a smaller upload-ready file? The reliable answer is to convert the PDF into an editable DOCX, correct the text there, rebuild the PDF, and only then compress the final export. That sequence keeps revision control cleaner than trying to edit and optimize the same file at the same time.
 
@@ -56,10 +56,10 @@ The goal is to solve the content problem first and the file-size problem second.
 The Dayfiles tool chain is:
 
 1. [PDF Toolkit](/pdf-toolkit) for the internal hub and surrounding workflow.
-2. [PDF to DOCX](/blog/pdf-to-docx-without-upload) to create an editable revision layer.
+2. [PDF to DOCX](/guides/how-to-convert-pdf-to-word-without-uploading) to create an editable revision layer.
 3. DOCX editing to fix the text.
-4. [DOCX to PDF](/blog/docx-to-pdf-without-upload) to rebuild the corrected file.
-5. [Minify PDF](/blog/minify-pdf-without-upload) to reduce the final file size only after content is finished.
+4. [DOCX to PDF](/guides/how-to-convert-docx-to-pdf-in-browser) to rebuild the corrected file.
+5. [Minify PDF](/guides/how-to-compress-pdf-without-losing-quality) to reduce the final file size only after content is finished.
 
 This order matters. Compression is a delivery step, not an editing step.
 
@@ -81,12 +81,12 @@ Use this workflow:
 
 1. Save the original PDF as the untouched source version.
 2. Start from [PDF Toolkit](/pdf-toolkit) so the full workflow stays visible.
-3. Convert the source file using [PDF to DOCX](/blog/pdf-to-docx-without-upload).
+3. Convert the source file using [PDF to DOCX](/guides/how-to-convert-pdf-to-word-without-uploading).
 4. Make the content edits in the DOCX version only.
 5. Review line breaks, tables, bullets, and page flow in the revised document.
-6. Rebuild the corrected document through [DOCX to PDF](/blog/docx-to-pdf-without-upload).
+6. Rebuild the corrected document through [DOCX to PDF](/guides/how-to-convert-docx-to-pdf-in-browser).
 7. Inspect the rebuilt PDF at full-page level.
-8. If the file is too large for the destination, run [Minify PDF](/blog/minify-pdf-without-upload) as the last transformation step.
+8. If the file is too large for the destination, run [Minify PDF](/guides/how-to-compress-pdf-without-losing-quality) as the last transformation step.
 9. Recheck readability after compression, especially on text-heavy pages.
 
 The key control point is between steps 7 and 8. You should only compress a PDF that is already content-final.
@@ -126,9 +126,9 @@ The "compress last" rule is simple, but it prevents a surprising amount of rewor
 
 ## Where this fits in Dayfiles
 
-This workflow connects several existing Dayfiles guides into one chain. If the text still needs revision, begin with [PDF to DOCX](/blog/pdf-to-docx-without-upload). If the content is final but the output format still needs to be rebuilt, use [DOCX to PDF](/blog/docx-to-pdf-without-upload). If upload limits are the last blocker, finish with [Minify PDF](/blog/minify-pdf-without-upload). Keep [PDF Toolkit](/pdf-toolkit) as the hub so the broader process stays organized.
+This workflow connects several existing Dayfiles guides into one chain. If the text still needs revision, begin with [PDF to DOCX](/guides/how-to-convert-pdf-to-word-without-uploading). If the content is final but the output format still needs to be rebuilt, use [DOCX to PDF](/guides/how-to-convert-docx-to-pdf-in-browser). If upload limits are the last blocker, finish with [Minify PDF](/guides/how-to-compress-pdf-without-losing-quality). Keep [PDF Toolkit](/pdf-toolkit) as the hub so the broader process stays organized.
 
-If the document is part of a larger packet, combine this sequence with [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload) or the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist). Those guides are useful when the fixed PDF becomes one step in a larger submission flow.
+If the document is part of a larger packet, combine this sequence with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading) or the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist). Those guides are useful when the fixed PDF becomes one step in a larger submission flow.
 
 ## Which documents benefit most from this sequence?
 
@@ -170,4 +170,4 @@ The cure is not a more complex process. It is a clearer one.
 
 ## Final takeaway
 
-Fixing PDF text and reducing file size are two different jobs, and the workflow works best when they stay in that order. Start from [PDF Toolkit](/pdf-toolkit), revise content through [PDF to DOCX](/blog/pdf-to-docx-without-upload), rebuild with [DOCX to PDF](/blog/docx-to-pdf-without-upload), and finish with [Minify PDF](/blog/minify-pdf-without-upload) only after the document is truly final.
+Fixing PDF text and reducing file size are two different jobs, and the workflow works best when they stay in that order. Start from [PDF Toolkit](/pdf-toolkit), revise content through [PDF to DOCX](/guides/how-to-convert-pdf-to-word-without-uploading), rebuild with [DOCX to PDF](/guides/how-to-convert-docx-to-pdf-in-browser), and finish with [Minify PDF](/guides/how-to-compress-pdf-without-losing-quality) only after the document is truly final.

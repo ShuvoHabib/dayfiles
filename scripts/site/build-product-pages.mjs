@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { PUBLIC_DIR, SITE_URL, ensureDir, formatHumanDate, postRelativeUrl, readPosts, sitePath, siteUrl } from '../blog/lib.mjs';
 import { getProductPageBySlug, productPages } from './product-pages.mjs';
 import { renderSubscribeSection, subscribeScriptTag, subscriptionStyles } from '../shared/subscription.mjs';
+import { isRetiredBlogSlug } from '../blog/remediation.mjs';
 import { trustPages } from './trust-pages.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -159,50 +160,6 @@ function themeSelectScript() {
             closeMenu();
           }
         });
-      })();
-    </script>
-  `;
-}
-
-function analyticsScripts() {
-  return `
-    <script>
-      (function () {
-        var host = window.location.hostname;
-        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
-        if (!isProd) return;
-        var loaded = false;
-
-        function loadThirdParty() {
-          if (loaded) return;
-          loaded = true;
-
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = function gtag() {
-            window.dataLayer.push(arguments);
-          };
-
-          var gtagScript = document.createElement('script');
-          gtagScript.async = true;
-          gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
-          gtagScript.onload = function () {
-            window.gtag('js', new Date());
-            window.gtag('config', 'G-V6HJS96NK6');
-          };
-          document.head.appendChild(gtagScript);
-        }
-
-        function triggerLoad() {
-          loadThirdParty();
-          window.removeEventListener('pointerdown', triggerLoad);
-          window.removeEventListener('keydown', triggerLoad);
-          window.removeEventListener('scroll', triggerLoad);
-        }
-
-        window.addEventListener('pointerdown', triggerLoad, { once: true, passive: true });
-        window.addEventListener('keydown', triggerLoad, { once: true });
-        window.addEventListener('scroll', triggerLoad, { once: true, passive: true });
-        window.setTimeout(loadThirdParty, 60000);
       })();
     </script>
   `;
@@ -1032,7 +989,6 @@ function renderPage(page, relatedPosts, lastUpdated) {
     <meta name="twitter:title" content="${escapeHtml(page.title)}" />
     <meta name="twitter:description" content="${escapeHtml(page.description)}" />
     <meta name="twitter:image" content="${SITE_URL}/dayfiles-logo.svg" />
-    ${analyticsScripts()}
     <script type="application/ld+json">${buildJsonLd(page)}</script>
     <style>${sharedStyles()}</style>
   </head>
@@ -1263,7 +1219,7 @@ export async function buildProductPages() {
   for (const page of productPages) {
     const relatedPosts = page.relatedGuideSlugs
       .map((slug) => posts.find((post) => post.slug === slug))
-      .filter(Boolean);
+      .filter((post) => post && !isRetiredBlogSlug(post.slug));
 
     const outDir = path.join(PUBLIC_DIR, page.slug);
     await ensureDir(outDir);

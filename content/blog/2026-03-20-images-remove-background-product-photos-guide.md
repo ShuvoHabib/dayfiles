@@ -9,7 +9,7 @@ tags:
   - "product photos"
   - "images dayfiles"
   - "listing workflow"
-canonicalUrl: "https://dayfiles.com/blog/images-remove-background-product-photos-guide/"
+canonicalUrl: "https://dayfiles.com/image-workflows/"
 featuredImage: "/blog/images/images-remove-background-product-photos-guide.svg"
 featuredImageAlt: "Background removal workflow for product photos"
 sources:
@@ -111,9 +111,9 @@ Run it again only when the review reveals one specific correction target, such a
 
 ## More Dayfiles guides around remove backgrounds from product photos
 
-- [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide/)
-- [How to Convert Images to JPG for Consistent Delivery](/blog/images-convert-to-jpg-guide/)
-- [eis social content production workflow](/blog/eis-social-content-production-workflow/)
+- [How to Resize Images in Bulk for Listings and Uploads](/image-workflows/)
+- [How to Convert Images to JPG for Consistent Delivery](/image-workflows/)
+- [eis social content production workflow](/image-workflows/)
 
 ## Before you release the remove backgrounds from product photos batch
 

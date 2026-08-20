@@ -16,7 +16,7 @@ sources:
   - title: "Everyday Image Studio"
     url: "https://everydayimagestudio.dayfiles.com/"
   - title: "PDF Toolkit"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
 faq:
@@ -97,9 +97,9 @@ A last-night scramble can still produce a submitted packet, but it usually leave
 
 ## More Dayfiles reading for routines like this
 
-- [eis passport photo checklist](/blog/eis-passport-photo-checklist/)
-- [fill pdf forms online](/blog/fill-pdf-forms-online/)
-- [pdf visa application packet checklist](/blog/pdf-visa-application-packet-checklist/)
+- [eis passport photo checklist](/image-workflows/)
+- [fill pdf forms online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/)
+- [pdf visa application packet checklist](/pdf-workflows/)
 
 ## What is worth carrying forward from this story
 

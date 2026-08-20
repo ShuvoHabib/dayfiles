@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "dayfiles-edge-router",
+  "main": "edge-router/src/index.mjs",
+  "compatibility_date": "2026-08-08",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "vars": {
+    "PDF_ORIGIN": "https://pdf-processor-4mc.pages.dev",
+    "EDITORIAL_ORIGIN": "https://dayfiles.pages.dev",
+    "ROUTER_MODE": "staging"
+  },
+  "env": {
+    "staging": {
+      "name": "dayfiles-edge-router-staging",
+      "workers_dev": true,
+      "vars": {
+        "PDF_ORIGIN": "https://41dcef01.pdf-processor-4mc.pages.dev",
+        "EDITORIAL_ORIGIN": "https://dayfiles.pages.dev",
+        "ROUTER_MODE": "staging"
+      }
+    },
+    "production": {
+      "name": "dayfiles-edge-router",
+      "workers_dev": false,
+      "routes": [
+        { "pattern": "dayfiles.com/*", "zone_name": "dayfiles.com" },
+        { "pattern": "www.dayfiles.com/*", "zone_name": "dayfiles.com" },
+        { "pattern": "pdf.dayfiles.com/*", "zone_name": "dayfiles.com" },
+        { "pattern": "blog.dayfiles.com", "custom_domain": true }
+      ],
+      "vars": {
+        "PDF_ORIGIN": "https://pdf-processor-4mc.pages.dev",
+        "EDITORIAL_ORIGIN": "https://dayfiles.pages.dev",
+        "ROUTER_MODE": "production"
+      }
+    }
+  }
+}

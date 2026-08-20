@@ -9,7 +9,7 @@ tags:
   - "images dayfiles"
   - "listing uploads"
   - "image dimensions"
-canonicalUrl: "https://dayfiles.com/blog/images-bulk-resize-listings-guide"
+canonicalUrl: "https://dayfiles.com/image-workflows"
 featuredImage: "/blog/images/images-bulk-resize-listings-guide.svg"
 featuredImageAlt: "Bulk image resize workflow visual"
 sources:
@@ -111,9 +111,9 @@ Run it again only when the review reveals one specific correction target, such a
 
 ## More Dayfiles guides around resize image batches for listings
 
-- [How to Compress Images in Bulk Before Upload Deadlines](/blog/images-bulk-image-compression-guide/)
-- [images remove background product photos guide](/blog/images-remove-background-product-photos-guide/)
-- [How to Convert Images to JPG for Consistent Delivery](/blog/images-convert-to-jpg-guide/)
+- [How to Compress Images in Bulk Before Upload Deadlines](/image-workflows/)
+- [images remove background product photos guide](/image-workflows/)
+- [How to Convert Images to JPG for Consistent Delivery](/image-workflows/)
 
 ## Before you release the resize image batches for listings batch
 

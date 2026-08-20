@@ -13,7 +13,7 @@ featuredImage: "/blog/images/complete-pdf-and-image-submission-packet.svg"
 featuredImageAlt: "PDF and image submission packet workflow"
 sources:
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Images Dayfiles"
     url: "https://images.dayfiles.com/"
   - title: "PDF Tools on Google Play"
@@ -33,7 +33,7 @@ How do you complete a submission packet when the materials include both PDFs and
 
 Mixed packets are risky because each file type has different failure points. Images may be too large, in the wrong format, or missing privacy cleanup. PDFs may have wrong page order, blank scans, missing signatures, or file-size problems. Fixing these at the end creates rework.
 
-Use [Images Dayfiles](https://images.dayfiles.com/) for image preparation and [PDF Dayfiles](https://pdf.dayfiles.com/) or the [Android app](https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor) for PDF assembly and review.
+Use [Images Dayfiles](https://images.dayfiles.com/) for image preparation and [PDF Dayfiles](https://dayfiles.com/) or the [Android app](https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor) for PDF assembly and review.
 
 ## A complete packet sequence
 
@@ -53,7 +53,7 @@ This order prevents image problems from appearing after the PDF is already assem
 
 Check destination rules, file size, page count, naming, signatures, image readability, page order, and whether any source material that should have stayed internal is still present. The packet should match the audience, not just the folder contents.
 
-For companion workflows, use [How to Turn Images Into a Clean Compressed PDF for Submission](/blog/images-to-clean-compressed-pdf-submission), [PDF Visa Packet Checklist for Faster Reviews](/blog/pdf-visa-application-packet-checklist), and [How to Build a Client PDF From DOCX, HTML, and Images](/blog/build-client-pdf-from-docx-html-and-images).
+For companion workflows, use [How to Turn Images Into a Clean Compressed PDF for Submission](/blog/images-to-clean-compressed-pdf-submission), [PDF Visa Packet Checklist for Faster Reviews](/pdf-workflows), and [How to Build a Client PDF From DOCX, HTML, and Images](/blog/build-client-pdf-from-docx-html-and-images).
 
 ## Final takeaway
 

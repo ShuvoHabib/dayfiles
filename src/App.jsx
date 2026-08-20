@@ -24,16 +24,16 @@ const liveProducts = [
 
 const credibilityFacts = [
   {
-    name: 'Founder-led publishing',
-    description: 'Dayfiles is run by Shuvo Habib, who owns the editorial direction, product framing, and final publishing decisions.'
+    name: 'Privacy-first browser tools',
+    description: 'Supported PDF and image workflows run locally in your browser, helping keep files on your device instead of sending them to an upload queue.'
   },
   {
-    name: 'Live-route review',
-    description: 'Guides are checked against current product hubs, route logic, screenshots, and the handoff risks readers need to catch.'
+    name: 'No feature paywalls',
+    description: 'Every available feature can be used without a subscription, premium tier, or paid unlock.'
   },
   {
-    name: 'Workflow-first editorial model',
-    description: 'The site publishes decision guides, checklists, and tool-backed workflow explanations rather than keyword filler or anonymous support content.'
+    name: 'Practical workflow guidance',
+    description: 'Clear guides and checklists help you choose the right PDF or image workflow before you start.'
   }
 ];
 
@@ -393,12 +393,12 @@ export default function App() {
 
       <main id="home">
         <section className="hero">
-          <p className="eyebrow">Founder-led workflow publisher</p>
-          <h1>Dayfiles makes PDF and image work easier.</h1>
+          <p className="eyebrow">Privacy-first. Free to use.</p>
+          <h1>Private PDF and image tools. No paywalls.</h1>
           <p className="hero-copy">
-            Dayfiles publishes browser-first workflow guides for PDF delivery, image preparation, and review-heavy file
-            jobs. The site combines editorial decision support with live product hubs so readers can understand the job
-            before they choose a tool path.
+            Use PDF and image tools directly in your browser. Supported workflows keep files on your device, and no
+            feature is blocked behind a subscription or paid unlock. Practical guides help you choose the right path
+            before you start.
           </p>
           <div className="hero-actions">
             {heroActions.map((action) => (

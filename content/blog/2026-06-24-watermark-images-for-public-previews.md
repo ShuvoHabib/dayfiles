@@ -60,7 +60,7 @@ The final file should feel intentional, not like a stamp dropped on at the last 
 
 Avoid covering faces, product labels, measurements, signatures, or small text when those details are the reason someone opened the image. Also avoid over-branding sensitive or administrative images. Sometimes a small draft label is better than a loud logo.
 
-For related workflow context, see [How to Add a Watermark to a PDF Without Uploading It](/blog/watermark-without-upload) and [How to Blur Faces in Images Before Sharing](/blog/images-blur-faces-before-sharing-guide). Both guides help when protection and readability need to live together.
+For related workflow context, see [How to Add a Watermark to a PDF Without Uploading It](/guides/how-to-add-a-watermark-to-a-pdf) and [How to Blur Faces in Images Before Sharing](/image-workflows). Both guides help when protection and readability need to live together.
 
 ## Final takeaway
 

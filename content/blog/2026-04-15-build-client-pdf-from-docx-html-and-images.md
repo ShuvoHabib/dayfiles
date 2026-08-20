@@ -17,11 +17,11 @@ featuredImage: /blog/images/build-client-pdf-from-docx-html-and-images.svg
 featuredImageAlt: Build one PDF from DOCX HTML and images workflow visual
 sources:
   - title: PDF Toolkit
-    url: 'https://pdf.dayfiles.com/'
+    url: 'https://dayfiles.com/'
   - title: How to Convert HTML to PDF Without Uploading Files
-    url: 'https://dayfiles.com/blog/html-to-pdf-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-convert-html-to-pdf-locally'
   - title: How to Convert DOCX to PDF Without Uploading Files
-    url: 'https://dayfiles.com/blog/docx-to-pdf-without-upload'
+    url: 'https://dayfiles.com/guides/how-to-convert-docx-to-pdf-in-browser'
 faq:
   - q: Why use a staged workflow for mixed-format PDF assembly?
     a: >-
@@ -36,10 +36,10 @@ faq:
   - q: Which Dayfiles guides support this process?
     a: >-
       The main support guides are [HTML to PDF Without Uploading
-      Files](/blog/html-to-pdf-without-upload), [DOCX to PDF Without Uploading
-      Files](/blog/docx-to-pdf-without-upload), [JPG to PDF Without Uploading
-      Files](/blog/jpg-to-pdf-without-upload), and [Merge PDF Without Uploading
-      Files](/blog/merge-pdf-without-upload).
+      Files](/guides/how-to-convert-html-to-pdf-locally), [DOCX to PDF Without Uploading
+      Files](/guides/how-to-convert-docx-to-pdf-in-browser), [JPG to PDF Without Uploading
+      Files](/guides/how-to-convert-jpg-to-pdf-for-free), and [Merge PDF Without Uploading
+      Files](/guides/how-to-merge-pdf-files-without-uploading).
 ---
 How do you turn DOCX files, HTML pages, and images into one clean client-ready PDF without losing order or consistency? The practical answer is to convert each source type into stable PDF components first, then merge the approved parts into one final document and review the assembled packet before delivery. That staged sequence is the safest path for mixed-format work.
 
@@ -58,11 +58,11 @@ Trying to combine everything in one improvised session usually creates avoidable
 The Dayfiles chain is:
 
 1. [PDF Toolkit](/pdf-toolkit) as the main workflow hub.
-2. [HTML to PDF Without Uploading Files](/blog/html-to-pdf-without-upload) for page-rendered content.
-3. [DOCX to PDF Without Uploading Files](/blog/docx-to-pdf-without-upload) for document files.
-4. [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload) for image pages or visual inserts.
-5. [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload) for final packet assembly.
-6. [Page Numbers Without Uploading Files](/blog/page-numbers-without-upload) if the final client packet needs numbering.
+2. [HTML to PDF Without Uploading Files](/guides/how-to-convert-html-to-pdf-locally) for page-rendered content.
+3. [DOCX to PDF Without Uploading Files](/guides/how-to-convert-docx-to-pdf-in-browser) for document files.
+4. [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free) for image pages or visual inserts.
+5. [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading) for final packet assembly.
+6. [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf) if the final client packet needs numbering.
 
 Each source type should be stabilized before merge. That is the operating rule that keeps mixed-format packets clean.
 
@@ -83,12 +83,12 @@ Use this process:
 
 1. Map the final document order before opening any conversion tools.
 2. Start from [PDF Toolkit](/pdf-toolkit) so the packet structure stays visible.
-3. Convert the HTML-derived content using [HTML to PDF Without Uploading Files](/blog/html-to-pdf-without-upload).
-4. Convert the document-based content using [DOCX to PDF Without Uploading Files](/blog/docx-to-pdf-without-upload).
-5. Convert any image inserts or visual pages using [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload).
+3. Convert the HTML-derived content using [HTML to PDF Without Uploading Files](/guides/how-to-convert-html-to-pdf-locally).
+4. Convert the document-based content using [DOCX to PDF Without Uploading Files](/guides/how-to-convert-docx-to-pdf-in-browser).
+5. Convert any image inserts or visual pages using [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free).
 6. Review each component PDF on its own before assembly.
-7. Merge the approved components using [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload).
-8. Add numbering with [Page Numbers Without Uploading Files](/blog/page-numbers-without-upload) if the final packet requires clear navigation.
+7. Merge the approved components using [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading).
+8. Add numbering with [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf) if the final packet requires clear navigation.
 9. Review the final merged PDF as one client-facing deliverable.
 
 This is the safest way to reduce errors when the source content lives in multiple formats.
@@ -117,7 +117,7 @@ The extra structure is valuable because mixed-format files multiply ambiguity qu
 
 ## Where this fits in Dayfiles
 
-This article connects several existing Dayfiles task guides into one client-delivery workflow. Keep [PDF Toolkit](/pdf-toolkit) as the packet hub. Use [HTML to PDF Without Uploading Files](/blog/html-to-pdf-without-upload) when the source is rendered page content. Use [DOCX to PDF Without Uploading Files](/blog/docx-to-pdf-without-upload) when the source is a document draft. Use [JPG to PDF Without Uploading Files](/blog/jpg-to-pdf-without-upload) when the source is visual. Then finish with [Merge PDF Without Uploading Files](/blog/merge-pdf-without-upload).
+This article connects several existing Dayfiles task guides into one client-delivery workflow. Keep [PDF Toolkit](/pdf-toolkit) as the packet hub. Use [HTML to PDF Without Uploading Files](/guides/how-to-convert-html-to-pdf-locally) when the source is rendered page content. Use [DOCX to PDF Without Uploading Files](/guides/how-to-convert-docx-to-pdf-in-browser) when the source is a document draft. Use [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free) when the source is visual. Then finish with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading).
 
 If the packet also needs a final review standard, pair it with the [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist). That guide helps when the mixed-format output becomes a client-facing final rather than an internal draft.
 

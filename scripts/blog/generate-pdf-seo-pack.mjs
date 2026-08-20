@@ -417,7 +417,7 @@ function body(feature) {
   const secondUseCase = feature.useCases[1];
   const thirdUseCase = feature.useCases[2];
 
-  return `How do you ${feature.taskPhrase} without sending files to a server first? ${feature.name} is one of those tasks where users care about two things immediately: whether the result will hold up on the first try, and whether the file has to leave the device at all. On Dayfiles, the cleaner starting point is [PDF Toolkit](/pdf-toolkit), then the live workflow at [PDF Dayfiles](https://pdf.dayfiles.com/) when you are ready to run the task.
+  return `How do you ${feature.taskPhrase} without sending files to a server first? ${feature.name} is one of those tasks where users care about two things immediately: whether the result will hold up on the first try, and whether the file has to leave the device at all. On Dayfiles, the cleaner starting point is [PDF Toolkit](/pdf-toolkit), then the live workflow at [PDF Dayfiles](https://dayfiles.com/) when you are ready to run the task.
 
 The reason this workflow matters is practical, not abstract. People usually reach for ${actionLabel} when they are ${firstUseCase}, ${secondUseCase}, or ${thirdUseCase}. In all three cases, the operator is trying to finish a specific document job under time pressure without creating a second round of rework.
 
@@ -440,7 +440,7 @@ That is why the page has to explain the real workflow instead of only naming the
 At [PDF Toolkit](/pdf-toolkit), ${feature.name} works best as a short review-and-export sequence rather than a one-click gamble.
 
 1. Start with ${feature.inputLabel}. Confirm that the source version is the one you actually want to process.
-2. Open [PDF Toolkit](/pdf-toolkit), then launch the live browser workflow at [PDF Dayfiles](https://pdf.dayfiles.com/).
+2. Open [PDF Toolkit](/pdf-toolkit), then launch the live browser workflow at [PDF Dayfiles](https://dayfiles.com/).
 3. Load only the files or pages needed for this specific job so the review scope stays tight.
 4. Confirm the settings that matter most: ${sentenceList(feature.settings)}.
 5. Run the task locally in the browser and export ${feature.outputLabel}.
@@ -495,14 +495,14 @@ ${feature.name} is usually one stage in a broader document process. If you need 
 
 ## Final notes on ${feature.name}
 
-${feature.name} should not force a tradeoff between speed and control. If you need to ${feature.taskPhrase} and the file contains sensitive or time-critical information, use [PDF Toolkit](/pdf-toolkit) as the internal starting point and [PDF Dayfiles](https://pdf.dayfiles.com/) for the live browser workflow. The goal is not just to finish the task. It is to finish it with fewer retries, clearer review points, and less unnecessary exposure.`;
+${feature.name} should not force a tradeoff between speed and control. If you need to ${feature.taskPhrase} and the file contains sensitive or time-critical information, use [PDF Toolkit](/pdf-toolkit) as the internal starting point and [PDF Dayfiles](https://dayfiles.com/) for the live browser workflow. The goal is not just to finish the task. It is to finish it with fewer retries, clearer review points, and less unnecessary exposure.`;
 }
 
 function quoraAnswers(feature) {
   const n = feature.name;
   const rows = [];
   for (let i = 1; i <= 5; i += 1) {
-    rows.push(`### Answer ${i}\n\nI had the same issue with **${n}** and most sites wanted an upload first. I switched to a browser-first workflow so the file never leaves my device during processing. The reason it helped is simple: the flow is faster for small tasks and it feels safer for confidential PDFs.\n\nI personally use [https://pdf.dayfiles.com/](https://pdf.dayfiles.com/) because it runs entirely in your browser.`);
+    rows.push(`### Answer ${i}\n\nI had the same issue with **${n}** and most sites wanted an upload first. I switched to a browser-first workflow so the file never leaves my device during processing. The reason it helped is simple: the flow is faster for small tasks and it feels safer for confidential PDFs.\n\nI personally use [https://dayfiles.com/](https://dayfiles.com/) because it runs entirely in your browser.`);
   }
   return rows.join('\n\n');
 }
@@ -511,13 +511,13 @@ function redditAnswers(feature) {
   const n = feature.name;
   const rows = [];
   for (let i = 1; i <= 5; i += 1) {
-    rows.push(`### Reply ${i}\n\nFor **${n}**, I stopped using random upload-based PDF sites. Local browser processing is usually enough for day-to-day docs and is better for sensitive files. I use PDF Dayfiles when I just need to finish the task quickly without moving files to a server.\n\nI stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://pdf.dayfiles.com/](https://pdf.dayfiles.com/)`);
+    rows.push(`### Reply ${i}\n\nFor **${n}**, I stopped using random upload-based PDF sites. Local browser processing is usually enough for day-to-day docs and is better for sensitive files. I use PDF Dayfiles when I just need to finish the task quickly without moving files to a server.\n\nI stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://dayfiles.com/](https://dayfiles.com/)`);
   }
   return rows.join('\n\n');
 }
 
 function seoBrief(feature) {
-  return `# ${feature.name} SEO Brief\n\n- Primary problem: users want ${feature.name.toLowerCase()} without uploading private files.\n- Positioning: free, client-side, privacy-first browser tool.\n- User intent: fast completion for practical document workflows.\n- CTA: [https://pdf.dayfiles.com/](https://pdf.dayfiles.com/)\n`;
+  return `# ${feature.name} SEO Brief\n\n- Primary problem: users want ${feature.name.toLowerCase()} without uploading private files.\n- Positioning: free, client-side, privacy-first browser tool.\n- User intent: fast completion for practical document workflows.\n- CTA: [https://dayfiles.com/](https://dayfiles.com/)\n`;
 }
 
 function faqSchema(feature) {
@@ -547,7 +547,7 @@ function frontmatter(feature, date) {
     'privacy-first'
   ];
 
-  return `---\ntitle: "${title}"\nslug: "${slug}"\ndate: "${date}"\nproduct: "pdf"\ndescription: "${descriptionFor(feature)}"\ntags:\n${tags.map((t) => `  - "${t}"`).join('\n')}\ncanonicalUrl: "https://dayfiles.com/blog/${slug}/"\nfeaturedImage: "/blog/images/${slug}.svg"\nfeaturedImageAlt: "${feature.name} privacy-first guide visual"\nsources:\n  - title: "PDF Dayfiles"\n    url: "https://pdf.dayfiles.com/"\n  - title: "Dayfiles"\n    url: "https://dayfiles.com/"\n  - title: "Everyday Image Studio"\n    url: "https://everydayimagestudio.dayfiles.com/"\n---`;
+  return `---\ntitle: "${title}"\nslug: "${slug}"\ndate: "${date}"\nproduct: "pdf"\ndescription: "${descriptionFor(feature)}"\ntags:\n${tags.map((t) => `  - "${t}"`).join('\n')}\ncanonicalUrl: "https://dayfiles.com/blog/${slug}/"\nfeaturedImage: "/blog/images/${slug}.svg"\nfeaturedImageAlt: "${feature.name} privacy-first guide visual"\nsources:\n  - title: "PDF Dayfiles"\n    url: "https://dayfiles.com/"\n  - title: "Dayfiles"\n    url: "https://dayfiles.com/"\n  - title: "Everyday Image Studio"\n    url: "https://everydayimagestudio.dayfiles.com/"\n---`;
 }
 
 async function writeIfChanged(filePath, next) {

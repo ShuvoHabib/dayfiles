@@ -99,7 +99,7 @@ Choosing between the two is mostly about the real cause of the file weight.
 
 ## Where this fits in Dayfiles
 
-Use [Images](/images) when the main job is controlled image preparation for upload or handoff. The most useful companion guides are [How to Compress Images to a Specific Size Before Upload](/blog/compress-images-to-a-specific-size-before-upload), [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide), and [How to Compress Images in Bulk Before Upload Deadlines](/blog/images-bulk-image-compression-guide).
+Use [Images](/images) when the main job is controlled image preparation for upload or handoff. The most useful companion guides are [How to Compress Images to a Specific Size Before Upload](/blog/compress-images-to-a-specific-size-before-upload), [How to Resize Images in Bulk for Listings and Uploads](/image-workflows), and [How to Compress Images in Bulk Before Upload Deadlines](/image-workflows).
 
 ## When resizing is a better tradeoff than harder compression
 

@@ -33,47 +33,6 @@
     <meta name="twitter:title" content="Free Online Image Converter and Compression Tools | Dayfiles" />
     <meta name="twitter:description" content="Use Dayfiles Images to convert, compress, resize in bulk, and export image files in your browser, with no account required for core workflows." />
     <meta name="twitter:image" content="https://dayfiles.com/dayfiles-logo.svg" />
-    
-    <script>
-      (function () {
-        var host = window.location.hostname;
-        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
-        if (!isProd) return;
-        var loaded = false;
-
-        function loadThirdParty() {
-          if (loaded) return;
-          loaded = true;
-
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = function gtag() {
-            window.dataLayer.push(arguments);
-          };
-
-          var gtagScript = document.createElement('script');
-          gtagScript.async = true;
-          gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
-          gtagScript.onload = function () {
-            window.gtag('js', new Date());
-            window.gtag('config', 'G-V6HJS96NK6');
-          };
-          document.head.appendChild(gtagScript);
-        }
-
-        function triggerLoad() {
-          loadThirdParty();
-          window.removeEventListener('pointerdown', triggerLoad);
-          window.removeEventListener('keydown', triggerLoad);
-          window.removeEventListener('scroll', triggerLoad);
-        }
-
-        window.addEventListener('pointerdown', triggerLoad, { once: true, passive: true });
-        window.addEventListener('keydown', triggerLoad, { once: true });
-        window.addEventListener('scroll', triggerLoad, { once: true, passive: true });
-        window.setTimeout(loadThirdParty, 60000);
-      })();
-    </script>
-  
     <script type="application/ld+json">{"@graph":[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Images","applicationCategory":"PhotoEditingApplication","operatingSystem":"Web","url":"https://images.dayfiles.com/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Browser-based image tools for conversion, compression, batch resizing, and export in repeated daily workflows."},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What can I do with Dayfiles Images?","acceptedAnswer":{"@type":"Answer","text":"You can convert, compress, resize, clean up, and export image files in a browser-based workflow."}},{"@type":"Question","name":"Do I need an account before using Images?","acceptedAnswer":{"@type":"Answer","text":"No. Dayfiles positions Images around no-account-required access for core workflows so users can start quickly."}},{"@type":"Question","name":"Who is Images best for?","acceptedAnswer":{"@type":"Answer","text":"It is best for people preparing uploads, resizing product assets, reducing file size, converting formats, and handling repeated image tasks."}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dayfiles.com/"},{"@type":"ListItem","position":2,"name":"Images","item":"https://dayfiles.com/images/"}]}]}</script>
     <style>
   :root {
@@ -805,7 +764,7 @@
         <p class="eyebrow">Image toolbox hub</p>
         <h1 class="hero-title">Free Online Image Conversion and Compression Tools</h1>
         <p class="hero-copy">Use browser-based image tools for conversion, compression, batch resizing, and export without creating an account before core work begins.</p>
-        <p class="muted">Last updated March 31, 2026</p>
+        <p class="muted">Last updated August 20, 2026</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://images.dayfiles.com/" target="_blank" rel="noreferrer">Open Images</a>
           <a class="btn btn-secondary" href="/blog/">Browse image guides</a>
@@ -839,24 +798,6 @@
         <h2>Related guides</h2>
         <div class="grid">
         <article class="card">
-          <a class="guide-link" href="/blog/images-bulk-image-compression-guide/">
-            <span class="badge">Image Guide</span>
-            <h3>How to Compress Images in Bulk Before Upload Deadlines</h3>
-            <p class="muted">Compress image batches before upload deadlines with a repeatable workflow that keeps files lighter, reviewable, and ready for email, CMS, and portal delivery.</p>
-          </a>
-        </article>
-      
-
-        <article class="card">
-          <a class="guide-link" href="/blog/eis-passport-photo-checklist/">
-            <span class="badge">Image Guide</span>
-            <h3>Everyday Image Studio Passport Photo Checklist Guide</h3>
-            <p class="muted">A practical passport photo checklist for visa and study applications using Everyday Image Studio, with size, background, and export quality checks before.</p>
-          </a>
-        </article>
-      
-
-        <article class="card">
           <a class="guide-link" href="/blog/eis-workflow-playbook/">
             <span class="badge">Image Guide</span>
             <h3>Everyday Image Studio Workflow Playbook for Daily Teams</h3>
@@ -866,10 +807,10 @@
       
 
         <article class="card">
-          <a class="guide-link" href="/blog/student-visa-application-story/">
+          <a class="guide-link" href="/blog/product-hunt-launch-everyday-image-studio/">
             <span class="badge">Image Guide</span>
-            <h3>Student Visa Application Workflow Story Powered by Dayfiles</h3>
-            <p class="muted">A practical story of how one student preparing for studies in Germany used Dayfiles tools to organize documents, fix image assets, and submit a clean.</p>
+            <h3>Everyday Image Studio Chrome Extension Launch Update</h3>
+            <p class="muted">Dayfiles launched the Everyday Image Studio Chrome Extension on Product Hunt, with a focused browser editing workflow and more features already on the roadmap.</p>
           </a>
         </article>
       </div>

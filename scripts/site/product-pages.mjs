@@ -27,10 +27,8 @@ export const productPages = [
     ],
     bestFor: ['bulk image compression', 'format conversion', 'listing image resize', 'batch export prep', 'upload-ready image delivery'],
     relatedGuideSlugs: [
-      'images-bulk-image-compression-guide',
-      'eis-passport-photo-checklist',
       'eis-workflow-playbook',
-      'student-visa-application-story'
+      'product-hunt-launch-everyday-image-studio'
     ],
     faqs: [
       {
@@ -66,7 +64,7 @@ export const productPages = [
       'Use Dayfiles PDF Toolkit to merge, split, compress, convert, fill, and sign PDFs in your browser, with no account required for core workflows.',
     shortTitle: 'PDF Toolkit',
     navLabel: 'PDF Toolkit',
-    appUrl: 'https://pdf.dayfiles.com/',
+    appUrl: 'https://dayfiles.com/',
     heroEyebrow: 'PDF workflow hub',
     h1: 'Free Online PDF Tools With No Account Required',
     heroCopy:
@@ -84,10 +82,8 @@ export const productPages = [
     ],
     bestFor: ['applications', 'contracts', 'form filling', 'packet assembly', 'document cleanup'],
     relatedGuideSlugs: [
-      'e-sign-pdf-online',
-      'fill-pdf-forms-online',
-      'merge-pdf-without-upload',
-      'pdf-operations-checklist'
+      'pdf-operations-checklist',
+      'fill-sign-merge-lock-pdf-packet'
     ],
     faqs: [
       {
@@ -141,7 +137,6 @@ export const productPages = [
     ],
     bestFor: ['passport photo preparation', 'team content production', 'quick image cleanup', 'repeated export workflows'],
     relatedGuideSlugs: [
-      'eis-passport-photo-checklist',
       'eis-workflow-playbook',
       'product-hunt-launch-everyday-image-studio'
     ],

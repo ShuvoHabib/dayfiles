@@ -9,12 +9,12 @@ tags:
   - "pdf tools"
   - "client-side"
   - "privacy-first"
-canonicalUrl: "https://dayfiles.com/blog/minify-pdf-without-upload"
+canonicalUrl: "https://dayfiles.com/guides/how-to-compress-pdf-without-losing-quality"
 featuredImage: "/blog/images/minify-pdf-without-upload.svg"
 featuredImageAlt: "Minify PDF privacy-first guide visual"
 sources:
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "Everyday Image Studio"
@@ -23,7 +23,7 @@ sources:
 
 How do you reduce PDF file size without turning a simple file job into extra rework? The safest way through the task is to decide what the finished file needs to do, line up the checks that matter before export, and only then run the operation.
 
-In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://pdf.dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
+In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
 
 ## When does reduce PDF file size make sense?
 
@@ -98,9 +98,9 @@ That broader logic stays the same even when the document changes: keep the appro
 
 ## Next Dayfiles guides after reduce PDF file size
 
-- [pdf to jpg without upload](/blog/pdf-to-jpg-without-upload/)
+- [pdf to jpg without upload](/guides/how-to-convert-pdf-to-jpg-locally/)
 - [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist/)
-- [Confidential Client Report PDF Workflow for Delivery Teams](/blog/pdf-confidential-client-report-workflow/)
+- [Confidential Client Report PDF Workflow for Delivery Teams](/pdf-workflows/)
 
 ## Before you send the reduce PDF file size result
 

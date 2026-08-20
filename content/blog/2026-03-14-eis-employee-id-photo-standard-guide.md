@@ -9,7 +9,7 @@ tags:
   - "everyday image studio"
   - "hr operations"
   - "photo standards"
-canonicalUrl: "https://dayfiles.com/blog/eis-employee-id-photo-standard-guide"
+canonicalUrl: "https://dayfiles.com/image-workflows"
 featuredImage: "/blog/images/eis-employee-id-photo-standard-guide.svg"
 featuredImageAlt: "Employee ID photo standard workflow visual"
 sources:
@@ -18,7 +18,7 @@ sources:
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
 faq:
   - q: "Why standardize employee ID photos?"
     a: "Standardization reduces rejected submissions, inconsistent profiles, and repetitive correction requests across HR systems."
@@ -100,9 +100,9 @@ The checklist earns its place when it helps the next run go faster with fewer su
 
 ## More Dayfiles guides for ID photo approvals
 
-- [Visa Photo Checklist to Prevent Resubmission Delays](/blog/eis-visa-photo-resubmission-checklist/)
-- [eis passport photo checklist](/blog/eis-passport-photo-checklist/)
-- [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide/)
+- [Visa Photo Checklist to Prevent Resubmission Delays](/image-workflows/)
+- [eis passport photo checklist](/image-workflows/)
+- [How to Resize Images in Bulk for Listings and Uploads](/image-workflows/)
 
 ## What “ready” should mean for ID photo approvals
 

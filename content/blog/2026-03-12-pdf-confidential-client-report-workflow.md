@@ -9,16 +9,16 @@ tags:
   - "client delivery"
   - "pdf operations"
   - "dayfiles"
-canonicalUrl: "https://dayfiles.com/blog/pdf-confidential-client-report-workflow"
+canonicalUrl: "https://dayfiles.com/pdf-workflows"
 featuredImage: "/blog/images/pdf-confidential-client-report-workflow.svg"
 featuredImageAlt: "Confidential client report PDF workflow visual"
 sources:
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "E-Sign PDF"
-    url: "https://pdf.dayfiles.com/e-sign-pdf"
+    url: "https://dayfiles.com/e-sign-pdf"
 faq:
   - q: "What causes the most report delivery errors?"
     a: "Most report errors come from version confusion and missing final review checks before delivery."
@@ -106,8 +106,8 @@ It ages well because it focuses on file state, not temporary interface details. 
 
 ## More Dayfiles guides for confidential report delivery
 
-- [merge pdf without upload](/blog/merge-pdf-without-upload/)
-- [e sign pdf online](/blog/e-sign-pdf-online/)
+- [merge pdf without upload](/guides/how-to-merge-pdf-files-without-uploading/)
+- [e sign pdf online](/guides/how-to-add-a-signature-image-to-a-pdf-locally/)
 - [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist/)
 
 ## What success looks like for confidential report delivery

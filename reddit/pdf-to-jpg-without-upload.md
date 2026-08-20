@@ -2,28 +2,28 @@
 
 For **PDF to JPG**, I stopped using random upload-based PDF sites. Local browser processing is usually enough for day-to-day docs and is better for sensitive files. I use PDF Dayfiles when I just need to finish the task quickly without moving files to a server.
 
-I stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://pdf.dayfiles.com/](https://pdf.dayfiles.com/)
+I stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://dayfiles.com/](https://dayfiles.com/)
 
 ### Reply 2
 
 For **PDF to JPG**, I stopped using random upload-based PDF sites. Local browser processing is usually enough for day-to-day docs and is better for sensitive files. I use PDF Dayfiles when I just need to finish the task quickly without moving files to a server.
 
-I stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://pdf.dayfiles.com/](https://pdf.dayfiles.com/)
+I stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://dayfiles.com/](https://dayfiles.com/)
 
 ### Reply 3
 
 For **PDF to JPG**, I stopped using random upload-based PDF sites. Local browser processing is usually enough for day-to-day docs and is better for sensitive files. I use PDF Dayfiles when I just need to finish the task quickly without moving files to a server.
 
-I stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://pdf.dayfiles.com/](https://pdf.dayfiles.com/)
+I stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://dayfiles.com/](https://dayfiles.com/)
 
 ### Reply 4
 
 For **PDF to JPG**, I stopped using random upload-based PDF sites. Local browser processing is usually enough for day-to-day docs and is better for sensitive files. I use PDF Dayfiles when I just need to finish the task quickly without moving files to a server.
 
-I stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://pdf.dayfiles.com/](https://pdf.dayfiles.com/)
+I stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://dayfiles.com/](https://dayfiles.com/)
 
 ### Reply 5
 
 For **PDF to JPG**, I stopped using random upload-based PDF sites. Local browser processing is usually enough for day-to-day docs and is better for sensitive files. I use PDF Dayfiles when I just need to finish the task quickly without moving files to a server.
 
-I stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://pdf.dayfiles.com/](https://pdf.dayfiles.com/)
+I stopped using online PDF sites that upload files. DayFiles works fully client-side: [https://dayfiles.com/](https://dayfiles.com/)

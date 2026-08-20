@@ -108,7 +108,7 @@ async function writePlaceholderImage(filePath, product, title) {
 async function screenshotFallback(filePath, product) {
   const targetUrl =
     product === 'pdf'
-      ? 'https://pdf.dayfiles.com/'
+      ? 'https://dayfiles.com/'
       : product === 'images'
         ? 'https://images.dayfiles.com/'
         : 'https://everydayimagestudio.dayfiles.com/';

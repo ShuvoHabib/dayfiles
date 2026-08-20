@@ -70,7 +70,7 @@ The best output depends on the destination. A transparent PNG may be best for a 
 
 Background removal is not magic. Busy hair, motion blur, low resolution, and complex reflections can make a perfect cutout unrealistic. The honest workflow is to improve the image, then decide if the result is good enough for the actual destination.
 
-Use [How to Remove Backgrounds From Product Photos](/blog/images-remove-background-product-photos-guide) for a broader product workflow. If the image later becomes a PDF page, [How to Build a Client PDF From DOCX, HTML, and Images](/blog/build-client-pdf-from-docx-html-and-images) shows how image assets move into documents.
+Use [How to Remove Backgrounds From Product Photos](/image-workflows) for a broader product workflow. If the image later becomes a PDF page, [How to Build a Client PDF From DOCX, HTML, and Images](/blog/build-client-pdf-from-docx-html-and-images) shows how image assets move into documents.
 
 ## Final takeaway
 

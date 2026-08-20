@@ -10,21 +10,21 @@ tags:
   - "client-side pdf"
   - "no file storage"
   - "privacy-first"
-canonicalUrl: "https://dayfiles.com/blog/e-sign-pdf-online"
+canonicalUrl: "https://dayfiles.com/guides/how-to-add-a-signature-image-to-a-pdf-locally"
 featuredImage: "/blog/images/e-sign-pdf-online.svg"
 featuredImageAlt: "E-sign PDF online privacy-first guide visual"
 sources:
   - title: "PDF Dayfiles E-Sign PDF"
-    url: "https://pdf.dayfiles.com/e-sign-pdf"
+    url: "https://dayfiles.com/e-sign-pdf"
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
 ---
 
 How do you move from an unsigned PDF to a signed file without losing control of the final packet? The safest approach is to treat signing as the last deliberate approval step, not as a shortcut you click in the middle of a messy document workflow.
 
-In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://pdf.dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
+In the Dayfiles stack, the safest starting point is [PDF Toolkit](/pdf-toolkit/) before opening the live route at [PDF Dayfiles](https://dayfiles.com/). That keeps the task grounded in the broader packet workflow instead of treating it like a disconnected one-click trick.
 
 ## When does e-sign a PDF in the browser make sense?
 
@@ -99,9 +99,9 @@ That broader logic stays the same even when the document changes: keep the appro
 
 ## Next Dayfiles guides after e-sign a PDF in the browser
 
-- [fill pdf forms online](/blog/fill-pdf-forms-online/)
-- [PDF Fill and Sign Workflow Guide for Private Teams](/blog/pdf-fill-sign-private-workflow/)
-- [merge pdf without upload](/blog/merge-pdf-without-upload/)
+- [fill pdf forms online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/)
+- [PDF Fill and Sign Workflow Guide for Private Teams](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/)
+- [merge pdf without upload](/guides/how-to-merge-pdf-files-without-uploading/)
 
 ## Before you send the e-sign a PDF in the browser result
 

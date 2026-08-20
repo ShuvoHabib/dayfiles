@@ -60,7 +60,7 @@ Show the before state, the action, and the outcome. That is enough for most rele
 
 Small text and fast cursor movement can make a GIF feel noisy. Zoom into the product area before recording, slow down the action, and remove dead time. A shorter, clearer loop is stronger than a full-screen recording where the feature is barely visible.
 
-For adjacent content workflows, see [Everyday Image Studio Chrome Extension Launch Update](/blog/product-hunt-launch-everyday-image-studio) and [Everyday Image Studio Social Content Workflow](/blog/eis-social-content-production-workflow). If the GIF is part of a document handoff, [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) can guide the final packet.
+For adjacent content workflows, see [Everyday Image Studio Chrome Extension Launch Update](/blog/product-hunt-launch-everyday-image-studio) and [Everyday Image Studio Social Content Workflow](/image-workflows). If the GIF is part of a document handoff, [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) can guide the final packet.
 
 ## Final takeaway
 

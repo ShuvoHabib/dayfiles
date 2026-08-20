@@ -63,7 +63,7 @@ This avoids the roughest outcome: a tiny file that meets the number but fails th
 
 Check the final image at the size it will be viewed. If the portal thumbnail is small, a lower-detail image may be acceptable. If someone will zoom into text, ID numbers, or product details, quality matters more.
 
-Use [How to Compress Images in Bulk Before Upload Deadlines](/blog/images-bulk-image-compression-guide) for folder-level compression and [How to Resize Images in Bulk for Listings and Uploads](/blog/images-bulk-resize-listings-guide) when dimension consistency matters across a batch.
+Use [How to Compress Images in Bulk Before Upload Deadlines](/image-workflows) for folder-level compression and [How to Resize Images in Bulk for Listings and Uploads](/image-workflows) when dimension consistency matters across a batch.
 
 ## Final takeaway
 

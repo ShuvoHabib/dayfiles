@@ -17,7 +17,7 @@ const TARGETS = [
   {
     product: 'pdf',
     name: 'PDF Toolkit',
-    url: 'https://pdf.dayfiles.com/'
+    url: 'https://dayfiles.com/'
   }
 ];
 

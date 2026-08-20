@@ -33,47 +33,6 @@
     <meta name="twitter:title" content="Free Online Image Editor for Crop and Cleanup | Dayfiles" />
     <meta name="twitter:description" content="Use Everyday Image Studio to crop, clean up, resize, and export images in your browser, with no account required for core daily workflows." />
     <meta name="twitter:image" content="https://dayfiles.com/dayfiles-logo.svg" />
-    
-    <script>
-      (function () {
-        var host = window.location.hostname;
-        var isProd = host === 'dayfiles.com' || host === 'www.dayfiles.com';
-        if (!isProd) return;
-        var loaded = false;
-
-        function loadThirdParty() {
-          if (loaded) return;
-          loaded = true;
-
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = function gtag() {
-            window.dataLayer.push(arguments);
-          };
-
-          var gtagScript = document.createElement('script');
-          gtagScript.async = true;
-          gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-V6HJS96NK6';
-          gtagScript.onload = function () {
-            window.gtag('js', new Date());
-            window.gtag('config', 'G-V6HJS96NK6');
-          };
-          document.head.appendChild(gtagScript);
-        }
-
-        function triggerLoad() {
-          loadThirdParty();
-          window.removeEventListener('pointerdown', triggerLoad);
-          window.removeEventListener('keydown', triggerLoad);
-          window.removeEventListener('scroll', triggerLoad);
-        }
-
-        window.addEventListener('pointerdown', triggerLoad, { once: true, passive: true });
-        window.addEventListener('keydown', triggerLoad, { once: true });
-        window.addEventListener('scroll', triggerLoad, { once: true, passive: true });
-        window.setTimeout(loadThirdParty, 60000);
-      })();
-    </script>
-  
     <script type="application/ld+json">{"@graph":[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Everyday Image Studio","applicationCategory":"PhotoEditingApplication","operatingSystem":"Web","url":"https://everydayimagestudio.dayfiles.com/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Browser-based image workflow tools for cropping, resizing, cleanup, and export in repeated daily editing tasks."},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Everyday Image Studio help with?","acceptedAnswer":{"@type":"Answer","text":"It helps with browser-based image cropping, resizing, cleanup, and export for fast repeated daily workflows."}},{"@type":"Question","name":"Do I need an account before using Everyday Image Studio?","acceptedAnswer":{"@type":"Answer","text":"No. Dayfiles positions the tool around no-account-required access for core daily image workflows."}},{"@type":"Question","name":"Who is Everyday Image Studio best for?","acceptedAnswer":{"@type":"Answer","text":"It is best for people preparing passport-style photos, producing team content, cleaning up images quickly, and handling repeated export tasks."}}]},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dayfiles.com/"},{"@type":"ListItem","position":2,"name":"Everyday Image Studio","item":"https://dayfiles.com/everyday-image-studio/"}]}]}</script>
     <style>
   :root {
@@ -805,7 +764,7 @@
         <p class="eyebrow">Image workflow hub</p>
         <h1 class="hero-title">Free Online Image Editing for Crop, Cleanup, and Export</h1>
         <p class="hero-copy">Use browser-based image tools for cropping, resizing, cleaning up, and exporting files fast, without creating an account before core daily work begins.</p>
-        <p class="muted">Last updated March 31, 2026</p>
+        <p class="muted">Last updated August 20, 2026</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://everydayimagestudio.dayfiles.com/" target="_blank" rel="noreferrer">Open Image Studio</a>
           <a class="btn btn-secondary" href="/blog/">Browse image guides</a>
@@ -837,15 +796,6 @@
       <section class="panel">
         <h2>Related guides</h2>
         <div class="grid">
-        <article class="card">
-          <a class="guide-link" href="/blog/eis-passport-photo-checklist/">
-            <span class="badge">Image Guide</span>
-            <h3>Everyday Image Studio Passport Photo Checklist Guide</h3>
-            <p class="muted">A practical passport photo checklist for visa and study applications using Everyday Image Studio, with size, background, and export quality checks before.</p>
-          </a>
-        </article>
-      
-
         <article class="card">
           <a class="guide-link" href="/blog/eis-workflow-playbook/">
             <span class="badge">Image Guide</span>

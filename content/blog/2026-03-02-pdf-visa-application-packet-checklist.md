@@ -9,16 +9,16 @@ tags:
   - "document checklist"
   - "privacy-first"
   - "dayfiles"
-canonicalUrl: "https://dayfiles.com/blog/pdf-visa-application-packet-checklist"
+canonicalUrl: "https://dayfiles.com/pdf-workflows"
 featuredImage: "/blog/images/pdf-visa-application-packet-checklist.svg"
 featuredImageAlt: "Visa application packet PDF checklist visual"
 sources:
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
   - title: "Fill PDF Forms"
-    url: "https://pdf.dayfiles.com/fill-pdf-forms"
+    url: "https://dayfiles.com/fill-pdf-forms"
   - title: "E-Sign PDF"
-    url: "https://pdf.dayfiles.com/e-sign-pdf"
+    url: "https://dayfiles.com/e-sign-pdf"
 faq:
   - q: "What is the most common visa packet mistake?"
     a: "The most common mistake is inconsistent field values across multiple forms, especially names and dates."
@@ -100,9 +100,9 @@ The checklist earns its place when it helps the next run go faster with fewer su
 
 ## More Dayfiles guides for visa packet review
 
-- [eis passport photo checklist](/blog/eis-passport-photo-checklist/)
-- [fill pdf forms online](/blog/fill-pdf-forms-online/)
-- [merge pdf without upload](/blog/merge-pdf-without-upload/)
+- [eis passport photo checklist](/image-workflows/)
+- [fill pdf forms online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/)
+- [merge pdf without upload](/guides/how-to-merge-pdf-files-without-uploading/)
 
 ## What “ready” should mean for visa packet review
 

@@ -9,7 +9,7 @@ tags:
   - "ads transparency"
   - "dayfiles blog"
   - "free resources"
-canonicalUrl: "https://dayfiles.com/blog/google-ads-content-support"
+canonicalUrl: "https://dayfiles.com/advertising-disclosure"
 featuredImage: "/blog/images/pdf-operations-checklist.svg"
 featuredImageAlt: "Dayfiles blog ad transparency and free content model"
 sources:
@@ -18,7 +18,7 @@ sources:
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "PDF Toolkit"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
 ---
 
 Why does Dayfiles use ads on some content pages at all? The honest answer is that the site needs a way to support public guides without turning every useful workflow page into a signup wall or an empty product teaser. The policy only works if the content remains the main reason to visit the page.
@@ -95,7 +95,7 @@ That is why policy talk alone is never enough. The surrounding pages have to pro
 
 - [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist/)
 - [Everyday Image Studio Workflow Playbook for Daily Teams](/blog/eis-workflow-playbook/)
-- [How to Blur Faces Before Sharing Sensitive Photos Online](/blog/images-blur-faces-before-sharing-guide/)
+- [How to Blur Faces Before Sharing Sensitive Photos Online](/image-workflows/)
 
 ## What this policy is trying to protect
 

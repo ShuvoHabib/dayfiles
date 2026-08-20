@@ -9,7 +9,7 @@ tags:
   - "everyday image studio"
   - "application quality"
   - "privacy-first"
-canonicalUrl: "https://dayfiles.com/blog/eis-visa-photo-resubmission-checklist"
+canonicalUrl: "https://dayfiles.com/image-workflows"
 featuredImage: "/blog/images/eis-visa-photo-resubmission-checklist.svg"
 featuredImageAlt: "Visa photo resubmission prevention checklist visual"
 sources:
@@ -18,7 +18,7 @@ sources:
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
   - title: "PDF Dayfiles"
-    url: "https://pdf.dayfiles.com/"
+    url: "https://dayfiles.com/"
 faq:
   - q: "Why are visa photos frequently rejected?"
     a: "Most rejections come from incorrect dimensions, poor background quality, and low-clarity exports."
@@ -100,9 +100,9 @@ The checklist earns its place when it helps the next run go faster with fewer su
 
 ## More Dayfiles guides for visa photo resubmission
 
-- [eis passport photo checklist](/blog/eis-passport-photo-checklist/)
+- [eis passport photo checklist](/image-workflows/)
 - [student visa application story](/blog/student-visa-application-story/)
-- [How to Convert Images to JPG for Consistent Delivery](/blog/images-convert-to-jpg-guide/)
+- [How to Convert Images to JPG for Consistent Delivery](/image-workflows/)
 
 ## What “ready” should mean for visa photo resubmission
 
