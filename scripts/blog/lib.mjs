@@ -68,7 +68,10 @@ export function formatHumanDate(dateInput) {
 }
 
 function normalizeInternalMarkdownLinks(markdown) {
-  return String(markdown || '').replace(/\]\((\/[^)\s]+)\)/g, (match, href) => `](${sitePath(href)})`);
+  return String(markdown || '').replace(
+    /\]\(((?:https:\/\/dayfiles\.com)?\/[^)\s]+)\)/g,
+    (match, href) => `](${href.startsWith('http') ? canonicalizeSiteUrl(href) : sitePath(href)})`
+  );
 }
 
 export function renderMarkdown(markdown) {
@@ -100,7 +103,12 @@ export async function readPosts(contentDir = CONTENT_DIR) {
       body: parsed.content.trim(),
       html: renderMarkdown(parsed.content.trim()),
       ...parsed.data,
-      canonicalUrl: canonicalizeSiteUrl(parsed.data.canonicalUrl)
+      canonicalUrl: canonicalizeSiteUrl(parsed.data.canonicalUrl),
+      testedToolUrl: canonicalizeSiteUrl(parsed.data.testedToolUrl),
+      sources: (parsed.data.sources || []).map((source) => ({
+        ...source,
+        url: canonicalizeSiteUrl(source.url)
+      }))
     });
   }
 

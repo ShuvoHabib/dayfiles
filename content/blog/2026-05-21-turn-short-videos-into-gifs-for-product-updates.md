@@ -100,7 +100,7 @@ If the goal is fast visual explanation, a GIF often wins.
 
 ## Where this fits in Dayfiles
 
-Use [Images](/images) when the team needs lightweight media assets for launch, support, or product communication. The closest related guides are [How to Turn HTML Into Shareable Images for Launch Posts](/blog/html-to-image-launch-posts-workflow) and [How to Blur Faces Before Sharing Sensitive Photos Online](/image-workflows) when privacy or launch packaging still matters around the asset.
+Use [Images](/images) when the team needs lightweight media assets for launch, support, or product communication. Continue with the [Image Workflows guide](/image-workflows) for a broader preparation path, or review [compliance-sensitive image preparation](/compliance-sensitive-image-prep) when privacy still matters around the asset. Keep the exported GIF named for the update it supports so teammates can identify the approved version later.
 
 ## Which product moments make the best GIFs
 

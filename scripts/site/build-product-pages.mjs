@@ -7,6 +7,9 @@ import { renderSubscribeSection, subscribeScriptTag, subscriptionStyles } from '
 import { isRetiredBlogSlug } from '../blog/remediation.mjs';
 import { trustPages } from './trust-pages.mjs';
 
+// Update this only when the generated hub and trust-page copy is materially reviewed.
+const SITE_CONTENT_LAST_REVIEWED = '2026-08-20';
+
 const __filename = fileURLToPath(import.meta.url);
 const extensionLink =
   'https://chromewebstore.google.com/detail/everyday-image-studio/cpcfdmaihaccamacobbfnfngefmdphfp/reviews?utm_source=item-share-cp';
@@ -1214,7 +1217,7 @@ function renderTrustPage(page, lastUpdated) {
 
 export async function buildProductPages() {
   const posts = await readPosts();
-  const lastUpdated = formatHumanDate(new Date().toISOString());
+  const lastUpdated = formatHumanDate(SITE_CONTENT_LAST_REVIEWED);
 
   for (const page of productPages) {
     const relatedPosts = page.relatedGuideSlugs
