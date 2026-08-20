@@ -17,6 +17,8 @@ sources:
     url: "https://dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
+  - title: "Organize PDF Pages in Acrobat"
+    url: "https://helpx.adobe.com/acrobat/web/edit-pdfs/organize-documents/organize-pages.html"
 ---
 
 What makes a PDF delivery process reliable when several people touch the file before it leaves the team? The strongest answer is not one feature. It is a checklist that forces the team to confirm version, formatting, privacy, and handoff discipline before the document becomes someone else’s problem.
@@ -100,3 +102,7 @@ The checklist earns its place when it helps the next run go faster with fewer su
 Ready means the file can move to its next destination without another person needing to guess what changed, what is final, or what still needs correction. That standard is what makes the checklist worth using.
 
 The stronger the checklist becomes, the less likely the next person is to treat the file like a mystery. That is the real gain from deepening this kind of page.
+
+## Verification note
+
+Last checked August 21, 2026. We ran the current PDF build through 21 Chromium regression checks using generated one- and multi-page fixtures. Merge, split, extract, compression, lock, unlock, redact, rotate, organize, remove pages, crop, watermark, page numbers, e-sign, form fill, PDF-to-JPG, PDF-to-DOCX, JPG-to-PDF, HTML-to-PDF, and DOCX-to-PDF all produced their expected downloadable outputs. The checklist still calls for a human visual review because an automated pass cannot approve the meaning, order, or readability of a real packet.

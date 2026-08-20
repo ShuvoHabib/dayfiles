@@ -22,6 +22,10 @@ sources:
     url: 'https://dayfiles.com/guides/how-to-reorder-and-delete-pdf-pages'
   - title: Minify PDF Without Uploading Files
     url: 'https://dayfiles.com/guides/how-to-compress-pdf-without-losing-quality'
+  - title: Reduce PDF File Size
+    url: 'https://helpx.adobe.com/acrobat/desktop/create-documents/optimize-pdfs/reduce-file-size.html'
+  - title: Combine Files Into One PDF
+    url: 'https://helpx.adobe.com/acrobat/desktop/edit-documents/combine-files/combine-files.html'
 faq:
   - q: Why is large PDF packaging a separate workflow?
     a: >-
@@ -168,3 +172,7 @@ The size of the packet is not the only risk. The structure of the packet is usua
 ## Final takeaway
 
 Large PDF submissions need packaging discipline more than they need faster clicks. Start in [PDF Toolkit](/pdf-toolkit), assemble with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), clean structure with [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages), optimize size through [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality), and lock only the approved final delivery version. That makes large uploads easier to trust and easier to get right the first time.
+
+## Verification note
+
+Last checked August 21, 2026. Merge, organize, compression, and lock checks passed in the current Chromium regression run. The compression fixture was designed to be reducible, so this verifies operation and output flow rather than promising a fixed saving for every document. Large real packets should be tested on the intended device and rechecked after compression for readable scans and complete attachments.

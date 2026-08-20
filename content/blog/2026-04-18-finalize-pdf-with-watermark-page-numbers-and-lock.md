@@ -22,6 +22,10 @@ sources:
     url: 'https://dayfiles.com/guides/how-to-add-a-watermark-to-a-pdf'
   - title: Page Numbers Without Uploading Files
     url: 'https://dayfiles.com/guides/how-to-add-page-numbers-to-a-pdf'
+  - title: Add Passwords to PDFs
+    url: 'https://helpx.adobe.com/acrobat/desktop/protect-documents/protect-with-passwords/add-passwords-to-pdfs.html'
+  - title: Organize PDF Pages in Acrobat
+    url: 'https://helpx.adobe.com/acrobat/web/edit-pdfs/organize-documents/organize-pages.html'
 faq:
   - q: Why should locking be the last step?
     a: >-
@@ -164,3 +168,7 @@ The stronger the delivery expectations, the more expensive those mistakes become
 ## Final takeaway
 
 Finalizing a PDF is not one action. It is a short release sequence. Start with [PDF Toolkit](/pdf-toolkit), add any status watermark through [Watermark Without Uploading Files](/guides/how-to-add-a-watermark-to-a-pdf), apply numbering through [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf), and lock only the approved delivery file. That makes the final handoff cleaner, easier to review, and easier to trust.
+
+## Verification note
+
+Last checked August 21, 2026. Watermark, page-number, and password-lock checks all passed in Chromium against the current DayFiles PDF build, each producing a downloadable PDF from generated fixtures. The automated run verifies that the operations complete. A human still needs to check watermark obstruction, number placement, final page order, and whether password protection is appropriate for the recipient.

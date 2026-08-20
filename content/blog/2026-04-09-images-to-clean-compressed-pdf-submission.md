@@ -22,6 +22,10 @@ sources:
     url: 'https://dayfiles.com/guides/how-to-convert-jpg-to-pdf-for-free'
   - title: Minify PDF Without Uploading Files
     url: 'https://dayfiles.com/guides/how-to-compress-pdf-without-losing-quality'
+  - title: Image Performance Guidance
+    url: 'https://web.dev/learn/performance/image-performance'
+  - title: Reduce PDF File Size
+    url: 'https://helpx.adobe.com/acrobat/desktop/create-documents/optimize-pdfs/reduce-file-size.html'
 faq:
   - q: Why compress the PDF after converting images?
     a: >-
@@ -159,3 +163,7 @@ The pattern is consistent: teams move too quickly between formats and lose the r
 ## Final takeaway
 
 Image-to-PDF work is more reliable when the operator treats preparation, conversion, assembly, and compression as distinct stages. Start from [Images](/images) if the source files need cleanup, move through [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free), combine parts with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), and finish with [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality) only after the packet is truly final.
+
+## Verification note
+
+Last checked August 21, 2026. A live 1280 × 720 image sample was reduced from 84 KB to 44 KB against a 50 KB target. Separately, the current PDF Chromium regression checks completed JPG-to-PDF, merge, and PDF compression with generated fixtures. These measurements verify the tool chain, while the final submission still needs checks for image legibility, page sequence, and the destination's actual limit.

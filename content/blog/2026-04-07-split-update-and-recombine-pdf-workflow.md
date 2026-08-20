@@ -22,6 +22,10 @@ sources:
     url: 'https://dayfiles.com/guides/how-to-split-one-pdf-into-multiple-files'
   - title: Merge PDF Without Uploading Files
     url: 'https://dayfiles.com/guides/how-to-merge-pdf-files-without-uploading'
+  - title: Split PDFs in Acrobat
+    url: 'https://helpx.adobe.com/acrobat/desktop/edit-documents/organize-pages/split-pdfs.html'
+  - title: Combine Files Into One PDF
+    url: 'https://helpx.adobe.com/acrobat/desktop/edit-documents/combine-files/combine-files.html'
 faq:
   - q: Why split a PDF before editing only one section?
     a: >-
@@ -162,3 +166,7 @@ The strongest protection against those mistakes is a clear "changed section" lab
 ## Final takeaway
 
 When only one part of a PDF packet changes, the smartest workflow is usually not to rebuild everything. Start with [PDF Toolkit](/pdf-toolkit), isolate the affected section with [Split PDF Without Uploading Files](/guides/how-to-split-one-pdf-into-multiple-files), revise it cleanly, then recombine the packet through [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading). That keeps revision scope narrow and packet quality easier to trust.
+
+## Verification note
+
+Last checked August 21, 2026. Using generated multi-page fixtures, the current Chromium checks exported split output and then successfully produced a merged PDF. This confirms that the separation and recombination steps work in the tested build. We did not treat that automated result as approval of a real revision; changed pages and final order still need visual comparison with the source packet.

@@ -22,6 +22,8 @@ sources:
     url: 'https://dayfiles.com/pdf-toolkit'
   - title: PDF Dayfiles
     url: 'https://dayfiles.com/'
+  - title: Change, Replace, or Delete Text in PDFs
+    url: 'https://helpx.adobe.com/acrobat/desktop/edit-documents/edit-text-in-pdfs/modify-text.html'
 faq:
   - q: When is direct PDF editing the right first step?
     a: >-
@@ -142,3 +144,7 @@ The edited file still needs one approved release state. Editing is not the end o
 ## Final takeaway
 
 Direct PDF editing is strongest when the document is already close to final and only needs focused changes. Start from [Edit PDF](https://dayfiles.com/edit-pdf), keep one working copy, and move the file through one review path before release. That keeps late-stage revisions fast without making the final PDF harder to trust.
+
+## Verification note
+
+Last checked August 21, 2026. We uploaded a 1.27 KB sample to the live editability inspector; it returned “Yes” and reported no major restriction signals, then offered direct handoffs to Edit, Fill, and E-sign. This is a routing check, not proof that every layout will edit cleanly. Scans, unusual fonts, tables, and complex positioning still require an output comparison before release.

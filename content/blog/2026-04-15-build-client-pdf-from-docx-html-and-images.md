@@ -22,6 +22,8 @@ sources:
     url: 'https://dayfiles.com/guides/how-to-convert-html-to-pdf-locally'
   - title: How to Convert DOCX to PDF Without Uploading Files
     url: 'https://dayfiles.com/guides/how-to-convert-docx-to-pdf-in-browser'
+  - title: Combine Files Into One PDF
+    url: 'https://helpx.adobe.com/acrobat/desktop/edit-documents/combine-files/combine-files.html'
 faq:
   - q: Why use a staged workflow for mixed-format PDF assembly?
     a: >-
@@ -162,3 +164,7 @@ These mistakes usually come from compressing the workflow into one hurried step 
 ## Final takeaway
 
 Mixed-format packet assembly becomes much easier when each source is stabilized before merge. Start from [PDF Toolkit](/pdf-toolkit), convert HTML, DOCX, and image inputs through their source-specific guides, then combine the approved components into one final PDF. That keeps client-ready packets cleaner, easier to review, and less likely to require late-stage rebuilding.
+
+## Verification note
+
+Last checked August 21, 2026. The current Chromium regression run created PDFs from DOCX, HTML, and JPG fixtures, then completed a separate PDF merge check. All four operations produced downloadable output. Because the fixtures are intentionally simple, real client material with tables, fonts, page breaks, or external web assets still needs component-by-component visual review before merge.

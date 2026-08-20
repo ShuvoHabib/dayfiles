@@ -21,6 +21,8 @@ sources:
     url: 'https://dayfiles.com/pdf-toolkit'
   - title: PDF Dayfiles
     url: 'https://dayfiles.com/'
+  - title: Redact and Sanitize PDFs
+    url: 'https://helpx.adobe.com/acrobat/desktop/protect-documents/redact-pdfs/redacting-sanitizing.html'
 faq:
   - q: When should a PDF be redacted instead of just trimmed or cropped?
     a: >-
@@ -141,3 +143,7 @@ It is not. It is a release decision with privacy implications.
 ## Final takeaway
 
 Redaction is strongest when the team treats it as part of controlled release, not as a quick visual edit. Start with [Redact PDF](https://dayfiles.com/redact-pdf), review the shareable result as its own file, and keep the original separate. That makes external sharing safer without forcing a full rebuild of the document.
+
+## Verification note
+
+Last checked August 21, 2026. The current Chromium regression check applied a redaction to a generated PDF fixture and exported a new PDF. This confirms the tool path completes, but a successful export is not enough for a sensitive release. Reopen the downloaded file, try text selection or search where relevant, and visually inspect every redacted area before sharing.

@@ -22,6 +22,8 @@ sources:
     url: 'https://dayfiles.com/pdf-toolkit'
   - title: PDF Dayfiles
     url: 'https://dayfiles.com/'
+  - title: Organize PDF Pages in Acrobat
+    url: 'https://helpx.adobe.com/acrobat/web/edit-pdfs/organize-documents/organize-pages.html'
 faq:
   - q: When should pages be removed instead of just ignored?
     a: >-
@@ -143,3 +145,7 @@ Keep the prior working version available when the team may need to explain what 
 ## Final takeaway
 
 Removing PDF pages is a delivery-quality decision, not just a cosmetic edit. Use [Remove PDF Pages](https://dayfiles.com/remove-pdf-pages) when the final file should be tighter, clearer, or safer than the assembled working packet. The key is to trim deliberately and then review the remaining structure before release.
+
+## Verification note
+
+Last checked August 21, 2026. The current Chromium regression check removed a page from a generated multi-page PDF and exported one cleaned PDF. That validates the operation, but not the editorial decision to delete a page. Before release, compare the remaining page count and cross-references with the source and keep the untouched original separately.

@@ -22,6 +22,8 @@ sources:
     url: 'https://dayfiles.com/pdf-toolkit'
   - title: PDF Dayfiles
     url: 'https://dayfiles.com/'
+  - title: Extract Pages From PDFs
+    url: 'https://helpx.adobe.com/acrobat/desktop/edit-documents/organize-pages/extract-pages.html'
 faq:
   - q: When should pages be extracted instead of sending the full PDF?
     a: >-
@@ -143,3 +145,7 @@ An extracted review file should stay tied to its original purpose. Do not quietl
 ## Final takeaway
 
 Page extraction is not just a convenience feature. It is a cleaner way to move specific sections through approval, correction, or limited review. Use [Extract PDF Pages](https://dayfiles.com/extract-pdf-pages) when only part of the packet is needed, and keep the subset clearly named so the team never confuses it with the full final document.
+
+## Verification note
+
+Last checked August 21, 2026. In Chromium, a generated multi-page fixture produced one PDF when one page was selected and a ZIP when multiple pages were selected. Both current regression checks passed. The test verifies selection and packaging behavior; reviewers should still compare the extracted first and last pages with the source because printed page labels may not match the file's internal page positions.

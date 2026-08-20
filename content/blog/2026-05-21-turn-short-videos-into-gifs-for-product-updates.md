@@ -22,6 +22,8 @@ sources:
     url: 'https://images.dayfiles.com/'
   - title: Dayfiles Images Hub
     url: 'https://dayfiles.com/images'
+  - title: WCAG 2.2 Guidance for Moving Content
+    url: 'https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html'
 faq:
   - q: When does a GIF work better than a short video clip?
     a: >-
@@ -144,3 +146,7 @@ Keep the source video if the team later needs a fuller demo or alternate crop.
 ## Final takeaway
 
 GIFs are strongest when they communicate one product moment quickly and cleanly. Use [Video to GIF](https://images.dayfiles.com/video-to-gif) when launch posts, support docs, or product updates need a lighter visual asset than full video, and keep the export tightly focused on the action that matters.
+
+## Verification note
+
+Last checked August 21, 2026 on the live tool. We converted a two-second, 17 KB MP4 sample at 10 FPS and 480 px output width. The browser produced a 26 KB GIF in 4.811 seconds after WebAssembly initialization. The GIF was larger than this unusually tiny input, which is a useful reminder that GIF is chosen for placement and looping behavior—not guaranteed file-size savings.

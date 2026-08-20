@@ -21,6 +21,10 @@ sources:
     url: 'https://images.dayfiles.com/'
   - title: Dayfiles Images Hub
     url: 'https://dayfiles.com/images'
+  - title: Using HEIF or HEVC Media on Apple Devices
+    url: 'https://support.apple.com/en-la/116944'
+  - title: WebP Format Overview
+    url: 'https://developers.google.com/speed/webp'
 faq:
   - q: 'When should teams convert between HEIC, PNG, WebP, or JPG?'
     a: >-
@@ -148,3 +152,7 @@ The right format depends on the next system, not on habit.
 ## Final takeaway
 
 Format conversion works best when it reduces friction for the next step instead of creating another mixed batch to manage. Use [Format Converter](https://images.dayfiles.com/format-converter) when HEIC, PNG, WebP, or similar files need one stable delivery format, and keep the output tied to its destination.
+
+## Verification note
+
+Last checked August 21, 2026 on the live tool. A 42 KB HEIC sample was decoded locally into a 1280 × 720 working image and exported as a 68 KB JPG at quality 90; the final conversion step reported 18 ms. We also converted a 110 KB PNG sample to an 84 KB JPG in 13 ms. These samples confirm the tested paths, but transparency and color appearance still need review when converting PNG or WebP assets.

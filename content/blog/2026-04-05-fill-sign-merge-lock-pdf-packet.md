@@ -21,6 +21,10 @@ sources:
     url: 'https://dayfiles.com/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it'
   - title: E-Sign PDF Online
     url: 'https://dayfiles.com/guides/how-to-add-a-signature-image-to-a-pdf-locally'
+  - title: Sign PDFs in Adobe Acrobat Reader
+    url: 'https://helpx.adobe.com/reader/desktop/sign-pdfs.html'
+  - title: Add Passwords to PDFs
+    url: 'https://helpx.adobe.com/acrobat/desktop/protect-documents/protect-with-passwords/add-passwords-to-pdfs.html'
 faq:
   - q: Why merge after filling and signing?
     a: >-
@@ -159,3 +163,7 @@ All of those failures are preventable if the packet is treated like a workflow i
 ## Final takeaway
 
 The best packet workflows are boring because the sequence is stable. Start with [PDF Toolkit](/pdf-toolkit), fill through [Fill PDF Forms Online](/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it), sign through [E-Sign PDF Online](/guides/how-to-add-a-signature-image-to-a-pdf-locally), merge with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), and lock only the final reviewed export. That keeps approvals, packet structure, and delivery aligned from start to finish.
+
+## Verification note
+
+Last checked August 21, 2026. The current Chromium regression run completed form fill, e-sign, merge, and password-lock operations on generated PDF fixtures and produced downloadable results for each step. We verified the mechanics in that order, but a real packet still needs a person to confirm field meaning, signature authority, page order, and the separately communicated password.

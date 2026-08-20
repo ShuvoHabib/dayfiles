@@ -22,6 +22,10 @@ sources:
     url: 'https://dayfiles.com/guides/how-to-convert-pdf-to-word-without-uploading'
   - title: How to Minify PDF Without Uploading Files
     url: 'https://dayfiles.com/guides/how-to-compress-pdf-without-losing-quality'
+  - title: Convert PDFs to Word Formats
+    url: 'https://helpx.adobe.com/acrobat/desktop/save-export-documents/convert-to-other-formats/pdf-to-word.html'
+  - title: Reduce PDF File Size
+    url: 'https://helpx.adobe.com/acrobat/desktop/create-documents/optimize-pdfs/reduce-file-size.html'
 faq:
   - q: Why compress the PDF after text edits are finished?
     a: >-
@@ -171,3 +175,7 @@ The cure is not a more complex process. It is a clearer one.
 ## Final takeaway
 
 Fixing PDF text and reducing file size are two different jobs, and the workflow works best when they stay in that order. Start from [PDF Toolkit](/pdf-toolkit), revise content through [PDF to DOCX](/guides/how-to-convert-pdf-to-word-without-uploading), rebuild with [DOCX to PDF](/guides/how-to-convert-docx-to-pdf-in-browser), and finish with [Minify PDF](/guides/how-to-compress-pdf-without-losing-quality) only after the document is truly final.
+
+## Verification note
+
+Last checked August 21, 2026. In a Chromium regression run against the current DayFiles PDF code, the PDF-to-DOCX check created a DOCX, the DOCX-to-PDF check rebuilt a PDF, and the compression check reduced a deliberately compressible PDF fixture. Those checks verify the three technical handoffs in this workflow; they do not remove the need to compare wording and layout before and after conversion.

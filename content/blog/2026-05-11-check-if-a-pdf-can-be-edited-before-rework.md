@@ -21,6 +21,10 @@ sources:
     url: 'https://dayfiles.com/pdf-password-status-checker'
   - title: PDF Toolkit
     url: 'https://dayfiles.com/pdf-toolkit'
+  - title: PDF Security Options
+    url: 'https://helpx.adobe.com/acrobat/desktop/protect-documents/protect-with-passwords/security-options.html'
+  - title: Change, Replace, or Delete Text in PDFs
+    url: 'https://helpx.adobe.com/acrobat/desktop/edit-documents/edit-text-in-pdfs/modify-text.html'
 faq:
   - q: Why check editability before trying to fix a PDF?
     a: >-
@@ -149,3 +153,7 @@ Even if a file can be edited, it may still be wiser to convert or isolate pages 
 ## Final takeaway
 
 Editability checks are valuable because they reduce wasted effort before real revision work even starts. Use [Can This PDF Be Edited](https://dayfiles.com/can-this-pdf-be-edited) to choose the right next step, then move into a single clean workflow instead of experimenting across several tools at once.
+
+## Verification note
+
+Last checked August 21, 2026. We uploaded a 1.27 KB sample PDF to the live inspector. It returned an editability verdict of “Yes,” reported no major restriction signals, and offered local next steps for Edit, Fill, and E-sign. That result applies only to the sample file; it should not be generalized to scanned, password-restricted, malformed, or layout-heavy PDFs.

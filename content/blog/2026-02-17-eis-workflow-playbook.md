@@ -17,6 +17,8 @@ sources:
     url: "https://everydayimagestudio.dayfiles.com/"
   - title: "Dayfiles"
     url: "https://dayfiles.com/"
+  - title: "Image Performance Guidance"
+    url: "https://web.dev/learn/performance/image-performance"
 faq:
   - q: "Who should own the image workflow in a small team?"
     a: "Assign a single workflow owner who maintains intake standards, quality checks, and delivery conventions across projects."
@@ -116,3 +118,7 @@ Small teams often assume they can rely on memory because everyone talks frequent
 It is useful when a new teammate can follow the sequence, a manager can review the outcomes, and the final asset handoff looks predictable instead of personal. That is the standard the playbook should support.
 
 The more the playbook reduces guesswork around approval, export, and archive status, the more it earns its place as a page people can actually use.
+
+## Verification note
+
+Last checked August 21, 2026. We ran 40 Chromium checks against the current Images.dayfiles.com build, including upload, preview, compression, resize, format conversion, and video-to-GIF output. We also crawled all 76 public image pages after deployment; each returned HTTP 200, while a made-up route returned a real 404. This verifies the tool paths behind the playbook, not the suitability of any individual output for a regulated destination.

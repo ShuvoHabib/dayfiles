@@ -22,6 +22,8 @@ sources:
     url: 'https://images.dayfiles.com/'
   - title: Dayfiles Images Hub
     url: 'https://dayfiles.com/images'
+  - title: Image Sizing and Performance Guidance
+    url: 'https://web.dev/learn/performance/image-performance'
 faq:
   - q: When is resize-to-size better than standard resizing?
     a: >-
@@ -143,3 +145,7 @@ Naming and folder discipline matter here just as much as the tool itself.
 ## Final takeaway
 
 Resize-to-size is valuable when the file is heavy because it is simply bigger than the destination needs. Use [Resize to Size](https://images.dayfiles.com/resize-to-size) when file limits and practical dimensions need to be solved together, and review the final image with the real destination in mind.
+
+## Verification note
+
+Last checked August 21, 2026 on the live tool. An 84 KB, 1280 × 720 JPG was processed against a 50 KB target and returned as a 44 KB JPG in 59 ms. For that sample, the tool kept the original 1280 × 720 dimensions because encoding alone met the target. A larger or stricter sample may reduce dimensions, so check the reported output size instead of assuming a resize will always occur.

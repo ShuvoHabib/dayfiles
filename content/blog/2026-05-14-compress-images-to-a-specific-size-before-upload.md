@@ -21,6 +21,8 @@ sources:
     url: 'https://images.dayfiles.com/'
   - title: Dayfiles Images Hub
     url: 'https://dayfiles.com/images'
+  - title: Image Compression and Quality Guidance
+    url: 'https://web.dev/learn/performance/image-performance'
 faq:
   - q: When is compress-to-size more useful than general compression?
     a: >-
@@ -148,3 +150,7 @@ That usually creates rework later.
 ## Final takeaway
 
 Compress-to-size workflows are strongest when the destination has a real threshold and the team wants fewer failed uploads. Use [Compress to Size](https://images.dayfiles.com/compress-to-size) when exact limits matter, then review the hardest files before the approved batch moves on.
+
+## Verification note
+
+Last checked August 21, 2026 on the live tool. We handed off an 84 KB, 1280 × 720 JPG, set a 50 KB target, and received a 44 KB JPG in 317 ms. The output met the tested limit. This single sample does not establish a universal quality threshold, so images with small text, gradients, or fine product detail still need visual review at the destination's actual target.

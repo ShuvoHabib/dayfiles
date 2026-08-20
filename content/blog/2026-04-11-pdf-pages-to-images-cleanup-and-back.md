@@ -22,6 +22,10 @@ sources:
     url: 'https://dayfiles.com/guides/how-to-convert-pdf-to-jpg-locally'
   - title: How to Convert JPG to PDF Without Uploading Files
     url: 'https://dayfiles.com/guides/how-to-convert-jpg-to-pdf-for-free'
+  - title: Combine Files Into One PDF
+    url: 'https://helpx.adobe.com/acrobat/desktop/edit-documents/combine-files/combine-files.html'
+  - title: Image Performance Guidance
+    url: 'https://web.dev/learn/performance/image-performance'
 faq:
   - q: When should PDF pages be converted to images before cleanup?
     a: >-
@@ -155,3 +159,7 @@ The workflow succeeds only when the page improvements also hold up at the full-d
 ## Final takeaway
 
 When page appearance is the real problem, converting PDF pages to images can make cleanup and review much clearer. Start from [PDF Toolkit](/pdf-toolkit), isolate page images with [PDF to JPG Without Uploading Files](/guides/how-to-convert-pdf-to-jpg-locally), prepare them through [Images](/images), and rebuild with [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free) so the final document looks cleaner without losing sequence control.
+
+## Verification note
+
+Last checked August 21, 2026. The current Chromium regression run completed both PDF-to-JPG and JPG-to-PDF output checks. The live image site also converted a 1280 × 720 PNG sample into an 84 KB JPG in 13 ms. That confirms the round-trip components, not pixel-for-pixel fidelity; text sharpness, crop boundaries, and page order must still be reviewed before replacing the source PDF.

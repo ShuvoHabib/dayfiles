@@ -21,6 +21,8 @@ sources:
     url: 'https://dayfiles.com/image-workflows'
   - title: JPG to PDF Without Uploading Files
     url: 'https://dayfiles.com/guides/how-to-convert-jpg-to-pdf-for-free'
+  - title: U.S. Passport Photo Requirements
+    url: 'https://travel.state.gov/content/travel/en/passports/how-apply/photos.html'
 faq:
   - q: Why should passport photo preparation happen before PDF assembly?
     a: >-
@@ -155,3 +157,7 @@ Those mistakes come from skipping the handoff between the image workflow and the
 ## Final takeaway
 
 Passport-photo preparation and PDF packet assembly should support each other without collapsing into one messy step. Start in [Everyday Image Studio](/everyday-image-studio), use [Images](/images) if export handling is needed, then move into [PDF Toolkit](/pdf-toolkit) only after the image is approved. That keeps the final packet cleaner, easier to review, and less likely to require last-minute rebuilding.
+
+## Verification note
+
+Last checked August 21, 2026. We verified the delivery chain with a live 1280 × 720 image conversion and a passing JPG-to-PDF Chromium check against the current PDF build. This test confirms that an approved image can move into a PDF output. It does not certify passport-photo compliance: dimensions, background, head position, recency, and file-size rules must be checked against the receiving authority's current instructions.

@@ -21,6 +21,8 @@ sources:
     url: "https://dayfiles.com/"
   - title: "PDF Toolkit"
     url: "https://dayfiles.com/"
+  - title: "Image Performance Guidance"
+    url: "https://web.dev/learn/performance/image-performance"
 faq:
   - q: "What was launched on Product Hunt?"
     a: "Dayfiles launched the Everyday Image Studio Chrome Extension, focused on practical in-browser image editing workflows."
@@ -106,3 +108,7 @@ Later readers often arrive from search, a shared link, or a passing mention rath
 The best launch post does not just celebrate. It gives visitors a useful next step and makes the product easier to evaluate on its own terms. That is the job this announcement should do on Dayfiles.
 
 If the post still helps a new visitor understand the product months later, it is doing more than announcing. It is helping the site explain itself in a durable way.
+
+## Verification note
+
+Last checked August 21, 2026 rather than relying on the original launch claim. All 76 public pages returned HTTP 200 after the deployment repair, and 40 Chromium workflow checks passed. In live browser tests, the site converted PNG to JPG, compressed and resized an image below a 50 KB target, converted a HEIC sample to JPG, and turned a two-second MP4 sample into a GIF. This is a current product-status check, not a claim about Product Hunt ranking or third-party reception.
