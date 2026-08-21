@@ -45,7 +45,7 @@ faq:
 ---
 How do you prepare a large PDF submission that is too complex to trust as a one-click export? The practical answer is to assemble the packet, organize the page flow, compress the final file for upload limits, and lock the approved version only after one last full review. That sequence treats large-file delivery as a process, not a gamble.
 
-## When to use this workflow
+## When does a large submission need staged packaging?
 
 This workflow is built for submissions that are too large, too important, or too structured for ad hoc handling:
 
@@ -125,7 +125,7 @@ That is why "organize before compress" is one of the most important rules in thi
 
 The difference is not just efficiency. It is whether the file can survive formal review without another export cycle.
 
-## Where this fits in Dayfiles
+## How large-submission packaging connects to DayFiles
 
 Use [PDF Toolkit](/pdf-toolkit) as the anchor for large submission work. The main supporting guides are [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages), [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality), and [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing). If the packet needs page references, [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf) is the next useful step.
 
@@ -169,10 +169,10 @@ The size of the packet is not the only risk. The structure of the packet is usua
 4. Review readability and completeness after compression.
 5. Lock and archive the approved final version separately from the working copy.
 
-## Final takeaway
+## Package large submissions as a controlled release
 
 Large PDF submissions need packaging discipline more than they need faster clicks. Start in [PDF Toolkit](/pdf-toolkit), assemble with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), clean structure with [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages), optimize size through [Minify PDF Without Uploading Files](/guides/how-to-compress-pdf-without-losing-quality), and lock only the approved final delivery version. That makes large uploads easier to trust and easier to get right the first time.
 
-## Verification note
+## How we checked the large-submission workflow
 
 Last checked August 21, 2026. Merge, organize, compression, and lock checks passed in the current Chromium regression run. The compression fixture was designed to be reducible, so this verifies operation and output flow rather than promising a fixed saving for every document. Large real packets should be tested on the intended device and rechecked after compression for readable scans and complete attachments.

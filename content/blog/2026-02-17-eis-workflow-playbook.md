@@ -119,6 +119,6 @@ It is useful when a new teammate can follow the sequence, a manager can review t
 
 The more the playbook reduces guesswork around approval, export, and archive status, the more it earns its place as a page people can actually use.
 
-## Verification note
+## How we checked the image workflow playbook
 
 Last checked August 21, 2026. We ran 40 Chromium checks against the current Images.dayfiles.com build, including upload, preview, compression, resize, format conversion, and video-to-GIF output. We also crawled all 76 public image pages after deployment; each returned HTTP 200, while a made-up route returned a real 404. This verifies the tool paths behind the playbook, not the suitability of any individual output for a regulated destination.

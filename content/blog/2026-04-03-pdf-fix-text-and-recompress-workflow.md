@@ -44,7 +44,7 @@ faq:
 ---
 How do you fix text inside a PDF and still end with a smaller upload-ready file? The reliable answer is to convert the PDF into an editable DOCX, correct the text there, rebuild the PDF, and only then compress the final export. That sequence keeps revision control cleaner than trying to edit and optimize the same file at the same time.
 
-## When to use this workflow
+## When should text correction happen before compression?
 
 This is the right workflow when the document has two problems at once:
 
@@ -128,7 +128,7 @@ That is why the workflow needs one final quality gate after the compression step
 
 The "compress last" rule is simple, but it prevents a surprising amount of rework.
 
-## Where this fits in Dayfiles
+## How edit-then-compress connects to DayFiles
 
 This workflow connects several existing Dayfiles guides into one chain. If the text still needs revision, begin with [PDF to DOCX](/guides/how-to-convert-pdf-to-word-without-uploading). If the content is final but the output format still needs to be rebuilt, use [DOCX to PDF](/guides/how-to-convert-docx-to-pdf-in-browser). If upload limits are the last blocker, finish with [Minify PDF](/guides/how-to-compress-pdf-without-losing-quality). Keep [PDF Toolkit](/pdf-toolkit) as the hub so the broader process stays organized.
 
@@ -172,10 +172,10 @@ The cure is not a more complex process. It is a clearer one.
 4. Compress only the approved final PDF.
 5. Recheck text clarity, then archive and upload the approved version.
 
-## Final takeaway
+## Correct the content before optimizing its size
 
 Fixing PDF text and reducing file size are two different jobs, and the workflow works best when they stay in that order. Start from [PDF Toolkit](/pdf-toolkit), revise content through [PDF to DOCX](/guides/how-to-convert-pdf-to-word-without-uploading), rebuild with [DOCX to PDF](/guides/how-to-convert-docx-to-pdf-in-browser), and finish with [Minify PDF](/guides/how-to-compress-pdf-without-losing-quality) only after the document is truly final.
 
-## Verification note
+## How we checked the edit-and-compress workflow
 
 Last checked August 21, 2026. In a Chromium regression run against the current DayFiles PDF code, the PDF-to-DOCX check created a DOCX, the DOCX-to-PDF check rebuilt a PDF, and the compression check reduced a deliberately compressible PDF fixture. Those checks verify the three technical handoffs in this workflow; they do not remove the need to compare wording and layout before and after conversion.

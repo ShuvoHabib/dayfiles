@@ -827,7 +827,7 @@
 </tr>
 </tbody></table>
 <p>Choosing between the two is mostly about the real cause of the file weight.</p>
-<h2>Where this fits in Dayfiles</h2>
+<h2>How resize-to-size connects to DayFiles</h2>
 <p>Use <a href="/images/">Images</a> when the main job is controlled image preparation for upload or handoff. The most useful companion guides are <a href="/blog/compress-images-to-a-specific-size-before-upload/">How to Compress Images to a Specific Size Before Upload</a>, <a href="/image-workflows/">How to Resize Images in Bulk for Listings and Uploads</a>, and <a href="/image-workflows/">How to Compress Images in Bulk Before Upload Deadlines</a>.</p>
 <h2>When resizing is a better tradeoff than harder compression</h2>
 <p>If the image is far larger than the destination actually needs, resizing is often the cleaner decision. It lowers the file weight by changing the scale, not just by squeezing more aggressively. That usually gives the team a more understandable tradeoff when the upload limit is strict but readability still matters.</p>
@@ -853,9 +853,9 @@
 <li>Export set named clearly.</li>
 <li>Originals preserved separately.</li>
 </ol>
-<h2>Final takeaway</h2>
+<h2>Resize when dimensions can absorb the tradeoff</h2>
 <p>Resize-to-size is valuable when the file is heavy because it is simply bigger than the destination needs. Use <a href="https://images.dayfiles.com/resize-to-size">Resize to Size</a> when file limits and practical dimensions need to be solved together, and review the final image with the real destination in mind.</p>
-<h2>Verification note</h2>
+<h2>How we checked the resize-to-size workflow</h2>
 <p>Last checked August 21, 2026 on the live tool. An 84 KB, 1280 × 720 JPG was processed against a 50 KB target and returned as a 44 KB JPG in 59 ms. For that sample, the tool kept the original 1280 × 720 dimensions because encoding alone met the target. A larger or stricter sample may reduce dimensions, so check the reported output size instead of assuming a resize will always occur.</p>
 
       </article>

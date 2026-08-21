@@ -103,6 +103,6 @@ Ready means the file can move to its next destination without another person nee
 
 The stronger the checklist becomes, the less likely the next person is to treat the file like a mystery. That is the real gain from deepening this kind of page.
 
-## Verification note
+## How we checked the PDF operations checklist
 
 Last checked August 21, 2026. We ran the current PDF build through 21 Chromium regression checks using generated one- and multi-page fixtures. Merge, split, extract, compression, lock, unlock, redact, rotate, organize, remove pages, crop, watermark, page numbers, e-sign, form fill, PDF-to-JPG, PDF-to-DOCX, JPG-to-PDF, HTML-to-PDF, and DOCX-to-PDF all produced their expected downloadable outputs. The checklist still calls for a human visual review because an automated pass cannot approve the meaning, order, or readability of a real packet.

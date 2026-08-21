@@ -99,7 +99,7 @@ In many teams, the real error is not a broken export. It is a correct export of 
 
 When only one section is needed, extraction usually creates a cleaner and safer review path.
 
-## Where this fits in Dayfiles
+## How page extraction connects to DayFiles
 
 Start from [PDF Toolkit](/pdf-toolkit) when page extraction is one step in a bigger packet workflow. The strongest adjacent guides are [Split PDF Without Uploading Files](/guides/how-to-split-one-pdf-into-multiple-files) for broader section handling, [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading) if the section must later return to a packet, and [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist) when the handoff itself needs structure.
 
@@ -142,10 +142,10 @@ An extracted review file should stay tied to its original purpose. Do not quietl
 5. Review context confirmed.
 6. Full packet stored separately.
 
-## Final takeaway
+## Extract the smallest useful review packet
 
 Page extraction is not just a convenience feature. It is a cleaner way to move specific sections through approval, correction, or limited review. Use [Extract PDF Pages](https://dayfiles.com/extract-pdf-pages) when only part of the packet is needed, and keep the subset clearly named so the team never confuses it with the full final document.
 
-## Verification note
+## How we checked PDF page extraction
 
 Last checked August 21, 2026. In Chromium, a generated multi-page fixture produced one PDF when one page was selected and a ZIP when multiple pages were selected. Both current regression checks passed. The test verifies selection and packaging behavior; reviewers should still compare the extracted first and last pages with the source because printed page labels may not match the file's internal page positions.

@@ -99,7 +99,7 @@ This is one of the most important habits in privacy workflows: review the file t
 
 If the page still needs to exist, redaction is usually the better fit.
 
-## Where this fits in Dayfiles
+## How redaction connects to DayFiles
 
 Use [PDF Toolkit](/pdf-toolkit) as the hub whenever redaction is part of a larger document-release workflow. The best adjacent guides are [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist), [How to Extract PDF Pages for Cleaner Review Packets](/blog/extract-pdf-pages-for-review-packets), and [How to Remove PDF Pages Before Sharing a Final Packet](/blog/remove-pdf-pages-before-final-packet). If the document will later become a locked final file, that should happen only after privacy review is complete.
 
@@ -140,10 +140,10 @@ It is not. It is a release decision with privacy implications.
 5. Release file named clearly.
 6. Source and redacted files stored separately.
 
-## Final takeaway
+## Redaction is complete only after the result is checked
 
 Redaction is strongest when the team treats it as part of controlled release, not as a quick visual edit. Start with [Redact PDF](https://dayfiles.com/redact-pdf), review the shareable result as its own file, and keep the original separate. That makes external sharing safer without forcing a full rebuild of the document.
 
-## Verification note
+## How we checked the redaction workflow
 
 Last checked August 21, 2026. The current Chromium regression check applied a redaction to a generated PDF fixture and exported a new PDF. This confirms the tool path completes, but a successful export is not enough for a sensitive release. Reopen the downloaded file, try text selection or search where relevant, and visually inspect every redacted area before sharing.

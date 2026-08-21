@@ -101,7 +101,7 @@ This is especially important when the team removes pages from the middle of a pa
 
 If the packet is about to leave the team, trimming usually helps more than “playing safe” by keeping every page.
 
-## Where this fits in Dayfiles
+## How page removal connects to DayFiles
 
 Use [PDF Toolkit](/pdf-toolkit) as the hub when page removal is one finishing step among others. The closest companion guides are [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages), [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading), and [PDF Toolkit Operations Checklist](/blog/pdf-operations-checklist). If the real need is not deletion but isolation of one section, [How to Extract PDF Pages for Cleaner Review Packets](/blog/extract-pdf-pages-for-review-packets) is the better path once that queued guide publishes.
 
@@ -142,10 +142,10 @@ Keep the prior working version available when the team may need to explain what 
 5. Updated final-review copy exported.
 6. Previous working packet stored separately.
 
-## Final takeaway
+## Remove only what the final packet does not need
 
 Removing PDF pages is a delivery-quality decision, not just a cosmetic edit. Use [Remove PDF Pages](https://dayfiles.com/remove-pdf-pages) when the final file should be tighter, clearer, or safer than the assembled working packet. The key is to trim deliberately and then review the remaining structure before release.
 
-## Verification note
+## How we checked PDF page removal
 
 Last checked August 21, 2026. The current Chromium regression check removed a page from a generated multi-page PDF and exported one cleaned PDF. That validates the operation, but not the editorial decision to delete a page. Before release, compare the remaining page count and cross-references with the source and keep the untouched original separately.

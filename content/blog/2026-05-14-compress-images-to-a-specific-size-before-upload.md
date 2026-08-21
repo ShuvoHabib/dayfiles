@@ -98,7 +98,7 @@ The important point is that a technically compliant file can still be a weak del
 
 If the destination uses a hard threshold, exact targeting is usually the better workflow.
 
-## Where this fits in Dayfiles
+## How exact-size compression connects to DayFiles
 
 Start from [Images](/images) when the job is batch processing, format conversion, or upload preparation at scale. The strongest adjacent guides are [How to Compress Images in Bulk Before Upload Deadlines](/image-workflows), [How to Resize Images in Bulk for Listings and Uploads](/image-workflows), and [PDF Toolkit Checklist for Reliable Document Delivery](/blog/pdf-operations-checklist) when the final assets later move into a packet.
 
@@ -147,10 +147,10 @@ That usually creates rework later.
 5. Approved exports named clearly.
 6. Original files preserved separately.
 
-## Final takeaway
+## Treat the portal limit as a measured target
 
 Compress-to-size workflows are strongest when the destination has a real threshold and the team wants fewer failed uploads. Use [Compress to Size](https://images.dayfiles.com/compress-to-size) when exact limits matter, then review the hardest files before the approved batch moves on.
 
-## Verification note
+## How we checked exact-size compression
 
 Last checked August 21, 2026 on the live tool. We handed off an 84 KB, 1280 × 720 JPG, set a 50 KB target, and received a 44 KB JPG in 317 ms. The output met the tested limit. This single sample does not establish a universal quality threshold, so images with small text, gradients, or fine product detail still need visual review at the destination's actual target.

@@ -109,6 +109,6 @@ The best launch post does not just celebrate. It gives visitors a useful next st
 
 If the post still helps a new visitor understand the product months later, it is doing more than announcing. It is helping the site explain itself in a durable way.
 
-## Verification note
+## How we checked the launch details
 
 Last checked August 21, 2026 rather than relying on the original launch claim. All 76 public pages returned HTTP 200 after the deployment repair, and 40 Chromium workflow checks passed. In live browser tests, the site converted PNG to JPG, compressed and resized an image below a 50 KB target, converted a HEIC sample to JPG, and turned a two-second MP4 sample into a GIF. This is a current product-status check, not a claim about Product Hunt ranking or third-party reception.

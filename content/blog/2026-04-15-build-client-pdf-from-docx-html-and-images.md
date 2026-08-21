@@ -45,7 +45,7 @@ faq:
 ---
 How do you turn DOCX files, HTML pages, and images into one clean client-ready PDF without losing order or consistency? The practical answer is to convert each source type into stable PDF components first, then merge the approved parts into one final document and review the assembled packet before delivery. That staged sequence is the safest path for mixed-format work.
 
-## When to use this workflow
+## When does a client PDF need mixed-source assembly?
 
 This workflow is useful whenever the final deliverable is one PDF but the inputs come from several different systems:
 
@@ -117,7 +117,7 @@ That is why mixed-format workflows should always include one final packet review
 
 The extra structure is valuable because mixed-format files multiply ambiguity quickly.
 
-## Where this fits in Dayfiles
+## How mixed-source assembly connects to DayFiles
 
 This article connects several existing Dayfiles task guides into one client-delivery workflow. Keep [PDF Toolkit](/pdf-toolkit) as the packet hub. Use [HTML to PDF Without Uploading Files](/guides/how-to-convert-html-to-pdf-locally) when the source is rendered page content. Use [DOCX to PDF Without Uploading Files](/guides/how-to-convert-docx-to-pdf-in-browser) when the source is a document draft. Use [JPG to PDF Without Uploading Files](/guides/how-to-convert-jpg-to-pdf-for-free) when the source is visual. Then finish with [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading).
 
@@ -161,10 +161,10 @@ These mistakes usually come from compressing the workflow into one hurried step 
 4. Merge and number only the approved set.
 5. Run one last client-facing review before delivery.
 
-## Final takeaway
+## Normalize each source before building the packet
 
 Mixed-format packet assembly becomes much easier when each source is stabilized before merge. Start from [PDF Toolkit](/pdf-toolkit), convert HTML, DOCX, and image inputs through their source-specific guides, then combine the approved components into one final PDF. That keeps client-ready packets cleaner, easier to review, and less likely to require late-stage rebuilding.
 
-## Verification note
+## How we checked mixed-source PDF assembly
 
 Last checked August 21, 2026. The current Chromium regression run created PDFs from DOCX, HTML, and JPG fixtures, then completed a separate PDF merge check. All four operations produced downloadable output. Because the fixtures are intentionally simple, real client material with tables, fonts, page breaks, or external web assets still needs component-by-component visual review before merge.

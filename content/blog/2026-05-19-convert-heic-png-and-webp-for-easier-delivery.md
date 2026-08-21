@@ -102,7 +102,7 @@ Some format changes are mostly invisible. Others change how the image behaves do
 
 If the batch is about to leave the working phase, one format standard usually helps.
 
-## Where this fits in Dayfiles
+## How format conversion connects to DayFiles
 
 Start from [Images](/images) when the task is large-scale format handling or delivery prep. The most useful companion guides are [How to Convert Images to JPG for Consistent Delivery](/image-workflows), [How to Compress Images to a Specific Size Before Upload](/blog/compress-images-to-a-specific-size-before-upload), and [How to Resize Images to Match File Size Limits Cleanly](/blog/resize-images-to-match-file-size-limits).
 
@@ -149,10 +149,10 @@ The right format depends on the next system, not on habit.
 5. Output set named clearly.
 6. Original files retained separately.
 
-## Final takeaway
+## Choose the delivery format before the handoff
 
 Format conversion works best when it reduces friction for the next step instead of creating another mixed batch to manage. Use [Format Converter](https://images.dayfiles.com/format-converter) when HEIC, PNG, WebP, or similar files need one stable delivery format, and keep the output tied to its destination.
 
-## Verification note
+## How we checked these image conversions
 
 Last checked August 21, 2026 on the live tool. A 42 KB HEIC sample was decoded locally into a 1280 × 720 working image and exported as a 68 KB JPG at quality 90; the final conversion step reported 18 ms. We also converted a 110 KB PNG sample to an 84 KB JPG in 13 ms. These samples confirm the tested paths, but transparency and color appearance still need review when converting PNG or WebP assets.

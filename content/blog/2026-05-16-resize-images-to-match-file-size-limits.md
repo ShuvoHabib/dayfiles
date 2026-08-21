@@ -99,7 +99,7 @@ If a file meets the KB rule but no longer fits the actual use case, the workflow
 
 Choosing between the two is mostly about the real cause of the file weight.
 
-## Where this fits in Dayfiles
+## How resize-to-size connects to DayFiles
 
 Use [Images](/images) when the main job is controlled image preparation for upload or handoff. The most useful companion guides are [How to Compress Images to a Specific Size Before Upload](/blog/compress-images-to-a-specific-size-before-upload), [How to Resize Images in Bulk for Listings and Uploads](/image-workflows), and [How to Compress Images in Bulk Before Upload Deadlines](/image-workflows).
 
@@ -142,10 +142,10 @@ Naming and folder discipline matter here just as much as the tool itself.
 5. Export set named clearly.
 6. Originals preserved separately.
 
-## Final takeaway
+## Resize when dimensions can absorb the tradeoff
 
 Resize-to-size is valuable when the file is heavy because it is simply bigger than the destination needs. Use [Resize to Size](https://images.dayfiles.com/resize-to-size) when file limits and practical dimensions need to be solved together, and review the final image with the real destination in mind.
 
-## Verification note
+## How we checked the resize-to-size workflow
 
 Last checked August 21, 2026 on the live tool. An 84 KB, 1280 × 720 JPG was processed against a 50 KB target and returned as a 44 KB JPG in 59 ms. For that sample, the tool kept the original 1280 × 720 dimensions because encoding alone met the target. A larger or stricter sample may reduce dimensions, so check the reported output size instead of assuming a resize will always occur.

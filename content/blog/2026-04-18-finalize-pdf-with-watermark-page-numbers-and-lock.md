@@ -45,7 +45,7 @@ faq:
 ---
 How do you take a PDF from "working draft" to "ready to send" without skipping the final control steps? The practical answer is to add watermarks, apply page numbers, review the finished structure, and lock the file only after the approved delivery version is clear. That sequence turns a working document into a controlled final output.
 
-## When to use this workflow
+## When should a PDF be finalized in stages?
 
 This workflow is for finalization, not for drafting. It is useful when the content is already approved and the remaining work is about delivery discipline:
 
@@ -119,7 +119,7 @@ If those checks are skipped, locking only makes the wrong file harder to correct
 
 This workflow is essentially release management for PDFs.
 
-## Where this fits in Dayfiles
+## How delivery finalization connects to DayFiles
 
 The right internal sequence is to start from [PDF Toolkit](/pdf-toolkit), then use [Watermark Without Uploading Files](/guides/how-to-add-a-watermark-to-a-pdf), [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf), and [Lock PDF Without Uploading Files](/guides/how-to-password-protect-a-pdf-before-emailing) in that order. If the file is still being assembled, finish that first through [Merge PDF Without Uploading Files](/guides/how-to-merge-pdf-files-without-uploading) or [Organize PDF Without Uploading Files](/guides/how-to-reorder-and-delete-pdf-pages).
 
@@ -165,10 +165,10 @@ The stronger the delivery expectations, the more expensive those mistakes become
 4. Review the entire finalized PDF before locking.
 5. Lock and archive the approved delivery version separately.
 
-## Final takeaway
+## Apply irreversible finishing steps last
 
 Finalizing a PDF is not one action. It is a short release sequence. Start with [PDF Toolkit](/pdf-toolkit), add any status watermark through [Watermark Without Uploading Files](/guides/how-to-add-a-watermark-to-a-pdf), apply numbering through [Page Numbers Without Uploading Files](/guides/how-to-add-page-numbers-to-a-pdf), and lock only the approved delivery file. That makes the final handoff cleaner, easier to review, and easier to trust.
 
-## Verification note
+## How we checked the finalization sequence
 
 Last checked August 21, 2026. Watermark, page-number, and password-lock checks all passed in Chromium against the current DayFiles PDF build, each producing a downloadable PDF from generated fixtures. The automated run verifies that the operations complete. A human still needs to check watermark obstruction, number placement, final page order, and whether password protection is appropriate for the recipient.

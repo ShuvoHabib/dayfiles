@@ -757,7 +757,7 @@
 
       <article class="panel prose">
         <p>How do you build one trustworthy PDF packet from forms, signatures, and supporting pages without losing control of the final version? The clean answer is to fill first, sign second, merge the complete approved files, and lock the final packet only after one last review. That order keeps edits, approvals, and delivery from colliding.</p>
-<h2>When to use this workflow</h2>
+<h2>When does a PDF packet need staged assembly?</h2>
 <p>This workflow is designed for packets, not one-off files. A visa application may include forms, declarations, identity pages, and signed confirmations. An onboarding bundle may include tax forms, acknowledgments, policy documents, and signed consent pages. A client approval packet may combine a proposal, signature page, and supporting schedules.</p>
 <p>What these use cases share is sequence. If the order breaks, quality breaks:</p>
 <ul>
@@ -843,7 +843,7 @@
 </tr>
 </tbody></table>
 <p>A packet workflow is mostly about reducing ambiguity. Once ambiguity is removed, the final export gets easier.</p>
-<h2>Where this fits in Dayfiles</h2>
+<h2>How fill-sign-merge-lock connects to DayFiles</h2>
 <p>The closest surrounding guides are already live on Dayfiles. Use <a href="/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/">Fill PDF Forms Online</a> for the form stage, <a href="/guides/how-to-add-a-signature-image-to-a-pdf-locally/">E-Sign PDF Online</a> for the signature stage, <a href="/guides/how-to-merge-pdf-files-without-uploading/">Merge PDF Without Uploading Files</a> for packet assembly, and <a href="/guides/how-to-password-protect-a-pdf-before-emailing/">Lock PDF Without Uploading Files</a> for final delivery control. Keep <a href="/pdf-toolkit/">PDF Toolkit</a> as the internal starting point when the process still needs orchestration.</p>
 <p>If the packet also includes image files turned into supporting PDF pages, pair this with <a href="/guides/how-to-convert-jpg-to-pdf-for-free/">JPG to PDF Without Uploading Files</a> and the <a href="/blog/pdf-operations-checklist/">PDF Toolkit Operations Checklist</a>. That combination helps when photos, scans, and forms all need to land in one deliverable.</p>
 <h2>Best fit scenarios for packet workflows</h2>
@@ -870,9 +870,9 @@
 <li>Merge the full packet and review page order.</li>
 <li>Lock only the approved final packet that is ready for delivery.</li>
 </ol>
-<h2>Final takeaway</h2>
+<h2>Lock the packet only after assembly is complete</h2>
 <p>The best packet workflows are boring because the sequence is stable. Start with <a href="/pdf-toolkit/">PDF Toolkit</a>, fill through <a href="/guides/how-to-fill-and-sign-a-pdf-form-before-sending-it/">Fill PDF Forms Online</a>, sign through <a href="/guides/how-to-add-a-signature-image-to-a-pdf-locally/">E-Sign PDF Online</a>, merge with <a href="/guides/how-to-merge-pdf-files-without-uploading/">Merge PDF Without Uploading Files</a>, and lock only the final reviewed export. That keeps approvals, packet structure, and delivery aligned from start to finish.</p>
-<h2>Verification note</h2>
+<h2>How we checked the packet assembly sequence</h2>
 <p>Last checked August 21, 2026. The current Chromium regression run completed form fill, e-sign, merge, and password-lock operations on generated PDF fixtures and produced downloadable results for each step. We verified the mechanics in that order, but a real packet still needs a person to confirm field meaning, signature authority, page order, and the separately communicated password.</p>
 
       </article>

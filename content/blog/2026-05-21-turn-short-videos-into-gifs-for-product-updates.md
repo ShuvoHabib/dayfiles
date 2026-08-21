@@ -100,7 +100,7 @@ The best product GIFs are often the simplest ones. They show one action, one sta
 
 If the goal is fast visual explanation, a GIF often wins.
 
-## Where this fits in Dayfiles
+## How this GIF workflow connects to DayFiles
 
 Use [Images](/images) when the team needs lightweight media assets for launch, support, or product communication. Continue with the [Image Workflows guide](/image-workflows) for a broader preparation path, or review [compliance-sensitive image preparation](/compliance-sensitive-image-prep) when privacy still matters around the asset. Keep the exported GIF named for the update it supports so teammates can identify the approved version later.
 
@@ -143,10 +143,10 @@ Keep the source video if the team later needs a fuller demo or alternate crop.
 5. GIF named by feature or update.
 6. Original clip retained separately.
 
-## Final takeaway
+## Make the GIF earn its place in the update
 
 GIFs are strongest when they communicate one product moment quickly and cleanly. Use [Video to GIF](https://images.dayfiles.com/video-to-gif) when launch posts, support docs, or product updates need a lighter visual asset than full video, and keep the export tightly focused on the action that matters.
 
-## Verification note
+## How we checked the video-to-GIF workflow
 
 Last checked August 21, 2026 on the live tool. We converted a two-second, 17 KB MP4 sample at 10 FPS and 480 px output width. The browser produced a 26 KB GIF in 4.811 seconds after WebAssembly initialization. The GIF was larger than this unusually tiny input, which is a useful reminder that GIF is chosen for placement and looping behavior—not guaranteed file-size savings.
