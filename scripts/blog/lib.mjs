@@ -50,7 +50,11 @@ export function slugify(value) {
 }
 
 export function normalizeDateString(dateInput) {
-  const d = new Date(dateInput);
+  const raw = String(dateInput || '').trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+    return raw;
+  }
+  const d = new Date(`${raw} UTC`);
   if (Number.isNaN(d.getTime())) {
     return null;
   }
@@ -96,6 +100,13 @@ export async function readPosts(contentDir = CONTENT_DIR) {
     const absPath = path.join(contentDir, file);
     const raw = await fs.readFile(absPath, 'utf8');
     const parsed = matter(raw);
+    const evidenceDateMatch = parsed.content.match(/Last checked\s+([A-Z][a-z]+\s+\d{1,2},\s+\d{4})/);
+    const evidenceDate = evidenceDateMatch ? normalizeDateString(evidenceDateMatch[1]) : null;
+    const declaredReviewDate = normalizeDateString(parsed.data.reviewDate);
+    const reviewDate = [evidenceDate, declaredReviewDate, normalizeDateString(parsed.data.date)]
+      .filter(Boolean)
+      .sort()
+      .at(-1);
 
     posts.push({
       file,
@@ -103,6 +114,7 @@ export async function readPosts(contentDir = CONTENT_DIR) {
       body: parsed.content.trim(),
       html: renderMarkdown(parsed.content.trim()),
       ...parsed.data,
+      reviewDate,
       canonicalUrl: canonicalizeSiteUrl(parsed.data.canonicalUrl),
       testedToolUrl: canonicalizeSiteUrl(parsed.data.testedToolUrl),
       sources: (parsed.data.sources || []).map((source) => ({

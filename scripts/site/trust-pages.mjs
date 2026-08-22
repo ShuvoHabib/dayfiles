@@ -304,8 +304,15 @@ export const trustPages = [
       {
         title: 'Advertising and analytics',
         paragraphs: [
-          'Dayfiles may use Google Analytics and Google AdSense or similar services on selected public pages. Those providers may use cookies or similar technologies to measure visits, serve ads, and report performance.',
-          'Visitors can control many advertising and cookie preferences through their browser settings and Google account controls where available.'
+          'Dayfiles may use Google Analytics and Google AdSense on selected public pages. Third-party vendors including Google may place or read cookies, use web beacons, collect IP addresses or device identifiers, and process data to provide, measure, or personalize ads where consent and local law permit.',
+          'Visitors can control many advertising and cookie preferences through their browser settings, certified consent controls where required, and Google account controls. Google explains how it uses information from sites and apps at https://policies.google.com/technologies/partner-sites.'
+        ]
+      },
+      {
+        title: 'Consent and regional controls',
+        paragraphs: [
+          'Where consent is required for advertising in the EEA, United Kingdom, or Switzerland, Dayfiles uses the applicable Google-certified consent flow before advertising storage or personalization is enabled.',
+          'Rejecting advertising consent should not prevent access to the core public content or browser-based tool workflow.'
         ]
       },
       {
@@ -315,6 +322,12 @@ export const trustPages = [
           'Visitors should avoid uploading or processing files they do not have rights to use, and should review the product context before starting any sensitive workflow.'
         ]
       }
+    ],
+    supportingLinks: [
+      { label: 'How Google uses information from partner sites', href: 'https://policies.google.com/technologies/partner-sites' },
+      { label: 'Cookie Policy', href: '/cookies/' },
+      { label: 'Advertising Disclosure', href: '/advertising-disclosure/' },
+      { label: 'Contact Dayfiles', href: '/contact/' }
     ]
   },
   {

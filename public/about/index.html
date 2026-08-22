@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <script>
       (function () {
         var key = 'dayfiles_theme';
@@ -14,7 +14,7 @@
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
-  
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -555,7 +555,7 @@
     height: 1px;
     overflow: hidden;
   }
-  
+
   .subscribe-section {
     margin-top: 1rem;
   }
@@ -672,7 +672,7 @@
       width: 100%;
     }
   }
-  
+
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
@@ -719,7 +719,7 @@
             <span class="theme-toggle-label">Light</span>
             <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
           </button>
-          
+
           <a class="chip" href="/blog/">Blog</a>
 
           <a class="chip" href="/pdf-workflows/">PDF Workflows</a>
@@ -743,7 +743,7 @@
             <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
           </button>
           <nav class="mobile-nav-links">
-            
+
             <a class="mobile-nav-link" data-mobile-nav-link href="/blog/">Blog</a>
 
             <a class="mobile-nav-link" data-mobile-nav-link href="/pdf-workflows/">PDF Workflows</a>
@@ -767,58 +767,58 @@
         <p class="muted">Last updated August 20, 2026</p>
       </section>
 
-      
+
       <section class="panel">
         <div class="grid">
-          
+
                 <article class="card">
                   <span class="badge">At a glance</span>
                   <h2>Founder and editor</h2>
                   <p>Shuvo Habib</p>
                 </article>
-              
+
 
                 <article class="card">
                   <span class="badge">At a glance</span>
                   <h2>Primary focus</h2>
                   <p>PDF delivery, image prep, and browser-based file workflows</p>
                 </article>
-              
+
 
                 <article class="card">
                   <span class="badge">At a glance</span>
                   <h2>Publishing model</h2>
                   <p>Editorial guides plus linked Dayfiles product hubs</p>
                 </article>
-              
+
         </div>
       </section>
-    
-      
-      
+
+
+
         <section class="panel prose">
           <h2>Who runs Dayfiles</h2>
           <p>Shuvo Habib runs Dayfiles as the site founder, editorial owner, and product operator. The site is published as a focused content-and-tools business rather than as an anonymous content network.</p>
 <p>That matters because the same person responsible for the tool ecosystem is also responsible for how the guides are scoped, reviewed, corrected, and kept aligned with the live product routes.</p>
-          
+
         </section>
-      
+
 
         <section class="panel prose">
           <h2>Why Dayfiles exists</h2>
           <p>Dayfiles exists because many everyday file tasks sit in an awkward middle ground: too important for guesswork, too common for expensive software, and too messy when the only advice online is a feature list or a keyword-stuffed tutorial.</p>
 <p>The site is built for people handling application packets, HR documents, image preparation, PDF delivery, and review-sensitive file work that needs a clearer operating path.</p>
-          
+
         </section>
-      
+
 
         <section class="panel prose">
           <h2>What qualifies the site to publish this material</h2>
           <p>Dayfiles publishes from direct product and workflow context. The guides are built around the actual jobs the site tools support: conversion, cleanup, packet assembly, handoff review, and browser-first file preparation.</p>
 <p>That does not make Dayfiles legal, compliance, or enterprise IT authority. It does make the site accountable for practical workflow guidance tied to the products it operates and documents publicly.</p>
-          
+
         </section>
-      
+
 
         <section class="panel prose">
           <h2>How Dayfiles is run</h2>
@@ -829,26 +829,26 @@
 <li>screenshots and walkthrough details are refreshed when the live route changes materially</li>
 <li>correction requests are reviewed through the contact page and direct email channel</li></ul>
         </section>
-      
+
 
         <section class="panel prose">
           <h2>How content and tools fit together</h2>
           <p>Dayfiles separates three things clearly: the main publisher site, the editorial workflow guides, and the live product interfaces. The main domain explains the work, while the tools handle the actual task execution.</p>
 <p>That structure is intentional. The guides should still be useful as knowledge pages even when a reader is comparing options or deciding whether the Dayfiles tools fit the job.</p>
-          
+
         </section>
-      
+
 
         <section class="panel prose">
           <h2>What Dayfiles is not</h2>
-          
+
           <ul><li>not legal advice or regulatory compliance advice</li>
 <li>not a managed document service or enterprise support desk</li>
 <li>not a generic tool directory with anonymous support content</li>
 <li>not a promise that every workflow fits every jurisdiction or sensitive file type</li></ul>
         </section>
-      
-      
+
+
       <section class="panel prose">
         <h2>Related Dayfiles pages</h2>
         <ul>
@@ -858,10 +858,10 @@
 <li><a href="/contact/">Contact Dayfiles</a></li>
         </ul>
       </section>
-    
 
-      
-    
+
+
+
     <section class="subscribe-section" aria-label="Email subscription">
       <div class="subscribe-card">
         <div class="subscribe-copy">
@@ -872,10 +872,10 @@
         <form class="subscribe-form" data-subscribe-form method="post" action="/api/subscribe" novalidate>
           <div class="subscribe-form-row">
             <input class="subscribe-input" type="email" name="email" autocomplete="email" inputmode="email" placeholder="Enter your email address" aria-label="Email address" required />
-            <button class="subscribe-button" type="submit">Subscribe free</button>
+            <button class="subscribe-button" type="submit" disabled>Subscribe free</button>
           </div>
           <label class="subscribe-consent">
-            <input type="checkbox" name="consent_granted" value="true" checked />
+            <input type="checkbox" name="consent_granted" value="true" />
             <span>Email me when Dayfiles publishes useful new workflow guides or product updates.</span>
           </label>
           <div class="subscribe-honeypot" aria-hidden="true">
@@ -888,7 +888,7 @@
         </form>
       </div>
     </section>
-  
+
     <footer class="site-footer">
       <p>Dayfiles publishes browser-based PDF and image workflow guides with visible product hubs, policy pages, and advertising disclosure.</p>
       <div class="footer-grid">
@@ -924,9 +924,9 @@
         </section>
       </div>
     </footer>
-  
+
     </main>
-    
+
     <script>
       (function () {
         var key = 'dayfiles_theme';
@@ -1021,8 +1021,8 @@
         });
       })();
     </script>
-  
+
     <script defer src="/subscribe-form.js"></script>
-    
+
   </body>
 </html>

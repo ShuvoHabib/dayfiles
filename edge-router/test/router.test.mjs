@@ -101,6 +101,13 @@ test('redirects old PDF trust paths in one hop and keeps the query', async () =>
   assert.equal(response.headers.get('location'), 'https://dayfiles.com/private-pdf/about/?ref=old');
 });
 
+test('consolidates the duplicate OCR entry into scanned edit mode', async () => {
+  const response = await handleRequest(new Request('https://dayfiles.com/ocr-pdf/'), env);
+
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get('location'), 'https://dayfiles.com/edit-pdf/?mode=scanned');
+});
+
 test('uses 308 for non-GET requests from the old PDF hostname', async () => {
   const response = await handleRequest(new Request('https://pdf.dayfiles.com/api/contact', { method: 'POST' }), env);
   assert.equal(response.status, 308);

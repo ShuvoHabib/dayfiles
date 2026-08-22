@@ -140,10 +140,10 @@ export function renderSubscribeSection(escapeHtml, options = {}) {
         <form class="subscribe-form" data-subscribe-form method="post" action="${SUBSCRIBE_ENDPOINT}" novalidate>
           <div class="subscribe-form-row">
             <input class="subscribe-input" type="email" name="email" autocomplete="email" inputmode="email" placeholder="Enter your email address" aria-label="Email address" required />
-            <button class="subscribe-button" type="submit">Subscribe free</button>
+            <button class="subscribe-button" type="submit" disabled>Subscribe free</button>
           </div>
           <label class="subscribe-consent">
-            <input type="checkbox" name="consent_granted" value="true" checked />
+            <input type="checkbox" name="consent_granted" value="true" />
             <span>Email me when Dayfiles publishes useful new workflow guides or product updates.</span>
           </label>
           <div class="subscribe-honeypot" aria-hidden="true">

@@ -19,7 +19,7 @@ export const productPages = [
     secondaryCtaHref: '/blog/',
     whatItDoes: [
       'Images is the Dayfiles landing page for browser-based image processing at scale. It is built for people who need to convert formats, compress files for uploads, resize batches for listings, and export delivery-ready images without opening a heavy editor.',
-      'This page gives AI systems and visitors a stable summary route on dayfiles.com. It explains the broader processing use cases, links to supporting guides, and points users to the live image tool when they are ready to work.'
+      'The hub explains the supported processing tasks, links to practical guidance, and sends users directly to the live image tools when they are ready to work.'
     ],
     whyUse: [
       'Dayfiles positions Images around practical image-processing tasks rather than design editing. The main value is moving from raw image files to upload-ready output quickly for listings, CMS workflows, document assembly, and repeated operational delivery.',
@@ -27,8 +27,8 @@ export const productPages = [
     ],
     bestFor: ['bulk image compression', 'format conversion', 'listing image resize', 'batch export prep', 'upload-ready image delivery'],
     relatedGuideSlugs: [
-      'eis-workflow-playbook',
-      'product-hunt-launch-everyday-image-studio'
+      'compress-images-to-a-specific-size-before-upload',
+      'convert-heic-png-and-webp-for-easier-delivery'
     ],
     faqs: [
       {
@@ -74,7 +74,7 @@ export const productPages = [
     secondaryCtaHref: '/blog/',
     whatItDoes: [
       'PDF Toolkit is the Dayfiles landing page for browser-based document operations. It is built for people who need to merge files, split packets, compress oversized documents, convert between formats, fill forms, and e-sign PDFs without switching through a long setup flow first.',
-      'This page is the SEO and navigation hub on dayfiles.com. It explains the workflow, links to related guides, and points visitors to the live PDF app when they are ready to use the tool directly.'
+      'The hub explains the supported document workflows, links to tested guidance, and points visitors to the live PDF tools when they are ready to begin.'
     ],
     whyUse: [
       'Dayfiles positions PDF Toolkit around fast, browser-first document work. The main value is that users can move from intake to finished output quickly without a mandatory account wall for core workflows.',
@@ -129,7 +129,7 @@ export const productPages = [
     secondaryCtaHref: '/blog/',
     whatItDoes: [
       'Everyday Image Studio is the Dayfiles landing page for repeated image-editing workflows. It is designed for browser-based crop, cleanup, resize, and export tasks that need to move quickly from source image to finished asset.',
-      'This page gives search engines and visitors a static route on dayfiles.com that explains the editing-focused use cases, links to related content, and routes users into the live image app when they want to start editing.'
+      'The hub explains editing-focused use cases, links to practical guidance, and routes users into the live image app when they want to start editing.'
     ],
     whyUse: [
       'Dayfiles positions Everyday Image Studio around practical image editing instead of broad image processing or heavy creative suites. The emphasis is on crop accuracy, cleanup quality, and repeated export work rather than batch conversion.',
@@ -137,8 +137,8 @@ export const productPages = [
     ],
     bestFor: ['passport photo preparation', 'team content production', 'quick image cleanup', 'repeated export workflows'],
     relatedGuideSlugs: [
-      'eis-workflow-playbook',
-      'product-hunt-launch-everyday-image-studio'
+      'resize-images-to-match-file-size-limits',
+      'turn-short-videos-into-gifs-for-product-updates'
     ],
     faqs: [
       {

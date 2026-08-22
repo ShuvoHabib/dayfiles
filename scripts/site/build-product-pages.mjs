@@ -1215,6 +1215,10 @@ function renderTrustPage(page, lastUpdated) {
 </html>`;
 }
 
+function normalizeGeneratedHtml(html) {
+  return html.replace(/[ \t]+$/gm, '');
+}
+
 export async function buildProductPages() {
   const posts = await readPosts();
   const lastUpdated = formatHumanDate(SITE_CONTENT_LAST_REVIEWED);
@@ -1226,13 +1230,13 @@ export async function buildProductPages() {
 
     const outDir = path.join(PUBLIC_DIR, page.slug);
     await ensureDir(outDir);
-    await fs.writeFile(path.join(outDir, 'index.html'), renderPage(page, relatedPosts, lastUpdated), 'utf8');
+    await fs.writeFile(path.join(outDir, 'index.html'), normalizeGeneratedHtml(renderPage(page, relatedPosts, lastUpdated)), 'utf8');
   }
 
   for (const page of trustPages) {
     const outDir = path.join(PUBLIC_DIR, page.slug);
     await ensureDir(outDir);
-    await fs.writeFile(path.join(outDir, 'index.html'), renderTrustPage(page, lastUpdated), 'utf8');
+    await fs.writeFile(path.join(outDir, 'index.html'), normalizeGeneratedHtml(renderTrustPage(page, lastUpdated)), 'utf8');
   }
 
   return { count: productPages.length + trustPages.length };

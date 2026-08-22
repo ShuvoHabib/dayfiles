@@ -50,7 +50,19 @@
   function wireForm(form) {
     var status = form.querySelector('[data-subscribe-status]');
     var button = form.querySelector('button[type="submit"]');
+    var consent = form.querySelector('input[name="consent_granted"]');
     prepareHiddenFields(form);
+
+    function syncButton() {
+      if (button) {
+        button.disabled = !consent || !consent.checked;
+      }
+    }
+
+    if (consent) {
+      consent.addEventListener('change', syncButton);
+    }
+    syncButton();
 
     form.addEventListener('submit', async function (event) {
       event.preventDefault();
@@ -80,17 +92,15 @@
 
         form.reset();
         prepareHiddenFields(form);
-        var consent = form.querySelector('input[name="consent_granted"]');
         if (consent) {
-          consent.checked = true;
+          consent.checked = false;
         }
+        syncButton();
         setStatus(status, data.message || 'You’re subscribed successfully.', 'success');
       } catch (error) {
         setStatus(status, error.message || 'We could not save your subscription right now.', 'error');
       } finally {
-        if (button) {
-          button.disabled = false;
-        }
+        syncButton();
       }
     });
   }

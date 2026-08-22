@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <script>
       (function () {
         var key = 'dayfiles_theme';
@@ -14,7 +14,7 @@
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
-  
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -555,7 +555,7 @@
     height: 1px;
     overflow: hidden;
   }
-  
+
   .subscribe-section {
     margin-top: 1rem;
   }
@@ -672,7 +672,7 @@
       width: 100%;
     }
   }
-  
+
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
@@ -719,7 +719,7 @@
             <span class="theme-toggle-label">Light</span>
             <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
           </button>
-          
+
           <a class="chip" href="/blog/">Blog</a>
 
           <a class="chip" href="/pdf-workflows/">PDF Workflows</a>
@@ -743,7 +743,7 @@
             <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
           </button>
           <nav class="mobile-nav-links">
-            
+
             <a class="mobile-nav-link" data-mobile-nav-link href="/blog/">Blog</a>
 
             <a class="mobile-nav-link" data-mobile-nav-link href="/pdf-workflows/">PDF Workflows</a>
@@ -767,44 +767,62 @@
         <p class="muted">Last updated August 20, 2026</p>
       </section>
 
-      
-      
-      
+
+
+
         <section class="panel prose">
           <h2>What this policy covers</h2>
           <p>This policy covers the public website at dayfiles.com, including the homepage, blog, product hub pages, and related static files. Separate live tools or third-party platforms may have their own interfaces or notices.</p>
 <p>Dayfiles is designed so visitors can browse public pages without creating an account on the main site.</p>
-          
+
         </section>
-      
+
 
         <section class="panel prose">
           <h2>Information collected on the public site</h2>
           <p>The site may collect standard technical information such as browser type, device information, approximate location, referring page, and page usage data through analytics or advertising tools.</p>
 <p>That information is used to understand site performance, maintain the service, measure traffic, and support content publishing.</p>
-          
+
         </section>
-      
+
 
         <section class="panel prose">
           <h2>Advertising and analytics</h2>
-          <p>Dayfiles may use Google Analytics and Google AdSense or similar services on selected public pages. Those providers may use cookies or similar technologies to measure visits, serve ads, and report performance.</p>
-<p>Visitors can control many advertising and cookie preferences through their browser settings and Google account controls where available.</p>
-          
+          <p>Dayfiles may use Google Analytics and Google AdSense on selected public pages. Third-party vendors including Google may place or read cookies, use web beacons, collect IP addresses or device identifiers, and process data to provide, measure, or personalize ads where consent and local law permit.</p>
+<p>Visitors can control many advertising and cookie preferences through their browser settings, certified consent controls where required, and Google account controls. Google explains how it uses information from sites and apps at https://policies.google.com/technologies/partner-sites.</p>
+
         </section>
-      
+
+
+        <section class="panel prose">
+          <h2>Consent and regional controls</h2>
+          <p>Where consent is required for advertising in the EEA, United Kingdom, or Switzerland, Dayfiles uses the applicable Google-certified consent flow before advertising storage or personalization is enabled.</p>
+<p>Rejecting advertising consent should not prevent access to the core public content or browser-based tool workflow.</p>
+
+        </section>
+
 
         <section class="panel prose">
           <h2>How browser-based tools relate to the main site</h2>
           <p>Dayfiles publishes browser-first workflows and links into live product interfaces. Core workflows are positioned around direct in-browser usage, but specific tool behavior can vary by product and should be reviewed on the relevant page before use.</p>
 <p>Visitors should avoid uploading or processing files they do not have rights to use, and should review the product context before starting any sensitive workflow.</p>
-          
-        </section>
-      
-      
 
-      
-    
+        </section>
+
+
+      <section class="panel prose">
+        <h2>Related Dayfiles pages</h2>
+        <ul>
+          <li><a href="https://policies.google.com/technologies/partner-sites">How Google uses information from partner sites</a></li>
+<li><a href="/cookies/">Cookie Policy</a></li>
+<li><a href="/advertising-disclosure/">Advertising Disclosure</a></li>
+<li><a href="/contact/">Contact Dayfiles</a></li>
+        </ul>
+      </section>
+
+
+
+
     <section class="subscribe-section" aria-label="Email subscription">
       <div class="subscribe-card">
         <div class="subscribe-copy">
@@ -815,10 +833,10 @@
         <form class="subscribe-form" data-subscribe-form method="post" action="/api/subscribe" novalidate>
           <div class="subscribe-form-row">
             <input class="subscribe-input" type="email" name="email" autocomplete="email" inputmode="email" placeholder="Enter your email address" aria-label="Email address" required />
-            <button class="subscribe-button" type="submit">Subscribe free</button>
+            <button class="subscribe-button" type="submit" disabled>Subscribe free</button>
           </div>
           <label class="subscribe-consent">
-            <input type="checkbox" name="consent_granted" value="true" checked />
+            <input type="checkbox" name="consent_granted" value="true" />
             <span>Email me when Dayfiles publishes useful new workflow guides or product updates.</span>
           </label>
           <div class="subscribe-honeypot" aria-hidden="true">
@@ -831,7 +849,7 @@
         </form>
       </div>
     </section>
-  
+
     <footer class="site-footer">
       <p>Dayfiles publishes browser-based PDF and image workflow guides with visible product hubs, policy pages, and advertising disclosure.</p>
       <div class="footer-grid">
@@ -867,9 +885,9 @@
         </section>
       </div>
     </footer>
-  
+
     </main>
-    
+
     <script>
       (function () {
         var key = 'dayfiles_theme';
@@ -964,8 +982,8 @@
         });
       })();
     </script>
-  
+
     <script defer src="/subscribe-form.js"></script>
-    
+
   </body>
 </html>

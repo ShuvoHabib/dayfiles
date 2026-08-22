@@ -306,23 +306,6 @@
     "readingMinutes": 6
   },
   {
-    "title": "Everyday Image Studio Chrome Extension Launch Update",
-    "slug": "product-hunt-launch-everyday-image-studio",
-    "date": "2026-02-21",
-    "product": "eis",
-    "description": "Dayfiles launched the Everyday Image Studio Chrome Extension on Product Hunt, with a focused browser editing workflow and more features already on the roadmap.",
-    "tags": [
-      "product hunt",
-      "chrome extension",
-      "everyday image studio",
-      "dayfiles"
-    ],
-    "canonicalUrl": "https://dayfiles.com/blog/product-hunt-launch-everyday-image-studio/",
-    "featuredImage": "/blog/images/product-hunt-launch-everyday-image-studio.svg",
-    "featuredImageAlt": "Everyday Image Studio launch announcement on Product Hunt",
-    "readingMinutes": 5
-  },
-  {
     "title": "PDF Toolkit Checklist for Reliable Document Delivery",
     "slug": "pdf-operations-checklist",
     "date": "2026-02-19",
@@ -337,23 +320,6 @@
     "canonicalUrl": "https://dayfiles.com/blog/pdf-operations-checklist/",
     "featuredImage": "/blog/images/pdf-operations-checklist.svg",
     "featuredImageAlt": "Illustration for PDF Toolkit operations checklist",
-    "readingMinutes": 5
-  },
-  {
-    "title": "Everyday Image Studio Workflow Playbook for Daily Teams",
-    "slug": "eis-workflow-playbook",
-    "date": "2026-02-17",
-    "product": "eis",
-    "description": "A practical guide for teams that need faster image turnaround, consistent quality, and cleaner handoffs using Everyday Image Studio. Free to use with no.",
-    "tags": [
-      "image workflow",
-      "creative operations",
-      "dayfiles",
-      "team process"
-    ],
-    "canonicalUrl": "https://dayfiles.com/blog/eis-workflow-playbook/",
-    "featuredImage": "/blog/images/eis-workflow-playbook.svg",
-    "featuredImageAlt": "Illustration for Everyday Image Studio workflow playbook",
     "readingMinutes": 5
   }
 ]

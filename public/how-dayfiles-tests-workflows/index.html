@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <script>
       (function () {
         var key = 'dayfiles_theme';
@@ -14,7 +14,7 @@
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
-  
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -555,7 +555,7 @@
     height: 1px;
     overflow: hidden;
   }
-  
+
   .subscribe-section {
     margin-top: 1rem;
   }
@@ -672,7 +672,7 @@
       width: 100%;
     }
   }
-  
+
   @media (max-width: 720px) {
     .wrap { width: min(1120px, calc(100% - 1.2rem)); }
     .panel { padding: 1rem; }
@@ -719,7 +719,7 @@
             <span class="theme-toggle-label">Light</span>
             <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
           </button>
-          
+
           <a class="chip" href="/blog/">Blog</a>
 
           <a class="chip" href="/pdf-workflows/">PDF Workflows</a>
@@ -743,7 +743,7 @@
             <span class="theme-toggle-switch" aria-hidden="true"><span class="theme-toggle-knob"></span></span>
           </button>
           <nav class="mobile-nav-links">
-            
+
             <a class="mobile-nav-link" data-mobile-nav-link href="/blog/">Blog</a>
 
             <a class="mobile-nav-link" data-mobile-nav-link href="/pdf-workflows/">PDF Workflows</a>
@@ -767,80 +767,80 @@
         <p class="muted">Last updated August 20, 2026</p>
       </section>
 
-      
+
       <section class="panel">
         <div class="grid">
-          
+
                 <article class="card">
                   <span class="badge">At a glance</span>
                   <h2>Checks cover</h2>
                   <p>live paths, screenshots, guide logic, and review-ready output expectations</p>
                 </article>
-              
+
 
                 <article class="card">
                   <span class="badge">At a glance</span>
                   <h2>Applies to</h2>
                   <p>PDF, Images, and Everyday Image Studio guides on dayfiles.com</p>
                 </article>
-              
+
 
                 <article class="card">
                   <span class="badge">At a glance</span>
                   <h2>Goal</h2>
                   <p>publish guidance that matches the live route and helps readers avoid preventable mistakes</p>
                 </article>
-              
+
         </div>
       </section>
-    
-      
-      
+
+
+
         <section class="panel prose">
           <h2>What gets checked on live tools</h2>
-          
+
           <ul><li>whether the linked route still exists and loads correctly</li>
 <li>whether the tool category or task path still matches the guide claim</li>
 <li>whether the workflow sequence described on the page still makes sense for the current route</li>
 <li>whether the product hub and article links still connect cleanly</li></ul>
         </section>
-      
+
 
         <section class="panel prose">
           <h2>What gets checked on guides</h2>
           <p>Guides are reviewed for task clarity, step order, risky failure points, and whether the final review checks would actually help a user avoid rework.</p>
 <p>The site also checks whether an article is saying something distinct or just repeating a neighboring workflow page with surface-level wording changes.</p>
-          
+
         </section>
-      
+
 
         <section class="panel prose">
           <h2>Examples of failure types Dayfiles looks for</h2>
-          
+
           <ul><li>screenshots that no longer match the live route</li>
 <li>guide intros that overpromise what the workflow can do</li>
 <li>navigation paths that send readers into the wrong product hub</li>
 <li>checklists that are too generic to catch real delivery mistakes</li>
 <li>pages that read like tool-adjacent filler rather than operational guidance</li></ul>
         </section>
-      
+
 
         <section class="panel prose">
           <h2>When screenshots are refreshed</h2>
           <p>Screenshots should be refreshed when the visible route changes meaningfully, when the UI no longer supports the explanation on the page, or when the old capture makes the product look incomplete or outdated.</p>
 <p>Dayfiles uses screenshots as proof and orientation, not as decorative filler. If a capture stops doing that job, it should be replaced.</p>
-          
+
         </section>
-      
+
 
         <section class="panel prose">
           <h2>What review-ready means before publishing</h2>
           <p>A page is review-ready when the route is live, the explanation is specific, the screenshots support the claim, the internal links work, and the page would still be useful if a reader were comparing options rather than immediately using the tool.</p>
 <p>That standard is stricter than “the page loads.” It is meant to keep workflow pages from becoming low-information wrappers around product links.</p>
-          
+
         </section>
-      
-      
+
+
       <section class="panel prose">
         <h2>Related Dayfiles pages</h2>
         <ul>
@@ -849,10 +849,10 @@
 <li><a href="/about/">About Dayfiles</a></li>
         </ul>
       </section>
-    
 
-      
-    
+
+
+
     <section class="subscribe-section" aria-label="Email subscription">
       <div class="subscribe-card">
         <div class="subscribe-copy">
@@ -863,10 +863,10 @@
         <form class="subscribe-form" data-subscribe-form method="post" action="/api/subscribe" novalidate>
           <div class="subscribe-form-row">
             <input class="subscribe-input" type="email" name="email" autocomplete="email" inputmode="email" placeholder="Enter your email address" aria-label="Email address" required />
-            <button class="subscribe-button" type="submit">Subscribe free</button>
+            <button class="subscribe-button" type="submit" disabled>Subscribe free</button>
           </div>
           <label class="subscribe-consent">
-            <input type="checkbox" name="consent_granted" value="true" checked />
+            <input type="checkbox" name="consent_granted" value="true" />
             <span>Email me when Dayfiles publishes useful new workflow guides or product updates.</span>
           </label>
           <div class="subscribe-honeypot" aria-hidden="true">
@@ -879,7 +879,7 @@
         </form>
       </div>
     </section>
-  
+
     <footer class="site-footer">
       <p>Dayfiles publishes browser-based PDF and image workflow guides with visible product hubs, policy pages, and advertising disclosure.</p>
       <div class="footer-grid">
@@ -915,9 +915,9 @@
         </section>
       </div>
     </footer>
-  
+
     </main>
-    
+
     <script>
       (function () {
         var key = 'dayfiles_theme';
@@ -1012,8 +1012,8 @@
         });
       })();
     </script>
-  
+
     <script defer src="/subscribe-form.js"></script>
-    
+
   </body>
 </html>

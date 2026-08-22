@@ -69,7 +69,7 @@ const defaultAuthor = {
 
 const defaultReviewer = {
   name: 'Shuvo Habib',
-  role: 'Reviews live routes, screenshots, and workflow accuracy before Dayfiles articles are updated',
+  role: 'Founder-maintained and self-reviewed against live routes, screenshots, and workflow results',
   url: `${SITE_URL}/shuvo-habib/`
 };
 
@@ -992,7 +992,7 @@ function renderBlogIndexPage(posts) {
       </div>
 
       <section class="panel">
-        <p class="badge">New every Mon/Wed/Fri</p>
+        <p class="badge">Evidence-backed PDF and image workflows</p>
         <h1 class="hero-title">Dayfiles Blog: Free Image and PDF Workflow Guides</h1>
         <p class="muted">Source-backed guides on Images, Everyday Image Studio, PDF Toolkit, and practical file workflows.</p>
       </section>
@@ -1131,7 +1131,7 @@ function renderPostPage(post, relatedPosts) {
             <p><a href="${escapeHtml(authorUrl)}">${escapeHtml(authorName)}</a>. ${escapeHtml(authorRole)}.</p>
           </section>
           <section class="signal-card">
-            <h2>Reviewed on</h2>
+            <h2>Maintained and self-reviewed</h2>
             <p>${formatHumanDate(reviewDate)} by <a href="${escapeHtml(reviewerUrl)}">${escapeHtml(reviewerName)}</a>. ${escapeHtml(reviewerRole)}.</p>
           </section>
           <section class="signal-card">
@@ -1171,17 +1171,6 @@ function renderPostPage(post, relatedPosts) {
         <ul>
           ${clusterLinks.map((item) => `<li><a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a></li>`).join('\n')}
         </ul>
-      </section>
-
-      <section class="panel">
-        <h2>Ad transparency</h2>
-        <p class="muted">
-          Dayfiles may place relevant Google Ads on selected pages to support free guides. Ads are kept separate from
-          editorial recommendations.
-        </p>
-        <p class="muted">
-          Learn more on <a href="/editorial-policy/">Editorial Policy</a>, <a href="/advertising-disclosure/">Advertising Disclosure</a>, and <a href="/contact/">Contact</a>.
-        </p>
       </section>
 
       <section class="panel">

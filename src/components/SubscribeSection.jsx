@@ -22,7 +22,7 @@ export default function SubscribeSection() {
   const consentId = useId();
   const [email, setEmail] = useState('');
   const [honeypot, setHoneypot] = useState('');
-  const [consentGranted, setConsentGranted] = useState(true);
+  const [consentGranted, setConsentGranted] = useState(false);
   const [clientId, setClientId] = useState('');
   const [status, setStatus] = useState({ tone: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -60,7 +60,7 @@ export default function SubscribeSection() {
       }
 
       setEmail('');
-      setConsentGranted(true);
+      setConsentGranted(false);
       setStatus({ tone: 'success', message: data.message || 'You’re subscribed successfully.' });
     } catch (error) {
       setStatus({ tone: 'error', message: error.message || 'We could not save your subscription right now.' });
@@ -95,7 +95,7 @@ export default function SubscribeSection() {
               onChange={(event) => setEmail(event.target.value)}
               required
             />
-            <button className="subscribe-button" type="submit" disabled={isSubmitting}>
+            <button className="subscribe-button" type="submit" disabled={isSubmitting || !consentGranted}>
               {isSubmitting ? 'Subscribing...' : 'Subscribe free'}
             </button>
           </div>

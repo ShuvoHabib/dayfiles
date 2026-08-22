@@ -103,7 +103,7 @@ function isEditorialApiRequest(request) {
 function redirectResponse(request, destination, status = 301) {
   const source = new URL(request.url);
   const target = new URL(destination, `https://${PUBLIC_HOST}`);
-  target.search = source.search;
+  if (source.search) target.search = source.search;
   return new Response(null, {
     status,
     headers: {

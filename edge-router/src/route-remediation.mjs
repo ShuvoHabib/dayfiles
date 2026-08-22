@@ -1,4 +1,5 @@
 export const PDF_ROUTE_REDIRECTS = Object.freeze({
+  '/ocr-pdf': '/edit-pdf/?mode=scanned',
   '/students-pdf-tools': '/guides/how-to-use-private-pdf-tools-as-a-student/',
   '/job-seekers-pdf-tools': '/guides/how-to-use-private-pdf-tools-for-job-applications/',
   '/accountants-pdf-tools': '/guides/how-to-use-private-pdf-tools-for-accounting-documents/',
