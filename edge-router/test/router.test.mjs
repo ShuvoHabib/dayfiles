@@ -102,10 +102,10 @@ test('redirects old PDF trust paths in one hop and keeps the query', async () =>
 });
 
 test('consolidates the duplicate OCR entry into scanned edit mode', async () => {
-  const response = await handleRequest(new Request('https://dayfiles.com/ocr-pdf/'), env);
+  const response = await handleRequest(new Request('https://dayfiles.com/ocr-pdf/?ref=old'), env);
 
   assert.equal(response.status, 301);
-  assert.equal(response.headers.get('location'), 'https://dayfiles.com/edit-pdf/?mode=scanned');
+  assert.equal(response.headers.get('location'), 'https://dayfiles.com/edit-pdf/?mode=scanned&ref=old');
 });
 
 test('uses 308 for non-GET requests from the old PDF hostname', async () => {
