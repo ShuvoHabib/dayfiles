@@ -3,6 +3,7 @@ import { BLOG_GONE_SLUGS, BLOG_REDIRECTS } from '../../scripts/blog/remediation.
 import { PDF_ROUTE_REDIRECTS } from './route-remediation.mjs';
 
 const PUBLIC_HOST = 'dayfiles.com';
+const SITEMAP_LASTMOD = '2026-08-23';
 const PUBLIC_HOSTS = new Set([
   PUBLIC_HOST,
   `www.${PUBLIC_HOST}`,
@@ -120,7 +121,10 @@ function redirectHostRequest(request, hostname) {
   const normalized = normalizePath(url.pathname);
 
   if (hostname === `pdf.${PUBLIC_HOST}`) {
-    const mapped = REDIRECTED_PDF_TRUST_PATHS.get(normalized) ?? url.pathname;
+    const mapped =
+      REDIRECTED_PDF_TRUST_PATHS.get(normalized) ??
+      PDF_REDIRECT_PATHS.get(normalized) ??
+      url.pathname;
     const status = request.method === 'GET' || request.method === 'HEAD' ? 301 : 308;
     return redirectResponse(request, mapped, status);
   }
@@ -265,7 +269,7 @@ async function specialSeoResponse(request, env, staging) {
     return textResponse(robots, 'text/plain', staging);
   }
   if (pathname === '/sitemap.xml') {
-    const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <sitemap><loc>https://${PUBLIC_HOST}/sitemaps/pdf.xml</loc></sitemap>\n  <sitemap><loc>https://${PUBLIC_HOST}/sitemaps/editorial.xml</loc></sitemap>\n</sitemapindex>\n`;
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <sitemap><loc>https://${PUBLIC_HOST}/sitemaps/pdf.xml</loc><lastmod>${SITEMAP_LASTMOD}</lastmod></sitemap>\n  <sitemap><loc>https://${PUBLIC_HOST}/sitemaps/editorial.xml</loc><lastmod>${SITEMAP_LASTMOD}</lastmod></sitemap>\n</sitemapindex>\n`;
     return textResponse(xml, 'application/xml', staging);
   }
   if (pathname === '/sitemaps/pdf.xml') {

@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { afterEach, beforeEach, test } from 'node:test';
 import { handleRequest } from '../src/index.mjs';
+import pdfRoutes from '../src/pdf-routes.json' with { type: 'json' };
+import { PDF_ROUTE_REDIRECTS } from '../src/route-remediation.mjs';
 
 const originalFetch = globalThis.fetch;
 const env = {
@@ -101,6 +103,35 @@ test('redirects old PDF trust paths in one hop and keeps the query', async () =>
   assert.equal(response.headers.get('location'), 'https://dayfiles.com/private-pdf/about/?ref=old');
 });
 
+test('redirects the complete historical PDF inventory to final apex destinations in one hop', async () => {
+  const trustDestinations = new Map([
+    ['/about', '/private-pdf/about/'],
+    ['/contact', '/private-pdf/contact/'],
+    ['/terms', '/private-pdf/terms/'],
+  ]);
+
+  const historicalRoutes = [...new Set([...pdfRoutes, ...Object.keys(PDF_ROUTE_REDIRECTS)])];
+
+  for (const route of historicalRoutes) {
+    const normalized = route === '/' ? '/' : route.replace(/\/+$/, '');
+    const destination =
+      trustDestinations.get(normalized) ??
+      PDF_ROUTE_REDIRECTS[normalized] ??
+      `${normalized || '/'}${normalized === '/' ? '' : '/'}`;
+    const expected = new URL(destination, 'https://dayfiles.com');
+    expected.searchParams.append('migration_check', '1');
+
+    const sourcePath = normalized === '/' ? '/' : `${normalized}/`;
+    const response = await handleRequest(
+      new Request(`https://pdf.dayfiles.com${sourcePath}?migration_check=1`),
+      env,
+    );
+
+    assert.equal(response.status, 301, `expected permanent redirect for ${route}`);
+    assert.equal(response.headers.get('location'), expected.toString(), `unexpected destination for ${route}`);
+  }
+});
+
 test('consolidates the duplicate OCR entry into scanned edit mode', async () => {
   const response = await handleRequest(new Request('https://dayfiles.com/ocr-pdf/?ref=old'), env);
 
@@ -123,7 +154,9 @@ test('redirects blog and www aliases without creating mirrors', async () => {
 
 test('serves SEO control files and genuine unknown-route 404s', async () => {
   const sitemap = await handleRequest(new Request('https://dayfiles.com/sitemap.xml'), env);
-  assert.match(await sitemap.text(), /sitemaps\/editorial\.xml/);
+  const sitemapText = await sitemap.text();
+  assert.match(sitemapText, /sitemaps\/editorial\.xml/);
+  assert.equal((sitemapText.match(/<lastmod>2026-08-23<\/lastmod>/g) ?? []).length, 2);
   const robots = await handleRequest(new Request('https://dayfiles.com/robots.txt'), env);
   const robotsText = await robots.text();
   assert.match(robotsText, /User-agent: GPTBot/);

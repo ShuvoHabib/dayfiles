@@ -27,6 +27,10 @@ import { trustPages } from '../site/trust-pages.mjs';
 import { validatePosts } from './validate.mjs';
 import { BLOG_REDIRECTS } from './remediation.mjs';
 
+// Keep this stable between deploys. Update only after a meaningful shared
+// content, structured-data, or internal-link change across editorial pages.
+const SITE_CONTENT_LASTMOD = '2026-08-23';
+
 const extensionLink =
   'https://chromewebstore.google.com/detail/everyday-image-studio/cpcfdmaihaccamacobbfnfngefmdphfp/reviews?utm_source=item-share-cp';
 const navLinks = [
@@ -1245,7 +1249,7 @@ function buildSitemap(posts) {
       loc: post.canonicalUrl,
       priority: '0.8',
       changefreq: 'weekly',
-      lastmod: post.date
+      lastmod: post.reviewDate || post.date
     }))
   ];
 
@@ -1254,7 +1258,7 @@ function buildSitemap(posts) {
       (url) => `
   <url>
     <loc>${url.loc}</loc>
-    <lastmod>${url.lastmod || new Date().toISOString().slice(0, 10)}</lastmod>
+    <lastmod>${url.lastmod || SITE_CONTENT_LASTMOD}</lastmod>
     <changefreq>${url.changefreq}</changefreq>
     <priority>${url.priority}</priority>
   </url>`

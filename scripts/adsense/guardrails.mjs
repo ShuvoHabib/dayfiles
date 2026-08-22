@@ -16,6 +16,17 @@ const blogDirectories = blogIndex.map((entry) => entry.slug);
 const htmlFiles = await collectFiles('public', '.html');
 const html = (await Promise.all(htmlFiles.map((file) => readFile(file, 'utf8')))).join('\n');
 const failures = [];
+const sitemapNodes = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => match[1] ?? '');
+const now = new Date();
+const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
+for (const node of sitemapNodes) {
+  const loc = node.match(/<loc>(.*?)<\/loc>/)?.[1];
+  const lastmod = node.match(/<lastmod>(.*?)<\/lastmod>/)?.[1];
+  if (!lastmod || !/^\d{4}-\d{2}-\d{2}$/.test(lastmod) || lastmod > today) {
+    failures.push(`invalid or missing sitemap lastmod: ${loc ?? 'unknown URL'}`);
+  }
+}
 
 for (const slug of ['product-hunt-launch-everyday-image-studio', 'eis-workflow-playbook']) {
   if (sitemap.includes(slug) || blogDirectories.includes(slug)) {
