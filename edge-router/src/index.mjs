@@ -67,8 +67,6 @@ function isEditorialPath(pathname) {
   return (
     normalized === '/blog' ||
     normalized.startsWith('/blog/') ||
-    normalized === '/human-anatomy-3d-body-layers' ||
-    normalized.startsWith('/human-anatomy-3d-body-layers/') ||
     EDITORIAL_EXACT_PATHS.has(normalized) ||
     EDITORIAL_ASSET_PATHS.has(pathname)
   );
@@ -78,6 +76,7 @@ function isKnownPdfPath(pathname) {
   const normalized = normalizePath(pathname);
   return (
     KNOWN_PDF_PATHS.has(normalized) ||
+    normalized.startsWith('/human-anatomy-3d-body-layers/') ||
     normalized === '/about-privacy' ||
     normalized.startsWith('/tool/') ||
     normalized.startsWith('/api/') ||

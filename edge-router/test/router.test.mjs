@@ -29,9 +29,16 @@ test('routes PDF app pages to the PDF Pages origin', async () => {
 });
 
 test('routes articles and exact editorial inventory to editorial Pages', async () => {
-  for (const path of ['/blog/fill-sign-merge-lock-pdf-packet/', '/editorial-policy/', '/images/', '/human-anatomy-3d-body-layers/ios/privacy-policy/', '/human-anatomy-3d-body-layers/android/terms-of-use/']) {
+  for (const path of ['/blog/fill-sign-merge-lock-pdf-packet/', '/editorial-policy/', '/images/']) {
     const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
     assert.match(await response.text(), /^upstream:https:\/\/dayfiles\.pages\.dev/);
+  }
+});
+
+test('routes Body Layers platform legal pages to the PDF Pages origin', async () => {
+  for (const path of ['/human-anatomy-3d-body-layers/ios/privacy-policy/', '/human-anatomy-3d-body-layers/ios/terms-of-use/', '/human-anatomy-3d-body-layers/android/privacy-policy/', '/human-anatomy-3d-body-layers/android/terms-of-use/']) {
+    const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
+    assert.match(await response.text(), /^upstream:https:\/\/pdf-processor-4mc\.pages\.dev/);
   }
 });
 
