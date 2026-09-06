@@ -132,11 +132,11 @@ test('redirects the complete historical PDF inventory to final apex destinations
   }
 });
 
-test('consolidates the duplicate OCR entry into scanned edit mode', async () => {
+test('routes the searchable PDF OCR page to the PDF Pages origin', async () => {
   const response = await handleRequest(new Request('https://dayfiles.com/ocr-pdf/?ref=old'), env);
 
-  assert.equal(response.status, 301);
-  assert.equal(response.headers.get('location'), 'https://dayfiles.com/edit-pdf/?mode=scanned&ref=old');
+  assert.equal(response.status, 200);
+  assert.equal(await response.text(), 'upstream:https://pdf-processor-4mc.pages.dev/ocr-pdf/');
 });
 
 test('uses 308 for non-GET requests from the old PDF hostname', async () => {
@@ -155,8 +155,9 @@ test('redirects blog and www aliases without creating mirrors', async () => {
 test('serves SEO control files and genuine unknown-route 404s', async () => {
   const sitemap = await handleRequest(new Request('https://dayfiles.com/sitemap.xml'), env);
   const sitemapText = await sitemap.text();
+  assert.match(sitemapText, /sitemaps\/pdf\.xml/);
   assert.match(sitemapText, /sitemaps\/editorial\.xml/);
-  assert.equal((sitemapText.match(/<lastmod>2026-08-23<\/lastmod>/g) ?? []).length, 2);
+  assert.doesNotMatch(sitemapText, /<lastmod>/);
   const robots = await handleRequest(new Request('https://dayfiles.com/robots.txt'), env);
   const robotsText = await robots.text();
   assert.match(robotsText, /User-agent: GPTBot/);
