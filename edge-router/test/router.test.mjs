@@ -29,7 +29,7 @@ test('routes PDF app pages to the PDF Pages origin', async () => {
 });
 
 test('routes articles and exact editorial inventory to editorial Pages', async () => {
-  for (const path of ['/blog/fill-sign-merge-lock-pdf-packet/', '/editorial-policy/', '/images/']) {
+  for (const path of ['/blog/fill-sign-merge-lock-pdf-packet/', '/editorial-policy/', '/images/', '/human-anatomy-3d-body-layers/ios/privacy-policy/', '/human-anatomy-3d-body-layers/android/terms-of-use/']) {
     const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
     assert.match(await response.text(), /^upstream:https:\/\/dayfiles\.pages\.dev/);
   }
