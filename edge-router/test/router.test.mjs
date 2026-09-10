@@ -28,6 +28,13 @@ test('routes PDF app pages to the PDF Pages origin', async () => {
   assert.equal(response.headers.get('location'), 'https://dayfiles.com/next/');
 });
 
+test('routes thelast30days legal pages to the PDF Pages origin', async () => {
+  for (const path of ['/thelast30days/privacy-policy/', '/thelast30days/terms-of-use/']) {
+    const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
+    assert.equal(await response.text(), `upstream:https://pdf-processor-4mc.pages.dev${path}`);
+  }
+});
+
 test('routes articles and exact editorial inventory to editorial Pages', async () => {
   for (const path of ['/blog/fill-sign-merge-lock-pdf-packet/', '/editorial-policy/', '/images/']) {
     const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
