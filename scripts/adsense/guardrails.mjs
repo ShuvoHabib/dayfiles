@@ -34,8 +34,8 @@ for (const slug of ['product-hunt-launch-everyday-image-studio', 'eis-workflow-p
   }
 }
 
-if (blogDirectories.length !== 19) {
-  failures.push(`expected 19 retained blog directories, found ${blogDirectories.length}`);
+if (blogDirectories.length !== 23) {
+  failures.push(`expected 23 retained blog directories, found ${blogDirectories.length}`);
 }
 if (/adsbygoogle|pagead2\.googlesyndication\.com|googletagmanager\.com/i.test(html)) {
   failures.push('generated approval inventory contains an advertising or analytics script');

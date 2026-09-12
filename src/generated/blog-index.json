@@ -1,5 +1,73 @@
 [
   {
+    "title": "How to Add Bates Numbers to PDF Files in One Sequence",
+    "slug": "add-bates-numbers-to-pdf-files",
+    "date": "2026-09-12",
+    "product": "pdf",
+    "description": "Learn how to add Bates numbers to PDF files in one continuous sequence, choose a readable footer, preserve file order, and export an accurate document index.",
+    "tags": [
+      "bates numbering pdf",
+      "add bates numbers to pdf",
+      "bates stamp pdf",
+      "legal document numbering"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/add-bates-numbers-to-pdf-files/",
+    "featuredImage": "/blog/images/add-bates-numbers-to-pdf-files.svg",
+    "featuredImageAlt": "Bates-numbered PDF pages arranged in one continuous document sequence",
+    "readingMinutes": 5
+  },
+  {
+    "title": "How to Compare Two PDF Files for Text and Page Changes",
+    "slug": "compare-two-pdf-files-for-changes",
+    "date": "2026-09-12",
+    "product": "pdf",
+    "description": "Learn how to compare two PDF files page by page, review text and visual changes, handle inserted pages, and save a report without uploading documents.",
+    "tags": [
+      "compare pdf files",
+      "compare two pdfs",
+      "pdf difference checker",
+      "compare pdf text"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/compare-two-pdf-files-for-changes/",
+    "featuredImage": "/blog/images/compare-two-pdf-files-for-changes.svg",
+    "featuredImageAlt": "Two PDF pages compared with highlighted text and visual changes",
+    "readingMinutes": 5
+  },
+  {
+    "title": "How to Convert a Bank Statement PDF to Excel Safely",
+    "slug": "convert-bank-statement-pdf-to-excel-safely",
+    "date": "2026-09-12",
+    "product": "pdf",
+    "description": "Learn how to convert a bank statement PDF to Excel or CSV, review transaction rows, handle debit and credit columns, and avoid errors from scanned pages.",
+    "tags": [
+      "bank statement pdf to excel",
+      "convert bank statement to excel",
+      "bank statement to csv",
+      "extract transactions from pdf"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/convert-bank-statement-pdf-to-excel-safely/",
+    "featuredImage": "/blog/images/convert-bank-statement-pdf-to-excel-safely.svg",
+    "featuredImageAlt": "Bank statement PDF transaction rows being reviewed before Excel export",
+    "readingMinutes": 6
+  },
+  {
+    "title": "How to Search and Redact Text in a PDF Permanently",
+    "slug": "search-and-redact-text-in-pdf",
+    "date": "2026-09-12",
+    "product": "pdf",
+    "description": "Learn how to search and redact text in a PDF, review every matching line, flatten the final copy, and check that sensitive text is no longer selectable.",
+    "tags": [
+      "search and redact pdf",
+      "redact text in pdf",
+      "find and redact pdf",
+      "permanently redact pdf"
+    ],
+    "canonicalUrl": "https://dayfiles.com/blog/search-and-redact-text-in-pdf/",
+    "featuredImage": "/blog/images/search-and-redact-text-in-pdf.svg",
+    "featuredImageAlt": "PDF search results reviewed and permanently redacted across several pages",
+    "readingMinutes": 5
+  },
+  {
     "title": "How to Turn Short Videos Into GIFs for Product Updates",
     "slug": "turn-short-videos-into-gifs-for-product-updates",
     "date": "2026-05-21",

@@ -29,7 +29,7 @@ import { BLOG_REDIRECTS } from './remediation.mjs';
 
 // Keep this stable between deploys. Update only after a meaningful shared
 // content, structured-data, or internal-link change across editorial pages.
-const SITE_CONTENT_LASTMOD = '2026-08-23';
+const SITE_CONTENT_LASTMOD = '2026-09-12';
 
 const extensionLink =
   'https://chromewebstore.google.com/detail/everyday-image-studio/cpcfdmaihaccamacobbfnfngefmdphfp/reviews?utm_source=item-share-cp';
@@ -917,7 +917,7 @@ function renderBlogIndexPage(posts) {
             <span class="card-cta">Read article</span>
           </a>
         </article>
-      `;
+      `.trim();
     })
     .join('\n');
 

@@ -153,6 +153,22 @@ test('routes the searchable PDF OCR page to the PDF Pages origin', async () => {
   assert.equal(await response.text(), 'upstream:https://pdf-processor-4mc.pages.dev/ocr-pdf/');
 });
 
+test('routes the free web workflow pages to the PDF Pages origin', async () => {
+  for (const path of [
+    '/bates-numbering-pdf/',
+    '/bank-statement-to-excel/',
+    '/compare-pdf/',
+    '/search-redact-pdf/',
+  ]) {
+    const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
+    assert.equal(response.status, 200);
+    assert.equal(
+      await response.text(),
+      `upstream:https://pdf-processor-4mc.pages.dev${path}`,
+    );
+  }
+});
+
 test('uses 308 for non-GET requests from the old PDF hostname', async () => {
   const response = await handleRequest(new Request('https://pdf.dayfiles.com/api/contact', { method: 'POST' }), env);
   assert.equal(response.status, 308);
