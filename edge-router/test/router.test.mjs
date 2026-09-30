@@ -123,6 +123,9 @@ test('redirects old PDF trust paths in one hop and keeps the query', async () =>
   const response = await handleRequest(new Request('https://pdf.dayfiles.com/about/?ref=old'), env);
   assert.equal(response.status, 301);
   assert.equal(response.headers.get('location'), 'https://dayfiles.com/private-pdf/about/?ref=old');
+  const oldPdfSitemap = await handleRequest(new Request('https://pdf.dayfiles.com/sitemaps/pdf.xml?ref=old'), env);
+  assert.equal(oldPdfSitemap.status, 301);
+  assert.equal(oldPdfSitemap.headers.get('location'), 'https://dayfiles.com/sitemap.xml?ref=old');
 });
 
 test('redirects the complete historical PDF inventory to final apex destinations in one hop', async () => {
@@ -191,19 +194,23 @@ test('redirects blog and www aliases without creating mirrors', async () => {
 });
 
 test('serves SEO control files and genuine unknown-route 404s', async () => {
-  const sitemap = await handleRequest(new Request('https://dayfiles.com/sitemap.xml'), env);
-  const sitemapText = await sitemap.text();
-  assert.match(sitemapText, /sitemaps\/pdf\.xml/);
-  assert.match(sitemapText, /sitemaps\/editorial\.xml/);
-  assert.doesNotMatch(sitemapText, /<lastmod>/);
+  const sitemapIndex = await handleRequest(new Request('https://dayfiles.com/sitemap-index.xml'), env);
+  const sitemapIndexText = await sitemapIndex.text();
+  assert.match(sitemapIndexText, /<loc>https:\/\/dayfiles\.com\/sitemap\.xml<\/loc>/);
+  assert.match(sitemapIndexText, /sitemaps\/editorial\.xml/);
+  assert.doesNotMatch(sitemapIndexText, /<lastmod>/);
   const robots = await handleRequest(new Request('https://dayfiles.com/robots.txt'), env);
   const robotsText = await robots.text();
   assert.match(robotsText, /User-agent: GPTBot/);
   assert.match(robotsText, /Clean-param: lang \/$/m);
+  assert.match(robotsText, /Sitemap: https:\/\/dayfiles\.com\/sitemap-index\.xml/);
   const ads = await handleRequest(new Request('https://dayfiles.com/ads.txt'), env);
   assert.match(await ads.text(), /pub-1193261985740702/);
-  const pdfSitemap = await handleRequest(new Request('https://dayfiles.com/sitemaps/pdf.xml'), env);
+  const pdfSitemap = await handleRequest(new Request('https://dayfiles.com/sitemap.xml'), env);
   assert.equal(await pdfSitemap.text(), 'upstream:https://pdf-processor-4mc.pages.dev/sitemap.xml');
+  const legacyPdfSitemap = await handleRequest(new Request('https://dayfiles.com/sitemaps/pdf.xml?source=gsc'), env);
+  assert.equal(legacyPdfSitemap.status, 301);
+  assert.equal(legacyPdfSitemap.headers.get('location'), 'https://dayfiles.com/sitemap.xml?source=gsc');
   const editorialSitemap = await handleRequest(new Request('https://dayfiles.com/sitemaps/editorial.xml'), env);
   assert.equal(await editorialSitemap.text(), 'upstream:https://dayfiles.pages.dev/sitemap.xml');
   const missing = await handleRequest(new Request('https://dayfiles.com/not-a-real-page'), env);

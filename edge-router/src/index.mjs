@@ -122,6 +122,7 @@ function redirectHostRequest(request, hostname) {
 
   if (hostname === `pdf.${PUBLIC_HOST}`) {
     const mapped =
+      (normalized === '/sitemaps/pdf.xml' ? '/sitemap.xml' : undefined) ??
       REDIRECTED_PDF_TRUST_PATHS.get(normalized) ??
       PDF_REDIRECT_PATHS.get(normalized) ??
       url.pathname;
@@ -265,16 +266,17 @@ async function specialSeoResponse(request, env, staging) {
   if (pathname === '/robots.txt') {
     const robots = staging
       ? 'User-agent: *\nDisallow: /\n'
-      : `User-agent: *\nAllow: /\n\nUser-agent: Yandex\nAllow: /\nClean-param: lang /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: anthropic-ai\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: CCBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nUser-agent: Applebot-Extended\nAllow: /\n\nUser-agent: Bytespider\nAllow: /\n\nUser-agent: Amazonbot\nAllow: /\n\nUser-agent: meta-externalagent\nAllow: /\n\nSitemap: https://${PUBLIC_HOST}/sitemap.xml\n`;
+      : `User-agent: *\nAllow: /\n\nUser-agent: Yandex\nAllow: /\nClean-param: lang /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: anthropic-ai\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: CCBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nUser-agent: Applebot-Extended\nAllow: /\n\nUser-agent: Bytespider\nAllow: /\n\nUser-agent: Amazonbot\nAllow: /\n\nUser-agent: meta-externalagent\nAllow: /\n\nSitemap: https://${PUBLIC_HOST}/sitemap-index.xml\n`;
     return textResponse(robots, 'text/plain', staging);
   }
-  if (pathname === '/sitemap.xml') {
-    const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <sitemap><loc>https://${PUBLIC_HOST}/sitemaps/pdf.xml</loc></sitemap>\n  <sitemap><loc>https://${PUBLIC_HOST}/sitemaps/editorial.xml</loc></sitemap>\n</sitemapindex>\n`;
+  if (pathname === '/sitemap-index.xml') {
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <sitemap><loc>https://${PUBLIC_HOST}/sitemap.xml</loc></sitemap>\n  <sitemap><loc>https://${PUBLIC_HOST}/sitemaps/editorial.xml</loc></sitemap>\n</sitemapindex>\n`;
     return textResponse(xml, 'application/xml', staging);
   }
-  if (pathname === '/sitemaps/pdf.xml') {
+  if (pathname === '/sitemap.xml') {
     return proxyRequest(requestWithPath(request, '/sitemap.xml'), env.PDF_ORIGIN, staging);
   }
+  if (pathname === '/sitemaps/pdf.xml') return redirectResponse(request, '/sitemap.xml', 301);
   if (pathname === '/sitemaps/editorial.xml') {
     return editorialSitemapResponse(request, env, staging);
   }

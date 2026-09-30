@@ -5,7 +5,7 @@ This Worker keeps the public site on one canonical origin:
 - `dayfiles.com/blog/*` and the existing editorial/trust pages proxy to `dayfiles.pages.dev`.
 - All known Private PDF routes proxy to `pdf-processor-4mc.pages.dev`.
 - `pdf.dayfiles.com`, `blog.dayfiles.com`, and `www.dayfiles.com` redirect to their canonical apex equivalents.
-- `robots.txt`, the sitemap index, child sitemaps, `llms.txt`, and `ads.txt` are assembled at the edge.
+- `robots.txt`, the sitemap index, child sitemaps, `llms.txt`, and `ads.txt` are assembled at the edge. `/sitemap.xml` is the PDF sitemap, `/sitemap-index.xml` indexes it together with the editorial sitemap, and the former `/sitemaps/pdf.xml` URL redirects to `/sitemap.xml`.
 
 Both Pages projects expose `/api/contact` and `/api/subscribe`. The router uses the same-origin `Referer` path to keep editorial-page submissions on the editorial origin; direct calls and PDF-page submissions use the PDF origin.
 
