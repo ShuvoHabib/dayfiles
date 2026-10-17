@@ -23,4 +23,6 @@ export const PDF_ROUTE_REDIRECTS = Object.freeze({
   '/pdf24-vs-ilovepdf': '/best-private-pdf-tools/',
   '/pdfgear-vs-ilovepdf': '/best-private-pdf-tools/',
   '/smallpdf-vs-ilovepdf-privacy': '/best-private-pdf-tools/',
+  // Former signing URL. Google Search Console still sends clicks here.
+  '/sign-pdf': '/e-sign-pdf/',
 });

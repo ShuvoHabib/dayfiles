@@ -6,6 +6,11 @@ This Worker keeps the public site on one canonical origin:
 - All known Private PDF routes proxy to `pdf-processor-4mc.pages.dev`.
 - `pdf.dayfiles.com`, `blog.dayfiles.com`, and `www.dayfiles.com` redirect to their canonical apex equivalents.
 - `robots.txt`, the sitemap index, child sitemaps, `llms.txt`, and `ads.txt` are assembled at the edge. `/sitemap.xml` is the PDF sitemap, `/sitemap-index.xml` indexes it together with the editorial sitemap, and the former `/sitemaps/pdf.xml` URL redirects to `/sitemap.xml`.
+- `/sign-pdf` permanently redirects to `/e-sign-pdf/`, including from `www` and `pdf.dayfiles.com`, in one hop.
+- A path with a file extension is a 404 when the upstream Pages project answers with its HTML app shell. Real assets and `index.html` pretty-URL redirects are left alone. `/.well-known/apple-app-site-association` still comes from the PDF origin.
+- `/.well-known/assetlinks.json` is a 404 until the Play App Signing SHA-256 for `com.dayfiles.pdfprocessor` is added here. Do not invent that fingerprint.
+- Every response sends `Strict-Transport-Security: max-age=31536000; includeSubDomains` with no preload. An `http://dayfiles.com` request that reaches the Worker redirects to https. Cloudflare "Always Use HTTPS" already does this in front of the Worker and is not stored in the repo.
+- `/sitemap.xml` keeps the PDF origin URL set, drops URLs that now redirect, and adds `<lastmod>` from the git commit that introduced each route in `pdf-routes.json` (`2026-08-20`, except the later route additions). The editorial sitemap's `<lastmod>` values come from `git log` of each page's source file at blog build time.
 
 Both Pages projects expose `/api/contact` and `/api/subscribe`. The router uses the same-origin `Referer` path to keep editorial-page submissions on the editorial origin; direct calls and PDF-page submissions use the PDF origin.
 

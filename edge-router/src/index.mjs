@@ -56,6 +56,22 @@ const BLOG_REDIRECT_PATHS = new Map(
 );
 const BLOG_GONE_PATHS = new Set(BLOG_GONE_SLUGS.map((slug) => `/blog/${slug}`));
 const PDF_REDIRECT_PATHS = new Map(Object.entries(PDF_ROUTE_REDIRECTS));
+const HSTS_VALUE = 'max-age=31536000; includeSubDomains';
+const FILE_EXTENSION = /\.[a-z0-9]{1,12}$/i;
+// Commit dates from `git blame` of edge-router/src/pdf-routes.json.
+// The PDF Pages sitemap does not include <lastmod>, and those pages are not in this repo.
+const PDF_ROUTE_LASTMOD_DEFAULT = '2026-08-20';
+const PDF_ROUTE_LASTMOD = new Map([
+  ['/thelast30days/privacy-policy', '2026-09-11'],
+  ['/thelast30days/terms-of-use', '2026-09-11'],
+  ['/simple-invoice-maker/privacy-policy', '2026-09-20'],
+  ['/simple-invoice-maker/terms', '2026-09-20'],
+  ['/simple-invoice-maker/support', '2026-09-20'],
+  ['/bates-numbering-pdf', '2026-09-12'],
+  ['/bank-statement-to-excel', '2026-09-12'],
+  ['/compare-pdf', '2026-09-12'],
+  ['/search-redact-pdf', '2026-09-12'],
+]);
 
 function normalizePath(pathname) {
   if (pathname === '/') return '/';
@@ -83,8 +99,9 @@ function isKnownPdfPath(pathname) {
     normalized === '/app-ads.txt' ||
     normalized === '/manifest.webmanifest' ||
     normalized === '/sw.js' ||
+    normalized === '/.well-known/apple-app-site-association' ||
     normalized.startsWith('/assets/') ||
-    /\.[a-z0-9]{1,12}$/i.test(normalized)
+    FILE_EXTENSION.test(normalized)
   );
 }
 
@@ -135,7 +152,7 @@ function redirectHostRequest(request, hostname) {
     return redirectResponse(request, path, 301);
   }
 
-  return redirectResponse(request, url.pathname, 301);
+  return redirectResponse(request, PDF_REDIRECT_PATHS.get(normalized) ?? url.pathname, 301);
 }
 
 function rewriteUpstreamRequest(request, upstreamOrigin) {
@@ -195,6 +212,34 @@ async function proxyRequest(request, upstreamOrigin, staging) {
   });
 }
 
+function applyHsts(response) {
+  const headers = new Headers(response.headers);
+  headers.set('strict-transport-security', HSTS_VALUE);
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+function hasFileExtension(pathname) {
+  return FILE_EXTENSION.test(normalizePath(pathname));
+}
+
+async function proxyPublicRequest(request, upstreamOrigin, staging) {
+  const response = await proxyRequest(request, upstreamOrigin, staging);
+  if (!hasFileExtension(new URL(request.url).pathname)) return response;
+  if (response.status !== 200) return response;
+  const contentType = response.headers.get('content-type') || '';
+  if (!/^text\/html\b/i.test(contentType)) return response;
+  try {
+    await response.body?.cancel();
+  } catch {
+    // The HTML content-type on a missing asset is enough to classify the SPA fallback.
+  }
+  return notFoundResponse(staging);
+}
+
 async function editorialSitemapResponse(request, env, staging) {
   const upstreamRequest = rewriteUpstreamRequest(
     requestWithPath(request, '/sitemap.xml'),
@@ -214,11 +259,42 @@ async function editorialSitemapResponse(request, env, staging) {
     });
   }
 
-  const xml = (await response.text()).replace(
-    /\s*<url>\s*<loc>https:\/\/dayfiles\.com\/<\/loc>[\s\S]*?<\/url>/,
-    '',
+  const xml = rewriteSitemapXml(
+    (await response.text()).replace(
+      /\s*<url>\s*<loc>https:\/\/dayfiles\.com\/<\/loc>[\s\S]*?<\/url>/,
+      '',
+    ),
   );
   return new Response(xml, { status: response.status, headers });
+}
+
+function pdfRouteLastmod(pathname) {
+  return PDF_ROUTE_LASTMOD.get(normalizePath(pathname)) || PDF_ROUTE_LASTMOD_DEFAULT;
+}
+
+function isRedirectedPublicPath(pathname) {
+  const normalized = normalizePath(pathname);
+  return PDF_REDIRECT_PATHS.has(normalized) || BLOG_REDIRECT_PATHS.has(normalized);
+}
+
+function rewriteSitemapXml(xml, { fillLastmod = false } = {}) {
+  if (!xml.includes('<urlset')) return xml;
+  return xml.replace(/\s*<url>\s*([\s\S]*?)<\/url>/g, (full, inner) => {
+    const locMatch = inner.match(/<loc>\s*([^<]+?)\s*<\/loc>/);
+    if (!locMatch) return full;
+    let pathname = '';
+    try {
+      pathname = new URL(locMatch[1].trim()).pathname;
+    } catch {
+      return full;
+    }
+    if (isRedirectedPublicPath(pathname)) return '';
+    if (!fillLastmod || inner.includes('<lastmod>')) return full;
+    return full.replace(
+      locMatch[0],
+      `${locMatch[0]}\n    <lastmod>${pdfRouteLastmod(pathname)}</lastmod>`,
+    );
+  });
 }
 
 function textResponse(body, contentType, staging = false) {
@@ -274,7 +350,10 @@ async function specialSeoResponse(request, env, staging) {
     return textResponse(xml, 'application/xml', staging);
   }
   if (pathname === '/sitemap.xml') {
-    return proxyRequest(requestWithPath(request, '/sitemap.xml'), env.PDF_ORIGIN, staging);
+    const upstream = await proxyRequest(requestWithPath(request, '/sitemap.xml'), env.PDF_ORIGIN, staging);
+    if (!upstream.ok) return upstream;
+    const xml = rewriteSitemapXml(await upstream.text(), { fillLastmod: true });
+    return textResponse(xml, 'application/xml', staging);
   }
   if (pathname === '/sitemaps/pdf.xml') return redirectResponse(request, '/sitemap.xml', 301);
   if (pathname === '/sitemaps/editorial.xml') {
@@ -293,6 +372,10 @@ async function specialSeoResponse(request, env, staging) {
 }
 
 export async function handleRequest(request, env) {
+  return applyHsts(await dispatchRequest(request, env));
+}
+
+async function dispatchRequest(request, env) {
   const url = new URL(request.url);
   const staging = env.ROUTER_MODE !== 'production';
 
@@ -300,15 +383,22 @@ export async function handleRequest(request, env) {
     return redirectHostRequest(request, url.hostname);
   }
 
+  if (url.protocol === 'http:' && url.hostname === PUBLIC_HOST) {
+    const destination = PDF_REDIRECT_PATHS.get(normalizePath(url.pathname)) ?? url.pathname;
+    return redirectResponse(request, destination, 301);
+  }
+
   const retiredBlog = retiredBlogResponse(request, staging);
   if (retiredBlog) return retiredBlog;
   const consolidatedPdfRoute = consolidatedPdfRouteResponse(request);
   if (consolidatedPdfRoute) return consolidatedPdfRoute;
+  // The Play App Signing SHA-256 for com.dayfiles.pdfprocessor is not in this repo.
+  if (normalizePath(url.pathname) === '/.well-known/assetlinks.json') return notFoundResponse(staging);
   const special = await specialSeoResponse(request, env, staging);
   if (special) return special;
   if (isEditorialApiRequest(request)) return proxyRequest(request, env.EDITORIAL_ORIGIN, staging);
-  if (isEditorialPath(url.pathname)) return proxyRequest(request, env.EDITORIAL_ORIGIN, staging);
-  if (isKnownPdfPath(url.pathname)) return proxyRequest(request, env.PDF_ORIGIN, staging);
+  if (isEditorialPath(url.pathname)) return proxyPublicRequest(request, env.EDITORIAL_ORIGIN, staging);
+  if (isKnownPdfPath(url.pathname)) return proxyPublicRequest(request, env.PDF_ORIGIN, staging);
   return notFoundResponse(staging);
 }
 
@@ -316,10 +406,10 @@ export default {
   fetch(request, env) {
     return handleRequest(request, env).catch((error) => {
       console.error('dayfiles-edge-router request failed', error);
-      return new Response('Upstream service unavailable', {
+      return applyHsts(new Response('Upstream service unavailable', {
         status: 502,
         headers: { 'content-type': 'text/plain; charset=utf-8' },
-      });
+      }));
     });
   },
 };
