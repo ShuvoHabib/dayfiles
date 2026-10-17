@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -8,6 +9,7 @@ import {
   LLMS_PATH,
   PUBLIC_DIR,
   REDIRECTS_PATH,
+  ROOT_DIR,
   SITEMAP_PATH,
   SITE_URL,
   siteUrl,
@@ -27,8 +29,7 @@ import { trustPages } from '../site/trust-pages.mjs';
 import { validatePosts } from './validate.mjs';
 import { BLOG_REDIRECTS } from './remediation.mjs';
 
-// Keep this stable between deploys. Update only after a meaningful shared
-// content, structured-data, or internal-link change across editorial pages.
+// Used only when a page has no git history, such as a copy outside this repo.
 const SITE_CONTENT_LASTMOD = '2026-09-12';
 
 const extensionLink =
@@ -1231,27 +1232,67 @@ function buildFeed(posts) {
 </rss>\n`;
 }
 
-function buildSitemap(posts) {
+function gitCommitDate(filePath) {
+  if (!filePath) return null;
+  try {
+    const output = execFileSync('git', ['log', '-1', '--format=%cs', '--', filePath], {
+      cwd: ROOT_DIR,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore']
+    }).trim();
+    return /^\d{4}-\d{2}-\d{2}$/.test(output) ? output : null;
+  } catch {
+    return null;
+  }
+}
+
+function editorialLastmod(filePath, fallback) {
+  return gitCommitDate(filePath) || fallback;
+}
+
+function isRedirectedEditorialUrl(loc) {
+  try {
+    const pathname = new URL(loc).pathname.replace(/\/+$/, '');
+    if (!pathname.startsWith('/blog/')) return false;
+    return Object.prototype.hasOwnProperty.call(BLOG_REDIRECTS, pathname.slice('/blog/'.length));
+  } catch {
+    return false;
+  }
+}
+
+export function buildSitemap(posts) {
   const urls = [
-    { loc: `${SITE_URL}/`, priority: '1.0', changefreq: 'weekly' },
+    {
+      loc: `${SITE_URL}/`,
+      priority: '1.0',
+      changefreq: 'weekly',
+      lastmod: editorialLastmod(path.join(ROOT_DIR, 'index.html'), SITE_CONTENT_LASTMOD)
+    },
     ...productPages.map((page) => ({
       loc: page.canonicalUrl,
       priority: '0.9',
-      changefreq: 'weekly'
+      changefreq: 'weekly',
+      lastmod: editorialLastmod(path.join(ROOT_DIR, 'public', page.slug, 'index.html'), SITE_CONTENT_LASTMOD)
     })),
     ...trustPages.map((page) => ({
       loc: siteUrl(page.slug),
       priority: '0.6',
-      changefreq: 'monthly'
+      changefreq: 'monthly',
+      lastmod: editorialLastmod(path.join(ROOT_DIR, 'public', page.slug, 'index.html'), SITE_CONTENT_LASTMOD)
     })),
-    { loc: siteUrl('/blog'), priority: '0.9', changefreq: 'daily' },
+    {
+      loc: siteUrl('/blog'),
+      priority: '0.9',
+      changefreq: 'daily',
+      lastmod: editorialLastmod(path.join(ROOT_DIR, 'public/blog/index.html'), SITE_CONTENT_LASTMOD)
+    },
     ...posts.map((post) => ({
       loc: post.canonicalUrl,
       priority: '0.8',
       changefreq: 'weekly',
-      lastmod: post.reviewDate || post.date
+      lastmod: editorialLastmod(post.path, post.reviewDate || post.date)
     }))
-  ];
+  ].filter((url) => !isRedirectedEditorialUrl(url.loc));
 
   const nodes = urls
     .map(

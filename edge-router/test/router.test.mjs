@@ -230,6 +230,130 @@ test('removes the replaced apex homepage from the editorial child sitemap', asyn
   assert.match(xml, /<loc>https:\/\/dayfiles\.com\/blog\/<\/loc>/);
 });
 
+test('redirects the legacy sign-pdf URL to the live e-sign page', async () => {
+  for (const path of ['/sign-pdf', '/sign-pdf/']) {
+    const response = await handleRequest(new Request(`https://dayfiles.com${path}?ref=gsc`), env);
+    assert.equal(response.status, 301);
+    assert.equal(response.headers.get('location'), 'https://dayfiles.com/e-sign-pdf/?ref=gsc');
+    assert.equal(response.headers.get('strict-transport-security'), 'max-age=31536000; includeSubDomains');
+    assert.doesNotMatch(response.headers.get('strict-transport-security'), /preload/);
+  }
+
+  const pdfHost = await handleRequest(new Request('https://pdf.dayfiles.com/sign-pdf/'), env);
+  assert.equal(pdfHost.status, 301);
+  assert.equal(pdfHost.headers.get('location'), 'https://dayfiles.com/e-sign-pdf/');
+
+  const www = await handleRequest(new Request('https://www.dayfiles.com/sign-pdf/'), env);
+  assert.equal(www.status, 301);
+  assert.equal(www.headers.get('location'), 'https://dayfiles.com/e-sign-pdf/');
+});
+
+test('redirects apex http requests to https', async () => {
+  const response = await handleRequest(new Request('http://dayfiles.com/merge-pdf/?a=1'), env);
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get('location'), 'https://dayfiles.com/merge-pdf/?a=1');
+});
+
+test('returns 404 for assetlinks until a signing fingerprint exists', async () => {
+  globalThis.fetch = async () => {
+    throw new Error('assetlinks must not fall through to the homepage');
+  };
+  const response = await handleRequest(new Request('https://dayfiles.com/.well-known/assetlinks.json'), env);
+  assert.equal(response.status, 404);
+  assert.match(response.headers.get('content-type'), /^text\/html/);
+  assert.match(await response.text(), /Page not found/);
+});
+
+test('keeps the Apple App Site Association file on the PDF origin', async () => {
+  const response = await handleRequest(
+    new Request('https://dayfiles.com/.well-known/apple-app-site-association'),
+    env,
+  );
+  assert.equal(
+    await response.text(),
+    'upstream:https://pdf-processor-4mc.pages.dev/.well-known/apple-app-site-association',
+  );
+});
+
+test('turns extension-path SPA fallbacks into real 404s and keeps real assets', async () => {
+  globalThis.fetch = async (request) => {
+    const { pathname } = new URL(request.url);
+    if (pathname === '/foo.html' || pathname === '/x.json' || pathname === '/abc.txt' || pathname === '/blog/foo.html') {
+      return new Response('<!doctype html><title>Home</title>', {
+        status: 200,
+        headers: { 'content-type': 'text/html; charset=utf-8' },
+      });
+    }
+    if (pathname === '/index.html') {
+      return new Response(null, { status: 308, headers: { location: '/' } });
+    }
+    if (pathname === '/merge-pdf/index.html') {
+      return new Response(null, { status: 308, headers: { location: '/merge-pdf/' } });
+    }
+    if (pathname === '/assets/app.js') {
+      return new Response('console.log(1)', { headers: { 'content-type': 'application/javascript' } });
+    }
+    if (pathname === '/blog/feed.xml') {
+      return new Response('<rss></rss>', { headers: { 'content-type': 'application/xml' } });
+    }
+    if (pathname === '/private-pdf-icon.png') {
+      return new Response('png', { headers: { 'content-type': 'image/png' } });
+    }
+    return new Response('missing', { status: 404, headers: { 'content-type': 'text/plain' } });
+  };
+
+  for (const path of ['/foo.html', '/x.json', '/abc.txt', '/blog/foo.html']) {
+    const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
+    assert.equal(response.status, 404, path);
+    assert.match(await response.text(), /Page not found/);
+  }
+
+  const asset = await handleRequest(new Request('https://dayfiles.com/assets/app.js'), env);
+  assert.equal(asset.status, 200);
+  assert.equal(await asset.text(), 'console.log(1)');
+
+  const icon = await handleRequest(new Request('https://dayfiles.com/private-pdf-icon.png'), env);
+  assert.equal(icon.status, 200);
+  assert.equal(await icon.text(), 'png');
+
+  const feed = await handleRequest(new Request('https://dayfiles.com/blog/feed.xml'), env);
+  assert.equal(feed.status, 200);
+  assert.match(await feed.text(), /<rss>/);
+
+  const index = await handleRequest(new Request('https://dayfiles.com/index.html'), env);
+  assert.equal(index.status, 308);
+  assert.equal(index.headers.get('location'), 'https://dayfiles.com/');
+
+  const nestedIndex = await handleRequest(new Request('https://dayfiles.com/merge-pdf/index.html'), env);
+  assert.equal(nestedIndex.status, 308);
+  assert.equal(nestedIndex.headers.get('location'), 'https://dayfiles.com/merge-pdf/');
+
+  const extensionless = await handleRequest(new Request('https://dayfiles.com/not-a-real-page'), env);
+  assert.equal(extensionless.status, 404);
+});
+
+test('adds git lastmod to the PDF sitemap and drops redirected URLs', async () => {
+  globalThis.fetch = async (request) => {
+    const { pathname } = new URL(request.url);
+    if (pathname !== '/sitemap.xml') return new Response('missing', { status: 404 });
+    return new Response(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://dayfiles.com/merge-pdf/</loc></url>
+  <url><loc>https://dayfiles.com/sign-pdf/</loc></url>
+  <url><loc>https://dayfiles.com/e-sign-pdf/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://dayfiles.com/bank-statement-to-excel/</loc></url>
+</urlset>`, { headers: { 'content-type': 'application/xml' } });
+  };
+
+  const response = await handleRequest(new Request('https://dayfiles.com/sitemap.xml'), env);
+  const xml = await response.text();
+  assert.match(xml, /<loc>https:\/\/dayfiles\.com\/merge-pdf\/<\/loc>\s*<lastmod>2026-08-20<\/lastmod>/);
+  assert.doesNotMatch(xml, /<loc>https:\/\/dayfiles\.com\/sign-pdf\/<\/loc>/);
+  assert.match(xml, /<loc>https:\/\/dayfiles\.com\/e-sign-pdf\/<\/loc>\s*<lastmod>2026-08-01<\/lastmod>/);
+  assert.match(xml, /bank-statement-to-excel\/<\/loc>\s*<lastmod>2026-09-12<\/lastmod>/);
+  assert.match(response.headers.get('content-type'), /^application\/xml/);
+});
+
 test('marks staging output noindex', async () => {
   const response = await handleRequest(new Request('https://staging.example/merge-pdf/'), {
     ...env,
