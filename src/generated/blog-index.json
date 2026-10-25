@@ -21,7 +21,7 @@
     "slug": "compare-two-pdf-files-for-changes",
     "date": "2026-09-12",
     "product": "pdf",
-    "description": "Learn how to compare two PDF files page by page, review text and visual changes, handle inserted pages, and save a report documents.",
+    "description": "Learn how to compare two PDF files page by page, review text and visual changes, handle inserted pages, and save a report.",
     "tags": [
       "compare pdf files",
       "compare two pdfs",
@@ -225,7 +225,7 @@
     "slug": "large-submission-packaging-workflow",
     "date": "2026-04-20",
     "product": "pdf",
-    "description": "Prepare a large PDF submission by merging, organizing, compressing, and locking the final file with a workflow that keeps uploads cleaner and easier to",
+    "description": "Prepare a large PDF submission by merging, organizing, compressing, and locking the final file with a workflow that keeps uploads cleaner and easier",
     "tags": [
       "prepare large pdf submission for upload",
       "large pdf packaging workflow",
@@ -293,7 +293,7 @@
     "slug": "pdf-pages-to-images-cleanup-and-back",
     "date": "2026-04-11",
     "product": "images",
-    "description": "Convert PDF pages into images, clean the pages visually, and rebuild the final PDF with a workflow that improves clarity and review confidence before",
+    "description": "Convert PDF pages into images, clean the pages visually, and rebuild the final PDF with a workflow that improves clarity and review confidence",
     "tags": [
       "convert pdf to images and back to pdf",
       "pdf page cleanup workflow",
@@ -310,7 +310,7 @@
     "slug": "images-to-clean-compressed-pdf-submission",
     "date": "2026-04-09",
     "product": "pdf",
-    "description": "Convert image files into a clean PDF submission, merge the set, and compress the final output with a workflow that keeps uploads lighter and easier to",
+    "description": "Convert image files into a clean PDF submission, merge the set, and compress the final output with a workflow that keeps uploads lighter and easier",
     "tags": [
       "convert images to compressed pdf",
       "images to pdf workflow",
@@ -361,7 +361,7 @@
     "slug": "pdf-fix-text-and-recompress-workflow",
     "date": "2026-04-03",
     "product": "pdf",
-    "description": "Fix PDF text through a DOCX edit stage, rebuild the document as PDF, and compress the final export so the revised file stays both accurate and",
+    "description": "Fix PDF text through a DOCX edit stage, rebuild the document as PDF, and compress the final export so the revised file stays both accurate",
     "tags": [
       "fix text in pdf and save as pdf",
       "pdf text correction",
@@ -378,7 +378,7 @@
     "slug": "pdf-operations-checklist",
     "date": "2026-02-19",
     "product": "pdf",
-    "description": "Use this checklist to standardize PDF conversion, compression, and delivery with fewer errors and approvals. to use.",
+    "description": "Use this checklist to standardize PDF conversion, compression, and delivery with fewer errors and approvals.",
     "tags": [
       "pdf workflow",
       "document operations",

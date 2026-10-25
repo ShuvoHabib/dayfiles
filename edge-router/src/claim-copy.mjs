@@ -157,7 +157,7 @@ const HOME_REPLACEMENTS = [
     'Reorder, rotate or delete pages, and add watermarks or page numbers. On Android, Bank statement to Excel is a Private PDF Premium feature.',
   ],
   ['Best for shrinking large files before sending.', 'Best for compressing a PDF before you send it.'],
-  ['Best for extracting specific page ranges quickly.', 'Best for extracting specific page ranges.'],
+  ['Best for extracting specific page ranges quickly.', 'Best for choosing the pages you want to keep.'],
   [
     'Best for local text changes, OCR review, and export without upload.',
     'Best for editing PDF text and pages.',
@@ -187,6 +187,15 @@ const HOME_REPLACEMENTS = [
   ['Files stay local. Only your email is submitted here.', 'Only your email is submitted here.'],
   ['Keep everything in your browser with no upload queue.', 'Merge, split, compress and edit PDFs.'],
 ];
+
+export const GUIDE_COPY = {
+  '/guides/how-to-make-a-pdf-smaller-without-uploading': {
+    title: 'Compress a PDF | Private PDF',
+    h1: 'How to Compress a PDF',
+    description: 'Compress a PDF and check the result before you send it. Results depend on the file.',
+    hero: 'Compress a PDF and check the result before you send it.',
+  },
+};
 
 export const GUIDE_LINKS = {
   '/guides/how-to-merge-pdf-files-without-uploading': ['/merge-pdf/', 'Merge PDF files'],
@@ -223,6 +232,10 @@ const PHRASES = [
   'Nothing leaves your browser',
   'without uploading them to a server',
   'Without Uploading Them to a Server',
+  'without uploading the file to a server',
+  'without uploading the file to another service',
+  'Without Uploading the File to Another Service',
+  'without uploading documents',
   'without uploading the file first',
   'Without Uploading the File First',
   'without uploading the file to another service',
@@ -272,8 +285,16 @@ const PHRASES = [
   'Online Free',
   'online free',
   'for free',
+  'Free, Local & Private',
+  'Free, Local and Private',
   'Free & Private',
   'Free and Private',
+  'Free to use with no account required',
+  'to use with no account required',
+  'and without an account',
+  'without an account',
+  'no file upload',
+  'browser-only processing',
   'low, balanced, or high compression presets',
   'without losing quality',
   'Without Losing Quality',
@@ -467,15 +488,20 @@ export function stripClaims(input) {
   text = text
     .replace(/\bsmaller\b/gi, ' ')
     .replace(/\s+/g, ' ')
+    .replace(/\s*[—–]\s*,\s*&?\s*/g, ' ')
+    .replace(/\s+&\s+(?=[|.,]|$)/g, ' ')
+    .replace(/\bmore\s+by\b/gi, 'by')
     .replace(/,?\s*\b(?:and|or|with)\b\s*(?=,|\.|$)/gi, ' ')
-    .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/\s+([,;:!?])/g, '$1')
+    .replace(/\s+\.(?!\w)/g, '.')
     .replace(/([([])\s+/g, '$1')
     .replace(/\s+([)\]])/g, '$1')
     .replace(/\(\s*\)/g, '')
     .replace(/\s+[-–—|]\s+/g, ' ')
-    .replace(/^[,.;:\-–—| ]+|[,;:\-–—| ]+$/g, '')
+    .replace(/^[,.;:\-–—|& ]+|[,;:\-–—|& ]+$/g, '')
     .replace(/^(?:and|or|with)\b[, ]*/i, '')
     .replace(/[, ]*\b(?:and|or|with)$/i, '')
+    .replace(/\.{2,}/g, '.')
     .replace(/\.\s*\./g, '.')
     .replace(/,\s*(?:and|or)\s+(?=(?:a|an|the)\b)/gi, ' ')
     .replace(/,\s*,/g, ',')
@@ -516,6 +542,9 @@ export function fitDescription(input) {
   let text = stripClaims(input).replace(/\s+/g, ' ').trim();
   if (text.length <= 155) return text;
   let cut = text.slice(0, 155).replace(/\s+\S*$/, '').replace(/[,:;.\s]+$/g, '').trim();
+  while (/\b(?:a|an|the|and|or|with|to|for|of|in|on|before|after|from|by)\s*$/i.test(cut)) {
+    cut = cut.replace(/\b(?:a|an|the|and|or|with|to|for|of|in|on|before|after|from|by)\s*$/i, '').replace(/[,:;.\s]+$/g, '').trim();
+  }
   if (cut.length < 40) cut = text.slice(0, 155).trim();
   return cut;
 }
@@ -588,11 +617,12 @@ export function pageSpec(pathname, html = '') {
     hero: readHero(html),
   };
   const guide = GUIDE_LINKS[path] || null;
+  const guideCopy = GUIDE_COPY[path] || null;
   return {
-    title: current.title ? fitPdfTitle(current.title) : '',
-    h1: current.h1 ? stripClaims(current.h1) : '',
-    description: current.description ? fitDescription(current.description) : '',
-    hero: current.hero ? stripClaims(current.hero) : '',
+    title: guideCopy?.title || (current.title ? fitPdfTitle(current.title) : ''),
+    h1: guideCopy?.h1 || (current.h1 ? stripClaims(current.h1) : ''),
+    description: guideCopy?.description || (current.description ? fitDescription(current.description) : ''),
+    hero: guideCopy?.hero || (current.hero ? stripClaims(current.hero) : ''),
     trust: '',
     kind: guide ? 'guide' : 'strip',
     store: false,
@@ -661,6 +691,7 @@ function clientScript() {
       storeBody: tool.storeBody || STORE_BODY,
     })),
     guides: GUIDE_LINKS,
+    guideCopy: GUIDE_COPY,
     phrases: PHRASES,
     trustSentence: TRUST_SENTENCE,
     excluded: EXCLUDED_PREFIXES,
@@ -704,9 +735,19 @@ function clientScript() {
       .replace(/\\bspeed\\b/gi, ' ')
       .replace(/\\bin seconds\\b/gi, ' ')
       .replace(/\\bin minutes\\b/gi, ' ')
-      .replace(/\\bwithout uploading\\b/gi, ' ');
+      .replace(/\\bwithout uploading\\b/gi, ' ')
+      .replace(/\\bsmaller\\b/gi, ' ');
     text = text.split(product).join(${JSON.stringify(PRODUCT)});
-    return text.replace(/\\s+/g, ' ').replace(/\\s+([,.;:!?])/g, '$1').replace(/^[,.;:\\-–—| ]+|[,;:\\-–—| ]+$/g, '').trim();
+    return text
+      .replace(/\\s+/g, ' ')
+      .replace(/\\s*[—–]\\s*,\\s*&?\\s*/g, ' ')
+      .replace(/\\s+&\\s+(?=[|.,]|$)/g, ' ')
+      .replace(/\\bmore\\s+by\\b/gi, 'by')
+      .replace(/\\s+([,;:!?])/g, '$1')
+      .replace(/\\s+\\.(?!\\w)/g, '.')
+      .replace(/\\.{2,}/g, '.')
+      .replace(/^[,.;:\\-–—|& ]+|[,;:\\-–—|& ]+$/g, '')
+      .trim();
   }
   function fitTitle(input) {
     var base = strip(input).replace(/\\s*\\|\\s*Private PDF\\s*$/i, '').trim();
@@ -743,7 +784,8 @@ function clientScript() {
     if (path === '/') spec = data.home;
     else if (tool) spec = tool;
     else {
-      spec = {
+      var guideCopy = data.guideCopy[path];
+      spec = guideCopy || {
         title: fitTitle(document.title),
         description: fitDesc((document.head.querySelector('meta[name="description"]') || {}).content || ''),
         h1: h1 ? strip(h1.textContent) : '',
@@ -772,6 +814,7 @@ function clientScript() {
         if (map[node.nodeValue]) node.nodeValue = map[node.nodeValue];
       }
     }
+    var anchor = h1 && h1.parentNode ? h1.parentNode : document.body;
     if (path === '/' && !document.querySelector('[data-pdf-home-tools]')) {
       var homeNav = document.createElement('nav');
       homeNav.setAttribute('data-pdf-home-tools', 'true');
@@ -794,7 +837,6 @@ function clientScript() {
       homeNav.appendChild(homeList);
       anchor.appendChild(homeNav);
     }
-    var anchor = h1 && h1.parentNode ? h1.parentNode : document.body;
     if (tool && !document.querySelector('[data-pdf-app-cta]')) {
       var aside = document.createElement('aside');
       aside.setAttribute('data-pdf-app-cta', 'true');

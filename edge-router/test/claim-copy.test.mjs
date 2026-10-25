@@ -6,6 +6,7 @@ import {
   STORE_LINKS,
   fitBrandTitle,
   fitDescription,
+  fitPdfTitle,
   newCopyViolations,
   rewriteClaimHtml,
   rewriteClaimScript,
@@ -142,4 +143,22 @@ test('blog titles lose claim words and stay within 60 characters', () => {
   }));
   assert.match(about, /<title>About Private PDF Editor \| Private PDF<\/title>/);
   assert.match(about, /<h1>About Private PDF Editor<\/h1>/);
+  assert.equal(fitPdfTitle('PDF to Markdown — Free, Local & Private'), 'PDF to Markdown | Private PDF');
+  assert.equal(fitPdfTitle('Scan to PDF — Free, Local & Private'), 'Scan to PDF | Private PDF');
+  assert.equal(stripClaims('by uploading .html files'), 'by uploading .html files');
+  assert.equal(
+    stripClaims('See total pages fast without uploading the file to a server.'),
+    'See total pages.',
+  );
+  assert.equal(stripClaims('Prepare HR PDF forms more privately by filling fields.'), 'Prepare HR PDF forms by filling fields.');
+  const smaller = rewriteClaimHtml('/guides/how-to-make-a-pdf-smaller-without-uploading/', page({
+    title: 'Make a PDF Smaller Without Uploading | Private PDF',
+    description: 'A local-first guide to reducing PDF size.',
+    h1: 'How to Make a PDF Smaller Without Uploading the File to Another Service',
+    hero: 'Reduce the file before you send it.',
+    canonical: '<link rel="canonical" href="https://dayfiles.com/guides/how-to-make-a-pdf-smaller-without-uploading/">',
+  }));
+  assert.match(smaller, /<title>Compress a PDF \| Private PDF<\/title>/);
+  assert.match(smaller, /<h1>How to Compress a PDF<\/h1>/);
+  assert.match(smaller, /href="\/compress-pdf\/"/);
 });
