@@ -28,7 +28,7 @@ import { renderSubscribeSection, subscribeScriptTag, subscriptionStyles } from '
 import { trustPages } from '../site/trust-pages.mjs';
 import { validatePosts } from './validate.mjs';
 import { BLOG_REDIRECTS } from './remediation.mjs';
-import { fitBrandTitle, fitDescription, stripClaims } from '../../edge-router/src/claim-copy.mjs';
+import { blogClaimCopy, cleanBodyText, cleanSchemaText, rewriteVisibleHtml } from '../../edge-router/src/claim-copy.mjs';
 
 // Used only when a page has no git history, such as a copy outside this repo.
 const SITE_CONTENT_LASTMOD = '2026-09-12';
@@ -162,7 +162,7 @@ function collectJsonLd(post, relatedPosts = []) {
         url: `${SITE_URL}/dayfiles-logo.svg`
       }
     },
-    keywords: (post.tags || []).join(', '),
+    keywords: (post.tags || []).map((tag) => cleanBodyText(tag)).filter(Boolean).join(', '),
     articleSection: productArticleSection(post.product),
     isPartOf: siteUrl('/blog'),
     citation: (post.sources || []).map((source) => source.url)
@@ -190,10 +190,10 @@ function collectJsonLd(post, relatedPosts = []) {
       '@type': 'FAQPage',
       mainEntity: post.faq.map((item) => ({
         '@type': 'Question',
-        name: item.q,
+        name: cleanSchemaText(item.q),
         acceptedAnswer: {
           '@type': 'Answer',
-          text: item.a
+          text: cleanSchemaText(item.a)
         }
       }))
     });
@@ -1414,13 +1414,15 @@ export async function buildBlogArtifacts() {
   }
 
   for (const post of posts) {
-    const title = stripClaims(post.title);
-    const description = fitDescription(post.description);
-    const documentTitle = fitBrandTitle(post.title, 'Dayfiles');
-    post.claimCopyChanged = title !== post.title || description !== post.description || documentTitle !== `${post.title} | Dayfiles Blog`;
-    post.title = title;
-    post.description = description;
-    post.documentTitle = documentTitle;
+    const claim = blogClaimCopy(post);
+    post.claimCopyChanged = claim.h1 !== post.title || claim.description !== post.description || claim.documentTitle !== `${post.title} | Dayfiles Blog`;
+    post.title = claim.h1;
+    post.description = claim.description;
+    post.documentTitle = claim.documentTitle;
+    post.tags = (post.tags || [])
+      .map((tag) => cleanBodyText(tag).replace(/\bprivacy(?:-first)?\b/gi, ' ').replace(/\s+/g, ' ').trim())
+      .filter((tag) => tag.length > 2);
+    post.featuredImageAlt = cleanBodyText(post.featuredImageAlt || '');
   }
 
   await ensureDir(BLOG_PUBLIC_DIR);
@@ -1433,7 +1435,7 @@ export async function buildBlogArtifacts() {
   const slugSet = new Set(posts.map((post) => post.slug));
   await cleanStalePostDirs(slugSet);
 
-  const blogIndexHtml = renderBlogIndexPage(posts);
+  const blogIndexHtml = rewriteVisibleHtml(renderBlogIndexPage(posts));
   await fs.writeFile(path.join(BLOG_PUBLIC_DIR, 'index.html'), blogIndexHtml, 'utf8');
 
   for (const post of posts) {
@@ -1443,7 +1445,7 @@ export async function buildBlogArtifacts() {
 
     const dir = path.join(BLOG_PUBLIC_DIR, post.slug);
     await ensureDir(dir);
-    await fs.writeFile(path.join(dir, 'index.html'), renderPostPage(post, chosenRelated), 'utf8');
+    await fs.writeFile(path.join(dir, 'index.html'), rewriteVisibleHtml(renderPostPage(post, chosenRelated)), 'utf8');
   }
 
   await fs.writeFile(FEED_PATH, buildFeed(posts), 'utf8');

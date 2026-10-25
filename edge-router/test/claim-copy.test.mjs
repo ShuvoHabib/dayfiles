@@ -3,7 +3,7 @@ import test from 'node:test';
 import {
   ALLOWED_TOOLS,
   HOME_COPY,
-  STORE_LINKS,
+  storeLinksForPath,
   fitBrandTitle,
   fitDescription,
   fitPdfTitle,
@@ -41,6 +41,12 @@ test('allowed tool copy stays inside the claim and length rules', () => {
     assert.deepEqual(newCopyViolations(value), []);
   }
   assert.ok(HOME_COPY.title.length <= 60);
+  assert.equal(HOME_COPY.title, 'Merge, Split, Organize and Edit PDFs | Private PDF');
+  assert.equal(HOME_COPY.h1, HOME_COPY.title);
+  assert.match(HOME_COPY.description, /Now available on iOS and Android/);
+  assert.doesNotMatch(`${HOME_COPY.description} ${HOME_COPY.hero}`, /compress|rotate|watermark|page numbers|on the web/i);
+  const organize = ALLOWED_TOOLS.find((tool) => tool.path === '/organize-pdf');
+  assert.equal(organize.description, 'Reorder, rearrange or delete PDF pages, then save the file.');
 });
 
 test('rewrites an allowed tool page without touching the canonical', () => {
@@ -55,14 +61,18 @@ test('rewrites an allowed tool page without touching the canonical', () => {
   assert.match(html, /<h1>Merge PDF Files<\/h1>/);
   assert.match(html, new RegExp(canonical.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   assert.match(html, /data-pdf-app-cta="true"/);
-  assert.match(html, new RegExp(STORE_LINKS.defaultPlay.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  const mergeLinks = storeLinksForPath('/merge-pdf');
+  assert.match(html, new RegExp(mergeLinks.play.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  assert.match(html, new RegExp(mergeLinks.ios.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   assert.match(html, /data-pdf-related-tools="true"/);
+  const visible = html.split('<script')[0];
+  assert.ok(visible.indexOf('data-pdf-related-tools') < visible.indexOf('data-pdf-app-cta'));
   assert.match(html, /Delete PDF pages/);
   assert.doesNotMatch(html.split('<script')[0], /Online Free|No upload queue|for free/i);
   assert.equal(newCopyViolations(html.match(/<title>([^<]*)<\/title>/)[1]).length, 0);
 });
 
-test('uses the tracked bank-statement store links and no store block on disallowed tools', () => {
+test('keeps the store block off bank, compress, and disallowed tools', () => {
   const bank = rewriteClaimHtml('/bank-statement-to-excel/', page({
     title: 'Bank statement to Excel — Free &amp; Private',
     description: 'Extract transaction rows from text-based bank statements, review the amounts, and export Excel or CSV. Your statement stays in this browser.',
@@ -70,10 +80,19 @@ test('uses the tracked bank-statement store links and no store block on disallow
     hero: 'Extract transaction rows from text-based bank statements.',
     canonical: '<link rel="canonical" href="https://dayfiles.com/bank-statement-to-excel/">',
   }));
-  assert.match(bank, new RegExp(STORE_LINKS.bankPlay.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
-  assert.match(bank, new RegExp(STORE_LINKS.bankIos.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  assert.doesNotMatch(bank.split('<script')[0], /data-pdf-app-cta|Premium feature|Also in the Private PDF app/);
   assert.match(bank, /<h1>Bank Statement PDF to Excel<\/h1>/);
   assert.doesNotMatch(bank, /Extract transaction/);
+
+  const compress = rewriteClaimHtml('/compress-pdf/', page({
+    title: 'Compress PDF Online Free | Private PDF',
+    description: 'Compress PDF files online without uploading.',
+    h1: 'Compress PDF Online Free',
+    hero: 'Compress a PDF.',
+    canonical: '<link rel="canonical" href="https://dayfiles.com/compress-pdf/">',
+  }));
+  assert.doesNotMatch(compress.split('<script')[0], /data-pdf-app-cta|Also in the Private PDF app|Premium feature/);
+  assert.match(compress, /data-pdf-related-tools="true"/);
 
   const sign = rewriteClaimHtml('/e-sign-pdf/', page({
     title: 'Sign PDF Online Free | Private PDF',

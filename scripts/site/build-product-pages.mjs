@@ -6,6 +6,7 @@ import { getProductPageBySlug, productPages } from './product-pages.mjs';
 import { renderSubscribeSection, subscribeScriptTag, subscriptionStyles } from '../shared/subscription.mjs';
 import { isRetiredBlogSlug } from '../blog/remediation.mjs';
 import { trustPages } from './trust-pages.mjs';
+import { blogClaimCopy, rewriteVisibleHtml } from '../../edge-router/src/claim-copy.mjs';
 
 // Update this only when the generated hub and trust-page copy is materially reviewed.
 const SITE_CONTENT_LAST_REVIEWED = '2026-08-20';
@@ -945,15 +946,18 @@ function renderPage(page, relatedPosts, lastUpdated) {
   const companion = getProductPageBySlug(page.companionSlug);
   const relatedGuidesHtml = relatedPosts
     .map(
-      (post) => `
+      (post) => {
+        const claim = blogClaimCopy(post);
+        return `
         <article class="card">
           <a class="guide-link" href="${postRelativeUrl(post.slug)}">
             <span class="badge">${post.product === 'pdf' ? 'PDF Guide' : 'Image Guide'}</span>
-            <h3>${escapeHtml(post.title)}</h3>
-            <p class="muted">${escapeHtml(post.description)}</p>
+            <h3>${escapeHtml(claim.h1)}</h3>
+            <p class="muted">${escapeHtml(claim.description)}</p>
           </a>
         </article>
-      `
+      `;
+      }
     )
     .join('\n');
 
@@ -1216,7 +1220,7 @@ function renderTrustPage(page, lastUpdated) {
 }
 
 function normalizeGeneratedHtml(html) {
-  return html.replace(/[ \t]+$/gm, '');
+  return rewriteVisibleHtml(html.replace(/[ \t]+$/gm, ''));
 }
 
 export async function buildProductPages() {

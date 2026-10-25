@@ -14,7 +14,7 @@ tags:
   - dayfiles pdf toolkit
 canonicalUrl: 'https://dayfiles.com/blog/large-submission-packaging-workflow/'
 featuredImage: /blog/images/large-submission-packaging-workflow.svg
-featuredImageAlt: Compress organize and secure a large PDF submission workflow visual
+featuredImageAlt: Compress and organize a large PDF submission workflow visual
 sources:
   - title: PDF Toolkit
     url: 'https://dayfiles.com/'
@@ -88,7 +88,7 @@ Small files can survive a casual workflow. Large submissions usually cannot. The
 
 That means the workflow must create checkpoints. Large-file handling is really a quality-control problem disguised as a file-size problem.
 
-## How to compress, organize, and secure a large PDF submission
+## How to compress and organize a large PDF submission
 
 Use this process:
 

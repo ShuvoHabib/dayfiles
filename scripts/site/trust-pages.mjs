@@ -138,13 +138,13 @@ export const trustPages = [
     slug: 'contact',
     title: 'Contact Dayfiles | Support, Policy, and Business Questions',
     description:
-      'Contact Dayfiles about corrections, privacy requests, site issues, advertising, or business questions.',
+      'Contact Dayfiles about corrections, policy questions, site issues, advertising, or business questions.',
     shortTitle: 'Contact',
     schemaType: 'ContactPage',
     heroEyebrow: 'Publisher contact',
     h1: 'Contact Dayfiles',
     heroCopy:
-      'Use this page to reach the publisher directly about site issues, editorial corrections, privacy requests, advertising questions, and business communication tied to Dayfiles.',
+      'Use this page to reach the publisher directly about site issues, editorial corrections, policy questions, advertising questions, and business communication tied to Dayfiles.',
     highlights: [
       { label: 'Primary contact', value: contactEmail },
       { label: 'Response owner', value: `${founderName} / Dayfiles editorial and site operations` },

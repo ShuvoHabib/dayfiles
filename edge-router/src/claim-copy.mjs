@@ -5,6 +5,8 @@
  * assetlinks, or apple-app-site-association.
  */
 
+import { BLOG_COPY, PAGE_COPY } from './claim-overrides.mjs';
+
 export const CLAIM_COPY_LASTMOD = '2026-10-25';
 
 const PRODUCT = 'Private PDF';
@@ -13,20 +15,30 @@ const TITLE_SUFFIX = ` | ${PRODUCT}`;
 export const STORE_LINKS = {
   defaultPlay: 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor',
   defaultIos: 'https://apps.apple.com/app/id6809184465',
-  bankPlay:
-    'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor&referrer=utm_source%3Dweb%26utm_medium%3Dwebsite%26utm_campaign%3Dbank-statement-to-excel',
-  bankIos:
-    'https://apps.apple.com/app/apple-store/id6809184465?pt=129418272&ct=web-bank-statement-to-excel&mt=8',
 };
+
+const STORE_PATHS = new Set([
+  '/merge-pdf',
+  '/split-pdf',
+  '/organize-pdf',
+  '/remove-pdf-pages',
+  '/edit-pdf',
+]);
 
 const TRUST_SENTENCE =
   'Private in-browser processing. No upload queue, and we do not store your files or document data.';
 
 const APP_TRUST = 'Get the Private PDF app for Android and iPhone.';
-const BANK_TRUST = 'On Android, Bank statement to Excel is a Private PDF Premium feature.';
 
-const STORE_BODY =
-  'Merge, split, compress and edit PDFs, then reorder, rotate or delete pages and add watermarks or page numbers.';
+const STORE_BODY = 'Merge, split, organize and edit PDFs.';
+
+export function storeLinksForPath(pathname) {
+  const slug = normalizeContentPath(pathname).replace(/^\//, '') || 'home';
+  return {
+    play: `${STORE_LINKS.defaultPlay}&referrer=utm_source%3Dweb%26utm_medium%3Dwebsite%26utm_campaign%3D${slug}`,
+    ios: `${STORE_LINKS.defaultIos}?pt=129418272&ct=web-${slug}&mt=8`,
+  };
+}
 
 export const ALLOWED_TOOLS = [
   {
@@ -53,8 +65,9 @@ export const ALLOWED_TOOLS = [
     title: 'Compress PDF Files Online | Private PDF',
     h1: 'Compress PDF Files',
     description:
-      'Compress a PDF and check the result before you send it. Results depend on the file. Also in the Private PDF app.',
+      'Compress a PDF and check the result before you send it. Results depend on the file.',
     hero: 'Compress a PDF and check the result before you send it.',
+    store: false,
   },
   {
     path: '/edit-pdf',
@@ -70,18 +83,17 @@ export const ALLOWED_TOOLS = [
     label: 'Reorder or rearrange PDF pages',
     title: 'Reorder, Rearrange or Delete PDF Pages | Private PDF',
     h1: 'Reorder or Rearrange PDF Pages',
-    description:
-      'Reorder, rearrange, rotate or delete PDF pages, then save the file. Also in the Private PDF app.',
-    hero: 'Reorder, rearrange, rotate or delete PDF pages, then save the file.',
+    description: 'Reorder, rearrange or delete PDF pages, then save the file.',
+    hero: 'Reorder, rearrange or delete PDF pages, then save the file.',
   },
   {
     path: '/rotate-pdf',
     label: 'Rotate PDF pages',
     title: 'Rotate PDF Pages Online | Private PDF',
     h1: 'Rotate PDF Pages',
-    description:
-      'Rotate PDF pages by 90, 180 or 270 degrees and save the file. Also in the Private PDF app.',
+    description: 'Rotate PDF pages by 90, 180 or 270 degrees and save the file.',
     hero: 'Rotate PDF pages by 90, 180 or 270 degrees and save the file.',
+    store: false,
   },
   {
     path: '/remove-pdf-pages',
@@ -97,18 +109,18 @@ export const ALLOWED_TOOLS = [
     label: 'Add watermark to PDF',
     title: 'Add Watermark to PDF Online | Private PDF',
     h1: 'Add Watermark to PDF',
-    description:
-      'Add a text or image watermark to a PDF, then save the file. Also in the Private PDF app.',
+    description: 'Add a text or image watermark to a PDF, then save the file.',
     hero: 'Add a text or image watermark to a PDF, then save the file.',
+    store: false,
   },
   {
     path: '/add-page-numbers-pdf',
     label: 'Add page numbers to PDF',
     title: 'Add Page Numbers to PDF Online | Private PDF',
     h1: 'Add Page Numbers to PDF',
-    description:
-      'Add page numbers to a PDF and choose the position and format. Also in the Private PDF app.',
+    description: 'Add page numbers to a PDF and choose the position and format.',
     hero: 'Add page numbers to a PDF and choose the position and format.',
+    store: false,
   },
   {
     path: '/bank-statement-to-excel',
@@ -116,23 +128,20 @@ export const ALLOWED_TOOLS = [
     title: 'Bank Statement PDF to Excel | Private PDF',
     h1: 'Bank Statement PDF to Excel',
     description:
-      'Turn rows from a text-based bank statement PDF into an Excel or CSV sheet you can review. On Android, this is a Private PDF Premium feature.',
+      'Turn rows from a text-based bank statement PDF into an Excel or CSV sheet you can review.',
     hero: 'Turn transaction rows from a text-based bank statement PDF into an Excel or CSV sheet you can review.',
-    trust: BANK_TRUST,
-    storeBody: BANK_TRUST,
-    play: STORE_LINKS.bankPlay,
-    ios: STORE_LINKS.bankIos,
+    store: false,
   },
 ];
 
 const ALLOWED_BY_PATH = new Map(ALLOWED_TOOLS.map((tool) => [tool.path, tool]));
 
 export const HOME_COPY = {
-  title: 'Merge, Split, Compress and Edit PDFs | Private PDF',
-  h1: 'Merge, split, compress and edit PDFs',
+  title: 'Merge, Split, Organize and Edit PDFs | Private PDF',
+  h1: 'Merge, Split, Organize and Edit PDFs | Private PDF',
   description:
-    'Merge, split, compress and edit PDFs, then reorder, rotate or delete pages and add watermarks or page numbers. On the web, Android and iPhone.',
-  hero: 'Reorder, rotate or delete pages, add a watermark or page numbers, and get the Private PDF app for Android and iOS.',
+    'Merge, split, organize and edit PDFs, then reorder or delete pages. Now available on iOS and Android.',
+  hero: 'Reorder or delete pages, and get the Private PDF app for Android and iOS.',
 };
 
 const HOME_REPLACEMENTS = [
@@ -143,18 +152,18 @@ const HOME_REPLACEMENTS = [
     HOME_COPY.hero,
   ],
   ['No uploads', 'Merge and split'],
-  ['No account required', 'Compress and edit'],
-  ['No paywalls', 'Watermarks'],
+  ['No account required', 'Organize PDFs'],
+  ['No paywalls', 'Split PDFs'],
   ['Free on Google Play and the App Store', 'On Google Play and the App Store'],
   [
     'Edit, merge, compress, and protect PDFs privately—right on your phone or tablet.',
-    'Merge, split, compress and edit PDFs on your phone or tablet.',
+    'Merge, split, organize and edit PDFs on your phone or tablet.',
   ],
   ['Files stay on-device', 'Reorder pages'],
-  ['Works offline', 'Add page numbers'],
+  ['Works offline', 'Edit PDFs'],
   [
     'Privacy-first browser processing for normal workflows. No upload queue, no stored document data, and no web feature locked behind a subscription or paid unlock.',
-    'Reorder, rotate or delete pages, and add watermarks or page numbers. On Android, Bank statement to Excel is a Private PDF Premium feature.',
+    'Reorder or delete pages. Now available on iOS and Android.',
   ],
   ['Best for shrinking large files before sending.', 'Best for compressing a PDF before you send it.'],
   ['Best for extracting specific page ranges quickly.', 'Best for choosing the pages you want to keep.'],
@@ -169,7 +178,7 @@ const HOME_REPLACEMENTS = [
   ['Offline-ready app', 'PDF page tools'],
   [
     'Local-first PDF tools for browser and offline workflows. Files stay on your device during normal processing. Support is available through the',
-    'PDF tools for merge, split, compress and edit. Support is available through the',
+    'PDF tools for merge, split, organize and edit. Support is available through the',
   ],
   [
     'Copyright 2026 DayFiles. Private PDF Editor is a browser-based PDF tool with offline-ready support.',
@@ -184,8 +193,9 @@ const HOME_REPLACEMENTS = [
     'Join the email list for product updates and practical guides.',
   ],
   ['Privacy-first updates', 'Product updates'],
-  ['Files stay local. Only your email is submitted here.', 'Only your email is submitted here.'],
-  ['Keep everything in your browser with no upload queue.', 'Merge, split, compress and edit PDFs.'],
+  ['Files stay local. Only your email is submitted here.', 'Get product updates by email.'],
+  ['Only your email is submitted here.', 'Get product updates by email.'],
+  ['Keep everything in your browser with no upload queue.', 'Merge, split, organize and edit PDFs.'],
 ];
 
 export const GUIDE_COPY = {
@@ -315,6 +325,25 @@ const PHRASES = [
   'on your device',
   'local-first',
   'download speed',
+  'with browser-only processing',
+  'browser-only processing',
+  'without server upload',
+  'no file upload',
+  'without upload',
+  'without an account',
+  'without sending the document anywhere',
+  'Processing stays in your browser.',
+  'Processing stays in your browser',
+  'On Android, this is a Private PDF Premium feature.',
+  'On Android, Bank statement to Excel is a Private PDF Premium feature.',
+  'Without Uploads',
+  'Without Re-Uploading the File',
+  'Without Sending the Whole Document Away',
+  'Without Sending the Whole Set Everywhere',
+  'Without Creating Extra Exposure',
+  'Without Exposing Sensitive Files',
+  'more safely',
+  'safely',
 ];
 
 const SCRIPT_REPLACEMENTS = [
@@ -449,6 +478,184 @@ function escapeAttr(value) {
   return escapeText(value).replace(/"/g, '&quot;');
 }
 
+const BODY_REPLACEMENTS = [
+  ['Files stay local. Only your email is submitted here.', 'Get product updates by email.'],
+  ['Only your email is submitted here.', 'Get product updates by email.'],
+  ['Subscribe free', 'Subscribe'],
+  ['Shrink a report or scan for faster downloads and easier storage.', ''],
+  ['keeps uploads lighter and easier to review', ''],
+  ['keeps uploads lighter and easier', ''],
+  ['for private or temporary documents', 'for temporary documents'],
+  ['local to your browser', 'in your browser'],
+  ['already local', 'ready'],
+  ['full of account prompts, cloud-first storage, and feature overlap', 'with fewer extra steps'],
+  ['full of account prompts, cloud-first storage, and feature overload', 'with fewer extra steps'],
+  ['Best for sharing sensitive files securely.', 'Best for adding a password to a PDF.'],
+  ['Best for sharing sensitive files securely', 'Best for adding a password to a PDF'],
+  ['4. Download your result instantly', '4. Download your result'],
+  [
+    'The goal is to make common PDF jobs faster without adding account setup, background syncing, or extra handoff steps between tools',
+    'Download the finished file when processing ends',
+  ],
+  [
+    'The goal is to make common PDF jobs faster without adding account setup, background syncing, or unnecessary uploads',
+    'Download the finished file when processing ends',
+  ],
+  [
+    'Private PDF tools preview showing offline, secure PDF merge, edit, compress, and convert workflows.',
+    'Private PDF tools preview.',
+  ],
+];
+
+const BODY_PHRASES = [
+  'Free to use with no account required',
+  'with no account required',
+  'No account required',
+  'no account required',
+  'Your statement stays in this browser.',
+  'Your statement stays in this browser',
+  'Your PDF stays in this browser.',
+  'stays in this browser',
+  'stays in your browser',
+  'All processing stays in your browser.',
+  'All processing stays on this device.',
+  'Processing stays in your browser.',
+  'Processing stays on this device.',
+  'stays on this device',
+  'stay on this device',
+  'on this device',
+  'Your files stay local',
+  'Files stay local',
+  'No upload queue',
+  'no upload queue',
+  'Without Uploading Files',
+  'without uploading files',
+  'Without Uploading It',
+  'without uploading it',
+  'without uploading them',
+  'Without Uploading',
+  'without uploading',
+  'without uploads',
+  'Without Uploads',
+  'On Android, Bank statement to Excel is a Private PDF Premium feature.',
+  'On Android, this is a Private PDF Premium feature.',
+  'local-first',
+  'browser-local',
+  'browser-only',
+  'Without Exposing Sensitive Files',
+  'Without Creating Extra Exposure',
+  'Without Sending the Whole Document Away',
+  'Without Sending the Whole Set Everywhere',
+  'Without Re-Uploading the File',
+  'more safely',
+  'upload-first',
+  'without adding account setup, background syncing, or unnecessary uploads',
+  'without adding account setup, background syncing, or extra handoff steps between tools',
+  'without turning into account-based storage',
+  'does not create an account history or a cloud copy',
+  'without account prompts',
+  'without account friction',
+  'friction of accounts, upload progress, and server-side retention',
+  'unnecessary uploads, accounts, or wait time',
+  'No account',
+  'privacy-first',
+  'Privacy notes',
+];
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+export function cleanBodyText(input, { stripAppMention = false } = {}) {
+  let text = decodeHtml(input);
+  if (!text.trim()) return text;
+  const productToken = '\u0001';
+  const policyToken = '\u0002';
+  text = text.replaceAll(PRODUCT, productToken);
+  text = text.replace(/privacy policy/gi, policyToken);
+  const replacements = BODY_REPLACEMENTS.slice().sort((a, b) => b[0].length - a[0].length);
+  for (const [from, to] of replacements) {
+    text = text.replace(new RegExp(escapeRegExp(from), 'gi'), to);
+  }
+  const phrases = BODY_PHRASES.slice().sort((a, b) => b.length - a.length);
+  for (const phrase of phrases) {
+    text = text.replace(new RegExp(escapeRegExp(phrase), 'gi'), ' ');
+  }
+  if (stripAppMention) {
+    text = text.replace(new RegExp(`Also in the ${productToken} app(?: for Android and iOS)?\\.?`, 'gi'), ' ');
+  }
+  text = text
+    .replace(/\blocal(?:ly)?\b/gi, ' ')
+    .replace(/\boffline\b/gi, ' ')
+    .replace(/\bon-device\b/gi, ' ')
+    .replace(/\bfree\b/gi, ' ')
+    .replace(/\bprivately\b/gi, ' ')
+    .replace(/\bprivate\b/gi, ' ')
+    .replace(/\bsafely\b/gi, ' ')
+    .replace(/\bsecure(?:ly)?\b/gi, ' ')
+    .replace(/\binstant(?:ly)?\b/gi, ' ');
+  text = text.replaceAll(productToken, PRODUCT);
+  text = text.replaceAll(policyToken, 'Privacy Policy');
+  return text
+    .replace(/\s+/g, ' ')
+    .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/\(\s*\)/g, '')
+    .replace(/\bbrowser-\b/gi, 'browser ')
+    .replace(/^[,.;:\-–— ]+/, '')
+    .replace(/[,;:\-–— ]+$/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+export function cleanSchemaText(input) {
+  const saved = [];
+  const masked = String(input || '').replace(/https?:\/\/[^\s)"']+|\]\([^)\s]+\)/g, (match) => {
+    const token = `\u0003${saved.length}\u0003`;
+    saved.push(match);
+    return token;
+  });
+  let cleaned = cleanBodyText(masked).replace(/[ \t]+\u0003/g, '\u0003');
+  cleaned = cleaned.replace(/\u0003(\d+)\u0003/g, (_, index) => saved[Number(index)] || '');
+  return cleaned;
+}
+
+export function rewriteVisibleHtml(html, { stripAppMention = false } = {}) {
+  if (!html) return html;
+  let cleaned = html;
+  for (const [from, to] of BODY_REPLACEMENTS) {
+    if (from && cleaned.includes(from)) cleaned = cleaned.replaceAll(from, to);
+  }
+  cleaned = cleaned.replace(/\balt=(["'])([\s\S]*?)\1/gi, (full, quote, value) => {
+    const next = escapeAttr(cleanBodyText(value));
+    return `alt=${quote}${next}${quote}`;
+  });
+  return cleaned.replace(/<body\b[^>]*>[\s\S]*<\/body>/i, (body) => {
+    const parts = body.split(/(<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>)/gi);
+    return parts
+      .map((part, index) => {
+        if (index % 2 === 1) return part;
+        return part.replace(/>([^<]+)</g, (full, text) => {
+          const next = cleanBodyText(text, { stripAppMention });
+          return `>${escapeText(next)}<`;
+        });
+      })
+      .join('');
+  });
+}
+
+export function blogClaimCopy(post) {
+  const authored = BLOG_COPY[post.slug];
+  if (!authored) {
+    const title = stripClaims(post.title);
+    return {
+      h1: title,
+      description: fitDescription(post.description),
+      documentTitle: fitBrandTitle(post.title, 'Dayfiles'),
+    };
+  }
+  return authored;
+}
+
 export function stripClaims(input) {
   let text = decodeHtml(input);
   const productToken = '\u0001';
@@ -479,7 +686,8 @@ export function stripClaims(input) {
     .replace(/\bspeed\b/gi, ' ')
     .replace(/\bin seconds\b/gi, ' ')
     .replace(/\bin minutes\b/gi, ' ')
-    .replace(/\bwithout uploading\b/gi, ' ');
+    .replace(/\bwithout uploading\b/gi, ' ')
+    .replace(/\bsafely\b/gi, ' ');
   text = text.replaceAll(productToken, PRODUCT);
   text = text.replaceAll(policyToken, 'Privacy Policy');
   const suffixToken = '\u0003';
@@ -597,19 +805,21 @@ export function pageSpec(pathname, html = '') {
   }
   const tool = ALLOWED_BY_PATH.get(path);
   if (tool) {
+    const store = tool.store !== false && STORE_PATHS.has(tool.path);
+    const links = storeLinksForPath(tool.path);
     return {
       title: tool.title,
       h1: tool.h1,
       description: tool.description,
       hero: tool.hero,
-      trust: tool.trust || APP_TRUST,
+      trust: store ? APP_TRUST : '',
       kind: 'tool',
-      store: true,
+      store,
       related: true,
       guide: null,
-      play: tool.play || STORE_LINKS.defaultPlay,
-      ios: tool.ios || STORE_LINKS.defaultIos,
-      storeBody: tool.storeBody || STORE_BODY,
+      play: links.play,
+      ios: links.ios,
+      storeBody: STORE_BODY,
     };
   }
   const current = {
@@ -619,12 +829,12 @@ export function pageSpec(pathname, html = '') {
     hero: readHero(html),
   };
   const guide = GUIDE_LINKS[path] || null;
-  const guideCopy = GUIDE_COPY[path] || null;
+  const authored = { ...(GUIDE_COPY[path] || {}), ...(PAGE_COPY[path] || {}) };
   return {
-    title: guideCopy?.title || (current.title ? fitPdfTitle(current.title) : ''),
-    h1: guideCopy?.h1 || (current.h1 ? stripClaims(current.h1) : ''),
-    description: guideCopy?.description || (current.description ? fitDescription(current.description) : ''),
-    hero: guideCopy?.hero || (current.hero ? stripClaims(current.hero) : ''),
+    title: authored.title || (current.title ? fitPdfTitle(current.title) : ''),
+    h1: authored.h1 || (current.h1 ? stripClaims(current.h1) : ''),
+    description: authored.description || (current.description ? fitDescription(current.description) : ''),
+    hero: authored.hero || (current.hero ? stripClaims(current.hero) : ''),
     trust: '',
     kind: guide ? 'guide' : 'strip',
     store: false,
@@ -680,20 +890,28 @@ function clientScript() {
   const payload = {
     home: HOME_COPY,
     homeReplacements: HOME_REPLACEMENTS,
-    tools: ALLOWED_TOOLS.map((tool) => ({
-      path: tool.path,
-      label: tool.label,
-      title: tool.title,
-      h1: tool.h1,
-      description: tool.description,
-      hero: tool.hero,
-      trust: tool.trust || APP_TRUST,
-      play: tool.play || STORE_LINKS.defaultPlay,
-      ios: tool.ios || STORE_LINKS.defaultIos,
-      storeBody: tool.storeBody || STORE_BODY,
-    })),
+    tools: ALLOWED_TOOLS.map((tool) => {
+      const store = tool.store !== false && STORE_PATHS.has(tool.path);
+      const links = storeLinksForPath(tool.path);
+      return {
+        path: tool.path,
+        label: tool.label,
+        title: tool.title,
+        h1: tool.h1,
+        description: tool.description,
+        hero: tool.hero,
+        trust: store ? APP_TRUST : '',
+        store,
+        play: links.play,
+        ios: links.ios,
+        storeBody: STORE_BODY,
+      };
+    }),
     guides: GUIDE_LINKS,
     guideCopy: GUIDE_COPY,
+    pages: { ...GUIDE_COPY, ...PAGE_COPY },
+    bodyReplacements: BODY_REPLACEMENTS,
+    bodyPhrases: BODY_PHRASES,
     phrases: PHRASES,
     trustSentence: TRUST_SENTENCE,
     excluded: EXCLUDED_PREFIXES,
@@ -786,13 +1004,19 @@ function clientScript() {
     if (path === '/') spec = data.home;
     else if (tool) spec = tool;
     else {
-      var guideCopy = data.guideCopy[path];
-      spec = guideCopy || {
+      var authored = data.pages[path];
+      var fallback = {
         title: fitTitle(document.title),
         description: fitDesc((document.head.querySelector('meta[name="description"]') || {}).content || ''),
         h1: h1 ? strip(h1.textContent) : '',
         hero: hero ? strip(hero.textContent) : ''
       };
+      spec = authored ? {
+        title: authored.title || fallback.title,
+        description: authored.description || fallback.description,
+        h1: authored.h1 || fallback.h1,
+        hero: authored.hero || fallback.hero
+      } : fallback;
     }
     if (spec.title && document.title !== spec.title) document.title = spec.title;
     setMeta('name', 'description', spec.description);
@@ -809,13 +1033,57 @@ function clientScript() {
     });
     var map = {};
     data.homeReplacements.forEach(function (pair) { map[pair[0]] = pair[1]; });
+    var stripApp = !(path === '/' || (tool && tool.store));
+    function cleanBody(input) {
+      var text = String(input || '');
+      var product = '\\u0001';
+      var policy = '\\u0002';
+      text = text.split(${JSON.stringify(PRODUCT)}).join(product);
+      text = text.replace(/privacy policy/gi, policy);
+      data.bodyReplacements.slice().sort(function (a, b) { return b[0].length - a[0].length; }).forEach(function (pair) {
+        text = text.split(pair[0]).join(pair[1]);
+        text = text.split(pair[0].toLowerCase()).join(pair[1]);
+      });
+      data.bodyPhrases.slice().sort(function (a, b) { return b.length - a.length; }).forEach(function (phrase) {
+        text = text.split(phrase).join(' ');
+        text = text.split(phrase.toLowerCase()).join(' ');
+      });
+      if (stripApp) text = text.replace(new RegExp('Also in the ' + product + ' app(?: for Android and iOS)?\\\\.?', 'gi'), ' ');
+      text = text
+        .replace(/\\blocal(?:ly)?\\b/gi, ' ')
+        .replace(/\\boffline\\b/gi, ' ')
+        .replace(/\\bon-device\\b/gi, ' ')
+        .replace(/\\bfree\\b/gi, ' ')
+        .replace(/\\bprivately\\b/gi, ' ')
+        .replace(/\\bprivate\\b/gi, ' ')
+        .replace(/\\bsafely\\b/gi, ' ')
+        .replace(/\\bsecure(?:ly)?\\b/gi, ' ')
+        .replace(/\\binstant(?:ly)?\\b/gi, ' ');
+      text = text.split(product).join(${JSON.stringify(PRODUCT)});
+      text = text.split(policy).join('Privacy Policy');
+      return text.replace(/\\s+/g, ' ').replace(/\\s+([,.;:!?])/g, '$1').replace(/^[,.;:\\- ]+/, '').replace(/[,;:\\- ]+$/g, '').trim();
+    }
     if (document.body) {
       var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
       var node;
       while ((node = walker.nextNode())) {
+        var parent = node.parentNode;
+        if (!parent || /^(SCRIPT|STYLE|NOSCRIPT)$/.test(parent.tagName)) continue;
         if (map[node.nodeValue]) node.nodeValue = map[node.nodeValue];
+        var cleaned = cleanBody(node.nodeValue);
+        if (cleaned !== node.nodeValue) node.nodeValue = cleaned;
       }
     }
+    document.querySelectorAll('meta[content], img[alt]').forEach(function (el) {
+      ['content', 'alt'].forEach(function (attr) {
+        var value = el.getAttribute(attr);
+        if (!value) return;
+        data.bodyReplacements.forEach(function (pair) {
+          if (value.indexOf(pair[0]) !== -1) value = value.split(pair[0]).join(pair[1]);
+        });
+        if (value !== el.getAttribute(attr)) el.setAttribute(attr, value);
+      });
+    });
     var anchor = h1 && h1.parentNode ? h1.parentNode : document.body;
     if (path === '/' && !document.querySelector('[data-pdf-home-tools]')) {
       var homeNav = document.createElement('nav');
@@ -839,39 +1107,49 @@ function clientScript() {
       homeNav.appendChild(homeList);
       anchor.appendChild(homeNav);
     }
-    if (tool && !document.querySelector('[data-pdf-app-cta]')) {
-      var aside = document.createElement('aside');
-      aside.setAttribute('data-pdf-app-cta', 'true');
-      aside.style.cssText = 'margin:1rem 0;padding:.85rem 1rem;border:1px solid #d6dde8;border-radius:12px;background:#fff;color:#0f172a;font:14px/1.45 system-ui,sans-serif';
-      aside.innerHTML = '<p style="margin:0 0 .35rem;font-weight:700">Get the Private PDF app</p><p style="margin:0 0 .7rem"></p><p style="margin:0;display:flex;flex-wrap:wrap;gap:.5rem"><a style="display:inline-block;padding:.45rem .75rem;border-radius:8px;background:#0f172a;color:#fff;text-decoration:none;font-weight:650">Google Play</a><a style="display:inline-block;padding:.45rem .75rem;border-radius:8px;background:#0f172a;color:#fff;text-decoration:none;font-weight:650">App Store</a></p>';
-      aside.querySelector('p:nth-of-type(2)').textContent = tool.storeBody;
-      var links = aside.querySelectorAll('a');
-      links[0].href = tool.play;
-      links[1].href = tool.ios;
-      anchor.appendChild(aside);
+    var relatedNode = document.querySelector('[data-pdf-related-tools]');
+    if (tool) {
+      if (!relatedNode) {
+        var nav = document.createElement('nav');
+        nav.setAttribute('data-pdf-related-tools', 'true');
+        nav.setAttribute('aria-label', 'Related tools');
+        nav.style.cssText = 'margin:1rem 0 1.25rem;font:14px/1.45 system-ui,sans-serif';
+        var label = document.createElement('p');
+        label.style.cssText = 'margin:0 0 .4rem;font-weight:700';
+        label.textContent = 'Related tools';
+        var list = document.createElement('ul');
+        list.style.cssText = 'margin:0;padding-left:1.1rem';
+        data.tools.forEach(function (item) {
+          if (item.path === path) return;
+          var li = document.createElement('li');
+          var link = document.createElement('a');
+          link.href = item.path + '/';
+          link.textContent = item.label;
+          li.appendChild(link);
+          list.appendChild(li);
+        });
+        nav.appendChild(label);
+        nav.appendChild(list);
+        anchor.appendChild(nav);
+      }
+    } else if (relatedNode) {
+      relatedNode.remove();
     }
-    if (tool && !document.querySelector('[data-pdf-related-tools]')) {
-      var nav = document.createElement('nav');
-      nav.setAttribute('data-pdf-related-tools', 'true');
-      nav.setAttribute('aria-label', 'Related tools');
-      nav.style.cssText = 'margin:1rem 0 1.25rem;font:14px/1.45 system-ui,sans-serif';
-      var label = document.createElement('p');
-      label.style.cssText = 'margin:0 0 .4rem;font-weight:700';
-      label.textContent = 'Related tools';
-      var list = document.createElement('ul');
-      list.style.cssText = 'margin:0;padding-left:1.1rem';
-      data.tools.forEach(function (item) {
-        if (item.path === path) return;
-        var li = document.createElement('li');
-        var a = document.createElement('a');
-        a.href = item.path + '/';
-        a.textContent = item.label;
-        li.appendChild(a);
-        list.appendChild(li);
-      });
-      nav.appendChild(label);
-      nav.appendChild(list);
-      anchor.appendChild(nav);
+    var storeNode = document.querySelector('[data-pdf-app-cta]');
+    if (tool && tool.store) {
+      if (!storeNode) {
+        var aside = document.createElement('aside');
+        aside.setAttribute('data-pdf-app-cta', 'true');
+        aside.style.cssText = 'margin:1rem 0;padding:.85rem 1rem;border:1px solid #d6dde8;border-radius:12px;background:#fff;color:#0f172a;font:14px/1.45 system-ui,sans-serif';
+        aside.innerHTML = '<p style="margin:0 0 .35rem;font-weight:700">Get the Private PDF app</p><p style="margin:0 0 .7rem"></p><p style="margin:0;display:flex;flex-wrap:wrap;gap:.5rem"><a style="display:inline-block;padding:.45rem .75rem;border-radius:8px;background:#0f172a;color:#fff;text-decoration:none;font-weight:650">Google Play</a><a style="display:inline-block;padding:.45rem .75rem;border-radius:8px;background:#0f172a;color:#fff;text-decoration:none;font-weight:650">App Store</a></p>';
+        aside.querySelector('p:nth-of-type(2)').textContent = tool.storeBody;
+        var links = aside.querySelectorAll('a');
+        links[0].href = tool.play;
+        links[1].href = tool.ios;
+        anchor.appendChild(aside);
+      }
+    } else if (storeNode) {
+      storeNode.remove();
     }
     var guide = data.guides[path];
     if (guide && !document.querySelector('[data-pdf-tool-link]')) {
@@ -940,15 +1218,15 @@ function cleanJsonNode(node, spec) {
   const copy = { ...node };
   if (copy.offers && (copy.offers.price === '0' || copy.offers.price === 0)) delete copy.offers;
   for (const key of ['name', 'headline', 'description', 'text', 'abstract']) {
-    if (typeof copy[key] !== 'string' || !claimWords(copy[key])) continue;
+    if (typeof copy[key] !== 'string') continue;
     if (key === 'name' && (type === 'WebPage' || type === 'WebSite') && spec.title) copy[key] = spec.title;
-    else if (key === 'description' && spec.description && (spec.kind === 'tool' || spec.kind === 'home')) copy[key] = spec.description;
-    else if (key === 'description' || key === 'text' || key === 'abstract') copy[key] = fitDescription(copy[key]);
-    else copy[key] = stripClaims(copy[key]);
+    else if (key === 'description' && spec.description && (type === 'WebPage' || type === 'WebSite')) copy[key] = spec.description;
+    else if (key === 'description' && spec.description && (spec.kind === 'tool' || spec.kind === 'home') && (type === 'SoftwareApplication' || type === 'HowTo' || type === 'WebApplication')) copy[key] = spec.description;
+    else copy[key] = cleanSchemaText(copy[key]);
   }
   if ((type === 'WebPage' || type === 'WebSite') && spec.title) copy.name = spec.title;
   if (type === 'SoftwareApplication' && spec.h1 && (spec.kind === 'tool' || spec.kind === 'home')) copy.name = spec.h1;
-  if (spec.description && (spec.kind === 'tool' || spec.kind === 'home') && typeof copy.description === 'string' && (type === 'WebPage' || type === 'SoftwareApplication' || type === 'HowTo' || type === 'WebSite' || type === 'WebApplication')) {
+  if (spec.description && typeof copy.description === 'string' && (type === 'WebPage' || type === 'WebSite' || ((spec.kind === 'tool' || spec.kind === 'home') && (type === 'SoftwareApplication' || type === 'HowTo' || type === 'WebApplication')))) {
     copy.description = spec.description;
   }
   for (const key of Object.keys(copy)) {
@@ -1017,10 +1295,13 @@ export function rewriteClaimHtml(pathname, html) {
   if (out.includes(TRUST_SENTENCE)) {
     out = out.replaceAll(TRUST_SENTENCE, spec.trust || '');
   }
-  if (path === '/') out = inject(out, homeToolsBlock());
-  if (spec.store) out = inject(out, storeBlock(spec));
-  if (spec.related) out = inject(out, relatedBlock(path));
-  if (spec.guide) out = inject(out, guideBlock(spec.guide));
+  out = rewriteVisibleHtml(out, { stripAppMention: path !== '/' && !spec.store });
+  let blocks = '';
+  if (path === '/') blocks += homeToolsBlock();
+  if (spec.related) blocks += relatedBlock(path);
+  if (spec.store) blocks += storeBlock(spec);
+  if (spec.guide) blocks += guideBlock(spec.guide);
+  if (blocks) out = inject(out, blocks);
   if (!out.includes('data-pdf-claim-script')) {
     out = out.includes('</body>')
       ? out.replace(/<\/body>/i, `${clientScript()}</body>`)
