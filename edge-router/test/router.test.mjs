@@ -367,3 +367,30 @@ test('marks staging output noindex', async () => {
   });
   assert.match(await robots.text(), /Disallow: \/$/m);
 });
+
+for (const slug of ['android-pdf-app', 'iphone-pdf-app']) {
+  test(`routes ${slug} to PDF_ORIGIN without changing its HTML`, async () => {
+    const html = `<html><head><link rel="canonical" href="https://dayfiles.com/${slug}/"></head><body><h1>Private PDF app</h1><a href="https://apps.apple.com/app/id6809184465">App Store</a></body></html>`;
+    globalThis.fetch = async request => {
+      assert.equal(request.url, `${env.PDF_ORIGIN}/${slug}/?source=guide`);
+      return new Response(html, { headers: { 'content-type': 'text/html' } });
+    };
+    const response = await handleRequest(new Request(`https://dayfiles.com/${slug}/?source=guide`), env);
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), html);
+  });
+  test(`redirects legacy PDF host for ${slug} to its canonical apex`, async () => {
+    const response = await handleRequest(new Request(`https://pdf.dayfiles.com/${slug}/?source=guide`), env);
+    assert.equal(response.status, 301);
+    assert.equal(response.headers.get('location'), `https://dayfiles.com/${slug}/?source=guide`);
+  });
+}
+
+
+test('preserves the four additional production PDF routes', async () => {
+  for (const path of ['/pdf-to-markdown/', '/scan-to-pdf/', '/extract-pdf-images/', '/pdf-to-powerpoint/']) {
+    const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), `upstream:https://pdf-processor-4mc.pages.dev${path}`);
+  }
+});
