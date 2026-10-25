@@ -294,7 +294,6 @@ const PHRASES = [
   'and without an account',
   'without an account',
   'no file upload',
-  'browser-only processing',
   'low, balanced, or high compression presets',
   'without losing quality',
   'Without Losing Quality',
@@ -507,6 +506,9 @@ export function stripClaims(input) {
     .replace(/,\s*,/g, ',')
     .replace(/,\s*\./g, '.')
     .replace(/\s+/g, ' ')
+    .replace(/\.{2,}/g, '.')
+    .replace(/\s+\b(?:with|and|or)\b\s*$/i, '')
+    .replace(/,\s*$/g, '')
     .trim();
   return text.replaceAll(suffixToken, TITLE_SUFFIX);
 }
