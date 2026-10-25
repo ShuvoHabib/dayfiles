@@ -584,9 +584,9 @@ export const trustPages = [
   },
   {
     slug: 'pdf-workflows',
-    title: 'PDF Workflows Hub | How Dayfiles Handles Common Document Jobs',
+    title: 'PDF Workflows Hub | Common Document Jobs',
     description:
-      'Use this Dayfiles editorial hub to understand common PDF jobs, choose the right workflow, avoid document-delivery mistakes, and find the best related guides and product routes.',
+      'Use this Dayfiles hub to choose a PDF workflow, avoid document-delivery mistakes, and find related guides.',
     shortTitle: 'PDF Workflows',
     schemaType: 'CollectionPage',
     heroEyebrow: 'Editorial hub',
@@ -651,9 +651,9 @@ export const trustPages = [
   },
   {
     slug: 'image-workflows',
-    title: 'Image Workflows Hub | How Dayfiles Handles Cleanup, Conversion, and Submission Prep',
+    title: 'Image Workflows Hub | Cleanup and Submission Prep',
     description:
-      'Use this Dayfiles editorial hub to understand common image jobs, choose the right workflow, avoid image-prep mistakes, and find the best related guides and product routes.',
+      'Use this Dayfiles hub to choose an image workflow, avoid image-prep mistakes, and find related guides.',
     shortTitle: 'Image Workflows',
     schemaType: 'CollectionPage',
     heroEyebrow: 'Editorial hub',
@@ -717,7 +717,7 @@ export const trustPages = [
   },
   {
     slug: 'document-delivery-formats',
-    title: 'Document Delivery Formats | Choosing the Right Output Before You Send',
+    title: 'Document Delivery Formats | Choose the Output',
     description:
       'Use this Dayfiles editorial page to choose the right delivery format before you send a document, archive a packet, or hand a file to a reviewer.',
     shortTitle: 'Document Delivery Formats',
@@ -780,7 +780,7 @@ export const trustPages = [
   },
   {
     slug: 'application-packet-mistakes',
-    title: 'Application Packet Mistakes | What Gets Packets Rejected or Sent Back',
+    title: 'Application Packet Mistakes | Sent Back or Rejected',
     description:
       'Read this Dayfiles editorial guide to catch the packet mistakes that cause application files to be rejected, delayed, or sent back for corrections.',
     shortTitle: 'Application Packet Mistakes',
@@ -835,7 +835,7 @@ export const trustPages = [
   },
   {
     slug: 'compliance-sensitive-image-prep',
-    title: 'Compliance-Sensitive Image Prep | What to Check Before Submission',
+    title: 'Compliance-Sensitive Image Prep | Before You Send',
     description:
       'Use this Dayfiles editorial guide to prepare compliance-sensitive images more carefully before passport, visa, ID, or other submission-driven workflows.',
     shortTitle: 'Compliance-Sensitive Image Prep',
