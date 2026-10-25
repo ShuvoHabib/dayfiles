@@ -385,3 +385,12 @@ for (const slug of ['android-pdf-app', 'iphone-pdf-app']) {
     assert.equal(response.headers.get('location'), `https://dayfiles.com/${slug}/?source=guide`);
   });
 }
+
+
+test('preserves the four additional production PDF routes', async () => {
+  for (const path of ['/pdf-to-markdown/', '/scan-to-pdf/', '/extract-pdf-images/', '/pdf-to-powerpoint/']) {
+    const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), `upstream:https://pdf-processor-4mc.pages.dev${path}`);
+  }
+});

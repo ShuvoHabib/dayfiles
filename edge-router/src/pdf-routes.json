@@ -112,5 +112,9 @@
   "/pdf-to-docx",
   "/jpg-to-pdf",
   "/docx-to-pdf",
-  "/html-to-pdf"
+  "/html-to-pdf",
+  "/pdf-to-markdown",
+  "/scan-to-pdf",
+  "/extract-pdf-images",
+  "/pdf-to-powerpoint"
 ]
