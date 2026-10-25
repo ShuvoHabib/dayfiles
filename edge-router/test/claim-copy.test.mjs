@@ -131,4 +131,15 @@ test('blog titles lose claim words and stay within 60 characters', () => {
   assert.ok(description.length <= 155);
   assert.equal(newCopyViolations(description).length, 0);
   assert.match(stripClaims('Privacy Policy | Private PDF'), /Privacy Policy/);
+  assert.equal(stripClaims('About Private PDF Editor'), 'About Private PDF Editor');
+  assert.equal(fitBrandTitle('How to Merge PDFs Without Uploading Files in Browser', 'Dayfiles').includes('Files in Browser'), false);
+  const about = rewriteClaimHtml('/private-pdf/about/', page({
+    title: 'About Private PDF Editor | DayFiles',
+    description: 'Learn who runs Private PDF Editor.',
+    h1: 'About Private PDF Editor',
+    hero: 'Private PDF Editor is a browser PDF tool.',
+    canonical: '<link rel="canonical" href="https://dayfiles.com/private-pdf/about/">',
+  }));
+  assert.match(about, /<title>About Private PDF Editor \| Private PDF<\/title>/);
+  assert.match(about, /<h1>About Private PDF Editor<\/h1>/);
 });

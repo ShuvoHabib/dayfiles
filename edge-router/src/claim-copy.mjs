@@ -463,7 +463,7 @@ export function stripClaims(input) {
   text = text.replaceAll(productToken, PRODUCT);
   text = text.replaceAll(policyToken, 'Privacy Policy');
   const suffixToken = '\u0003';
-  text = text.replace(new RegExp(`\\s*\\|\\s*${PRODUCT}\\s*$`, 'i'), suffixToken);
+  text = text.replace(/\s*\|\s*(?:Private PDF|DayFiles|Dayfiles)(?:\s+Blog)?\s*$/i, suffixToken);
   text = text
     .replace(/\bsmaller\b/gi, ' ')
     .replace(/\s+/g, ' ')
@@ -475,7 +475,7 @@ export function stripClaims(input) {
     .replace(/\s+[-–—|]\s+/g, ' ')
     .replace(/^[,.;:\-–—| ]+|[,;:\-–—| ]+$/g, '')
     .replace(/^(?:and|or|with)\b[, ]*/i, '')
-    .replace(/[, ]*(?:and|or|with)$/i, '')
+    .replace(/[, ]*\b(?:and|or|with)$/i, '')
     .replace(/\.\s*\./g, '.')
     .replace(/,\s*(?:and|or)\s+(?=(?:a|an|the)\b)/gi, ' ')
     .replace(/,\s*,/g, ',')
@@ -492,7 +492,7 @@ export function fitPdfTitle(input) {
   const full = `${base}${TITLE_SUFFIX}`;
   if (full.length <= 60) return full;
   const max = 60 - TITLE_SUFFIX.length;
-  let cut = base.slice(0, max).replace(/\s+\S*$/, '').replace(/[\s\-–—|:]+$/g, '').replace(/[, ]*(?:and|or)$/i, '').trim();
+  let cut = base.slice(0, max).replace(/\s+\S*$/, '').replace(/[\s\-–—|:]+$/g, '').replace(/[, ]*\b(?:and|or)$/i, '').trim();
   if (cut.length < 8) cut = base.slice(0, max).trim();
   return `${cut}${TITLE_SUFFIX}`;
 }
@@ -507,7 +507,7 @@ export function fitBrandTitle(input, brand = 'Dayfiles') {
   const full = `${base}${suffix}`;
   if (full.length <= 60) return full;
   const max = 60 - suffix.length;
-  let cut = base.slice(0, max).replace(/\s+\S*$/, '').replace(/[\s\-–—|:]+$/g, '').replace(/[, ]*(?:and|or)$/i, '').trim();
+  let cut = base.slice(0, max).replace(/\s+\S*$/, '').replace(/[\s\-–—|:]+$/g, '').replace(/[, ]*\b(?:and|or)$/i, '').trim();
   if (cut.length < 8) cut = base.slice(0, max).trim();
   return `${cut}${suffix}`;
 }
