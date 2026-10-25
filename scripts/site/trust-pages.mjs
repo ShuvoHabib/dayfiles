@@ -84,7 +84,7 @@ export const trustPages = [
     slug: founderSlug,
     title: `${founderName} | Founder and Editor of Dayfiles`,
     description:
-      `Read the public profile for ${founderName}, the founder and editor responsible for Dayfiles publishing, workflow reviews, and the site's PDF and image guidance.`,
+      `Profile of ${founderName}, founder and editor for Dayfiles publishing, workflow reviews, and PDF and image guidance.`,
     shortTitle: founderName,
     schemaType: 'ProfilePage',
     heroEyebrow: 'Publisher profile',
@@ -138,7 +138,7 @@ export const trustPages = [
     slug: 'contact',
     title: 'Contact Dayfiles | Support, Policy, and Business Questions',
     description:
-      'Contact Dayfiles for editorial corrections, privacy requests, technical site issues, advertising questions, or business inquiries related to the site and product hubs.',
+      'Contact Dayfiles about corrections, privacy requests, site issues, advertising, or business questions.',
     shortTitle: 'Contact',
     schemaType: 'ContactPage',
     heroEyebrow: 'Publisher contact',
@@ -425,18 +425,18 @@ export const trustPages = [
     slug: 'advertising-disclosure',
     title: 'Advertising Disclosure | Dayfiles',
     description:
-      'Read how Dayfiles uses advertising on selected pages, how ads relate to editorial content, and how the site funds free public guides.',
+      'Read how Dayfiles uses advertising on selected pages and how ads stay separate from editorial guides.',
     shortTitle: 'Advertising Disclosure',
     schemaType: 'WebPage',
     heroEyebrow: 'Advertising disclosure',
     h1: 'Advertising Disclosure',
     heroCopy:
-      'Dayfiles may run advertising on selected pages to support free workflow guides and public product discovery.',
+      'Dayfiles may run advertising on selected pages to support workflow guides and public product discovery.',
     sections: [
       {
         title: 'How advertising is used',
         paragraphs: [
-          'Dayfiles may display Google Ads or similar advertising units on selected public pages. Those ads help support the cost of maintaining the site, publishing new guides, and keeping core public content free to read.',
+          'Dayfiles may display Google Ads or similar advertising units on selected public pages. Those ads help support the cost of maintaining the site and publishing new guides.',
           'Not every page will contain ads, and the presence of an ad does not change the editorial goal of explaining a workflow clearly.'
         ]
       },
@@ -584,9 +584,9 @@ export const trustPages = [
   },
   {
     slug: 'pdf-workflows',
-    title: 'PDF Workflows Hub | How Dayfiles Handles Common Document Jobs',
+    title: 'PDF Workflows Hub | Common Document Jobs',
     description:
-      'Use this Dayfiles editorial hub to understand common PDF jobs, choose the right workflow, avoid document-delivery mistakes, and find the best related guides and product routes.',
+      'Use this Dayfiles hub to choose a PDF workflow, avoid document-delivery mistakes, and find related guides.',
     shortTitle: 'PDF Workflows',
     schemaType: 'CollectionPage',
     heroEyebrow: 'Editorial hub',
@@ -651,9 +651,9 @@ export const trustPages = [
   },
   {
     slug: 'image-workflows',
-    title: 'Image Workflows Hub | How Dayfiles Handles Cleanup, Conversion, and Submission Prep',
+    title: 'Image Workflows Hub | Cleanup and Submission Prep',
     description:
-      'Use this Dayfiles editorial hub to understand common image jobs, choose the right workflow, avoid image-prep mistakes, and find the best related guides and product routes.',
+      'Use this Dayfiles hub to choose an image workflow, avoid image-prep mistakes, and find related guides.',
     shortTitle: 'Image Workflows',
     schemaType: 'CollectionPage',
     heroEyebrow: 'Editorial hub',
@@ -717,7 +717,7 @@ export const trustPages = [
   },
   {
     slug: 'document-delivery-formats',
-    title: 'Document Delivery Formats | Choosing the Right Output Before You Send',
+    title: 'Document Delivery Formats | Choose the Output',
     description:
       'Use this Dayfiles editorial page to choose the right delivery format before you send a document, archive a packet, or hand a file to a reviewer.',
     shortTitle: 'Document Delivery Formats',
@@ -780,7 +780,7 @@ export const trustPages = [
   },
   {
     slug: 'application-packet-mistakes',
-    title: 'Application Packet Mistakes | What Gets Packets Rejected or Sent Back',
+    title: 'Application Packet Mistakes | Sent Back or Rejected',
     description:
       'Read this Dayfiles editorial guide to catch the packet mistakes that cause application files to be rejected, delayed, or sent back for corrections.',
     shortTitle: 'Application Packet Mistakes',
@@ -835,7 +835,7 @@ export const trustPages = [
   },
   {
     slug: 'compliance-sensitive-image-prep',
-    title: 'Compliance-Sensitive Image Prep | What to Check Before Submission',
+    title: 'Compliance-Sensitive Image Prep | Before You Send',
     description:
       'Use this Dayfiles editorial guide to prepare compliance-sensitive images more carefully before passport, visa, ID, or other submission-driven workflows.',
     shortTitle: 'Compliance-Sensitive Image Prep',

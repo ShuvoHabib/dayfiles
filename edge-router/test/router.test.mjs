@@ -347,10 +347,10 @@ test('adds git lastmod to the PDF sitemap and drops redirected URLs', async () =
 
   const response = await handleRequest(new Request('https://dayfiles.com/sitemap.xml'), env);
   const xml = await response.text();
-  assert.match(xml, /<loc>https:\/\/dayfiles\.com\/merge-pdf\/<\/loc>\s*<lastmod>2026-08-20<\/lastmod>/);
+  assert.match(xml, /<loc>https:\/\/dayfiles\.com\/merge-pdf\/<\/loc>\s*<lastmod>2026-10-25<\/lastmod>/);
   assert.doesNotMatch(xml, /<loc>https:\/\/dayfiles\.com\/sign-pdf\/<\/loc>/);
-  assert.match(xml, /<loc>https:\/\/dayfiles\.com\/e-sign-pdf\/<\/loc>\s*<lastmod>2026-08-01<\/lastmod>/);
-  assert.match(xml, /bank-statement-to-excel\/<\/loc>\s*<lastmod>2026-09-12<\/lastmod>/);
+  assert.match(xml, /<loc>https:\/\/dayfiles\.com\/e-sign-pdf\/<\/loc>\s*<lastmod>2026-10-25<\/lastmod>/);
+  assert.match(xml, /bank-statement-to-excel\/<\/loc>\s*<lastmod>2026-10-25<\/lastmod>/);
   assert.match(response.headers.get('content-type'), /^application\/xml/);
 });
 

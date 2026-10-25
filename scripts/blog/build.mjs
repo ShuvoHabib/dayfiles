@@ -28,6 +28,7 @@ import { renderSubscribeSection, subscribeScriptTag, subscriptionStyles } from '
 import { trustPages } from '../site/trust-pages.mjs';
 import { validatePosts } from './validate.mjs';
 import { BLOG_REDIRECTS } from './remediation.mjs';
+import { fitBrandTitle, fitDescription, stripClaims } from '../../edge-router/src/claim-copy.mjs';
 
 // Used only when a page has no git history, such as a copy outside this repo.
 const SITE_CONTENT_LASTMOD = '2026-09-12';
@@ -949,16 +950,16 @@ function renderBlogIndexPage(posts) {
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <title>Dayfiles Blog | Free Image and PDF Workflow Guides</title>
-    <meta name="description" content="Free image and PDF workflow articles for Images, Everyday Image Studio, and PDF Toolkit, with practical guides, checklists, and operational playbooks." />
+    <title>Dayfiles Blog | Image and PDF Workflow Guides</title>
+    <meta name="description" content="Image and PDF workflow articles for Images, Everyday Image Studio, and PDF Toolkit, with practical guides, checklists, and operational playbooks." />
     <link rel="canonical" href="${siteUrl('/blog')}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Dayfiles Blog" />
+    <meta property="og:title" content="Dayfiles Blog | Image and PDF Workflow Guides" />
     <meta property="og:description" content="Daily workflow guides for image and PDF operations." />
     <meta property="og:url" content="${siteUrl('/blog')}" />
     <meta property="og:image" content="${SITE_URL}/dayfiles-logo.svg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Dayfiles Blog" />
+    <meta name="twitter:title" content="Dayfiles Blog | Image and PDF Workflow Guides" />
     <meta name="twitter:description" content="Daily workflow guides for image and PDF operations." />
     <meta name="twitter:image" content="${SITE_URL}/dayfiles-logo.svg" />
     <script type="application/ld+json">${JSON.stringify(itemList)}</script>
@@ -998,7 +999,7 @@ function renderBlogIndexPage(posts) {
 
       <section class="panel">
         <p class="badge">Evidence-backed PDF and image workflows</p>
-        <h1 class="hero-title">Dayfiles Blog: Free Image and PDF Workflow Guides</h1>
+        <h1 class="hero-title">Dayfiles Blog: Image and PDF Workflow Guides</h1>
         <p class="muted">Source-backed guides on Images, Everyday Image Studio, PDF Toolkit, and practical file workflows.</p>
       </section>
 
@@ -1076,16 +1077,16 @@ function renderPostPage(post, relatedPosts) {
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <title>${escapeHtml(post.title)} | Dayfiles Blog</title>
+    <title>${escapeHtml(post.documentTitle)}</title>
     <meta name="description" content="${escapeHtml(post.description)}" />
     <link rel="canonical" href="${escapeHtml(post.canonicalUrl)}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="${escapeHtml(post.title)}" />
+    <meta property="og:title" content="${escapeHtml(post.documentTitle)}" />
     <meta property="og:description" content="${escapeHtml(post.description)}" />
     <meta property="og:url" content="${escapeHtml(post.canonicalUrl)}" />
     <meta property="og:image" content="${escapeHtml(toAbsoluteUrl(post.featuredImage))}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${escapeHtml(post.title)}" />
+    <meta name="twitter:title" content="${escapeHtml(post.documentTitle)}" />
     <meta name="twitter:description" content="${escapeHtml(post.description)}" />
     <meta name="twitter:image" content="${escapeHtml(toAbsoluteUrl(post.featuredImage))}" />
     <script type="application/ld+json">${collectJsonLd(post, relatedPosts)}</script>
@@ -1272,25 +1273,38 @@ export function buildSitemap(posts) {
       loc: page.canonicalUrl,
       priority: '0.9',
       changefreq: 'weekly',
-      lastmod: editorialLastmod(path.join(ROOT_DIR, 'public', page.slug, 'index.html'), SITE_CONTENT_LASTMOD)
+      lastmod: ['images', 'pdf-toolkit', 'everyday-image-studio'].includes(page.slug)
+        ? '2026-10-25'
+        : editorialLastmod(path.join(ROOT_DIR, 'public', page.slug, 'index.html'), SITE_CONTENT_LASTMOD)
     })),
     ...trustPages.map((page) => ({
       loc: siteUrl(page.slug),
       priority: '0.6',
       changefreq: 'monthly',
-      lastmod: editorialLastmod(path.join(ROOT_DIR, 'public', page.slug, 'index.html'), SITE_CONTENT_LASTMOD)
+      lastmod: [
+        'advertising-disclosure',
+        'contact',
+        'shuvo-habib',
+        'pdf-workflows',
+        'image-workflows',
+        'document-delivery-formats',
+        'application-packet-mistakes',
+        'compliance-sensitive-image-prep',
+      ].includes(page.slug)
+        ? '2026-10-25'
+        : editorialLastmod(path.join(ROOT_DIR, 'public', page.slug, 'index.html'), SITE_CONTENT_LASTMOD)
     })),
     {
       loc: siteUrl('/blog'),
       priority: '0.9',
       changefreq: 'daily',
-      lastmod: editorialLastmod(path.join(ROOT_DIR, 'public/blog/index.html'), SITE_CONTENT_LASTMOD)
+      lastmod: '2026-10-25'
     },
     ...posts.map((post) => ({
       loc: post.canonicalUrl,
       priority: '0.8',
       changefreq: 'weekly',
-      lastmod: editorialLastmod(post.path, post.reviewDate || post.date)
+      lastmod: post.claimCopyChanged ? '2026-10-25' : editorialLastmod(post.path, post.reviewDate || post.date)
     }))
   ].filter((url) => !isRedirectedEditorialUrl(url.loc));
 
@@ -1316,7 +1330,7 @@ function buildLlms(posts) {
     '# Dayfiles',
     '',
     'Dayfiles is a file workflow platform focused on image and PDF operations for daily team work.',
-    'Core user value: free core workflows, no account required for core usage, and practical browser-first tooling.',
+    'Core user value: practical browser-first image and PDF workflows for daily team work.',
     '',
     '## Canonical Site',
     '- https://dayfiles.com/',
@@ -1397,6 +1411,16 @@ export async function buildBlogArtifacts() {
 
   if (errors.length > 0) {
     throw new Error(`Validation failed:\n${errors.map((err) => `- ${err}`).join('\n')}`);
+  }
+
+  for (const post of posts) {
+    const title = stripClaims(post.title);
+    const description = fitDescription(post.description);
+    const documentTitle = fitBrandTitle(post.title, 'Dayfiles');
+    post.claimCopyChanged = title !== post.title || description !== post.description || documentTitle !== `${post.title} | Dayfiles Blog`;
+    post.title = title;
+    post.description = description;
+    post.documentTitle = documentTitle;
   }
 
   await ensureDir(BLOG_PUBLIC_DIR);

@@ -1,6 +1,7 @@
 import pdfRoutes from './pdf-routes.json' with { type: 'json' };
 import { BLOG_GONE_SLUGS, BLOG_REDIRECTS } from '../../scripts/blog/remediation.mjs';
 import { PDF_ROUTE_REDIRECTS } from './route-remediation.mjs';
+import { claimCopyLastmod, rewriteClaimHtml, rewriteClaimScript, shouldRewritePath, shouldRewriteScript } from './claim-copy.mjs';
 
 const PUBLIC_HOST = 'dayfiles.com';
 const PUBLIC_HOSTS = new Set([
@@ -226,12 +227,43 @@ function hasFileExtension(pathname) {
   return FILE_EXTENSION.test(normalizePath(pathname));
 }
 
-async function proxyPublicRequest(request, upstreamOrigin, staging) {
+function claimCopyResponse(request, response) {
+  const type = response.headers.get('content-type') || '';
+  if (response.status !== 200) return Promise.resolve(response);
+  const pathname = new URL(request.url).pathname;
+  if (/^text\/html\b/i.test(type) && shouldRewritePath(pathname)) {
+    return response.text().then((html) => htmlResponse(response, rewriteClaimHtml(pathname, html)));
+  }
+  if (/javascript|ecmascript/i.test(type) && shouldRewriteScript(pathname)) {
+    return response.text().then((code) => htmlResponse(response, rewriteClaimScript(code)));
+  }
+  return Promise.resolve(response);
+}
+
+function htmlResponse(response, body) {
+  if (body === undefined) return response;
+  const headers = new Headers(response.headers);
+  headers.delete('content-length');
+  return new Response(body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+async function proxyPublicRequest(request, upstreamOrigin, staging, rewriteClaims = false) {
   const response = await proxyRequest(request, upstreamOrigin, staging);
-  if (!hasFileExtension(new URL(request.url).pathname)) return response;
+  const pathname = new URL(request.url).pathname;
+  if (!hasFileExtension(pathname)) {
+    if (!rewriteClaims) return response;
+    return claimCopyResponse(request, response);
+  }
   if (response.status !== 200) return response;
   const contentType = response.headers.get('content-type') || '';
-  if (!/^text\/html\b/i.test(contentType)) return response;
+  if (!/^text\/html\b/i.test(contentType)) {
+    if (!rewriteClaims) return response;
+    return claimCopyResponse(request, response);
+  }
   try {
     await response.body?.cancel();
   } catch {
@@ -269,7 +301,7 @@ async function editorialSitemapResponse(request, env, staging) {
 }
 
 function pdfRouteLastmod(pathname) {
-  return PDF_ROUTE_LASTMOD.get(normalizePath(pathname)) || PDF_ROUTE_LASTMOD_DEFAULT;
+  return claimCopyLastmod(pathname) || PDF_ROUTE_LASTMOD.get(normalizePath(pathname)) || PDF_ROUTE_LASTMOD_DEFAULT;
 }
 
 function isRedirectedPublicPath(pathname) {
@@ -289,7 +321,12 @@ function rewriteSitemapXml(xml, { fillLastmod = false } = {}) {
       return full;
     }
     if (isRedirectedPublicPath(pathname)) return '';
-    if (!fillLastmod || inner.includes('<lastmod>')) return full;
+    const claimDate = claimCopyLastmod(pathname);
+    if (inner.includes('<lastmod>')) {
+      if (!claimDate) return full;
+      return full.replace(/<lastmod>\s*[^<]+?\s*<\/lastmod>/, `<lastmod>${claimDate}</lastmod>`);
+    }
+    if (!fillLastmod) return full;
     return full.replace(
       locMatch[0],
       `${locMatch[0]}\n    <lastmod>${pdfRouteLastmod(pathname)}</lastmod>`,
@@ -397,8 +434,8 @@ async function dispatchRequest(request, env) {
   const special = await specialSeoResponse(request, env, staging);
   if (special) return special;
   if (isEditorialApiRequest(request)) return proxyRequest(request, env.EDITORIAL_ORIGIN, staging);
-  if (isEditorialPath(url.pathname)) return proxyPublicRequest(request, env.EDITORIAL_ORIGIN, staging);
-  if (isKnownPdfPath(url.pathname)) return proxyPublicRequest(request, env.PDF_ORIGIN, staging);
+  if (isEditorialPath(url.pathname)) return proxyPublicRequest(request, env.EDITORIAL_ORIGIN, staging, false);
+  if (isKnownPdfPath(url.pathname)) return proxyPublicRequest(request, env.PDF_ORIGIN, staging, true);
   return notFoundResponse(staging);
 }
 

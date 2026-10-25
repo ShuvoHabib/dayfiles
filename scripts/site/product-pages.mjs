@@ -4,28 +4,28 @@ export const productPages = [
   {
     slug: 'images',
     canonicalUrl: siteUrl('/images'),
-    title: 'Free Online Image Converter and Compression Tools | Dayfiles',
+    title: 'Image Format, Compression and Resize Tools | Dayfiles',
     description:
-      'Use Dayfiles Images to convert, compress, resize in bulk, and export image files in your browser, with no account required for core workflows.',
+      'Use Dayfiles Images to change image format, compress, resize in bulk, and export image files in the browser.',
     shortTitle: 'Images',
     navLabel: 'Images',
     appUrl: 'https://images.dayfiles.com/',
     heroEyebrow: 'Image toolbox hub',
-    h1: 'Free Online Image Conversion and Compression Tools',
+    h1: 'Image format, compression and resize tools',
     heroCopy:
-      'Use browser-based image tools for conversion, compression, batch resizing, and export without creating an account before core work begins.',
+      'Use browser-based image tools for format changes, compression, batch resizing, and export.',
     primaryCtaLabel: 'Open Images',
     secondaryCtaLabel: 'Browse image guides',
     secondaryCtaHref: '/blog/',
     whatItDoes: [
-      'Images is the Dayfiles landing page for browser-based image processing at scale. It is built for people who need to convert formats, compress files for uploads, resize batches for listings, and export delivery-ready images without opening a heavy editor.',
+      'Images is the Dayfiles landing page for browser-based image processing at scale. It is built for people who need to change formats, compress files, resize batches for listings, and export delivery-ready images without opening a heavy editor.',
       'The hub explains the supported processing tasks, links to practical guidance, and sends users directly to the live image tools when they are ready to work.'
     ],
     whyUse: [
-      'Dayfiles positions Images around practical image-processing tasks rather than design editing. The main value is moving from raw image files to upload-ready output quickly for listings, CMS workflows, document assembly, and repeated operational delivery.',
-      'That makes it useful for teams handling batch prep, solo operators working against file-size limits, and anyone who needs browser-based format changes or compression without design-tool overhead.'
+      'Dayfiles positions Images around practical image-processing tasks rather than design editing. The main value is moving from raw image files to upload-ready output for listings, CMS workflows, document assembly, and repeated operational delivery.',
+      'That makes it useful for teams handling batch prep, solo operators preparing images for delivery, and anyone who needs browser-based format changes or compression without design-tool overhead.'
     ],
-    bestFor: ['bulk image compression', 'format conversion', 'listing image resize', 'batch export prep', 'upload-ready image delivery'],
+    bestFor: ['bulk image compression', 'format changes', 'listing image resize', 'batch export prep', 'upload-ready image delivery'],
     relatedGuideSlugs: [
       'compress-images-to-a-specific-size-before-upload',
       'convert-heic-png-and-webp-for-easier-delivery'
@@ -33,15 +33,15 @@ export const productPages = [
     faqs: [
       {
         q: 'What can I do with Dayfiles Images?',
-        a: 'You can convert, compress, resize, clean up, and export image files in a browser-based workflow.'
+        a: 'You can change image format, compress, resize, clean up, and export image files in a browser-based workflow.'
       },
       {
-        q: 'Do I need an account before using Images?',
-        a: 'No. Dayfiles positions Images around no-account-required access for core workflows so users can start quickly.'
+        q: 'What should I prepare before using Images?',
+        a: 'Open the tool and start with the image file you want to process.'
       },
       {
         q: 'Who is Images best for?',
-        a: 'It is best for people preparing uploads, resizing product assets, reducing file size, converting formats, and handling repeated image tasks.'
+        a: 'It is best for people preparing images for delivery, resizing product assets, changing formats, and handling repeated image tasks.'
       }
     ],
     companionSlug: 'everyday-image-studio',
@@ -59,28 +59,28 @@ export const productPages = [
   {
     slug: 'pdf-toolkit',
     canonicalUrl: siteUrl('/pdf-toolkit'),
-    title: 'Free Online PDF Tools With No Account | Dayfiles',
+    title: 'Merge, Split, Compress and Edit PDFs | Dayfiles',
     description:
-      'Use Dayfiles PDF Toolkit to merge, split, compress, convert, fill, and sign PDFs in your browser, with no account required for core workflows.',
+      'Use Dayfiles PDF Toolkit to merge, split, compress and edit PDFs, then reorder, rotate or delete pages and add watermarks or page numbers.',
     shortTitle: 'PDF Toolkit',
     navLabel: 'PDF Toolkit',
     appUrl: 'https://dayfiles.com/',
     heroEyebrow: 'PDF workflow hub',
-    h1: 'Free Online PDF Tools With No Account Required',
+    h1: 'Merge, split, compress and edit PDFs',
     heroCopy:
-      'Open browser-based PDF tools for merging, splitting, compressing, converting, filling forms, and signing documents without creating an account before core work begins.',
+      'Open PDF tools to merge, split, compress and edit, then reorder, rotate or delete pages.',
     primaryCtaLabel: 'Open PDF Toolkit',
     secondaryCtaLabel: 'Browse PDF guides',
     secondaryCtaHref: '/blog/',
     whatItDoes: [
-      'PDF Toolkit is the Dayfiles landing page for browser-based document operations. It is built for people who need to merge files, split packets, compress oversized documents, convert between formats, fill forms, and e-sign PDFs without switching through a long setup flow first.',
+      'PDF Toolkit is the Dayfiles landing page for browser-based document operations. It is built for people who need to merge files, split packets, compress documents, edit pages, and add watermarks or page numbers.',
       'The hub explains the supported document workflows, links to tested guidance, and points visitors to the live PDF tools when they are ready to begin.'
     ],
     whyUse: [
-      'Dayfiles positions PDF Toolkit around fast, browser-first document work. The main value is that users can move from intake to finished output quickly without a mandatory account wall for core workflows.',
+      'Dayfiles positions PDF Toolkit around browser-first document work. The main value is moving from intake to a finished PDF with merge, split, compress, and page edits.',
       'That makes it useful for application packets, contracts, repeat document cleanup, and form-heavy tasks where the operator needs a reliable path from raw file to finished delivery.'
     ],
-    bestFor: ['applications', 'contracts', 'form filling', 'packet assembly', 'document cleanup'],
+    bestFor: ['applications', 'contracts', 'packet assembly', 'page cleanup', 'document editing'],
     relatedGuideSlugs: [
       'pdf-operations-checklist',
       'fill-sign-merge-lock-pdf-packet'
@@ -88,11 +88,11 @@ export const productPages = [
     faqs: [
       {
         q: 'What can I do with Dayfiles PDF Toolkit?',
-        a: 'You can use it for merging, splitting, compressing, converting, filling, and signing PDFs in a browser-based workflow.'
+        a: 'You can use it to merge, split, compress and edit PDFs, then reorder, rotate or delete pages and add watermarks or page numbers.'
       },
       {
-        q: 'Do I need an account before using PDF Toolkit?',
-        a: 'No. Dayfiles positions PDF Toolkit around no-account-required access for core workflows so users can start quickly.'
+        q: 'What should I prepare before using PDF Toolkit?',
+        a: 'Open the tool and start with the PDF you want to merge, split, compress, or edit.'
       },
       {
         q: 'Who is PDF Toolkit best for?',
@@ -108,34 +108,34 @@ export const productPages = [
       applicationCategory: 'BusinessApplication',
       operatingSystem: 'Web',
       description:
-        'Browser-based PDF workflow tools for merge, split, compress, convert, fill forms, and e-sign operations.'
+        'Browser-based PDF workflow tools for merge, split, compress, edit, page changes, watermarks, and page numbers.'
     }
   },
   {
     slug: 'everyday-image-studio',
     canonicalUrl: siteUrl('/everyday-image-studio'),
-    title: 'Free Online Image Editor for Crop and Cleanup | Dayfiles',
+    title: 'Crop, Clean Up and Export Images | Dayfiles',
     description:
-      'Use Everyday Image Studio to crop, clean up, resize, and export images in your browser, with no account required for core daily workflows.',
+      'Use Everyday Image Studio to crop, clean up, resize, and export images in the browser.',
     shortTitle: 'Everyday Image Studio',
     navLabel: 'Image Studio',
     appUrl: 'https://everydayimagestudio.dayfiles.com/',
     heroEyebrow: 'Image workflow hub',
-    h1: 'Free Online Image Editing for Crop, Cleanup, and Export',
+    h1: 'Crop, clean up and export images',
     heroCopy:
-      'Use browser-based image tools for cropping, resizing, cleaning up, and exporting files fast, without creating an account before core daily work begins.',
+      'Use browser-based image tools for cropping, resizing, cleaning up, and exporting files.',
     primaryCtaLabel: 'Open Image Studio',
     secondaryCtaLabel: 'Browse image guides',
     secondaryCtaHref: '/blog/',
     whatItDoes: [
-      'Everyday Image Studio is the Dayfiles landing page for repeated image-editing workflows. It is designed for browser-based crop, cleanup, resize, and export tasks that need to move quickly from source image to finished asset.',
+      'Everyday Image Studio is the Dayfiles landing page for repeated image-editing workflows. It is designed for browser-based crop, cleanup, resize, and export tasks that move from source image to finished asset.',
       'The hub explains editing-focused use cases, links to practical guidance, and routes users into the live image app when they want to start editing.'
     ],
     whyUse: [
       'Dayfiles positions Everyday Image Studio around practical image editing instead of broad image processing or heavy creative suites. The emphasis is on crop accuracy, cleanup quality, and repeated export work rather than batch conversion.',
-      'That makes it a good fit for teams creating content, people preparing submission images, and operators who need quick cleanup and export workflows in the browser.'
+      'That makes it a good fit for teams creating content, people preparing submission images, and operators who need cleanup and export workflows in the browser.'
     ],
-    bestFor: ['passport photo preparation', 'team content production', 'quick image cleanup', 'repeated export workflows'],
+    bestFor: ['passport photo preparation', 'team content production', 'image cleanup', 'repeated export workflows'],
     relatedGuideSlugs: [
       'resize-images-to-match-file-size-limits',
       'turn-short-videos-into-gifs-for-product-updates'
@@ -143,21 +143,21 @@ export const productPages = [
     faqs: [
       {
         q: 'What does Everyday Image Studio help with?',
-        a: 'It helps with browser-based image cropping, resizing, cleanup, and export for fast repeated daily workflows.'
+        a: 'It helps with browser-based image cropping, resizing, cleanup, and export for repeated daily workflows.'
       },
       {
-        q: 'Do I need an account before using Everyday Image Studio?',
-        a: 'No. Dayfiles positions the tool around no-account-required access for core daily image workflows.'
+        q: 'What should I prepare before using Everyday Image Studio?',
+        a: 'Open the tool and start with the image you want to crop, clean up, or export.'
       },
       {
         q: 'Who is Everyday Image Studio best for?',
-        a: 'It is best for people preparing passport-style photos, producing team content, cleaning up images quickly, and handling repeated export tasks.'
+        a: 'It is best for people preparing passport-style photos, producing team content, cleaning up images, and handling repeated export tasks.'
       }
     ],
     companionSlug: 'pdf-toolkit',
     companionTitle: 'PDF Toolkit',
     companionCopy:
-      'Need batch conversion or compression before document packaging? Use Images for broad image processing, then PDF Toolkit for form filling, signing, and PDF delivery workflows.',
+      'Need format changes or compression before document packaging? Use Images for broad image processing, then PDF Toolkit for merge, split, compress, and edit workflows.',
     schema: {
       name: 'Everyday Image Studio',
       applicationCategory: 'PhotoEditingApplication',
