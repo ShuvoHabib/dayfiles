@@ -4,6 +4,7 @@ import {
   ALLOWED_TOOLS,
   HOME_COPY,
   storeLinksForPath,
+  cleanBodyText,
   fitBrandTitle,
   fitDescription,
   fitPdfTitle,
@@ -180,4 +181,22 @@ test('blog titles lose claim words and stay within 60 characters', () => {
   assert.match(smaller, /<title>Compress a PDF \| Private PDF<\/title>/);
   assert.match(smaller, /<h1>How to Compress a PDF<\/h1>/);
   assert.match(smaller, /href="\/compress-pdf\/"/);
+});
+
+test('body copy drops no-upload marketing lines and keeps file steps', () => {
+  const dropped = [
+    'redact pdf without upload',
+    'Why convert instead of uploading the file?',
+    'merge pdf without upload',
+    'No document uploads.',
+    'protecting the finished copy without repeating the upload step',
+    'Why people look for a no-upload merge workflow',
+    'It can also be faster in practice for small and medium document batches because there is no upload round-trip before processing begins.',
+  ];
+  for (const sample of dropped) {
+    assert.doesNotMatch(cleanBodyText(sample), /upload/i, cleanBodyText(sample));
+  }
+  assert.equal(cleanBodyText('Upload your PDF file'), 'Upload your PDF file');
+  assert.equal(cleanBodyText('Draw, type, or upload your signature'), 'Draw, type, or upload your signature');
+  assert.match(cleanBodyText('Why convert instead of uploading the file?'), /Why convert the file\?/);
 });

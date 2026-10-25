@@ -505,6 +505,45 @@ const BODY_REPLACEMENTS = [
     'Private PDF tools preview showing offline, secure PDF merge, edit, compress, and convert workflows.',
     'Private PDF tools preview.',
   ],
+  [
+    'and any job where upload delay is slower than the actual merge.',
+    '.',
+  ],
+  ['Why people look for a no-upload merge workflow', 'Why people look for a merge workflow'],
+  [
+    'It can also be faster in practice for small and medium document batches because there is no upload round-trip before processing begins.',
+    'Small and medium document batches can be merged in one pass.',
+  ],
+  [
+    'On a stable laptop, the merge can finish before a remote service would have completed the upload step alone.',
+    '',
+  ],
+  [
+    'Instead of shipping document contents to a remote processor, the browser handles the job on the device, creates the merged output, and hands the file back immediately for download.',
+    'The browser handles the job, creates the merged output, and hands the file back for download.',
+  ],
+  [
+    'For many routine cases, that is the right balance between privacy, speed, and simplicity.',
+    'For many routine cases, that is a straightforward way to finish the merge.',
+  ],
+  [
+    'that should not be uploaded to a third-party converter just to recover editable content',
+    'before you recover editable content',
+  ],
+  [
+    'that should not be uploaded to a third-party service just to become a PDF',
+    'before they become a PDF',
+  ],
+  ['without a round-trip through a remote processor', ''],
+  [
+    'the original unredacted document never needs to be uploaded first',
+    'you can redact a copy and keep the source file',
+  ],
+  [
+    'Use HTML to PDF when you want to finish this workflow quickly while keeping the normal processing path in the browser instead of uploading the file to a remote processor first.',
+    'Use HTML to PDF when you want to export HTML as a PDF in the browser.',
+  ],
+  ['Why convert instead of uploading the file?', 'Why convert the file?'],
 ];
 
 const BODY_PHRASES = [
@@ -537,6 +576,17 @@ const BODY_PHRASES = [
   'without uploading',
   'without uploads',
   'Without Uploads',
+  'without repeating the upload step',
+  'without starting over with another upload',
+  'without starting the upload over',
+  'No document uploads.',
+  'No document uploads',
+  'no document uploads',
+  'instead of uploading the file to a remote processor first',
+  'instead of uploading the file',
+  'instead of uploading',
+  'no upload round-trip',
+  'without upload',
   'On Android, Bank statement to Excel is a Private PDF Premium feature.',
   'On Android, this is a Private PDF Premium feature.',
   'local-first',
@@ -593,7 +643,11 @@ export function cleanBodyText(input, { stripAppMention = false } = {}) {
     .replace(/\bprivate\b/gi, ' ')
     .replace(/\bsafely\b/gi, ' ')
     .replace(/\bsecure(?:ly)?\b/gi, ' ')
-    .replace(/\binstant(?:ly)?\b/gi, ' ');
+    .replace(/\binstant(?:ly)?\b/gi, ' ')
+    .replace(/\bwithout upload\b/gi, ' ')
+    .replace(/\bno-upload\b/gi, ' ')
+    .replace(/\binstead of uploading\b/gi, ' ')
+    .replace(/\bno upload round-trip\b/gi, ' ');
   text = text.replaceAll(productToken, PRODUCT);
   text = text.replaceAll(policyToken, 'Privacy Policy');
   return text
@@ -1058,7 +1112,11 @@ function clientScript() {
         .replace(/\\bprivate\\b/gi, ' ')
         .replace(/\\bsafely\\b/gi, ' ')
         .replace(/\\bsecure(?:ly)?\\b/gi, ' ')
-        .replace(/\\binstant(?:ly)?\\b/gi, ' ');
+        .replace(/\\binstant(?:ly)?\\b/gi, ' ')
+        .replace(/\\bwithout upload\\b/gi, ' ')
+        .replace(/\\bno-upload\\b/gi, ' ')
+        .replace(/\\binstead of uploading\\b/gi, ' ')
+        .replace(/\\bno upload round-trip\\b/gi, ' ');
       text = text.split(product).join(${JSON.stringify(PRODUCT)});
       text = text.split(policy).join('Privacy Policy');
       return text.replace(/\\s+/g, ' ').replace(/\\s+([,.;:!?])/g, '$1').replace(/^[,.;:\\- ]+/, '').replace(/[,;:\\- ]+$/g, '').trim();
