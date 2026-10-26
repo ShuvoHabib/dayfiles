@@ -42,3 +42,7 @@ Keep the hostname migration redirects for at least 180 days and indefinitely whe
 ## Local PDF release routing (2026-10-26)
 
 The four local tools (`/repair-pdf/`, `/create-pdf-forms/`, `/image-watermark-pdf/`, `/pdf-workflows/`) and their illustrated guides route to the PDF origin. `/pdf-workflows/` now serves the recipe tool rather than the former editorial landing page. The editorial child sitemap filters PDF-owned paths to prevent duplicate entries across the combined sitemap index. Release evidence: `docs/reports/local-pdf-production-release-2026-10-26.md`.
+
+## Remember the Day iOS URLs
+
+`/app/remember-the-day/ios/`, its `support/` page and its `privacy-policy/` page are served as bundled HTML so App Store links do not depend on another origin's fallback routing. Sources are in `public/app/remember-the-day/ios/`. After editing, run `node scripts/site/build-remember-day-ios-pages.mjs`, then `npm run router:test` and the router deployment checks. Commit the source pages and generated `remember-day-ios-pages.mjs` together.
