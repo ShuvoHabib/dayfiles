@@ -1364,10 +1364,13 @@ const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.dayfil
 const APP_STORE_URL = 'https://apps.apple.com/app/id6809184465?utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms';
 
 function withoutAllowedPrivatePdf(text) {
-  // Case-sensitive brand phrase only. The negative lookahead keeps "Private PDF Editor",
-  // "tool", "tools", "app is", "web", and "online" in the text so they still fail below.
-  const allowed = new RegExp('Private PDF\\b(?!\\s+(?:Editor|tools|tool|app is|web|online)\\b)', 'g');
-  return text.replace(allowed, '');
+  // "Private PDF" stays exact-case. The follower check is case-insensitive and includes
+  // optional dashes, so "Private PDF-Editor", "editor", "tools", "app", "web", and "online" remain.
+  const blockedFollower = /^\s*[-—]?\s*(?:editor|tools?|app|web|online)\b/i;
+  return text.replace(/Private PDF/g, (match, offset, source) => {
+    const rest = source.slice(offset + match.length);
+    return blockedFollower.test(rest) ? match : '';
+  });
 }
 
 function bannedClaimPattern(text) {
@@ -1380,6 +1383,10 @@ function bannedClaimPattern(text) {
 
 function pageTitleText(page) {
   return [page.title, page.shortTitle, page.h1].filter(Boolean).join('\n');
+}
+
+function pageMetaDescription(page) {
+  return typeof page.description === 'string' ? page.description : '';
 }
 
 function assertNeutralLlms(text, titles) {
@@ -1396,6 +1403,11 @@ function assertPrivatePdfExemption() {
     'Private PDF: Merge, split, organize and edit PDFs.',
   ];
   const blocked = [
+    'Private PDF Tools',
+    'Private PDF Online',
+    'Private PDF editor',
+    'Private PDF-Editor',
+    'Private PDF app',
     'Private PDF Editor',
     'Private PDF tool',
     'Private PDF tools',
@@ -1404,7 +1416,6 @@ function assertPrivatePdfExemption() {
     'Private PDF online',
     'private PDF',
     'Private pdf',
-    'Private PDFs',
     'privacy',
     'Privacy Policy',
     'a private file',
@@ -1423,15 +1434,16 @@ export function buildLlms(posts) {
   // /privacy-policy/ stays out: its title and URL contain privacy.
   void posts;
   assertPrivatePdfExemption();
-  const listedTitles = [];
+  const listedCopy = [];
   const editorialPages = [];
   for (const page of [...productPages, ...trustPages]) {
     if (LLMS_EXCLUDED_SLUGS.has(page.slug)) continue;
     const url = page.canonicalUrl || siteUrl(`/${page.slug}`);
     const titles = pageTitleText(page);
-    if (bannedClaimPattern(url) || bannedClaimPattern(titles)) continue;
+    const description = pageMetaDescription(page);
+    if (bannedClaimPattern(url) || bannedClaimPattern(titles) || bannedClaimPattern(description)) continue;
     editorialPages.push(url);
-    listedTitles.push(titles);
+    listedCopy.push(titles, description);
   }
   const lines = [
     '# Dayfiles',
@@ -1448,7 +1460,7 @@ export function buildLlms(posts) {
     '',
   ];
   const text = lines.join('\n');
-  assertNeutralLlms(text, listedTitles);
+  assertNeutralLlms(text, listedCopy);
   return text;
 }
 

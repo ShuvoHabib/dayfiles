@@ -4,11 +4,8 @@ Dayfiles Studio: Merge, split, organize and edit PDFs.
 
 ## Editorial pages
 - https://dayfiles.com/shuvo-habib/
-- https://dayfiles.com/contact/
-- https://dayfiles.com/cookies/
 - https://dayfiles.com/terms/
 - https://dayfiles.com/editorial-policy/
-- https://dayfiles.com/advertising-disclosure/
 - https://dayfiles.com/how-dayfiles-tests-workflows/
 - https://dayfiles.com/content-review-process/
 - https://dayfiles.com/image-workflows/
