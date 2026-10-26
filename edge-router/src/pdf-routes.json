@@ -116,5 +116,12 @@
   "/pdf-to-markdown",
   "/scan-to-pdf",
   "/extract-pdf-images",
-  "/pdf-to-powerpoint"
+  "/pdf-to-powerpoint",
+  "/repair-pdf",
+  "/create-pdf-forms",
+  "/image-watermark-pdf",
+  "/pdf-workflows",
+  "/guides/how-to-create-a-fillable-pdf-without-uploading",
+  "/guides/how-to-add-a-logo-or-image-watermark-to-a-pdf",
+  "/guides/how-to-create-reusable-pdf-workflow-recipes"
 ]

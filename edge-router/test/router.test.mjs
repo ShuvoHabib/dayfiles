@@ -394,3 +394,22 @@ test('preserves the four additional production PDF routes', async () => {
     assert.equal(await response.text(), `upstream:https://pdf-processor-4mc.pages.dev${path}`);
   }
 });
+
+test('routes the released local PDF tools and illustrated guides to PDF origin', async () => {
+  for (const path of ['/android-pdf-app/', '/iphone-pdf-app/', '/repair-pdf/', '/create-pdf-forms/', '/image-watermark-pdf/', '/pdf-workflows/', '/guides/how-to-create-a-fillable-pdf-without-uploading/', '/guides/how-to-add-a-logo-or-image-watermark-to-a-pdf/', '/guides/how-to-create-reusable-pdf-workflow-recipes/']) {
+    const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), `upstream:${env.PDF_ORIGIN}${path}`);
+    assert.equal(response.headers.has('x-robots-tag'), false);
+  }
+});
+
+test('removes PDF-owned workflow URL from editorial sitemap and dates the new PDF route', async () => {
+  globalThis.fetch = async () => new Response('<?xml version="1.0"?><urlset><url><loc>https://dayfiles.com/pdf-workflows/</loc></url><url><loc>https://dayfiles.com/blog/example/</loc></url></urlset>', {headers:{'content-type':'application/xml'}});
+  const editorial = await handleRequest(new Request('https://dayfiles.com/sitemaps/editorial.xml'), env);
+  const xml = await editorial.text();
+  assert.doesNotMatch(xml, /<loc>https:\/\/dayfiles.com\/pdf-workflows\//);
+  assert.match(xml, /blog\/example/);
+  const pdf = await handleRequest(new Request('https://dayfiles.com/sitemap.xml'), env);
+  assert.match(await pdf.text(), /pdf-workflows\/<\/loc>\s*<lastmod>2026-10-26<\/lastmod>/);
+});
