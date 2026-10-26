@@ -38,3 +38,7 @@ The old Cloudflare single redirect named `Redirect /pdf-workflows/ to pdf.dayfil
 To roll back, first disable the Worker routes/custom domain. Restore `dayfiles.com` and `www.dayfiles.com` as custom domains on the `dayfiles` Pages project and restore `pdf.dayfiles.com` on the `pdf-processor` Pages project. Then select the previous PDF deployment above if the PDF build also needs to be reverted. Re-enable the old `/pdf-workflows/` rule only after the old host layout is restored.
 
 Keep the hostname migration redirects for at least 180 days and indefinitely where practical.
+
+## Local PDF release routing (2026-10-26)
+
+The four local tools (`/repair-pdf/`, `/create-pdf-forms/`, `/image-watermark-pdf/`, `/pdf-workflows/`) and their illustrated guides route to the PDF origin. `/pdf-workflows/` now serves the recipe tool rather than the former editorial landing page. The editorial child sitemap filters PDF-owned paths to prevent duplicate entries across the combined sitemap index. Release evidence: `docs/reports/local-pdf-production-release-2026-10-26.md`.

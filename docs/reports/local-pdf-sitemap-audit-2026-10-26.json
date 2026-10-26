@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "sitemap_sources": [
+      "https://dayfiles.com/sitemap-index.xml",
+      "https://dayfiles.com/sitemap.xml",
+      "https://dayfiles.com/sitemaps/editorial.xml"
+    ],
+    "url_count": 147,
+    "audited_url_count": 147,
+    "sampled": false,
+    "hosts": [
+      "dayfiles.com"
+    ]
+  },
+  "counts": {},
+  "examples": {},
+  "warnings": []
+}
