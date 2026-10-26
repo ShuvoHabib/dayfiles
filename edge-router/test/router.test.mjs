@@ -74,9 +74,38 @@ test('consolidates redundant blog articles and retires unsupported stories', asy
 });
 
 test('consolidates thin comparison routes into the tested comparison hub', async () => {
-  const response = await handleRequest(new Request('https://dayfiles.com/smallpdf-vs-pdf24/'), env);
+  const response = await handleRequest(new Request('https://dayfiles.com/sejda-alternative/'), env);
   assert.equal(response.status, 301);
   assert.equal(response.headers.get('location'), 'https://dayfiles.com/best-private-pdf-tools/');
+});
+
+test('retargets former comparison URLs in one 301 on the apex and PDF host', async () => {
+  const cases = [
+    ['/pdf24-vs-ilovepdf/', '/alternatives/ilovepdf/'],
+    ['/pdfgear-vs-ilovepdf/', '/compare/private-pdf-vs-pdfgear/'],
+    ['/smallpdf-vs-pdf24/', '/alternatives/smallpdf/'],
+  ];
+  const knownRoutes = new Set(pdfRoutes.map((route) => (route === '/' ? '/' : route.replace(/\/+$/, ''))));
+
+  for (const [source, destination] of cases) {
+    const normalizedDestination = destination.replace(/\/+$/, '');
+    assert.equal(PDF_ROUTE_REDIRECTS[normalizedDestination], undefined, destination);
+    assert.equal(knownRoutes.has(normalizedDestination), true, destination);
+
+    for (const host of ['https://dayfiles.com', 'https://pdf.dayfiles.com', 'https://www.dayfiles.com']) {
+      const response = await handleRequest(new Request(`${host}${source}?ref=old`), env);
+      assert.equal(response.status, 301, `${host}${source}`);
+      assert.equal(response.headers.get('location'), `https://dayfiles.com${destination}?ref=old`);
+    }
+
+    const landed = await handleRequest(new Request(`https://dayfiles.com${destination}`), env);
+    assert.equal(landed.status, 200, destination);
+    assert.equal(await landed.text(), `upstream:${env.PDF_ORIGIN}${destination}`);
+  }
+
+  const http = await handleRequest(new Request('http://dayfiles.com/pdf24-vs-ilovepdf/?ref=old'), env);
+  assert.equal(http.status, 301);
+  assert.equal(http.headers.get('location'), 'https://dayfiles.com/alternatives/ilovepdf/?ref=old');
 });
 
 test('consolidates templated audience and workflow routes into detailed guides', async () => {
@@ -342,6 +371,9 @@ test('adds git lastmod to the PDF sitemap and drops redirected URLs', async () =
   <url><loc>https://dayfiles.com/sign-pdf/</loc></url>
   <url><loc>https://dayfiles.com/e-sign-pdf/</loc><lastmod>2026-08-01</lastmod></url>
   <url><loc>https://dayfiles.com/bank-statement-to-excel/</loc></url>
+  <url><loc>https://dayfiles.com/alternatives/ilovepdf/</loc></url>
+  <url><loc>https://dayfiles.com/delete-pdf-pages/</loc></url>
+  <url><loc>https://dayfiles.com/best-pdf-apps-android/</loc></url>
 </urlset>`, { headers: { 'content-type': 'application/xml' } });
   };
 
@@ -351,6 +383,9 @@ test('adds git lastmod to the PDF sitemap and drops redirected URLs', async () =
   assert.doesNotMatch(xml, /<loc>https:\/\/dayfiles\.com\/sign-pdf\/<\/loc>/);
   assert.match(xml, /<loc>https:\/\/dayfiles\.com\/e-sign-pdf\/<\/loc>\s*<lastmod>2026-08-01<\/lastmod>/);
   assert.match(xml, /bank-statement-to-excel\/<\/loc>\s*<lastmod>2026-09-12<\/lastmod>/);
+  assert.match(xml, /alternatives\/ilovepdf\/<\/loc>\s*<lastmod>2026-10-26<\/lastmod>/);
+  assert.match(xml, /delete-pdf-pages\/<\/loc>\s*<lastmod>2026-10-26<\/lastmod>/);
+  assert.match(xml, /best-pdf-apps-android\/<\/loc>\s*<lastmod>2026-10-26<\/lastmod>/);
   assert.match(response.headers.get('content-type'), /^application\/xml/);
 });
 
@@ -402,6 +437,49 @@ test('routes the released local PDF tools and illustrated guides to PDF origin',
     assert.equal(await response.text(), `upstream:${env.PDF_ORIGIN}${path}`);
     assert.equal(response.headers.has('x-robots-tag'), false);
   }
+});
+
+test('routes the new comparison, Android, and delete-pages HTML to the PDF origin', async () => {
+  for (const path of [
+    '/alternatives/',
+    '/compare/',
+    '/best-pdf-apps-android/',
+    '/bank-statement-to-excel-android/',
+    '/delete-pdf-pages/',
+  ]) {
+    const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
+    assert.equal(response.status, 200, path);
+    assert.equal(await response.text(), `upstream:${env.PDF_ORIGIN}${path}`);
+  }
+});
+
+test('routes the IndexNow key file to the PDF origin', async () => {
+  const response = await handleRequest(
+    new Request('https://dayfiles.com/dd8edf05c78de2b2ec72f36b6b662176.txt'),
+    env,
+  );
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type') || '', /^text\/plain/);
+  assert.equal(
+    await response.text(),
+    `upstream:${env.PDF_ORIGIN}/dd8edf05c78de2b2ec72f36b6b662176.txt`,
+  );
+});
+
+test('keeps llms.txt assembled from both origins', async () => {
+  globalThis.fetch = async (request) => {
+    const url = new URL(request.url ?? request);
+    return new Response(`upstream:${url.origin}${url.pathname}`, {
+      status: 200,
+      headers: { 'content-type': 'text/plain' },
+    });
+  };
+  const response = await handleRequest(new Request('https://dayfiles.com/llms.txt'), env);
+  assert.equal(response.status, 200);
+  const text = await response.text();
+  assert.match(text, /upstream:https:\/\/dayfiles\.pages\.dev\/llms\.txt/);
+  assert.match(text, /upstream:https:\/\/pdf-processor-4mc\.pages\.dev\/llms\.txt/);
+  assert.match(response.headers.get('content-type') || '', /^text\/plain/);
 });
 
 test('removes PDF-owned workflow URL from editorial sitemap and dates the new PDF route', async () => {

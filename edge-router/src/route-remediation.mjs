@@ -19,9 +19,9 @@ export const PDF_ROUTE_REDIRECTS = Object.freeze({
   '/pdfcandy-alternative': '/best-private-pdf-tools/',
   '/lightpdf-alternative': '/best-private-pdf-tools/',
   '/adobe-acrobat-online-alternative': '/best-private-pdf-tools/',
-  '/smallpdf-vs-pdf24': '/best-private-pdf-tools/',
-  '/pdf24-vs-ilovepdf': '/best-private-pdf-tools/',
-  '/pdfgear-vs-ilovepdf': '/best-private-pdf-tools/',
+  '/smallpdf-vs-pdf24': '/alternatives/smallpdf/',
+  '/pdf24-vs-ilovepdf': '/alternatives/ilovepdf/',
+  '/pdfgear-vs-ilovepdf': '/compare/private-pdf-vs-pdfgear/',
   '/smallpdf-vs-ilovepdf-privacy': '/best-private-pdf-tools/',
   // Former signing URL. Google Search Console still sends clicks here.
   '/sign-pdf': '/e-sign-pdf/',
