@@ -1,3 +1,4 @@
+import rememberDayPages from './remember-day-ios-pages.mjs';
 import pdfRoutes from './pdf-routes.json' with { type: 'json' };
 import { BLOG_GONE_SLUGS, BLOG_REDIRECTS } from '../../scripts/blog/remediation.mjs';
 import { PDF_ROUTE_REDIRECTS } from './route-remediation.mjs';
@@ -395,6 +396,24 @@ async function dispatchRequest(request, env) {
   if (url.protocol === 'http:' && url.hostname === PUBLIC_HOST) {
     const destination = PDF_REDIRECT_PATHS.get(normalizePath(url.pathname)) ?? url.pathname;
     return redirectResponse(request, destination, 301);
+  }
+
+  const appPage = rememberDayPages[normalizePath(url.pathname)];
+  if (appPage) {
+    const headers = new Headers({
+      'content-type': 'text/html; charset=utf-8',
+      'cache-control': 'public, max-age=300',
+      'content-security-policy': "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      'x-content-type-options': 'nosniff',
+      'referrer-policy': 'strict-origin-when-cross-origin',
+    });
+    if (staging) headers.set('x-robots-tag', 'noindex, nofollow');
+    if (!['GET', 'HEAD'].includes(request.method)) {
+      headers.set('allow', 'GET, HEAD');
+      return new Response('Method not allowed', { status: 405, headers });
+    }
+    if (!url.pathname.endsWith('/')) return redirectResponse(request, `${url.pathname}/`, 301);
+    return new Response(request.method === 'HEAD' ? null : appPage, { headers });
   }
 
   const retiredBlog = retiredBlogResponse(request, staging);
