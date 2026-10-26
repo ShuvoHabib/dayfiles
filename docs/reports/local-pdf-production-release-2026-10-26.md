@@ -13,6 +13,6 @@ Validation:
 - All four guide screenshots return HTTP 200 with image/png content.
 - PDF build, lint, 26 unit/SEO guardrails and 14 browser journeys passed before deployment. GitHub Actions could not start because of account billing; local tests are the validation evidence.
 
-Google Search Console accepted the sitemap-index resubmission on October 26, 2026. Submission does not guarantee indexing; its displayed last-read date and discovered count still describe earlier crawls until Google refreshes them.
+Google Search Console accepted both `https://dayfiles.com/sitemap-index.xml` and `https://dayfiles.com/sitemap.xml` resubmissions on October 26, 2026, showing “Sitemap submitted successfully” for each and Success in the table. The index last-read date refreshed to October 26. Discovered-page counts were still 139 for the index and 97 for the PDF child; these do not establish indexing of the new URLs.
 
 Unrelated changes in both original repositories were preserved; router edits were made in an isolated checkout based on current origin/master.
