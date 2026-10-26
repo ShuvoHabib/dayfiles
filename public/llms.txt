@@ -17,5 +17,6 @@ Dayfiles Studio: Merge, split, organize and edit PDFs.
 - https://dayfiles.com/compliance-sensitive-image-prep/
 
 ## App stores
+Private PDF: Merge, split, organize and edit PDFs.
 - https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor&utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms
 - https://apps.apple.com/app/id6809184465?utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms

@@ -1313,7 +1313,7 @@ export function buildSitemap(posts) {
 
 const LLMS_BANNED_CLAIM = [
   /\bfree\b/i,
-  /\bprivate\b/i,
+  /\bprivate/i,
   /\bprivacy\b/i,
   /\blocal\b/i,
   /\boffline\b/i,
@@ -1357,14 +1357,23 @@ const LLMS_EXCLUDED_SLUGS = new Set([
   'images',
   'pdf-toolkit',
   'pdf-workflows',
+  'privacy-policy',
 ]);
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor&utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms';
 const APP_STORE_URL = 'https://apps.apple.com/app/id6809184465?utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms';
 
+function withoutAllowedPrivatePdf(text) {
+  // Case-sensitive brand phrase only. The negative lookahead keeps "Private PDF Editor",
+  // "tool", "tools", "app is", "web", and "online" in the text so they still fail below.
+  const allowed = new RegExp('Private PDF\\b(?!\\s+(?:Editor|tools|tool|app is|web|online)\\b)', 'g');
+  return text.replace(allowed, '');
+}
+
 function bannedClaimPattern(text) {
+  const scanned = withoutAllowedPrivatePdf(text);
   for (const pattern of LLMS_BANNED_CLAIM) {
-    if (pattern.test(text)) return pattern;
+    if (pattern.test(scanned)) return pattern;
   }
   return null;
 }
@@ -1381,11 +1390,39 @@ function assertNeutralLlms(text, titles) {
   }
 }
 
+function assertPrivatePdfExemption() {
+  const allowed = [
+    'Private PDF',
+    'Private PDF: Merge, split, organize and edit PDFs.',
+  ];
+  const blocked = [
+    'Private PDF Editor',
+    'Private PDF tool',
+    'Private PDF tools',
+    'Private PDF app is',
+    'Private PDF web',
+    'Private PDF online',
+    'private PDF',
+    'Private pdf',
+    'Private PDFs',
+    'privacy',
+    'Privacy Policy',
+    'a private file',
+  ];
+  for (const sample of allowed) {
+    const pattern = bannedClaimPattern(sample);
+    if (pattern) throw new Error(`allowed brand phrase was rejected: ${sample} (${pattern})`);
+  }
+  for (const sample of blocked) {
+    if (!bannedClaimPattern(sample)) throw new Error(`private wording was allowed: ${sample}`);
+  }
+}
+
 export function buildLlms(posts) {
   // Post titles are omitted. Several current titles use tool claims this file must not repeat.
-  // The product name "Private PDF" matches the private ban, and so does "the Dayfiles Private PDF app".
-  // Neither string is exempted. The app is identified by the store URLs only.
+  // /privacy-policy/ stays out: its title and URL contain privacy.
   void posts;
+  assertPrivatePdfExemption();
   const listedTitles = [];
   const editorialPages = [];
   for (const page of [...productPages, ...trustPages]) {
@@ -1405,6 +1442,7 @@ export function buildLlms(posts) {
     ...editorialPages.map((url) => `- ${url}`),
     '',
     '## App stores',
+    'Private PDF: Merge, split, organize and edit PDFs.',
     `- ${PLAY_STORE_URL}`,
     `- ${APP_STORE_URL}`,
     '',
