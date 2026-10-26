@@ -457,6 +457,17 @@ test('routes the new comparison, Android, and delete-pages HTML to the PDF origi
   assert.equal(dropped.status, 404);
 });
 
+test('does not route or redirect the missing PDF Expert Android alternative', async () => {
+  const path = '/alternatives/pdf-expert-android';
+  assert.equal(pdfRoutes.includes(path), false);
+  assert.equal(Object.hasOwn(PDF_ROUTE_REDIRECTS, path), false);
+  assert.equal(Object.values(PDF_ROUTE_REDIRECTS).includes(`${path}/`), false);
+
+  const response = await handleRequest(new Request(`https://dayfiles.com${path}/`), env);
+  assert.equal(response.status, 404);
+  assert.match(await response.text(), /Page not found/);
+});
+
 test('routes the IndexNow key file to the PDF origin', async () => {
   const response = await handleRequest(
     new Request('https://dayfiles.com/dd8edf05c78de2b2ec72f36b6b662176.txt'),
