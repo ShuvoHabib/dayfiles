@@ -1,16 +1,11 @@
 # Dayfiles
 
-Dayfiles Studio and Private PDF: Merge, split, organize and edit PDFs.
+Dayfiles Studio: Merge, split, organize and edit PDFs.
 
 ## Editorial pages
-- https://dayfiles.com/images/
-- https://dayfiles.com/pdf-toolkit/
-- https://dayfiles.com/everyday-image-studio/
-- https://dayfiles.com/about/
 - https://dayfiles.com/shuvo-habib/
 - https://dayfiles.com/contact/
 - https://dayfiles.com/cookies/
-- https://dayfiles.com/privacy-policy/
 - https://dayfiles.com/terms/
 - https://dayfiles.com/editorial-policy/
 - https://dayfiles.com/advertising-disclosure/
@@ -20,8 +15,7 @@ Dayfiles Studio and Private PDF: Merge, split, organize and edit PDFs.
 - https://dayfiles.com/document-delivery-formats/
 - https://dayfiles.com/application-packet-mistakes/
 - https://dayfiles.com/compliance-sensitive-image-prep/
-- https://dayfiles.com/blog/
 
 ## App stores
-- https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor
-- https://apps.apple.com/app/id6809184465
+- https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor&utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms
+- https://apps.apple.com/app/id6809184465?utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms

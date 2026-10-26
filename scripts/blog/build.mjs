@@ -1314,66 +1314,103 @@ export function buildSitemap(posts) {
 const LLMS_BANNED_CLAIM = [
   /\bfree\b/i,
   /\bprivate\b/i,
+  /\bprivacy\b/i,
   /\blocal\b/i,
   /\boffline\b/i,
   /\bon-device\b/i,
   /\bon device\b/i,
-  /\bsecure\b/i,
-  /\bno-upload\b/i,
+  /\bsecur/i,
+  /\bupload/i,
   /\bno upload\b/i,
   /\bno-account\b/i,
   /\bno account\b/i,
-  /\bcompress\b/i,
-  /\bconvert\b/i,
+  /\bno ads\b/i,
+  /\bcompress/i,
+  /\bconvert/i,
   /\block\b/i,
-  /\bunlock\b/i,
+  /\bunlock/i,
   /\bpassword\b/i,
   /\bocr\b/i,
-  /\bsign\b/i,
-  /\bextract\b/i,
-  /\bfile-size\b/i,
-  /\bfile size\b/i,
+  /\be-sign/i,
+  /\bsign/i,
+  /\bextract/i,
+  /\bsize/i,
   /\bspeed\b/i,
   /\bfast(?:er)?\b/i,
   /\binstant(?:ly)?\b/i,
   /\bquick(?:ly)?\b/i,
+  /\brotate\b/i,
+  /\bwatermark\b/i,
+  /\bpage numbers?\b/i,
+  /\bredact\b/i,
+  /\bcompare\b/i,
+  /\bbates\b/i,
+  /\bbank statement\b/i,
+  /\bexcel\b/i,
+  /\bbrowser\b/i,
 ];
 
-function assertNeutralLlms(text) {
-  const scanned = text.replaceAll('Private PDF', '');
+const LLMS_EXCLUDED_SLUGS = new Set([
+  'about',
+  'blog',
+  'everyday-image-studio',
+  'images',
+  'pdf-toolkit',
+  'pdf-workflows',
+]);
+
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor&utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms';
+const APP_STORE_URL = 'https://apps.apple.com/app/id6809184465?utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms';
+
+function bannedClaimPattern(text) {
   for (const pattern of LLMS_BANNED_CLAIM) {
-    if (pattern.test(scanned)) {
-      throw new Error(`llms.txt contains a banned claim: ${pattern}`);
-    }
+    if (pattern.test(text)) return pattern;
+  }
+  return null;
+}
+
+function pageTitleText(page) {
+  return [page.title, page.shortTitle, page.h1].filter(Boolean).join('\n');
+}
+
+function assertNeutralLlms(text, titles) {
+  const corpus = [text, ...titles].join('\n');
+  const pattern = bannedClaimPattern(corpus);
+  if (pattern) {
+    throw new Error(`llms.txt contains a banned claim: ${pattern}`);
   }
 }
 
 export function buildLlms(posts) {
   // Post titles are omitted. Several current titles use tool claims this file must not repeat.
-  // /pdf-workflows/ is a PDF-origin route, so it is not an editorial page on dayfiles.com.
+  // The product name "Private PDF" matches the private ban, and so does "the Dayfiles Private PDF app".
+  // Neither string is exempted. The app is identified by the store URLs only.
   void posts;
-  const editorialPages = [
-    ...productPages.map((page) => page.canonicalUrl),
-    ...trustPages
-      .filter((page) => page.slug !== 'pdf-workflows')
-      .map((page) => siteUrl(`/${page.slug}`)),
-    siteUrl('/blog'),
-  ];
+  const listedTitles = [];
+  const editorialPages = [];
+  for (const page of [...productPages, ...trustPages]) {
+    if (LLMS_EXCLUDED_SLUGS.has(page.slug)) continue;
+    const url = page.canonicalUrl || siteUrl(`/${page.slug}`);
+    const titles = pageTitleText(page);
+    if (bannedClaimPattern(url) || bannedClaimPattern(titles)) continue;
+    editorialPages.push(url);
+    listedTitles.push(titles);
+  }
   const lines = [
     '# Dayfiles',
     '',
-    'Dayfiles Studio and Private PDF: Merge, split, organize and edit PDFs.',
+    'Dayfiles Studio: Merge, split, organize and edit PDFs.',
     '',
     '## Editorial pages',
     ...editorialPages.map((url) => `- ${url}`),
     '',
     '## App stores',
-    '- https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor',
-    '- https://apps.apple.com/app/id6809184465',
+    `- ${PLAY_STORE_URL}`,
+    `- ${APP_STORE_URL}`,
     '',
   ];
   const text = lines.join('\n');
-  assertNeutralLlms(text);
+  assertNeutralLlms(text, listedTitles);
   return text;
 }
 
