@@ -442,15 +442,19 @@ test('routes the released local PDF tools and illustrated guides to PDF origin',
 test('routes the new comparison, Android, and delete-pages HTML to the PDF origin', async () => {
   for (const path of [
     '/alternatives/',
+    '/alternatives/adobe-acrobat/',
     '/compare/',
+    '/compare/private-pdf-vs-xodo/',
     '/best-pdf-apps-android/',
-    '/bank-statement-to-excel-android/',
     '/delete-pdf-pages/',
   ]) {
     const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
     assert.equal(response.status, 200, path);
     assert.equal(await response.text(), `upstream:${env.PDF_ORIGIN}${path}`);
   }
+
+  const dropped = await handleRequest(new Request('https://dayfiles.com/bank-statement-to-excel-android/'), env);
+  assert.equal(dropped.status, 404);
 });
 
 test('routes the IndexNow key file to the PDF origin', async () => {

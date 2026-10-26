@@ -63,12 +63,13 @@ const FILE_EXTENSION = /\.[a-z0-9]{1,12}$/i;
 const PDF_ROUTE_LASTMOD_DEFAULT = '2026-08-20';
 const PDF_ROUTE_LASTMOD = new Map([
   ['/alternatives', '2026-10-26'],
+  ['/alternatives/adobe-acrobat', '2026-10-26'],
   ['/alternatives/ilovepdf', '2026-10-26'],
   ['/alternatives/smallpdf', '2026-10-26'],
   ['/compare', '2026-10-26'],
   ['/compare/private-pdf-vs-pdfgear', '2026-10-26'],
+  ['/compare/private-pdf-vs-xodo', '2026-10-26'],
   ['/best-pdf-apps-android', '2026-10-26'],
-  ['/bank-statement-to-excel-android', '2026-10-26'],
   ['/delete-pdf-pages', '2026-10-26'],
   ['/repair-pdf', '2026-10-26'],
   ['/create-pdf-forms', '2026-10-26'],
