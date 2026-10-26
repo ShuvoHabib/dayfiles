@@ -1364,9 +1364,9 @@ const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.dayfil
 const APP_STORE_URL = 'https://apps.apple.com/app/id6809184465?utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms';
 
 function withoutAllowedPrivatePdf(text) {
-  // "Private PDF" stays exact-case. The follower check is case-insensitive and includes
-  // optional dashes, so "Private PDF-Editor", "editor", "tools", "app", "web", and "online" remain.
-  const blockedFollower = /^\s*[-—]?\s*(?:editor|tools?|app|web|online)\b/i;
+  // "Private PDF" stays exact-case. The follower check is case-insensitive and treats
+  // hyphens, en dashes, and em dashes as repeatable separators, including plurals.
+  const blockedFollower = /^\s*[-—–]*\s*(?:editors?|tools?|apps?|web|online)\b/i;
   return text.replace(/Private PDF/g, (match, offset, source) => {
     const rest = source.slice(offset + match.length);
     return blockedFollower.test(rest) ? match : '';
@@ -1407,7 +1407,9 @@ function assertPrivatePdfExemption() {
     'Private PDF Online',
     'Private PDF editor',
     'Private PDF-Editor',
+    'Private PDF\u2013Editor',
     'Private PDF app',
+    'Private PDF apps',
     'Private PDF Editor',
     'Private PDF tool',
     'Private PDF tools',
