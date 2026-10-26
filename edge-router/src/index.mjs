@@ -25,7 +25,6 @@ const EDITORIAL_EXACT_PATHS = new Set([
   '/image-workflows',
   '/images',
   '/pdf-toolkit',
-  '/pdf-workflows',
   '/privacy-policy',
   '/shuvo-habib',
   '/terms',
@@ -62,6 +61,15 @@ const FILE_EXTENSION = /\.[a-z0-9]{1,12}$/i;
 // The PDF Pages sitemap does not include <lastmod>, and those pages are not in this repo.
 const PDF_ROUTE_LASTMOD_DEFAULT = '2026-08-20';
 const PDF_ROUTE_LASTMOD = new Map([
+  ['/repair-pdf', '2026-10-26'],
+  ['/create-pdf-forms', '2026-10-26'],
+  ['/image-watermark-pdf', '2026-10-26'],
+  ['/pdf-workflows', '2026-10-26'],
+  ['/guides/how-to-create-a-fillable-pdf-without-uploading', '2026-10-26'],
+  ['/guides/how-to-add-a-logo-or-image-watermark-to-a-pdf', '2026-10-26'],
+  ['/guides/how-to-create-reusable-pdf-workflow-recipes', '2026-10-26'],
+  ['/guides/how-to-repair-a-pdf-and-when-local-tools-cannot-fix-it', '2026-10-26'],
+
   ['/thelast30days/privacy-policy', '2026-09-11'],
   ['/thelast30days/terms-of-use', '2026-09-11'],
   ['/simple-invoice-maker/privacy-policy', '2026-09-20'],
@@ -264,6 +272,7 @@ async function editorialSitemapResponse(request, env, staging) {
       /\s*<url>\s*<loc>https:\/\/dayfiles\.com\/<\/loc>[\s\S]*?<\/url>/,
       '',
     ),
+    { excludePdfPaths: true },
   );
   return new Response(xml, { status: response.status, headers });
 }
@@ -277,7 +286,7 @@ function isRedirectedPublicPath(pathname) {
   return PDF_REDIRECT_PATHS.has(normalized) || BLOG_REDIRECT_PATHS.has(normalized);
 }
 
-function rewriteSitemapXml(xml, { fillLastmod = false } = {}) {
+function rewriteSitemapXml(xml, { fillLastmod = false, excludePdfPaths = false } = {}) {
   if (!xml.includes('<urlset')) return xml;
   return xml.replace(/\s*<url>\s*([\s\S]*?)<\/url>/g, (full, inner) => {
     const locMatch = inner.match(/<loc>\s*([^<]+?)\s*<\/loc>/);
@@ -288,7 +297,7 @@ function rewriteSitemapXml(xml, { fillLastmod = false } = {}) {
     } catch {
       return full;
     }
-    if (isRedirectedPublicPath(pathname)) return '';
+    if (isRedirectedPublicPath(pathname) || (excludePdfPaths && KNOWN_PDF_PATHS.has(normalizePath(pathname)))) return '';
     if (!fillLastmod || inner.includes('<lastmod>')) return full;
     return full.replace(
       locMatch[0],
