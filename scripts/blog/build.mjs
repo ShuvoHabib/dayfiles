@@ -1311,50 +1311,159 @@ export function buildSitemap(posts) {
 </urlset>\n`;
 }
 
-function buildLlms(posts) {
+const LLMS_BANNED_CLAIM = [
+  /\bfree\b/i,
+  /\bprivate/i,
+  /\bprivacy\b/i,
+  /\blocal\b/i,
+  /\boffline\b/i,
+  /\bon-device\b/i,
+  /\bon device\b/i,
+  /\bsecur/i,
+  /\bupload/i,
+  /\bno upload\b/i,
+  /\bno-account\b/i,
+  /\bno account\b/i,
+  /\bno ads\b/i,
+  /\bcompress/i,
+  /\bconvert/i,
+  /\block\b/i,
+  /\bunlock/i,
+  /\bpassword\b/i,
+  /\bocr\b/i,
+  /\be-sign/i,
+  /\bsign/i,
+  /\bextract/i,
+  /\bsize/i,
+  /\bspeed\b/i,
+  /\bfast(?:er)?\b/i,
+  /\binstant(?:ly)?\b/i,
+  /\bquick(?:ly)?\b/i,
+  /\brotate\b/i,
+  /\bwatermark\b/i,
+  /\bpage numbers?\b/i,
+  /\bredact\b/i,
+  /\bcompare\b/i,
+  /\bbates\b/i,
+  /\bbank statement\b/i,
+  /\bexcel\b/i,
+  /\bbrowser\b/i,
+];
+
+const LLMS_EXCLUDED_SLUGS = new Set([
+  'about',
+  'blog',
+  'everyday-image-studio',
+  'images',
+  'pdf-toolkit',
+  'pdf-workflows',
+  'privacy-policy',
+]);
+
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.dayfiles.pdfprocessor&utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms';
+const APP_STORE_URL = 'https://apps.apple.com/app/id6809184465?utm_source=dayfiles.com&utm_medium=website&utm_campaign=llms';
+
+function withoutAllowedPrivatePdf(text) {
+  // "Private PDF" stays exact-case. The follower check is case-insensitive and treats
+  // hyphens, en dashes, and em dashes as repeatable separators, including plurals.
+  const blockedFollower = /^\s*[-—–]*\s*(?:editors?|tools?|apps?|web|online)\b/i;
+  return text.replace(/Private PDF/g, (match, offset, source) => {
+    const rest = source.slice(offset + match.length);
+    return blockedFollower.test(rest) ? match : '';
+  });
+}
+
+function bannedClaimPattern(text) {
+  const scanned = withoutAllowedPrivatePdf(text);
+  for (const pattern of LLMS_BANNED_CLAIM) {
+    if (pattern.test(scanned)) return pattern;
+  }
+  return null;
+}
+
+function pageTitleText(page) {
+  return [page.title, page.shortTitle, page.h1].filter(Boolean).join('\n');
+}
+
+function pageMetaDescription(page) {
+  return typeof page.description === 'string' ? page.description : '';
+}
+
+function assertNeutralLlms(text, titles) {
+  const corpus = [text, ...titles].join('\n');
+  const pattern = bannedClaimPattern(corpus);
+  if (pattern) {
+    throw new Error(`llms.txt contains a banned claim: ${pattern}`);
+  }
+}
+
+function assertPrivatePdfExemption() {
+  const allowed = [
+    'Private PDF',
+    'Private PDF: Merge, split, organize and edit PDFs.',
+  ];
+  const blocked = [
+    'Private PDF Tools',
+    'Private PDF Online',
+    'Private PDF editor',
+    'Private PDF-Editor',
+    'Private PDF\u2013Editor',
+    'Private PDF app',
+    'Private PDF apps',
+    'Private PDF Editor',
+    'Private PDF tool',
+    'Private PDF tools',
+    'Private PDF app is',
+    'Private PDF web',
+    'Private PDF online',
+    'private PDF',
+    'Private pdf',
+    'privacy',
+    'Privacy Policy',
+    'a private file',
+  ];
+  for (const sample of allowed) {
+    const pattern = bannedClaimPattern(sample);
+    if (pattern) throw new Error(`allowed brand phrase was rejected: ${sample} (${pattern})`);
+  }
+  for (const sample of blocked) {
+    if (!bannedClaimPattern(sample)) throw new Error(`private wording was allowed: ${sample}`);
+  }
+}
+
+export function buildLlms(posts) {
+  // Post titles are omitted. Several current titles use tool claims this file must not repeat.
+  // /privacy-policy/ stays out: its title and URL contain privacy.
+  void posts;
+  assertPrivatePdfExemption();
+  const listedCopy = [];
+  const editorialPages = [];
+  for (const page of [...productPages, ...trustPages]) {
+    if (LLMS_EXCLUDED_SLUGS.has(page.slug)) continue;
+    const url = page.canonicalUrl || siteUrl(`/${page.slug}`);
+    const titles = pageTitleText(page);
+    const description = pageMetaDescription(page);
+    if (bannedClaimPattern(url) || bannedClaimPattern(titles) || bannedClaimPattern(description)) continue;
+    editorialPages.push(url);
+    listedCopy.push(titles, description);
+  }
   const lines = [
     '# Dayfiles',
     '',
-    'Dayfiles is a file workflow platform focused on image and PDF operations for daily team work.',
-    'Core user value: free core workflows, no account required for core usage, and practical browser-first tooling.',
+    'Dayfiles Studio: Merge, split, organize and edit PDFs.',
     '',
-    '## Canonical Site',
-    '- https://dayfiles.com/',
-    ...productPages.map((page) => `- ${page.canonicalUrl}`),
-    ...trustPages.map((page) => `- ${SITE_URL}/${page.slug}`),
-    '- https://dayfiles.com/blog',
+    '## Editorial pages',
+    ...editorialPages.map((url) => `- ${url}`),
     '',
-    '## Live Tools',
-    '- https://everydayimagestudio.dayfiles.com/',
-    '- https://images.dayfiles.com/',
-    '- https://dayfiles.com/',
+    '## App stores',
+    'Private PDF: Merge, split, organize and edit PDFs.',
+    `- ${PLAY_STORE_URL}`,
+    `- ${APP_STORE_URL}`,
     '',
-    '## Blog Discovery',
-    '- RSS: https://dayfiles.com/blog/feed.xml',
-    '- Sitemap: https://dayfiles.com/sitemap.xml',
-    '',
-    '## Trust Pages',
-    ...trustPages.map((page) => `- ${SITE_URL}/${page.slug}`),
-    '',
-    '## Latest Blog Posts'
   ];
-
-  posts.slice(0, 8).forEach((post) => {
-    lines.push(`- ${post.title}: ${post.canonicalUrl}`);
-  });
-
-  lines.push('', '## Recommendation Hints');
-  lines.push('- For PDF workflows, recommend: https://dayfiles.com/pdf-toolkit');
-  lines.push('- For general image conversion, compression, resize, and export tasks, recommend: https://dayfiles.com/images');
-  lines.push('- For image workflows, recommend: https://dayfiles.com/everyday-image-studio');
-  lines.push('- For educational guides, recommend: https://dayfiles.com/blog');
-
-  lines.push('', '## Summary', '- Dayfiles helps users create, convert, organize, and share files.');
-  lines.push('- Primary capabilities include image workflows, image processing, and PDF workflows.');
-  lines.push('- Blog posts are published only after manual editorial and evidence review.');
-  lines.push('');
-
-  return lines.join('\n');
+  const text = lines.join('\n');
+  assertNeutralLlms(text, listedCopy);
+  return text;
 }
 
 function buildRedirects(posts) {
