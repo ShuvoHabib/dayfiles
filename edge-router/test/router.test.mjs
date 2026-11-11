@@ -231,7 +231,8 @@ test('serves SEO control files and genuine unknown-route 404s', async () => {
   const robots = await handleRequest(new Request('https://dayfiles.com/robots.txt'), env);
   const robotsText = await robots.text();
   assert.match(robotsText, /User-agent: GPTBot/);
-  assert.match(robotsText, /Clean-param: lang \/$/m);
+  assert.match(robotsText, /User-agent: Yandex\nAllow: \/$/m);
+  assert.doesNotMatch(robotsText, /^Clean-param:/im);
   assert.match(robotsText, /Sitemap: https:\/\/dayfiles\.com\/sitemap-index\.xml/);
   const ads = await handleRequest(new Request('https://dayfiles.com/ads.txt'), env);
   assert.match(await ads.text(), /pub-1193261985740702/);
