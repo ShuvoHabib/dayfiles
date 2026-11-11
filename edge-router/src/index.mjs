@@ -361,7 +361,7 @@ async function specialSeoResponse(request, env, staging) {
   if (pathname === '/robots.txt') {
     const robots = staging
       ? 'User-agent: *\nDisallow: /\n'
-      : `User-agent: *\nAllow: /\n\nUser-agent: Yandex\nAllow: /\nClean-param: lang /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: anthropic-ai\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: CCBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nUser-agent: Applebot-Extended\nAllow: /\n\nUser-agent: Bytespider\nAllow: /\n\nUser-agent: Amazonbot\nAllow: /\n\nUser-agent: meta-externalagent\nAllow: /\n\nSitemap: https://${PUBLIC_HOST}/sitemap-index.xml\n`;
+      : `User-agent: *\nAllow: /\n\nUser-agent: Yandex\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: anthropic-ai\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: CCBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nUser-agent: Applebot-Extended\nAllow: /\n\nUser-agent: Bytespider\nAllow: /\n\nUser-agent: Amazonbot\nAllow: /\n\nUser-agent: meta-externalagent\nAllow: /\n\nSitemap: https://${PUBLIC_HOST}/sitemap-index.xml\n`;
     return textResponse(robots, 'text/plain', staging);
   }
   if (pathname === '/sitemap-index.xml') {
