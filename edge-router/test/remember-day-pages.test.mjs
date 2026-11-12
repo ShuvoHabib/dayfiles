@@ -23,3 +23,11 @@ test('Remember the Day iOS product/support/privacy pages serve exact canonical H
   }
   assert.equal((await handleRequest(new Request(`https://dayfiles.com${base}unknown/`), env)).status, 404);
 });
+
+
+test('Remember the Day privacy discloses optional TikTok consent and excludes Google data', async () => {
+  const response = await handleRequest(new Request('https://dayfiles.com/app/remember-the-day/ios/privacy-policy/'), { ROUTER_MODE: 'production' });
+  const html = await response.text();
+  for (const text of ['Effective 12 November 2026', 'Optional TikTok ad measurement', 'App Tracking Transparency', 'explicit off choice is preserved', 'Google user data and data derived from it are never sent to TikTok']) assert.ok(html.includes(text), text);
+  assert.ok(!html.includes('or track you across other companies'));
+});
