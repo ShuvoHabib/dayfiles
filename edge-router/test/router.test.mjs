@@ -521,3 +521,9 @@ test('routes the iOS purchase privacy link to its deployed policy', async () => 
   assert.equal(response.status, 200);
   assert.equal(await response.text(), 'upstream:https://pdf-processor-4mc.pages.dev/private-pdf/ios/privacy-policy/');
 });
+
+test('routes the standalone article tool to PDF Pages', async () => {
+  const response = await handleRequest(new Request('https://dayfiles.com/read-pdf-as-article/'), env);
+  assert.equal(response.status, 200);
+  assert.equal(await response.text(), 'upstream:https://pdf-processor-4mc.pages.dev/read-pdf-as-article/');
+});

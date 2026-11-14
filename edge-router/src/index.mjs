@@ -109,6 +109,7 @@ function isEditorialPath(pathname) {
 function isKnownPdfPath(pathname) {
   const normalized = normalizePath(pathname);
   return (
+    normalized === '/read-pdf-as-article' ||
     normalized === '/view-pdf' ||
     normalized === '/private-pdf/ios/privacy-policy' ||
     KNOWN_PDF_PATHS.has(normalized) ||
