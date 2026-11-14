@@ -515,3 +515,9 @@ test('removes PDF-owned workflow URL from editorial sitemap and dates the new PD
     assert.equal(await response.text(), `upstream:https://pdf-processor-4mc.pages.dev${path}`);
   }
 });
+
+test('routes the iOS purchase privacy link to its deployed policy', async () => {
+  const response = await handleRequest(new Request('https://dayfiles.com/private-pdf/ios/privacy-policy/'), env);
+  assert.equal(response.status, 200);
+  assert.equal(await response.text(), 'upstream:https://pdf-processor-4mc.pages.dev/private-pdf/ios/privacy-policy/');
+});
