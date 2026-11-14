@@ -109,6 +109,7 @@ function isEditorialPath(pathname) {
 function isKnownPdfPath(pathname) {
   const normalized = normalizePath(pathname);
   return (
+    normalized === '/view-pdf' ||
     KNOWN_PDF_PATHS.has(normalized) ||
     normalized.startsWith('/human-anatomy-3d-body-layers/') ||
     normalized === '/about-privacy' ||

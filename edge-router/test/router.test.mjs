@@ -507,3 +507,11 @@ test('removes PDF-owned workflow URL from editorial sitemap and dates the new PD
   const pdf = await handleRequest(new Request('https://dayfiles.com/sitemap.xml'), env);
   assert.match(await pdf.text(), /pdf-workflows\/<\/loc>\s*<lastmod>2026-10-26<\/lastmod>/);
 });
+
+ test('routes the article reader to PDF Pages with either trailing slash', async () => {
+  for (const path of ['/view-pdf', '/view-pdf/']) {
+    const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), `upstream:https://pdf-processor-4mc.pages.dev${path}`);
+  }
+});
