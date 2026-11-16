@@ -378,6 +378,7 @@ async function dispatchRequest(request, env) {
     ['GET', 'HEAD'].includes(request.method)
   ) {
     const response = await proxyRequest(request, env.PDF_ORIGIN, staging);
+    if (response.status === 304) return response;
     // A missing file can fall through to the Pages app shell.
     if (response.status === 200 && /^application\/json\b/i.test(response.headers.get('content-type') ?? '')) {
       return response;

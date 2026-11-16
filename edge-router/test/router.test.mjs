@@ -288,6 +288,7 @@ test('serves both app association files on the three PDF hosts', async () => {
   globalThis.fetch = async (request) => {
     const url = new URL(request.url);
     assert.equal(url.origin, env.PDF_ORIGIN);
+    if (request.headers.has('if-none-match')) return new Response(null, { status: 304 });
     return new Response(request.method === 'HEAD' ? null : JSON.stringify({ path: url.pathname }), {
       headers: { 'content-type': 'application/json' },
     });
@@ -302,6 +303,8 @@ test('serves both app association files on the three PDF hosts', async () => {
       const head = await handleRequest(new Request(url, { method: 'HEAD' }), env);
       assert.equal(head.status, 200);
       assert.equal(await head.text(), '');
+      const conditional = await handleRequest(new Request(url, { headers: { 'if-none-match': '"v1"' } }), env);
+      assert.equal(conditional.status, 304);
     }
   }
 });
