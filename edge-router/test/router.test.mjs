@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { afterEach, beforeEach, test } from 'node:test';
 import { handleRequest } from '../src/index.mjs';
+import { INDEXNOW_KEY } from '../src/indexnow-key.mjs';
 import pdfRoutes from '../src/pdf-routes.json' with { type: 'json' };
 import { PDF_ROUTE_REDIRECTS } from '../src/route-remediation.mjs';
 
@@ -480,6 +482,49 @@ test('routes the IndexNow key file to the PDF origin', async () => {
     await response.text(),
     `upstream:${env.PDF_ORIGIN}/dd8edf05c78de2b2ec72f36b6b662176.txt`,
   );
+});
+
+test('serves the repository IndexNow key from the edge router', async () => {
+  const keyFile = readFileSync(
+    new URL(`../indexnow/${INDEXNOW_KEY}.txt`, import.meta.url),
+    'utf8',
+  );
+  assert.equal(keyFile, INDEXNOW_KEY);
+  assert.match(INDEXNOW_KEY, /^[0-9a-f]{32}$/);
+
+  globalThis.fetch = async () => {
+    throw new Error('IndexNow key must be served by the router, not an upstream origin');
+  };
+
+  const response = await handleRequest(
+    new Request(`https://dayfiles.com/${INDEXNOW_KEY}.txt`),
+    env,
+  );
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type') || '', /^text\/plain/);
+  assert.equal(response.headers.get('strict-transport-security'), 'max-age=31536000; includeSubDomains');
+  assert.equal(await response.text(), INDEXNOW_KEY);
+
+  const slashed = await handleRequest(
+    new Request(`https://dayfiles.com/${INDEXNOW_KEY}.txt/`),
+    env,
+  );
+  assert.equal(slashed.status, 200);
+  assert.equal(await slashed.text(), INDEXNOW_KEY);
+
+  const staging = await handleRequest(
+    new Request(`https://dayfiles.com/${INDEXNOW_KEY}.txt`),
+    { ...env, ROUTER_MODE: 'staging' },
+  );
+  assert.equal(await staging.text(), INDEXNOW_KEY);
+  assert.equal(staging.headers.get('x-robots-tag'), 'noindex, nofollow');
+
+  const www = await handleRequest(
+    new Request(`https://www.dayfiles.com/${INDEXNOW_KEY}.txt`),
+    env,
+  );
+  assert.equal(www.status, 301);
+  assert.equal(www.headers.get('location'), `https://dayfiles.com/${INDEXNOW_KEY}.txt`);
 });
 
 test('keeps llms.txt assembled from both origins', async () => {
