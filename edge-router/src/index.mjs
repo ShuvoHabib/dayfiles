@@ -1,6 +1,7 @@
 import rememberDayPages from './remember-day-ios-pages.mjs';
 import pdfRoutes from './pdf-routes.json' with { type: 'json' };
 import { BLOG_GONE_SLUGS, BLOG_REDIRECTS } from '../../scripts/blog/remediation.mjs';
+import { INDEXNOW_KEY } from './indexnow-key.mjs';
 import { PDF_ROUTE_REDIRECTS } from './route-remediation.mjs';
 
 const PUBLIC_HOST = 'dayfiles.com';
@@ -57,6 +58,7 @@ const BLOG_REDIRECT_PATHS = new Map(
 const BLOG_GONE_PATHS = new Set(BLOG_GONE_SLUGS.map((slug) => `/blog/${slug}`));
 const PDF_REDIRECT_PATHS = new Map(Object.entries(PDF_ROUTE_REDIRECTS));
 const HSTS_VALUE = 'max-age=31536000; includeSubDomains';
+const INDEXNOW_KEY_PATH = `/${INDEXNOW_KEY}.txt`;
 const FILE_EXTENSION = /\.[a-z0-9]{1,12}$/i;
 // Commit dates from `git blame` of edge-router/src/pdf-routes.json.
 // The PDF Pages sitemap does not include <lastmod>, and those pages are not in this repo.
@@ -358,6 +360,12 @@ function consolidatedPdfRouteResponse(request) {
 
 async function specialSeoResponse(request, env, staging) {
   const { pathname } = new URL(request.url);
+  // Extension paths otherwise proxy to the PDF origin. This key file has to
+  // be answered here or https://dayfiles.com/<key>.txt never resolves from
+  // this repository.
+  if (normalizePath(pathname) === INDEXNOW_KEY_PATH) {
+    return textResponse(INDEXNOW_KEY, 'text/plain', staging);
+  }
   if (pathname === '/ads.txt') {
     return textResponse('google.com, pub-1193261985740702, DIRECT, f08c47fec0942fa0\n', 'text/plain', staging);
   }

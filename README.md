@@ -73,6 +73,24 @@ This project includes:
 - `wrangler.toml` with `pages_build_output_dir = "dist"`
 - `public/_redirects` for SPA fallback (`/* /index.html 200`)
 
+## IndexNow
+
+The edge router serves the IndexNow key at `https://dayfiles.com/b68bdd53ba275942cce52af95c3d3844.txt` with that key as the exact response body (`text/plain`). The source file is `edge-router/indexnow/b68bdd53ba275942cce52af95c3d3844.txt`. Root files in `public/` are not served on the apex for an arbitrary `.txt` path; the router has to answer this URL itself.
+
+The key URL is not live until the production router Worker is deployed. That deploy is manual after merge and is not part of `npm run build`. Editorial Pages and the PDF Pages project do not need a deploy for this key.
+
+```bash
+npm run router:deploy:production
+curl -fsS https://dayfiles.com/b68bdd53ba275942cce52af95c3d3844.txt
+```
+
+`curl` must print `b68bdd53ba275942cce52af95c3d3844` and nothing else. Then submit URLs. The script does not run during the site build. With no `--all` flag it submits only the URLs passed as arguments. `--all` reads `https://dayfiles.com/sitemap-index.xml` and each child sitemap (`/sitemap.xml` and `/sitemaps/editorial.xml`). Posts go to `https://api.indexnow.org/indexnow` in batches of at most 10,000 URLs, and each response prints its HTTP status.
+
+```bash
+npm run indexnow:submit -- https://dayfiles.com/blog/ https://dayfiles.com/merge-pdf/
+npm run indexnow:submit -- --all
+```
+
 ## Subscriber D1 commands
 
 The site-wide subscription form writes to the Cloudflare D1 database `day-files-subscribers` and table `email_subscribers`.
