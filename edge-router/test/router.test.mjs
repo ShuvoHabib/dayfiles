@@ -525,12 +525,21 @@ test('keeps the PDF-owned workflow URL only in the PDF sitemap', async () => {
   assert.match(await pdf.text(), /pdf-workflows\/<\/loc>/);
 });
 
- test('routes the article reader to PDF Pages with either trailing slash', async () => {
+test('redirects the legacy view-pdf URL to the article reader', async () => {
   for (const path of ['/view-pdf', '/view-pdf/']) {
-    const response = await handleRequest(new Request(`https://dayfiles.com${path}`), env);
-    assert.equal(response.status, 200);
-    assert.equal(await response.text(), `upstream:https://pdf-processor-4mc.pages.dev${path}`);
+    const response = await handleRequest(new Request(`https://dayfiles.com${path}?open=demo`), env);
+    assert.equal(response.status, 301);
+    assert.equal(response.headers.get('location'), 'https://dayfiles.com/read-pdf-as-article/?open=demo');
+    assert.equal(response.headers.get('strict-transport-security'), 'max-age=31536000; includeSubDomains');
   }
+
+  const pdfHost = await handleRequest(new Request('https://pdf.dayfiles.com/view-pdf/'), env);
+  assert.equal(pdfHost.status, 301);
+  assert.equal(pdfHost.headers.get('location'), 'https://dayfiles.com/read-pdf-as-article/');
+
+  const www = await handleRequest(new Request('https://www.dayfiles.com/view-pdf/'), env);
+  assert.equal(www.status, 301);
+  assert.equal(www.headers.get('location'), 'https://dayfiles.com/read-pdf-as-article/');
 });
 
 test('routes the iOS purchase privacy link to its deployed policy', async () => {
