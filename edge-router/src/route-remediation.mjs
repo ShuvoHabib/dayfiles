@@ -25,4 +25,7 @@ export const PDF_ROUTE_REDIRECTS = Object.freeze({
   '/smallpdf-vs-ilovepdf-privacy': '/best-private-pdf-tools/',
   // Former signing URL. Google Search Console still sends clicks here.
   '/sign-pdf': '/e-sign-pdf/',
+  // Web app client-redirects this native-only viewer URL to the article reader.
+  // Without the 301, the origin SPA fallback serves a homepage duplicate (index,follow).
+  '/view-pdf': '/read-pdf-as-article/',
 });
