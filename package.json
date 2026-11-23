@@ -24,7 +24,8 @@
     "router:types": "wrangler types --config wrangler.router.jsonc --env production edge-router/worker-configuration.d.ts",
     "router:dry-run": "wrangler deploy --dry-run --config wrangler.router.jsonc --env production",
     "router:deploy:staging": "wrangler deploy --config wrangler.router.jsonc --env staging",
-    "router:deploy:production": "wrangler deploy --config wrangler.router.jsonc --env production"
+    "router:deploy:production": "wrangler deploy --config wrangler.router.jsonc --env production",
+    "indexnow:submit": "node scripts/indexnow-submit.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
