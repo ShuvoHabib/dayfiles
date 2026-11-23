@@ -59,39 +59,11 @@ const BLOG_GONE_PATHS = new Set(BLOG_GONE_SLUGS.map((slug) => `/blog/${slug}`));
 const PDF_REDIRECT_PATHS = new Map(Object.entries(PDF_ROUTE_REDIRECTS));
 const HSTS_VALUE = 'max-age=31536000; includeSubDomains';
 const INDEXNOW_KEY_PATH = `/${INDEXNOW_KEY}.txt`;
-const FILE_EXTENSION = /\.[a-z0-9]{1,12}$/i;
-// Commit dates from `git blame` of edge-router/src/pdf-routes.json.
-// The PDF Pages sitemap does not include <lastmod>, and those pages are not in this repo.
-const PDF_ROUTE_LASTMOD_DEFAULT = '2026-08-20';
-const PDF_ROUTE_LASTMOD = new Map([
-  ['/alternatives', '2026-10-26'],
-  ['/alternatives/adobe-acrobat', '2026-10-26'],
-  ['/alternatives/ilovepdf', '2026-10-26'],
-  ['/alternatives/smallpdf', '2026-10-26'],
-  ['/compare', '2026-10-26'],
-  ['/compare/private-pdf-vs-pdfgear', '2026-10-26'],
-  ['/compare/private-pdf-vs-xodo', '2026-10-26'],
-  ['/best-pdf-apps-android', '2026-10-26'],
-  ['/delete-pdf-pages', '2026-10-26'],
-  ['/repair-pdf', '2026-10-26'],
-  ['/create-pdf-forms', '2026-10-26'],
-  ['/image-watermark-pdf', '2026-10-26'],
-  ['/pdf-workflows', '2026-10-26'],
-  ['/guides/how-to-create-a-fillable-pdf-without-uploading', '2026-10-26'],
-  ['/guides/how-to-add-a-logo-or-image-watermark-to-a-pdf', '2026-10-26'],
-  ['/guides/how-to-create-reusable-pdf-workflow-recipes', '2026-10-26'],
-  ['/guides/how-to-repair-a-pdf-and-when-local-tools-cannot-fix-it', '2026-10-26'],
-
-  ['/thelast30days/privacy-policy', '2026-09-11'],
-  ['/thelast30days/terms-of-use', '2026-09-11'],
-  ['/simple-invoice-maker/privacy-policy', '2026-09-20'],
-  ['/simple-invoice-maker/terms', '2026-09-20'],
-  ['/simple-invoice-maker/support', '2026-09-20'],
-  ['/bates-numbering-pdf', '2026-09-12'],
-  ['/bank-statement-to-excel', '2026-09-12'],
-  ['/compare-pdf', '2026-09-12'],
-  ['/search-redact-pdf', '2026-09-12'],
+const APP_ASSOCIATION_PATHS = new Set([
+  '/.well-known/assetlinks.json',
+  '/.well-known/apple-app-site-association',
 ]);
+const FILE_EXTENSION = /\.[a-z0-9]{1,12}$/i;
 
 function normalizePath(pathname) {
   if (pathname === '/') return '/';
@@ -122,7 +94,6 @@ function isKnownPdfPath(pathname) {
     normalized === '/app-ads.txt' ||
     normalized === '/manifest.webmanifest' ||
     normalized === '/sw.js' ||
-    normalized === '/.well-known/apple-app-site-association' ||
     normalized.startsWith('/assets/') ||
     FILE_EXTENSION.test(normalized)
   );
@@ -222,11 +193,15 @@ function rewritePublicLocation(location, upstreamOrigin, requestUrl, staging) {
   return target.toString();
 }
 
-async function proxyRequest(request, upstreamOrigin, staging) {
+async function proxyRequest(request, upstreamOrigin, staging, pdfPage = false) {
   const response = await fetch(rewriteUpstreamRequest(request, upstreamOrigin));
   const headers = new Headers(response.headers);
   const location = rewritePublicLocation(headers.get('location'), upstreamOrigin, request.url, staging);
   if (location) headers.set('location', location);
+  // Pages exposes this directive only on its public origin hostname.
+  if (pdfPage && headers.get('x-robots-tag') === 'noindex, follow') {
+    headers.delete('x-robots-tag');
+  }
   if (staging) headers.set('x-robots-tag', 'noindex, nofollow');
   return new Response(response.body, {
     status: response.status,
@@ -249,8 +224,8 @@ function hasFileExtension(pathname) {
   return FILE_EXTENSION.test(normalizePath(pathname));
 }
 
-async function proxyPublicRequest(request, upstreamOrigin, staging) {
-  const response = await proxyRequest(request, upstreamOrigin, staging);
+async function proxyPublicRequest(request, upstreamOrigin, staging, pdfPage = false) {
+  const response = await proxyRequest(request, upstreamOrigin, staging, pdfPage);
   if (!hasFileExtension(new URL(request.url).pathname)) return response;
   if (response.status !== 200) return response;
   const contentType = response.headers.get('content-type') || '';
@@ -292,16 +267,12 @@ async function editorialSitemapResponse(request, env, staging) {
   return new Response(xml, { status: response.status, headers });
 }
 
-function pdfRouteLastmod(pathname) {
-  return PDF_ROUTE_LASTMOD.get(normalizePath(pathname)) || PDF_ROUTE_LASTMOD_DEFAULT;
-}
-
 function isRedirectedPublicPath(pathname) {
   const normalized = normalizePath(pathname);
   return PDF_REDIRECT_PATHS.has(normalized) || BLOG_REDIRECT_PATHS.has(normalized);
 }
 
-function rewriteSitemapXml(xml, { fillLastmod = false, excludePdfPaths = false } = {}) {
+function rewriteSitemapXml(xml, { excludePdfPaths = false } = {}) {
   if (!xml.includes('<urlset')) return xml;
   return xml.replace(/\s*<url>\s*([\s\S]*?)<\/url>/g, (full, inner) => {
     const locMatch = inner.match(/<loc>\s*([^<]+?)\s*<\/loc>/);
@@ -313,11 +284,7 @@ function rewriteSitemapXml(xml, { fillLastmod = false, excludePdfPaths = false }
       return full;
     }
     if (isRedirectedPublicPath(pathname) || (excludePdfPaths && KNOWN_PDF_PATHS.has(normalizePath(pathname)))) return '';
-    if (!fillLastmod || inner.includes('<lastmod>')) return full;
-    return full.replace(
-      locMatch[0],
-      `${locMatch[0]}\n    <lastmod>${pdfRouteLastmod(pathname)}</lastmod>`,
-    );
+    return full;
   });
 }
 
@@ -382,7 +349,7 @@ async function specialSeoResponse(request, env, staging) {
   if (pathname === '/sitemap.xml') {
     const upstream = await proxyRequest(requestWithPath(request, '/sitemap.xml'), env.PDF_ORIGIN, staging);
     if (!upstream.ok) return upstream;
-    const xml = rewriteSitemapXml(await upstream.text(), { fillLastmod: true });
+    const xml = rewriteSitemapXml(await upstream.text());
     return textResponse(xml, 'application/xml', staging);
   }
   if (pathname === '/sitemaps/pdf.xml') return redirectResponse(request, '/sitemap.xml', 301);
@@ -408,6 +375,25 @@ export async function handleRequest(request, env) {
 async function dispatchRequest(request, env) {
   const url = new URL(request.url);
   const staging = env.ROUTER_MODE !== 'production';
+
+  // Android's Digital Asset Links verifier can send a fully qualified hostname.
+  const associationHost = url.hostname.replace(/\.$/, '');
+  if (
+    url.protocol === 'https:' &&
+    PUBLIC_HOSTS.has(associationHost) &&
+    associationHost !== `blog.${PUBLIC_HOST}` &&
+    APP_ASSOCIATION_PATHS.has(url.pathname) &&
+    ['GET', 'HEAD'].includes(request.method)
+  ) {
+    const response = await proxyRequest(request, env.PDF_ORIGIN, staging);
+    if (response.status === 304) return response;
+    // A missing file can fall through to the Pages app shell.
+    if (response.status === 200 && /^application\/json\b/i.test(response.headers.get('content-type') ?? '')) {
+      return response;
+    }
+    await response.body?.cancel().catch(() => {});
+    return notFoundResponse(staging);
+  }
 
   if (PUBLIC_HOSTS.has(url.hostname) && url.hostname !== PUBLIC_HOST) {
     return redirectHostRequest(request, url.hostname);
@@ -440,13 +426,12 @@ async function dispatchRequest(request, env) {
   if (retiredBlog) return retiredBlog;
   const consolidatedPdfRoute = consolidatedPdfRouteResponse(request);
   if (consolidatedPdfRoute) return consolidatedPdfRoute;
-  // The Play App Signing SHA-256 for com.dayfiles.pdfprocessor is not in this repo.
-  if (normalizePath(url.pathname) === '/.well-known/assetlinks.json') return notFoundResponse(staging);
+  if (APP_ASSOCIATION_PATHS.has(normalizePath(url.pathname))) return notFoundResponse(staging);
   const special = await specialSeoResponse(request, env, staging);
   if (special) return special;
   if (isEditorialApiRequest(request)) return proxyRequest(request, env.EDITORIAL_ORIGIN, staging);
   if (isEditorialPath(url.pathname)) return proxyPublicRequest(request, env.EDITORIAL_ORIGIN, staging);
-  if (isKnownPdfPath(url.pathname)) return proxyPublicRequest(request, env.PDF_ORIGIN, staging);
+  if (isKnownPdfPath(url.pathname)) return proxyPublicRequest(request, env.PDF_ORIGIN, staging, true);
   return notFoundResponse(staging);
 }
 
