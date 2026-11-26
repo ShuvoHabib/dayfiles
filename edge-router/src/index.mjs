@@ -1,3 +1,4 @@
+import evenleafPages from './evenleaf-ios-pages.mjs';
 import rememberDayPages from './remember-day-ios-pages.mjs';
 import pdfRoutes from './pdf-routes.json' with { type: 'json' };
 import { BLOG_GONE_SLUGS, BLOG_REDIRECTS } from '../../scripts/blog/remediation.mjs';
@@ -396,7 +397,8 @@ async function dispatchRequest(request, env) {
     return redirectResponse(request, destination, 301);
   }
 
-  const appPage = rememberDayPages[normalizePath(url.pathname)];
+  const appPath = normalizePath(url.pathname);
+  const appPage = evenleafPages[appPath] ?? rememberDayPages[appPath];
   if (appPage) {
     const headers = new Headers({
       'content-type': 'text/html; charset=utf-8',
